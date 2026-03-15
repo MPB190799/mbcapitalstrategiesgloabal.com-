@@ -30,6 +30,74 @@
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/pages/blog.html">
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategies.com/pages/blog.html">
 <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/pages/blog.html">
+
+<style>
+    .category-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        margin-bottom: 2rem;
+        justify-content: center;
+    }
+    .category-filter button {
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--gold-primary);
+        background: transparent;
+        color: var(--gold-primary);
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+    }
+    .category-filter button:hover,
+    .category-filter button.active {
+        background: var(--gold-primary);
+        color: var(--dark-bg);
+    }
+    .category-section {
+        margin-bottom: 3rem;
+    }
+    .category-header {
+        color: var(--gold-primary);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba(218, 165, 32, 0.3);
+    }
+    .article-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .article-card {
+        padding: 2rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .article-card h3 {
+        margin: 0.75rem 0 1rem;
+        font-size: 1.1rem;
+        line-height: 1.4;
+    }
+    .article-card h3 a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    .article-card h3 a:hover {
+        color: var(--gold-primary);
+    }
+    .article-meta {
+        color: var(--gold-primary);
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 0.75rem;
+    }
+</style>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -80,53 +148,300 @@
     <section class="page-content">
         <div class="container">
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; margin-top: 1rem;">
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Shipping &middot; Mar 12, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">Why Shipping Stocks Are the Best Dividend Play in 2026</h3>
-                    <p>The tanker orderbook is at a 25-year low while global oil demand continues to climb. This supply-demand imbalance is creating a golden window for shipping investors. Companies like Frontline, Hafnia, and International Seaways are generating record free cashflow and returning the bulk of it to shareholders through variable dividends. We break down the math: at current spot rates, several tanker operators are yielding north of 15% on an annualized basis — and unlike many high-yield sectors, these payouts are backed by real asset values and contracted revenue. The question is not whether shipping will cycle down eventually, but how much income you can collect before it does.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Tax Strategy &middot; Mar 5, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">Understanding MLP Tax Implications: A Practical Guide for Income Investors</h3>
-                    <p>Master Limited Partnerships offer some of the highest yields in the market, but their tax treatment confuses many investors — and even some financial advisors. MLPs issue K-1 forms instead of 1099s, distributions are largely classified as return of capital (reducing your cost basis rather than creating current tax liability), and holding them in an IRA can trigger Unrelated Business Taxable Income above the $1,000 threshold. This guide walks through every scenario: taxable accounts, IRAs, state filing obligations, and what happens when you eventually sell. We also compare the tax efficiency of MLPs versus midstream C-corps for different investor profiles.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Mining &middot; Feb 25, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">Gold Royalty Companies: The Lowest-Risk Way to Own the Gold Bull Market</h3>
-                    <p>Gold miners carry operational risk — cost overruns, permitting delays, geopolitical exposure. Royalty and streaming companies like Franco-Nevada, Wheaton Precious Metals, and Royal Gold sidestep most of these risks entirely. They provide upfront capital to miners in exchange for a percentage of future production at a predetermined price. The result: high margins (often above 75%), no exposure to AISC inflation, and organic growth as partner mines expand. With gold above $2,800/oz, these companies are compounding free cashflow and raising dividends. We analyze which royalty companies offer the best combination of yield, growth, and valuation today.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Strategy &middot; Feb 18, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">The 80/20 Portfolio: How to Balance Yield and Growth in Hard Assets</h3>
-                    <p>Most income portfolios fail for one of two reasons: they chase yield into unsustainable payouts, or they play it so safe they underperform inflation. The 80/20 framework solves both problems. Allocate 80% to stable, well-covered distributions from pipelines, infrastructure MLPs, and blue-chip BDCs. These form your income foundation — boring, predictable, and growing at 3-5% annually. Then allocate 20% to high-upside cyclical plays: tanker stocks at the bottom of the cycle, junior miners with exploration catalysts, or beaten-down commodity producers. This 20% sleeve provides the asymmetric returns that turbocharge total performance while the 80% sleeve pays the bills.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">BDCs &middot; Feb 10, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">BDC Deep Dive: Earning 10%+ Yields from Private Credit</h3>
-                    <p>Business Development Companies lend to middle-market firms that are too small for public bond markets but too large for traditional bank loans. In exchange for favorable tax treatment (they must distribute at least 90% of taxable income), BDCs offer yields of 9-13% that are backed by diversified loan portfolios. The key metrics to analyze: net investment income coverage, non-accrual rates, leverage ratios, and NAV trends. We profile the top five BDCs by risk-adjusted yield and explain why the current floating-rate environment is particularly favorable for this asset class.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
-                <div class="glass-card" style="padding: 2rem;">
-                    <span style="color: var(--gold-primary); font-size: 0.85rem; font-weight: 600;">Macro &middot; Jan 28, 2026</span>
-                    <h3 style="margin: 0.75rem 0 0.5rem;">Commodity Supercycles Explained: Are We in One Right Now?</h3>
-                    <p>Commodity supercycles are multi-decade periods of structurally rising real commodity prices driven by demand shocks that outpace supply response. The last supercycle ran roughly from 2000 to 2011, fueled by Chinese industrialization. Today, a confluence of forces — the energy transition demanding vast quantities of copper, lithium, and rare earths; years of underinvestment in oil and gas exploration; reshoring of manufacturing; and aging mine supply — suggests we may be in the early innings of a new supercycle. We examine the historical evidence, compare current conditions to prior cycles, and discuss how income investors should position across energy, metals, and agricultural commodities.</p>
-                    <a href="#" style="color: var(--gold-primary); font-weight: 600;">Read Full Article &rarr;</a>
-                </div>
-
+            <!-- Category Navigation -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All Articles</button>
+                <button class="filter-btn" data-category="upstream">Upstream Oil & Gas</button>
+                <button class="filter-btn" data-category="mining">Mining</button>
+                <button class="filter-btn" data-category="pipelines">Pipelines & Midstream</button>
+                <button class="filter-btn" data-category="shipping">Shipping</button>
+                <button class="filter-btn" data-category="bdcs">BDCs & High-Yield</button>
+                <button class="filter-btn" data-category="market-news">Market News</button>
             </div>
 
-            <p style="margin-top: 2rem;"><em>Disclaimer: Blog articles are for educational and informational purposes only. Nothing published here constitutes investment advice or a recommendation to buy or sell any security.</em></p>
+            <!-- Upstream Oil & Gas Section -->
+            <div class="category-section" data-category="upstream">
+                <h2 class="category-header">⛽ Upstream Oil & Gas</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/aker-bp-analysis-2026.html">Aker BP (AKRBP) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/apa-corporation-analysis-2026.html">APA Corporation (APA) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/cardinal-energy-analysis-2026.html">Cardinal Energy (CJ.TO) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/coterra-energy-analysis-2026.html">Coterra Energy (CTRA) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/coterra-vs-devon-comparison-2026.html">Coterra vs Devon: Gas vs Oil Production Mix Comparison 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/devon-energy-analysis-2026.html">Devon Energy (DVN) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/ecopetrol-analysis-2026.html">Ecopetrol (EC) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/eni-analysis-2026.html">Eni (E) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/equinor-analysis-2026.html">Equinor (EQNR) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/omv-analysis-2026.html">OMV (OMVKY) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/panoro-energy-analysis-2026.html">Panoro Energy (PEN.OL) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/petrobras-analysis-2026.html">Petrobras (PBR) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/repsol-analysis-2026.html">Repsol (REPYY) Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Upstream Oil & Gas</span>
+                        <h3><a href="../blog/woodside-energy-analysis-2026.html">Woodside Energy (WDS) Analysis 2026</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mining Section -->
+            <div class="category-section" data-category="mining">
+                <h2 class="category-header">⛏️ Mining</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/anglo-american-analysis-2026.html">Anglo American Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/anglogold-ashanti-analysis-2026.html">AngloGold Ashanti Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/b2gold-analysis-2026.html">B2Gold Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/barrick-gold-analysis-2026.html">Barrick Gold Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/barrick-vs-newmont-comparison-2026.html">Barrick vs Newmont Comparison 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/bhp-analysis-2026.html">BHP Group Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/bhp-vs-rio-tinto-comparison-2026.html">BHP vs Rio Tinto Comparison 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/central-asia-metals-analysis-2026.html">Central Asia Metals Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/exxaro-resources-analysis-2026.html">Exxaro Resources Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/fortescue-analysis-2026.html">Fortescue Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/fresnillo-analysis-2026.html">Fresnillo Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/gerdau-analysis-2026.html">Gerdau Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/glencore-analysis-2026.html">Glencore Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/indo-tambangraya-megah-analysis-2026.html">Indo Tambangraya Megah Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/jiangxi-copper-analysis-2026.html">Jiangxi Copper Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/kazatomprom-uranium-analysis-2026.html">Kazatomprom Uranium Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/rio-tinto-analysis-2026.html">Rio Tinto Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/suncoke-energy-analysis-2026.html">SunCoke Energy Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/thungela-resources-analysis-2026.html">Thungela Resources Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/vale-analysis-2026.html">Vale Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/valterra-platinum-analysis-2026.html">Valterra Platinum Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/whitehaven-coal-analysis-2026.html">Whitehaven Coal Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Mining</span>
+                        <h3><a href="../blog/yancoal-australia-analysis-2026.html">Yancoal Australia Analysis 2026</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pipelines & Midstream Section -->
+            <div class="category-section" data-category="pipelines">
+                <h2 class="category-header">🔗 Pipelines & Midstream</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Pipelines & Midstream</span>
+                        <h3><a href="../blog/enbridge-analysis-2026.html">Enbridge Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Pipelines & Midstream</span>
+                        <h3><a href="../blog/oneok-analysis-2026.html">ONEOK Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Pipelines & Midstream</span>
+                        <h3><a href="../blog/pembina-pipeline-analysis-2026.html">Pembina Pipeline Analysis 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Pipelines & Midstream</span>
+                        <h3><a href="../blog/pipeline-comparison-2026.html">Top 5 Pipeline Operators Compared 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Pipelines & Midstream</span>
+                        <h3><a href="../blog/tc-energy-analysis-2026.html">TC Energy Analysis 2026</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping Section -->
+            <div class="category-section" data-category="shipping">
+                <h2 class="category-header">🚢 Shipping</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/frontline-vs-scorpio-tankers-2026.html">Frontline vs Scorpio Tankers 2026: VLCC vs MR Comparison</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/green-shipping-2026-transformation.html">Green Shipping 2026: The Biggest Transformation in 50 Years</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/hidden-champions-shipping-2025.html">Hidden Champions of Shipping: Wallenius Wilhelmsen, Hoegh &amp; ZIM</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/six-shipping-stocks-portfolio-2025.html">6 Shipping Stocks: Bulk &amp; Container Dividend Machines</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/tanker-charter-rates-sanctions-2026.html">Tanker Charter Rates and Sanctions in 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/tanker-mixed-fleet-2025.html">Tanker Mixed Fleet: Hafnia, Ardmore, DHT &amp; SFL Corp</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/three-lng-tanker-stocks-2025.html">3 LNG &amp; Gas Tanker Stocks for Income Investors</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Shipping</span>
+                        <h3><a href="../blog/three-shipping-stocks-10-percent-dividend-2025.html">3 Shipping Stocks Paying 10%+ Dividends</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BDCs & High-Yield Section -->
+            <div class="category-section" data-category="bdcs">
+                <h2 class="category-header">💰 BDCs & High-Yield Dividends</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/bdc-crescent-vs-blue-owl-2025.html">Crescent Capital vs Blue Owl BDC Comparison</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/bdc-newtek-vs-hercules-2025.html">Newtek vs Hercules Capital BDC Comparison</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/commodity-supercycle-2025.html">The Commodity Supercycle Thesis 2025</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/five-stable-dividend-stocks-2025.html">5 Stable Dividend Stocks for Defensive Income</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/ten-high-yield-dividend-stocks-2025.html">10 High-Yield Dividend Stocks Paying 10%+</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">BDCs & High-Yield</span>
+                        <h3><a href="../blog/withholding-tax-canada-australia.html">Withholding Tax &amp; Franking Credits Guide</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market News Section -->
+            <div class="category-section" data-category="market-news">
+                <h2 class="category-header">📰 Market News</h2>
+                <div class="article-grid">
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Market News</span>
+                        <h3><a href="../blog/debitum-investments-reality-check-2026.html">Debitum Investments Reality Check 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Market News</span>
+                        <h3><a href="../blog/market-news-container-copper-february-2026.html">Container Rates &amp; Copper Rally – February 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Market News</span>
+                        <h3><a href="../blog/market-news-cpi-devon-coterra-february-2026.html">CPI Data, Devon &amp; Coterra Earnings – February 2026</a></h3>
+                    </div>
+                    <div class="glass-card article-card">
+                        <span class="article-meta">Market News</span>
+                        <h3><a href="../blog/shipping-consolidation-avance-bw-lpg-2026.html">LPG Shipping Consolidation: Avance Gas &amp; BW LPG Merger</a></h3>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 3rem; text-align: center;"><em>Disclaimer: Blog articles are for educational and informational purposes only. Nothing published here constitutes investment advice or a recommendation to buy or sell any security.</em></p>
         </div>
     </section>
 
@@ -142,6 +457,31 @@
             </div>
         </div>
     </footer>
+
     <script src="../js/main.js"></script>
+    <script>
+        // Category filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const categorySections = document.querySelectorAll('.category-section');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const selectedCategory = btn.getAttribute('data-category');
+
+                // Show/hide sections
+                categorySections.forEach(section => {
+                    if (selectedCategory === 'all') {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = section.getAttribute('data-category') === selectedCategory ? 'block' : 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
