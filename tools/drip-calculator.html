@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRIP Calculator – MB Capital Strategies Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .calc-container { max-width: 750px; margin: 0 auto; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem; }
+        .calc-group { display: flex; flex-direction: column; }
+        .calc-group label { color: #ccc; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 500; }
+        .calc-group.full-width { grid-column: 1 / -1; }
+        .calc-btn {
+            width: 100%; padding: 1rem; border: none; border-radius: 8px; cursor: pointer;
+            background: linear-gradient(135deg, #d4af37, #e8c95a); color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.3); }
+        .results-box {
+            background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem;
+        }
+        .result-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: #aaa; font-size: 0.95rem; }
+        .result-value { color: #e8c95a; font-weight: 700; font-size: 1.1rem; }
+        .comparison-header { color: #e8c95a; font-weight: 700; font-size: 1rem; margin-top: 1rem; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid rgba(212,175,55,0.3); }
+        @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                        <li><a href="../pages/strategy.html">80/20 Strategy</a></li>
+                        <li><a href="../pages/dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/shipping.html">Shipping</a></li>
+                        <li><a href="../pages/pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="../pages/mining.html">Mining</a></li>
+                        <li><a href="../pages/energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="../pages/high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="../pages/supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link active">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Financial Tools</span>
+            <h1><span class="gold-text">DRIP</span> Calculator</h1>
+            <p>Compare dividend reinvestment (DRIP) versus taking cash — see how reinvesting accelerates wealth.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="glass-card calc-container">
+                <div class="calc-grid">
+                    <div class="calc-group">
+                        <label for="initInvest">Initial Investment ($)</label>
+                        <input type="number" id="initInvest" class="form-input" placeholder="e.g. 50000" value="50000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="sharePrice">Share Price ($)</label>
+                        <input type="number" id="sharePrice" class="form-input" step="0.01" placeholder="e.g. 25" value="25">
+                    </div>
+                    <div class="calc-group">
+                        <label for="divYield">Dividend Yield (%)</label>
+                        <input type="number" id="divYield" class="form-input" step="0.1" placeholder="e.g. 7" value="7">
+                    </div>
+                    <div class="calc-group">
+                        <label for="growthRate">Dividend Growth Rate (%)</label>
+                        <input type="number" id="growthRate" class="form-input" step="0.1" placeholder="e.g. 3" value="3">
+                    </div>
+                    <div class="calc-group full-width">
+                        <label for="years">Years</label>
+                        <input type="number" id="years" class="form-input" placeholder="e.g. 20" value="20">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calculate()">Calculate DRIP</button>
+                <div class="results-box" id="results" style="display:none;">
+                    <div class="comparison-header">With DRIP (Reinvesting Dividends)</div>
+                    <div class="result-row"><span class="result-label">Shares Accumulated</span><span class="result-value" id="dripShares">—</span></div>
+                    <div class="result-row"><span class="result-label">Portfolio Value</span><span class="result-value" id="dripValue">—</span></div>
+                    <div class="result-row"><span class="result-label">Annual Income (final year)</span><span class="result-value" id="dripIncome">—</span></div>
+                    <div class="comparison-header">Without DRIP (Taking Cash)</div>
+                    <div class="result-row"><span class="result-label">Shares (unchanged)</span><span class="result-value" id="noDripShares">—</span></div>
+                    <div class="result-row"><span class="result-label">Portfolio Value</span><span class="result-value" id="noDripValue">—</span></div>
+                    <div class="result-row"><span class="result-label">Annual Income (final year)</span><span class="result-value" id="noDripIncome">—</span></div>
+                    <div class="comparison-header">DRIP Advantage</div>
+                    <div class="result-row"><span class="result-label">Extra Income per Year</span><span class="result-value" id="extraIncome">—</span></div>
+                    <div class="result-row"><span class="result-label">Extra Portfolio Value</span><span class="result-value" id="extraValue">—</span></div>
+                </div>
+            </div>
+            <p style="margin-top:2rem;"><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../pages/imprint.html">Imprint</a>
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>
+        function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
+        function calculate() {
+            var invest = parseFloat(document.getElementById('initInvest').value) || 0;
+            var price = parseFloat(document.getElementById('sharePrice').value) || 1;
+            var yld = parseFloat(document.getElementById('divYield').value) || 0;
+            var growth = parseFloat(document.getElementById('growthRate').value) || 0;
+            var years = parseInt(document.getElementById('years').value) || 1;
+            var yldRate = yld / 100;
+            var growthRate = growth / 100;
+
+            // With DRIP
+            var dripShares = invest / price;
+            var divPerShare = price * yldRate;
+            for (var y = 0; y < years; y++) {
+                var annualDiv = dripShares * divPerShare;
+                var newShares = annualDiv / price;
+                dripShares += newShares;
+                divPerShare *= (1 + growthRate);
+            }
+            var dripValue = dripShares * price;
+            var dripIncome = dripShares * divPerShare;
+
+            // Without DRIP
+            var noDripShares = invest / price;
+            var noDripDivPerShare = price * yldRate * Math.pow(1 + growthRate, years);
+            var noDripValue = noDripShares * price;
+            var noDripIncome = noDripShares * noDripDivPerShare;
+
+            document.getElementById('dripShares').textContent = dripShares.toFixed(2);
+            document.getElementById('dripValue').textContent = fmt(dripValue);
+            document.getElementById('dripIncome').textContent = fmt(dripIncome);
+            document.getElementById('noDripShares').textContent = noDripShares.toFixed(2);
+            document.getElementById('noDripValue').textContent = fmt(noDripValue);
+            document.getElementById('noDripIncome').textContent = fmt(noDripIncome);
+            document.getElementById('extraIncome').textContent = fmt(dripIncome - noDripIncome);
+            document.getElementById('extraValue').textContent = fmt(dripValue - noDripValue);
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
