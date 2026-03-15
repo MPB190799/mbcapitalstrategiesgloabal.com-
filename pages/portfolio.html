@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio – MB Capital Strategies Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="portfolio.html">My Portfolio</a></li>
+                        <li><a href="strategy.html">80/20 Strategy</a></li>
+                        <li><a href="dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="shipping.html">Shipping</a></li>
+                        <li><a href="pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="mining.html">Mining</a></li>
+                        <li><a href="energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="calculators.html" class="nav-link">Calculators</a></li>
+                <li class="nav-item"><a href="podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Full Transparency</span>
+            <h1>My <span class="gold-text">Portfolio</span></h1>
+            <p>Real money, real positions, real dividends. Updated monthly with video commentary on YouTube.</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <h2>Portfolio Overview</h2>
+            <p>Our portfolio is built on the <strong>80/20 strategy</strong>: 80% in stable, high-dividend payers from pipelines, mining royalties, and infrastructure, and 20% in ultrashort bonds for tactical flexibility.</p>
+            <p>We track our holdings live using Parqet and share the data openly. Every position, every dividend payment, and every rebalancing decision is documented.</p>
+
+            <div class="glass-card" style="padding: 40px; margin: 32px 0; text-align: center;">
+                <h3 style="margin-bottom: 12px;">Live Portfolio Tracker</h3>
+                <p style="color: var(--text-muted); margin-bottom: 24px;">Embedded Parqet portfolio tracking will appear here once connected.</p>
+                <div style="background: var(--black-elevated); border-radius: 12px; padding: 60px 24px; border: 1px dashed var(--black-border);">
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Parqet Portfolio Widget Placeholder</p>
+                    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 8px;">Connect your Parqet embed URL to display live portfolio data</p>
+                </div>
+            </div>
+
+            <h2>Key Portfolio Metrics</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 24px 0;">
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--gold-primary);">&euro;60,000+</div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Total Portfolio Value</div>
+                </div>
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--gold-primary);">6–15%</div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Dividend Yield Range</div>
+                </div>
+                <div class="glass-card" style="padding: 24px; text-align: center;">
+                    <div style="font-size: 1.8rem; font-weight: 800; color: var(--gold-primary);">Monthly</div>
+                    <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">YouTube Updates</div>
+                </div>
+            </div>
+
+            <h2>Portfolio Allocation</h2>
+            <p>The portfolio is diversified across our core hard asset sectors:</p>
+            <ul>
+                <li><strong>Pipelines &amp; Midstream (30–35%)</strong> — MLPs and infrastructure providing stable, contract-backed distributions</li>
+                <li><strong>Shipping (20–25%)</strong> — Tanker and LNG carriers benefiting from tight vessel supply</li>
+                <li><strong>Mining &amp; Royalties (15–20%)</strong> — Gold, copper, and coal royalties with minimal capex exposure</li>
+                <li><strong>Energy &amp; Upstream (10–15%)</strong> — Oil and gas producers with strong free cash flow</li>
+                <li><strong>High-Yield &amp; BDCs (5–10%)</strong> — Business development companies for portfolio income boost</li>
+                <li><strong>Ultrashort Bonds (15–20%)</strong> — Cash-like instruments for tactical deployment</li>
+            </ul>
+
+            <h2>Monthly Updates</h2>
+            <p>Every month, we publish a detailed portfolio review on YouTube covering:</p>
+            <ul>
+                <li>New positions added or sold</li>
+                <li>Dividend income received</li>
+                <li>Sector allocation changes</li>
+                <li>Market outlook and opportunities</li>
+            </ul>
+
+            <p><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="imprint.html">Imprint</a>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
