@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowball + YOC Pro Calculator – MB Capital Strategies Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .calc-container { max-width: 800px; margin: 0 auto; }
+        .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem; }
+        .calc-group { display: flex; flex-direction: column; }
+        .calc-group label { color: #ccc; font-size: 0.9rem; margin-bottom: 0.4rem; font-weight: 500; }
+        .calc-group.full-width { grid-column: 1 / -1; }
+        .calc-btn {
+            width: 100%; padding: 1rem; border: none; border-radius: 8px; cursor: pointer;
+            background: linear-gradient(135deg, #d4af37, #e8c95a); color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .calc-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(212,175,55,0.3); }
+        .results-box {
+            background: rgba(212,175,55,0.05); border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; overflow-x: auto;
+        }
+        .result-row { display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.06); }
+        .result-row:last-child { border-bottom: none; }
+        .result-label { color: #aaa; font-size: 0.95rem; }
+        .result-value { color: #e8c95a; font-weight: 700; font-size: 1.1rem; }
+        .proj-table { width: 100%; border-collapse: collapse; margin-top: 0.5rem; min-width: 600px; }
+        .proj-table th { color: #e8c95a; text-align: left; padding: 0.6rem; border-bottom: 1px solid rgba(212,175,55,0.3); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .proj-table td { color: #ddd; padding: 0.6rem; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+        .proj-table tr:last-child td { border-bottom: none; }
+        .proj-table .highlight td { color: #e8c95a; font-weight: 700; }
+        .section-title { color: #e8c95a; font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; }
+        @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                        <li><a href="../pages/strategy.html">80/20 Strategy</a></li>
+                        <li><a href="../pages/dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/shipping.html">Shipping</a></li>
+                        <li><a href="../pages/pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="../pages/mining.html">Mining</a></li>
+                        <li><a href="../pages/energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="../pages/high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="../pages/supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link active">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Financial Tools</span>
+            <h1><span class="gold-text">Snowball + YOC</span> Pro Calculator</h1>
+            <p>The ultimate tool — combines dividend snowball compounding with yield-on-cost tracking over time.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+            <div class="glass-card calc-container">
+                <div class="calc-grid">
+                    <div class="calc-group">
+                        <label for="initInvest">Initial Investment ($)</label>
+                        <input type="number" id="initInvest" class="form-input" placeholder="e.g. 50000" value="50000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="curYield">Current Yield (%)</label>
+                        <input type="number" id="curYield" class="form-input" step="0.1" placeholder="e.g. 7" value="7">
+                    </div>
+                    <div class="calc-group">
+                        <label for="divGrowth">Dividend Growth (%)</label>
+                        <input type="number" id="divGrowth" class="form-input" step="0.1" placeholder="e.g. 5" value="5">
+                    </div>
+                    <div class="calc-group">
+                        <label for="monthlyContrib">Monthly Contribution ($)</label>
+                        <input type="number" id="monthlyContrib" class="form-input" placeholder="e.g. 1500" value="1500">
+                    </div>
+                    <div class="calc-group full-width">
+                        <label for="years">Years</label>
+                        <input type="number" id="years" class="form-input" placeholder="e.g. 20" value="20">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calculate()">Calculate Pro Projection</button>
+                <div id="summaryBox" class="results-box" style="display:none;">
+                    <div class="section-title">Summary Metrics</div>
+                    <div class="result-row"><span class="result-label">Total Cost Basis (invested)</span><span class="result-value" id="totalCostBasis">—</span></div>
+                    <div class="result-row"><span class="result-label">Final Portfolio Value</span><span class="result-value" id="finalPortfolio">—</span></div>
+                    <div class="result-row"><span class="result-label">Final Year Annual Income</span><span class="result-value" id="finalIncome">—</span></div>
+                    <div class="result-row"><span class="result-label">Final Year Monthly Income</span><span class="result-value" id="finalMonthly">—</span></div>
+                    <div class="result-row"><span class="result-label">Final Yield on Cost</span><span class="result-value" id="finalYOC">—</span></div>
+                    <div class="result-row"><span class="result-label">Income Multiple vs Year 1</span><span class="result-value" id="incomeMultiple">—</span></div>
+                </div>
+                <div class="results-box" id="results" style="display:none;">
+                    <div class="section-title">Projected Income Timeline</div>
+                    <table class="proj-table">
+                        <thead><tr><th>Year</th><th>Portfolio</th><th>Cost Basis</th><th>Annual Income</th><th>Monthly Income</th><th>YOC</th></tr></thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+            <p style="margin-top:2rem;"><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../pages/imprint.html">Imprint</a>
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/disclaimer.html">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script>
+        function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
+        function calculate() {
+            var initInvest = parseFloat(document.getElementById('initInvest').value) || 0;
+            var curYield = parseFloat(document.getElementById('curYield').value) || 0;
+            var divGrowth = parseFloat(document.getElementById('divGrowth').value) || 0;
+            var monthlyContrib = parseFloat(document.getElementById('monthlyContrib').value) || 0;
+            var years = parseInt(document.getElementById('years').value) || 1;
+            var yieldRate = curYield / 100;
+            var growthRate = divGrowth / 100;
+            var annualContrib = monthlyContrib * 12;
+
+            var tbody = document.getElementById('tableBody');
+            tbody.innerHTML = '';
+            var portfolio = initInvest;
+            var costBasis = initInvest;
+            var effectiveYieldRate = yieldRate;
+            var year1Income = 0;
+
+            for (var y = 1; y <= years; y++) {
+                // Dividends earned this year based on portfolio and growing yield
+                var annualIncome = portfolio * effectiveYieldRate;
+                if (y === 1) year1Income = annualIncome;
+
+                // Reinvest dividends + add contributions
+                portfolio += annualIncome + annualContrib;
+                costBasis += annualContrib;
+
+                // Yield grows for next year
+                effectiveYieldRate = yieldRate * Math.pow(1 + growthRate, y);
+
+                var yoc = (annualIncome / costBasis) * 100;
+                var monthlyIncome = annualIncome / 12;
+
+                var tr = document.createElement('tr');
+                if (y === years) tr.className = 'highlight';
+                tr.innerHTML = '<td>' + y + '</td><td>' + fmt(portfolio) + '</td><td>' + fmt(costBasis) + '</td><td>' + fmt(annualIncome) + '</td><td>' + fmt(monthlyIncome) + '</td><td>' + yoc.toFixed(2) + '%</td>';
+                tbody.appendChild(tr);
+            }
+
+            var finalIncome = portfolio * effectiveYieldRate;
+            var finalYOC = (finalIncome / costBasis) * 100;
+            var incomeMultiple = year1Income > 0 ? (finalIncome / year1Income) : 0;
+
+            document.getElementById('totalCostBasis').textContent = fmt(costBasis);
+            document.getElementById('finalPortfolio').textContent = fmt(portfolio);
+            document.getElementById('finalIncome').textContent = fmt(finalIncome);
+            document.getElementById('finalMonthly').textContent = fmt(finalIncome / 12);
+            document.getElementById('finalYOC').textContent = finalYOC.toFixed(2) + '%';
+            document.getElementById('incomeMultiple').textContent = incomeMultiple.toFixed(1) + 'x';
+            document.getElementById('summaryBox').style.display = 'block';
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
