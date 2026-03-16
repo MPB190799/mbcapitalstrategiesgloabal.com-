@@ -1,0 +1,68 @@
+name: IndexNow - Submit Changed Pages Only
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'blog/**.html'
+      - 'pages/**.html'
+      - 'tools/**.html'
+      - 'index.html'
+
+jobs:
+  submit-changed:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Find changed HTML files
+        id: changed
+        run: |
+          DOMAIN="https://mbcapitalstrategiesgloabal.com"
+          CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v 'google.*\.html')
+
+          if [ -z "$CHANGED" ]; then
+            echo "No HTML files changed."
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          echo "has_changes=true" >> $GITHUB_OUTPUT
+
+          # Convert file paths to URLs
+          URLS=""
+          for f in $CHANGED; do
+            URLS="$URLS${DOMAIN}/${f}\n"
+          done
+
+          URL_JSON=$(echo -e "$URLS" | python3 -c "
+          import sys, json
+          urls = [l.strip() for l in sys.stdin if l.strip()]
+          print(json.dumps(urls))
+          ")
+
+          echo "url_json=$URL_JSON" >> $GITHUB_OUTPUT
+          echo "count=$(echo "$CHANGED" | wc -l)" >> $GITHUB_OUTPUT
+          echo "Changed files:"
+          echo "$CHANGED"
+
+      - name: Submit changed URLs to IndexNow
+        if: steps.changed.outputs.has_changes == 'true'
+        run: |
+          curl -s -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "mbcapitalstrategiesgloabal.com",
+              "key": "9281296539de44729f00285e02a89b85",
+              "keyLocation": "https://mbcapitalstrategiesgloabal.com/9281296539de44729f00285e02a89b85.txt",
+              "urlList": ${{ steps.changed.outputs.url_json }}
+            }' -o /dev/null -w "IndexNow: HTTP %{http_code}\n"
+
+      - name: Summary
+        if: steps.changed.outputs.has_changes == 'true'
+        run: |
+          echo "### Changed Pages Submitted" >> $GITHUB_STEP_SUMMARY
+          echo "- **Pages submitted:** ${{ steps.changed.outputs.count }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Submitted via IndexNow to Bing, Yandex, Naver, Seznam" >> $GITHUB_STEP_SUMMARY
