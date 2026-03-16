@@ -1,0 +1,55 @@
+name: IndexNow - Auto Submit URLs to Search Engines
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+
+jobs:
+  submit-urls:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect all URLs from sitemap
+        id: urls
+        run: |
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml)
+          URL_JSON=$(echo "$URLS" | python3 -c "
+          import sys, json
+          urls = [l.strip() for l in sys.stdin if l.strip()]
+          print(json.dumps(urls))
+          ")
+          echo "url_json=$URL_JSON" >> $GITHUB_OUTPUT
+          echo "url_count=$(echo "$URLS" | wc -l)" >> $GITHUB_OUTPUT
+
+      - name: Submit to IndexNow (Bing, Yandex, Naver, Seznam)
+        run: |
+          curl -s -X POST "https://api.indexnow.org/IndexNow" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "host": "mbcapitalstrategiesgloabal.com",
+              "key": "9281296539de44729f00285e02a89b85",
+              "keyLocation": "https://mbcapitalstrategiesgloabal.com/9281296539de44729f00285e02a89b85.txt",
+              "urlList": ${{ steps.urls.outputs.url_json }}
+            }' -o /dev/null -w "IndexNow: HTTP %{http_code}\n"
+
+      - name: Ping Google Sitemap
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://mbcapitalstrategiesgloabal.com/sitemap.xml" \
+            -o /dev/null -w "Google ping: HTTP %{http_code}\n"
+
+      - name: Ping Bing Sitemap
+        run: |
+          curl -s "https://www.bing.com/ping?sitemap=https://mbcapitalstrategiesgloabal.com/sitemap.xml" \
+            -o /dev/null -w "Bing ping: HTTP %{http_code}\n"
+
+      - name: Summary
+        run: |
+          echo "### IndexNow Submission Complete" >> $GITHUB_STEP_SUMMARY
+          echo "- **URLs submitted:** ${{ steps.urls.outputs.url_count }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Google:** Sitemap pinged" >> $GITHUB_STEP_SUMMARY
+          echo "- **Bing:** Sitemap pinged + IndexNow submitted" >> $GITHUB_STEP_SUMMARY
+          echo "- **Yandex, Naver, Seznam:** IndexNow submitted" >> $GITHUB_STEP_SUMMARY
