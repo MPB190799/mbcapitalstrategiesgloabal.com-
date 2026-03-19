@@ -12,8 +12,8 @@
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Freedom Calculator – When Do Dividends Cover Expen</title>
-    <meta name="description" content="Free financial freedom calculator: Find out when your dividend income covers your monthly expenses. Set your target, plug in your portfolio — get your date">
+    <title>Financial Freedom Calculator – MB Capital Strategies Global</title>
+    <meta name="description" content="Free financial freedom calculator: determine how many years until your dividend income covers all monthly expenses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -58,14 +58,14 @@
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
-<meta property="og:title" content="Financial Freedom Calculator – When Do Dividends Cover Expenses?">
-<meta property="og:description" content="Free financial freedom calculator: Find out when your dividend income covers your monthly expenses. Set your target, plug in your portfolio — get your date.">
+<meta property="og:title" content="Financial Freedom Calculator – MB Capital Strategies Global">
+<meta property="og:description" content="Free financial freedom calculator: determine how many years until your dividend income covers all monthly expenses.">
 <meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/tools/financial-freedom.html">
 <meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Financial Freedom Calculator – MB Capital Strategies Global">
-<meta name="twitter:description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+<meta name="twitter:description" content="Free financial freedom calculator: determine how many years until your dividend income covers all monthly expenses.">
 <meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/financial-freedom.html">
@@ -79,7 +79,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Financial Freedom Calculator – MB Capital Strategies Global",
-  "description": "Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.",
+  "description": "Free financial freedom calculator: determine how many years until your dividend income covers all monthly expenses.",
   "url": "https://mbcapitalstrategiesgloabal.com/tools/financial-freedom.html",
   "publisher": {
     "@type": "Organization",
@@ -180,23 +180,23 @@
                 <div class="calc-grid">
                     <div class="calc-group">
                         <label for="monthlyExp">Monthly Expenses ($)</label>
-                        <input type="number" id="monthlyExp" class="form-input" placeholder="e.g. 5000" value="5000">
+                        <input type="number" min="0" id="monthlyExp" class="form-input" placeholder="e.g. 5000" value="5000">
                     </div>
                     <div class="calc-group">
                         <label for="currentPort">Current Portfolio ($)</label>
-                        <input type="number" id="currentPort" class="form-input" placeholder="e.g. 100000" value="100000">
+                        <input type="number" min="0" id="currentPort" class="form-input" placeholder="e.g. 100000" value="100000">
                     </div>
                     <div class="calc-group">
                         <label for="monthlyContrib">Monthly Contribution ($)</label>
-                        <input type="number" id="monthlyContrib" class="form-input" placeholder="e.g. 2000" value="2000">
+                        <input type="number" min="0" id="monthlyContrib" class="form-input" placeholder="e.g. 2000" value="2000">
                     </div>
                     <div class="calc-group">
                         <label for="avgYield">Average Yield (%)</label>
-                        <input type="number" id="avgYield" class="form-input" step="0.1" placeholder="e.g. 7" value="7">
+                        <input type="number" min="0" id="avgYield" class="form-input" step="0.1" placeholder="e.g. 7" value="7">
                     </div>
                     <div class="calc-group full-width">
                         <label for="divGrowth">Dividend Growth (%)</label>
-                        <input type="number" id="divGrowth" class="form-input" step="0.1" placeholder="e.g. 4" value="4">
+                        <input type="number" min="0" id="divGrowth" class="form-input" step="0.1" placeholder="e.g. 4" value="4">
                     </div>
                 </div>
                 <button class="calc-btn" onclick="calculate()">Calculate Freedom Date</button>
@@ -212,7 +212,7 @@
                     <div class="result-row"><span class="result-label">Projected Portfolio at Freedom</span><span class="result-value" id="projPortfolio">—</span></div>
                 </div>
             </div>
-            <p style="margin-top:2rem;"><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+            <p style="margin-top:2rem;"><em>Free financial freedom calculator: determine how many years until your dividend income covers all monthly expenses.</em></p>
         </div>
     </section>
 
@@ -247,11 +247,13 @@
     <script>
         function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
         function calculate() {
-            var monthlyExp = parseFloat(document.getElementById('monthlyExp').value) || 0;
-            var portfolio = parseFloat(document.getElementById('currentPort').value) || 0;
-            var monthlyContrib = parseFloat(document.getElementById('monthlyContrib').value) || 0;
-            var avgYield = parseFloat(document.getElementById('avgYield').value) || 0;
-            var divGrowth = parseFloat(document.getElementById('divGrowth').value) || 0;
+            var monthlyExp = Math.max(0, parseFloat(document.getElementById('monthlyExp').value) || 0);
+            var portfolio = Math.max(0, parseFloat(document.getElementById('currentPort').value) || 0);
+            var monthlyContrib = Math.max(0, parseFloat(document.getElementById('monthlyContrib').value) || 0);
+            var avgYield = Math.max(0, parseFloat(document.getElementById('avgYield').value) || 0);
+            var divGrowth = Math.max(0, parseFloat(document.getElementById('divGrowth').value) || 0);
+            if (avgYield === 0) { alert('Please enter an average yield greater than 0%.'); return; }
+            if (monthlyExp === 0) { alert('Please enter your monthly expenses.'); return; }
             var annualExp = monthlyExp * 12;
             var yieldRate = avgYield / 100;
             var growthRate = divGrowth / 100;
@@ -285,6 +287,6 @@
             document.getElementById('results').style.display = 'block';
         }
     </script>
-<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="/pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 </body>
 </html>
