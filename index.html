@@ -128,20 +128,26 @@
   ]
 }
 </script>
+<style>
+/* Accessibility: Keyboard navigation for dropdowns */
+@media (min-width: 769px) {
+  .nav-item.dropdown:focus-within .dropdown-menu { display: block; opacity: 1; visibility: visible; transform: translateY(0); }
+}
+</style>
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img loading="lazy"  src="Logo.png" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;">
+                <img src="Logo.png" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;">
                 <span class="logo-mb">MB</span>
                 <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Portfolio Strategy</a>
                     <ul class="dropdown-menu">
                         <li><a href="pages/portfolio.html">My Portfolio</a></li>
                         <li><a href="pages/strategy.html">80/20 Strategy</a></li>
@@ -150,7 +156,7 @@
                 </li>
                 <li class="nav-item"><a href="pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Sectors</a>
                     <ul class="dropdown-menu">
                         <li><a href="pages/shipping.html">Shipping</a></li>
                         <li><a href="pages/pipelines.html">Pipelines &amp; Midstream</a></li>
@@ -162,7 +168,7 @@
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Best-of 2026</a>
+                    <a href="#" class="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Best-of 2026</a>
                     <ul class="dropdown-menu">
                         <li><a href="pages/best-lng.html">Best LNG Stocks</a></li>
                         <li><a href="pages/best-tanker.html">Best Tanker Stocks</a></li>
@@ -191,7 +197,7 @@
             <div class="hero-left">
                 <div class="avatar-wrapper">
                     <div class="avatar-ring"></div>
-                    <img loading="lazy"  src="marco.jpg" alt="Marco Bozem" class="avatar-img" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+                    <img src="marco.jpg" alt="Marco Bozem" class="avatar-img" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
                     <div class="avatar-badge pulse">
                         <span>Live</span>
                     </div>
