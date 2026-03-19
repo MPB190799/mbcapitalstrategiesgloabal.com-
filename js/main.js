@@ -9,14 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.getElementById('navbar');
     let lastScroll = 0;
 
+    let scrollTicking = false;
     window.addEventListener('scroll', () => {
-        const currentScroll = window.scrollY;
-        if (currentScroll > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        if (!scrollTicking) {
+            window.requestAnimationFrame(() => {
+                const currentScroll = window.scrollY;
+                if (currentScroll > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                lastScroll = currentScroll;
+                scrollTicking = false;
+            });
+            scrollTicking = true;
         }
-        lastScroll = currentScroll;
     });
 
     // === Mobile Navigation ===
@@ -44,7 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
-                    toggle.closest('.dropdown').classList.toggle('active');
+                    var dropdown = toggle.closest('.dropdown');
+                    if (dropdown) dropdown.classList.toggle('active');
                 }
             });
         });
@@ -97,13 +105,15 @@ document.addEventListener('DOMContentLoaded', () => {
             const input = newsletterForm.querySelector('.form-input');
             if (input && input.value) {
                 const btn = newsletterForm.querySelector('.btn');
-                btn.textContent = 'Subscribed!';
-                btn.style.background = '#28a745';
-                input.value = '';
-                setTimeout(() => {
-                    btn.textContent = 'Subscribe Free';
-                    btn.style.background = '';
-                }, 3000);
+                if (btn) {
+                    btn.textContent = 'Subscribed!';
+                    btn.style.background = '#28a745';
+                    input.value = '';
+                    setTimeout(() => {
+                        btn.textContent = 'Subscribe Free';
+                        btn.style.background = '';
+                    }, 3000);
+                }
             }
         });
     }
@@ -131,14 +141,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieAccept) {
         cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookie_consent', 'accepted');
-            cookieBanner.classList.remove('show');
+            if (cookieBanner) cookieBanner.classList.remove('show');
         });
     }
 
     if (cookieReject) {
         cookieReject.addEventListener('click', () => {
             localStorage.setItem('cookie_consent', 'rejected');
-            cookieBanner.classList.remove('show');
+            if (cookieBanner) cookieBanner.classList.remove('show');
             // Disable GA4 if rejected
             window['ga-disable-G-FSW7J7QYL8'] = true;
         });

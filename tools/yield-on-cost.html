@@ -13,7 +13,7 @@
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yield on Cost Calculator – MB Capital Strategies Global</title>
-    <meta name="description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+    <meta name="description" content="Free yield-on-cost calculator: calculate your true dividend yield based on your original purchase price vs current dividend payments.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -51,13 +51,13 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
 <meta property="og:title" content="Yield on Cost Calculator – MB Capital Strategies Global">
-<meta property="og:description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+<meta property="og:description" content="Free yield-on-cost calculator: calculate your true dividend yield based on your original purchase price vs current dividend payments.">
 <meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/tools/yield-on-cost.html">
 <meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yield on Cost Calculator – MB Capital Strategies Global">
-<meta name="twitter:description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+<meta name="twitter:description" content="Free yield-on-cost calculator: calculate your true dividend yield based on your original purchase price vs current dividend payments.">
 <meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/yield-on-cost.html">
@@ -71,7 +71,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Yield on Cost Calculator – MB Capital Strategies Global",
-  "description": "Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.",
+  "description": "Free yield-on-cost calculator: calculate your true dividend yield based on your original purchase price vs current dividend payments.",
   "url": "https://mbcapitalstrategiesgloabal.com/tools/yield-on-cost.html",
   "publisher": {
     "@type": "Organization",
@@ -172,19 +172,19 @@
                 <div class="calc-grid">
                     <div class="calc-group">
                         <label for="purchasePrice">Purchase Price ($)</label>
-                        <input type="number" id="purchasePrice" class="form-input" placeholder="e.g. 50" value="50">
+                        <input type="number" min="0" id="purchasePrice" class="form-input" placeholder="e.g. 50" value="50">
                     </div>
                     <div class="calc-group">
                         <label for="currentDiv">Current Annual Dividend ($)</label>
-                        <input type="number" id="currentDiv" class="form-input" step="0.01" placeholder="e.g. 3.00" value="3.00">
+                        <input type="number" min="0" id="currentDiv" class="form-input" step="0.01" placeholder="e.g. 3.00" value="3.00">
                     </div>
                     <div class="calc-group">
                         <label for="growthRate">Dividend Growth Rate (%)</label>
-                        <input type="number" id="growthRate" class="form-input" step="0.1" placeholder="e.g. 5" value="5">
+                        <input type="number" min="0" id="growthRate" class="form-input" step="0.1" placeholder="e.g. 5" value="5">
                     </div>
                     <div class="calc-group">
                         <label for="years">Years</label>
-                        <input type="number" id="years" class="form-input" placeholder="e.g. 10" value="10">
+                        <input type="number" min="0" id="years" class="form-input" placeholder="e.g. 10" value="10">
                     </div>
                 </div>
                 <button class="calc-btn" onclick="calculate()">Calculate YOC</button>
@@ -195,7 +195,7 @@
                     <div class="result-row"><span class="result-label">Dividend Growth (total)</span><span class="result-value" id="divGrowth">—</span></div>
                 </div>
             </div>
-            <p style="margin-top:2rem;"><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+            <p style="margin-top:2rem;"><em>Free yield-on-cost calculator: calculate your true dividend yield based on your original purchase price vs current dividend payments.</em></p>
         </div>
     </section>
 
@@ -244,6 +244,6 @@
             document.getElementById('results').style.display = 'block';
         }
     </script>
-<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="/pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 </body>
 </html>

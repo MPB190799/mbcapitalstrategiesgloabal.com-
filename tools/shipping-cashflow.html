@@ -13,7 +13,7 @@
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shipping Cashflow Calculator – MB Capital Strategies Global</title>
-    <meta name="description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+    <meta name="description" content="Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -51,13 +51,13 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
 <meta property="og:title" content="Shipping Cashflow Calculator – MB Capital Strategies Global">
-<meta property="og:description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+<meta property="og:description" content="Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.">
 <meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/tools/shipping-cashflow.html">
 <meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Shipping Cashflow Calculator – MB Capital Strategies Global">
-<meta name="twitter:description" content="Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.">
+<meta name="twitter:description" content="Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.">
 <meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/marco.jpg">
 
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/shipping-cashflow.html">
@@ -71,7 +71,7 @@
   "@context": "https://schema.org",
   "@type": "WebApplication",
   "name": "Shipping Cashflow Calculator – MB Capital Strategies Global",
-  "description": "Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.",
+  "description": "Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.",
   "url": "https://mbcapitalstrategiesgloabal.com/tools/shipping-cashflow.html",
   "publisher": {
     "@type": "Organization",
@@ -172,19 +172,19 @@
                 <div class="calc-grid">
                     <div class="calc-group">
                         <label for="dailyRate">Daily Rate ($)</label>
-                        <input type="number" id="dailyRate" class="form-input" placeholder="e.g. 35000" value="35000">
+                        <input type="number" min="0" id="dailyRate" class="form-input" placeholder="e.g. 35000" value="35000">
                     </div>
                     <div class="calc-group">
                         <label for="opexDay">OPEX / Day ($)</label>
-                        <input type="number" id="opexDay" class="form-input" placeholder="e.g. 8000" value="8000">
+                        <input type="number" min="0" id="opexDay" class="form-input" placeholder="e.g. 8000" value="8000">
                     </div>
                     <div class="calc-group">
                         <label for="daysAtSea">Days at Sea</label>
-                        <input type="number" id="daysAtSea" class="form-input" placeholder="e.g. 300" value="300">
+                        <input type="number" min="0" id="daysAtSea" class="form-input" placeholder="e.g. 300" value="300">
                     </div>
                     <div class="calc-group">
                         <label for="numVessels">Number of Vessels</label>
-                        <input type="number" id="numVessels" class="form-input" placeholder="e.g. 5" value="5">
+                        <input type="number" min="0" id="numVessels" class="form-input" placeholder="e.g. 5" value="5">
                     </div>
                 </div>
                 <button class="calc-btn" onclick="calculate()">Calculate Cashflow</button>
@@ -195,7 +195,7 @@
                     <div class="result-row"><span class="result-label">Cashflow per Vessel</span><span class="result-value" id="cashPerVessel">—</span></div>
                 </div>
             </div>
-            <p style="margin-top:2rem;"><em>Disclaimer: All content serves exclusively informational and educational purposes and does not constitute investment advice.</em></p>
+            <p style="margin-top:2rem;"><em>Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.</em></p>
         </div>
     </section>
 
@@ -245,6 +245,6 @@
             document.getElementById('results').style.display = 'block';
         }
     </script>
-<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="/pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 </body>
 </html>
