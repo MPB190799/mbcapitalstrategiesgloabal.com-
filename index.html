@@ -147,6 +147,31 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Free Dividend Calculators",
+  "description": "Eight free online calculators for dividend investors: Dividend Calculator, Yield on Cost, Snowball, DRIP, Growth, Financial Freedom, Shipping Cashflow.",
+  "itemListOrder": "ItemListOrderAscending",
+  "numberOfItems": 8,
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"url":"https://mbcapitalstrategiesgloabal.com/tools/dividend-calculator.html","name":"Dividend Calculator"},
+    {"@type":"ListItem","position":2,"url":"https://mbcapitalstrategiesgloabal.com/tools/yield-on-cost.html","name":"Yield on Cost Calculator"},
+    {"@type":"ListItem","position":3,"url":"https://mbcapitalstrategiesgloabal.com/tools/dividend-snowball.html","name":"Dividend Snowball"},
+    {"@type":"ListItem","position":4,"url":"https://mbcapitalstrategiesgloabal.com/tools/drip-calculator.html","name":"DRIP Calculator"},
+    {"@type":"ListItem","position":5,"url":"https://mbcapitalstrategiesgloabal.com/tools/dividend-growth.html","name":"Dividend Growth Calculator"},
+    {"@type":"ListItem","position":6,"url":"https://mbcapitalstrategiesgloabal.com/tools/financial-freedom.html","name":"Financial Freedom Calculator"},
+    {"@type":"ListItem","position":7,"url":"https://mbcapitalstrategiesgloabal.com/tools/shipping-cashflow.html","name":"Shipping Cash Flow Calculator"},
+    {"@type":"ListItem","position":8,"url":"https://mbcapitalstrategiesgloabal.com/tools/snowball-yoc-pro.html","name":"Snowball YOC PRO"}
+  ]
+}
+</script>
+<style>
+.tool-card:hover{border-color:var(--accent)!important;transform:translateY(-2px)}
+.tool-card h3{transition:color var(--t-fast)}
+.tool-card:hover h3{color:var(--accent)}
+</style>
 
 <style>
 /* ═══ MB CAPITAL STRATEGIES GLOBAL — LUXE DARK v3.0 ═══ */
@@ -661,81 +686,58 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 <div class="divider"></div>
 
-<!-- STRATEGY -->
-<section id="strategy">
+<!-- FREE TOOLS -->
+<section id="tools" aria-labelledby="tools-h">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">§03 · My Strategy</span>
-      <h2 class="display section-title">Three steps. <em>Zero hype.</em></h2>
+      <span class="eyebrow">§03 · Calculators</span>
+      <h2 class="display section-title" id="tools-h">Eight calculators. <em>No login.</em></h2>
     </div>
-    <p style="color:var(--fg-dim);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;margin-top:-60px;margin-bottom:48px">How I personally invest. Not investment advice.</p>
-    <div class="steps reveal">
-      <div class="step">
-        <div class="step-n">01</div>
-        <div class="step-t">I understand the cycle</div>
-        <p class="step-d">Hard assets follow 7–15-year cycles. Capex, supply, demand, geopolitical shifts. Without cycle awareness there is no sustainable cashflow.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">02</div>
-        <div class="step-t">I select the sector</div>
-        <p class="step-d">80 % of my portfolio in cashflow-rich dividend payers with low all-in costs, healthy balance sheets and clear capital-allocation strategies.</p>
-      </div>
-      <div class="step">
-        <div class="step-n">03</div>
-        <div class="step-t">I hold &amp; reinvest</div>
-        <p class="step-d">20 % liquidity for counter-cyclical buys. Dividends get reinvested — the snowball over years beats every short-term trade.</p>
-      </div>
+    <p style="color:var(--fg-muted);max-width:60ch;margin:0 0 48px;font-family:var(--serif);font-size:18px;line-height:1.5">Free tools for cashflow investors. Yield-on-Cost, Snowball projection, Shipping cash flow and more. No signup, no tracking, runs entirely in your browser.</p>
+    <div class="tools-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+      <a class="tool-card" href="tools/dividend-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast),transform var(--t-fast);text-decoration:none">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">01 · Basic</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Calculator</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Gross dividend, withholding tax, net cashflow per position.</p>
+      </a>
+      <a class="tool-card" href="tools/yield-on-cost.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">02 · YOC</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Yield on Cost Calculator</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">YOC at purchase price + 10-year projection with cashflow table.</p>
+      </a>
+      <a class="tool-card" href="tools/dividend-snowball.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">03 · Snowball</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Snowball</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Simulate reinvestment + growth — see the compounding effect over 30 years.</p>
+      </a>
+      <a class="tool-card" href="tools/drip-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">04 · DRIP</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">DRIP Calculator</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Dividend reinvest in share-mode, with price path simulation.</p>
+      </a>
+      <a class="tool-card" href="tools/dividend-growth.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">05 · Growth</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Growth</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">DGR projection: conservative, realistic and optimistic in one chart.</p>
+      </a>
+      <a class="tool-card" href="tools/financial-freedom.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">06 · FIRE</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Financial Freedom</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">When do dividends cover your living expenses? Get the exact answer.</p>
+      </a>
+      <a class="tool-card" href="tools/shipping-cashflow.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">07 · Shipping</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Shipping Cash Flow</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Model TCE rates, daily rates and per-vessel cash flow for tanker investors.</p>
+      </a>
+      <a class="tool-card" href="tools/snowball-yoc-pro.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast);position:relative">
+        <span style="position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--bg);background:var(--accent);padding:2px 8px;border-radius:2px">PRO</span>
+        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">08 · YOC PRO</div>
+        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Snowball YOC PRO</h3>
+        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Multi-stock portfolio with taxes, growth and FX in a single model.</p>
+      </a>
     </div>
-  </div>
-</section>
-
-<!-- PERFORMANCE -->
-<section class="perf">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§04 · Research · Live</span>
-      <h2 class="display section-title">What happens on the platform.</h2>
-    </div>
-    <div class="perf-grid reveal">
-      <div class="perf-cell">
-        <span class="stat-num" data-count="111">111</span>
-        <div class="perf-label">Research articles</div>
-        <svg class="perf-spark" viewBox="0 0 180 50" width="180" height="50" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="sg1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".35"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
-          <path d="M 0 40 L 20 36 L 40 38 L 60 30 L 80 28 L 100 22 L 120 18 L 140 12 L 160 8 L 180 4 L 180 50 L 0 50 Z" fill="url(#sg1)"/>
-          <path d="M 0 40 L 20 36 L 40 38 L 60 30 L 80 28 L 100 22 L 120 18 L 140 12 L 160 8 L 180 4" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
-        </svg>
-      </div>
-      <div class="perf-cell">
-        <span class="stat-num" data-count="8">8</span>
-        <div class="perf-label">Free calculators</div>
-        <svg class="perf-spark" viewBox="0 0 180 50" width="180" height="50" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="sg2" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".35"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
-          <path d="M 0 36 L 20 32 L 40 38 L 60 26 L 80 30 L 100 18 L 120 22 L 140 14 L 160 10 L 180 6 L 180 50 L 0 50 Z" fill="url(#sg2)"/>
-          <path d="M 0 36 L 20 32 L 40 38 L 60 26 L 80 30 L 100 18 L 120 22 L 140 14 L 160 10 L 180 6" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
-        </svg>
-      </div>
-      <div class="perf-cell">
-        <span class="stat-num" data-count="4">4</span>
-        <div class="perf-label">Sectors covered</div>
-        <svg class="perf-spark" viewBox="0 0 180 50" width="180" height="50" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="sg3" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".35"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
-          <path d="M 0 44 L 20 40 L 40 42 L 60 36 L 80 34 L 100 30 L 120 28 L 140 22 L 160 18 L 180 14 L 180 50 L 0 50 Z" fill="url(#sg3)"/>
-          <path d="M 0 44 L 20 40 L 40 42 L 60 36 L 80 34 L 100 30 L 120 28 L 140 22 L 160 18 L 180 14" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
-        </svg>
-      </div>
-      <div class="perf-cell">
-        <span class="stat-num" data-count="6">6</span><span class="stat-suffix" style="font-family:var(--serif);font-size:82px;color:var(--accent)">–15%</span>
-        <div class="perf-label">Target dividend yield</div>
-        <svg class="perf-spark" viewBox="0 0 180 50" width="180" height="50" preserveAspectRatio="none" aria-hidden="true">
-          <defs><linearGradient id="sg4" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="var(--accent)" stop-opacity=".35"/><stop offset="1" stop-color="var(--accent)" stop-opacity="0"/></linearGradient></defs>
-          <path d="M 0 46 L 20 44 L 40 42 L 60 38 L 80 34 L 100 28 L 120 22 L 140 16 L 160 10 L 180 4 L 180 50 L 0 50 Z" fill="url(#sg4)"/>
-          <path d="M 0 46 L 20 44 L 40 42 L 60 38 L 80 34 L 100 28 L 120 22 L 140 16 L 160 10 L 180 4" fill="none" stroke="var(--accent)" stroke-width="1.4"/>
-        </svg>
-      </div>
-    </div>
-    <div class="ticker reveal" id="ticker" aria-label="Market data"></div>
-    <p class="perf-note">* Market data illustrative. Ticker is simulated client-side — not a real-time feed.</p>
+    <p style="margin-top:32px;color:var(--fg-dim);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase">→ All calculators: <a href="pages/calculators.html" style="color:var(--accent)">browse the full toolbox</a></p>
   </div>
 </section>
 
@@ -745,7 +747,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <section id="audience">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">§05 · Built for</span>
+      <span class="eyebrow">§04 · Built for</span>
       <h2 class="display section-title">Not for everyone. <em>For you?</em></h2>
     </div>
     <div class="audience-grid reveal">
@@ -772,7 +774,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <section id="insights">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">§06 · Latest</span>
+      <span class="eyebrow">§05 · Latest</span>
       <h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
     </div>
     <div class="insights-list reveal">
@@ -815,7 +817,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   <div class="wrap">
     <div class="contact-grid reveal">
       <div>
-        <span class="eyebrow">§07 · Follow the research</span>
+        <span class="eyebrow">§06 · Follow the research</span>
         <h2 class="display contact-title" style="margin-top:24px">Every new analysis.
 On <em>YouTube.</em></h2>
         <p class="contact-body">New hard-asset deep-dives, market updates and portfolio moves — free and honest. Subscribe to MBCS Global on YouTube and get notified when something ships.</p>
@@ -839,7 +841,7 @@ On <em>YouTube.</em></h2>
 <section id="faq">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">§08 · FAQ</span>
+      <span class="eyebrow">§07 · FAQ</span>
       <h2 class="display section-title">Frequently <em>asked.</em></h2>
     </div>
     <div class="faq-wrap reveal">
