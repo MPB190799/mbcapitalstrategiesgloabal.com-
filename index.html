@@ -167,6 +167,22 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type":"SiteNavigationElement","name":"Shipping","url":"https://mbcapitalstrategiesgloabal.com/pages/shipping.html","description":"Tanker, LNG carriers, bulkers — dividend research from the shipping sector"},
+    {"@type":"SiteNavigationElement","name":"Mining","url":"https://mbcapitalstrategiesgloabal.com/pages/mining.html","description":"Gold, copper, coal, uranium — hard-asset mining with dividends"},
+    {"@type":"SiteNavigationElement","name":"Upstream Producers","url":"https://mbcapitalstrategiesgloabal.com/pages/upstream.html","description":"Oil and gas producers with high dividend yields"},
+    {"@type":"SiteNavigationElement","name":"Pipelines & Midstream","url":"https://mbcapitalstrategiesgloabal.com/pages/pipelines.html","description":"MLPs, take-or-pay pipelines, infrastructure cashflows"},
+    {"@type":"SiteNavigationElement","name":"Portfolio Strategy","url":"https://mbcapitalstrategiesgloabal.com/pages/portfolio.html","description":"Real private-investor portfolio with live tracking via Parqet"},
+    {"@type":"SiteNavigationElement","name":"Hard Asset Guide","url":"https://mbcapitalstrategiesgloabal.com/pages/hard-asset-guide.html","description":"Introduction to hard-asset investing for cashflow investors"},
+    {"@type":"SiteNavigationElement","name":"Calculators","url":"https://mbcapitalstrategiesgloabal.com/pages/calculators.html","description":"Eight free dividend and cashflow calculators"},
+    {"@type":"SiteNavigationElement","name":"Research Blog","url":"https://mbcapitalstrategiesgloabal.com/pages/blog.html","description":"Latest hard-asset stock analyses and dividend strategy"},
+    {"@type":"SiteNavigationElement","name":"Glossary","url":"https://mbcapitalstrategiesgloabal.com/pages/glossary.html","description":"Glossary of terms around dividends, cashflow and hard assets"}
+  ]
+}
+</script>
 <style>
 .tool-card:hover{border-color:var(--accent)!important;transform:translateY(-2px)}
 .tool-card h3{transition:color var(--t-fast)}
@@ -465,39 +481,79 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 <main id="main">
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bars" id="hero-bars" aria-hidden="true"></div>
+<!-- HERO (v3.1 — Editorial Issue) -->
+<style>
+.hero-trust{display:flex;gap:32px;margin:36px 0 32px;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
+.hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
+.hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
+.hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:8px}
+.btn-link{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-muted);position:relative;padding:6px 0;transition:color var(--t-fast)}
+.btn-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;opacity:.3;transition:opacity var(--t-fast)}
+.btn-link:hover{color:var(--accent)}
+.btn-link:hover::after{opacity:.8}
+.hero-meta-card{display:flex;flex-direction:column;gap:2px;text-align:center;margin-top:14px}
+.hero-meta-name{font-family:var(--serif);font-size:18px;color:var(--fg);font-style:italic}
+.hero-meta-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim)}
+.hero-issue{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+.hero-issue .issue-rule{flex:0 0 32px;height:1px;background:var(--accent);align-self:center}
+.hero-issue .issue-no{color:var(--fg-muted);letter-spacing:.18em}
+.hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
+@media (max-width:760px){
+  .hero-trust{gap:18px;margin:28px 0;padding:18px 0}
+  .hero-trust .trust-item{min-width:90px}
+  .hero-ctas{gap:18px}
+}
+</style>
+<section class="hero" id="hero">
   <div class="wrap hero-inner">
-    <div>
-      <div class="hero-eyebrow-row">
-        <span class="eyebrow">Curated research · Since 2022</span>
+    <div class="hero-content">
+      <div class="hero-issue">
+        <span class="issue-rule"></span>
+        <span class="issue-no">Issue №47</span>
+        <span>May 2026</span>
       </div>
       <h1 class="display hero-title">
         <span class="w1">Dividends from</span>
-        <span class="w2">Hard Assets.</span>
+        <span class="w2"><em>Hard Assets.</em></span>
       </h1>
       <p class="lede hero-sub">
-        My independent research on cashflow from energy, shipping, mining &amp; pipelines — personal views, not investment advice.
+        Independent research on cashflow from shipping, mining, energy and pipelines —
+        from a real private-investor portfolio. <strong style="color:var(--fg)">Not investment advice.</strong>
       </p>
+
+      <div class="hero-trust" role="list" aria-label="Platform metrics">
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">111</span>
+          <span class="trust-lab">stock<br>analyses</span>
+        </div>
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">8</span>
+          <span class="trust-lab">free<br>calculators</span>
+        </div>
+        <div class="trust-item" role="listitem">
+          <span class="trust-num">4</span>
+          <span class="trust-lab">hard-asset<br>sectors</span>
+        </div>
+      </div>
+
       <div class="hero-ctas">
-        <a href="pages/portfolio.html" class="btn">View my portfolio →</a>
-        <a href="pages/hard-asset-guide.html" class="btn btn-ghost">Hard Asset Guide</a>
+        <a href="#subscribe" class="btn">Subscribe to the Sunday note →</a>
+        <a href="pages/blog.html" class="btn-link">latest research ↗</a>
       </div>
     </div>
-    <div class="hero-right">
+
+    <aside class="hero-right" aria-label="Author">
       <div class="hero-persona">
         <div class="hero-avatar">
           <picture>
             <source srcset="marco.webp" type="image/webp">
-            <img src="marco.jpg" alt="Marco Bozem" width="168" height="168" fetchpriority="high">
+            <img src="marco.jpg" alt="Marco Bozem — founder of MB Capital Strategies" width="168" height="168" fetchpriority="high">
           </picture>
         </div>
-        <div class="hero-logo">
-          <picture>
-            <source srcset="Logo.webp" type="image/webp">
-            <img src="Logo.png" alt="MB Capital Strategies Logo" width="128" height="128" loading="lazy" decoding="async">
-          </picture>
+        <div class="hero-meta-card">
+          <span class="hero-meta-name">Marco Bozem</span>
+          <span class="hero-meta-role">Independent Investor · Germany</span>
         </div>
       </div>
       <div class="hero-badge">
@@ -507,12 +563,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         </div>
         <div class="hero-badge-sub">personal strategy · not investment advice</div>
       </div>
-    </div>
+    </aside>
   </div>
-  <div class="hero-meta">
-    <span><span class="hero-meta-dot"></span>Live · MB Capital Strategies</span>
-    <span>Hard Assets · Dividends · Cashflow</span>
-  </div>
+  <div class="wrap"><div class="hero-rule"></div></div>
 </section>
 
 <!-- MARQUEE -->
@@ -821,6 +874,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         <h2 class="display contact-title" style="margin-top:24px">Every new analysis.
 On <em>YouTube.</em></h2>
         <p class="contact-body">New hard-asset deep-dives, market updates and portfolio moves — free and honest. Subscribe to MBCS Global on YouTube and get notified when something ships.</p>
+        <ul style="list-style:none;margin:24px 0 16px;padding:0;display:flex;flex-direction:column;gap:10px">
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">01</span><span>What actually mattered this week in tankers, LNG, mining or pipelines.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">02</span><span>Which Q-report metrics I am tracking — and why they matter.</span></li>
+          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">03</span><span>Buys and sells from the real portfolio — with the reasoning behind each one.</span></li>
+        </ul>
         <dl class="contact-info">
           <div class="contact-info-row"><dt>Format</dt><dd>Deep-dive videos · 15–30 minutes</dd></div>
           <div class="contact-info-row"><dt>Cadence</dt><dd>Weekly · analysis &amp; portfolio updates</dd></div>
