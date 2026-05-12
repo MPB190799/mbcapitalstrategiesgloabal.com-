@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
+  <!-- Hub Pages -->
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/blog/baltic-dry-index-2026.html</loc>
+    <lastmod>2026-05-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/baltic-dry-index-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/baltic-dry-index-2026.html"/>
+  </url>
+
   <!-- Overview -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/mining-stocks-overview-2026.html</loc>

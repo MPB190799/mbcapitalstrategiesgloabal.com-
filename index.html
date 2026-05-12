@@ -61,10 +61,17 @@
       "@type": "Organization",
       "@id": "https://mbcapitalstrategiesgloabal.com/#organization",
       "name": "MB Capital Strategies Global",
+      "alternateName": "MB Capital Strategies — International Edition",
       "url": "https://mbcapitalstrategiesgloabal.com",
       "logo": "https://mbcapitalstrategiesgloabal.com/Logo.png",
       "image": "https://mbcapitalstrategiesgloabal.com/marco.jpg",
-      "description": "Independent research platform for dividend investors focused on hard asset stocks: shipping, pipelines, mining, and energy.",
+      "description": "International (English) edition of MB Capital Strategies — independent research for dividend investors focused on hard asset stocks: shipping, pipelines, mining, and energy. Main site (German): mbcapitalstrategies.com.",
+      "parentOrganization": {
+        "@type": "Organization",
+        "@id": "https://mbcapitalstrategies.com/#organization",
+        "name": "MB Capital Strategies",
+        "url": "https://mbcapitalstrategies.com/"
+      },
       "founder": {
         "@type": "Person",
         "name": "Marco Bozem",
@@ -90,7 +97,14 @@
       "@id": "https://mbcapitalstrategiesgloabal.com/#website",
       "url": "https://mbcapitalstrategiesgloabal.com",
       "name": "MB Capital Strategies Global",
-      "alternateName": "MBCapitalStrategies Global",
+      "alternateName": "MB Capital Strategies — International Edition",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://mbcapitalstrategies.com/#website",
+        "name": "MB Capital Strategies",
+        "url": "https://mbcapitalstrategies.com/",
+        "inLanguage": "de-DE"
+      },
       "publisher": {
         "@id": "https://mbcapitalstrategiesgloabal.com/#organization"
       },
@@ -512,6 +526,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         <span class="issue-rule"></span>
         <span class="issue-no">Issue №47</span>
         <span>May 2026</span>
+        <span class="issue-rule" style="opacity:.5"></span>
+        <span style="color:var(--fg-muted);letter-spacing:.18em">International Edition</span>
       </div>
       <h1 class="display hero-title">
         <span class="w1">Dividends from</span>
@@ -520,6 +536,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       <p class="lede hero-sub">
         Independent research on cashflow from shipping, mining, energy and pipelines —
         from a real private-investor portfolio. <strong style="color:var(--fg)">Not investment advice.</strong>
+      </p>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);margin:-8px 0 22px">
+        English companion to the original German site
+        <a href="https://mbcapitalstrategies.com/" hreflang="de" rel="alternate" style="color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor">mbcapitalstrategies.com →</a>
       </p>
 
       <div class="hero-trust" role="list" aria-label="Platform metrics">
