@@ -19,10 +19,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     // 2) Find target content area
     const selectors = [
         ".article-body",
-        ".container",
+        ".blog-post-content",
+        ".page-content",
         "main",
         ".post",
-        ".content"
+        ".content",
+        ".container"
     ];
 
     let target = null;
@@ -32,27 +34,80 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
     if (!target) return;
 
-    let html = target.innerHTML;
+    // 3) Link glossary terms — only inside text nodes, never inside attribute values,
+    // <a>, <script>, <style>, <code>, <pre>, <button>, <h1>
+    const walker = document.createTreeWalker(target, NodeFilter.SHOW_TEXT, {
+        acceptNode(node) {
+            let parent = node.parentElement;
+            while (parent && parent !== target) {
+                const tag = parent.tagName.toLowerCase();
+                if (tag === 'a' || tag === 'script' || tag === 'style' ||
+                    tag === 'code' || tag === 'pre' || tag === 'button' ||
+                    tag === 'h1') {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                parent = parent.parentElement;
+            }
+            return NodeFilter.FILTER_ACCEPT;
+        }
+    });
 
-    // Protect existing links from being modified
-    html = html.replace(/<a\b[^>]*>.*?<\/a>/gi, m =>
-        m.replace(/</g, "§§LT§§").replace(/>/g, "§§GT§§")
-    );
+    // Collect text nodes first (modifying during walk causes issues)
+    const textNodes = [];
+    let node;
+    while (node = walker.nextNode()) textNodes.push(node);
 
-    // 3) Link glossary terms
-    for (const [term, slug] of Object.entries(glossary)) {
-        const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
-        const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
+    // Sort terms by length (longest first) to avoid partial matches
+    const sortedTerms = Object.entries(glossary).sort((a, b) => b[0].length - a[0].length);
 
-        html = html.replace(regex,
-            `<a href="/pages/glossary.html?term=${slug}" class="glossar-link">$1</a>`
-        );
+    // Track linked slugs to avoid duplicate links for same concept on the page
+    const linkedSlugs = new Set();
+
+    for (const textNode of textNodes) {
+        const text = textNode.textContent;
+        if (!text.trim()) continue;
+
+        const matches = [];
+        for (const [term, slug] of sortedTerms) {
+            if (linkedSlugs.has(slug)) continue;
+            const safeTerm = term.replace(/[-/\\^$*+?.()|[\]{}]/g, "\\$&");
+            const regex = new RegExp(`\\b(${safeTerm})\\b`, "gi");
+            const match = regex.exec(text);
+            if (match) {
+                const start = match.index;
+                const end = start + match[0].length;
+                const overlaps = matches.some(m => !(end <= m.start || start >= m.end));
+                if (!overlaps) {
+                    matches.push({ start, end, text: match[1], slug, term });
+                }
+            }
+        }
+
+        if (matches.length === 0) continue;
+
+        matches.sort((a, b) => a.start - b.start);
+
+        const fragment = document.createDocumentFragment();
+        let lastIndex = 0;
+
+        for (const m of matches) {
+            if (m.start > lastIndex) {
+                fragment.appendChild(document.createTextNode(text.slice(lastIndex, m.start)));
+            }
+            const link = document.createElement('a');
+            link.href = `/pages/glossary.html?term=${m.slug}`;
+            link.className = 'glossar-link';
+            link.textContent = m.text;
+            fragment.appendChild(link);
+            lastIndex = m.end;
+            linkedSlugs.add(m.slug);
+        }
+
+        if (lastIndex < text.length) {
+            fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        }
+
+        textNode.parentNode.replaceChild(fragment, textNode);
     }
-
-    // Restore protected links
-    html = html.replace(/§§LT§§/g, "<").replace(/§§GT§§/g, ">");
-
-    // 4) Apply changes
-    target.innerHTML = html;
 
 });
