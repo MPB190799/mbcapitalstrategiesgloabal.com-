@@ -993,4 +993,30 @@
     </video:video>
   </url>
 
+  <!-- Weekly Recap KW19 -->
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/blog/weekly-recap-kw19-2026.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/Mmdlhudobww/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>EUR 164 Special Dividend: INSW + Dorian LPG | Weekly Recap KW19 2026</video:title>
+      <video:description>Weekly recap KW19 2026: INSW $4.55 + Dorian LPG $1.00 special dividend (largest in INSW history), Realty Income 113th hike streak, Arbor Realty cuts, Trump 25% EU auto tariff, Iran talks crash Brent from $105 to $101.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/Mmdlhudobww</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=Mmdlhudobww</video:content_loc>
+      <video:publication_date>2026-05-09T12:00:00+02:00</video:publication_date>
+    </video:video>
+  </url>
+
+  <!-- Portfolio Update April 2026 -->
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/blog/portfolio-update-april-2026.html</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/nrth4RR-czA/maxresdefault.jpg</video:thumbnail_loc>
+      <video:title>EUR 358 Dividends, 78 Payouts: My COMPLETE Portfolio Unfiltered | Portfolio Update April 2026</video:title>
+      <video:description>Portfolio Update April 2026: EUR 358.28 dividends in 30 days, 78 payouts, 276 positions. Top performers Canacol +256%, Mara +45%, Vale Indonesia +28%. New buys: Volkswagen, Novo Nordisk, Central Asia Metals.</video:description>
+      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/nrth4RR-czA</video:player_loc>
+      <video:content_loc>https://www.youtube.com/watch?v=nrth4RR-czA</video:content_loc>
+      <video:publication_date>2026-05-07T12:00:00+02:00</video:publication_date>
+    </video:video>
+  </url>
+
 </urlset>
