@@ -248,7 +248,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
 .logo{display:flex;align-items:center;gap:14px}
-.logo-mark{width:36px;height:36px;border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:20px;letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
+.logo-mark{width:clamp(32px,5vw,40px);height:clamp(32px,5vw,40px);border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
 .logo-mark::before{content:"";position:absolute;inset:3px;border:1px solid var(--accent);opacity:.35}
 .logo-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.01em;color:var(--fg);line-height:1}
 .logo-name em{font-style:italic;color:var(--accent);font-weight:400}
@@ -282,8 +282,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.55fr 1fr;gap:80px;align-items:center}
 .hero-eyebrow-row{display:flex;align-items:center;gap:24px;margin-bottom:32px}
 .hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
-.hero-title .w1{display:block}
-.hero-title .w2{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
+.hero-title em{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
 .hero-sub{max-width:48ch;margin-bottom:48px}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
@@ -300,8 +299,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 
 .hero-right{position:relative;display:flex;flex-direction:column;gap:36px;align-items:center;max-width:420px;margin-left:auto}
 .hero-persona{display:flex;align-items:center;gap:28px;justify-content:center;width:100%}
-.hero-avatar{position:relative;width:168px;height:168px;border-radius:50%;flex-shrink:0}
-.hero-avatar::before{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid rgba(212,178,106,.55);box-shadow:0 0 0 1px rgba(212,178,106,.12),0 0 50px -10px rgba(212,178,106,.45)}
+.hero-avatar{position:relative;width:clamp(120px,20vw,168px);height:clamp(120px,20vw,168px);border-radius:50%;flex-shrink:0}
+.hero-avatar::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid transparent;background:linear-gradient(135deg,#b8941e,#d4af37,#e0bd55,#b8941e) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:avatarSpin 8s linear infinite;box-shadow:0 0 0 1px rgba(212,175,55,.12),0 0 50px -10px rgba(212,175,55,.5)}
+@keyframes avatarSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.hero-avatar::before{animation:none}}
 .hero-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 28%}
 .hero-logo{width:128px;height:128px;flex-shrink:0;display:grid;place-items:center}
 .hero-logo img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 4px 24px rgba(212,178,106,.15))}
@@ -425,7 +426,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .footer-bottom a:hover{color:var(--accent)}
 .footer-aff{margin-top:14px;font-size:11px;color:var(--fg-dim);text-align:center;font-family:var(--mono);letter-spacing:.06em}
 
-.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);z-index:100;transition:width 80ms linear;width:0}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;box-shadow:0 0 12px rgba(212,175,55,.4)}
 
 @media (max-width:1024px){
   .hero-inner{grid-template-columns:1fr}.hero-right{display:none}
@@ -529,10 +530,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
         <span class="issue-rule" style="opacity:.5"></span>
         <span style="color:var(--fg-muted);letter-spacing:.18em">International Edition</span>
       </div>
-      <h1 class="display hero-title">
-        <span class="w1">Dividends from</span>
-        <span class="w2"><em>Hard Assets.</em></span>
-      </h1>
+      <h1 class="display hero-title">Dividends from <em>Hard Assets.</em></h1>
       <p class="lede hero-sub">
         Independent research on cashflow from shipping, mining, energy and pipelines —
         from a real private-investor portfolio. <strong style="color:var(--fg)">Not investment advice.</strong>
