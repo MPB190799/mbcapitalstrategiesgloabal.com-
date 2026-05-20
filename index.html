@@ -279,7 +279,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .btn-ghost:hover{color:var(--bg);border-color:var(--fg)}
 
 .hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
-.hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1.55fr 1fr;gap:80px;align-items:center}
+.hero-inner{position:relative;z-index:2;display:block;max-width:880px}
 .hero-eyebrow-row{display:flex;align-items:center;gap:24px;margin-bottom:32px}
 .hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
 .hero-title em{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
@@ -297,20 +297,6 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 @keyframes barIn{from{opacity:0;transform:translateY(30px) scaleY(.4)}to{opacity:var(--o,.15);transform:translateY(0) scaleY(1)}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 
-.hero-right{position:relative;display:flex;flex-direction:column;gap:36px;align-items:center;max-width:420px;margin-left:auto}
-.hero-persona{display:flex;align-items:center;gap:28px;justify-content:center;width:100%}
-.hero-avatar{position:relative;width:clamp(120px,20vw,168px);height:clamp(120px,20vw,168px);border-radius:50%;flex-shrink:0}
-.hero-avatar::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid transparent;background:linear-gradient(135deg,#b8941e,#d4af37,#e0bd55,#b8941e) border-box;-webkit-mask:linear-gradient(#fff 0 0) padding-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:avatarSpin 8s linear infinite;box-shadow:0 0 0 1px rgba(212,175,55,.12),0 0 50px -10px rgba(212,175,55,.5)}
-@keyframes avatarSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion:reduce){.hero-avatar::before{animation:none}}
-.hero-avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:center 28%}
-.hero-logo{width:128px;height:128px;flex-shrink:0;display:grid;place-items:center}
-.hero-logo img{max-width:100%;max-height:100%;object-fit:contain;filter:drop-shadow(0 4px 24px rgba(212,178,106,.15))}
-.hero-badge{border:1px solid var(--border-strong);padding:20px 24px;background:color-mix(in oklab,var(--surface) 70%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.hero-badge-col{display:flex;flex-direction:column;line-height:1}
-.hero-badge-label{font-family:var(--mono);font-size:9px;color:var(--fg-dim);letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
-.hero-badge-value{font-family:var(--serif);font-size:38px;line-height:1;color:var(--accent)}
-.hero-badge-sub{font-size:11px;color:var(--fg-muted);font-family:var(--mono);letter-spacing:.06em;text-align:right;max-width:16ch}
 
 .marquee{overflow:hidden;border-block:1px solid var(--border);padding:22px 0;background:var(--surface);position:relative}
 .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:slide 50s linear infinite;font-family:var(--serif);font-size:32px;color:var(--fg);letter-spacing:-.01em}
@@ -429,9 +415,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;box-shadow:0 0 12px rgba(212,175,55,.4)}
 
 @media (max-width:1024px){
-  .hero-inner{grid-template-columns:1fr;gap:40px}
-  .hero-right{order:-1;max-width:360px;margin:0 auto}
-  .hero-content{text-align:left}
+  .hero-inner{display:block;max-width:100%}
   .assets-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .perf-grid{grid-template-columns:1fr 1fr}.ticker{grid-template-columns:1fr 1fr}
   .audience-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:60px}
@@ -517,60 +501,67 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .hero-issue .issue-no{color:var(--fg-muted);letter-spacing:.18em}
 .hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
 
-/* ═══ COMPASS — Premium Interactive Centerpiece ═══ */
-.compass-stage{position:relative;width:100%;max-width:520px;aspect-ratio:1/1;margin:0 auto;display:grid;place-items:center;perspective:1200px}
-.compass-stage::before{content:"";position:absolute;inset:-8% -8%;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.22),rgba(212,175,55,.06) 38%,transparent 62%);filter:blur(20px);pointer-events:none;z-index:0;animation:compassGlow 9s ease-in-out infinite}
-@keyframes compassGlow{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
-.compass-svg{position:relative;z-index:1;width:100%;height:100%;filter:drop-shadow(0 30px 80px rgba(0,0,0,.55)) drop-shadow(0 0 40px rgba(212,175,55,.18));transition:transform var(--t-slow)}
-.compass-stage:hover .compass-svg{transform:rotate(-2deg) scale(1.015)}
-.compass-ring-outer{transform-origin:50% 50%;animation:compassSpin 90s linear infinite;transform-box:fill-box}
-.compass-ring-text{transform-origin:50% 50%;animation:compassSpinReverse 120s linear infinite;transform-box:fill-box}
-.compass-rose{transform-origin:50% 50%;animation:compassRose 22s ease-in-out infinite;transform-box:fill-box}
-.compass-needle{transform-origin:50% 50%;animation:compassNeedle 14s cubic-bezier(.45,.05,.55,.95) infinite;transform-box:fill-box}
-.compass-stage:hover .compass-ring-outer{animation-duration:50s}
-.compass-stage:hover .compass-ring-text{animation-duration:70s}
-.compass-stage:hover .compass-needle{animation-duration:6s}
+/* ═══ COMPASS BACKDROP — Hero-spanning brand atmosphere ═══ */
+.compass-backdrop{position:absolute;top:50%;left:50%;width:min(95vh,1100px);aspect-ratio:1/1;transform:translate(-50%,-50%);z-index:0;opacity:.42;--scroll-rot:0deg;--scroll-fade:1;will-change:transform,opacity}
+.compass-backdrop > svg{pointer-events:none}
+.compass-backdrop .compass-svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 90px rgba(212,175,55,.18));transform:rotate(var(--scroll-rot));opacity:var(--scroll-fade);transition:transform .12s linear,opacity .35s linear}
+.compass-backdrop::before{content:"";position:absolute;inset:-4%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.20),rgba(212,175,55,.05) 38%,transparent 62%);filter:blur(40px);animation:compassGlow 11s ease-in-out infinite;pointer-events:none}
+@keyframes compassGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.04)}}
+
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 55% 50% at 28% 50%,rgba(12,11,9,.78),rgba(12,11,9,0) 70%),linear-gradient(180deg,rgba(12,11,9,.55) 0%,transparent 18%,transparent 80%,var(--bg) 100%)}
+
+.compass-ring-outer{transform-origin:50% 50%;animation:compassSpin 110s linear infinite;transform-box:fill-box}
+.compass-ring-text{transform-origin:50% 50%;animation:compassSpinReverse 140s linear infinite;transform-box:fill-box}
+.compass-rose{transform-origin:50% 50%;animation:compassRose 26s ease-in-out infinite;transform-box:fill-box}
+.compass-needle{transform-origin:50% 50%;animation:compassNeedle 45s linear infinite;transform-box:fill-box;transition:transform .9s cubic-bezier(.2,.8,.2,1)}
 @keyframes compassSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes compassSpinReverse{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
-@keyframes compassRose{0%,100%{transform:rotate(0deg)}50%{transform:rotate(2.2deg)}}
-@keyframes compassNeedle{
-  0%{transform:rotate(-7deg)}
-  18%{transform:rotate(85deg)}
-  35%{transform:rotate(82deg)}
-  55%{transform:rotate(178deg)}
-  72%{transform:rotate(265deg)}
-  90%{transform:rotate(353deg)}
-  100%{transform:rotate(353deg)}
-}
-.compass-center-photo{position:absolute;inset:0;display:grid;place-items:center;z-index:2;pointer-events:none}
-.compass-center-photo .cphoto-frame{position:relative;width:24%;height:24%;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);box-shadow:0 0 0 4px rgba(12,11,9,.92),0 0 0 5px rgba(212,175,55,.4),0 12px 40px -8px rgba(212,175,55,.5)}
-.compass-center-photo .cphoto-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
-.compass-center-photo .cphoto-frame::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
-.compass-cardinals{position:absolute;inset:0;z-index:3;pointer-events:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
-.compass-cardinals span{position:absolute;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1}
-.compass-cardinals span b{font-family:var(--serif);font-style:italic;font-size:13px;font-weight:500;color:var(--fg);letter-spacing:-.01em;text-transform:none}
-.compass-cardinals .ccn{top:5%;left:50%;transform:translateX(-50%)}
-.compass-cardinals .cce{top:50%;right:3%;transform:translateY(-50%);align-items:flex-end;text-align:right}
-.compass-cardinals .ccs{bottom:5%;left:50%;transform:translateX(-50%)}
-.compass-cardinals .ccw{top:50%;left:3%;transform:translateY(-50%);align-items:flex-start;text-align:left}
-.hero-signature{display:flex;align-items:center;gap:14px;justify-content:center;width:100%;margin-top:16px;padding-top:18px;border-top:1px solid var(--border)}
-.hero-signature .sig-name{font-family:var(--serif);font-size:16px;color:var(--fg);font-style:italic}
-.hero-signature .sig-dot{width:4px;height:4px;background:var(--accent);border-radius:50%}
-.hero-signature .sig-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim)}
-.hero-yield-pill{display:inline-flex;align-items:baseline;gap:10px;margin-top:18px;padding:10px 18px;border:1px solid var(--border-strong);border-radius:999px;background:color-mix(in oklab,var(--surface) 70%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
-.hero-yield-pill .yp-l{font-family:var(--mono);font-size:9px;color:var(--fg-dim);letter-spacing:.18em;text-transform:uppercase}
-.hero-yield-pill .yp-v{font-family:var(--serif);font-size:20px;color:var(--accent);line-height:1;font-feature-settings:"lnum"}
-.hero-yield-pill .yp-v sup{font-size:.55em;color:var(--accent-bright);margin-left:2px;font-family:var(--mono)}
-.hero-yield-pill .yp-s{font-family:var(--mono);font-size:9px;color:var(--fg-muted);letter-spacing:.12em}
+@keyframes compassRose{0%,100%{transform:rotate(0deg)}50%{transform:rotate(2deg)}}
+@keyframes compassNeedle{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+.compass-cardinals{position:absolute;inset:0;z-index:5;pointer-events:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.compass-cardinals a{position:absolute;pointer-events:auto;display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1;padding:11px 16px;border:1px solid var(--border);border-radius:12px;background:rgba(12,11,9,.72);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);transition:all var(--t-fast);text-decoration:none;box-shadow:0 8px 28px -10px rgba(0,0,0,.5)}
+.compass-cardinals a:hover{border-color:var(--accent);background:rgba(12,11,9,.92);transform:translateY(-3px) scale(1.04);box-shadow:0 16px 44px -12px rgba(212,175,55,.5),0 0 0 1px rgba(212,175,55,.25)}
+.compass-cardinals a b{font-family:var(--serif);font-style:italic;font-size:19px;font-weight:500;color:var(--fg);letter-spacing:-.01em;text-transform:none}
+.compass-cardinals a:hover b{color:var(--accent-bright)}
+.compass-cardinals a small{color:var(--fg-muted);font-size:9px;letter-spacing:.2em}
+.compass-cardinals a:hover small{color:var(--accent)}
+.compass-cardinals .ccn{top:110px;left:50%;transform:translateX(-50%)}
+.compass-cardinals .cce{top:50%;right:calc(var(--pad) + 6px);transform:translateY(-50%)}
+.compass-cardinals .ccs{bottom:60px;left:50%;transform:translateX(-50%)}
+.compass-cardinals .ccw{bottom:60px;left:calc(var(--pad) + 6px)}
+.compass-cardinals .ccn:hover{transform:translateX(-50%) translateY(-3px) scale(1.04)}
+.compass-cardinals .cce:hover{transform:translateY(-50%) translateY(-3px) scale(1.04)}
+.compass-cardinals .ccs:hover{transform:translateX(-50%) translateY(-3px) scale(1.04)}
+
+.hero-signature-pill{position:absolute;right:var(--pad);bottom:32px;z-index:4;display:flex;align-items:center;gap:14px;padding:10px 18px 10px 10px;border:1px solid var(--border-strong);border-radius:999px;background:color-mix(in oklab,var(--surface) 80%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);transition:all var(--t-fast);text-decoration:none}
+.hero-signature-pill:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:0 12px 40px -10px rgba(212,175,55,.4)}
+.hero-signature-pill .sig-avatar{position:relative;width:42px;height:42px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--accent)}
+.hero-signature-pill .sig-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.hero-signature-pill .sig-text{display:flex;flex-direction:column;gap:2px;line-height:1.1}
+.hero-signature-pill .sig-name{font-family:var(--serif);font-size:15px;color:var(--fg);font-style:italic}
+.hero-signature-pill .sig-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted)}
+
 @media (prefers-reduced-motion:reduce){
-  .compass-ring-outer,.compass-ring-text,.compass-rose,.compass-needle,.compass-stage::before{animation:none}
+  .compass-ring-outer,.compass-ring-text,.compass-rose,.compass-needle,.compass-backdrop::before{animation:none}
+  .compass-backdrop .compass-svg{transition:none}
+}
+@media (max-width:1024px){
+  .compass-backdrop{width:min(140vw,900px);opacity:.32}
+  .compass-cardinals{font-size:9.5px}
+  .compass-cardinals a{padding:8px 10px}
+  .compass-cardinals a b{font-size:14px}
+  .hero-signature-pill{right:24px;bottom:24px}
 }
 @media (max-width:760px){
   .hero-trust{gap:18px;margin:28px 0;padding:18px 0}
   .hero-trust .trust-item{min-width:90px}
   .hero-ctas{gap:18px}
-  .compass-cardinals{font-size:8px}
-  .compass-cardinals span b{font-size:11px}
+  .compass-backdrop{width:130vw;opacity:.22}
+  .compass-cardinals a small{display:none}
+  .compass-cardinals a{padding:6px 8px}
+  .compass-cardinals a b{font-size:11px}
+  .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
 }
 </style>
 <section class="hero" id="hero">
@@ -614,9 +605,23 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       </div>
     </div>
 
-    <aside class="hero-right" aria-label="MB Capital Strategies compass">
-      <div class="compass-stage" role="img" aria-label="Animated compass with the four hard-asset sectors as cardinal directions">
-        <svg class="compass-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  </div>
+
+  <aside class="hero-signature-pill" aria-label="Marco Bozem, founder">
+    <span class="sig-avatar">
+      <picture>
+        <source srcset="marco.webp" type="image/webp">
+        <img src="marco.jpg" alt="Marco Bozem" width="42" height="42" fetchpriority="high">
+      </picture>
+    </span>
+    <span class="sig-text">
+      <span class="sig-name">Marco Bozem</span>
+      <span class="sig-role">Founder · Independent Investor</span>
+    </span>
+  </aside>
+
+  <div class="compass-backdrop" id="compass-backdrop" aria-hidden="true">
+    <svg class="compass-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="goldRing" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#8a6a14"/>
@@ -696,40 +701,31 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
             <circle cx="200" cy="200" r="9" fill="url(#centerBoss)" stroke="#6b4e1a" stroke-width=".6"/>
           </g>
 
-          <circle cx="200" cy="200" r="56" fill="rgba(12,11,9,0.92)" stroke="rgba(212,175,55,0.35)" stroke-width="1"/>
-          <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(212,175,55,0.22)" stroke-width=".6"/>
-        </svg>
-
-        <div class="compass-center-photo">
-          <div class="cphoto-frame">
-            <picture>
-              <source srcset="marco.webp" type="image/webp">
-              <img src="marco.jpg" alt="Marco Bozem" width="120" height="120" fetchpriority="high">
-            </picture>
-          </div>
-        </div>
-
-        <div class="compass-cardinals" aria-hidden="true">
-          <span class="ccn">N · Energy<b>Oil &amp; Gas</b></span>
-          <span class="cce"><b>Pipelines</b>E · Midstream</span>
-          <span class="ccs"><b>Mining</b>S · Metals</span>
-          <span class="ccw">W · Shipping<b>Tankers</b></span>
-        </div>
-      </div>
-
-      <div class="hero-signature">
-        <span class="sig-name">Marco Bozem</span>
-        <span class="sig-dot"></span>
-        <span class="sig-role">Independent Investor · Germany</span>
-      </div>
-
-      <div class="hero-yield-pill" title="Personal strategy · not investment advice">
-        <span class="yp-l">Target Yield</span>
-        <span class="yp-v">6–15<sup>%</sup></span>
-        <span class="yp-s">p.a.</span>
-      </div>
-    </aside>
+          <circle cx="200" cy="200" r="48" fill="none" stroke="rgba(212,175,55,0.28)" stroke-width=".7"/>
+          <circle cx="200" cy="200" r="34" fill="none" stroke="rgba(212,175,55,0.18)" stroke-width=".5"/>
+          <text x="200" y="208" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="32" fill="#d4af37" opacity=".5">MB</text>
+    </svg>
   </div>
+
+  <nav class="compass-cardinals" aria-label="Hard-asset sectors">
+    <a class="ccn" href="pages/energy.html" data-bearing="0">
+      <small>N · Energy</small>
+      <b>Oil &amp; Gas</b>
+    </a>
+    <a class="cce" href="pages/pipelines.html" data-bearing="90">
+      <small>E · Midstream</small>
+      <b>Pipelines</b>
+    </a>
+    <a class="ccs" href="pages/mining.html" data-bearing="180">
+      <small>S · Mining</small>
+      <b>Metals</b>
+    </a>
+    <a class="ccw" href="pages/shipping.html" data-bearing="270">
+      <small>W · Shipping</small>
+      <b>Tankers</b>
+    </a>
+  </nav>
+
   <div class="wrap"><div class="hero-rule"></div></div>
 </section>
 
@@ -1189,6 +1185,47 @@ On <em>YouTube.</em></h2>
       svg += `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="#d4af37" stroke-width="${w}" opacity="${op}"/>`;
     }
     tickGroup.innerHTML = svg;
+  }
+
+  const compassBackdrop = document.getElementById('compass-backdrop');
+  if (compassBackdrop && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    let scrollRaf = 0;
+    const heroEl = document.getElementById('hero');
+    const updateCompass = () => {
+      const sc = window.scrollY;
+      const heroH = heroEl ? heroEl.offsetHeight : 800;
+      const t = Math.min(1, sc / heroH);
+      const extraRot = (sc / 100) * 5;
+      const fade = 1 - t * 0.85;
+      compassBackdrop.style.setProperty('--scroll-rot', extraRot.toFixed(2) + 'deg');
+      compassBackdrop.style.setProperty('--scroll-fade', fade.toFixed(3));
+      scrollRaf = 0;
+    };
+    window.addEventListener('scroll', () => {
+      if (scrollRaf) return;
+      scrollRaf = requestAnimationFrame(updateCompass);
+    }, { passive: true });
+    updateCompass();
+  }
+
+  const cardinalLinks = document.querySelectorAll('.compass-cardinals a[data-bearing]');
+  const needle = document.querySelector('.compass-needle');
+  if (needle && cardinalLinks.length) {
+    let snapTimeout = 0;
+    cardinalLinks.forEach(a => {
+      a.addEventListener('mouseenter', () => {
+        clearTimeout(snapTimeout);
+        const bearing = parseFloat(a.getAttribute('data-bearing')) || 0;
+        needle.style.animationPlayState = 'paused';
+        needle.style.transform = `rotate(${bearing}deg)`;
+      });
+      a.addEventListener('mouseleave', () => {
+        snapTimeout = setTimeout(() => {
+          needle.style.transform = '';
+          needle.style.animationPlayState = 'running';
+        }, 600);
+      });
+    });
   }
 
   const bars = document.getElementById('hero-bars');

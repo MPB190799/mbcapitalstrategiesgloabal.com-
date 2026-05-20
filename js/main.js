@@ -14,12 +14,15 @@
   if (!document.documentElement.hasAttribute('data-luxe-v3') && !document.getElementById('mbcs-premium-polish')) {
     var s = document.createElement('style');
     s.id = 'mbcs-premium-polish';
-    s.textContent = '.mbcs-corner-glow{position:fixed;pointer-events:none;z-index:1;opacity:.55;will-change:transform}.mbcs-corner-glow.top-right{top:-160px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.18),rgba(212,175,55,0) 65%);filter:blur(8px)}.mbcs-corner-glow.bottom-left{bottom:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.12),rgba(212,175,55,0) 60%);filter:blur(10px);animation:mbcsAuroraDrift 22s ease-in-out infinite alternate}@keyframes mbcsAuroraDrift{0%{transform:translate(0,0)}100%{transform:translate(80px,-60px)}}@media(prefers-reduced-motion:reduce){.mbcs-corner-glow{animation:none}}';
+    s.textContent = '.mbcs-corner-glow{position:fixed;pointer-events:none;z-index:1;opacity:.55;will-change:transform}.mbcs-corner-glow.top-right{top:-160px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.18),rgba(212,175,55,0) 65%);filter:blur(8px)}.mbcs-corner-glow.bottom-left{bottom:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.12),rgba(212,175,55,0) 60%);filter:blur(10px);animation:mbcsAuroraDrift 22s ease-in-out infinite alternate}@keyframes mbcsAuroraDrift{0%{transform:translate(0,0)}100%{transform:translate(80px,-60px)}}.mbcs-mini-compass{position:fixed;right:24px;bottom:24px;width:64px;height:64px;z-index:2;opacity:.18;pointer-events:none;transition:opacity .4s ease}.mbcs-mini-compass:hover{opacity:.42}.mbcs-mini-compass svg{width:100%;height:100%;animation:mbcsCompassSpin 60s linear infinite}@keyframes mbcsCompassSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}@media(max-width:640px){.mbcs-mini-compass{display:none}}@media(prefers-reduced-motion:reduce){.mbcs-corner-glow,.mbcs-mini-compass svg{animation:none}}';
     document.head.appendChild(s);
     document.addEventListener('DOMContentLoaded', function(){
       var a=document.createElement('div');a.className='mbcs-corner-glow top-right';
       var b=document.createElement('div');b.className='mbcs-corner-glow bottom-left';
       document.body.appendChild(a);document.body.appendChild(b);
+      var c=document.createElement('div');c.className='mbcs-mini-compass';c.setAttribute('aria-hidden','true');
+      c.innerHTML='<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="46" fill="none" stroke="#d4af37" stroke-width="1" opacity=".7"/><circle cx="50" cy="50" r="38" fill="none" stroke="#d4af37" stroke-width=".5" opacity=".4"/><polygon points="50,8 54,50 50,58 46,50" fill="#d4af37" opacity=".9"/><polygon points="92,50 50,46 42,50 50,54" fill="#d4af37" opacity=".55"/><polygon points="50,92 46,50 50,42 54,50" fill="#d4af37" opacity=".55"/><polygon points="8,50 50,46 58,50 50,54" fill="#d4af37" opacity=".55"/><circle cx="50" cy="50" r="3.5" fill="#d4af37"/></svg>';
+      document.body.appendChild(c);
     });
   }
 })();
