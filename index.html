@@ -429,7 +429,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;box-shadow:0 0 12px rgba(212,175,55,.4)}
 
 @media (max-width:1024px){
-  .hero-inner{grid-template-columns:1fr}.hero-right{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:40px}
+  .hero-right{order:-1;max-width:360px;margin:0 auto}
+  .hero-content{text-align:left}
   .assets-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .perf-grid{grid-template-columns:1fr 1fr}.ticker{grid-template-columns:1fr 1fr}
   .audience-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:60px}
@@ -514,10 +516,61 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .hero-issue .issue-rule{flex:0 0 32px;height:1px;background:var(--accent);align-self:center}
 .hero-issue .issue-no{color:var(--fg-muted);letter-spacing:.18em}
 .hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
+
+/* ═══ COMPASS — Premium Interactive Centerpiece ═══ */
+.compass-stage{position:relative;width:100%;max-width:520px;aspect-ratio:1/1;margin:0 auto;display:grid;place-items:center;perspective:1200px}
+.compass-stage::before{content:"";position:absolute;inset:-8% -8%;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.22),rgba(212,175,55,.06) 38%,transparent 62%);filter:blur(20px);pointer-events:none;z-index:0;animation:compassGlow 9s ease-in-out infinite}
+@keyframes compassGlow{0%,100%{opacity:.85;transform:scale(1)}50%{opacity:1;transform:scale(1.06)}}
+.compass-svg{position:relative;z-index:1;width:100%;height:100%;filter:drop-shadow(0 30px 80px rgba(0,0,0,.55)) drop-shadow(0 0 40px rgba(212,175,55,.18));transition:transform var(--t-slow)}
+.compass-stage:hover .compass-svg{transform:rotate(-2deg) scale(1.015)}
+.compass-ring-outer{transform-origin:50% 50%;animation:compassSpin 90s linear infinite;transform-box:fill-box}
+.compass-ring-text{transform-origin:50% 50%;animation:compassSpinReverse 120s linear infinite;transform-box:fill-box}
+.compass-rose{transform-origin:50% 50%;animation:compassRose 22s ease-in-out infinite;transform-box:fill-box}
+.compass-needle{transform-origin:50% 50%;animation:compassNeedle 14s cubic-bezier(.45,.05,.55,.95) infinite;transform-box:fill-box}
+.compass-stage:hover .compass-ring-outer{animation-duration:50s}
+.compass-stage:hover .compass-ring-text{animation-duration:70s}
+.compass-stage:hover .compass-needle{animation-duration:6s}
+@keyframes compassSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes compassSpinReverse{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
+@keyframes compassRose{0%,100%{transform:rotate(0deg)}50%{transform:rotate(2.2deg)}}
+@keyframes compassNeedle{
+  0%{transform:rotate(-7deg)}
+  18%{transform:rotate(85deg)}
+  35%{transform:rotate(82deg)}
+  55%{transform:rotate(178deg)}
+  72%{transform:rotate(265deg)}
+  90%{transform:rotate(353deg)}
+  100%{transform:rotate(353deg)}
+}
+.compass-center-photo{position:absolute;inset:0;display:grid;place-items:center;z-index:2;pointer-events:none}
+.compass-center-photo .cphoto-frame{position:relative;width:24%;height:24%;border-radius:50%;overflow:hidden;border:1.5px solid var(--accent);box-shadow:0 0 0 4px rgba(12,11,9,.92),0 0 0 5px rgba(212,175,55,.4),0 12px 40px -8px rgba(212,175,55,.5)}
+.compass-center-photo .cphoto-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
+.compass-center-photo .cphoto-frame::after{content:"";position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.18),transparent 55%);pointer-events:none}
+.compass-cardinals{position:absolute;inset:0;z-index:3;pointer-events:none;font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+.compass-cardinals span{position:absolute;display:flex;flex-direction:column;align-items:center;gap:3px;line-height:1}
+.compass-cardinals span b{font-family:var(--serif);font-style:italic;font-size:13px;font-weight:500;color:var(--fg);letter-spacing:-.01em;text-transform:none}
+.compass-cardinals .ccn{top:5%;left:50%;transform:translateX(-50%)}
+.compass-cardinals .cce{top:50%;right:3%;transform:translateY(-50%);align-items:flex-end;text-align:right}
+.compass-cardinals .ccs{bottom:5%;left:50%;transform:translateX(-50%)}
+.compass-cardinals .ccw{top:50%;left:3%;transform:translateY(-50%);align-items:flex-start;text-align:left}
+.hero-signature{display:flex;align-items:center;gap:14px;justify-content:center;width:100%;margin-top:16px;padding-top:18px;border-top:1px solid var(--border)}
+.hero-signature .sig-name{font-family:var(--serif);font-size:16px;color:var(--fg);font-style:italic}
+.hero-signature .sig-dot{width:4px;height:4px;background:var(--accent);border-radius:50%}
+.hero-signature .sig-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim)}
+.hero-yield-pill{display:inline-flex;align-items:baseline;gap:10px;margin-top:18px;padding:10px 18px;border:1px solid var(--border-strong);border-radius:999px;background:color-mix(in oklab,var(--surface) 70%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.hero-yield-pill .yp-l{font-family:var(--mono);font-size:9px;color:var(--fg-dim);letter-spacing:.18em;text-transform:uppercase}
+.hero-yield-pill .yp-v{font-family:var(--serif);font-size:20px;color:var(--accent);line-height:1;font-feature-settings:"lnum"}
+.hero-yield-pill .yp-v sup{font-size:.55em;color:var(--accent-bright);margin-left:2px;font-family:var(--mono)}
+.hero-yield-pill .yp-s{font-family:var(--mono);font-size:9px;color:var(--fg-muted);letter-spacing:.12em}
+@media (prefers-reduced-motion:reduce){
+  .compass-ring-outer,.compass-ring-text,.compass-rose,.compass-needle,.compass-stage::before{animation:none}
+}
 @media (max-width:760px){
   .hero-trust{gap:18px;margin:28px 0;padding:18px 0}
   .hero-trust .trust-item{min-width:90px}
   .hero-ctas{gap:18px}
+  .compass-cardinals{font-size:8px}
+  .compass-cardinals span b{font-size:11px}
 }
 </style>
 <section class="hero" id="hero">
@@ -561,25 +614,119 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       </div>
     </div>
 
-    <aside class="hero-right" aria-label="Author">
-      <div class="hero-persona">
-        <div class="hero-avatar">
-          <picture>
-            <source srcset="marco.webp" type="image/webp">
-            <img src="marco.jpg" alt="Marco Bozem — founder of MB Capital Strategies" width="168" height="168" fetchpriority="high">
-          </picture>
+    <aside class="hero-right" aria-label="MB Capital Strategies compass">
+      <div class="compass-stage" role="img" aria-label="Animated compass with the four hard-asset sectors as cardinal directions">
+        <svg class="compass-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="goldRing" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#8a6a14"/>
+              <stop offset="35%" stop-color="#d4af37"/>
+              <stop offset="55%" stop-color="#f2d675"/>
+              <stop offset="100%" stop-color="#8a6a14"/>
+            </linearGradient>
+            <linearGradient id="goldRose" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f2d675"/>
+              <stop offset="50%" stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#8a6a14"/>
+            </linearGradient>
+            <linearGradient id="needleN" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#f2d675"/>
+              <stop offset="55%" stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#b8941e"/>
+            </linearGradient>
+            <linearGradient id="needleS" x1="0.5" y1="0" x2="0.5" y2="1">
+              <stop offset="0%" stop-color="#4a4034"/>
+              <stop offset="100%" stop-color="#1c1814"/>
+            </linearGradient>
+            <radialGradient id="centerBoss" cx="0.35" cy="0.32" r="0.85">
+              <stop offset="0%" stop-color="#f6dd8c"/>
+              <stop offset="55%" stop-color="#d4af37"/>
+              <stop offset="100%" stop-color="#6b4e1a"/>
+            </radialGradient>
+            <radialGradient id="bgGlow" cx="0.5" cy="0.5" r="0.55">
+              <stop offset="0%" stop-color="rgba(212,175,55,0.18)"/>
+              <stop offset="60%" stop-color="rgba(212,175,55,0.04)"/>
+              <stop offset="100%" stop-color="rgba(212,175,55,0)"/>
+            </radialGradient>
+            <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="2.4" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <path id="brandTextPath" d="M 200,200 m -158,0 a 158,158 0 1,1 316,0 a 158,158 0 1,1 -316,0"/>
+          </defs>
+
+          <circle cx="200" cy="200" r="195" fill="url(#bgGlow)"/>
+
+          <g class="compass-ring-outer">
+            <circle cx="200" cy="200" r="188" fill="none" stroke="url(#goldRing)" stroke-width="1.2" opacity=".85"/>
+            <circle cx="200" cy="200" r="172" fill="none" stroke="rgba(212,175,55,0.32)" stroke-width=".7"/>
+            <g stroke="#d4af37" stroke-linecap="round">
+              <g id="ticks-major"></g>
+            </g>
+          </g>
+
+          <g class="compass-ring-text" opacity=".82">
+            <text font-family="'Cormorant Garamond', Georgia, serif" font-style="italic" font-size="13" fill="#d4af37" letter-spacing="6">
+              <textPath href="#brandTextPath" startOffset="0%">
+                MB CAPITAL STRATEGIES · DIVIDENDS FROM HARD ASSETS · CASHFLOW · MB CAPITAL STRATEGIES · DIVIDENDS FROM HARD ASSETS · CASHFLOW ·
+              </textPath>
+            </text>
+          </g>
+
+          <circle cx="200" cy="200" r="138" fill="none" stroke="rgba(212,175,55,0.18)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="126" fill="none" stroke="rgba(212,175,55,0.4)" stroke-width=".6" stroke-dasharray="1 5"/>
+
+          <g class="compass-rose">
+            <polygon points="200,62 207,200 200,220 193,200" fill="url(#goldRose)" opacity=".92"/>
+            <polygon points="338,200 200,193 180,200 200,207" fill="url(#goldRose)" opacity=".68"/>
+            <polygon points="200,338 193,200 200,180 207,200" fill="url(#goldRose)" opacity=".68"/>
+            <polygon points="62,200 200,193 220,200 200,207" fill="url(#goldRose)" opacity=".68"/>
+            <g opacity=".48">
+              <polygon points="297,103 207,193 200,200 193,207" fill="#d4af37"/>
+              <polygon points="297,297 207,207 200,200 193,193" fill="#d4af37"/>
+              <polygon points="103,297 193,207 200,200 207,193" fill="#d4af37"/>
+              <polygon points="103,103 193,193 200,200 207,207" fill="#d4af37"/>
+            </g>
+            <circle cx="200" cy="200" r="108" fill="none" stroke="rgba(212,175,55,0.25)" stroke-width=".8"/>
+          </g>
+
+          <g class="compass-needle" filter="url(#goldGlow)">
+            <polygon points="200,72 212,200 200,210 188,200" fill="url(#needleN)"/>
+            <polygon points="200,328 212,200 200,190 188,200" fill="url(#needleS)" opacity=".88"/>
+            <circle cx="200" cy="200" r="9" fill="url(#centerBoss)" stroke="#6b4e1a" stroke-width=".6"/>
+          </g>
+
+          <circle cx="200" cy="200" r="56" fill="rgba(12,11,9,0.92)" stroke="rgba(212,175,55,0.35)" stroke-width="1"/>
+          <circle cx="200" cy="200" r="50" fill="none" stroke="rgba(212,175,55,0.22)" stroke-width=".6"/>
+        </svg>
+
+        <div class="compass-center-photo">
+          <div class="cphoto-frame">
+            <picture>
+              <source srcset="marco.webp" type="image/webp">
+              <img src="marco.jpg" alt="Marco Bozem" width="120" height="120" fetchpriority="high">
+            </picture>
+          </div>
         </div>
-        <div class="hero-meta-card">
-          <span class="hero-meta-name">Marco Bozem</span>
-          <span class="hero-meta-role">Independent Investor · Germany</span>
+
+        <div class="compass-cardinals" aria-hidden="true">
+          <span class="ccn">N · Energy<b>Oil &amp; Gas</b></span>
+          <span class="cce"><b>Pipelines</b>E · Midstream</span>
+          <span class="ccs"><b>Mining</b>S · Metals</span>
+          <span class="ccw">W · Shipping<b>Tankers</b></span>
         </div>
       </div>
-      <div class="hero-badge">
-        <div class="hero-badge-col">
-          <div class="hero-badge-label">My target yield 2026</div>
-          <div class="hero-badge-value">6–15<span style="font-size:.5em;color:var(--accent-bright);margin-left:3px">%</span></div>
-        </div>
-        <div class="hero-badge-sub">personal strategy · not investment advice</div>
+
+      <div class="hero-signature">
+        <span class="sig-name">Marco Bozem</span>
+        <span class="sig-dot"></span>
+        <span class="sig-role">Independent Investor · Germany</span>
+      </div>
+
+      <div class="hero-yield-pill" title="Personal strategy · not investment advice">
+        <span class="yp-l">Target Yield</span>
+        <span class="yp-v">6–15<sup>%</sup></span>
+        <span class="yp-s">p.a.</span>
       </div>
     </aside>
   </div>
@@ -1023,6 +1170,26 @@ On <em>YouTube.</em></h2>
     });
   }, { threshold: 0.4 });
   document.querySelectorAll('[data-count]').forEach(c => cio.observe(c));
+
+  const tickGroup = document.getElementById('ticks-major');
+  if (tickGroup) {
+    const cx = 200, cy = 200, rOuter = 188;
+    let svg = '';
+    for (let i = 0; i < 72; i++) {
+      const ang = (i * 5 - 90) * Math.PI / 180;
+      const isMajor = i % 9 === 0;
+      const isMid = i % 3 === 0;
+      const r2 = isMajor ? 174 : (isMid ? 180 : 184);
+      const x1 = cx + rOuter * Math.cos(ang);
+      const y1 = cy + rOuter * Math.sin(ang);
+      const x2 = cx + r2 * Math.cos(ang);
+      const y2 = cy + r2 * Math.sin(ang);
+      const op = isMajor ? 1 : (isMid ? .6 : .3);
+      const w  = isMajor ? 1.6 : (isMid ? 1 : .7);
+      svg += `<line x1="${x1.toFixed(2)}" y1="${y1.toFixed(2)}" x2="${x2.toFixed(2)}" y2="${y2.toFixed(2)}" stroke="#d4af37" stroke-width="${w}" opacity="${op}"/>`;
+    }
+    tickGroup.innerHTML = svg;
+  }
 
   const bars = document.getElementById('hero-bars');
   if (bars) {

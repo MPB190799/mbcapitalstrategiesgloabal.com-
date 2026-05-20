@@ -3,6 +3,27 @@
    Main JavaScript
    ============================================ */
 
+/* Premium Polish: Cormorant Garamond + soft corner glows on every non-luxe-v3 sub-page */
+(function(){
+  if (!document.querySelector('link[href*="Cormorant"]')) {
+    var f = document.createElement('link');
+    f.rel = 'stylesheet';
+    f.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap';
+    document.head.appendChild(f);
+  }
+  if (!document.documentElement.hasAttribute('data-luxe-v3') && !document.getElementById('mbcs-premium-polish')) {
+    var s = document.createElement('style');
+    s.id = 'mbcs-premium-polish';
+    s.textContent = '.mbcs-corner-glow{position:fixed;pointer-events:none;z-index:1;opacity:.55;will-change:transform}.mbcs-corner-glow.top-right{top:-160px;right:-160px;width:520px;height:520px;background:radial-gradient(circle,rgba(212,175,55,.18),rgba(212,175,55,0) 65%);filter:blur(8px)}.mbcs-corner-glow.bottom-left{bottom:-200px;left:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(212,175,55,.12),rgba(212,175,55,0) 60%);filter:blur(10px);animation:mbcsAuroraDrift 22s ease-in-out infinite alternate}@keyframes mbcsAuroraDrift{0%{transform:translate(0,0)}100%{transform:translate(80px,-60px)}}@media(prefers-reduced-motion:reduce){.mbcs-corner-glow{animation:none}}';
+    document.head.appendChild(s);
+    document.addEventListener('DOMContentLoaded', function(){
+      var a=document.createElement('div');a.className='mbcs-corner-glow top-right';
+      var b=document.createElement('div');b.className='mbcs-corner-glow bottom-left';
+      document.body.appendChild(a);document.body.appendChild(b);
+    });
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // === Background Effects (Gold Waves + Aurora Orbs) ===
