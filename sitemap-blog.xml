@@ -846,19 +846,22 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/de/blog/south32-analyse-2026.html"/>
   </url>
   <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/bayer-analysis-2026.html</loc>
-    <lastmod>2026-05-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/bayer-analysis-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/bayer-analyse-2026.html"/>
-  </url>
-  <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/realty-income-analysis-2026.html</loc>
     <lastmod>2026-05-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/realty-income-analysis-2026.html"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/realty-income-analyse-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/blog/realty-income-analysis-2026.html"/>
+  </url>
+
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/blog/bayer-analysis-2026.html</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/bayer-analysis-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/bayer-analyse-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/blog/bayer-analysis-2026.html"/>
   </url>
 </urlset>
