@@ -248,8 +248,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
 .logo{display:flex;align-items:center;gap:14px}
-.logo-mark{width:clamp(32px,5vw,40px);height:clamp(32px,5vw,40px);border:1px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-family:var(--serif);font-size:clamp(18px,2.2vw,22px);letter-spacing:-.03em;position:relative;flex-shrink:0;font-style:italic}
-.logo-mark::before{content:"";position:absolute;inset:3px;border:1px solid var(--accent);opacity:.35}
+.logo-mark{width:clamp(40px,5.5vw,48px);height:clamp(40px,5.5vw,48px);display:grid;place-items:center;position:relative;flex-shrink:0}
+.logo-mark img{width:100%;height:100%;object-fit:contain;display:block}
 .logo-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.01em;color:var(--fg);line-height:1}
 .logo-name em{font-style:italic;color:var(--accent);font-weight:400}
 .nav{display:flex;align-items:center;gap:28px}
@@ -442,9 +442,12 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <div class="scroll-progress" id="scroll-progress"></div>
 
 <header class="header" id="header">
-  <a href="/" class="logo" aria-label="MB Capital Strategies home">
-    <span class="logo-mark">M</span>
-    <span class="logo-name">MB <em>Capital Strategies</em></span>
+  <a href="/" class="logo" aria-label="MB Capital Strategies Global home">
+    <picture class="logo-mark">
+      <source srcset="/Logo.webp" type="image/webp">
+      <img src="/Logo.png" alt="MB Capital Strategies Global Logo" width="48" height="48" loading="eager" decoding="async">
+    </picture>
+    <span class="logo-name">MB Capital Strategies <em>Global</em></span>
   </a>
   <nav class="nav" aria-label="Main navigation">
     <a href="pages/portfolio.html" class="nav-link">Portfolio</a>
@@ -597,7 +600,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       </div>
 
       <div class="hero-ctas">
-        <a href="#subscribe" class="btn">Subscribe to the Sunday note →</a>
+        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn">Subscribe on YouTube →</a>
         <a href="pages/blog.html" class="btn-link">latest research ↗</a>
       </div>
 
@@ -922,41 +925,11 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   </div>
 </section>
 
-<!-- NEWSLETTER / CONTACT -->
-<section class="contact" id="subscribe">
-  <div class="wrap">
-    <div class="contact-grid reveal">
-      <div>
-        <span class="eyebrow">§06 · Follow the research</span>
-        <h2 class="display contact-title" style="margin-top:24px">Every new analysis.
-On <em>YouTube.</em></h2>
-        <p class="contact-body">New hard-asset deep-dives, market updates and portfolio moves — free and honest. Subscribe to MBCS Global on YouTube and get notified when something ships.</p>
-        <ul style="list-style:none;margin:24px 0 16px;padding:0;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">01</span><span>What actually mattered this week in tankers, LNG, mining or pipelines.</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">02</span><span>Which Q-report metrics I am tracking — and why they matter.</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">03</span><span>Buys and sells from the real portfolio — with the reasoning behind each one.</span></li>
-        </ul>
-        <dl class="contact-info">
-          <div class="contact-info-row"><dt>Format</dt><dd>Deep-dive videos · 15–30 minutes</dd></div>
-          <div class="contact-info-row"><dt>Cadence</dt><dd>Weekly · analysis &amp; portfolio updates</dd></div>
-          <div class="contact-info-row"><dt>Language</dt><dd>English · global audience</dd></div>
-        </dl>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:20px;justify-content:center">
-        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn" style="justify-self:start">Subscribe on YouTube →</a>
-        <a href="pages/contact.html" class="btn btn-ghost" style="justify-self:start">Contact Marco →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
 <!-- FAQ -->
 <section id="faq">
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">§07 · FAQ</span>
+      <span class="eyebrow">§06 · FAQ</span>
       <h2 class="display section-title">Frequently <em>asked.</em></h2>
     </div>
     <div class="faq-wrap reveal">
