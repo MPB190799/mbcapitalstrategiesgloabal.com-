@@ -16,6 +16,9 @@
     <meta name="keywords" content="mining stocks, mining dividend, commodity stocks, dividend stocks, hard assets, MB Capital Strategies, cashflow investing">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- LCP-Fix: Preload critical font (Batch 63 - LCP was 14s) -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.min.css">
 <!-- Google tag (gtag.js) -->
@@ -167,7 +170,7 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
-                <img src="../Logo.png" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;">
+                <img src="../Logo.webp" onerror="this.src='../Logo.png'" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;">
                 <span class="logo-mb">MB</span>
                 <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
             </a>
