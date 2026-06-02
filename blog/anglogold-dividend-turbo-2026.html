@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        <!-- LCP-Fix: Preload critical font -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
     <meta charset="UTF-8">
     <!-- Favicon / Brand Icons -->
     <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -309,6 +312,15 @@ author-box{background:#1a1f2b;padding:20px 24px;border-radius:10px;border:1px so
   </div>
 </div>
 
+
+<div class="related-articles" style="background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;">
+  <h3 style="color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;">Related Resources</h3>
+  <ul style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;">
+    <li><a href="/pages/mining.html" style="color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);">Mining Stocks — Copper, Gold & Iron Ore</a></li>
+    <li><a href="/pages/hard-asset-guide.html" style="color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);">Hard Asset Investing Guide</a></li>
+    <li><a href="/glossary/yield-on-cost.html" style="color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);">Yield on Cost Explained</a></li>
+  </ul>
+</div>
 <div class="author-box">
     <strong style="color:#f5f6fa;display:block;margin-bottom:8px">Marco Bozem — MB Capital Strategies</strong>
     <p style="font-size:.85rem;color:#9aa6c0;margin:0 0 10px">Investor focused on hard assets and dividends: shipping, mining, energy, pipelines, REITs. Not a financial advisor — just an investor who thinks in public.</p>
