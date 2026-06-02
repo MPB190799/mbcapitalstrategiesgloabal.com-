@@ -66,7 +66,37 @@
 </head>
 <body>
 <nav class="navbar" id="navbar"><div class="nav-container"><a href="../index.html" class="nav-logo"><img src="../Logo.webp" onerror="this.src='../Logo.png'" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;"><span class="logo-mb">MB</span><span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span></a><ul class="nav-menu" id="navMenu"><li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li><li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li><li class="nav-item dropdown"><a href="#" class="nav-link dropdown-toggle">Sectors</a><ul class="dropdown-menu"><li><a href="../pages/shipping.html">Shipping</a></li><li><a href="../pages/pipelines.html">Pipelines</a></li><li><a href="../pages/mining.html">Mining</a></li><li><a href="../pages/energy.html">Energy</a></li></ul></li><li class="nav-item"><a href="../pages/calculators.html" class="nav-link">Calculators</a></li><li class="nav-item"><a href="../pages/blog.html" class="nav-link active">Blog</a></li></ul><button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button></div></nav>
-<section class="page-hero"><div class="container"><span class="hero-tag">Shipping Analysis</span><h1>Shipping Cycle: Sanctions &amp; Freight Rates</h1><p>How sanctions and freight rates shape the shipping cycle.</p></div>
+<section class="page-hero"><div class="container"><span class="hero-tag">Shipping Analysis</span><h1>Shipping Cycle: Sanctions &amp; Freight Rates</h1><p>How sanctions and freight rates shape the shipping cycle.</p>
+<!-- MB Capital Insider — Growth CTA (Blog-Middle, CF Worker) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-en-mid-email" placeholder="your@email.com" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbEnMidSubscribe()" data-cta="newsletter-en-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-en-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+(function(){if(window._mbEnMidSubDefined)return;window._mbEnMidSubDefined=true;
+window.mbEnMidSubscribe=function(){
+  var e=document.getElementById("mb-en-mid-email"),m=document.getElementById("mb-en-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error.";}});
+};})();
+</script>
+<!-- END Growth CTA EN -->
+</div>
 <div style="margin:2rem 0;padding:1.5rem;border:1px solid rgba(212,175,55,0.3);border-radius:12px;background:rgba(212,175,55,0.05);"><p style="margin:0;color:var(--text-secondary);font-size:0.9rem;">Deutsche Version: <a href="https://mbcapitalstrategies.com/blog/shipping-zyklus-sanktionen-frachtraten.html" style="color:var(--gold-primary);">Auf Deutsch lesen</a></p></div>
 </section>
 <section class="page-content"><div class="container"><div class="blog-post-content">
@@ -78,7 +108,7 @@
 <div>
 <h4 style="margin:0 0 6px;color:var(--gold-primary);">About the Author</h4>
 <p style="margin:0 0 8px;font-size:0.9em;"><strong>Marco Bozem</strong> is an independent investor based in Germany focusing on dividend-paying hard-asset companies in shipping, mining, and energy. He holds positions in many of the companies he analyzes. <a href="../pages/about.html" style="color:var(--gold-primary);">Read more</a></p>
-<p style="margin:0;font-size:0.85em;color:var(--text-muted);"><a href="https://www.linkedin.com/company/mb-capital-strategies/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">LinkedIn</a> &middot; <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:var(--gold-primary);">YouTube</a> &middot; <a href="https://mbcapitalstrategies.com" rel="alternate" hreflang="de" target="_blank" style="color:var(--gold-primary);">Deutsche Version</a></p>
+<p style="margin:0;font-size:0.85em;color:var(--text-muted);"><a href="https://www.linkedin.com/company/mb-capital-strategies/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">LinkedIn</a> &middot; <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:var(--gold-primary);">YouTube</a> &middot; <a href="https://mbcapitalstrategies.com" rel="noopener" target="_blank" style="color:var(--gold-primary);">Deutsche Version</a></p>
 </div>
 </aside>
 

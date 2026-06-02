@@ -249,7 +249,37 @@
 <strong>Key Takeaway:</strong> A diversified shipping portfolio across bulk carriers, container lines, and leasing companies can deliver a blended 10-12% yield while reducing dependence on any single commodity cycle.
 </div>
 
-                <h2>Bulk Carriers: Star Bulk and Golden Ocean</h2>
+                
+<!-- MB Capital Insider — Growth CTA (Blog-Middle, CF Worker) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-en-mid-email" placeholder="your@email.com" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbEnMidSubscribe()" data-cta="newsletter-en-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-en-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+(function(){if(window._mbEnMidSubDefined)return;window._mbEnMidSubDefined=true;
+window.mbEnMidSubscribe=function(){
+  var e=document.getElementById("mb-en-mid-email"),m=document.getElementById("mb-en-mid-msg");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error.";}});
+};})();
+</script>
+<!-- END Growth CTA EN -->
+<h2>Bulk Carriers: Star Bulk and Golden Ocean</h2>
                 <p>Star Bulk Carriers (SBLK) operates the largest publicly listed dry bulk fleet, with approximately 160 vessels spanning Capesize, Panamax, Supramax, and Ultramax segments following its merger with Eagle Bulk. This scale provides unmatched commercial flexibility: Star Bulk can optimize cargo scheduling across vessel sizes, capture arbitrage between time-charter and spot markets, and negotiate bulk fuel purchases at lower rates. At Capesize spot rates of $20,000-28,000 per day and mid-size bulker rates of $14,000-20,000 per day, Star Bulk generates quarterly distributable cashflow of $80-120 million, supporting a variable dividend yield of 8-12%.</p>
                 <p>Golden Ocean Group (GOGL), another Fredriksen-controlled company, focuses on the larger end of dry bulk with a fleet weighted toward Capesize and Newcastlemax vessels. These are the largest dry bulk ships afloat, carrying iron ore and coal on long-haul routes from Brazil and Australia to China. Golden Ocean's leverage to the Capesize market makes it higher-beta than Star Bulk but with greater upside in strong markets. The company pays quarterly dividends targeting 50-100% of net income, yielding 10-14% in favorable rate environments.</p>
 
@@ -323,7 +353,7 @@
 <div>
 <h4 style="margin:0 0 6px;color:var(--gold-primary);">About the Author</h4>
 <p style="margin:0 0 8px;font-size:0.9em;"><strong>Marco Bozem</strong> is an independent investor based in Germany focusing on dividend-paying hard-asset companies in shipping, mining, and energy. He holds positions in many of the companies he analyzes. <a href="../pages/about.html" style="color:var(--gold-primary);">Read more</a></p>
-<p style="margin:0;font-size:0.85em;color:var(--text-muted);"><a href="https://www.linkedin.com/company/mb-capital-strategies/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">LinkedIn</a> &middot; <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:var(--gold-primary);">YouTube</a> &middot; <a href="https://mbcapitalstrategies.com" rel="alternate" hreflang="de" target="_blank" style="color:var(--gold-primary);">Deutsche Version</a></p>
+<p style="margin:0;font-size:0.85em;color:var(--text-muted);"><a href="https://www.linkedin.com/company/mb-capital-strategies/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">LinkedIn</a> &middot; <a href="https://www.youtube.com/@mbcapitalstrategies" rel="author noopener" target="_blank" style="color:var(--gold-primary);">YouTube</a> &middot; <a href="https://mbcapitalstrategies.com" rel="noopener" target="_blank" style="color:var(--gold-primary);">Deutsche Version</a></p>
 </div>
 </aside>
 <div class="blog-post-disclaimer">
