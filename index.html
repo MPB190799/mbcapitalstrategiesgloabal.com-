@@ -619,9 +619,33 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       </div>
 
       <div class="hero-ctas">
-        <a href="#newsletter" class="btn">Get the Weekly Brief →</a>
+        <div class="hero-inline-cta" id="hero-inline-cta-en">
+          <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
+            <input type="email" id="hero-email-en" placeholder="your@email.com" required
+              autocomplete="email"
+              style="padding:10px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;flex:1 1 180px;font-family:var(--mono);">
+            <button onclick="mbHeroSubscribeEn()" data-cta="hero-en-index"
+              style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Newsletter + PDF →</button>
+          </div>
+          <p id="hero-msg-en" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono);"></p>
+          <p style="font-size:0.7rem;color:var(--fg-dim);margin:4px 0 0;font-family:var(--mono);">Free: Top 10 YOC &ge;8% PDF · Unsubscribe anytime · GDPR</p>
+        </div>
         <a href="pages/blog.html" class="btn-link">latest research ↗</a>
       </div>
+<script>
+(function(){
+  window.mbHeroSubscribeEn=function(){
+    var el=document.getElementById("hero-email-en"),msg=document.getElementById("hero-msg-en");
+    var email=el?el.value.trim():"";
+    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email address.";}return;}
+    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Signing up...";}
+    fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+    .then(function(r){return r.json();})
+    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Almost done! Please confirm via email (double opt-in).";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Sign-up failed. Please try again.";}}}
+    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again later.";}});
+  };
+})();
+</script>
 
       <nav class="compass-cardinals" aria-label="Hard-asset sectors">
         <a href="pages/energy.html" data-cardinal="N" data-bearing="0">
