@@ -69,7 +69,38 @@
 <div class='info-box'><strong>Key Takeaway:</strong> Crypto portfolio revealed: BTC +158%, XRP +199%, BNB +129%.</div><p>Transparent look alongside the hard asset portfolio. Details in the video.</p>
 <aside class="author-box" style="display:flex;gap:16px;align-items:flex-start;background:rgba(21,24,33,0.92);border:1px solid rgba(212,175,55,0.22);border-radius:12px;padding:20px;margin:30px 0;"><img src="../marco.webp" alt="Marco Bozem" style="width:64px;height:64px;border-radius:50%;border:2px solid var(--gold-primary);flex-shrink:0;" loading="lazy"><div><h4 style="margin:0 0 6px;color:var(--gold-primary);">About the Author</h4><p style="margin:0 0 8px;font-size:0.9em;"><strong>Marco Bozem</strong> is an independent investor based in Germany focusing on dividend-paying hard-asset companies in shipping, mining, and energy. He holds positions in many of the companies he analyzes. <a href="../pages/about.html" style="color:var(--gold-primary);">Read more</a></p><p style="margin:0;font-size:0.85em;color:var(--text-muted);"><a href="https://www.linkedin.com/company/mb-capital-strategies/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">LinkedIn</a> · <a href="https://www.youtube.com/" rel="author noopener" target="_blank" style="color:var(--gold-primary);">YouTube</a> · <a href="https://mbcapitalstrategies.com" rel="alternate" hreflang="de" target="_blank" style="color:var(--gold-primary);">Deutsche Version</a></p></div></aside>
 <div class="blog-post-disclaimer"><p><strong>Disclaimer:</strong> For informational purposes only. Not investment advice.</p></div>
-</div></div></section>
+</div></div>
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marco&#x27;s personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% calculation + payout analysis. Updated quarterly. Plus: weekly market wrap-up every Friday.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-email-en-b" placeholder="your@email.com" required
+      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
+    <button onclick="if(typeof window.mbSubscribe!=='undefined')mbSubscribe('mb-email-en-b','mb-msg-en-b','https://mbcapitalstrategiesgloabal.com')"
+      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-msg-en-b" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+if (typeof window.mbSubscribe === "undefined") {
+  window.mbSubscribe = function(emailId, msgId, origin) {
+    var emailEl = document.getElementById(emailId);
+    var msgEl = document.getElementById(msgId);
+    var email = emailEl ? emailEl.value.trim() : "";
+    if (!email || !email.includes("@")) { if (msgEl) { msgEl.style.display="block"; msgEl.style.color="#ef4444"; msgEl.textContent="Please enter a valid email address."; } return; }
+    if (msgEl) { msgEl.style.display="block"; msgEl.style.color="#D4AF37"; msgEl.textContent="Signing up..."; }
+    fetch("https://mbcapitalstrategiesgloabal.com/subscribe", { method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({email:email}) })
+    .then(function(r){return r.json();}).then(function(d){if(msgEl){msgEl.style.display="block";if(d.ok){msgEl.style.color="#22c55e";msgEl.textContent=d.msg||"Almost done! Check your email to confirm.";if(emailEl)emailEl.value="";}else{msgEl.style.color="#ef4444";msgEl.textContent=d.msg||"Sign-up failed.";}}}).catch(function(){if(msgEl){msgEl.style.display="block";msgEl.style.color="#ef4444";msgEl.textContent="Connection error.";}});
+  };
+}
+</script>
+<!-- ======================== END NEWSLETTER ======================== -->
+</section>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
