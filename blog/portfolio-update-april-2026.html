@@ -125,6 +125,21 @@ table.dep th{color:#d4af37;font-size:.85rem;letter-spacing:.04em;text-transform:
   <div class="article-meta">
     <span>May 7, 2026</span> &middot; <span>Marco Bozem</span> &middot; <span>Portfolio Update April 2026</span>
   </div>
+
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
+  <h3 style="color:#D4AF37;margin:0 0 8px;font-size:1.1rem;font-weight:700;">&#x1F4CA; Hard Asset Dividend Analysis — Weekly + PDF</h3>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Top 10 high-yield stocks (YOC &ge;8%) + weekly market wrap. Free, no spam.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-email-b9" placeholder="your@email.com" required
+      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
+    <button onclick="(function(){var e=document.getElementById('mb-email-b9'),m=document.getElementById('mb-msg-b9'),v=e?e.value.trim():'';if(!v||!v.includes('@')){if(m){m.style.display='block';m.style.color='#ef4444';m.textContent='Valid email required.';}return;}if(m){m.style.display='block';m.style.color='#D4AF37';m.textContent='Signing up...';}fetch('https://mbcapitalstrategiesgloabal.com/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v})}).then(r=>r.json()).then(d=>{if(m){m.style.display='block';if(d.ok){m.style.color='#22c55e';m.textContent=d.msg||'Done!';if(e)e.value='';}else{m.style.color='#ef4444';m.textContent=d.msg||'Failed.'}}}).catch(()=>{if(m){m.style.display='block';m.style.color='#ef4444';m.textContent='Error.'}})})()"
+      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Subscribe Free &rarr;</button>
+  </div>
+  <p id="mb-msg-b9" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant.</p>
+</div>
+<!-- ======================== END NEWSLETTER ======================== -->
 </section>
 
 <article class="article-body">
