@@ -313,7 +313,54 @@
         🌐 <a href="https://mbcapitalstrategies.com/" style="color: var(--gold-primary);">MB Capital Strategies (DE)</a>
     </p>
 </div>
-    </section>
+    
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-cta" id="mb-cta-en-a" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marco&#x27;s personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% calculation + payout analysis. Updated quarterly. Plus: weekly market wrap-up every Friday.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;" id="mb-cta-form-en-a">
+    <input type="email" id="mb-email-en-a" placeholder="your@email.com" required
+      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
+    <button onclick="mbSubscribe(&#x27;mb-email-en-a&#x27;,&#x27;mb-msg-en-a&#x27;,&#x27;https://mbcapitalstrategiesgloabal.com&#x27;)"
+      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-msg-en-a" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+(function() {
+  var SUBSCRIBE_URL = "https://mbcapitalstrategiesgloabal.com/subscribe";
+  if (typeof window.mbSubscribe === "undefined") {
+    window.mbSubscribe = function(emailId, msgId, origin) {
+      var emailEl = document.getElementById(emailId);
+      var msgEl = document.getElementById(msgId);
+      var email = emailEl ? emailEl.value.trim() : "";
+      if (!email || !email.includes("@")) {
+        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Please enter a valid email address."; }
+        return;
+      }
+      if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#D4AF37"; msgEl.textContent = "Signing up..."; }
+      fetch(SUBSCRIBE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email }) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (msgEl) {
+          msgEl.style.display = "block";
+          if (data.ok) { msgEl.style.color = "#22c55e"; msgEl.textContent = data.msg || "Almost done! Please check your email to confirm (double opt-in)."; if (emailEl) emailEl.value = ""; }
+          else { msgEl.style.color = "#ef4444"; msgEl.textContent = data.msg || "Sign-up failed. Please try again."; }
+        }
+      })
+      .catch(function(err) {
+        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Connection error. Please try again later."; }
+      });
+    };
+  }
+})();
+</script>
+<!-- ======================== END NEWSLETTER ======================== -->
+</section>
 
 <div style="background:#0d1117;border:1px solid #D4AF37;border-radius:10px;padding:18px 22px;margin:28px 0;text-align:center">
   <p style="color:#D4AF37;font-size:1rem;font-weight:600;margin-bottom:8px">Calculate It Yourself</p>

@@ -374,7 +374,54 @@
     <div class="blog-post-disclaimer" style="margin-top:2rem;padding:1.25rem 1.5rem;border-left:3px solid rgba(212,175,55,0.6);background:rgba(212,175,55,0.04);border-radius:4px;">
       <p style="margin:0;font-size:0.875rem;color:#aaa;line-height:1.7;"><strong style="color:#d4af37;">Disclaimer:</strong> This analysis is for informational and educational purposes only and does not constitute investment advice. The author may hold positions in the securities discussed. Past performance and shipping rate patterns are not indicative of future results. Dry-bulk shipping stocks involve significant cyclical risk including complete loss of capital. Always conduct your own due diligence before making investment decisions. <a href="../pages/disclaimer.html" style="color:#d4af37;">Full disclaimer &rarr;</a></p>
     </div>
-  </section>
+  
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-cta" id="mb-cta-en-a" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marco&#x27;s personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% calculation + payout analysis. Updated quarterly. Plus: weekly market wrap-up every Friday.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;" id="mb-cta-form-en-a">
+    <input type="email" id="mb-email-en-a" placeholder="your@email.com" required
+      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
+    <button onclick="mbSubscribe(&#x27;mb-email-en-a&#x27;,&#x27;mb-msg-en-a&#x27;,&#x27;https://mbcapitalstrategiesgloabal.com&#x27;)"
+      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-msg-en-a" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+(function() {
+  var SUBSCRIBE_URL = "https://mbcapitalstrategiesgloabal.com/subscribe";
+  if (typeof window.mbSubscribe === "undefined") {
+    window.mbSubscribe = function(emailId, msgId, origin) {
+      var emailEl = document.getElementById(emailId);
+      var msgEl = document.getElementById(msgId);
+      var email = emailEl ? emailEl.value.trim() : "";
+      if (!email || !email.includes("@")) {
+        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Please enter a valid email address."; }
+        return;
+      }
+      if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#D4AF37"; msgEl.textContent = "Signing up..."; }
+      fetch(SUBSCRIBE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email }) })
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (msgEl) {
+          msgEl.style.display = "block";
+          if (data.ok) { msgEl.style.color = "#22c55e"; msgEl.textContent = data.msg || "Almost done! Please check your email to confirm (double opt-in)."; if (emailEl) emailEl.value = ""; }
+          else { msgEl.style.color = "#ef4444"; msgEl.textContent = data.msg || "Sign-up failed. Please try again."; }
+        }
+      })
+      .catch(function(err) {
+        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Connection error. Please try again later."; }
+      });
+    };
+  }
+})();
+</script>
+<!-- ======================== END NEWSLETTER ======================== -->
+</section>
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
@@ -395,6 +442,14 @@
       <a href="https://mbcapitalstrategies.com/" hreflang="de" rel="alternate" style="color:#d4af37;text-decoration:none">mbcapitalstrategies.com →</a>
     </p>
   </div>
+
+<!-- Internal CTA: Calculators -->
+<div style="border-left:4px solid #D4AF37;margin:28px 0;padding:16px 20px;background:#0d1117;border-radius:6px;">
+  <h3 style="margin:0 0 8px;color:#D4AF37;font-size:1rem;">Calculate Your Own Returns</h3>
+  <p style="margin:0 0 12px;color:#cfd6e6;font-size:0.9rem;">YOC, Dividend Snowball, Cashflow &amp; Financial Freedom &mdash; all calculators free and ready to use.</p>
+  <a href="/pages/yield-on-cost.html" style="display:inline-block;background:#D4AF37;color:#0f1115;font-weight:700;padding:9px 18px;border-radius:5px;text-decoration:none;font-size:0.9rem;margin-right:8px;">YOC Calculator &rarr;</a>
+  <a href="/pages/calculators.html" style="display:inline-block;color:#D4AF37;font-weight:600;text-decoration:none;font-size:0.88rem;">All Calculators &rarr;</a>
+</div>
 <div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
   <img src="/marco.jpg" alt="Marco Bozem — MB Capital Strategies" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
   <div>
