@@ -410,7 +410,37 @@
             </div>
 
             <!-- Investor Journey - E-E-A-T -->
-            <h2>My Investor Journey: From Zero to a Hard Asset Strategy</h2>
+            <!-- MB Capital Insider — Growth CTA (Blog-Mitte, CF Worker) -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-mid-email-en" placeholder="your@email.com" required
+      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
+    <button onclick="mbMidSubscribeEn()" data-cta="newsletter-en-mid"
+      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-mid-msg-en" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
+</div>
+<script>
+(function(){if(window._mbMidSubEnDefined)return;window._mbMidSubEnDefined=true;
+window.mbMidSubscribeEn=function(){
+  var e=document.getElementById("mb-mid-email-en"),m=document.getElementById("mb-mid-msg-en");
+  var email=e?e.value.trim():"";
+  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
+  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
+  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
+  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Please check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
+  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error. Please try again later.";}});
+};})();
+</script>
+<!-- END Growth CTA -->
+
+<h2>My Investor Journey: From Zero to a Hard Asset Strategy</h2>
             <div class="about-card">
                 <h3>2022: Getting Started — Frustration with Growth Stocks</h3>
                 <p>In 2022, I started investing systematically — like most people at first: ETFs, growth stocks, tech hype. Then interest rates rose sharply. Growth stocks crashed 60–80%. My portfolio along with them. That experience was the turning point: I no longer wanted to depend on price appreciation. I wanted companies that send me money every month and every quarter, <em>regardless of what the market does</em>.</p>
