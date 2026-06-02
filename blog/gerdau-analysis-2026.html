@@ -320,7 +320,26 @@
         🌐 <a href="https://mbcapitalstrategies.com/" style="color: var(--gold-primary);">MB Capital Strategies (DE)</a>
     </p>
 </div>
-    </section>
+    
+<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
+<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
+    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
+    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
+  </div>
+  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Updated quarterly: Shipping, Energy, Mining, REITs with YOC &ge;8% + weekly market wrap-up every Friday.</p>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;">
+    <input type="email" id="mb-email-b5" placeholder="your@email.com" required
+      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
+    <button onclick="if(typeof window.mbSubscribe!=='undefined')mbSubscribe('mb-email-b5','mb-msg-b5','https://mbcapitalstrategiesgloabal.com')"
+      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
+  </div>
+  <p id="mb-msg-b5" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
+  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant.</p>
+</div>
+<script>if(typeof window.mbSubscribe==="undefined"){window.mbSubscribe=function(eId,mId){var e=document.getElementById(eId),m=document.getElementById(mId),v=e?e.value.trim():"";if(!v||!v.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}fetch("https://mbcapitalstrategiesgloabal.com/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:v})}).then(function(r){return r.json()}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Done! Check email.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Failed.";}}}).catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Error.";}});};}</script>
+<!-- ======================== END NEWSLETTER ======================== -->
+</section>
 
 <div style="background:#0d1117;border:1px solid #D4AF37;border-radius:10px;padding:18px 22px;margin:28px 0;text-align:center">
   <p style="color:#D4AF37;font-size:1rem;font-weight:600;margin-bottom:8px">Calculate It Yourself</p>
