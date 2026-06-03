@@ -473,7 +473,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
     <a href="pages/blog.html" class="nav-link">Research</a>
     <a href="pages/calculators.html" class="nav-link">Calculators</a>
     <a href="pages/about.html" class="nav-link">About</a>
-    <a href="#newsletter" class="nav-link" style="color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:6px 14px;font-weight:500;letter-spacing:.04em;">Free PDF ✦</a>
+    
   </nav>
   <div class="header-actions">
     <a href="https://mbcapitalstrategies.com/" rel="noopener" class="lang-flag" title="Deutsche Version">🇩🇪 DE</a>
@@ -492,7 +492,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   <a href="pages/blog.html">Research</a>
   <a href="pages/calculators.html">Calculators</a>
   <a href="pages/about.html">About</a>
-  <a href="#newsletter" style="color:var(--accent);font-weight:600;">Free PDF + Newsletter ✦</a>
+  
   <a href="pages/glossary.html">Glossary</a>
   <a href="https://mbcapitalstrategies.com/" rel="noopener">🇩🇪 Deutsch</a>
   <div class="mob-label">Sectors</div>
@@ -620,35 +620,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       </div>
 
       <div class="hero-ctas">
-        <div class="hero-inline-cta" id="hero-inline-cta-en">
-          <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
-            <input type="email" id="hero-email-en" placeholder="your@email.com" required
-              autocomplete="email"
-              style="padding:10px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;flex:1 1 180px;font-family:var(--mono);">
-            <button onclick="mbHeroSubscribeEn()" data-cta="hero-en-index"
-              style="padding:10px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;white-space:nowrap;cursor:pointer;font-family:var(--mono);letter-spacing:.04em;">Top 10 YOC ≥8% PDF — Free →</button>
-          </div>
-          <p id="hero-msg-en" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono);"></p>
-          <p style="font-size:0.7rem;color:var(--fg-dim);margin:4px 0 0;font-family:var(--mono);">Free · Weekly newsletter · Unsubscribe anytime · GDPR</p>
-        </div>
+        
         <a href="pages/blog.html" class="btn-link">latest research ↗</a>
       </div>
-<script>
-(function(){
-  window.mbHeroSubscribeEn=function(){
-    var el=document.getElementById("hero-email-en"),msg=document.getElementById("hero-msg-en");
-    var email=el?el.value.trim():"";
-    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email address.";}return;}
-    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Signing up...";}
-    fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-    .then(function(r){return r.json();})
-    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Almost done! Please confirm via email (double opt-in).";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Sign-up failed. Please try again.";}}}
-    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again later.";}});
-  };
-})();
-</script>
-
-      <nav class="compass-cardinals" aria-label="Hard-asset sectors">
+<nav class="compass-cardinals" aria-label="Hard-asset sectors">
         <a href="pages/energy.html" data-cardinal="N" data-bearing="0">
           <span class="cdir"><b>Oil &amp; Gas</b><small>Energy</small></span>
         </a>
@@ -755,35 +730,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   <div class="wrap">
     <div class="section-head reveal">
       <span class="eyebrow">§02 · Hard Assets</span>
-      <!-- MB Capital Insider — Growth CTA (Blog-Mitte, CF Worker) -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-mid-email-en" placeholder="your@email.com" required
-      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbMidSubscribeEn()" data-cta="newsletter-en-mid"
-      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-mid-msg-en" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-(function(){if(window._mbMidSubEnDefined)return;window._mbMidSubEnDefined=true;
-window.mbMidSubscribeEn=function(){
-  var e=document.getElementById("mb-mid-email-en"),m=document.getElementById("mb-mid-msg-en");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
-  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Please check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
-  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error. Please try again later.";}});
-};})();
-</script>
-<!-- END Growth CTA -->
+      <!-- END Growth CTA -->
 
 <h2 class="display section-title">Four sectors. <em>One principle.</em></h2>
     </div>
@@ -1008,67 +955,9 @@ window.mbMidSubscribeEn=function(){
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="contact" id="newsletter">
-  <div class="wrap">
-    <div class="contact-grid reveal">
-      <div>
-        <span class="eyebrow">§06 · MB Capital Insider</span>
-        <h2 class="display contact-title" style="margin-top:24px">Every Sunday.
-In your <em>inbox.</em></h2>
-        <p class="contact-body">Weekly wrap-up on the most important developments in Shipping, Mining, Energy and Pipelines — plus my personal take straight from the portfolio. Free, no clickbait, unsubscribe anytime.</p>
-        <ul style="list-style:none;margin:24px 0 16px;padding:0;display:flex;flex-direction:column;gap:10px">
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">01</span><span>What actually mattered this week in the tanker, LNG or mining cycle.</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">02</span><span>Which metrics I track in quarterly reports — and why they matter.</span></li>
-          <li style="display:flex;gap:12px;align-items:baseline;font-family:var(--serif);font-size:17px;color:var(--fg-muted);line-height:1.5"><span style="color:var(--accent);font-family:var(--mono);font-size:11px;letter-spacing:.18em">03</span><span>Buys and sells from the real portfolio — honest, with reasoning.</span></li>
-        </ul>
-        <dl class="contact-info">
-          <div class="contact-info-row"><dt>Delivery</dt><dd>Sundays · 09:00 CET</dd></div>
-          <div class="contact-info-row"><dt>Format</dt><dd>Text email · 4 min read</dd></div>
-          <div class="contact-info-row"><dt>Frequency</dt><dd>One issue per week, never more</dd></div>
-        </dl>
-      </div>
-      <div class="form" id="mb-contact-form-en">
-        <div class="field">
-          <label>Email</label>
-          <input type="email" id="mb-contact-email-en" placeholder="your@email.com" required autocomplete="email">
-        </div>
-        <label class="field-check">
-          <input type="checkbox" id="mb-contact-optin-en" required>
-          <span>I accept the <a href="pages/privacy.html">Privacy Policy</a> and want to receive the MB Capital Insider. Unsubscribe at any time.</span>
-        </label>
-        <div style="margin:16px 0 12px;padding:12px 16px;background:rgba(212,175,55,0.08);border-left:3px solid #D4AF37;border-radius:4px;">
-          <span style="color:#D4AF37;font-size:0.78rem;font-weight:700;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;">Free with signup:</span>
-          <span style="color:#c8cfe0;font-size:0.87rem;margin-left:8px;">Top 10 YOC &ge;8% Hard Asset Stocks PDF — Marco's selection, updated quarterly</span>
-        </div>
-        <p id="mb-contact-msg-en" style="font-size:0.82rem;margin:0 0 10px;display:none;"></p>
-        <button type="button" onclick="mbContactSubscribeEn()" class="btn" style="justify-self:start">Get Sunday Brief + Free PDF →</button>
-        <p style="color:var(--fg-dim);font-size:12px;margin-top:4px;font-family:var(--mono);letter-spacing:.08em">Or: <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color:var(--accent)">subscribe on YouTube</a></p>
-      </div>
-<script>
-(function(){
-  window.mbContactSubscribeEn=function(){
-    var el=document.getElementById("mb-contact-email-en"),
-        cb=document.getElementById("mb-contact-optin-en"),
-        msg=document.getElementById("mb-contact-msg-en");
-    var email=el?el.value.trim():"";
-    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email address.";}return;}
-    if(!cb||!cb.checked){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please accept the Privacy Policy.";}return;}
-    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Signing up...";}
-    fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-    .then(function(r){return r.json();})
-    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Almost done! Please confirm via email (double opt-in).";if(el)el.value="";if(cb)cb.checked=false;}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Sign-up failed. Please try again.";}}}
-    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again later.";}});
-  };
-})();
-</script>
-    </div>
-  </div>
-</section>
-
 <div class="divider"></div>
 
-<!-- AdSense: between newsletter and FAQ -->
+<!-- AdSense: before FAQ -->
 <div style="text-align:center;margin:24px auto;">
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="in-article" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -1282,73 +1171,5 @@ In your <em>inbox.</em></h2>
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
-<!-- MB Capital Insider — Sticky Newsletter Bar v2.2 (body-padding + CTA copy, 2026-06-03) -->
-<div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;">
-  <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">&#x1F4CA; Top 10 YOC &ge;8% Stocks &mdash; Free PDF:</span>
-    <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;" id="mb-sticky-form-en">
-      <input type="email" id="mb-sticky-email-en" placeholder="your@email.com" required
-        style="flex:1;padding:7px 10px;border:1px solid #D4AF37;background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.8rem;min-width:0;">
-      <button onclick="mbStickySubscribeEn()" data-cta="sticky-en-index"
-        style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;">Newsletter + PDF &rarr;</button>
-    </div>
-    <span id="mb-sticky-msg-en" style="font-size:0.75rem;display:none;"></span>
-    <button onclick="mbStickyDismissEn()" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Close">&times;</button>
-  </div>
-</div>
-<script>
-(function(){
-  var bar = document.getElementById('mb-sticky-cta');
-
-  function mbStickySetBodyPadEn(){
-    if(!bar || bar.style.display === 'none') {
-      document.body.style.paddingBottom = '';
-    } else {
-      document.body.style.paddingBottom = bar.offsetHeight + 'px';
-    }
-  }
-
-  window.mbStickyDismissEn = function(){
-    bar.style.display = 'none';
-    localStorage.setItem('mbctadismissed_en','1');
-    document.body.style.paddingBottom = '';
-    var cb = document.getElementById('cookieBanner');
-    if(cb) cb.style.bottom = '0';
-  };
-
-  if(localStorage.getItem("mbctadismissed_en")){
-    bar.style.display = 'none';
-  } else {
-    document.addEventListener('DOMContentLoaded', function(){
-      mbStickySetBodyPadEn();
-      var cb = document.getElementById('cookieBanner');
-      if(cb && bar && bar.style.display !== 'none'){
-        cb.style.bottom = bar.offsetHeight + 'px';
-      }
-    });
-    window.addEventListener('load', function(){
-      mbStickySetBodyPadEn();
-      var cb = document.getElementById('cookieBanner');
-      if(cb && bar && bar.style.display !== 'none'){
-        cb.style.bottom = bar.offsetHeight + 'px';
-      }
-    });
-    window.addEventListener('resize', mbStickySetBodyPadEn);
-    mbStickySetBodyPadEn();
-  }
-
-  var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
-  window.mbStickySubscribeEn=function(){
-    var el=document.getElementById("mb-sticky-email-en"),msg=document.getElementById("mb-sticky-msg-en");
-    var email=el?el.value.trim():"";
-    if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email.";}return;}
-    if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Signing up...";}
-    fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-    .then(function(r){return r.json();})
-    .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Almost done! Check your email to confirm.";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Sign-up failed. Please try again.";}}}
-    ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again later.";}});
-  };
-})();
-</script>
 </body>
 </html>

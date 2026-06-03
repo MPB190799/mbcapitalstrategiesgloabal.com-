@@ -199,7 +199,7 @@
     <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">
         🇩🇪 <strong>Deutsche Version:</strong> <a href="https://mbcapitalstrategies.com/blog/barrick-gold-analyse-2026.html" style="color: var(--gold-primary);">Diesen Artikel auf Deutsch lesen</a>
         &nbsp;|&nbsp;
-        🌐 <a href="/newsletter.html" style="color:#7a8499;text-decoration:none;font-size:0.83rem;">Subscribe Newsletter</a>
+        🌐 
         <a href="https://mbcapitalstrategies.com/" style="color: var(--gold-primary);">MB Capital Strategies (DE)</a>
     </p>
 </div>
@@ -220,34 +220,6 @@
 </div>
 
 
-<!-- MB Capital Insider — Growth CTA (Blog-Middle, CF Worker) -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-en-mid-email" placeholder="your@email.com" required
-      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbEnMidSubscribe()" data-cta="newsletter-en-mid"
-      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-en-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-(function(){if(window._mbEnMidSubDefined)return;window._mbEnMidSubDefined=true;
-window.mbEnMidSubscribe=function(){
-  var e=document.getElementById("mb-en-mid-email"),m=document.getElementById("mb-en-mid-msg");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
-  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
-  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error.";}});
-};})();
-</script>
 <!-- END Growth CTA EN -->
 <h2>Barrick Gold Business Model: Tier-1 Gold &amp; Copper Strategy</h2>
             <p>Barrick defines a tier-1 mine as having a production capacity of at least 500,000 ounces of gold per year, a mine life exceeding 10 years, and costs in the lower half of the industry cost curve. This disciplined focus ensures that Barrick's portfolio generates robust margins across gold price cycles. The flagship Nevada Gold Mines (a 61.5% JV with Newmont) is the single largest gold-producing complex in the world. Loulo-Gounkoto and Kibali in Africa, Pueblo Viejo in the Dominican Republic, and the Reko Diq copper-gold project in Pakistan (under development) round out the portfolio. Copper production from Lumwana (Zambia) and Zaldivar (Chile) is targeted to grow substantially with planned expansions.</p>
@@ -370,52 +342,6 @@ window.mbEnMidSubscribe=function(){
     </p>
 </div>
     
-<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
-<div class="mb-newsletter-cta" id="mb-cta-en-a" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Marco&#x27;s personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% calculation + payout analysis. Updated quarterly. Plus: weekly market wrap-up every Friday.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;" id="mb-cta-form-en-a">
-    <input type="email" id="mb-email-en-a" placeholder="your@email.com" required
-      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
-    <button onclick="mbSubscribe(&#x27;mb-email-en-a&#x27;,&#x27;mb-msg-en-a&#x27;,&#x27;https://mbcapitalstrategiesgloabal.com&#x27;)"
-      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-msg-en-a" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-(function() {
-  var SUBSCRIBE_URL = "https://mbcapitalstrategiesgloabal.com/subscribe";
-  if (typeof window.mbSubscribe === "undefined") {
-    window.mbSubscribe = function(emailId, msgId, origin) {
-      var emailEl = document.getElementById(emailId);
-      var msgEl = document.getElementById(msgId);
-      var email = emailEl ? emailEl.value.trim() : "";
-      if (!email || !email.includes("@")) {
-        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Please enter a valid email address."; }
-        return;
-      }
-      if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#D4AF37"; msgEl.textContent = "Signing up..."; }
-      fetch(SUBSCRIBE_URL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ email: email }) })
-      .then(function(r) { return r.json(); })
-      .then(function(data) {
-        if (msgEl) {
-          msgEl.style.display = "block";
-          if (data.ok) { msgEl.style.color = "#22c55e"; msgEl.textContent = data.msg || "Almost done! Please check your email to confirm (double opt-in)."; if (emailEl) emailEl.value = ""; }
-          else { msgEl.style.color = "#ef4444"; msgEl.textContent = data.msg || "Sign-up failed. Please try again."; }
-        }
-      })
-      .catch(function(err) {
-        if (msgEl) { msgEl.style.display = "block"; msgEl.style.color = "#ef4444"; msgEl.textContent = "Connection error. Please try again later."; }
-      });
-    };
-  }
-})();
-</script>
-<!-- ======================== END NEWSLETTER ======================== -->
 </section>
 
 <div style="background:#0d1117;border:1px solid #D4AF37;border-radius:10px;padding:18px 22px;margin:28px 0;text-align:center">
@@ -448,31 +374,6 @@ window.mbEnMidSubscribe=function(){
   <a href="/blog/commodity-supercycle-2025.html" style="color:#D4AF37;font-weight:600;font-size:0.85rem;text-decoration:none;">→ Full Commodity Supercycle Guide →</a>
 </div>
 
-<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
-<div class="mb-newsletter-wrap" style="background:rgba(212,175,55,0.07);border-top:1px solid rgba(212,175,55,0.18);padding:40px 20px;text-align:center;margin:40px 0;">
-  <div style="max-width:520px;margin:0 auto;">
-    <p style="color:#d4af37;font-size:0.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 6px;">Newsletter</p>
-    <h3 style="color:#f5f6fa;font-size:1.2rem;font-weight:700;margin:0 0 8px;">&#128236; MB Capital Insider</h3>
-    <p style="color:#9aa6c0;font-size:0.87rem;margin:0 0 20px;">Every Sunday: market wrap-up &amp; analysis — Shipping, Mining, Energy &amp; Pipelines. Straight from the portfolio.</p>
-    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="margin:0;">
-      <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:12px;">
-        <input type="email" name="EMAIL" placeholder="your@email.com" required
-          style="flex:1;min-width:200px;max-width:270px;padding:11px 15px;border-radius:6px;border:1px solid rgba(212,175,55,0.35);background:#151821;color:#f5f6fa;font-size:0.88rem;outline:none;">
-        <button type="submit"
-          style="padding:11px 22px;background:#d4af37;color:#0f1115;font-weight:700;border:none;border-radius:6px;cursor:pointer;font-size:0.88rem;white-space:nowrap;">
-          Subscribe &rarr;
-        </button>
-      </div>
-      <label style="display:flex;align-items:flex-start;gap:8px;max-width:420px;margin:0 auto 6px;text-align:left;cursor:pointer;">
-        <input type="checkbox" name="OPT_IN" value="1" required style="margin-top:3px;accent-color:#d4af37;flex-shrink:0;">
-        <span style="color:#5a6480;font-size:0.74rem;">I accept the <a href="/pages/privacy.html" style="color:#d4af37;text-decoration:none;">Privacy Policy</a> and want to receive the MB Capital Insider. Unsubscribe anytime.</span>
-      </label>
-      <input type="hidden" name="email_address_check" value="">
-      <input type="hidden" name="locale" value="en">
-    </form>
-  </div>
-</div>
-<!-- ======================== END NEWSLETTER ======================== -->
 <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none;">

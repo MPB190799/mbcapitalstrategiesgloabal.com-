@@ -115,24 +115,6 @@ Enterprise Value = Market Cap + Net Debt</div>
 <li><a href="./tce-rate.html">TCE Rate</a> — revenue metric driving shipping EBITDA</li>
 </ul>
 
-<!-- MB Capital Insider — Growth CTA (Blog-Mitte, CF Worker) -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-mid-email-en-ebitda" placeholder="your@email.com" required
-      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbMidSubscribeEnEbitda()" data-cta="newsletter-en-mid-ebitda"
-      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-mid-msg-en-ebitda" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">No investment advice. Unsubscribe anytime. GDPR-compliant. Double opt-in.</p>
-</div>
-<script>(function(){if(window._mbMidEnEbitdaDef)return;window._mbMidEnEbitdaDef=true;window.mbMidSubscribeEnEbitda=function(){var e=document.getElementById("mb-mid-email-en-ebitda"),m=document.getElementById("mb-mid-msg-en-ebitda");var email=e?e.value.trim():"";if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email address.";}return;}if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Subscribing...";}fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email,list:"en"})}).then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Please confirm your email.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Error. Please try again.";}}}).catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error.";}});};})();</script>
-
 <ins class="adsbygoogle" style="display:block;margin:24px 0" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
 

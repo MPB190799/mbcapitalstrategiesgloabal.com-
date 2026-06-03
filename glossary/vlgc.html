@@ -95,49 +95,6 @@ a{color:#D4AF37}
 <p><strong>Disclaimer:</strong> This glossary entry is for educational and informational purposes only. Not investment advice. All data is based on publicly available sources. Freight rates and company financials can change rapidly. Marco Bozem may hold positions in companies mentioned. <a href="/pages/privacy.html">Privacy Policy</a> | <a href="/pages/imprint.html">Imprint</a></p>
 </div>
 
-<!-- Newsletter CTA -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;">
-  <h3 style="color:#D4AF37;margin:0 0 8px;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Shipping, Energy, Mining, REITs &#x2014; Marco's YOC &#x2265;8% selection. Updated quarterly. Plus weekly market wrap-up every Friday.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-gl-email" placeholder="your@email.com" required style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbGlSubscribe()" style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-gl-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-(function(){if(window._mbGlSubDefined)return;window._mbGlSubDefined=true;
-window.mbGlSubscribe=function(){
-  var e=document.getElementById("mb-gl-email"),m=document.getElementById("mb-gl-msg");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
-  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Please confirm your email.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Error. Please try again.";}}})};}
-)();
-</script>
-
-<!-- Sticky Newsletter Bar -->
-<div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-  <span style="color:#D4AF37;font-size:0.85rem;font-weight:700;white-space:nowrap;">Free PDF: Top 10 YOC &#x2265;8% Stocks</span>
-  <div style="display:flex;gap:6px;flex:1;min-width:240px;max-width:420px;">
-    <input type="email" id="mb-sticky-email-en" placeholder="your@email.com" required style="flex:1;padding:8px 12px;border:1px solid rgba(212,175,55,.3);background:#080810;color:#f0f4ff;border-radius:4px;font-size:0.83rem;">
-    <button onclick="mbStickySubscribeEN()" style="padding:8px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.83rem;white-space:nowrap;">Get it free</button>
-  </div>
-  <button onclick="document.getElementById('mb-sticky-cta').style.display='none';localStorage.setItem('mbctadismissed_en','1')" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;">&times;</button>
-</div>
-<script>
-if(localStorage.getItem("mbctadismissed_en"))document.getElementById("mb-sticky-cta").style.display="none";
-function mbStickySubscribeEN(){
-  var e=document.getElementById("mb-sticky-email-en");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@"))return;
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(d.ok){if(e)e.value="";alert("Almost done! Please confirm your email.");}});
-}
-</script>
-
 <footer style="text-align:center;padding:24px 0 60px;color:#555;font-size:0.8rem;">
 <p>&copy; 2026 MB Capital Strategies Global | <a href="/pages/imprint.html">Imprint</a> | <a href="/pages/privacy.html">Privacy</a> | <a href="https://mbcapitalstrategies.com">Deutsche Version</a></p>
 </footer>

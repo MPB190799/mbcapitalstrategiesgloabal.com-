@@ -179,34 +179,6 @@ gtag('config', 'G-FSW7J7QYL8');
 </div>
 
 
-<!-- MB Capital Insider — Growth CTA (Blog-Middle, CF Worker) -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:24px 28px;border-radius:8px;border-left:4px solid #D4AF37;margin:36px 0;font-family:Outfit,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.1rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &mdash; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 14px;font-size:0.88rem;line-height:1.6;">Marco's personal selection: Shipping, Energy, Mining, REITs with YOC &ge;8% + payout analysis. Updated quarterly.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-en-mid-email" placeholder="your@email.com" required
-      style="padding:11px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:180px;font-size:0.87rem;">
-    <button onclick="mbEnMidSubscribe()" data-cta="newsletter-en-mid"
-      style="padding:11px 22px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.87rem;white-space:nowrap;">Get PDF + Newsletter</button>
-  </div>
-  <p id="mb-en-mid-msg" style="color:#6b7a99;font-size:0.74rem;margin:8px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:6px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-(function(){if(window._mbEnMidSubDefined)return;window._mbEnMidSubDefined=true;
-window.mbEnMidSubscribe=function(){
-  var e=document.getElementById("mb-en-mid-email"),m=document.getElementById("mb-en-mid-msg");
-  var email=e?e.value.trim():"";
-  if(!email||!email.includes("@")){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Please enter a valid email.";}return;}
-  if(m){m.style.display="block";m.style.color="#D4AF37";m.textContent="Signing up...";}
-  fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-  .then(function(r){return r.json();}).then(function(d){if(m){m.style.display="block";if(d.ok){m.style.color="#22c55e";m.textContent=d.msg||"Almost done! Check your email to confirm.";if(e)e.value="";}else{m.style.color="#ef4444";m.textContent=d.msg||"Sign-up failed. Please try again.";}}})
-  .catch(function(){if(m){m.style.display="block";m.style.color="#ef4444";m.textContent="Connection error.";}});
-};})();
-</script>
 <!-- END Growth CTA EN -->
 <h2>2. Shipping: Where the Highest Yields Live</h2>
 
@@ -225,8 +197,8 @@ window.mbEnMidSubscribe=function(){
 </div>
 
 <div class="stock-card">
-<h3>#3 FLEX LNG (FLNG) &mdash; <span class="stock-yield">~10–12% yield</span></h3>
-<p>FLEX LNG operates a modern <a href="../glossary/lng.html" style="color:#d4af37">LNG</a> carrier fleet under predominantly long-term <a href="../glossary/time-charter.html" style="color:#d4af37">time charters</a>. The Hormuz disruption forces LNG rerouting through the Cape of Good Hope — adding 30–45 days per voyage and structurally reducing available fleet capacity. Time charters provide cashflow visibility. The dividend at current rates is well-covered.</p>
+<h3>#3 <a href="/blog/flex-lng-q1-2026-dividend-analysis.html" style="color:#D4AF37;">FLEX LNG (FLNG)</a> &mdash; <span class="stock-yield">~9–10% yield</span></h3>
+<p>FLEX LNG operates a modern <a href="../glossary/lng.html" style="color:#d4af37">LNG</a> carrier fleet under predominantly long-term <a href="../glossary/time-charter.html" style="color:#d4af37">time charters</a>. Q1 2026: $0.75 dividend, 19th consecutive quarterly payment, ~9.2% yield. The Hormuz disruption forces LNG rerouting through the Cape of Good Hope — adding 30–45 days per voyage and structurally reducing available fleet capacity. Time charters provide cashflow visibility. The dividend at current rates is well-covered.</p>
 <p><strong>Sustainability:</strong> ✅ High. Charter backlog of 3+ years provides earnings visibility. LNG demand structurally rises through 2030 regardless of Hormuz.</p>
 </div>
 
@@ -334,24 +306,6 @@ window.mbEnMidSubscribe=function(){
   <p style="margin:0;font-size:0.875rem;color:#aaa;line-height:1.7;"><strong style="color:#d4af37;">Disclaimer:</strong>This article is for informational and educational purposes only. It does not constitute investment advice, a recommendation, or an offer to buy or sell any security. All information provided without guarantee. Investing involves risk, including the possible loss of principal. Act on your own responsibility and consult a qualified financial advisor if necessary. <a href="../pages/disclaimer.html" style="color:#d4af37;">Full disclaimer &rarr;</a></p>
 </div>
 
-
-<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;max-width:680px;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Updated quarterly: Shipping, Energy, Mining, REITs with YOC &ge;8% + weekly market wrap-up every Friday.</p>
-  <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription" style="margin:0">
-    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
-      <input type="email" name="EMAIL" placeholder="your@email.com" required
-        style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
-      <button type="submit"
-        style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get PDF + Newsletter</button>
-    </div>
-    <p style="color:#6b7a99;font-size:0.72rem;margin:0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-  </form>
-</div>
 
 <!-- Internal CTA: Calculators -->
 <div style="border-left:4px solid #D4AF37;margin:28px 0;padding:16px 20px;background:#0d1117;border-radius:6px;">

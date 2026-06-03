@@ -695,33 +695,6 @@
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
     
-<!-- ======================== MB CAPITAL INSIDER NEWSLETTER ======================== -->
-<div class="mb-newsletter-cta" style="background:#0f0f1a;padding:28px 32px;border-radius:8px;border-left:4px solid #D4AF37;margin:40px 0;font-family:Arial,Helvetica,sans-serif;">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px;">
-    <span style="color:#D4AF37;font-size:1.2rem;">&#x1F4CA;</span>
-    <h3 style="color:#D4AF37;margin:0;font-size:1.1rem;font-weight:700;">Top 10 High-Yield Hard Asset Stocks &#x2014; Free PDF</h3>
-  </div>
-  <p style="color:#c8cfe0;margin:0 0 16px;font-size:0.9rem;line-height:1.6;">Updated quarterly: Shipping, Energy, Mining, REITs with YOC &ge;8% + weekly market wrap-up every Friday.</p>
-  <div style="display:flex;gap:8px;flex-wrap:wrap;">
-    <input type="email" id="mb-email-pg" placeholder="your@email.com" required
-      style="padding:12px 14px;border:1px solid #1e1e35;background:#080810;color:#f0f4ff;border-radius:4px;flex:1;min-width:200px;font-size:0.9rem;">
-    <button onclick="if(typeof window.mbSubscribePg!=='undefined')window.mbSubscribePg()"
-      style="padding:12px 24px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;cursor:pointer;font-size:0.9rem;white-space:nowrap;">Get Free PDF &rarr;</button>
-  </div>
-  <p id="mb-msg-pg" style="color:#6b7a99;font-size:0.75rem;margin:10px 0 0;display:none;"></p>
-  <p style="color:#6b7a99;font-size:0.72rem;margin:8px 0 0;">Not financial advice. Unsubscribe anytime. GDPR compliant. Double opt-in.</p>
-</div>
-<script>
-window.mbSubscribePg = function() {
-  var emailEl = document.getElementById('mb-email-pg');
-  var msgEl = document.getElementById('mb-msg-pg');
-  var email = emailEl ? emailEl.value.trim() : '';
-  if (!email || !email.includes('@')) { if(msgEl){msgEl.style.display='block';msgEl.style.color='#ef4444';msgEl.textContent='Please enter a valid email address.';} return; }
-  if(msgEl){msgEl.style.display='block';msgEl.style.color='#D4AF37';msgEl.textContent='Signing up...'}
-  fetch('https://mbcapitalstrategiesgloabal.com/subscribe',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email})}).then(function(r){return r.json()}).then(function(d){if(msgEl){msgEl.style.display='block';if(d.ok){msgEl.style.color='#22c55e';msgEl.textContent=d.msg||"Almost done! Check your email to confirm.";if(emailEl)emailEl.value=''}else{msgEl.style.color='#ef4444';msgEl.textContent=d.msg||"Sign-up failed."}}}).catch(function(){if(msgEl){msgEl.style.display='block';msgEl.style.color='#ef4444';msgEl.textContent='Connection error.'}});
-};
-</script>
-<!-- ======================== END NEWSLETTER ======================== -->
 <footer class="footer">
         <div class="container">
             <div class="footer-bottom" style="border-top: none;">
