@@ -275,19 +275,60 @@ window.mbMidSubscribeEn=function(){
 
 <h2>📬 Subscribe to MB Capital Insider</h2>
     <p class="sub">Every Sunday — free — straight from Marco's portfolio. No AI filler, just genuine analysis.</p>
-    <form method="POST" action="https://cf86455c.sibforms.com/serve/MUIFAIb7f1lflE6kIGEoW0CiaYhm0zlsprpmM3MqGWH_2nB3baUSs94gRBMRJtSDWa2f5R7FWeWWGtjW73wi79soTyWbW6shpsnUEspoIRZhpOpvJloSA_tAm6_i29D4OWhZZxZMaJo3iTmz9GS64hxZDTGXUWp9QF3qgNdjCQDL3Y83JYdFsiB1gEUjMOA8bRE6IIa9I8vwGCpYAw==" data-type="subscription">
+    <div id="mb-en-free-form">
       <div class="form-row">
-        <input type="email" name="EMAIL" placeholder="your@email.com" required aria-label="Email address">
-        <button type="submit">Get PDF + Newsletter &rarr;</button>
+        <input type="email" id="mb-en-free-email" placeholder="your@email.com" required aria-label="Email address" autocomplete="email">
+        <button type="button" onclick="mbEnFreeSubscribe()">Get PDF + Newsletter &rarr;</button>
       </div>
       <div class="form-check">
-        <input type="checkbox" id="optin" name="OPT_IN" value="1" required>
-        <label for="optin">I accept the <a href="/pages/privacy.html">Privacy Policy</a> and want to receive the MB Capital Insider. Unsubscribe anytime. (Double opt-in: confirmation email follows)</label>
+        <input type="checkbox" id="mb-en-free-optin" required>
+        <label for="mb-en-free-optin">I accept the <a href="/pages/privacy.html">Privacy Policy</a> and want to receive the MB Capital Insider. Unsubscribe anytime. (Double opt-in: confirmation email follows)</label>
       </div>
-      <input type="hidden" name="email_address_check" value="">
-      <input type="hidden" name="locale" value="en">
-      <p class="fine-print">Not financial advice. GDPR compliant. Data stored via Brevo (EU-based).</p>
-    </form>
+      <p id="mb-en-free-msg" style="font-size:0.85rem;margin:8px 0 0;display:none;"></p>
+      <p class="fine-print">Not financial advice. GDPR compliant. Double opt-in via Brevo (EU-based).</p>
+    </div>
+    <script>
+    (function(){
+      window.mbEnFreeSubscribe = function(){
+        var el = document.getElementById("mb-en-free-email");
+        var cb = document.getElementById("mb-en-free-optin");
+        var msg = document.getElementById("mb-en-free-msg");
+        var email = el ? el.value.trim() : "";
+        if(!email || !email.includes("@")){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email address.";}
+          return;
+        }
+        if(!cb || !cb.checked){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please accept the Privacy Policy.";}
+          return;
+        }
+        if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Signing up...";}
+        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({email:email})
+        })
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(msg){
+            msg.style.display="block";
+            if(d.ok){
+              msg.style.color="#22c55e";
+              msg.textContent=d.msg||"Almost done! Please check your email to confirm (double opt-in).";
+              if(el)el.value="";
+              if(cb)cb.checked=false;
+            } else {
+              msg.style.color="#ef4444";
+              msg.textContent=d.msg||"Sign-up failed. Please try again.";
+            }
+          }
+        })
+        .catch(function(){
+          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again later.";}
+        });
+      };
+    })();
+    </script>
   </div>
 
   <!-- SAMPLE PREVIEW -->
@@ -356,12 +397,6 @@ window.mbMidSubscribeEn=function(){
 </footer>
 
 <script>
-if(document.querySelector('form[action*="sibforms.com"]')){
-  var s=document.createElement('script');
-  s.defer=true;
-  s.src='https://sibforms.com/forms/end-form/build/main.js';
-  document.head.appendChild(s);
-}
 // Affiliate click tracking
 document.querySelectorAll('a[href*="everflow"],a[href*="impact.com"],a[href*="investingpro"]').forEach(function(link){
   link.addEventListener('click',function(){
