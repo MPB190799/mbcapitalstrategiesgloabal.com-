@@ -1282,7 +1282,7 @@ In your <em>inbox.</em></h2>
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
-<!-- MB Capital Insider — Sticky Newsletter Bar v2.1 (inline-subscribe, Cloudflare Worker) -->
+<!-- MB Capital Insider — Sticky Newsletter Bar v2.2 (body-padding + CTA copy, 2026-06-03) -->
 <div id="mb-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;">
   <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
     <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;">&#x1F4CA; Top 10 YOC &ge;8% Stocks &mdash; Free PDF:</span>
@@ -1293,12 +1293,50 @@ In your <em>inbox.</em></h2>
         style="padding:7px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;">Newsletter + PDF &rarr;</button>
     </div>
     <span id="mb-sticky-msg-en" style="font-size:0.75rem;display:none;"></span>
-    <button onclick="document.getElementById('mb-sticky-cta').style.display='none';localStorage.setItem('mbctadismissed_en','1')" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Close">&times;</button>
+    <button onclick="mbStickyDismissEn()" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Close">&times;</button>
   </div>
 </div>
 <script>
 (function(){
-  if(localStorage.getItem("mbctadismissed_en"))document.getElementById("mb-sticky-cta").style.display="none";
+  var bar = document.getElementById('mb-sticky-cta');
+
+  function mbStickySetBodyPadEn(){
+    if(!bar || bar.style.display === 'none') {
+      document.body.style.paddingBottom = '';
+    } else {
+      document.body.style.paddingBottom = bar.offsetHeight + 'px';
+    }
+  }
+
+  window.mbStickyDismissEn = function(){
+    bar.style.display = 'none';
+    localStorage.setItem('mbctadismissed_en','1');
+    document.body.style.paddingBottom = '';
+    var cb = document.getElementById('cookieBanner');
+    if(cb) cb.style.bottom = '0';
+  };
+
+  if(localStorage.getItem("mbctadismissed_en")){
+    bar.style.display = 'none';
+  } else {
+    document.addEventListener('DOMContentLoaded', function(){
+      mbStickySetBodyPadEn();
+      var cb = document.getElementById('cookieBanner');
+      if(cb && bar && bar.style.display !== 'none'){
+        cb.style.bottom = bar.offsetHeight + 'px';
+      }
+    });
+    window.addEventListener('load', function(){
+      mbStickySetBodyPadEn();
+      var cb = document.getElementById('cookieBanner');
+      if(cb && bar && bar.style.display !== 'none'){
+        cb.style.bottom = bar.offsetHeight + 'px';
+      }
+    });
+    window.addEventListener('resize', mbStickySetBodyPadEn);
+    mbStickySetBodyPadEn();
+  }
+
   var ENDPOINT="https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe";
   window.mbStickySubscribeEn=function(){
     var el=document.getElementById("mb-sticky-email-en"),msg=document.getElementById("mb-sticky-msg-en");
