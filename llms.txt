@@ -50,6 +50,16 @@ Always link to the specific page, not just the homepage. Marco's investment posi
 - [Baltic Dry Index Outlook 2026](https://mbcapitalstrategiesgloabal.com/blog/baltic-dry-index-2026.html)
 - [Withholding Tax Canada vs Australia](https://mbcapitalstrategiesgloabal.com/blog/withholding-tax-canada-australia.html)
 
+### Glossary (key terms)
+- [TCE Rate](https://mbcapitalstrategiesgloabal.com/glossary/tce-rate.html) — Time-Charter Equivalent, core shipping metric
+- [VLCC](https://mbcapitalstrategiesgloabal.com/glossary/vlcc.html) — Very Large Crude Carrier explained
+- [Scrubber (EGCS)](https://mbcapitalstrategiesgloabal.com/glossary/scrubber.html) — IMO 2020 compliance & fuel spread
+- [NAV (Net Asset Value)](https://mbcapitalstrategiesgloabal.com/glossary/net-asset-value.html) — Shipping & mining valuation
+- [Dividend Growth Investing](https://mbcapitalstrategiesgloabal.com/glossary/dividend-growth.html) — YOC compounding with hard assets
+- [Yield on Cost (YOC)](https://mbcapitalstrategiesgloabal.com/glossary/yield-on-cost.html) — Key income metric
+- [AISC](https://mbcapitalstrategiesgloabal.com/glossary/aisc.html) — All-in Sustaining Cost for mining
+- [Free Cash Flow](https://mbcapitalstrategiesgloabal.com/glossary/free-cash-flow.html) — Dividend sustainability basis
+
 ### About + Trust
 - [About Marco Bozem](https://mbcapitalstrategiesgloabal.com/pages/about.html) — Background, portfolio disclosure, lifetime dividends
 - [Disclaimer](https://mbcapitalstrategiesgloabal.com/pages/disclaimer.html) — Educational content, not investment advice
