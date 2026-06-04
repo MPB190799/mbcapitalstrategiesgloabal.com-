@@ -23,6 +23,8 @@
 <!-- LCP-Fix: Fonts non-blocking (eliminates render-blocking resource) -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
+<link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
@@ -1178,5 +1180,36 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 <!-- AdSense loaded after LCP to prevent Google Funding Choices CMP from blocking hero render -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+<!-- Sticky Research CTA bar — depth navigation, no newsletter (EN-only policy) v1.0 2026-06-04 -->
+<div id="en-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
+  <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
+    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;font-family:'JetBrains Mono',monospace;">MB Capital Strategies &mdash; Free Hard Asset Research:</span>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+      <a href="pages/blog.html" style="padding:6px 14px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;">Browse Research &rarr;</a>
+      <a href="pages/calculators.html" style="padding:6px 14px;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;">Free Calculators &rarr;</a>
+    </div>
+    <button onclick="document.getElementById('en-sticky-cta').style.display='none';localStorage.setItem('enstickydismissed','1');document.body.style.paddingBottom='';" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Close">&times;</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(!localStorage.getItem('enstickydismissed')){
+    var bar = document.getElementById('en-sticky-cta');
+    // Show after 4s scroll engagement (not immediately — less jarring)
+    var shown = false;
+    var show = function(){
+      if(shown) return;
+      shown = true;
+      bar.style.display = 'block';
+      document.body.style.paddingBottom = (bar.offsetHeight + 4) + 'px';
+    };
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 300) show();
+    }, {passive:true});
+    setTimeout(show, 8000); // fallback: show after 8s regardless
+  }
+})();
+</script>
 </body>
 </html>
