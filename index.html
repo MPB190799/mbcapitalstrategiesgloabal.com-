@@ -21,6 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- LCP-Fix: Fonts non-blocking (eliminates render-blocking resource) -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 
@@ -514,6 +515,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
 .hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
 .hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:8px}
+/* CRO: primary CTA filled (Browse Research) — secondary stays ghost */
+.hero-ctas .btn:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.hero-ctas .btn:first-child::before{display:none}
+.hero-ctas .btn:first-child:hover{background:var(--accent-bright);border-color:var(--accent-bright);color:var(--bg)}
 .btn-link{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-muted);position:relative;padding:6px 0;transition:color var(--t-fast)}
 .btn-link::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;opacity:.3;transition:opacity var(--t-fast)}
 .btn-link:hover{color:var(--accent)}
