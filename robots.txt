@@ -60,3 +60,4 @@ Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-blog.xml
 Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-tools.xml
 Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-video.xml
 Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-bestenlisten.xml
+Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-glossary.xml
