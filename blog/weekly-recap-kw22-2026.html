@@ -140,7 +140,52 @@
 
 <body>
 
-<nav class="nav"></nav>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <picture><source srcset="../Logo.webp" type="image/webp"><img src="../Logo.png" alt="MB Capital Strategies" class="nav-logo-img" style="height:40px;margin-right:10px;" fetchpriority="high"></picture>
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                        <li><a href="../pages/strategy.html">80/20 Strategy</a></li>
+                        <li><a href="../pages/dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/shipping.html">Shipping</a></li>
+                        <li><a href="../pages/pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="../pages/mining.html">Mining</a></li>
+                        <li><a href="../pages/energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="../pages/upstream.html">Upstream Producers</a></li>
+                        <li><a href="../pages/high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="../pages/supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Best-of 2026</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/best-lng.html">Best LNG Stocks</a></li>
+                        <li><a href="../pages/best-tanker.html">Best Tanker Stocks</a></li>
+                        <li><a href="../pages/best-high-yield.html">Top High-Yield</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/glossary.html" class="nav-link">Glossary</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link active">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
 
 <nav class="breadcrumbs">
   <a href="/">Home</a> &rsaquo;
