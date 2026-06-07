@@ -262,7 +262,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .lang-flag:hover{color:var(--accent);border-color:var(--accent)}
 .theme-btn{width:34px;height:34px;border:1px solid var(--border-strong);border-radius:999px;display:grid;place-items:center;color:var(--fg-muted);transition:all var(--t-fast);flex-shrink:0}
 .theme-btn:hover{color:var(--accent);border-color:var(--accent)}
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:36px;height:36px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
 .nav-hamburger span{display:block;width:16px;height:1px;background:var(--accent);transition:.3s}
 .nav-mobile{display:none;position:fixed;top:76px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:20px var(--pad) 32px;z-index:49;max-height:calc(100vh - 76px);overflow-y:auto}
 .nav-mobile.open{display:block}
@@ -580,6 +580,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Touch-target min 44px — .btn padding:14px gives ~40px; explicit min-height closes the gap */
   .hero-ctas .btn{min-height:44px}
+  /* Touch-target min 44px for theme toggle button on mobile — was 34px */
+  .theme-btn{width:44px;height:44px}
 }
 </style>
 <section class="hero" id="hero">
