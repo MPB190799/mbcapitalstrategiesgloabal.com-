@@ -439,6 +439,9 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .hero-meta{display:none}
   .hero-title{font-size:clamp(44px,10vw,72px)}
   .logo-name{font-size:16px}
+  /* Touch-targets P0: lang-switcher + theme-btn ≥44px on mobile (was ~22px / 34px) */
+  .lang-flag{min-height:44px;min-width:44px;padding:0 12px;justify-content:center;box-sizing:border-box}
+  .theme-btn{width:44px;height:44px}
 }
 @media (max-width:760px){
   /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
