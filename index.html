@@ -440,6 +440,15 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   .hero-title{font-size:clamp(44px,10vw,72px)}
   .logo-name{font-size:16px}
 }
+@media (max-width:760px){
+  /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
+     desktop scrim (.92) causes an almost-black hero. Lighten to a gentle top/bottom fade only,
+     keeping text readable without a dark overlay blocking content. CRO-P0 fix. */
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
+  }
+}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
 <script type="application/ld+json">
