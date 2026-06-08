@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Value (EV): Meaning, Formula & EV/EBITDA</title>
+<meta name="description" content="Enterprise Value (EV) explained: EV formula, difference from market cap, EV/EBITDA ratio for mining and shipping stocks, and how to use EV to compare companies across capital structures.">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html">
+<meta property="og:title" content="Enterprise Value (EV): Meaning, Formula & EV/EBITDA">
+<meta property="og:description" content="Enterprise Value formula, EV vs market cap, EV/EBITDA benchmarks for mining and shipping, and how debt affects valuation. Practical guide for hard-asset investors.">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Enterprise Value (EV): Meaning, Formula & EV/EBITDA">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Enterprise Value","alternateName":["EV","firm value","total enterprise value","TEV"],"description":"Enterprise Value (EV) is the total economic value of a company, representing what it would cost an acquirer to buy the entire business — including equity, debt, minority interest and preferred shares, minus cash. EV is capital-structure neutral: it ignores how a company is financed, making it the preferred metric for comparing companies with different debt levels. EV/EBITDA is the most widely used EV multiple in hard-asset sectors (mining, shipping, energy) because EBITDA strips out depreciation distortions from capital-intensive balance sheets.","url":"https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html","inDefinedTermSet":{"@type":"DefinedTermSet","name":"MB Capital Strategies Investing Glossary","url":"https://mbcapitalstrategiesgloabal.com/pages/glossary.html"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Enterprise Value (EV): Meaning, Formula & EV/EBITDA",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {"@type": "Organization", "name": "MB Capital Strategies"},
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "wordCount": 1680,
+  "description": "Enterprise Value explained for hard-asset investors: EV formula, EV vs market cap, EV/EBITDA benchmarks for mining and shipping, debt adjustment and practical examples."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://mbcapitalstrategiesgloabal.com/pages/glossary.html"},
+    {"@type": "ListItem", "position": 3, "name": "Enterprise Value", "item": "https://mbcapitalstrategiesgloabal.com/glossary/enterprise-value.html"}
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#0a0e14;color:#d0d3e2;line-height:1.8;max-width:860px;margin:0 auto;padding:40px 24px}
+h1{color:#D4AF37;font-size:1.8rem;font-weight:800;margin:0 0 12px}
+h2{color:#D4AF37;font-size:1.3rem;font-weight:700;margin:32px 0 12px;border-left:4px solid #D4AF37;padding-left:12px}
+h3{color:#D4AF37;font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+p{margin:0 0 16px}
+.formula{background:#13151c;border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:16px 20px;font-family:monospace;color:#D4AF37;margin:16px 0;font-size:1rem}
+.example-box{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.disclaimer{font-size:0.78rem;color:#888aa0;border-top:1px solid #222;padding-top:20px;margin-top:40px}
+a{color:#D4AF37}
+.breadcrumb{color:#888aa0;font-size:0.85rem;margin-bottom:28px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:rgba(212,175,55,.15);color:#D4AF37;padding:10px;text-align:left;font-size:0.9rem}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:0.9rem}
+tr:hover{background:rgba(212,175,55,.04)}
+.author-box{display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px}
+.tag{display:inline-block;background:rgba(212,175,55,.12);color:#D4AF37;padding:3px 10px;border-radius:12px;font-size:0.8rem;margin:0 4px 4px 0}
+</style>
+</head>
+<body>
+<header style="background:#050508;border-bottom:1px solid rgba(212,175,55,0.18);padding:12px 0;position:sticky;top:0;z-index:100;margin:-40px -24px 32px">
+  <nav style="max-width:860px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <a href="/" style="color:#D4AF37;font-weight:800;font-size:1.1rem;text-decoration:none">MB Capital Strategies</a>
+    <div style="display:flex;gap:20px;font-size:0.9rem">
+      <a href="/pages/glossary.html" style="color:#d0d3e2;text-decoration:none">Glossary</a>
+      <a href="/blog/" style="color:#d0d3e2;text-decoration:none">Blog</a>
+      <a href="/pages/about.html" style="color:#d0d3e2;text-decoration:none">About</a>
+    </div>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/pages/glossary.html">Glossary</a> › Enterprise Value</div>
+
+<h1>Enterprise Value (EV): Formula, Uses and Hard-Asset Applications</h1>
+
+<p><strong>Enterprise Value (EV)</strong> is the total economic value of a company — the price an acquirer would pay to purchase the entire business, take on all its debt, and pocket all its cash. Unlike market capitalisation, EV is capital-structure neutral, which makes it the standard metric for comparing companies that have very different debt loads.</p>
+
+<p>In the sectors I follow — shipping, mining, upstream energy, pipelines — debt levels vary enormously between companies. A tanker company with a fully leveraged, newly built fleet looks completely different from a debt-free operator with older ships. Market cap alone gives a misleading comparison. EV equalises the playing field.</p>
+
+<!-- Ad slot 1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>The Enterprise Value Formula</h2>
+
+<div class="formula">
+EV = Market Cap + Total Debt + Preferred Shares + Minority Interest − Cash & Cash Equivalents
+</div>
+
+<p>Breaking this down:</p>
+<ul>
+<li><strong>Market Cap</strong> = Share price × shares outstanding (equity value)</li>
+<li><strong>+ Total Debt</strong> = Short-term + long-term borrowings, including lease obligations (IFRS 16 material for shipping)</li>
+<li><strong>+ Preferred Shares</strong> = Have seniority over common equity, so must be included in the total acquisition cost</li>
+<li><strong>+ Minority Interest</strong> = The portion of subsidiaries not owned by the parent</li>
+<li><strong>− Cash</strong> = An acquirer receives this cash, effectively reducing the net purchase price</li>
+</ul>
+
+<div class="example-box">
+<strong>Example — BHP Group (simplified, FY2025):</strong><br>
+Market Cap: ~$120bn<br>
+Net Debt: ~$12bn<br>
+Minority Interest: ~$4bn<br>
+EV ≈ $136bn<br><br>
+<em>Note: BHP's net debt of $12bn is moderate relative to its $30bn+ EBITDA, giving an EV/EBITDA of ~4.5x — below long-term sector average of 5–7x at mid-cycle.</em>
+</div>
+
+<h2>EV vs. Market Capitalisation</h2>
+
+<p>The distinction matters most when comparing two companies with different capital structures:</p>
+
+<table>
+<thead><tr><th>Company</th><th>Market Cap</th><th>Net Debt</th><th>EV</th><th>EBITDA</th><th>EV/EBITDA</th></tr></thead>
+<tbody>
+<tr><td>Company A (low debt)</td><td>$5bn</td><td>$0.5bn</td><td>$5.5bn</td><td>$1bn</td><td>5.5x</td></tr>
+<tr><td>Company B (high debt)</td><td>$4bn</td><td>$3bn</td><td>$7bn</td><td>$1bn</td><td>7.0x</td></tr>
+</tbody>
+</table>
+
+<p>Company B has a lower market cap, but it is actually more expensive on an EV/EBITDA basis because you are also taking on $3bn of debt. Many retail investors miss this and focus only on the "cheap" share price.</p>
+
+<h2>EV/EBITDA: The Primary Valuation Multiple</h2>
+
+<p>The <strong>EV/EBITDA ratio</strong> compares enterprise value to earnings before interest, taxes, depreciation and amortisation. It is preferred in capital-intensive industries because:</p>
+<ul>
+<li>EBITDA is pre-financing (no interest) → capital-structure neutral like EV itself</li>
+<li>EBITDA adds back depreciation → removes distortions from different asset ages or accounting choices</li>
+<li>More comparable across geographies with different tax regimes</li>
+</ul>
+
+<div class="formula">
+EV/EBITDA = Enterprise Value / EBITDA
+</div>
+
+<p>Sector benchmarks for hard-asset companies (2025–2026 mid-cycle estimates):</p>
+
+<table>
+<thead><tr><th>Sector</th><th>Typical EV/EBITDA range</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Diversified mining (BHP, Rio)</td><td>4–7x</td><td>Lower at commodity peak</td></tr>
+<tr><td>Precious metals (Barrick, Newmont)</td><td>6–10x</td><td>Gold price sensitive</td></tr>
+<tr><td>Tanker shipping</td><td>4–8x</td><td>Freight rate cycle matters</td></tr>
+<tr><td>LNG shipping (FLEX LNG)</td><td>6–10x</td><td>Long-term charters → premium</td></tr>
+<tr><td>Upstream oil & gas</td><td>3–6x</td><td>Oil price at $70–80/bbl basis</td></tr>
+<tr><td>Midstream pipelines</td><td>8–13x</td><td>Fee-based, lower risk = premium</td></tr>
+<tr><td>REITs</td><td>12–20x (EV/FFO more common)</td><td>FFO more relevant than EBITDA</td></tr>
+</tbody>
+</table>
+
+<!-- Ad slot 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>EV in Shipping: The Net Asset Value Connection</h2>
+
+<p>For shipping stocks, EV has a direct connection to <a href="/glossary/net-asset-value.html">Net Asset Value (NAV)</a>. In shipping, analysts often estimate the current market value of the fleet (using broker assessments or second-hand vessel prices) and subtract net debt to arrive at NAV per share.</p>
+
+<p>If a tanker company trades at a market cap below NAV, the EV may still exceed asset value if the company carries significant debt. This is why shipping investors look at both:</p>
+<ul>
+<li><strong>P/NAV</strong> (market cap relative to net asset value) — tells you if equity is cheap</li>
+<li><strong>EV/DAE</strong> (EV relative to Depreciation-Adjusted EBITDA) — tells you if the whole enterprise is cheap</li>
+</ul>
+
+<h2>Lease Obligations Under IFRS 16</h2>
+
+<p>Since IFRS 16 came into force, operating leases are capitalised onto the balance sheet. For shipping companies that charter-in vessels (rather than owning them outright), this can significantly inflate reported debt and therefore EV. When comparing across periods (pre- vs. post-IFRS 16) or between a ship-owner and a charter-heavy operator, you must adjust EV or use pre-IFRS 16 metrics for consistency.</p>
+
+<h2>EV/EBITDA Limitations</h2>
+
+<p>EV/EBITDA is not perfect:</p>
+<ul>
+<li>EBITDA ignores capital expenditure. A company with heavy reinvestment needs (building new ships, sinking new mines) will have lower free cash flow than EBITDA implies.</li>
+<li>In mining, depletion of resources is a real economic cost that depreciation approximates — adding it back in EBITDA can overstate true earnings power.</li>
+<li>At the top of a commodity cycle, EBITDA is inflated → EV/EBITDA appears falsely low. Use mid-cycle EBITDA estimates to avoid buying cyclical peaks disguised as "cheap" multiples.</li>
+</ul>
+
+<p>My preference: combine EV/EBITDA with <a href="/glossary/free-cash-flow.html">free cash flow</a> yield and dividend coverage ratio. No single metric tells the full story in <a href="/glossary/hard-assets-investing.html">hard assets investing</a>.</p>
+
+<div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="/assets/marco-profile.jpg" alt="Marco Bozem — MB Capital Strategies hard assets analyst" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco applies EV-based valuation to shipping, mining and energy companies, focusing on capital-structure-adjusted comparisons across the commodity cycle. All analysis based on publicly available data. <em>Not investment advice.</em></p>
+  </div>
+</div>
+
+<h2>Related Concepts</h2>
+<p>
+<a href="/glossary/ebitda.html" class="tag">EBITDA</a>
+<a href="/glossary/free-cash-flow.html" class="tag">Free Cash Flow</a>
+<a href="/glossary/debt-ebitda.html" class="tag">Debt/EBITDA</a>
+<a href="/glossary/net-asset-value.html" class="tag">Net Asset Value</a>
+<a href="/glossary/cash-flow.html" class="tag">Cash Flow</a>
+<a href="/glossary/hard-assets-investing.html" class="tag">Hard Assets Investing</a>
+<a href="/glossary/dividend-safety.html" class="tag">Dividend Safety</a>
+</p>
+
+<p class="disclaimer">This glossary entry is for educational purposes only. Nothing on this page constitutes investment advice. All valuation multiples are illustrative ranges and not specific buy or sell recommendations. Please consult a qualified financial adviser before making investment decisions.</p>
+</body>
+</html>
