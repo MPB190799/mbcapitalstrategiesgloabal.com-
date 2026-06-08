@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Return on Equity (ROE): Formula, ROIC &amp; Hard-Asset Benchmarks</title>
+<meta name="description" content="Return on Equity (ROE) and ROIC explained for mining, shipping and energy investors. Formula, DuPont analysis, why ROIC beats ROE, and sector benchmarks for 2026.">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html">
+<meta property="og:title" content="Return on Equity (ROE): Formula, ROIC &amp; Hard-Asset Benchmarks">
+<meta property="og:description" content="ROE and ROIC explained: DuPont breakdown, why ROIC is more useful for capital-intensive companies, and 2026 sector benchmarks for mining, shipping and upstream energy.">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Return on Equity (ROE): Formula, ROIC &amp; Hard-Asset Benchmarks">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Return on Equity","alternateName":["ROE","return on equity ratio","shareholders return","equity return"],"description":"Return on Equity (ROE) measures how much profit a company generates for each euro or dollar of shareholder equity. It is calculated as net income divided by average shareholders equity. In capital-intensive sectors like mining and shipping, ROE must be interpreted alongside debt levels and asset age — a high ROE driven by leverage or book-value erosion can be misleading. Return on Invested Capital (ROIC) is often preferred because it includes both equity and debt capital, making it more robust for comparing hard-asset businesses across different capital structures.","url":"https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html","inDefinedTermSet":{"@type":"DefinedTermSet","name":"MB Capital Strategies Investing Glossary","url":"https://mbcapitalstrategiesgloabal.com/pages/glossary.html"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Return on Equity (ROE): Formula, ROIC & Hard-Asset Benchmarks",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {"@type": "Organization", "name": "MB Capital Strategies"},
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "wordCount": 1700,
+  "description": "Return on Equity and ROIC explained for hard-asset investors: DuPont analysis, leverage traps, WACC vs ROIC spread, and 2026 sector benchmarks for mining, shipping, and energy."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://mbcapitalstrategiesgloabal.com/pages/glossary.html"},
+    {"@type": "ListItem", "position": 3, "name": "Return on Equity", "item": "https://mbcapitalstrategiesgloabal.com/glossary/return-on-equity.html"}
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#0a0e14;color:#d0d3e2;line-height:1.8;max-width:860px;margin:0 auto;padding:40px 24px}
+h1{color:#D4AF37;font-size:1.8rem;font-weight:800;margin:0 0 12px}
+h2{color:#D4AF37;font-size:1.3rem;font-weight:700;margin:32px 0 12px;border-left:4px solid #D4AF37;padding-left:12px}
+h3{color:#D4AF37;font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+p{margin:0 0 16px}
+.formula{background:#13151c;border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:16px 20px;font-family:monospace;color:#D4AF37;margin:16px 0;font-size:1rem}
+.example-box{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.warn-box{background:rgba(200,50,50,.07);border:1px solid rgba(200,50,50,.25);border-radius:8px;padding:16px 20px;margin:16px 0}
+.disclaimer{font-size:0.78rem;color:#888aa0;border-top:1px solid #222;padding-top:20px;margin-top:40px}
+a{color:#D4AF37}
+.breadcrumb{color:#888aa0;font-size:0.85rem;margin-bottom:28px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:rgba(212,175,55,.15);color:#D4AF37;padding:10px;text-align:left;font-size:0.9rem}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:0.9rem}
+tr:hover{background:rgba(212,175,55,.04)}
+.author-box{display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px}
+.tag{display:inline-block;background:rgba(212,175,55,.12);color:#D4AF37;padding:3px 10px;border-radius:12px;font-size:0.8rem;margin:0 4px 4px 0}
+</style>
+</head>
+<body>
+<header style="background:#050508;border-bottom:1px solid rgba(212,175,55,0.18);padding:12px 0;position:sticky;top:0;z-index:100;margin:-40px -24px 32px">
+  <nav style="max-width:860px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <a href="/" style="color:#D4AF37;font-weight:800;font-size:1.1rem;text-decoration:none">MB Capital Strategies</a>
+    <div style="display:flex;gap:20px;font-size:0.9rem">
+      <a href="/pages/glossary.html" style="color:#d0d3e2;text-decoration:none">Glossary</a>
+      <a href="/blog/" style="color:#d0d3e2;text-decoration:none">Blog</a>
+      <a href="/pages/about.html" style="color:#d0d3e2;text-decoration:none">About</a>
+    </div>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/pages/glossary.html">Glossary</a> › Return on Equity</div>
+
+<h1>Return on Equity (ROE): Formula, DuPont Analysis &amp; ROIC for Hard-Asset Investors</h1>
+
+<p><strong>Return on Equity (ROE)</strong> measures how much net profit a company generates for every dollar of shareholder equity on its books. It is one of the most widely cited profitability metrics in finance — and one of the most frequently misread in capital-intensive sectors like mining, shipping and upstream energy.</p>
+
+<p>In my analysis of hard-asset companies, ROE rarely travels alone. I pair it with <strong>Return on Invested Capital (ROIC)</strong> and cross-check it against the company's cost of capital. A high ROE can mean genuine business quality — or it can simply reflect a heavily leveraged balance sheet eroding equity through buybacks. Knowing which is which is the difference between a quality investment and a value trap.</p>
+
+<!-- Ad slot 1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>The Basic ROE Formula</h2>
+
+<div class="formula">
+ROE = Net Income / Average Shareholders' Equity × 100
+</div>
+
+<p>Use <em>average</em> equity (beginning of year + end of year, divided by 2) rather than just year-end equity. This corrects for large equity events (share issuances, buybacks) mid-year.</p>
+
+<div class="example-box">
+<strong>Example — Barrick Gold (simplified, FY2025):</strong><br>
+Net Income: ~$1.6bn<br>
+Average Shareholders' Equity: ~$21bn<br>
+ROE ≈ 7.6%<br><br>
+<em>Is 7.6% good? For a gold miner with a fortress balance sheet (net cash position) and high reinvestment cycle, yes — it reflects genuine returns on mostly unlevered equity. Compare this to a peer with 20% ROE driven by 3× leverage, where the same underlying business earns a similar return on assets.</em>
+</div>
+
+<h2>The DuPont Decomposition</h2>
+
+<p>The three-factor DuPont model breaks ROE into its component drivers. It is the most useful diagnostic tool for understanding <em>why</em> ROE is high or low:</p>
+
+<div class="formula">
+ROE = Net Profit Margin × Asset Turnover × Financial Leverage<br><br>
+= (Net Income / Revenue) × (Revenue / Total Assets) × (Total Assets / Equity)
+</div>
+
+<p>This decomposition reveals the source of a company's return profile:</p>
+
+<table>
+<thead><tr><th>Driver</th><th>What it measures</th><th>Hard-asset implication</th></tr></thead>
+<tbody>
+<tr><td>Net Profit Margin</td><td>How much of each dollar of revenue becomes profit</td><td>Sensitive to commodity price, cost of production, and hedging. Tankers: 15–35% in a strong freight market, near zero in a downcycle</td></tr>
+<tr><td>Asset Turnover</td><td>Revenue generated per dollar of assets</td><td>Low for capital-heavy businesses (mines, ships). A diversified miner turns over ~0.3–0.5× its asset base annually</td></tr>
+<tr><td>Financial Leverage</td><td>How much equity is amplified by debt</td><td>A leverage ratio of 2× means assets are twice the size of equity. Higher leverage amplifies ROE in good years — and destroys equity in bad years</td></tr>
+</tbody>
+</table>
+
+<div class="warn-box">
+<strong>The Leverage Trap:</strong> A company buying back shares reduces equity, automatically inflating ROE even if underlying profitability is unchanged. During the 2021–2023 tanker boom, many shipping companies posted 40–80% ROEs — mostly real, but partly driven by equity distributions compressing the denominator. Always check the DuPont breakdown.
+</div>
+
+<h2>Why ROIC Is Preferred for Capital-Intensive Companies</h2>
+
+<p><strong>Return on Invested Capital (ROIC)</strong> includes both equity and debt in the denominator, making it capital-structure neutral and more comparable across companies:</p>
+
+<div class="formula">
+ROIC = NOPAT / Invested Capital<br><br>
+where NOPAT = Net Operating Profit After Tax = EBIT × (1 − tax rate)<br>
+Invested Capital = Total Assets − Non-interest-bearing Current Liabilities − Cash
+</div>
+
+<p>ROIC answers the question: "For every dollar of capital committed to this business (regardless of how it was funded), what return does the company generate?" This is the metric I use when comparing <a href="/glossary/mining-royalty-stocks.html">mining royalty companies</a> against direct miners, or pipeline operators against tanker companies — their leverage profiles are completely different, but ROIC is apples-to-apples.</p>
+
+<h2>ROIC vs. WACC: The Value Creation Test</h2>
+
+<p>A company creates shareholder value only when ROIC exceeds its Weighted Average Cost of Capital (WACC):</p>
+
+<div class="formula">
+Value Creation: ROIC &gt; WACC (economic profit positive)<br>
+Value Destruction: ROIC &lt; WACC (capital is being consumed)
+</div>
+
+<p>WACC for hard-asset companies typically runs 8–12% (higher than tech or consumer staples because of commodity-cycle risk). A mining company with a 14% ROIC and 10% WACC is genuinely creating value. A shipper with a 7% ROIC and 11% WACC is destroying capital even if it appears profitable on paper.</p>
+
+<h2>Sector Benchmarks: ROE and ROIC (2025–2026, mid-cycle)</h2>
+
+<table>
+<thead><tr><th>Sector</th><th>Typical ROE</th><th>Typical ROIC</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Diversified mining (BHP, Rio Tinto, Glencore)</td><td>12–25%</td><td>10–18%</td><td>Peak years 30%+; trough years near zero</td></tr>
+<tr><td>Precious metals (Barrick, Newmont)</td><td>6–15%</td><td>5–12%</td><td>Strong in high-gold-price environments; AISC discipline key</td></tr>
+<tr><td>Tanker shipping (TORM, Frontline, DHT)</td><td>15–60%+ (boom)</td><td>10–35%</td><td>Cyclical extremes; leverage amplifies in both directions</td></tr>
+<tr><td>LNG shipping (FLEX LNG, GAIL)</td><td>12–22%</td><td>9–16%</td><td>Long-term charters stabilise returns; lower peak, lower trough</td></tr>
+<tr><td>Upstream E&amp;P (Equinor, Aker BP, Harbour)</td><td>10–30%</td><td>8–20%</td><td>Oil price sensitivity dominates</td></tr>
+<tr><td>Midstream pipelines (Enbridge, TC Energy)</td><td>8–15%</td><td>5–9%</td><td>Fee-based = stable; high debt = ROE higher than ROIC</td></tr>
+<tr><td>REITs (Realty Income, MPW)</td><td>4–10%</td><td>3–7%</td><td>Asset intensity + leverage structures inflate/depress ROE; FFO-based metrics more relevant</td></tr>
+</tbody>
+</table>
+
+<!-- Ad slot 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>ROE in Shipping: A Cyclical Lens</h2>
+
+<p>Shipping ROEs are some of the most volatile in any sector. During the 2021–2023 tanker supercycle, companies like <a href="/blog/torm-dividend-analysis-2026.html">TORM</a> and <a href="/blog/frontline-vs-scorpio-tankers-2026.html">Frontline</a> generated ROEs of 60–80%. These were not manufactured by financial engineering — they reflected genuine cash flows from freight rates 3–5× above long-run averages.</p>
+
+<p>The trap: investors extrapolating 2022 ROEs into 2025 or 2026 valuations. The correct interpretation of shipping ROE is time-weighted: what is the average ROE across a full shipping cycle (typically 7–10 years)? For the larger tanker companies, mid-cycle ROE converges to 10–18%. That is still an excellent return on equity — the problem is the earnings volatility that comes with it.</p>
+
+<h2>ROE Pitfalls: When High ROE Misleads</h2>
+
+<p>Four situations where a high ROE can be a red flag rather than a green light:</p>
+
+<ol>
+<li><strong>Negative equity:</strong> If accumulated losses or buybacks have pushed shareholders' equity near zero or negative, the ROE formula produces meaningless or infinity results. Some shipping companies post technically infinite ROE because equity is slightly negative. Always check the absolute equity balance.</li>
+<li><strong>Extreme leverage:</strong> A debt-to-equity ratio of 4× means the company's ROE is approximately 4× the underlying return on assets. The ROE looks great — but one bad year can wipe out equity entirely.</li>
+<li><strong>Asset write-downs:</strong> When a company writes down impaired assets (a mine with falling ore grades, ships that are older and less efficient), equity shrinks. The same net income produces a higher ROE. This is accounting noise, not value creation.</li>
+<li><strong>Cyclical peaks:</strong> In commodity businesses, the best years are the worst time to rely on ROE as a normalised profitability measure. Use through-the-cycle averages.</li>
+</ol>
+
+<h2>How I Use ROE in Practice</h2>
+
+<p>My workflow for a new hard-asset investment:</p>
+
+<ol>
+<li><strong>Start with ROIC vs. WACC</strong> — is the business earning above its cost of capital at mid-cycle commodity prices?</li>
+<li><strong>DuPont breakdown</strong> — is the ROE driven by margin, asset efficiency, or leverage? Margin-driven ROE is most durable.</li>
+<li><strong>Through-cycle average</strong> — what did ROE look like over the last full commodity cycle (7–10 years)? Ignore single-year extremes.</li>
+<li><strong>Pair with <a href="/glossary/free-cash-flow.html">free cash flow</a></strong> — does ROE translate to actual cash the company can pay out, reinvest, or use to reduce debt?</li>
+<li><strong>Check <a href="/glossary/dividend-safety.html">dividend coverage</a></strong> — especially for high-yield payers, where high ROE can coexist with an unsustainable dividend if cash conversion is poor.</li>
+</ol>
+
+<p>ROE is useful, but it needs context. In hard assets, the capital cycle matters more than any single-year profitability number. A company entering a capex cycle will see ROE fall — not because the business is deteriorating, but because invested capital is rising before the new assets generate returns. Patience and cycle awareness are the real edge here.</p>
+
+<div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="/assets/marco-profile.jpg" alt="Marco Bozem — MB Capital Strategies investor and analyst" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco analyses mining, shipping and upstream energy stocks with a focus on capital returns, dividend sustainability and through-cycle valuation. All analysis is based on publicly available reports. <em>Not investment advice.</em></p>
+  </div>
+</div>
+
+<p>
+  <span class="tag">ROE</span>
+  <span class="tag">ROIC</span>
+  <span class="tag">DuPont Analysis</span>
+  <span class="tag">Mining Stocks</span>
+  <span class="tag">Shipping Stocks</span>
+  <span class="tag">Hard Assets</span>
+</p>
+
+<p><strong>Related:</strong> <a href="/glossary/free-cash-flow.html">Free Cash Flow</a> · <a href="/glossary/enterprise-value.html">Enterprise Value</a> · <a href="/glossary/dividend-safety.html">Dividend Safety</a> · <a href="/glossary/net-debt.html">Net Debt</a> · <a href="/glossary/hard-assets-investing.html">Hard Assets Investing</a></p>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> This glossary entry is for educational purposes only and does not constitute investment advice. Sector benchmarks are estimates based on historical ranges and may not reflect current or future conditions. Always conduct your own research before making investment decisions.
+</div>
+
+<footer style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(212,175,55,0.15);color:#888aa0;font-size:0.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+  <span>© 2026 MB Capital Strategies</span>
+  <span><a href="/pages/privacy.html" style="color:#888aa0">Privacy</a> · <a href="/pages/imprint.html" style="color:#888aa0">Imprint</a></span>
+</footer>
+</body>
+</html>

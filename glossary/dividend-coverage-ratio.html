@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dividend Coverage Ratio: Formula, Safe Levels &amp; Shipping/Mining Guide</title>
+<meta name="description" content="Dividend Coverage Ratio explained: formula, safe vs. dangerous levels, FCF-based coverage, and why coverage analysis is essential for shipping and mining dividend investors.">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html">
+<meta property="og:title" content="Dividend Coverage Ratio: Formula, Safe Levels &amp; Shipping/Mining Guide">
+<meta property="og:description" content="Dividend coverage ratio: EPS-based vs FCF-based, what counts as safe for tankers and miners, and how to stress-test a dividend before it gets cut. Practical guide for income investors.">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dividend Coverage Ratio: Formula, Safe Levels &amp; Shipping/Mining Guide">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Dividend Coverage Ratio","alternateName":["dividend cover","dividend coverage","DCR","dividend payout inverse"],"description":"The Dividend Coverage Ratio (DCR) measures how many times a company's earnings or free cash flow exceed the total dividend payment. It is the inverse of the payout ratio. A coverage ratio above 2.0x means the company earns twice as much as it pays out in dividends, providing a safety buffer. In cyclical hard-asset sectors (shipping, mining, upstream energy), coverage should be assessed on through-cycle normalised earnings or free cash flow — not just the most recent high-profit year. Coverage below 1.0x means the dividend is not covered by current earnings and requires balance sheet support to sustain.","url":"https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html","inDefinedTermSet":{"@type":"DefinedTermSet","name":"MB Capital Strategies Investing Glossary","url":"https://mbcapitalstrategiesgloabal.com/pages/glossary.html"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Dividend Coverage Ratio: Formula, Safe Levels & Shipping/Mining Guide",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {"@type": "Organization", "name": "MB Capital Strategies"},
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "wordCount": 1720,
+  "description": "Dividend Coverage Ratio explained for hard-asset income investors: EPS-based vs FCF-based coverage, sector-specific thresholds, stress testing, and how to identify dividend cuts before they happen."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://mbcapitalstrategiesgloabal.com/pages/glossary.html"},
+    {"@type": "ListItem", "position": 3, "name": "Dividend Coverage Ratio", "item": "https://mbcapitalstrategiesgloabal.com/glossary/dividend-coverage-ratio.html"}
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#0a0e14;color:#d0d3e2;line-height:1.8;max-width:860px;margin:0 auto;padding:40px 24px}
+h1{color:#D4AF37;font-size:1.8rem;font-weight:800;margin:0 0 12px}
+h2{color:#D4AF37;font-size:1.3rem;font-weight:700;margin:32px 0 12px;border-left:4px solid #D4AF37;padding-left:12px}
+h3{color:#D4AF37;font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+p{margin:0 0 16px}
+.formula{background:#13151c;border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:16px 20px;font-family:monospace;color:#D4AF37;margin:16px 0;font-size:1rem}
+.example-box{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.red-flag{background:rgba(200,50,50,.07);border:1px solid rgba(200,50,50,.25);border-radius:8px;padding:16px 20px;margin:16px 0}
+.disclaimer{font-size:0.78rem;color:#888aa0;border-top:1px solid #222;padding-top:20px;margin-top:40px}
+a{color:#D4AF37}
+.breadcrumb{color:#888aa0;font-size:0.85rem;margin-bottom:28px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:rgba(212,175,55,.15);color:#D4AF37;padding:10px;text-align:left;font-size:0.9rem}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:0.9rem}
+tr:hover{background:rgba(212,175,55,.04)}
+.author-box{display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px}
+.tag{display:inline-block;background:rgba(212,175,55,.12);color:#D4AF37;padding:3px 10px;border-radius:12px;font-size:0.8rem;margin:0 4px 4px 0}
+</style>
+</head>
+<body>
+<header style="background:#050508;border-bottom:1px solid rgba(212,175,55,0.18);padding:12px 0;position:sticky;top:0;z-index:100;margin:-40px -24px 32px">
+  <nav style="max-width:860px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <a href="/" style="color:#D4AF37;font-weight:800;font-size:1.1rem;text-decoration:none">MB Capital Strategies</a>
+    <div style="display:flex;gap:20px;font-size:0.9rem">
+      <a href="/pages/glossary.html" style="color:#d0d3e2;text-decoration:none">Glossary</a>
+      <a href="/blog/" style="color:#d0d3e2;text-decoration:none">Blog</a>
+      <a href="/pages/about.html" style="color:#d0d3e2;text-decoration:none">About</a>
+    </div>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/pages/glossary.html">Glossary</a> › Dividend Coverage Ratio</div>
+
+<h1>Dividend Coverage Ratio: Formula, Safe Levels &amp; Hard-Asset Income Guide</h1>
+
+<p>The <strong>Dividend Coverage Ratio (DCR)</strong> answers one of the most important questions in income investing: can this company afford to keep paying its dividend? It measures how many times a company's earnings or <a href="/glossary/free-cash-flow.html">free cash flow</a> cover the total dividend payment. It is the inverse of the payout ratio and one of my non-negotiable checkpoints before committing to any high-yield position.</p>
+
+<p>In the sectors I track — shipping, mining, upstream energy — dividend yields of 8–20% are common. But a 15% yield means nothing if the dividend gets cut in the next rate downcycle. Coverage analysis is how you separate the sustainable income from the yield traps.</p>
+
+<!-- Ad slot 1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>Dividend Coverage Ratio Formula</h2>
+
+<div class="formula">
+Dividend Coverage Ratio = Earnings Per Share (EPS) / Dividends Per Share (DPS)<br><br>
+or equivalently:<br><br>
+DCR = Net Income / Total Dividends Paid
+</div>
+
+<p>The inverse relationship to payout ratio:</p>
+
+<div class="formula">
+Payout Ratio = 1 / DCR<br>
+e.g. DCR 2.5× = Payout Ratio 40%
+</div>
+
+<div class="example-box">
+<strong>Example — TORM (simplified, FY2024):</strong><br>
+EPS: ~$3.80<br>
+Dividends Per Share: ~$3.40 (variable quarterly, paying out most of earnings)<br>
+DCR = $3.80 / $3.40 = <strong>1.12×</strong><br><br>
+<em>Coverage of 1.12× means TORM is paying out 89% of earnings as dividends. That is fine during a strong freight market — TORM explicitly targets paying out a high fraction of earnings. The question is whether a mid-cycle or trough-rate environment still supports this level of distribution. This is why I stress-test on normalised earnings, not just the best year.</em>
+</div>
+
+<h2>EPS-Based vs. Free Cash Flow-Based Coverage</h2>
+
+<p>EPS-based coverage uses accounting earnings. FCF-based coverage uses actual cash generated from operations minus capital expenditure. For hard-asset companies, I almost always prefer FCF-based coverage:</p>
+
+<div class="formula">
+FCF Coverage = Free Cash Flow Per Share / Dividends Per Share<br><br>
+where Free Cash Flow = Operating Cash Flow − Maintenance Capex
+</div>
+
+<table>
+<thead><tr><th>Why EPS can mislead</th><th>Why FCF is more reliable</th></tr></thead>
+<tbody>
+<tr><td>Depreciation reduces EPS but is not a cash outflow</td><td>FCF reflects actual cash available for distribution</td></tr>
+<tr><td>Non-cash gains inflate EPS (asset sales, FX gains)</td><td>FCF strips out working capital timing effects</td></tr>
+<tr><td>Deferred tax creates EPS/cash divergence</td><td>FCF is what the company actually has to pay dividends</td></tr>
+<tr><td>IFRS 16 lease amortisation distorts EPS in shipping</td><td>Operating cash flow is less distorted by lease accounting</td></tr>
+</tbody>
+</table>
+
+<p>Practical note: for shipping companies that pay <a href="/glossary/variable-dividend.html">variable dividends</a> linked directly to earnings (TORM, Frontline, DHT, CMB.Tech), EPS-coverage and FCF-coverage tend to converge because management explicitly ties the formula to cash generation. For fixed-dividend or progressive-dividend companies, FCF coverage is the more stringent test.</p>
+
+<h2>What Counts as Safe Coverage?</h2>
+
+<table>
+<thead><tr><th>Coverage Ratio</th><th>Payout Ratio</th><th>Risk assessment</th></tr></thead>
+<tbody>
+<tr><td>Below 1.0×</td><td>Above 100%</td><td>Dividend not covered — requires debt or cash drawdown to sustain. High cut risk.</td></tr>
+<tr><td>1.0× – 1.3×</td><td>77% – 100%</td><td>Thin buffer. One bad quarter could trigger a cut. Acceptable only for companies with contracted cash flows (LNG charters, pipeline fees).</td></tr>
+<tr><td>1.3× – 1.7×</td><td>59% – 77%</td><td>Moderate safety. Withstands a modest earnings decline. Standard zone for many mining companies.</td></tr>
+<tr><td>1.7× – 2.5×</td><td>40% – 59%</td><td>Good coverage. Comfortable buffer for cyclical companies. Room to maintain dividend through a downturn.</td></tr>
+<tr><td>2.5× and above</td><td>Below 40%</td><td>Conservative. Strong sustainability. Often means the company has capacity to grow the dividend or return additional capital via specials.</td></tr>
+</tbody>
+</table>
+
+<h2>Sector-Specific Coverage Norms</h2>
+
+<p>Coverage thresholds vary significantly by sector because cash flow predictability varies:</p>
+
+<table>
+<thead><tr><th>Sector</th><th>Typical DCR</th><th>Notes</th></tr></thead>
+<tbody>
+<tr><td>Tanker shipping (variable dividend)</td><td>1.0× – 1.3× (by policy)</td><td>Policy is to pay out most earnings — low DCR is intended, not a red flag</td></tr>
+<tr><td>LNG/LPG shipping (chartered)</td><td>1.2× – 1.8×</td><td>Long-term charters provide stability; leverage matters more than coverage</td></tr>
+<tr><td>Diversified mining</td><td>1.5× – 2.5×</td><td>Progressive dividend policy; need buffer for commodity cycle</td></tr>
+<tr><td>Precious metals miners</td><td>1.5× – 3×</td><td>Reinvestment-heavy; coverage needs to account for capex ambitions</td></tr>
+<tr><td>Upstream E&amp;P (variable)</td><td>1.0× – 1.5×</td><td>Many pay out defined % of FCF — similar to tanker model</td></tr>
+<tr><td>Midstream pipelines (fixed)</td><td>1.4× – 2.0×</td><td>Fee-based — fixed coverage target typical (e.g. Enbridge targets ~1.65×)</td></tr>
+<tr><td>REITs</td><td>1.1× – 1.4× (AFFO basis)</td><td>Use AFFO (adjusted FFO) not EPS; real estate depreciation inflates payout ratio</td></tr>
+</tbody>
+</table>
+
+<!-- Ad slot 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>How to Stress-Test Dividend Coverage</h2>
+
+<p>A current coverage ratio is a backward-looking number. For cyclical businesses, the relevant question is: what happens to coverage if earnings fall 30–40%? Here is my stress-test framework:</p>
+
+<ol>
+<li><strong>Define a trough scenario:</strong> For shipping, assume freight rates fall to 10-year average. For mining, model commodity prices 25% below current. For upstream, use oil at $55–60/bbl.</li>
+<li><strong>Recompute EBITDA under trough:</strong> Apply the price/rate change to revenue while keeping fixed costs constant (variable costs decrease proportionally with activity).</li>
+<li><strong>Subtract debt service:</strong> Interest expense (at current rates) and scheduled debt amortisation reduce available cash for dividends. This is where <a href="/glossary/net-debt.html">net debt</a> level matters — high-debt companies feel this most.</li>
+<li><strong>Calculate stressed free cash flow:</strong> What remains after trough EBITDA minus interest minus maintenance capex is the realistic dividend capacity.</li>
+<li><strong>Compare to total dividend commitment:</strong> If stressed FCF / total dividends is below 1.0×, the dividend is at risk in a trough. Companies typically cut when stressed DCR approaches 0.8×.</li>
+</ol>
+
+<div class="red-flag">
+<strong>Red Flag Combination:</strong> High yield + low coverage + high net debt + spot-exposed cash flows<br><br>
+This is the classic dividend trap formula in hard assets. A tanker company with a 15% trailing yield but only 1.05× coverage, 3× net debt/EBITDA, and no long-term charters is likely to cut its dividend the moment freight rates normalise. The yield was real — historically. It may not persist.
+</div>
+
+<h2>Special Dividends and Coverage</h2>
+
+<p>Many hard-asset companies distinguish between a <strong>base dividend</strong> (sustainable across the cycle) and a <strong>special or variable component</strong> (paid from excess cash in good years). Understanding which part of the dividend is which is critical for coverage analysis:</p>
+
+<ul>
+<li><strong>Base dividend:</strong> should have coverage well above 2× under trough conditions</li>
+<li><strong>Variable/special:</strong> by definition, not expected to recur — do not use it in your income projection</li>
+</ul>
+
+<p>Companies like <a href="/blog/torm-dividend-analysis-2026.html" style="color:#D4AF37">TORM</a>, CMB.Tech, and <a href="/blog/flex-lng-q1-2026-dividend-analysis.html" style="color:#D4AF37">FLEX LNG</a> are explicit about their variable-dividend policies. In a high-rate environment, these can yield 15–30%. In a trough, the payout drops to whatever base remains. My position sizing in these companies accounts for this — they go into a "high-yield cyclical" bucket with explicit yield-normalisation in the return expectation.</p>
+
+<h2>Coverage, Yield on Cost, and the Long Game</h2>
+
+<p>For long-term dividend investors, coverage matters most at entry. A <a href="/glossary/yield-on-cost.html">Yield on Cost (YOC)</a> of 12% only has compounding value if the underlying dividend is sustainable. I use the following combined filter when screening hard-asset income stocks:</p>
+
+<ul>
+<li>FCF coverage ≥ 1.5× at mid-cycle commodity prices (not peak)</li>
+<li>Net Debt/EBITDA ≤ 2.5× (or ≤ 3.5× for contracted LNG/pipeline cash flows)</li>
+<li>Dividend history: has the base dividend been maintained through the previous cycle downturn?</li>
+<li>Management track record: did they cut the base dividend in 2015–2016 (oil crash) or 2020 (COVID)?</li>
+</ul>
+
+<p>Companies that clear all four filters with a trailing yield above 6% are, in my experience, the most rewarding long-term income positions in hard assets. The combination of genuine coverage at mid-cycle prices and manageable leverage is what allows dividends to persist — and grow — across multiple commodity cycles.</p>
+
+<div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="/assets/marco-profile.jpg" alt="Marco Bozem — MB Capital Strategies dividend analyst" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco analyses dividend sustainability in shipping, mining and energy stocks using FCF-based coverage, stress tests and through-cycle normalisation. All analysis is based on public reports. <em>Not investment advice.</em></p>
+  </div>
+</div>
+
+<p>
+  <span class="tag">Dividend Coverage</span>
+  <span class="tag">Payout Ratio</span>
+  <span class="tag">Dividend Safety</span>
+  <span class="tag">Shipping Dividends</span>
+  <span class="tag">Mining Dividends</span>
+  <span class="tag">Free Cash Flow</span>
+</p>
+
+<p><strong>Related:</strong> <a href="/glossary/dividend-safety.html">Dividend Safety</a> · <a href="/glossary/free-cash-flow.html">Free Cash Flow</a> · <a href="/glossary/payout-ratio.html">Payout Ratio</a> · <a href="/glossary/net-debt.html">Net Debt</a> · <a href="/glossary/variable-dividend.html">Variable Dividend</a> · <a href="/glossary/yield-on-cost.html">Yield on Cost</a></p>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> This glossary entry is educational only and does not constitute investment advice. Coverage ratios and dividend sustainability depend on company-specific factors and market conditions. Past dividend payments are no guarantee of future distributions. Always conduct your own due diligence.
+</div>
+
+<footer style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(212,175,55,0.15);color:#888aa0;font-size:0.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+  <span>© 2026 MB Capital Strategies</span>
+  <span><a href="/pages/privacy.html" style="color:#888aa0">Privacy</a> · <a href="/pages/imprint.html" style="color:#888aa0">Imprint</a></span>
+</footer>
+</body>
+</html>

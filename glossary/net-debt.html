@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Net Debt: Formula, Net Debt/EBITDA &amp; Shipping + Mining Guide</title>
+<meta name="description" content="Net Debt explained for shipping, mining and energy investors. Formula, net debt to EBITDA ratio, leverage thresholds, and why net cash matters for dividend safety.">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html">
+<meta property="og:title" content="Net Debt: Formula, Net Debt/EBITDA &amp; Shipping + Mining Guide">
+<meta property="og:description" content="Net Debt formula, net debt/EBITDA ratio, and how to read leverage in shipping, mining and upstream energy. Includes 2026 sector thresholds and dividend safety implications.">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Net Debt: Formula, Net Debt/EBITDA &amp; Shipping + Mining Guide">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"DefinedTerm","name":"Net Debt","alternateName":["net debt ratio","net financial debt","net leverage","ND/EBITDA"],"description":"Net Debt is total financial debt minus cash and cash equivalents held by a company. It represents the theoretical net borrowing position — what a company would owe if it used all its cash to immediately repay debt. Net debt is used in enterprise value calculations (EV = market cap + net debt) and in the leverage metric Net Debt/EBITDA, which is the primary credit and dividend sustainability signal for capital-intensive businesses in shipping, mining, and energy. A net cash position (negative net debt) provides balance sheet flexibility for dividends, buybacks, and opportunistic acquisitions.","url":"https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html","inDefinedTermSet":{"@type":"DefinedTermSet","name":"MB Capital Strategies Investing Glossary","url":"https://mbcapitalstrategiesgloabal.com/pages/glossary.html"}}</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Net Debt: Formula, Net Debt/EBITDA & Shipping + Mining Guide",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {"@type": "Organization", "name": "MB Capital Strategies"},
+  "datePublished": "2026-06-08",
+  "dateModified": "2026-06-08",
+  "wordCount": 1680,
+  "description": "Net Debt formula and net debt/EBITDA explained for mining, shipping and energy investors — includes sector leverage thresholds, dividend safety implications, and IFRS 16 lease adjustments."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Glossary", "item": "https://mbcapitalstrategiesgloabal.com/pages/glossary.html"},
+    {"@type": "ListItem", "position": 3, "name": "Net Debt", "item": "https://mbcapitalstrategiesgloabal.com/glossary/net-debt.html"}
+  ]
+}
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<style>
+body{font-family:'Segoe UI',sans-serif;background:#0a0e14;color:#d0d3e2;line-height:1.8;max-width:860px;margin:0 auto;padding:40px 24px}
+h1{color:#D4AF37;font-size:1.8rem;font-weight:800;margin:0 0 12px}
+h2{color:#D4AF37;font-size:1.3rem;font-weight:700;margin:32px 0 12px;border-left:4px solid #D4AF37;padding-left:12px}
+h3{color:#D4AF37;font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+p{margin:0 0 16px}
+.formula{background:#13151c;border:1px solid rgba(212,175,55,.3);border-radius:8px;padding:16px 20px;font-family:monospace;color:#D4AF37;margin:16px 0;font-size:1rem}
+.example-box{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.green-box{background:rgba(50,200,50,.06);border:1px solid rgba(50,200,50,.2);border-radius:8px;padding:16px 20px;margin:16px 0}
+.disclaimer{font-size:0.78rem;color:#888aa0;border-top:1px solid #222;padding-top:20px;margin-top:40px}
+a{color:#D4AF37}
+.breadcrumb{color:#888aa0;font-size:0.85rem;margin-bottom:28px}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th{background:rgba(212,175,55,.15);color:#D4AF37;padding:10px;text-align:left;font-size:0.9rem}
+td{padding:9px 10px;border-bottom:1px solid rgba(255,255,255,.07);font-size:0.9rem}
+tr:hover{background:rgba(212,175,55,.04)}
+.author-box{display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px}
+.tag{display:inline-block;background:rgba(212,175,55,.12);color:#D4AF37;padding:3px 10px;border-radius:12px;font-size:0.8rem;margin:0 4px 4px 0}
+</style>
+</head>
+<body>
+<header style="background:#050508;border-bottom:1px solid rgba(212,175,55,0.18);padding:12px 0;position:sticky;top:0;z-index:100;margin:-40px -24px 32px">
+  <nav style="max-width:860px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+    <a href="/" style="color:#D4AF37;font-weight:800;font-size:1.1rem;text-decoration:none">MB Capital Strategies</a>
+    <div style="display:flex;gap:20px;font-size:0.9rem">
+      <a href="/pages/glossary.html" style="color:#d0d3e2;text-decoration:none">Glossary</a>
+      <a href="/blog/" style="color:#d0d3e2;text-decoration:none">Blog</a>
+      <a href="/pages/about.html" style="color:#d0d3e2;text-decoration:none">About</a>
+    </div>
+  </nav>
+</header>
+
+<div class="breadcrumb"><a href="/">Home</a> › <a href="/pages/glossary.html">Glossary</a> › Net Debt</div>
+
+<h1>Net Debt: Formula, Net Debt/EBITDA Ratio &amp; Hard-Asset Leverage Guide</h1>
+
+<p><strong>Net Debt</strong> is a company's total financial debt minus its cash and liquid equivalents. It answers a simple but important question: if the company immediately used all available cash to repay borrowings, how much debt would remain?</p>
+
+<p>In shipping and mining — two sectors where I spend most of my analytical time — net debt determines everything from dividend sustainability to acquisition capacity to survival in a downcycle. A tanker company with $3bn in gross debt but $1.2bn in cash has net debt of $1.8bn. That cash cushion matters enormously when freight rates collapse and the company needs 18 months of runway without refinancing.</p>
+
+<!-- Ad slot 1 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>Net Debt Formula</h2>
+
+<div class="formula">
+Net Debt = Short-Term Debt + Long-Term Debt + Finance Lease Obligations − Cash − Cash Equivalents
+</div>
+
+<p>Key components:</p>
+<ul>
+<li><strong>Short-term debt:</strong> current portion of long-term debt, revolving credit facility drawings, commercial paper</li>
+<li><strong>Long-term debt:</strong> term loans, bonds, ship mortgages (dominant for tanker/LNG operators)</li>
+<li><strong>Finance lease obligations:</strong> capitalised under IFRS 16 — material for charter-heavy shipping operators</li>
+<li><strong>Cash &amp; equivalents:</strong> bank deposits, treasury bills, money market funds with <90-day maturities</li>
+</ul>
+
+<div class="example-box">
+<strong>Example — FLEX LNG (simplified, Q1 2026):</strong><br>
+Long-term debt (ship mortgages): ~$1.35bn<br>
+Current portion: ~$85m<br>
+Cash: ~$310m<br>
+Net Debt = $1.35bn + $0.085bn − $0.31bn = <strong>~$1.125bn</strong><br><br>
+<em>Net Debt/EBITDA of approximately 3.2×. High by general standards, but acceptable for LNG shipping because long-term charters provide contracted cash flows that service the debt reliably. Context always matters.</em>
+</div>
+
+<h2>Net Debt vs. Gross Debt: Why the Distinction Matters</h2>
+
+<p>Gross debt figures appear in balance sheets and credit agreements. Net debt is the investor-relevant number because cash is available to service or retire debt. Two companies with identical gross debt look identical until you check cash balances:</p>
+
+<table>
+<thead><tr><th>Company</th><th>Gross Debt</th><th>Cash</th><th>Net Debt</th><th>Interpretation</th></tr></thead>
+<tbody>
+<tr><td>Tanker Co A</td><td>$2.0bn</td><td>$1.5bn</td><td>$0.5bn</td><td>Net cash buffer — flexible, dividend-friendly</td></tr>
+<tr><td>Tanker Co B</td><td>$2.0bn</td><td>$0.1bn</td><td>$1.9bn</td><td>Tightly leveraged — vulnerable to rate downcycle</td></tr>
+</tbody>
+</table>
+
+<p>Same headline debt load, completely different financial resilience. This is why I always compute net debt before making a final judgement on a company's capital structure.</p>
+
+<h2>Net Debt/EBITDA: The Primary Leverage Metric</h2>
+
+<div class="formula">
+Net Debt/EBITDA = Net Debt / Last-Twelve-Months EBITDA
+</div>
+
+<p>This ratio tells you how many years of operating cash generation it would take to repay all net debt (assuming no capital expenditure and no tax). It is the most widely used leverage metric by analysts, credit agencies, and company management teams in hard-asset sectors.</p>
+
+<table>
+<thead><tr><th>Net Debt/EBITDA</th><th>General read</th><th>Hard-asset context</th></tr></thead>
+<tbody>
+<tr><td>Negative (net cash)</td><td>Fortress balance sheet</td><td>Maximum dividend flexibility; common in mining at commodity peaks (BHP FY2022)</td></tr>
+<tr><td>0× – 1×</td><td>Very low leverage</td><td>Conservative management; firepower for acquisitions or higher dividends</td></tr>
+<tr><td>1× – 2×</td><td>Moderate leverage</td><td>Normal for well-run miners and LNG shippers with long-term charters</td></tr>
+<tr><td>2× – 3×</td><td>Elevated but manageable</td><td>Acceptable for contracted businesses; requires stable cash flows</td></tr>
+<tr><td>3× – 4×</td><td>High leverage</td><td>Dividend at risk in a commodity downcycle; watch free cash flow closely</td></tr>
+<tr><td>4×+</td><td>Dangerous territory</td><td>Refinancing risk; dividends typically cut first, equity raises possible</td></tr>
+</tbody>
+</table>
+
+<h2>Sector-Specific Leverage Thresholds</h2>
+
+<p>Net Debt/EBITDA thresholds are not universal — they depend on the predictability of the underlying cash flows:</p>
+
+<table>
+<thead><tr><th>Sector</th><th>Acceptable Range</th><th>Comfort Level</th><th>Danger Zone</th></tr></thead>
+<tbody>
+<tr><td>Diversified mining (BHP, Glencore, Rio)</td><td>0× – 2×</td><td>&lt;1.5×</td><td>&gt;2.5× at commodity trough</td></tr>
+<tr><td>Precious metals (Barrick, Newmont)</td><td>0× – 1.5×</td><td>Net cash preferred</td><td>&gt;2× (gold is volatile too)</td></tr>
+<tr><td>Tanker shipping (spot-exposed)</td><td>0× – 3×</td><td>&lt;2× in rate cycle</td><td>&gt;3× going into a rate trough</td></tr>
+<tr><td>LNG/LPG shipping (long charters)</td><td>1× – 4×</td><td>2–3× with contracted cash flows</td><td>&gt;4× without contract coverage</td></tr>
+<tr><td>Upstream E&amp;P</td><td>0× – 2.5×</td><td>&lt;1.5× at $70 oil</td><td>&gt;3× with hedging gaps</td></tr>
+<tr><td>Midstream pipelines</td><td>3× – 5×</td><td>4–4.5× (fee-based, stable)</td><td>&gt;6×; regulatory risk changes equation</td></tr>
+</tbody>
+</table>
+
+<!-- Ad slot 2 -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+
+<h2>IFRS 16 and Lease-Adjusted Net Debt</h2>
+
+<p>Since the adoption of IFRS 16, operating leases are capitalised onto balance sheets. For shipping companies that charter-in vessels (paying daily hire to other owners instead of owning their own ships), this creates reported debt that is really a service contract obligation — not a true financial claim on the company's equity.</p>
+
+<p>When comparing a ship-owner against a charter-heavy operator, you need to be consistent:</p>
+<ul>
+<li><strong>Option 1:</strong> Use <em>lease-adjusted</em> net debt for both (IFRS 16 approach — both include lease liabilities)</li>
+<li><strong>Option 2:</strong> Use <em>pre-IFRS 16</em> net debt for both (add back operating lease liabilities from notes — gives economic debt picture)</li>
+</ul>
+
+<p>The danger is mixing the two — using IFRS 16 figures for one company and pre-IFRS 16 for another. I flag this explicitly in every comparative analysis I run on shipping stocks.</p>
+
+<h2>Net Cash: When Negative Net Debt is a Signal</h2>
+
+<div class="green-box">
+<strong>Net Cash Position = Maximum Flexibility</strong><br><br>
+When cash exceeds total financial debt, the company has a net cash position. This is a powerful signal in hard-asset investing because it means:<br>
+• Dividend can be paid even in a commodity trough (no debt service competes for cash)<br>
+• Acquisition firepower without equity dilution<br>
+• Lower cost of equity (reduced bankruptcy risk premium)<br>
+• Management credibility signal — they returned capital instead of empire-building<br><br>
+Examples: Barrick Gold (net cash at gold &gt;$2,000/oz), BHP after the 2021–2022 iron ore peak, several Norwegian shipping operators (Frontline, DHT) during the 2022–2023 rate boom.
+</div>
+
+<h2>Net Debt and Dividend Safety</h2>
+
+<p>Net debt is my first checkpoint when assessing <a href="/glossary/dividend-safety.html">dividend safety</a> for a hard-asset company. A high dividend yield paired with high net debt is a warning sign — the company may be distributing cash it needs for debt service or capital expenditure.</p>
+
+<p>My threshold: if Net Debt/EBITDA exceeds 2.5× and the trailing dividend yield exceeds 8%, I stress-test the dividend against a 30% EBITDA decline scenario. If the payout ratio on stressed EBITDA minus interest cost exceeds 80%, the dividend is at risk. This is the single analysis that has most often separated sustainable high-yield from dividend traps in my watch universe — shipping, mining, upstream energy and <a href="/glossary/infrastructure-investing.html">infrastructure</a> stocks.</p>
+
+<p>For deeper analysis of capital structure and how it affects returns over a full cycle, see also: <a href="/glossary/enterprise-value.html">Enterprise Value</a>, <a href="/glossary/free-cash-flow.html">Free Cash Flow</a>, and <a href="/glossary/return-on-equity.html">Return on Equity</a>.</p>
+
+<div class="author-box" style="display:flex;align-items:center;gap:16px;margin:40px 0;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="/assets/marco-profile.jpg" alt="Marco Bozem — MB Capital Strategies hard assets analyst" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco analyses shipping, mining and energy stocks with focus on balance sheet strength, dividend sustainability and cycle positioning. All analysis based on public reports. <em>Not investment advice.</em></p>
+  </div>
+</div>
+
+<p>
+  <span class="tag">Net Debt</span>
+  <span class="tag">Net Debt/EBITDA</span>
+  <span class="tag">Leverage</span>
+  <span class="tag">Shipping Stocks</span>
+  <span class="tag">Mining Stocks</span>
+  <span class="tag">Dividend Safety</span>
+</p>
+
+<p><strong>Related:</strong> <a href="/glossary/enterprise-value.html">Enterprise Value</a> · <a href="/glossary/free-cash-flow.html">Free Cash Flow</a> · <a href="/glossary/dividend-safety.html">Dividend Safety</a> · <a href="/glossary/dividend-coverage-ratio.html">Dividend Coverage Ratio</a> · <a href="/glossary/return-on-equity.html">Return on Equity</a></p>
+
+<div class="disclaimer">
+<strong>Disclaimer:</strong> This glossary entry is for educational purposes only and does not constitute investment advice. Leverage thresholds are general guidelines and may differ significantly based on company-specific circumstances, credit ratings, and market conditions. Always conduct your own research.
+</div>
+
+<footer style="margin-top:40px;padding-top:24px;border-top:1px solid rgba(212,175,55,0.15);color:#888aa0;font-size:0.82rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px">
+  <span>© 2026 MB Capital Strategies</span>
+  <span><a href="/pages/privacy.html" style="color:#888aa0">Privacy</a> · <a href="/pages/imprint.html" style="color:#888aa0">Imprint</a></span>
+</footer>
+</body>
+</html>
