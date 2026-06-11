@@ -5,6 +5,24 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
     <meta charset="UTF-8">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles (web-design-agent batch-167, LCP fix) -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -112,6 +130,7 @@ gtag('config', 'G-FSW7J7QYL8');
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoObject","name":"When to Buy Oil, Gas andamp; Agriculture — Commodity Cycle Strategy 2026","description":"How to time commodity cycle investments: oil, gas, and agriculture seasonal patterns explained. Marco Bozem's cycle strategy for hard asset investors — when to enter, when to wait.","thumbnailUrl":"https://img.youtube.com/vi/VzzPOk9xxOo/maxresdefault.jpg","uploadDate":"2026-04-10","embedUrl":"https://www.youtube.com/embed/VzzPOk9xxOo","publisher":{"@type":"Organization","name":"MB Capital Strategies Global","url":"https://mbcapitalstrategiesgloabal.com"}}
 </script>
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
 </head>
 <body>
 
@@ -139,8 +158,14 @@ gtag('config', 'G-FSW7J7QYL8');
 
 <p>This is the complete cycle strategy I use for my hard-asset portfolio — developed over years of investing in shipping, energy, and mining. It combines macro framework, seasonal patterns, and specific entry signals.</p>
 
-<div class="video-wrapper">
-  <iframe src="https://www.youtube.com/embed/VzzPOk9xxOo" title="When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+<div class="yt-lite" data-id="VzzPOk9xxOo" data-title="When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained" role="button" tabindex="0" aria-label="Video abspielen: When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained">
+    <img class="yt-thumb" src="https://img.youtube.com/vi/VzzPOk9xxOo/hqdefault.jpg" alt="When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained Thumbnail" width="480" height="360" loading="lazy" decoding="async">
+    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="yt-label">When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained</div>
+</div>c="https://img.youtube.com/vi/VzzPOk9xxOo/hqdefault.jpg" alt="When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained Thumbnail" width="480" height="360" loading="lazy" decoding="async">
+    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="yt-label">When to Buy Oil, Gas &amp; Agriculture — Cycle Strategy Explained</div>
+</div>
 </div>
 
 <div class="metrics-grid">
@@ -418,6 +443,28 @@ gtag('config', 'G-FSW7J7QYL8');
     }
   ]
 }
+</script>
+<!-- YouTube Lite Facade Init (web-design-agent batch-167) -->
+<script>
+(function(){
+  function initYtLite(el){
+    el.addEventListener('click',function activate(){
+      el.removeEventListener('click',activate);
+      var id=el.dataset.id;
+      if(!id)return;
+      var iframe=document.createElement('iframe');
+      iframe.src='https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0';
+      iframe.title=el.dataset.title||'YouTube Video';
+      iframe.allow='autoplay;encrypted-media;picture-in-picture';
+      iframe.allowFullscreen=true;
+      el.innerHTML='';
+      el.appendChild(iframe);
+      el.style.cursor='default';
+    });
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){el.click();}});
+  }
+  document.querySelectorAll('.yt-lite[data-id]').forEach(initYtLite);
+})();
 </script>
 </body>
 </html>

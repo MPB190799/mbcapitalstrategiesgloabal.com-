@@ -2207,3 +2207,75 @@ html, body { max-width: 100vw; overflow-x: hidden; }
 ins.adsbygoogle[data-anchor-shown="true"],
 [id^="google_anchor"],
 .gad-anchor-container { display: none !important; }
+
+/* === YouTube Lite Facade (LCP-Fix) ===
+   Replaces direct iframe with click-to-load thumbnail.
+   Saves ~500KB YouTube JS on initial page load — major LCP improvement.
+   Usage: <div class="yt-lite" data-id="VIDEO_ID" data-title="Title"></div>
+   web-design-agent 2026-06-11 */
+.yt-lite {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 */
+  border-radius: 12px;
+  border: 1px solid var(--gold, #d4af37);
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  margin: 12px 0;
+}
+.yt-lite img.yt-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: filter 0.2s;
+}
+.yt-lite:hover img.yt-thumb {
+  filter: brightness(0.8);
+}
+.yt-lite .yt-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: rgba(0,0,0,0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+  pointer-events: none;
+}
+.yt-lite:hover .yt-play {
+  background: #d4af37;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+.yt-lite .yt-play svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+  margin-left: 4px;
+}
+.yt-lite .yt-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+  pointer-events: none;
+  line-height: 1.3;
+}
+.yt-lite iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
