@@ -22,6 +22,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- duplicate preconnect fonts.gstatic.com removed 2026-06-12 web-design-agent (was causing redundant TLS handshake) -->
 <!-- LCP-Fix 2026-06-12: switched to brand fonts Outfit+IBM Plex Mono (css/style.css uses Outfit, not Cormorant/Inter Tight/JetBrains — wrong bundle was preloaded, wasting ~200ms). -->
+<!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direct preload — eliminates 1 network round-trip (CSS→woff2) in critical path (~100-200ms) -->
+<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
 <link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
