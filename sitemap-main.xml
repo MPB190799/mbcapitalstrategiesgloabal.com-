@@ -80,6 +80,12 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/"/>
   </url>
   <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/pages/market-updates.html</loc><lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/pages/market-updates.html"/>
+  </url>
+  <url>
     <loc>https://mbcapitalstrategiesgloabal.com/pages/glossary.html</loc><lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
