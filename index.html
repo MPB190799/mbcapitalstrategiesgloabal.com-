@@ -546,8 +546,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
 
 /* ═══ COMPASS BACKDROP — Real vintage brass photograph, centered-right ═══ */
-.compass-backdrop{position:absolute;top:54%;left:58%;width:min(62vh,680px);aspect-ratio:1/1;transform:translate(-50%,-50%);z-index:0;--scroll-rot:0deg;--scroll-fade:1;will-change:transform,opacity;filter:drop-shadow(0 40px 80px rgba(0,0,0,.7)) drop-shadow(0 0 80px rgba(212,175,55,.18))}
-.compass-backdrop .compass-img{width:100%;height:100%;display:block;animation:compassImgSpin 110s linear infinite;transform-origin:50% 50%;will-change:transform,opacity}
+.compass-backdrop{position:absolute;top:54%;left:58%;width:min(62vh,680px);aspect-ratio:1/1;transform:translate(-50%,-50%) rotate(var(--scroll-rot));z-index:0;--scroll-rot:0deg;--scroll-fade:1;will-change:transform,opacity;filter:drop-shadow(0 40px 80px rgba(0,0,0,.7)) drop-shadow(0 0 80px rgba(212,175,55,.18))}
+.compass-backdrop .compass-img{width:100%;height:100%;display:block;animation:compassImgSpin 70s linear infinite;transform-origin:50% 50%;will-change:transform,opacity}
 .compass-backdrop::before{content:"";position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.22),rgba(212,175,55,.05) 42%,transparent 65%);filter:blur(50px);animation:compassGlow 11s ease-in-out infinite;pointer-events:none;z-index:-1}
 @keyframes compassGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 @keyframes compassImgSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
@@ -1063,6 +1063,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
           <li><a href="pages/mining.html">Mining</a></li>
           <li><a href="pages/energy.html">Energy</a></li>
           <li><a href="pages/best-high-yield.html">High-Yield</a></li>
+          <li><a href="pages/market-updates.html">Market Updates</a></li>
         </ul>
       </div>
       <div>
@@ -1078,7 +1079,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
     </div>
     <div class="footer-bottom">
       <span>© 2026 MB Capital Strategies · Marco Bozem</span>
-      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="pages/pages/imprint.html">Imprint</a><a href="pages/pages/privacy.html">Privacy</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/affiliate-disclosure.html">Affiliates</a></span>
+      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="pages/imprint.html">Imprint</a><a href="pages/privacy.html">Privacy</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/affiliate-disclosure.html">Affiliates</a></span>
     </div>
     <p class="footer-aff">Some links are affiliate links. No extra cost to you. Not investment advice.</p>
   </div>
@@ -1141,6 +1142,8 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
       const t = Math.min(1, sc / heroH);
       const fade = 1 - t * 0.85;
       compassBackdrop.style.setProperty('--scroll-fade', fade.toFixed(3));
+      // Compass actively rotates with scroll (up to 90°) — composes with the continuous img spin
+      compassBackdrop.style.setProperty('--scroll-rot', (t * 90).toFixed(2) + 'deg');
       scrollRaf = 0;
     };
     window.addEventListener('scroll', () => {
@@ -1226,7 +1229,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
   }
 })();
 </script>
-<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 <!-- AdSense loaded after LCP to prevent Google Funding Choices CMP from blocking hero render -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 
