@@ -20,8 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<!-- LCP-Fix: Fonts non-blocking (eliminates render-blocking resource) -->
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- duplicate preconnect fonts.gstatic.com removed 2026-06-12 web-design-agent (was causing redundant TLS handshake) -->
 <!-- LCP-Fix: Cormorant Garamond reduziert auf 3 Varianten (vorher 8) — spart ~150ms font-load -->
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
