@@ -21,11 +21,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- duplicate preconnect fonts.gstatic.com removed 2026-06-12 web-design-agent (was causing redundant TLS handshake) -->
-<!-- LCP-Fix: Cormorant Garamond reduziert auf 3 Varianten (vorher 8) — spart ~150ms font-load -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<!-- LCP-Fix 2026-06-12: switched to brand fonts Outfit+IBM Plex Mono (css/style.css uses Outfit, not Cormorant/Inter Tight/JetBrains — wrong bundle was preloaded, wasting ~200ms). -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
 <link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter+Tight:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
 <script>
@@ -1254,10 +1254,10 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 <!-- Sticky Research CTA bar — depth navigation, no newsletter (EN-only policy) v1.0 2026-06-04 -->
 <div id="en-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
   <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;font-family:'JetBrains Mono',monospace;">MB Capital Strategies &mdash; Free Hard Asset Research:</span>
+    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;font-family:'IBM Plex Mono',monospace;">MB Capital Strategies &mdash; Free Hard Asset Research:</span>
     <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-      <a href="pages/blog.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Browse Research &rarr;</a>
-      <a href="pages/calculators.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'JetBrains Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Free Calculators &rarr;</a>
+      <a href="pages/blog.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Browse Research &rarr;</a>
+      <a href="pages/calculators.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Free Calculators &rarr;</a>
     </div>
     <button onclick="document.getElementById('en-sticky-cta').style.display='none';localStorage.setItem('enstickydismissed','1');document.body.style.paddingBottom='';" style="background:none;border:none;color:#555;cursor:pointer;font-size:1.1rem;padding:4px 6px;line-height:1;" aria-label="Close">&times;</button>
   </div>

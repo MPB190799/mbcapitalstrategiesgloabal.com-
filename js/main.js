@@ -3,12 +3,15 @@
    Main JavaScript
    ============================================ */
 
-/* Premium Polish: Cormorant Garamond + soft corner glows on every non-luxe-v3 sub-page */
+/* Premium Polish: soft corner glows on every non-luxe-v3 sub-page.
+   Font-Guard 2026-06-12: Cormorant Garamond injection removed — brand font is Outfit (design-style-guide.md).
+   Cormorant was never used in css/style.css body rules, causing ~200ms wasted font-parse per sub-page. */
 (function(){
-  if (!document.querySelector('link[href*="Cormorant"]')) {
+  /* Font guard: ensure brand fonts Outfit + IBM Plex Mono are loaded if missing (sub-pages without preload in <head>) */
+  if (!document.querySelector('link[href*="Outfit"]')) {
     var f = document.createElement('link');
     f.rel = 'stylesheet';
-    f.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap';
+    f.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap';
     document.head.appendChild(f);
   }
   if (!document.documentElement.hasAttribute('data-luxe-v3') && !document.getElementById('mbcs-premium-polish')) {
