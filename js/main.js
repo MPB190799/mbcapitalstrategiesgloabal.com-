@@ -183,22 +183,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Cookie Consent Banner ===
-    // CMP-Stacking-Guard (web-design-agent 2026-06-13):
+    // CMP-Stacking-Guard v2 (web-design-agent 2026-06-13 fix):
     // Do NOT show own banner simultaneously with Google Funding Choices CMP.
+    // v1 bug: window.googlefc not available at DOMContentLoaded (AdSense=async).
+    // v2 fix: TCF-API polling — wait for Google CMP decision, then show own banner.
+    // Timeout after 3.5s if no CMP found → show banner safely.
     const cookieBanner = document.getElementById('cookieBanner');
     if (cookieBanner && !localStorage.getItem('cookie_consent')) {
-        if (window.googlefc && window.googlefc.callbackQueue) {
-            window.googlefc.callbackQueue.push({
-                'CONSENT_DATA_READY': function() { cookieBanner.classList.add('show'); }
-            });
-        } else {
-            setTimeout(function() {
-                if (!document.querySelector('.googlefc-dialog, [id^="googlefc"]') &&
-                    !localStorage.getItem('cookie_consent')) {
-                    cookieBanner.classList.add('show');
-                }
-            }, 1800);
+        let cmpCheckAttempts = 0;
+        const cmpMaxAttempts = 35; // 35 × 100ms = 3.5s total wait
+        function checkCmpAndMaybeShowBanner() {
+            cmpCheckAttempts++;
+            const hasFundingChoices = window.googlefc && window.googlefc.callbackQueue;
+            const hasTcfApi = typeof window.__tcfapi === 'function';
+
+            if (hasFundingChoices) {
+                window.googlefc.callbackQueue.push({
+                    'CONSENT_DATA_READY': function() {
+                        if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
+                    }
+                });
+                return;
+            }
+
+            if (hasTcfApi) {
+                window.__tcfapi('addEventListener', 2, function(tcData, success) {
+                    if (success && (tcData.eventStatus === 'useractioncomplete' ||
+                                    tcData.eventStatus === 'tcloaded')) {
+                        if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
+                    }
+                });
+                return;
+            }
+
+            if (cmpCheckAttempts < cmpMaxAttempts) {
+                setTimeout(checkCmpAndMaybeShowBanner, 100);
+                return;
+            }
+
+            // No CMP found after 3.5s → show own banner
+            if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
         }
+        setTimeout(checkCmpAndMaybeShowBanner, 200);
     }
 
     const cookieAccept = document.getElementById('cookieAccept');
