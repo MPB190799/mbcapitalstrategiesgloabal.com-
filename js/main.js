@@ -183,9 +183,22 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Cookie Consent Banner ===
+    // CMP-Stacking-Guard (web-design-agent 2026-06-13):
+    // Do NOT show own banner simultaneously with Google Funding Choices CMP.
     const cookieBanner = document.getElementById('cookieBanner');
     if (cookieBanner && !localStorage.getItem('cookie_consent')) {
-        cookieBanner.classList.add('show');
+        if (window.googlefc && window.googlefc.callbackQueue) {
+            window.googlefc.callbackQueue.push({
+                'CONSENT_DATA_READY': function() { cookieBanner.classList.add('show'); }
+            });
+        } else {
+            setTimeout(function() {
+                if (!document.querySelector('.googlefc-dialog, [id^="googlefc"]') &&
+                    !localStorage.getItem('cookie_consent')) {
+                    cookieBanner.classList.add('show');
+                }
+            }, 1800);
+        }
     }
 
     const cookieAccept = document.getElementById('cookieAccept');
