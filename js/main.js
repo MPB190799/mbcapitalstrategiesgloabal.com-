@@ -183,48 +183,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Cookie Consent Banner ===
-    // CMP-Stacking-Guard v2 (web-design-agent 2026-06-13 fix):
-    // Do NOT show own banner simultaneously with Google Funding Choices CMP.
-    // v1 bug: window.googlefc not available at DOMContentLoaded (AdSense=async).
-    // v2 fix: TCF-API polling — wait for Google CMP decision, then show own banner.
-    // Timeout after 3.5s if no CMP found → show banner safely.
+    // CMP-Stacking-Guard v3 (web-design-agent 2026-06-14 fix):
+    // When AdSense (adsbygoogle) is present on the page, Google Funding Choices IS the CMP.
+    // Our custom banner must NEVER show alongside Google's CMP — that creates double-dialog (UX-kill).
+    // v2 bug: even when googlefc was detected, own banner showed AFTER CMP dismissed (sequential stack).
+    // v3 fix: if page has AdSense → suppress own banner entirely. GA4 consent handled by gtag defaults.
+    //         Only show own banner on pages WITHOUT AdSense (GA4-only pages need own consent UI).
     const cookieBanner = document.getElementById('cookieBanner');
     if (cookieBanner && !localStorage.getItem('cookie_consent')) {
-        let cmpCheckAttempts = 0;
-        const cmpMaxAttempts = 35; // 35 × 100ms = 3.5s total wait
-        function checkCmpAndMaybeShowBanner() {
-            cmpCheckAttempts++;
-            const hasFundingChoices = window.googlefc && window.googlefc.callbackQueue;
-            const hasTcfApi = typeof window.__tcfapi === 'function';
+        // Detect AdSense presence: array defined by adsbygoogle.js load or inline push scripts
+        const hasAdSense = (typeof window.adsbygoogle !== 'undefined') ||
+                           document.querySelector('ins.adsbygoogle') !== null ||
+                           document.querySelector('script[src*="adsbygoogle.js"]') !== null;
 
-            if (hasFundingChoices) {
-                window.googlefc.callbackQueue.push({
-                    'CONSENT_DATA_READY': function() {
-                        if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
-                    }
-                });
-                return;
+        if (hasAdSense) {
+            // AdSense present → Google Funding Choices handles consent. Own banner suppressed.
+            // GA4 consent mode defaults are already set via gtag('consent','default') in <head>.
+        } else {
+            // No AdSense on this page → show own lightweight banner after brief delay
+            let cmpCheckAttempts = 0;
+            const cmpMaxAttempts = 15; // 15 × 100ms = 1.5s — shorter wait on non-AdSense pages
+            function checkCmpAndMaybeShowBanner() {
+                cmpCheckAttempts++;
+                if (typeof window.__tcfapi === 'function') {
+                    window.__tcfapi('addEventListener', 2, function(tcData, success) {
+                        if (success && (tcData.eventStatus === 'useractioncomplete' ||
+                                        tcData.eventStatus === 'tcloaded')) {
+                            if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
+                        }
+                    });
+                    return;
+                }
+                if (cmpCheckAttempts < cmpMaxAttempts) {
+                    setTimeout(checkCmpAndMaybeShowBanner, 100);
+                    return;
+                }
+                // No external CMP found → show own banner
+                if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
             }
-
-            if (hasTcfApi) {
-                window.__tcfapi('addEventListener', 2, function(tcData, success) {
-                    if (success && (tcData.eventStatus === 'useractioncomplete' ||
-                                    tcData.eventStatus === 'tcloaded')) {
-                        if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
-                    }
-                });
-                return;
-            }
-
-            if (cmpCheckAttempts < cmpMaxAttempts) {
-                setTimeout(checkCmpAndMaybeShowBanner, 100);
-                return;
-            }
-
-            // No CMP found after 3.5s → show own banner
-            if (!localStorage.getItem('cookie_consent')) cookieBanner.classList.add('show');
+            setTimeout(checkCmpAndMaybeShowBanner, 300);
         }
-        setTimeout(checkCmpAndMaybeShowBanner, 200);
     }
 
     const cookieAccept = document.getElementById('cookieAccept');
