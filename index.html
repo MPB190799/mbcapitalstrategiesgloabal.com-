@@ -973,12 +973,23 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         <span class="insight-title">FOMC June 17, 2026 — Fed Hold: What the rate decision means for Shipping, REITs and Pipelines</span>
         <span class="insight-arrow">→</span>
       </a>
-      <a class="insight" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html">
+      <a class="insight" id="hormuz-insight-en" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping · Breaking</span>
+        <span class="insight-tag" id="hormuz-tag-en">Shipping · Breaking</span>
         <span class="insight-title">Hormuz Crisis: Tanker Freight Rates +24% in One Day — Shipping Stocks 2026</span>
         <span class="insight-arrow">→</span>
       </a>
+      <script>
+      (function(){
+        var expiry=new Date('2026-06-17T23:59:59Z');
+        if(new Date()>expiry){
+          var el=document.getElementById('hormuz-insight-en');
+          var tag=document.getElementById('hormuz-tag-en');
+          if(el){el.removeAttribute('style');}
+          if(tag){tag.textContent='Shipping · Current';}
+        }
+      })();
+      </script>
       <a class="insight" href="blog/rio-tinto-analysis-2026.html">
         <span class="insight-date">2026-06</span>
         <span class="insight-tag">Mining</span>
