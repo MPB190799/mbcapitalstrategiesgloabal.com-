@@ -652,11 +652,22 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         </div>
       </div>
 
-      <div class="hero-ctas">
-        <a href="pages/blog.html" class="btn">Browse Research ↗</a>
-        <a href="pages/calculators.html" class="btn btn-ghost">Free Calculators ↗</a>
-        <a href="pages/best-high-yield.html" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">High-Yield Stocks →</a>
+      <!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
+      <div class="hero-ctas" id="hero-ctas-en">
+        <a href="pages/shipping.html" class="btn" id="hero-cta-primary-en">Shipping Research ↗</a>
+        <a href="pages/blog.html" class="btn btn-ghost">All Research ↗</a>
+        <a href="pages/calculators.html" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">Free Calculators →</a>
       </div>
+      <script>
+      /* Self-expire: revert primary CTA to default after 2026-06-17 23:59:59 UTC */
+      (function(){
+        var expiry = new Date('2026-06-17T23:59:59Z');
+        if(new Date() > expiry){
+          var el = document.getElementById('hero-cta-primary-en');
+          if(el){ el.href='pages/blog.html'; el.textContent='Browse Research ↗'; }
+        }
+      })();
+      </script>
       <!-- CRO: YouTube sub CTA — no newsletter on EN (policy), YT is the reach channel. Sub-Watch-Time 3.5x vs Search. 2026-06-14 web-design-agent -->
       <p style="margin:14px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);">Or: <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);padding-bottom:1px;transition:border-color .15s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,.9)'" onmouseout="this.style.borderColor='rgba(212,175,55,.35)'">Subscribe on YouTube →</a></p>
 <nav class="compass-cardinals" aria-label="Hard-asset sectors">
