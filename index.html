@@ -20,7 +20,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://pagead2.googlesyndication.com">
+<!-- LCP-Fix 2026-06-15 web-design-agent: preconnect→dns-prefetch — preconnect triggered immediate TCP/TLS handshake to Ad servers, accelerating CMP modal trigger before hero render. dns-prefetch sufficient for async AdSense script at page bottom. -->
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <!-- dns-prefetch dedup 2026-06-15 web-design-agent: removed duplicate googletagmanager + google-analytics entries (were declared twice in head) -->
 <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
 <!-- duplicate preconnect fonts.gstatic.com removed 2026-06-12 web-design-agent (was causing redundant TLS handshake) -->
