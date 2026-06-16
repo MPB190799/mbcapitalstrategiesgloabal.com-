@@ -658,23 +658,38 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       </div>
 
       <!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
+      <!-- CRO 2026-06-16 web-design-agent: improved self-expire default (was generic "Browse Research") + sector-teaser replaces empty YouTube-only micro-CTA (no internal links ATF on EN previously) -->
       <div class="hero-ctas" id="hero-ctas-en">
         <a href="pages/shipping.html" class="btn" id="hero-cta-primary-en">Shipping Research ↗</a>
-        <a href="pages/blog.html" class="btn btn-ghost">All Research ↗</a>
+        <a href="pages/blog.html" class="btn btn-ghost" id="hero-cta-secondary-en">All Research ↗</a>
         <a href="pages/calculators.html" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">Free Calculators →</a>
       </div>
       <script>
-      /* Self-expire: revert primary CTA to default after 2026-06-17 23:59:59 UTC */
+      /* Self-expire: revert primary CTA to stronger default after 2026-06-17 23:59:59 UTC
+         CRO 2026-06-16: changed default from generic "Browse Research" to sector-specific "Hard Asset Research"
+         to maintain keyword context and reduce bounce after Hormuz event window closes. */
       (function(){
         var expiry = new Date('2026-06-17T23:59:59Z');
         if(new Date() > expiry){
           var el = document.getElementById('hero-cta-primary-en');
-          if(el){ el.href='pages/blog.html'; el.textContent='Browse Research ↗'; }
+          if(el){ el.href='pages/blog.html'; el.textContent='Hard Asset Research ↗'; }
         }
       })();
       </script>
-      <!-- CRO: YouTube sub CTA — no newsletter on EN (policy), YT is the reach channel. Sub-Watch-Time 3.5x vs Search. 2026-06-14 web-design-agent -->
-      <p style="margin:14px 0 0;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);">Or: <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);padding-bottom:1px;transition:border-color .15s ease;" onmouseover="this.style.borderColor='rgba(212,175,55,.9)'" onmouseout="this.style.borderColor='rgba(212,175,55,.35)'">Subscribe on YouTube →</a></p>
+      <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
+           Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
+           the hero had no path into specific sectors without scrolling past the compass cardinals.
+           This adds 4 high-intent sector links directly in the hero content flow.
+           YouTube sub link moved inline with sector nav (no dedicated paragraph = less clutter). -->
+      <div style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;" aria-label="Explore by sector">
+        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);flex-shrink:0;">Sectors:</span>
+        <a href="pages/shipping.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Shipping</a>
+        <a href="pages/mining.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Mining</a>
+        <a href="pages/energy.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Energy</a>
+        <a href="pages/pipelines.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Pipelines</a>
+        <span style="width:1px;height:12px;background:var(--border-strong,#1e1e35);display:inline-block;flex-shrink:0;"></span>
+        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);text-decoration:none;border-bottom:1px solid rgba(107,122,153,.3);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;white-space:nowrap;" onmouseover="this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,.5)'" onmouseout="this.style.color='#6b7a99';this.style.borderColor='rgba(107,122,153,.3)'">YouTube →</a>
+      </div>
 <nav class="compass-cardinals" aria-label="Hard-asset sectors">
         <a href="pages/energy.html" data-cardinal="N" data-bearing="0">
           <span class="cdir"><b>Oil &amp; Gas</b><small>Energy</small></span>
