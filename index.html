@@ -716,6 +716,18 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <span class="cdir"><b>Tankers</b><small>Shipping</small></span>
         </a>
       </nav>
+      <!-- CRO 2026-06-16 web-design-agent: FOMC event signal in hero — rate decision June 17 tomorrow. Self-expire 2026-06-18T00:00:00Z. No layout shift (inline-flex, mono, 1 line). -->
+      <div id="fomc-hero-en" style="margin:14px 0 0;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono,monospace);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.22);border-radius:3px;padding:6px 12px;line-height:1.3;">
+        <span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#60a5fa;flex-shrink:0;animation:pulse 2.4s ease-in-out infinite;"></span>
+        <span style="color:var(--fg,#f0f4ff);">FOMC Tomorrow:</span>
+        <a href="blog/fomc-june-2026-hard-assets-interest-rates.html" style="color:#60a5fa;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.35);">Rate decision — what it means for Hard Assets →</a>
+      </div>
+      <script>
+      (function(){
+        var expiry=new Date('2026-06-18T00:00:00Z');
+        if(new Date()>expiry){ var el=document.getElementById('fomc-hero-en'); if(el) el.style.display='none'; }
+      })();
+      </script>
     </div>
   </div>
 
