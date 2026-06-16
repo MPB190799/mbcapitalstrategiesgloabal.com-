@@ -630,13 +630,24 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         </span>
       </aside>
 
-      <div class="hero-issue">
+      <!-- CRO 2026-06-16 web-design-agent: Issue-date eyebrow added for freshness/trust signal (DE parity). Self-expire reverts to sector list after 2026-07-01. -->
+      <div class="hero-issue" id="hero-issue-en">
         <span class="issue-rule"></span>
-        <span class="issue-no">Shipping</span>
-        <span>Mining</span>
+        <span class="issue-no">Issue № 48</span>
+        <span>June 2026</span>
         <span class="issue-rule" style="opacity:.5"></span>
-        <span style="color:var(--fg-muted);letter-spacing:.18em">Energy · Pipelines</span>
+        <span style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
       </div>
+      <script>
+      /* Self-expire: revert issue eyebrow to sector list after 2026-07-01 00:00:00 UTC */
+      (function(){
+        var expiry = new Date('2026-07-01T00:00:00Z');
+        if(new Date() > expiry){
+          var el = document.getElementById('hero-issue-en');
+          if(el){ el.innerHTML = '<span class="issue-rule"></span><span class="issue-no">Shipping</span><span>Mining</span><span class="issue-rule" style="opacity:.5"></span><span style="color:var(--fg-muted);letter-spacing:.18em">Energy · Pipelines</span>'; }
+        }
+      })();
+      </script>
       <h1 class="display hero-title">Dividends from <em>Hard Assets.</em></h1>
       <p class="lede hero-sub">
         Independent research on cashflow from shipping, mining, energy and pipelines —
@@ -987,12 +998,27 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
     </div>
     <div class="insights-list reveal">
-      <a class="insight" href="blog/fomc-june-2026-hard-assets-interest-rates.html">
+      <!-- CRO 2026-06-16 web-design-agent: FOMC timely-highlight — rate decision June 17 tomorrow. Border+badge self-expire after 2026-06-18T00:00:00Z. -->
+      <a class="insight" id="fomc-insight-en" href="blog/fomc-june-2026-hard-assets-interest-rates.html" style="border-left:3px solid #60a5fa;padding-left:20px;background:rgba(96,165,250,0.04);">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">FOMC · June 17</span>
+        <span class="insight-tag" id="fomc-tag-en" style="color:#60a5fa;">FOMC · Tomorrow</span>
         <span class="insight-title">FOMC June 17, 2026 — Fed Hold: What the rate decision means for Shipping, REITs and Pipelines</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-arrow" style="color:#60a5fa;">→</span>
       </a>
+      <script>
+      /* Self-expire: remove FOMC timely highlight after decision day June 18 00:00 UTC */
+      (function(){
+        var expiry = new Date('2026-06-18T00:00:00Z');
+        if(new Date() > expiry){
+          var el = document.getElementById('fomc-insight-en');
+          var tag = document.getElementById('fomc-tag-en');
+          if(el){ el.style.borderLeft=''; el.style.paddingLeft=''; el.style.background=''; }
+          if(tag){ tag.style.color=''; tag.textContent='FOMC · June 17'; }
+          var arrows = el ? el.querySelectorAll('.insight-arrow') : [];
+          arrows.forEach(function(a){ a.style.color=''; });
+        }
+      })();
+      </script>
       <a class="insight" id="hormuz-insight-en" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
         <span class="insight-date">2026-06</span>
         <span class="insight-tag" id="hormuz-tag-en">Shipping · Breaking</span>
