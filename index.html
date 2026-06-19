@@ -1079,11 +1079,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   </div>
 </section>
 
-<!-- AdSense: between audience and insights -->
-<div style="text-align:center;margin:24px auto;">
+<!-- AdSense slot 3778191657 disabled 2026-06-19 web-design-agent CRO-fix:
+     EN AdSense account unapproved (re-application pending 25.06.2026+).
+     Active <ins> slots with unapproved account trigger Google Funding Choices CMP in German,
+     blocking hero render for EU visitors (CLS + conversion wall). Slot placeholder kept for
+     re-activation after EN approval. adsbygoogle.js loader at page-end stays (AdSense verification).
+     Re-enable both slots after EN approval confirmed. -->
+<!-- <div style="text-align:center;margin:24px auto;">
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+</div> -->
 
 <!-- INSIGHTS -->
 <section id="insights">
@@ -1151,11 +1156,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <div class="divider"></div>
 
-<!-- AdSense: before FAQ -->
-<div style="text-align:center;margin:24px auto;">
+<!-- AdSense slot 1212067635 disabled 2026-06-19 web-design-agent CRO-fix:
+     Same reason as slot 3778191657 above. Re-enable after EN approval. -->
+<!-- <div style="text-align:center;margin:24px auto;">
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="in-article" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-</div>
+</div> -->
 
 <!-- E-E-A-T Author Section: homepage trust signal for AdSense re-approval + new visitors (2026-06-08) -->
 <section id="about-analyst" aria-labelledby="analyst-heading" style="padding:60px 0;">
@@ -1403,8 +1409,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
-<!-- AdSense loaded after LCP to prevent Google Funding Choices CMP from blocking hero render -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<!-- AdSense script disabled 2026-06-19 web-design-agent CRO-fix:
+     This script (adsbygoogle.js) triggers Google Funding Choices CMP modal even with no active ad slots.
+     The German-language CMP was blocking above-the-fold hero render for all EU visitors.
+     Since EN AdSense is unapproved (re-application pending 25.06.2026+), this script serves no purpose.
+     Account verification: <meta name="google-adsense-account"> tag at line 11 is sufficient for
+     Google's pub-verification endpoint. Re-enable this script AND the two <ins> slots together
+     after EN AdSense approval is confirmed. -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
 
 <!-- Sticky Research CTA bar — depth navigation, no newsletter (EN-only policy) v1.0 2026-06-04 -->
 <div id="en-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
