@@ -9,6 +9,8 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0c0b09">
 <meta name="google-adsense-account" content="ca-pub-7097302643579933">
+<!-- AdSense loader declared in <head> (E-E-A-T/verification requirement). Marked async so it does not block hero LCP; ad-fill scripts run after the deferred body loader fires. -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="dns-prefetch" href="https://www.youtube.com">
@@ -752,6 +754,108 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   </div>
 </div>
 
+<!-- ═══ REAL INVESTOR — Experience/Trust band (E-E-A-T) ═══
+     2026-06-19 web-design-agent: makes the human investor unmistakable above-the-fold-near.
+     Real %-only track record from output/seo/adsense-en-portfolio.json (Parqet TR+Scalable, as_of 2026-06-18).
+     Compliance R5: NO total portfolio EUR, NO share counts, NO absolute EUR position values.
+     Annual NET dividend EUR is permitted (income transparency). -->
+<style>
+.realinv{background:var(--surface);position:relative;overflow:hidden;padding:clamp(56px,7vw,96px) 0}
+.realinv::before{content:"";position:absolute;inset:-30% auto auto -10%;width:60%;height:130%;background:radial-gradient(ellipse at center,var(--accent-deep),transparent 62%);opacity:.12;pointer-events:none}
+.realinv-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(36px,5vw,72px);align-items:center;position:relative}
+.realinv-id{display:flex;align-items:center;gap:20px;margin-bottom:26px}
+.realinv-photo{width:84px;height:84px;border-radius:50%;border:2px solid var(--accent);object-fit:cover;object-position:center 28%;flex-shrink:0}
+.realinv-id-text{display:flex;flex-direction:column;gap:4px}
+.realinv-name{font-family:var(--serif);font-size:clamp(28px,3.4vw,40px);line-height:1;letter-spacing:-.015em;color:var(--fg)}
+.realinv-name em{font-style:italic;color:var(--accent)}
+.realinv-creds{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--fg-muted);line-height:1.55}
+.realinv-creds b{color:var(--accent);font-weight:500}
+.realinv-lede{font-size:15.5px;color:var(--fg-muted);line-height:1.7;max-width:46ch;margin-bottom:28px}
+.realinv-lede strong{color:var(--fg);font-weight:500}
+.realinv-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:30px}
+.realinv-stat{background:var(--surface);padding:22px 18px}
+.realinv-stat .rs-num{font-family:var(--serif);font-size:clamp(30px,3.6vw,40px);line-height:1;color:var(--fg);letter-spacing:-.02em}
+.realinv-stat .rs-num span{font-size:.42em;color:var(--accent);font-family:var(--mono);margin-left:3px;letter-spacing:.04em}
+.realinv-stat .rs-lab{margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);line-height:1.5}
+.realinv-ctas{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.realinv-ctas .btn:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.realinv-ctas .btn:first-child::before{display:none}
+.realinv-ctas .btn:first-child:hover{background:var(--accent-bright);border-color:var(--accent-bright);color:var(--bg)}
+.realinv-video{position:relative}
+.realinv-video .rv-frame{position:relative;aspect-ratio:16/9;border:1px solid var(--border-strong);border-radius:12px;overflow:hidden;background:#000;box-shadow:0 24px 60px -20px rgba(0,0,0,.7)}
+.realinv-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.realinv-video .rv-cap{margin-top:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--fg-dim);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.realinv-video .rv-cap a{color:var(--accent)}
+.realinv-disclaimer{margin-top:26px;font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--fg-dim);line-height:1.6;border-top:1px solid var(--border);padding-top:18px}
+.realinv-disclaimer b{color:var(--fg-muted);font-weight:500}
+@media (max-width:920px){.realinv-grid{grid-template-columns:1fr;gap:40px}.realinv-video{order:-1}}
+@media (max-width:480px){.realinv-stats{grid-template-columns:1fr;}.realinv-photo{width:64px;height:64px}}
+</style>
+<section class="realinv" id="real-investor" aria-labelledby="realinv-h">
+  <div class="wrap">
+    <div class="realinv-grid reveal">
+      <div>
+        <span class="eyebrow" style="margin-bottom:22px">Real investor · Skin in the game</span>
+        <div class="realinv-id" style="margin-top:18px">
+          <picture>
+            <source srcset="assets/marco-bozem.webp" type="image/webp">
+            <img class="realinv-photo" src="assets/marco-bozem.jpg" alt="Marco Bozem — private investor and founder of MB Capital Strategies" width="84" height="84" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='marco.jpg'">
+          </picture>
+          <div class="realinv-id-text">
+            <span class="realinv-name" id="realinv-h">Marco <em>Bozem</em></span>
+            <span class="realinv-creds">Independent private investor since <b>2022</b><br>630+ YouTube subscribers · CFA Level&nbsp;I candidate</span>
+          </div>
+        </div>
+        <p class="realinv-lede">
+          I am a real person investing my own money in hard assets — shipping, mining, energy and pipelines.
+          Every analysis here is backed by positions I actually hold (<strong>CMB.Tech ~3.4%, TORM ~2.9%, Dorian LPG ~2.9%, FLEX&nbsp;LNG ~2.2%</strong> of the public portfolio).
+          The numbers below come straight from my live Parqet tracking — Trade Republic + Scalable Capital, percentages only.
+        </p>
+        <div class="realinv-stats" role="list" aria-label="Real portfolio track record">
+          <div class="realinv-stat" role="listitem">
+            <div class="rs-num">20.7<span>%</span></div>
+            <div class="rs-lab">XIRR p.a.<br>since 2022</div>
+          </div>
+          <div class="realinv-stat" role="listitem">
+            <div class="rs-num">6.93<span>%</span></div>
+            <div class="rs-lab">Yield on<br>cost (YOC)</div>
+          </div>
+          <div class="realinv-stat" role="listitem">
+            <div class="rs-num">~4,216<span>€</span></div>
+            <div class="rs-lab">net dividends<br>last 12 months</div>
+          </div>
+        </div>
+        <div class="realinv-ctas">
+          <a href="pages/portfolio.html" class="btn">See my real portfolio →</a>
+          <a href="https://www.youtube.com/@MBCapitalStrategies" target="_blank" rel="noopener" class="btn btn-ghost">YouTube channel ↗</a>
+        </div>
+      </div>
+
+      <div class="realinv-video">
+        <div class="rv-frame">
+          <iframe loading="lazy"
+            src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9de2z6a0MqXsEdm8Erda1Zwp"
+            title="MB Capital Strategies — real portfolio updates by Marco Bozem"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen></iframe>
+        </div>
+        <div class="rv-cap">
+          <span>▶ Portfolio updates &amp; weekly recaps</span>
+          <span style="opacity:.5">·</span>
+          <a href="https://www.youtube.com/@MBCapitalStrategies" target="_blank" rel="noopener">@MBCapitalStrategies →</a>
+        </div>
+        <p class="realinv-disclaimer">
+          <b>This is not financial advice.</b> I am a private investor, not a financial advisor.
+          Figures are real, percentage-based and from my own Parqet tracking (as of June 2026); past performance is no guarantee of future results.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- PHILOSOPHY -->
 <section id="philosophy">
   <div class="wrap">
@@ -1057,10 +1161,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   <div class="wrap">
     <div style="display:flex;align-items:flex-start;gap:32px;background:rgba(15,17,26,0.85);border:1px solid rgba(212,175,55,0.2);border-radius:16px;padding:32px 36px;flex-wrap:wrap;">
       <picture style="flex-shrink:0;">
-        <source srcset="marco.webp" type="image/webp">
-        <img src="marco.webp" alt="Marco Bozem — Founder, MB Capital Strategies" width="96" height="96"
+        <source srcset="assets/marco-bozem.webp" type="image/webp">
+        <img src="assets/marco-bozem.jpg" alt="Marco Bozem — Founder, MB Capital Strategies" width="96" height="96"
              style="border-radius:50%;border:2px solid #D4AF37;object-fit:cover;display:block;" loading="lazy"
-             onerror="this.onerror=null;this.src='marco.webp'">
+             onerror="this.onerror=null;this.src='marco.jpg'">
       </picture>
       <div style="flex:1;min-width:220px;">
         <p style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;">§08 · About the Analyst</p>
@@ -1139,7 +1243,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <span>© 2026 MB Capital Strategies · Marco Bozem</span>
       <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="pages/imprint.html">Imprint</a><a href="pages/privacy.html">Privacy</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/affiliate-disclosure.html">Affiliates</a></span>
     </div>
-    <p class="footer-aff">Some links are affiliate links. No extra cost to you. Not investment advice.</p>
+    <p class="footer-aff"><strong style="color:var(--fg-muted)">This is not financial advice. I am a private investor, not a financial advisor.</strong><br>Some links are affiliate links — no extra cost to you.</p>
   </div>
 </footer>
 
