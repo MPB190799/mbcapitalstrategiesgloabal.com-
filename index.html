@@ -9,8 +9,9 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0c0b09">
 <meta name="google-adsense-account" content="ca-pub-7097302643579933">
-<!-- AdSense loader declared in <head> (E-E-A-T/verification requirement). Marked async so it does not block hero LCP; ad-fill scripts run after the deferred body loader fires. -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<!-- AdSense loader moved to body-end (2026-06-19 web-design-agent LCP-fix). Verification via <meta name="google-adsense-account"> above is sufficient for E-E-A-T. HEAD loader was triggering Google CMP before hero render — duplicate of body-end loader at line ~1406. DE site pattern is the reference. -->
+<!-- dns-prefetch for pagead2 is sufficient for early DNS lookup without blocking hero -->
+<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 <link rel="dns-prefetch" href="https://www.google-analytics.com">
 <link rel="dns-prefetch" href="https://www.youtube.com">
@@ -675,8 +676,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <!-- CRO 2026-06-19 web-design-agent: primary CTA hardened to permanent state (Hormuz window closed 2026-06-17; JS-patch removed, static HTML now matches live intent — eliminates post-load text-swap CLS risk). -->
       <div class="hero-ctas" id="hero-ctas-en">
         <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
-        <a href="pages/blog.html" class="btn btn-ghost" id="hero-cta-secondary-en">All Research ↗</a>
-        <a href="pages/calculators.html" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">Free Calculators →</a>
+        <a href="pages/calculators.html" class="btn btn-ghost" id="hero-cta-secondary-en">Free Calculators ↗</a>
+        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">YouTube →</a>
       </div>
       <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
            Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
