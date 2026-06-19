@@ -670,24 +670,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       </div>
 
       <!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
-      <!-- CRO 2026-06-16 web-design-agent: improved self-expire default (was generic "Browse Research") + sector-teaser replaces empty YouTube-only micro-CTA (no internal links ATF on EN previously) -->
+      <!-- CRO 2026-06-19 web-design-agent: primary CTA hardened to permanent state (Hormuz window closed 2026-06-17; JS-patch removed, static HTML now matches live intent — eliminates post-load text-swap CLS risk). -->
       <div class="hero-ctas" id="hero-ctas-en">
-        <a href="pages/shipping.html" class="btn" id="hero-cta-primary-en">Shipping Research ↗</a>
+        <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
         <a href="pages/blog.html" class="btn btn-ghost" id="hero-cta-secondary-en">All Research ↗</a>
         <a href="pages/calculators.html" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">Free Calculators →</a>
       </div>
-      <script>
-      /* Self-expire: revert primary CTA to stronger default after 2026-06-17 23:59:59 UTC
-         CRO 2026-06-16: changed default from generic "Browse Research" to sector-specific "Hard Asset Research"
-         to maintain keyword context and reduce bounce after Hormuz event window closes. */
-      (function(){
-        var expiry = new Date('2026-06-17T23:59:59Z');
-        if(new Date() > expiry){
-          var el = document.getElementById('hero-cta-primary-en');
-          if(el){ el.href='pages/blog.html'; el.textContent='Hard Asset Research ↗'; }
-        }
-      })();
-      </script>
       <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
            Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
            the hero had no path into specific sectors without scrolling past the compass cardinals.
@@ -716,18 +704,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           <span class="cdir"><b>Tankers</b><small>Shipping</small></span>
         </a>
       </nav>
-      <!-- CRO 2026-06-16 web-design-agent: FOMC event signal in hero — rate decision June 17 tomorrow. Self-expire 2026-06-18T00:00:00Z. No layout shift (inline-flex, mono, 1 line). -->
-      <div id="fomc-hero-en" style="margin:14px 0 0;display:inline-flex;align-items:center;gap:10px;font-family:var(--mono,monospace);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);background:rgba(96,165,250,0.06);border:1px solid rgba(96,165,250,0.22);border-radius:3px;padding:6px 12px;line-height:1.3;">
-        <span style="display:inline-block;width:5px;height:5px;border-radius:50%;background:#60a5fa;flex-shrink:0;animation:pulse 2.4s ease-in-out infinite;"></span>
-        <span style="color:var(--fg,#f0f4ff);">FOMC Tomorrow:</span>
-        <a href="blog/fomc-june-2026-hard-assets-interest-rates.html" style="color:#60a5fa;text-decoration:none;border-bottom:1px solid rgba(96,165,250,0.35);">Rate decision — what it means for Hard Assets →</a>
-      </div>
-      <script>
-      (function(){
-        var expiry=new Date('2026-06-18T00:00:00Z');
-        if(new Date()>expiry){ var el=document.getElementById('fomc-hero-en'); if(el) el.style.display='none'; }
-      })();
-      </script>
+      <!-- FOMC-signal chip removed 2026-06-19 web-design-agent (expired 2026-06-18, DOM clean-up). -->
     </div>
   </div>
 
