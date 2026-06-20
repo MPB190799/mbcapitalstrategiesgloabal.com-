@@ -1103,6 +1103,20 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-06-20">June 20, 2026</time></p>
     </div>
     <div class="insights-list reveal">
+      <!-- CRO 2026-06-20 web-design-agent: BHP Jansen-Writedown $2.3B Mining-Sector-Signal — inserted as top entry with Breaking highlight (today-strategy 20.06., 24h window). Self-expire: revert highlight after 2026-06-21. -->
+      <a class="insight" href="blog/bhp-analysis-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);" id="bhp-mining-insight">
+        <span class="insight-date">2026-06</span>
+        <span class="insight-tag">Mining · Breaking</span>
+        <span class="insight-title">BHP writes down $2.3B Jansen Potash — what this means for mining dividends in 2026</span>
+        <span class="insight-arrow">→</span>
+      </a>
+      <script>
+      // Self-expire: BHP mining-sector highlight → plain after 2026-06-21
+      (function(){
+        var exp=new Date('2026-06-21T23:59:00Z'), el=document.getElementById('bhp-mining-insight');
+        if(el && new Date()>exp){ el.removeAttribute('style'); el.querySelector('.insight-tag').textContent='Mining'; }
+      })();
+      </script>
       <!-- CRO 2026-06-19 web-design-agent: FOMC expired highlight removed from static HTML (expired 2026-06-18). Plain insight, no highlight. -->
       <a class="insight" href="blog/fomc-june-2026-hard-assets-interest-rates.html">
         <span class="insight-date">2026-06</span>
@@ -1110,10 +1124,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         <span class="insight-title">FOMC June 17, 2026 — Fed Hold: What the rate decision means for Shipping, REITs and Pipelines</span>
         <span class="insight-arrow">→</span>
       </a>
-      <!-- CRO 2026-06-19 web-design-agent: Hormuz highlight hardened to permanent "Current" state — Breaking expired 2026-06-17, Hormuz-Contrarian still top topic (today-strategy 2026-06-19). Self-expire script removed. -->
-      <a class="insight" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+      <!-- CRO 2026-06-20 web-design-agent: Hormuz highlight downgraded from "Current" to plain — event is 4 days old, BHP is today's Breaking topic (today-strategy 20.06.). -->
+      <a class="insight" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping · Current</span>
+        <span class="insight-tag">Shipping</span>
         <span class="insight-title">Hormuz Crisis: Tanker Freight Rates +24% in One Day — Shipping Stocks 2026</span>
         <span class="insight-arrow">→</span>
       </a>
