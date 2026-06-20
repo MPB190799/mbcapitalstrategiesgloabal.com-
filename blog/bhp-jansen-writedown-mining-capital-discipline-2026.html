@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0f1115">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+<!-- LCP-Critical-CSS -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+h2{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;color:var(--gold);margin:40px 0 14px;border-left:3px solid var(--gold);padding-left:14px}
+h3{font-size:1.15rem;font-weight:700;color:var(--text);margin:28px 0 10px}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem}
+.container{max-width:820px;margin:0 auto;padding:0 24px 80px}
+.fact-box{background:rgba(212,175,55,0.07);border:1px solid rgba(212,175,55,0.25);border-radius:12px;padding:20px 24px;margin:28px 0}
+.fact-box h4{color:var(--gold);font-weight:700;margin:0 0 10px;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase}
+.fact-row{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:.92rem}
+.fact-row:last-child{border-bottom:none}
+.fact-label{color:var(--text-muted)}
+.fact-value{color:var(--gold);font-weight:700}
+.disclaimer{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:18px 22px;margin-top:48px;font-size:.82rem;color:var(--text-muted);line-height:1.6}
+.affiliate-note{font-size:.8rem;color:var(--text-muted);margin-top:4px}
+a{color:var(--gold);text-decoration:none}a:hover{text-decoration:underline}
+ul{padding-left:20px}li{margin-bottom:6px}
+@media(max-width:768px){h1{font-size:1.6rem}.container{padding:0 16px 60px}}
+</style>
+
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/blog/styles.min.css?v=5"></noscript>
+
+  <title>BHP Jansen $2.3B Writedown: What Mining Investors Should Know (June 2026)</title>
+  <meta name="description" content="BHP takes a $2.3B writedown on Jansen Stage 2 potash mine. Costs up 41% to $6.9B. What this signals for mining capital discipline and which producers benefit.">
+  <meta name="author" content="Marco Bozem">
+
+  <link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
+
+  <meta property="og:title" content="BHP Jansen $2.3B Writedown: What Mining Investors Should Know (June 2026)">
+  <meta property="og:description" content="BHP takes a $2.3B writedown on Jansen Stage 2 potash mine. Costs up 41% to $6.9B. What this signals for mining capital discipline and which producers benefit.">
+  <meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MB Capital Strategies Global">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BHP Jansen $2.3B Writedown: What Mining Investors Should Know (June 2026)">
+  <meta name="twitter:description" content="BHP takes a $2.3B writedown on Jansen Stage 2 potash mine. Costs up 41% to $6.9B. What this signals for mining capital discipline.">
+  <meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('config', 'G-FSW7J7QYL8');
+  </script>
+
+  <!-- Schema: BlogPosting -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "BHP Jansen $2.3B Writedown: What Mining Investors Should Know (June 2026)",
+    "description": "BHP takes a $2.3B writedown on Jansen Stage 2 potash mine. Costs up 41% to $6.9B. What this signals for mining capital discipline and dividend investors.",
+    "author": {
+      "@type": "Person",
+      "name": "Marco Bozem",
+      "url": "https://mbcapitalstrategiesgloabal.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "MB Capital Strategies",
+      "url": "https://mbcapitalstrategiesgloabal.com"
+    },
+    "datePublished": "2026-06-20",
+    "dateModified": "2026-06-20",
+    "mainEntityOfPage": "https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html",
+    "image": "https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg",
+    "keywords": ["BHP", "Jansen potash", "mining writedown", "mining stocks", "capital discipline", "dividend investing", "hard assets"]
+  }
+  </script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+      {"@type": "ListItem", "position": 2, "name": "Mining Stocks", "item": "https://mbcapitalstrategiesgloabal.com/mining-stocks"},
+      {"@type": "ListItem", "position": 3, "name": "BHP Jansen Writedown Analysis", "item": "https://mbcapitalstrategiesgloabal.com/blog/bhp-jansen-writedown-mining-capital-discipline-2026.html"}
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/">
+      <img src="/assets/mb_logo.png" alt="MB Capital Strategies Logo" width="32" height="32" loading="eager">
+      <span>MB Capital Strategies Global</span>
+    </a>
+    <a href="/mining-stocks" style="color:var(--gold);font-size:.85rem;font-weight:600;">Mining Stocks</a>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="breadcrumbs" style="margin-bottom:24px;font-size:.82rem;color:var(--text-muted)">
+    <a href="/">Home</a> › <a href="/mining-stocks">Mining Stocks</a> › BHP Jansen Writedown
+  </div>
+
+  <article>
+    <header>
+      <p style="color:var(--gold);font-size:.82rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin:0 0 12px">Mining · Capital Discipline · June 20, 2026</p>
+      <h1>BHP Jansen $2.3 Billion Writedown: What It Signals for Mining Investors</h1>
+      <p style="color:var(--text-muted);font-size:.95rem;margin-bottom:32px">
+        On June 18, 2026, BHP announced a $2.3 billion impairment on its Jansen potash project Stage 2. Stage 2 costs jumped 41% — from $4.9B to $6.9B. This is not a BHP-specific event. It is a structural signal for the entire mining sector.
+      </p>
+    </header>
+
+    <div class="fact-box">
+      <h4>Key Numbers — Verified (Bloomberg / Globe and Mail, June 18, 2026)</h4>
+      <div class="fact-row"><span class="fact-label">Stage 2 writedown</span><span class="fact-value">$2.3 billion USD</span></div>
+      <div class="fact-row"><span class="fact-label">Stage 2 new budget</span><span class="fact-value">$6.9B (was $4.9B, +41%)</span></div>
+      <div class="fact-row"><span class="fact-label">Stage 1 budget</span><span class="fact-value">$8.4B — running over original estimate</span></div>
+      <div class="fact-row"><span class="fact-label">Stage 1 first production</span><span class="fact-value">Mid-2027 (delayed)</span></div>
+      <div class="fact-row"><span class="fact-label">Stage 2 production start</span><span class="fact-value">Fiscal 2031 (was fiscal 2029)</span></div>
+      <div class="fact-row"><span class="fact-label">Jansen in BHP context</span><span class="fact-value">Largest single investment in BHP history</span></div>
+    </div>
+
+    <h2>What Happened</h2>
+
+    <p>BHP's Jansen Stage 2 potash project in Saskatchewan, Canada, is costing significantly more than planned. The revised budget of $6.9 billion represents a $2 billion increase — a 41% overrun — over the originally approved estimate of $4.9 billion.</p>
+
+    <p>According to BHP, the cause is "additional construction hours and quantities of materials." Combined with revised long-term potash price assumptions, the present value fell below the current book value, triggering the $2.3B write-down.</p>
+
+    <p>Stage 1 of the same project is also running over budget at $8.4 billion, with first production now expected in mid-2027. Stage 2 has been pushed to fiscal year 2031, two years later than originally planned (FY2029).</p>
+
+    <p>Jansen is the largest single investment in BHP's history. This makes the cost overrun particularly significant — not just for BHP shareholders, but as a data point for any investor analyzing mining development risk.</p>
+
+    <h2>The Structural Pattern Behind This</h2>
+
+    <p>This is not an isolated case. Large greenfield mining projects have systematically run over budget for years. The causes are structural:</p>
+
+    <ul>
+      <li><strong>Energy cost inflation</strong> — mining operations are energy-intensive; diesel, electricity, and logistics costs have risen substantially since 2020.</li>
+      <li><strong>Skilled labor shortages</strong> — experienced mining engineers and technicians remain scarce, particularly in remote regions like Saskatchewan.</li>
+      <li><strong>Supply chain constraints</strong> — specialized equipment (drilling, tunneling, processing machinery) has long lead times and limited global supply.</li>
+      <li><strong>Geological complexity underestimation</strong> — subsurface conditions often exceed initial assumptions, requiring more construction hours and material.</li>
+    </ul>
+
+    <p>These factors compound each other. When a project takes longer, all costs increase further. The 41% overrun at Jansen Stage 2 is severe, but cost escalations of 20-50% on major mining developments have become the norm rather than the exception over the past decade.</p>
+
+    <h2>What This Means for Dividend-Focused Mining Investors</h2>
+
+    <p>If you invest in mining stocks for income — dividends from current production — this event provides a clear framework signal:</p>
+
+    <h3>1. Cash-generating producers over development projects</h3>
+    <p>Dividends require current free cash flow. A mine that is not yet producing generates zero cash flow. When development projects overrun by $2 billion, that capital comes from somewhere — often from free cash flow that could otherwise fund dividends or shareholder returns.</p>
+
+    <p>My preference is for companies that are producing today, generating cash today, and returning cash to shareholders today. No construction site risk.</p>
+
+    <h3>2. Capex-to-FCF ratio as a mandatory screen</h3>
+    <p>Before purchasing any mining stock for income purposes, the capex-to-free-cash-flow ratio matters more than the dividend yield alone. A company spending more on capital expenditures than it generates in free cash flow cannot sustain its dividend without debt or dilution.</p>
+
+    <p>The Jansen overrun is a reminder that capex estimates in mining are frequently wrong — and wrong on the upside. Budget conservatism and actual execution track records should carry significant weight in your analysis.</p>
+
+    <h3>3. Write-downs at large players often reduce future supply</h3>
+    <p>When BHP takes a writedown and delays Jansen Stage 2 to 2031, that represents supply that will not enter the potash market. Similar dynamics apply across commodity sectors: cost overruns and project delays reduce future supply growth, which can be structurally positive for existing, lower-cost producers.</p>
+
+    <p>This is not a direct investment thesis for potash specifically — it is a pattern worth understanding across the hard asset universe.</p>
+
+    <h2>The German-language Analysis (DE)</h2>
+    <p>The full German-language analysis of this topic — including specific implications for the hard assets cycle and dividend producer framework — is available on the <a href="https://mbcapitalstrategies.com/blog/bhp-jansen-writedown-mining-kapital-2026.html" hreflang="de">German MB Capital Strategies site</a>.</p>
+
+    <h2>Tools for Mining Stock Research</h2>
+    <p>For deeper fundamental analysis on mining stocks — including capex/FCF ratios, balance sheet strength, and dividend coverage — I use <a href="https://www.investing-referral.com/mbcapitalglobal/" rel="sponsored">InvestingPro</a>* for screening and data verification.
+    <br><span class="affiliate-note">* Affiliate link — at no additional cost to you. I only recommend tools I use myself.</span></p>
+
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This article is for informational and educational purposes only. Nothing here constitutes investment advice or a recommendation to buy or sell any security. BHP Group is not currently in my portfolio. References to Thungela Resources and Yancoal Australia are for illustrative purposes only. All investment decisions carry risk and should be made based on your own research and risk tolerance. Past performance does not guarantee future results.
+    </div>
+  </article>
+</div>
+
+</body>
+</html>
