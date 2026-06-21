@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- LCP-Fix: Preload critical font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+<meta charset="UTF-8">
+<!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#050508">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Uranium Supercycle 2026: Supply Cuts Meet Nuclear Renaissance</title>
+<meta name="description" content="Kazatomprom cuts production 10% to 29,697t. 440 reactors running, 70 under construction. WNA forecasts 150,000t demand by 2040. Structural deficit ~31M lbs in 2026. The numbers behind the uranium supercycle.">
+<meta name="author" content="Marco Bozem">
+<meta name="keywords" content="uranium supercycle 2026, uranium price, Kazatomprom, nuclear renaissance, uranium stocks, hard assets, nuclear energy, uranium demand 2040, MB Capital Strategies">
+
+<!-- LCP-Critical-CSS -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+h2{font-size:clamp(1.25rem,3vw,1.7rem);font-weight:700;color:var(--gold);margin:40px 0 14px;line-height:1.2}
+h3{font-size:1.05rem;font-weight:700;color:#f0f1f5;margin:28px 0 10px}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+.breadcrumbs a:hover{color:var(--gold)}
+.highlight{background:#1a1d23;border-left:4px solid #d4af37;padding:14px 18px;margin:22px 0;border-radius:8px}
+.risk-box{background:#22151a;border-left:4px solid #ff6b6b;padding:14px 18px;margin:22px 0;border-radius:8px;color:#f0f1f5}
+.info-box{background:#1a1f2b;padding:14px 18px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+.data-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin:24px 0}
+.data-card{background:#0c0e16;border:1px solid rgba(212,175,55,.2);border-radius:10px;padding:16px;text-align:center}
+.data-card .val{font-size:1.6rem;font-weight:800;color:#d4af37;line-height:1.1}
+.data-card .lbl{font-size:.78rem;color:#9aa0b8;margin-top:6px}
+.cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0;text-align:center}
+.cta-box p{color:#cfd6e6;margin:0 0 14px;font-size:.95rem}
+.related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+.related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+.related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+.related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+.sources-box{background:#1a1d23;border-left:4px solid #d4af37;padding:14px 20px;margin-top:30px;border-radius:8px;font-size:.88em;color:#9aa0b8}
+.sources-box a{color:#d4af37;text-decoration:none}
+.sources-box a:hover{text-decoration:underline}
+.disclaimer{background:#1a1d23;padding:14px 18px;margin-top:40px;border-radius:8px;font-size:.85em;color:#7a8499;line-height:1.6}
+footer{text-align:center;padding:25px;font-size:.9em;color:#9aa6c0;border-top:1px solid rgba(255,255,255,.05);margin-top:60px}
+footer a{color:#d4af37;text-decoration:none}
+footer a:hover{text-decoration:underline}
+nav.nav-links a{color:#cfd6e6;text-decoration:none;font-size:.9rem;padding:6px 10px;border-radius:6px;transition:color .2s}
+nav.nav-links a:hover{color:#d4af37}
+.nav-mobile{display:none}
+@media(max-width:768px){nav.nav-links{display:none}.nav-hamburger{display:flex}.nav-mobile{display:none;flex-direction:column;background:rgba(5,5,8,.97);padding:16px 20px;gap:10px}.nav-mobile.open{display:flex}.nav-mobile a{color:#cfd6e6;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}h1{font-size:1.6rem}}
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('config', 'G-FSW7J7QYL8');
+</script>
+
+<meta property="og:title" content="Uranium Supercycle 2026: Supply Cuts Meet Nuclear Renaissance">
+<meta property="og:description" content="Kazatomprom cuts output 10% to 29,697t. 440 reactors operating, 70 under construction. WNA forecasts 150,000t demand by 2040. Structural deficit ~31M lbs. The data behind the uranium supercycle.">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Uranium Supercycle 2026: Supply Cuts Meet Nuclear Renaissance">
+<meta name="twitter:description" content="Kazatomprom −10%, 440 reactors running, 70 under construction, WNA sees 150,000t demand by 2040. Structural deficit growing to 130M lbs by 2040.">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html">
+
+<!-- JSON-LD Article Structured Data -->
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Uranium Supercycle 2026: Supply Cuts Meet Nuclear Renaissance",
+  "description": "Kazatomprom cuts output 10% to 29,697t U3O8. Spot price ~$85/lb. 440 reactors operating, 70 under construction. WNA projects 150,000t demand by 2040. Structural deficit ~31M lbs in 2026, growing to 130M lbs by 2040.",
+  "url": "https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html",
+  "image": "https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg",
+  "datePublished": "2026-06-21",
+  "dateModified": "2026-06-21",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://www.linkedin.com/in/marco-bozem-182173295",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesgloabal.com/Logo.webp"
+    }
+  },
+  "inLanguage": "en",
+  "articleSection": "Hard Assets",
+  "wordCount": 1050,
+  "keywords": ["uranium supercycle", "Kazatomprom", "nuclear renaissance", "uranium spot price", "uranium demand 2040", "hard assets", "mining stocks 2026"]
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategiesgloabal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategiesgloabal.com/pages/blog.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Uranium Supercycle 2026",
+      "item": "https://mbcapitalstrategiesgloabal.com/blog/uranium-supercycle-2026.html"
+    }
+  ]
+}</script>
+
+<link rel="stylesheet" href="../css/style.min.css">
+</head>
+<body>
+
+<!-- Navigation -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies Global" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/pages/mining.html">Mining Stocks</a>
+      <a href="/pages/blog.html">Blog</a>
+      <a href="/pages/hard-assets.html">Hard Assets</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Home</a>
+    <a href="/pages/mining.html">Mining Stocks</a>
+    <a href="/pages/blog.html">Blog</a>
+    <a href="/pages/hard-assets.html">Hard Assets</a>
+  </nav>
+</header>
+<script>
+  document.getElementById('navHamburger').addEventListener('click',function(){
+    var m=document.getElementById('navMobile');
+    var open=m.classList.toggle('open');
+    this.setAttribute('aria-expanded',open);
+  });
+</script>
+
+<!-- Breadcrumbs -->
+<div class="breadcrumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a> &rsaquo;
+  <a href="/pages/blog.html">Blog</a> &rsaquo;
+  Uranium Supercycle 2026
+</div>
+
+<div class="container">
+
+  <!-- DE Language Switch -->
+  <aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6">
+    &#127465;&#127466; <strong style="color:#f5f6fa">Deutsche Version:</strong>
+    <a href="https://mbcapitalstrategies.com/blog/uran-superzyklus-2026.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Diesen Artikel auf Deutsch lesen</a>
+    &nbsp;&middot;&nbsp;
+    <a href="https://mbcapitalstrategies.com/" style="color:#d4af37">MB Capital Strategies DE</a>
+  </aside>
+
+  <p style="color:#7a8499;font-size:0.82rem;margin:4px 0 16px;">&#128197; June 21, 2026 &nbsp;&middot;&nbsp; Marco Bozem</p>
+
+  <!-- AEO Answer-First Block -->
+  <div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 28px;font-size:.95rem;line-height:1.65;color:#cfd6e6">
+    <strong style="color:#D4AF37">Uranium Supercycle 2026 — Quick Answer:</strong><br>
+    Uranium spot price sits at ~$85/lb (year high: $101.41/lb in January). Kazatomprom — the world's largest producer — reports 2026 output of 29,697t U3O8, down 10% from planned 32,777t. Meanwhile 440 reactors operate globally with 70 more under construction. The WNA projects demand at 150,000t+ by 2040 — more than double today's levels. The structural supply deficit for 2026 alone is estimated at ~31 million lbs. This is not narrative. These are facts.
+  </div>
+
+  <h1>Uranium Supercycle 2026: Supply Cuts Meet Nuclear Renaissance</h1>
+
+  <!-- Key Data Grid -->
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="val">~$85</div>
+      <div class="lbl">Spot price/lb U3O8 (Jun 2026)</div>
+    </div>
+    <div class="data-card">
+      <div class="val">−10%</div>
+      <div class="lbl">Kazatomprom 2026 production cut</div>
+    </div>
+    <div class="data-card">
+      <div class="val">440 + 70</div>
+      <div class="lbl">Reactors operating + under construction</div>
+    </div>
+    <div class="data-card">
+      <div class="val">150,000t</div>
+      <div class="lbl">WNA demand forecast to 2040</div>
+    </div>
+    <div class="data-card">
+      <div class="val">31M lbs</div>
+      <div class="lbl">Structural deficit 2026</div>
+    </div>
+    <div class="data-card">
+      <div class="val">$93/lb</div>
+      <div class="lbl">Citigroup 2026 price forecast</div>
+    </div>
+  </div>
+
+  <h2>Supply Side: The World's Largest Producer Is Cutting Output</h2>
+
+  <p>
+    Kazakhstan's Kazatomprom controls the single most important lever in uranium supply. No other country or company comes close to its market position — making its production numbers a direct market signal.
+  </p>
+
+  <p>
+    <strong>FACT:</strong> Kazatomprom's 2026 production is projected at 29,697 tonnes U3O8, a 10% shortfall versus the planned 32,777 tonnes. (Source: World Nuclear News June 2026, Enerdata)
+  </p>
+
+  <p>
+    The drivers are structural, not seasonal: sulfuric acid supply constraints, geological challenges in specific in-situ recovery fields, and infrastructure delays that have compounded over multiple years. These do not resolve on a quarterly basis.
+  </p>
+
+  <div class="info-box">
+    <strong>Analogy:</strong> Imagine Saudi Aramco announcing 10% below-plan oil output. The Kazatomprom situation is the uranium equivalent — and it's happening while reactor demand is accelerating in the opposite direction.
+  </div>
+
+  <h2>Demand Side: Nuclear Is No Longer a Niche Energy Policy</h2>
+
+  <p>
+    The nuclear renaissance narrative has moved from policy papers into construction contracts. The numbers are concrete.
+  </p>
+
+  <p>
+    <strong>FACT:</strong> 440 reactors are currently operating globally. 70 are under construction. 100 more are in planning stages. The WNA has raised its SMR (Small Modular Reactor) forecasts by +42%. (Source: WNA via Goldinvest.de, Sprott 2026)
+  </p>
+
+  <p>
+    <strong>FACT:</strong> The WNA's reference scenario projects uranium demand growing from 68,920 tonnes in 2025 to over 150,000 tonnes by 2040. (Source: WNA Reference Scenario via Sprott)
+  </p>
+
+  <p>
+    That is a more-than-doubling of demand over 15 years. Critically, this is the <em>reference</em> scenario — not the bull case. The high-growth scenario incorporating aggressive SMR deployment runs considerably higher.
+  </p>
+
+  <div class="highlight">
+    <strong>THESIS:</strong> The nuclear buildout is not a 5-year story. It is a multi-decade infrastructure commitment. Governments that have made reactor construction decisions are not reversing them — the capital is already deployed, the concrete is already poured.
+  </div>
+
+  <h2>The Structural Deficit: Why Price Must Clear Higher</h2>
+
+  <p>
+    The central argument for the uranium supercycle is not about short-term sentiment. It is about a physical commodity where supply cannot respond to price signals quickly.
+  </p>
+
+  <p>
+    <strong>FACT:</strong> The structural supply deficit for 2026 is estimated at approximately 31 million lbs. By 2040, that deficit is projected to grow to 130 million lbs. (Source: Sprott, DiscoveryAlert.com.au)
+  </p>
+
+  <p>
+    Mine development timelines average 10–15 years from discovery to first production. The mines needed to satisfy 2035–2040 demand would, ideally, already be in permitting. Most are not. This means the market faces a structural underinvestment problem that cannot be fixed quickly regardless of where the price goes in the next 12 months.
+  </p>
+
+  <div class="risk-box">
+    <strong>Key Risks — These Are Real:</strong><br>
+    Kazakhstan is a frontier market with geopolitical risk. European reactor buildout timelines face regulatory and political headwinds. New mine supply from Canada (Athabasca Basin), Namibia, and Niger requires political stability that cannot be guaranteed. Physical uranium markets are illiquid, dominated by long-term contracts, and can diverge significantly from spot pricing. Uranium equities carry amplified price sensitivity — both on the upside and downside. Size positions accordingly.
+  </div>
+
+  <h2>Price Outlook: Where Does the Market Go?</h2>
+
+  <p>
+    The spot price pulled back from $101.41/lb in January 2026 to approximately $85/lb by June — a ~16% correction that has shaken out momentum-driven positioning.
+  </p>
+
+  <p>
+    <strong>FACT:</strong> Citigroup projects a 2026 average uranium price of $93/lb. (Source: Miningscout.de)
+  </p>
+
+  <p>
+    <strong>THESIS:</strong> For Citi's annual average to materialize, the second half of 2026 needs to see a meaningful price recovery. Whether utilities — who have been drawing down strategic stockpiles — return to the long-term contracting market in size is the key catalyst to watch. When utilities realize their coverage ratios are insufficient, they don't negotiate gradually. They scramble.
+  </p>
+
+  <h2>How to Access the Uranium Theme</h2>
+
+  <p>
+    Physical uranium cannot be purchased by retail investors directly — the market is wholesale, dominated by long-term supply contracts between producers and utility buyers.
+  </p>
+
+  <p>Instruments available to investors:</p>
+
+  <ul>
+    <li><strong>Producers:</strong> Kazatomprom (KAP — LSE/AIX), Cameco (CCJ — NYSE/TSX), NexGen Energy (NXE), Paladin Energy (PDN) — direct leverage to uranium price, high beta</li>
+    <li><strong>Uranium ETFs:</strong> Global X Uranium ETF (URA), Sprott Uranium Miners ETF (URNM) — diversified exposure across the producer spectrum</li>
+    <li><strong>Physical Uranium Trust:</strong> Sprott Physical Uranium Trust (U.UN — TSX) — tracks spot price directly</li>
+  </ul>
+
+  <p>
+    For a deeper look at Kazatomprom's fundamentals — production profile, dividend, geopolitical exposure — see our dedicated analysis:
+    <a href="/blog/kazatomprom-uranium-analysis-2026.html" style="color:#d4af37">Kazatomprom 2026: 40% World Uranium Supply &rarr;</a>
+  </p>
+
+  <div class="cta-box">
+    <p>More hard asset analysis and mining stock research at MB Capital Strategies Global:</p>
+    <a href="/pages/mining.html" style="display:inline-block;padding:12px 22px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;margin:4px">Mining Stocks Overview</a>
+    <a href="/blog/commodity-supercycle-2025.html" style="display:inline-block;padding:12px 22px;background:transparent;color:#d4af37;font-weight:700;border-radius:8px;text-decoration:none;border:1px solid #d4af37;margin:4px">Commodity Supercycle Analysis</a>
+  </div>
+
+  <h2>Bottom Line: Structurally Bullish, Tactically Patient</h2>
+
+  <p>
+    Line up the data points: the world's largest uranium producer is delivering 10% below plan. 70 new reactors are under construction. Demand is on track to more than double by 2040. The structural deficit is not closing — it is widening.
+  </p>
+
+  <p>
+    The pullback from $101 to $85/lb does not change the underlying thesis. If anything, it reduces the froth from a market that briefly priced in perfection.
+  </p>
+
+  <p>
+    <strong>THESIS:</strong> Uranium is one of the most structurally compelling commodity setups of the late 2020s. Not because of narrative, but because of physics and mine development lead times. Reactors need fuel. Fuel is constrained. New mines take a decade to build. The math is not complicated — the patience required to wait for it to play out is.
+  </p>
+
+  <!-- Related Articles -->
+  <nav class="related-articles" aria-label="Related articles">
+    <h3>Further Analysis</h3>
+    <ul>
+      <li><a href="/blog/kazatomprom-uranium-analysis-2026.html">&#9855; Kazatomprom 2026: Deep Dive Analysis</a></li>
+      <li><a href="/blog/commodity-supercycle-2025.html">&#9935; Commodity Supercycle 2025 Overview</a></li>
+      <li><a href="/blog/commodity-cycle-timing-2026.html">&#9201; Commodity Cycle: Timing the Entry</a></li>
+      <li><a href="/blog/mining-stocks-overview-2026.html">&#9885; Mining Stocks Overview 2026</a></li>
+      <li><a href="/blog/barrick-gold-analysis-2026.html">&#9885; Barrick Gold Analysis 2026</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sources -->
+  <div class="sources-box">
+    <strong>Sources &amp; Fact Basis:</strong><br>
+    Kazatomprom 2026 production: <a href="https://www.world-nuclear-news.org" target="_blank" rel="noopener">World Nuclear News</a> June 2026 + Enerdata &nbsp;&middot;&nbsp;
+    Uranium spot price: <a href="https://tradingeconomics.com/commodity/uranium" target="_blank" rel="noopener">TradingEconomics</a> + <a href="https://investingnews.com/uranium-price/" target="_blank" rel="noopener">InvestingNews</a> &nbsp;&middot;&nbsp;
+    Reactor counts + WNA demand forecast: <a href="https://world-nuclear.org" target="_blank" rel="noopener">WNA</a> via Goldinvest.de + Sprott 2026 &nbsp;&middot;&nbsp;
+    Structural deficit: Sprott + <a href="https://discoveryalert.com.au" target="_blank" rel="noopener">DiscoveryAlert.com.au</a> &nbsp;&middot;&nbsp;
+    Citigroup price forecast: <a href="https://miningscout.de" target="_blank" rel="noopener">Miningscout.de</a>
+  </div>
+
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <strong>Risk Disclosure &amp; Disclaimer:</strong> This article is for informational purposes only and does not constitute investment advice. Investments in commodities and mining companies involve significant risks, including the potential loss of all capital invested. Figures and forecasts cited are based on publicly available sources (as of June 2026) and may change without notice. Please consult an independent financial advisor before making investment decisions. MB Capital Strategies accepts no liability for decisions made on the basis of this article.
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>&copy; 2026 MB Capital Strategies Global &middot; <a href="/pages/imprint.html">Imprint</a> &middot; <a href="/pages/privacy.html">Privacy Policy</a> &middot; <a href="/pages/blog.html">Blog</a></p>
+</footer>
+
+</body>
+</html>
