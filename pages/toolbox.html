@@ -114,6 +114,14 @@
 
 </head>
 <body>
+
+<!-- InvestingPro Summer Sale Top Bar (default hidden) -->
+<div class="ip-sale" style="display:none;background:linear-gradient(90deg,rgba(10,20,5,0.98) 0%,rgba(15,20,8,1) 50%,rgba(10,20,5,0.98) 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f0f5">
+  <strong style="color:#d4af37">InvestingPro Summer Sale: 60% Off + 15% On Top</strong> &nbsp;·&nbsp; July only &nbsp;
+  <a href="../investingpro-summer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px">Claim 60%+15% →</a>
+  <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate link</span>
+</div>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
@@ -207,14 +215,25 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; margin: 2rem 0;">
 
-                <a href="https://www.investing-referral.com/mbcapitalglobal/" target="_blank" rel="noopener sponsored" style="text-decoration: none; color: inherit;">
-                    <div class="glass-card" style="padding: 2rem;">
-                        <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">InvestingPro</h3>
-                        <span style="font-size: 0.85rem; opacity: 0.7;">Research Platform &middot; Global</span>
-                        <p style="margin-top: 1rem;">InvestingPro is our go-to platform for fundamental analysis, fair value estimates, and financial data across global markets. The tool provides institutional-grade financial statements, consensus analyst estimates, historical dividend data, and proprietary fair value models for thousands of stocks worldwide. For dividend investors, the dividend history charts, payout ratio tracking, and dividend safety scoring are particularly valuable. We use InvestingPro to screen for undervalued dividend stocks, validate our own valuation work, and track portfolio-level metrics. The ProPicks AI-driven stock selection feature adds a quantitative overlay that complements fundamental analysis.</p>
-                        <p style="margin-top: 0.75rem; padding: 0.5rem 1rem; background: rgba(212,175,55,0.1); border-radius: 8px; font-size: 0.9rem;"><strong style="color: var(--gold-primary);">Coupon Code: mbcapitalglobal</strong> — Use at checkout for a discount</p>
+                <div class="glass-card" style="padding: 2rem; position:relative; overflow:hidden;">
+                    <!-- Sale badge (July only) -->
+                    <div class="ip-sale" style="display:none;position:absolute;top:12px;right:12px;background:#d4af37;color:#050508;font-weight:800;font-size:0.7rem;padding:3px 10px;border-radius:12px;letter-spacing:.04em">SUMMER SALE</div>
+                    <h3 style="color: var(--gold-primary); margin-bottom: 0.5rem;">InvestingPro</h3>
+                    <span style="font-size: 0.85rem; opacity: 0.7;">Research Platform &middot; Global</span>
+                    <p style="margin-top: 1rem;">InvestingPro is our go-to platform for fundamental analysis, fair value estimates, and financial data across global markets. The tool provides institutional-grade financial statements, consensus analyst estimates, historical dividend data, and proprietary fair value models for thousands of stocks worldwide. For dividend investors, the dividend history charts, payout ratio tracking, and dividend safety scoring are particularly valuable. We use InvestingPro to screen for undervalued dividend stocks, validate our own valuation work, and track portfolio-level metrics. The ProPicks AI-driven stock selection feature adds a quantitative overlay that complements fundamental analysis.</p>
+                    <!-- Evergreen -->
+                    <div class="ip-evergreen">
+                      <p style="margin-top: 0.75rem; padding: 0.5rem 1rem; background: rgba(212,175,55,0.1); border-radius: 8px; font-size: 0.9rem;"><strong style="color: var(--gold-primary);">15% off</strong> — activated automatically via my link. No code needed.</p>
+                      <a href="https://www.investing-referral.com/mbcapitalglobal/" target="_blank" rel="noopener sponsored nofollow" style="display:inline-block;margin-top:12px;background:transparent;border:2px solid var(--gold-primary);color:var(--gold-primary);font-weight:700;padding:10px 22px;border-radius:8px;text-decoration:none;font-size:0.9rem">Get 15% Off InvestingPro →</a>
                     </div>
-                </a>
+                    <!-- Sale -->
+                    <div class="ip-sale" style="display:none">
+                      <p style="margin-top:0.75rem;padding:0.5rem 1rem;background:rgba(212,175,55,0.15);border-radius:8px;font-size:0.95rem;border:1px solid #d4af37"><strong style="color:#d4af37">Summer Sale: 60% Off + 15% On Top</strong> — best price of the year. July only.</p>
+                      <a href="https://www.investing-referral.com/mbcapitalglobal/" target="_blank" rel="noopener sponsored nofollow" style="display:inline-block;margin-top:12px;background:#d4af37;color:#050508;font-weight:700;padding:12px 24px;border-radius:8px;text-decoration:none;font-size:0.95rem">Claim 60% + 15% →</a>
+                      <a href="../investingpro-summer-sale.html" style="display:inline-block;margin:8px 0 0 12px;color:#d4af37;font-size:0.85rem">Details →</a>
+                    </div>
+                    <p style="font-size:0.75rem;color:rgba(176,176,200,0.7);margin-top:10px">*Affiliate link — commission at no extra cost to you.</p>
+                </div>
 
                 <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="noopener sponsored" style="text-decoration: none; color: inherit;">
                     <div class="glass-card" style="padding: 2rem;">
@@ -403,6 +422,10 @@
         </div>
     </footer>
     <script src="../js/main.min.js" defer></script>
+
+<!-- InvestingPro Sale Self-Expiry -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
+
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 </body>
 </html>

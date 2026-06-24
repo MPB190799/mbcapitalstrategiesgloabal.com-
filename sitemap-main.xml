@@ -13,6 +13,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/"/>
   </url>
 
+  <!-- Deal Page -->
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/investingpro-summer-sale.html</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/investingpro-summer-sale.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/investingpro-sommer-sale.html"/>
+  </url>
+
   <!-- Hub Pages -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/pages/mining-stocks.html</loc><lastmod>2026-06-02</lastmod>
