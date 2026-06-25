@@ -656,21 +656,37 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         </span>
       </aside>
 
-      <!-- CRO 2026-06-16 web-design-agent: Issue-date eyebrow added for freshness/trust signal (DE parity). Self-expire reverts to sector list after 2026-07-01. -->
+      <!-- CRO 2026-06-16 web-design-agent: Issue-date eyebrow added for freshness/trust signal (DE parity). -->
+      <!-- web-design-agent 2026-06-25: Auto-issue-number+date — DE parity fix, no manual stale. Self-expire reverts to sector list after 2026-07-01. -->
       <div class="hero-issue" id="hero-issue-en">
         <span class="issue-rule"></span>
-        <span class="issue-no">Issue № 49</span>
-        <span>June 2026</span>
+        <span class="issue-no" id="hero-issue-no-en">Issue № 49</span>
+        <span id="hero-issue-date-en">21 June 2026</span>
         <span class="issue-rule" style="opacity:.5"></span>
         <span style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
       </div>
       <script>
-      /* Self-expire: revert issue eyebrow to sector list after 2026-07-01 00:00:00 UTC */
       (function(){
         var expiry = new Date('2026-07-01T00:00:00Z');
-        if(new Date() > expiry){
+        var now = new Date();
+        if(now > expiry){
           var el = document.getElementById('hero-issue-en');
           if(el){ el.innerHTML = '<span class="issue-rule"></span><span class="issue-no">Shipping</span><span>Mining</span><span class="issue-rule" style="opacity:.5"></span><span style="color:var(--fg-muted);letter-spacing:.18em">Energy · Pipelines</span>'; }
+        } else {
+          // Auto-update issue number + date: ref №49 = 2026-06-21 (Sunday)
+          var ref=new Date('2026-06-21T00:00:00Z'), refIssue=49;
+          var day=now.getUTCDay(), diffToSun=day===0?0:day;
+          var lastSun=new Date(now);
+          lastSun.setUTCDate(now.getUTCDate()-diffToSun);
+          lastSun.setUTCHours(0,0,0,0);
+          var weeksDiff=Math.round((lastSun-ref)/(7*24*3600*1000));
+          var issueNum=refIssue+weeksDiff;
+          var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+          var d=lastSun.getUTCDate(), m=months[lastSun.getUTCMonth()], y=lastSun.getUTCFullYear();
+          var noEl=document.getElementById('hero-issue-no-en');
+          var dtEl=document.getElementById('hero-issue-date-en');
+          if(noEl && issueNum>0) noEl.textContent='Issue № '+issueNum;
+          if(dtEl) dtEl.textContent=d+' '+m+' '+y;
         }
       })();
       </script>
