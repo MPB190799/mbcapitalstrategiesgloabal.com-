@@ -474,6 +474,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     background:
       linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
   }
+  /* CRO 2026-06-26 web-design-agent: hero CTAs full-width stacked on mobile (DE parity).
+     At 375px the two .btn elements were content-sized (~230px / ~206px) floating in a 295px
+     container — unequal widths and sub-optimal tap area. Stacking to full-width via
+     flex-direction:column + align-items:stretch gives equal-size buttons that fill the
+     hero content width, maximising tap target and visual weight. min-height:44px already
+     set at 640px breakpoint above; this adds the layout change. */
+  .hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
+  .hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
+  .hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
