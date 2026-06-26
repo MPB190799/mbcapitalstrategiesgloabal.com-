@@ -1137,13 +1137,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-06-26">June 26, 2026</time></p>
     </div>
     <div class="insights-list reveal">
-      <!-- CRO 2026-06-26 web-design-agent: Triple-Ex-Date insight — last buy day TODAY. Static highlight, no self-expire (Ex-Date is Mon 30.06., article remains relevant over weekend). -->
-      <a class="insight" href="blog/ex-dividend-june-30-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+      <!-- CRO 2026-06-26 web-design-agent: Triple-Ex-Date highlight with self-expire after Ex-Date (30.06.2026 21:59 UTC).
+           After expiry: gold highlight styles stripped, "Today" tag replaced with "Dividends", title normalized.
+           JS does NOT remove the element (avoids CLS), only removes visual highlight. -->
+      <a id="triple-ex-insight-en" class="insight" href="blog/ex-dividend-june-30-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
         <span class="insight-date">2026-06-26</span>
-        <span class="insight-tag">Dividends · Today</span>
-        <span class="insight-title">Ex-Dividend June 30: O, TRP, TTE, Enagás — Last Buy Day is Today</span>
+        <span id="triple-ex-tag-en" class="insight-tag">Dividends · Today</span>
+        <span id="triple-ex-title-en" class="insight-title">Ex-Dividend June 30: O, TRP, TTE, Enagás — Last Buy Day is Today</span>
         <span class="insight-arrow">→</span>
       </a>
+      <script>(function(){try{var expire=Date.UTC(2026,5,30,21,59,59);if(Date.now()>expire){var el=document.getElementById('triple-ex-insight-en');if(el){el.style.borderLeft='';el.style.paddingLeft='';el.style.background='';}var tag=document.getElementById('triple-ex-tag-en');if(tag)tag.textContent='Dividends';var ttl=document.getElementById('triple-ex-title-en');if(ttl)ttl.textContent='Ex-Dividend June 30 passed: O, TRP, TTE, Enagás';}}catch(e){}})();</script>
       <!-- CRO 2026-06-26 web-design-agent: BHP insight hardened to plain state (highlight expired 2026-06-21, self-expire JS removed — eliminates micro-CLS + inline script block). -->
       <!-- CRO-FIX 2026-06-20 web-design-agent: link corrected bhp-analysis-2026.html → bhp-jansen-writedown-mining-capital-discipline-2026.html. -->
       <a class="insight" href="blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
