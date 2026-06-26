@@ -441,7 +441,9 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .footer-bottom a:hover{color:var(--accent)}
 .footer-aff{margin-top:14px;font-size:11px;color:var(--fg-dim);text-align:center;font-family:var(--mono);letter-spacing:.06em}
 
-.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;box-shadow:0 0 12px rgba(212,175,55,.4)}
+/* CRO 2026-06-26 web-design-agent: max-width:100vw guard prevents scroll-progress from overflowing
+   past scrollbar gutter on Windows/Linux where scrollbar-width is ~17px — visual artefact fix. */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;max-width:100vw;box-shadow:0 0 12px rgba(212,175,55,.4)}
 
 @media (max-width:1024px){
   .hero-inner{display:block;max-width:100%}
@@ -632,7 +634,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .hero-ctas{gap:18px}
   .compass-backdrop{width:120vw;opacity:.35}
   .compass-cardinals{grid-template-columns:1fr 1fr;max-width:100%}
-  .compass-cardinals a b{font-size:11px}
+  /* CRO 2026-06-26 web-design-agent: 11px→13px — WCAG font-size readability on 390px viewport */
+  .compass-cardinals a b{font-size:13px}
   .hero-signature-pill{position:static;margin:32px 0 0;width:fit-content}
   /* Touch-target min 44px — .btn padding:14px gives ~40px; explicit min-height closes the gap */
   .hero-ctas .btn{min-height:44px}
