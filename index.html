@@ -115,7 +115,7 @@
       "url": "https://mbcapitalstrategiesgloabal.com",
       "name": "MB Capital Strategies Global",
       "alternateName": "MB Capital Strategies — International Edition",
-      "dateModified": "2026-06-25",
+      "dateModified": "2026-06-26",
       "isPartOf": {
         "@type": "WebSite",
         "@id": "https://mbcapitalstrategies.com/#website",
@@ -1141,24 +1141,17 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <span class="eyebrow">§05 · Latest</span>
       <h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
       <!-- AEO/Freshness 2026-06-21 web-design-agent: freshness date updated 20→21 June. -->
-      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-06-25">June 25, 2026</time></p>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-06-26">June 26, 2026</time></p>
     </div>
     <div class="insights-list reveal">
-      <!-- CRO 2026-06-20 web-design-agent: BHP Jansen-Writedown $2.3B Mining-Sector-Signal — inserted as top entry with Breaking highlight (today-strategy 20.06., 24h window). Self-expire: revert highlight after 2026-06-21. -->
-      <!-- CRO-FIX 2026-06-20 web-design-agent: link corrected bhp-analysis-2026.html → bhp-jansen-writedown-mining-capital-discipline-2026.html. The general BHP analysis (Iron Ore/Copper) was mismatched with "Jansen writedown" teaser text. Dedicated article is the correct destination. -->
-      <a class="insight" href="blog/bhp-jansen-writedown-mining-capital-discipline-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);" id="bhp-mining-insight">
+      <!-- CRO 2026-06-26 web-design-agent: BHP insight hardened to plain state (highlight expired 2026-06-21, self-expire JS removed — eliminates micro-CLS + inline script block). -->
+      <!-- CRO-FIX 2026-06-20 web-design-agent: link corrected bhp-analysis-2026.html → bhp-jansen-writedown-mining-capital-discipline-2026.html. -->
+      <a class="insight" href="blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
         <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Mining · Breaking</span>
+        <span class="insight-tag">Mining</span>
         <span class="insight-title">BHP writes down $2.3B Jansen Potash — what this means for mining dividends in 2026</span>
         <span class="insight-arrow">→</span>
       </a>
-      <script>
-      // Self-expire: BHP mining-sector highlight → plain after 2026-06-21
-      (function(){
-        var exp=new Date('2026-06-21T23:59:00Z'), el=document.getElementById('bhp-mining-insight');
-        if(el && new Date()>exp){ el.removeAttribute('style'); el.querySelector('.insight-tag').textContent='Mining'; }
-      })();
-      </script>
       <!-- CRO 2026-06-19 web-design-agent: FOMC expired highlight removed from static HTML (expired 2026-06-18). Plain insight, no highlight. -->
       <a class="insight" href="blog/fomc-june-2026-hard-assets-interest-rates.html">
         <span class="insight-date">2026-06</span>
