@@ -695,19 +695,10 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         Independent research on cashflow from shipping, mining, energy and pipelines —
         from a real private-investor portfolio. <strong style="color:var(--fg)">Not investment advice.</strong>
       </p>
-      <!-- CRO 2026-06-20 web-design-agent: BHP Jansen writedown $2.3B — mining sector signal as hero context line (DE-parity, today-strategy 20.06.). Self-expire: revert to generic after 2026-06-28. -->
-      <!-- CRO-FIX 2026-06-20 web-design-agent: negative margin-top removed (-32px→8px) — was a layout hack that caused overlap on mobile (390px). Duplicate font-size:0.8rem declaration removed (browser silently used last value 11px anyway). -->
-      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 36px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:42ch;">Mining sector alert: BHP Jansen writedown $2.3B — what it means for hard-asset dividends. <a href="blog/bhp-jansen-writedown-mining-capital-discipline-2026.html" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">Read analysis →</a></p>
-      <script>
-      /* Self-expire: revert mining hook to generic after 2026-06-28 00:00:00 UTC */
-      (function(){
-        var expiry = new Date('2026-06-28T00:00:00Z');
-        if(new Date() > expiry){
-          var el = document.getElementById('hero-context-en');
-          if(el){ el.remove(); }
-        }
-      })();
-      </script>
+      <!-- CRO 2026-06-26 web-design-agent: replaced expiring BHP mining hook (expired 2026-06-28)
+           with permanent evergreen authority signal. No self-expiry JS needed — eliminates layout
+           gap after hook removal and avoids DOM-manipulation CLS on mobile. -->
+      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 36px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">630+ YouTube subscribers</a></p>
       <div class="hero-trust" role="list" aria-label="Platform metrics">
         <div class="trust-item" role="listitem">
           <span class="trust-num">160+</span>
