@@ -472,6 +472,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .hero-sub{margin-bottom:20px!important}
   #hero-context-en{margin-bottom:12px!important}
   .hero-trust{margin:12px 0!important;padding:10px 0!important}
+  /* CRO 2026-06-27 web-design-agent: hero-signature-pill hidden on ≤480px.
+     On 375×812 the pill (≈70px) + static margin-top:32px = ≈102px eaten before h1.
+     Content above CTAs: nav(68px)+pill(102px)+issue-line(38px)+h1(130px)+lede(82px+20px)+
+     context(28px+12px)+trust(68px+24px) = 572px + hero padding-top(100px) = 672px < 812px.
+     Hiding the pill saves ≈102px → ensures CTAs land at ≈570px (240px above fold).
+     Trust signals (YOC, articles, calculators) remain — no E-E-A-T loss.
+     Pill stays visible at ≥481px where fold is not a concern. */
+  .hero-signature-pill{display:none!important}
 }
 @media (max-width:760px){
   /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
