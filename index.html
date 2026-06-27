@@ -465,6 +465,13 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   /* Touch-targets P0: lang-switcher + theme-btn ≥44px on mobile (was ~22px / 34px) */
   .lang-flag{min-height:44px;min-width:44px;padding:0 12px;justify-content:center;box-sizing:border-box}
   .theme-btn{width:44px;height:44px}
+  /* CRO 2026-06-27 web-design-agent: Tighten vertical spacing to bring CTAs above fold (375×812).
+     hero-sub margin-bottom 48→20px (-28px), hero-trust margin 28→12px (-16px),
+     hero-trust padding 18→10px (-16px), hero-context-en bottom-margin 36→12px (-24px)
+     = -84px total. CTAs measured at y≈887 on 812px viewport; target <812. */
+  .hero-sub{margin-bottom:20px!important}
+  #hero-context-en{margin-bottom:12px!important}
+  .hero-trust{margin:12px 0!important;padding:10px 0!important}
 }
 @media (max-width:760px){
   /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
@@ -638,7 +645,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .compass-backdrop{width:min(80vh,620px);left:50%}
 }
 @media (max-width:760px){
-  .hero-trust{gap:18px;margin:28px 0;padding:18px 0}
+  /* CRO 2026-06-27: tighten trust section vertical margin (28→12px) to save ~32px on mobile (part of CTAs-above-fold fix) */
+  .hero-trust{gap:18px;margin:12px 0;padding:18px 0}
   .hero-trust .trust-item{min-width:90px}
   .hero-ctas{gap:18px}
   .compass-backdrop{width:120vw;opacity:.35}
@@ -711,7 +719,8 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <!-- CRO 2026-06-26 web-design-agent: replaced expiring BHP mining hook (expired 2026-06-28)
            with permanent evergreen authority signal. No self-expiry JS needed — eliminates layout
            gap after hook removal and avoids DOM-manipulation CLS on mobile. -->
-      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 36px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">630+ YouTube subscribers</a></p>
+      <!-- CRO fix 2026-06-27 web-design-agent: 630+ subscribers belong to DE channel (@MBCapitalStrategies, 634 subs per kpi-rollup 2026-06-26); EN channel (@MBCapitalStrategiesGlobal) has 7 subs — linking sub count to correct channel. -->
+      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 36px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">630+ YouTube subscribers</a></p>
       <div class="hero-trust" role="list" aria-label="Platform metrics">
         <div class="trust-item" role="listitem">
           <span class="trust-num">150+</span>
@@ -862,7 +871,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
           </picture>
           <div class="realinv-id-text">
             <span class="realinv-name" id="realinv-h">Marco <em>Bozem</em></span>
-            <span class="realinv-creds">Independent private investor since <b>2022</b><br>630+ YouTube subscribers · CFA Level&nbsp;I candidate</span>
+            <span class="realinv-creds">Independent private investor since <b>2022</b><br><a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.2);">630+ YouTube subscribers</a> · CFA Level&nbsp;I candidate</span>
           </div>
         </div>
         <p class="realinv-lede">
