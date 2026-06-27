@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&display=swap"></noscript>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+
+  <style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+  </style>
+
+  <title>Mining Capital Allocation in the Supercycle: BHP $2.3B Writedown, Rio Tinto Lithium, Vale 2026</title>
+  <meta name="description" content="BHP takes a $2.3B writedown on Jansen Potash, Rio Tinto triples lithium output to 200,000t by 2028, Vale preps copper IPO. What the big miners reveal about capital discipline in the commodity supercycle.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="author" content="Marco Bozem">
+
+  <link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/blog/mining-capital-allocation-supercycle-2026.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/mining-kapitalallokation-superzyklus-2026.html">
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/mining-capital-allocation-supercycle-2026.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategies.com/blog/mining-kapitalallokation-superzyklus-2026.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mining Capital Allocation in the Supercycle: BHP $2.3B Writedown, Rio Tinto Lithium, Vale 2026">
+  <meta property="og:description" content="BHP takes a $2.3B writedown on Jansen Potash, Rio Tinto triples lithium output to 200,000t by 2028, Vale preps copper IPO. What the big miners reveal about capital discipline.">
+  <meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/blog/mining-capital-allocation-supercycle-2026.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mining Capital Allocation in the Supercycle: BHP $2.3B Writedown, Rio Tinto Lithium, Vale 2026">
+  <meta name="twitter:description" content="BHP writes down $2.3B on Jansen Potash, Rio Tinto targets 200,000t lithium, Vale eyes copper IPO. Capital discipline vs. capital failure in the commodity supercycle.">
+  <meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg">
+  <meta name="twitter:creator" content="@MBCapitalStrat">
+
+  <!-- Schema: BlogPosting -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Mining Capital Allocation in the Supercycle: What BHP, Rio Tinto, and Vale Are Telling Us",
+  "description": "BHP writes down $2.3B on Jansen Potash (third cost overrun), Rio Tinto targets 200,000t LCE lithium by 2028, Vale Base Metals prepares for IPO and doubles copper output. An analysis of capital allocation among major miners in the commodity supercycle, week 26 2026.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/about/",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesgloabal.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies"
+    ]
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mbcapitalstrategiesgloabal.com/blog/mining-capital-allocation-supercycle-2026.html"
+  },
+  "datePublished": "2026-06-27",
+  "dateModified": "2026-06-27",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "articleSection": "Mining",
+  "wordCount": 1050,
+  "keywords": [
+    "mining capital allocation",
+    "BHP Jansen Potash writedown",
+    "Rio Tinto lithium target",
+    "Vale Base Metals IPO",
+    "commodity supercycle 2026",
+    "critical minerals",
+    "copper mining stocks",
+    "MB Capital Strategies"
+  ]
+}</script>
+
+  <!-- Schema: BreadcrumbList -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategiesgloabal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mining Stocks",
+      "item": "https://mbcapitalstrategiesgloabal.com/mining-stocks/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Mining Capital Allocation in the Supercycle 2026",
+      "item": "https://mbcapitalstrategiesgloabal.com/blog/mining-capital-allocation-supercycle-2026.html"
+    }
+  ]
+}</script>
+
+  <!-- Schema: FAQPage -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why did BHP take a $2.3 billion writedown on Jansen Potash?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BHP raised the cost estimate for Stage 2 of the Jansen Potash project in Saskatchewan to $6.9 billion — up 41% from prior estimates. It is the third consecutive cost overrun. The $2.3 billion writedown in June 2026 reflects lower potash price expectations and higher construction costs. Stage 1 first production is expected in mid-2027. Sources: Bloomberg and BHP IR, 18 June 2026."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Rio Tinto's lithium production target by 2028?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Rio Tinto targets 200,000 tonnes of LCE (lithium carbonate equivalent) by 2028, up from 57,000 tonnes LCE in 2025 — a roughly 3.5x increase. The company is investing around $1 billion per year across projects in Canada (Robe de Beurre) and Argentina (Rincon)."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Vale Base Metals planning in terms of copper production and an IPO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vale's CEO stated in March 2026 (Bloomberg) that Vale Base Metals aims to be IPO-ready by mid-2026. The copper production target is a doubling to 700,000 tonnes per year. Capex for 2026 is $1.6 billion for copper and nickel. A separate listing would make Vale's copper exposure more visible and potentially unlock a revaluation premium."
+      }
+    }
+  ]
+}</script>
+
+  <style>
+    .info-box{margin:22px 0;padding:16px;border-left:4px solid #d4af37;background:#1a1f2b;border-radius:10px;}
+    .risk-box{margin:22px 0;padding:16px;border-left:4px solid #ff6b6b;background:#22151a;border-radius:10px;}
+    .cta-box{background:#151821;padding:22px;border-radius:14px;border:1px solid rgba(212,175,55,.35);margin:40px 0;}
+    .cta-btn{display:inline-block;padding:12px 20px;margin-top:12px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none;}
+    .data-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92em;}
+    .data-table th{background:#1a1f2b;color:#d4af37;padding:10px 14px;text-align:left;border-bottom:2px solid rgba(212,175,55,.3);}
+    .data-table td{padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.06);color:#e0e4f0;}
+    .data-table tr:hover td{background:rgba(212,175,55,.04);}
+    .author-box{background:#0f1323;border:1px solid rgba(212,175,55,.2);border-radius:14px;padding:24px;margin:48px 0 32px;display:flex;gap:20px;align-items:flex-start;}
+    .author-box img{border-radius:50%;width:64px;height:64px;object-fit:cover;flex-shrink:0;align-self:flex-start;}
+    .author-box h4{color:#d4af37;margin:0 0 6px;font-size:1rem;}
+    .author-box p{margin:0;font-size:.88rem;color:#9aa0b8;line-height:1.6;}
+    .disclaimer{background:#0d1018;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:16px 20px;font-size:.82em;color:#7a8399;margin:40px 0 0;line-height:1.6;}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
+    .faq-section{margin:48px 0;}
+    .faq-section h2{color:#d4af37;}
+    .faq-item{border-bottom:1px solid rgba(255,255,255,.07);padding:20px 0;}
+    .faq-item h3{font-size:1rem;color:#f0f1f5;margin:0 0 10px;}
+    .faq-item p{margin:0;color:#9aa0b8;font-size:.93em;line-height:1.7;}
+  </style>
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+
+  <!-- GA4 EN -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'analytics_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    gtag('config', 'G-FSW7J7QYL8');
+  </script>
+
+  <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high" style="height:40px;width:auto;"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/portfolio-strategy/">Portfolio Strategy</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true">Topics &#9662;</button>
+        <div class="dropdown-content">
+          <a href="/shipping/">Shipping</a>
+          <a href="/midstream/">Pipelines / Midstream</a>
+          <a href="/mining-stocks/">Mining Stocks</a>
+          <a href="/upstream-stocks/">Upstream Stocks</a>
+          <hr>
+          <a href="/high-yield-stocks/">High-Yield Stocks</a>
+          <a href="/commodity-supercycle/">Commodity Supercycle</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/tools/">Tools</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/portfolio-strategy/">Portfolio Strategy</a>
+    <a href="/mining-stocks/">Mining Stocks</a>
+    <a href="/commodity-supercycle/">Commodity Supercycle</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/">Tools</a>
+  </nav>
+</header>
+
+<div class="breadcrumbs">
+  <a href="/">Home</a> &rsaquo;
+  <a href="/blog/">Blog</a> &rsaquo;
+  Mining Capital Allocation in the Supercycle 2026
+</div>
+
+<main class="container">
+
+  <article>
+
+    <header style="padding-top:40px;padding-bottom:24px;">
+      <p style="color:#d4af37;font-size:.85em;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px;">Mining &middot; Capital Allocation &middot; Week 26, 2026</p>
+      <h1>Mining Capital Allocation in the Supercycle: What BHP, Rio Tinto, and Vale Are Telling Us</h1>
+      <p style="color:#9aa0b8;font-size:.95em;margin:0;">By <strong style="color:#d4af37;">Marco Bozem</strong> &middot; 27 June 2026 &middot; 8 min read</p>
+    </header>
+
+    <!-- AdSense Placement 1: after intro -->
+    <ins class="adsbygoogle" style="display:block;margin:24px 0;" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <section>
+      <h2>The Paradox: Commodity Demand Is Rising — Yet the Biggest Miners Are Writing Down</h2>
+
+      <p>Look at the mining sector this week and you get a strange picture. Demand for copper, lithium, potash, and critical minerals is structurally rising, driven by electrification, the energy transition, and surging defense spending. And yet BHP — the world's third-largest miner — just posted a $2.3 billion writedown.</p>
+
+      <p>That's not a contradiction. It's exactly what makes capital allocation in the commodity supercycle both compelling and dangerous. The question isn't whether demand exists. The question is whether a company can control costs, pick the right commodity at the right moment, and keep financial discipline intact when prices look good on paper.</p>
+
+      <p>Three cases from the past week make this unusually clear: BHP Jansen, Rio Tinto Lithium, and Vale Base Metals. Add to that a political signal I consider more significant than most analysts are currently crediting: the US Army's critical minerals deal announced on June 25.</p>
+    </section>
+
+    <section>
+      <h2>BHP Jansen: What a $2.3 Billion Writedown Actually Reveals</h2>
+
+      <p>On June 18, 2026, BHP announced a $2.3 billion writedown on the Jansen Potash project in Saskatchewan, Canada. At the same time, the total cost for Stage 2 rose to $6.9 billion — a 41% increase from prior estimates. This is the third consecutive cost overrun. Stage 1 first production is expected in mid-2027.</p>
+
+      <div class="info-box">
+        <strong>BHP Jansen — Key Numbers (June 2026)</strong><br>
+        Stage 2 writedown: <strong>USD 2.3 billion</strong> (Bloomberg + BHP IR, 18 June 2026)<br>
+        Stage 2 total cost: <strong>USD 6.9 billion</strong> (+41% vs. prior estimate)<br>
+        Cost overruns: <strong>3 in a row</strong><br>
+        Stage 1 first production: <strong>mid-2027</strong>
+      </div>
+
+      <p>Two factors are driving this. First: potash prices have fallen sharply from their 2022 highs. What penciled out at $600-700 per tonne looks very different at $300-350. Second: construction costs for large mining projects have climbed globally — steel, energy, labor. That hits every miner currently building.</p>
+
+      <p>What this tells investors: BHP shows both discipline and weakness here. The discipline: they're writing down rather than throwing good money after bad. The weakness: three consecutive cost overruns point to structural issues in project planning, not just bad luck. No serious investor takes BHP's Jansen cost estimates at face value anymore.</p>
+
+      <p>The broader point: Jansen is symptomatic of the supercycle challenge. Everyone wants exposure to critical commodities. But between a project's groundbreaking and its first tonne of output, 10-15 years can pass — and the world changes in that time. Price assumptions from 2021 don't hold in 2026.</p>
+    </section>
+
+    <!-- AdSense Placement 2: midpoint -->
+    <ins class="adsbygoogle" style="display:block;margin:32px 0;" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <section>
+      <h2>Rio Tinto: Lithium as the Fastest-Growing Segment</h2>
+
+      <p>On the other end of the spectrum sits Rio Tinto. The company has designated lithium its fastest-growing segment with a clear volume target: from 57,000 tonnes LCE (lithium carbonate equivalent) in 2025 to 200,000 tonnes LCE by 2028 — a roughly 3.5x increase in three years. Capital deployed: around USD 1 billion per year across projects in Canada (Robe de Beurre) and Argentina (Rincon).</p>
+
+      <p>On the surface, that sounds like exactly what investors want to hear: growth in a structural trend, a clear volume target, geographic diversification. But I look at this more carefully.</p>
+
+      <p>Lithium prices have dropped more than 80% from their late-2022 peak. Investing USD 1 billion per year in lithium today is a bet that prices recover by 2028. That can work — battery demand is real. It can also go wrong if the market stays in oversupply longer than expected.</p>
+
+      <div class="info-box">
+        <strong>Rio Tinto Lithium — Key Numbers (Week 26, 2026)</strong><br>
+        Production 2025: <strong>57,000 t LCE</strong><br>
+        Target 2028: <strong>200,000 t LCE</strong> (3.5x growth)<br>
+        Annual capex: <strong>approx. USD 1 billion</strong><br>
+        Projects: Robe de Beurre (Canada), Rincon (Argentina)
+      </div>
+
+      <p>What I find positive about Rio Tinto: no repeat-cost-overrun pattern on lithium like BHP at Jansen. And USD 1 billion per year is manageable within Rio Tinto's overall portfolio — this isn't a bet-the-company move. Strategically, diversifying away from iron ore dependency is the right call.</p>
+
+      <p>This doesn't make Rio Tinto a buy on that basis alone. But it shows a management that is directing capital into a structural trend without anchoring to 2021 price assumptions. That's a different picture than BHP Jansen.</p>
+    </section>
+
+    <section>
+      <h2>Vale Base Metals: Copper Story and IPO Preparation</h2>
+
+      <p>Vale is the case I find most interesting. The Brazilian mining giant is known for iron ore — but the really compelling story is Vale Base Metals, its internal copper and nickel unit. According to CEO commentary in March 2026 (Bloomberg), the unit aims to be IPO-ready by mid-2026. The copper production target: a doubling to 700,000 tonnes per year. Capex for 2026 stands at USD 1.6 billion for copper and nickel.</p>
+
+      <p>Why does this matter? Because copper is the metal of the supercycle. No other industrial commodity is as broadly needed (power lines, electric motors, solar installations, data centers) with such a structural supply deficit. Large copper mines take 15-25 years on average from exploration to production. What is not under construction today will not hit the market before 2035-2040.</p>
+
+      <p>A Vale Base Metals IPO would make that copper exposure explicit and re-ratable. Because Vale as a whole trades at an iron ore discount, the Base Metals unit theoretically carries a revaluation premium. That's a thesis, not a guarantee — but one I'm tracking closely.</p>
+
+      <p>For deep fundamental data on Vale, Rio Tinto, or other mining names, I use InvestingPro — fair value models, financial health scores, and balance sheet trends in one place. My link gets you 15% off on top of any current promotion: <a href="https://www.investing-referral.com/mbcapitalglobal/" rel="noopener noreferrer" style="color:#d4af37;">InvestingPro — 15% discount</a>.*</p>
+    </section>
+
+    <section>
+      <h2>Critical Minerals as Geopolitical Factor: The US Army Deal</h2>
+
+      <p>On June 25, 2026, the Trump administration awarded long-term lease agreements for critical mineral processing facilities on four US Army bases — to REalloys, Titan Mining, ioneer, and Energy X. The Pentagon is committing USD 2 billion now, with USD 5 billion total through 2029.</p>
+
+      <p>This is not a normal economic program. It's a statement: the US views the critical mineral supply chain as a national security issue. When the military opens its own bases for processing facilities, the calculation is not about return optimization — it's about supply security regardless of price levels.</p>
+
+      <div class="info-box">
+        <strong>US Army Critical Minerals Deal (25 June 2026)</strong><br>
+        Recipients: REalloys, Titan Mining, ioneer, Energy X<br>
+        Locations: 4 US Army bases<br>
+        Pentagon budget: <strong>USD 2 billion</strong> now, <strong>USD 5 billion</strong> through 2029<br>
+        Sources: Bloomberg 25 June 2026, army.mil
+      </div>
+
+      <p>What this means for the mining sector: the government as offtake partner and infrastructure provider changes the risk profile for certain critical mineral producers. A long-term government contract fundamentally repositions a producer vs. a spot-market-only seller. We see the same pattern in Europe with the Critical Raw Materials Act.</p>
+
+      <p>My read: critical minerals will increasingly become a strategically regulated asset class over the next few years. That reduces price volatility for producers with government backing, while raising entry barriers for competitors without state partnerships.</p>
+    </section>
+
+    <section>
+      <h2>Capital Discipline vs. Capital Failure: How to Tell Them Apart</h2>
+
+      <p>After what BHP, Rio Tinto, and Vale have shown this week, I've distilled a practical checklist for evaluating mining capital allocation.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Criterion</th>
+            <th>Capital Discipline</th>
+            <th>Capital Failure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cost transparency</td>
+            <td>Writedown + clear rationale (BHP Stage 2)</td>
+            <td>Costs repeatedly "surprise" to the upside</td>
+          </tr>
+          <tr>
+            <td>Price assumptions</td>
+            <td>Conservative scenarios, sensitivity analysis</td>
+            <td>Planning based on the last price peak</td>
+          </tr>
+          <tr>
+            <td>Portfolio balance</td>
+            <td>Growth + cash generators in parallel</td>
+            <td>All-in on one growth project</td>
+          </tr>
+          <tr>
+            <td>Offtake security</td>
+            <td>Government contracts or long-term deals</td>
+            <td>Selling at spot only</td>
+          </tr>
+          <tr>
+            <td>Timeline realism</td>
+            <td>Conservative schedules with buffer</td>
+            <td>Optimistic timelines that never hold</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>BHP gets a point for discipline on the writedown itself — but three cost overruns in a row is a red flag. Rio Tinto is handling the lithium scale-up more carefully so far. Vale is the wildcard: the copper exposure is real, but the IPO timeline has been pushed back more than once. I'm watching, not buying on announcements.</p>
+
+      <p>Investing in mining stocks means accepting one thing: the commodity supercycle is not a guarantee of stock gains. It's a framework in which good capital allocation gets rewarded above average — and bad allocation gets punished above average. Demand is coming. The question is always who delivers it cost-efficiently.</p>
+
+      <p>I cover mining, shipping, and hard assets regularly on my YouTube channel: <a href="https://www.youtube.com/@MBCapitalStrategies" rel="noopener noreferrer" style="color:#d4af37;">MB Capital Strategies on YouTube</a>. Thungela is one of my mining positions — and a good contrast to the mega-cap miners discussed here.</p>
+    </section>
+
+    <!-- AdSense Placement 3: before footer -->
+    <ins class="adsbygoogle" style="display:block;margin:32px 0;" data-ad-client="ca-pub-7097302643579933" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
+    <!-- FAQ Section -->
+    <div class="faq-section">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <h3>Why did BHP write down $2.3 billion on Jansen Potash?</h3>
+        <p>BHP raised Stage 2 costs to USD 6.9 billion — 41% above prior estimates — amid falling potash prices and higher construction costs. It is the third consecutive cost overrun. Stage 1 first production remains on track for mid-2027 (Bloomberg + BHP IR, 18 June 2026).</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is Rio Tinto's lithium production target for 2028?</h3>
+        <p>Rio Tinto targets 200,000 tonnes LCE by 2028, up from 57,000 tonnes LCE in 2025. Annual investment is approximately USD 1 billion across projects in Canada and Argentina.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>What is Vale planning for its Base Metals unit?</h3>
+        <p>Vale Base Metals aims for IPO readiness by mid-2026, with a copper production target of 700,000 tonnes per year (double current levels) and USD 1.6 billion capex for copper and nickel in 2026 (Bloomberg, March 2026).</p>
+      </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="related-articles">
+      <h3>Further Reading</h3>
+      <ul>
+        <li><a href="/commodity-supercycle/" rel="noopener">Commodity Supercycle Master Guide</a></li>
+        <li><a href="/mining-stocks/" rel="noopener">Best Mining Stocks 2026</a></li>
+        <li><a href="/blog/yancoal-australia-analysis-2026.html" rel="noopener">Yancoal Analysis 2026 — 11% Dividend</a></li>
+        <li><a href="/blog/whitehaven-coal-analysis-2026.html" rel="noopener">Whitehaven Coal 2026</a></li>
+      </ul>
+    </div>
+
+    <!-- Author Box -->
+    <div class="author-box">
+      <img src="/marco.webp" alt="Marco Bozem — MB Capital Strategies" loading="lazy" width="64" height="64">
+      <div>
+        <h4>Marco Bozem</h4>
+        <p>Independent investor focused on hard assets and dividends: shipping, mining, energy, pipelines, and REITs. Investing since 2019, documenting portfolio and strategy transparently on YouTube and the blog. Not a financial advisor, not a product seller.</p>
+        <p style="margin-top:8px;"><a href="https://www.youtube.com/@MBCapitalStrategies" rel="noopener noreferrer" style="color:#d4af37;">YouTube: MB Capital Strategies</a> &middot; <a href="/about/" style="color:#d4af37;">About Marco</a></p>
+      </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="disclaimer">
+      <strong>Disclaimer:</strong> This article is for informational purposes only and does not constitute investment advice. All companies, stocks, and investments mentioned are not buy or sell recommendations. Investing involves risk, including the possible loss of principal. Past performance is not indicative of future results. Please conduct your own due diligence and consult a licensed financial advisor if needed. *Affiliate link: I may receive a commission if you purchase through my link, at no additional cost to you.
+    </div>
+
+  </article>
+
+</main>
+
+<footer style="background:#05050a;border-top:1px solid rgba(212,175,55,.1);padding:40px 24px;text-align:center;color:#5a6070;font-size:.82em;">
+  <p style="margin:0 0 8px;">&copy; 2026 MB Capital Strategies &middot; <a href="/imprint/" style="color:#d4af37;text-decoration:none;">Imprint</a> &middot; <a href="/privacy/" style="color:#d4af37;text-decoration:none;">Privacy</a></p>
+  <p style="margin:0;">Not investment advice. All content is for information and entertainment purposes only.</p>
+</footer>
+
+<script>
+  const ham = document.getElementById('navHamburger');
+  const mob = document.getElementById('navMobile');
+  if(ham && mob){
+    ham.addEventListener('click',()=>{
+      const open = mob.style.display === 'flex';
+      mob.style.display = open ? 'none' : 'flex';
+      ham.setAttribute('aria-expanded', String(!open));
+    });
+  }
+</script>
+
+</body>
+</html>
