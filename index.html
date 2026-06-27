@@ -651,6 +651,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   /* Touch-target min 44px for theme toggle button on mobile — was 34px */
   .theme-btn{width:44px;height:44px}
 }
+@media (max-width:480px){
+  /* CRO 2026-06-27 web-design-agent: Sector-nav tighter gap on very small screens (375px).
+     5 nowrap items at gap:8px 20px produce 2-3 wrap rows; tighter gap fits Sectors+4 links
+     on ≤2 rows. Divider span + YouTube link hidden — YouTube already present as btn-link above. */
+  #hero-sector-nav{gap:6px 12px!important}
+  #hero-sector-nav .sector-nav-divider,
+  #hero-sector-nav .sector-nav-yt{display:none!important}
+}
 </style>
 <section class="hero" id="hero">
   <div class="wrap hero-inner">
@@ -724,21 +732,24 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
       <div class="hero-ctas" id="hero-ctas-en">
         <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
         <a href="pages/calculators.html" class="btn btn-ghost" id="hero-cta-secondary-en">Free Calculators ↗</a>
-        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:inline-flex;align-items:center;padding:4px 0">YouTube →</a>
+        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 0">YouTube →</a>
       </div>
       <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
            Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
            the hero had no path into specific sectors without scrolling past the compass cardinals.
            This adds 4 high-intent sector links directly in the hero content flow.
            YouTube sub link moved inline with sector nav (no dedicated paragraph = less clutter). -->
-      <div style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;" aria-label="Explore by sector">
+      <!-- CRO 2026-06-27 web-design-agent: added id=hero-sector-nav + sector-nav-divider/yt classes
+           for mobile media-query targeting (480px: tighter gap, divider+yt hidden — YouTube already
+           present as btn-link in hero-ctas above, avoids duplicate tap targets on very small screens) -->
+      <div id="hero-sector-nav" style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;" aria-label="Explore by sector">
         <span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);flex-shrink:0;">Sectors:</span>
         <a href="pages/shipping.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Shipping</a>
         <a href="pages/mining.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Mining</a>
         <a href="pages/energy.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Energy</a>
         <a href="pages/pipelines.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Pipelines</a>
-        <span style="width:1px;height:12px;background:var(--border-strong,#1e1e35);display:inline-block;flex-shrink:0;"></span>
-        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);text-decoration:none;border-bottom:1px solid rgba(107,122,153,.3);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;white-space:nowrap;" onmouseover="this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,.5)'" onmouseout="this.style.color='#6b7a99';this.style.borderColor='rgba(107,122,153,.3)'">YouTube →</a>
+        <span class="sector-nav-divider" style="width:1px;height:12px;background:var(--border-strong,#1e1e35);display:inline-block;flex-shrink:0;"></span>
+        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="sector-nav-yt" style="font-family:var(--mono);font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);text-decoration:none;border-bottom:1px solid rgba(107,122,153,.3);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;white-space:nowrap;" onmouseover="this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,.5)'" onmouseout="this.style.color='#6b7a99';this.style.borderColor='rgba(107,122,153,.3)'">YouTube →</a>
       </div>
 <nav class="compass-cardinals" aria-label="Hard-asset sectors">
         <a href="pages/energy.html" data-cardinal="N" data-bearing="0">
