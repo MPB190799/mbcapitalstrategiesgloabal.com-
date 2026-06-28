@@ -498,6 +498,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
   .hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
   .hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
+  /* CRO 2026-06-28 web-design-agent: EN hero newsletter form — mobile column stack (DE parity).
+     On 390px the input (flex:1 1 180px) + button (~140px) sit in a ~330px container.
+     flex-wrap:wrap means they *can* wrap but do so unpredictably depending on font rendering.
+     Forcing flex-direction:column eliminates wrapping ambiguity, matches DE .hero-inline-cta
+     column layout, gives full-width input + full-width button = cleaner tap targets. */
+  #hero-nl-en>div{flex-direction:column;align-items:stretch}
+  #hero-nl-en input[type="email"]{flex:none;width:100%;box-sizing:border-box;height:auto}
+  #hero-nl-en button{width:100%;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
