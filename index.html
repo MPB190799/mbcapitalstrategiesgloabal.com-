@@ -238,7 +238,7 @@
   --accent:#b8941e;--accent-bright:#d4af37;--accent-deep:#8a6a14;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-anchor:none}
 html,body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;transition:background var(--t-med),color var(--t-med)}
 img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
@@ -1579,7 +1579,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 </script>
 
 <!-- InvestingPro Sale Self-Expiry: shows .ip-sale in July window, hides .ip-evergreen -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
 <!-- CRO fix 2026-07-03 web-design-agent: .header is position:fixed;top:0 and overlapped the
      sale bar (also top, in-flow) once it became visible — the sale bar's gold divider line ran
      straight through the logo+nav text (verified live on desktop). Fix: header is offset down by
