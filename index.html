@@ -499,14 +499,6 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
   .hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
   .hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
-  /* CRO 2026-06-28 web-design-agent: EN hero newsletter form — mobile column stack (DE parity).
-     On 390px the input (flex:1 1 180px) + button (~140px) sit in a ~330px container.
-     flex-wrap:wrap means they *can* wrap but do so unpredictably depending on font rendering.
-     Forcing flex-direction:column eliminates wrapping ambiguity, matches DE .hero-inline-cta
-     column layout, gives full-width input + full-width button = cleaner tap targets. */
-  #hero-nl-en>div{flex-direction:column;align-items:stretch}
-  #hero-nl-en input[type="email"]{flex:none;width:100%;box-sizing:border-box;height:auto}
-  #hero-nl-en button{width:100%;justify-content:center}
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
@@ -766,41 +758,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
         <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 0">YouTube →</a>
       </div>
 
-      <!-- CRO 2026-06-27 web-design-agent: Newsletter sign-up added to EN hero — DE parity.
-           Rationale: DE hero has inline email form with DOI + trust signals → confirmed CRO lift.
-           EN had NO hero email capture despite identical audience intent (dividend/hard-asset research).
-           Brevo endpoint is language-agnostic (same Cloudflare Worker handles DE+EN).
-           Placement: between hero-ctas and sector-nav → visible without scroll on desktop+mobile.
-           Mobile: stacked layout, full-width button, min-height:44px touch target.
-           AdSense guard: not a conversion-page, hero newsletter form is standard content. -->
-      <div id="hero-nl-en" style="margin:20px auto 0;max-width:520px;text-align:left;border-top:1px solid rgba(212,175,55,.18);padding-top:18px;">
-        <label for="hero-email-en" style="display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent,#D4AF37);margin-bottom:4px;opacity:.9;">Free Weekly · Every Sunday</label>
-        <p style="font-size:0.8rem;color:var(--fg-muted,#c8cfe0);margin:0 0 8px;font-family:var(--sans,Outfit,system-ui);line-height:1.45;max-width:40ch;">Tanker rates, dividend checks &amp; market outlook — compact, every week from Marco. Not investment advice.</p>
-        <div style="display:flex;gap:6px;flex-wrap:wrap;align-items:center;">
-          <input type="email" id="hero-email-en" placeholder="your@email.com" required
-            autocomplete="email"
-            aria-label="Enter your email address for the free weekly newsletter"
-            style="padding:13px 14px;border:1px solid #D4AF37;background:rgba(8,8,16,0.85);color:#f0f4ff;border-radius:4px;font-size:0.85rem;min-width:0;min-height:44px;flex:1 1 180px;font-family:var(--mono,monospace);box-sizing:border-box;">
-          <button onclick="mbHeroSubscribeEn()" data-cta="hero-en-index"
-            style="padding:13px 20px;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.85rem;min-height:44px;white-space:nowrap;cursor:pointer;font-family:var(--mono,monospace);letter-spacing:.04em;">Subscribe Free →</button>
-        </div>
-        <p id="hero-msg-en" style="font-size:0.75rem;margin:6px 0 0;display:none;font-family:var(--mono,monospace);"></p>
-        <p style="font-size:0.72rem;color:var(--fg-muted,#6b7a99);margin:4px 0 0;font-family:var(--mono,monospace);">No spam · Double opt-in · Unsubscribe anytime · GDPR-compliant</p>
-      </div>
-      <script>
-      (function(){
-        window.mbHeroSubscribeEn=function(){
-          var el=document.getElementById("hero-email-en"),msg=document.getElementById("hero-msg-en");
-          var email=el?el.value.trim():"";
-          if(!email||!email.includes("@")){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Please enter a valid email address.";}return;}
-          if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Subscribing...";}
-          fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:email})})
-          .then(function(r){return r.json();})
-          .then(function(d){if(msg){msg.style.display="block";if(d.ok){msg.style.color="#22c55e";msg.textContent=d.msg||"Almost done! Please confirm your email (Double opt-in).";if(el)el.value="";}else{msg.style.color="#ef4444";msg.textContent=d.msg||"Something went wrong. Please try again.";}}}
-          ).catch(function(){if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try again.";}});
-        };
-      })();
-      </script>
+      <!-- REMOVED 2026-07-03 growth-funnel-agent: EN hero newsletter form (added 2026-06-27 by
+           web-design-agent) violated the explicit Marco 03.06.2026 rule "Newsletter is DE-only —
+           on the EN site NO Newsletter/Insider/Sign-Up/Lead-Magnet/PDF-CTA and no newsletter.html
+           may appear" (CLAUDE.md, newsletter-playbook.md §2). Was live 6 days feeding the same
+           Brevo list from the EN audience. Removed entirely, not disabled — do not restore
+           without explicit Marco sign-off per playbook §0. -->
 
       <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
            Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
