@@ -1374,8 +1374,18 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     pg.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
     header.classList.toggle('is-scrolled', h.scrollTop > 40);
   };
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  // CRO-Fix 2026-07-03 web-design-agent: progress bar falsely showed ~17% fill on a fresh
+  // page load (scrollTop=0, no user scroll yet). Cause: the sale-bar/header-offset scripts
+  // further down the body change page height AFTER this first onScroll() call, which made
+  // Chrome scroll-anchoring fire a phantom scroll event that the already-bound listener
+  // immediately converted into a wrong width. Fix: bind listener + initial sync only after
+  // the sale-bar/header layout (end of body, runs synchronously before 'load') has settled.
+  const bindOnScroll = () => {
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  };
+  if (document.readyState === 'complete') bindOnScroll();
+  else window.addEventListener('load', bindOnScroll, { once: true });
 
   const themeBtn = document.getElementById('theme-btn');
   const saved = localStorage.getItem('mbcs-theme');
