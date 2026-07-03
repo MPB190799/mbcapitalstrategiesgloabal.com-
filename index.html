@@ -300,9 +300,16 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-content .hero-signature-pill{margin-left:auto;margin-right:auto}
 .hero-eyebrow-row{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:32px}
 .hero-issue{justify-content:center}
-.hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:40px;line-height:.98}
+/* CRO 2026-07-04 web-design-agent: hero-title/hero-sub margins trimmed (40->32 / 48->36) —
+   above-the-fold audit found primary hero CTAs ("Hard Asset Research"/"Free Calculators") cut
+   off below the fold at common 1440x900 laptop viewport (CTA row started at y=894, only visible
+   with viewport >943px). Root cause: EN hero carries an extra hero-signature-pill (founder
+   badge) DE doesn't have, adding ~50px of vertical content the centered layout pushes below
+   the fold. Fix spreads ~88px of savings across existing spacing tokens (this + sig-pill +
+   hero-issue + hero-context-en + hero-trust below) rather than removing any element. */
+.hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:32px;line-height:.98}
 .hero-title em{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
-.hero-sub{max-width:48ch;margin-bottom:48px;margin-left:auto;margin-right:auto}
+.hero-sub{max-width:48ch;margin-bottom:36px;margin-left:auto;margin-right:auto}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
@@ -595,7 +602,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <!-- HERO (v3.1 — Editorial Issue) -->
 <style>
-.hero-trust{display:flex;gap:32px;margin:36px 0 32px;padding:24px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;justify-content:center}
+.hero-trust{display:flex;gap:32px;margin:26px 0 22px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;justify-content:center}
 .hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
 .hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
 .hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
@@ -611,7 +618,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-meta-card{display:flex;flex-direction:column;gap:2px;text-align:center;margin-top:14px}
 .hero-meta-name{font-family:var(--serif);font-size:18px;color:var(--fg);font-style:italic}
 .hero-meta-role{font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim)}
-.hero-issue{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
+.hero-issue{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
 .hero-issue .issue-rule{flex:0 0 32px;height:1px;background:var(--accent);align-self:center}
 .hero-issue .issue-no{color:var(--fg-muted);letter-spacing:.18em}
 .hero-rule{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong) 20%,var(--border-strong) 80%,transparent);margin:64px 0 0}
@@ -639,7 +646,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .compass-cardinals a .cdir{display:flex;flex-direction:column}
 
 /* Signature Pill — inline above hero issue eyebrow */
-.hero-signature-pill{position:relative;z-index:5;display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;margin-bottom:24px;border:1px solid var(--border-strong);border-radius:999px;background:color-mix(in oklab,var(--surface) 80%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);transition:all var(--t-fast);text-decoration:none}
+.hero-signature-pill{position:relative;z-index:5;display:inline-flex;align-items:center;gap:12px;padding:8px 16px 8px 8px;margin-bottom:14px;border:1px solid var(--border-strong);border-radius:999px;background:color-mix(in oklab,var(--surface) 80%,transparent);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);transition:all var(--t-fast);text-decoration:none}
 .hero-signature-pill:hover{border-color:var(--accent);transform:translateY(-1px);box-shadow:0 12px 40px -10px rgba(212,175,55,.4)}
 .hero-signature-pill .sig-avatar{position:relative;width:34px;height:34px;border-radius:50%;overflow:hidden;flex-shrink:0;border:1px solid var(--accent)}
 .hero-signature-pill .sig-avatar img{width:100%;height:100%;object-fit:cover;object-position:center 28%}
@@ -738,7 +745,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
            gap after hook removal and avoids DOM-manipulation CLS on mobile. -->
       <!-- CRO fix 2026-06-27 web-design-agent: 630+ subscribers belong to DE channel (@MBCapitalStrategies, 634 subs per kpi-rollup 2026-06-26); EN channel (@MBCapitalStrategiesGlobal) has 7 subs — linking sub count to correct channel. -->
       <!-- CRO 2026-06-28 web-design-agent: sub count updated 634→637 (kpi-rollup 2026-06-28T05:00Z, +3 subs yesterday). -->
-      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 36px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">637+ YouTube subscribers</a></p>
+      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 20px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">637+ YouTube subscribers</a></p>
       <div class="hero-trust" role="list" aria-label="Platform metrics">
         <div class="trust-item" role="listitem">
           <span class="trust-num">160+</span>
