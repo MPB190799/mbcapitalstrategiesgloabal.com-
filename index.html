@@ -684,8 +684,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   #hero-sector-nav .sector-nav-divider,
   #hero-sector-nav .sector-nav-yt{display:none!important}
 }
+/* CRO 2026-07-03 web-design-agent: AdSense Auto-Ads must NOT place in-page ads inside the
+   hero/above-the-fold (observed overlap with trust-stat badges on mobile via DE-Site auto-ad
+   injection, Marco rule "ads never over content"). Official Google CSS opt-out, no account access needed: */
+.adsense-auto-ads-ignore{ google-auto-ads: ignore; }
 </style>
-<section class="hero" id="hero">
+<section class="hero adsense-auto-ads-ignore" id="hero">
   <div class="wrap hero-inner">
     <div class="hero-content">
       <aside class="hero-signature-pill" aria-label="Marco Bozem, founder">
