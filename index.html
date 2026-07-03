@@ -1601,6 +1601,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
 <!-- InvestingPro Sale Self-Expiry: shows .ip-sale in July window, hides .ip-evergreen -->
 <script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});}}catch(err){}})();</script>
+<!-- CRO fix 2026-07-03 web-design-agent: .header is position:fixed;top:0 and overlapped the
+     sale bar (also top, in-flow) once it became visible — the sale bar's gold divider line ran
+     straight through the logo+nav text (verified live on desktop). Fix: header is offset down by
+     JS to the sale bar's actual rendered height while the bar is shown. -->
+<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
 
 </body>
 </html>
