@@ -1585,6 +1585,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     var shown = false;
     var show = function(){
       if(shown) return;
+      // CRO fix 2026-07-03 web-design-agent: don't stack this bottom bar on top of the
+      // active sale top-bar -- gold-bar sandwich (top+bottom) eats too much mobile
+      // viewport and over-promotes (Marco rule: subtle, never overwhelming). Newsletter/
+      // sale CTA is already above-the-fold in the hero.
+      var saleBar = document.querySelector('.ip-sale');
+      if(saleBar && saleBar.style.display !== 'none' && saleBar.offsetHeight > 0) return;
       shown = true;
       bar.style.display = 'block';
       document.body.style.paddingBottom = (bar.offsetHeight + 4) + 'px';
