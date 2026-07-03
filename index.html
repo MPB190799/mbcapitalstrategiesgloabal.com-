@@ -658,7 +658,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   .hero-trust{gap:18px;margin:12px 0;padding:18px 0}
   .hero-trust .trust-item{min-width:90px}
   .hero-ctas{gap:18px}
-  .compass-backdrop{width:120vw;opacity:.35}
+  /* CRO 2026-07-03 web-design-agent: opacity .35 let the light compass-face brass color
+     bleed through "160+ research articles" stat label (var(--fg-muted) gray-on-beige,
+     confirmed illegible via Playwright 390x844 crop). DE-Seite uses .22 for the same
+     mobile compass-backdrop and that stat row is legible there — align EN to DE parity. */
+  .compass-backdrop{width:120vw;opacity:.22}
   .compass-cardinals{grid-template-columns:1fr 1fr;max-width:100%}
   /* CRO 2026-06-26 web-design-agent: 11px→13px — WCAG font-size readability on 390px viewport */
   .compass-cardinals a b{font-size:13px}
