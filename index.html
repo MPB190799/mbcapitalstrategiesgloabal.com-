@@ -37,6 +37,11 @@
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
 <link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
+<!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections start at opacity:0 and only
+     become visible via JS (IntersectionObserver). If JS is blocked/slow/fails, these sections stay
+     permanently invisible (content loss). Noscript fallback forces full visibility without JS —
+     affects 0% of normal (JS-enabled) visitors, only closes the resilience gap. DE-parity fix. -->
+<noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
 <script>
