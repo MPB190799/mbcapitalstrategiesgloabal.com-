@@ -316,6 +316,15 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-title em{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
 .hero-sub{max-width:48ch;margin-bottom:36px;margin-left:auto;margin-right:auto}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+/* CRO 2026-07-04 web-design-agent: #hero-cta-secondary-en ("Free Calculators") sits directly
+   over the compass-backdrop image at common desktop viewports (1440x900). btn-ghost's dim
+   border-color+fg-muted text has near-zero contrast against the busy brass/gold compass face,
+   making the CTA effectively unreadable/unclickable-looking — the primary gold-filled button
+   next to it is unaffected since it has a solid fill. Fix: give this one CTA the same
+   scrim+blur treatment already used successfully for .compass-cardinals (which sits over the
+   same image) so the label stays legible without changing btn-ghost anywhere else on the site. */
+#hero-cta-secondary-en{background:rgba(12,11,9,.6);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-color:var(--accent);color:var(--fg)}
+#hero-cta-secondary-en:hover{color:var(--bg);border-color:var(--fg)}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
