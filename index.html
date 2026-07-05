@@ -793,10 +793,20 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
            link (previously hidden as "already present above") now stays visible, since the
            hero-ctas slot no longer carries a YouTube link. Measure: GA4 click event on
            #hero-cta-broker-en vs. 0-click baseline (element didn't exist before). -->
+      <!-- CRO 2026-07-05 web-design-agent (UX-Audit): the 3rd hero CTA ("Compare Brokers", an
+           affiliate-monetized link) was rendered with color:var(--fg-dim,#c8cfe0) — but --fg-dim
+           resolves to #746b5d (dark mode), giving ~3.2:1 contrast against --bg #0c0b09 (fails
+           WCAG AA 4.5:1) AND no visual container, so it looked like disabled/ghost text next to
+           two solid buttons (confirmed via Playwright screenshot, desktop 1440x900 + mobile
+           390x844 — text was barely legible). Fixed to color:var(--fg-muted) (#a39885, ~7:1
+           contrast, same token .btn-link already defaults to) + a thin var(--border-strong) box
+           so it reads as a real (3rd-priority, still dezent per Marco-Regel 12.06.) clickable CTA
+           instead of disabled copy. No new element, no CLS, no fold-position change. Measure: GA4
+           click-rate on #hero-cta-broker-en before/after. -->
       <div class="hero-ctas" id="hero-ctas-en">
         <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
         <a href="pages/calculators.html" class="btn btn-ghost" id="hero-cta-secondary-en">Free Calculators ↗</a>
-        <a href="pages/best-broker-dividends.html" class="btn-link" id="hero-cta-broker-en" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 0">Compare Brokers ↗</a>
+        <a href="pages/best-broker-dividends.html" class="btn-link" id="hero-cta-broker-en" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 12px;border:1px solid var(--border-strong);border-radius:4px">Compare Brokers ↗</a>
       </div>
 
       <!-- REMOVED 2026-07-03 growth-funnel-agent: EN hero newsletter form (added 2026-06-27 by
