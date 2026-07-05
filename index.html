@@ -696,10 +696,12 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 @media (max-width:480px){
   /* CRO 2026-06-27 web-design-agent: Sector-nav tighter gap on very small screens (375px).
      5 nowrap items at gap:8px 20px produce 2-3 wrap rows; tighter gap fits Sectors+4 links
-     on ≤2 rows. Divider span + YouTube link hidden — YouTube already present as btn-link above. */
+     on ≤2 rows. */
+  /* CRO 2026-07-05 web-design-agent: divider+YouTube link in hero-sector-nav are now KEPT visible
+     at this breakpoint. Previously hidden because hero-ctas above carried its own YouTube link
+     ("already present as btn-link above") — that slot now carries the Compare-Brokers CTA instead,
+     so this is the only YouTube link left on <=480px screens. */
   #hero-sector-nav{gap:6px 12px!important}
-  #hero-sector-nav .sector-nav-divider,
-  #hero-sector-nav .sector-nav-yt{display:none!important}
 }
 /* CRO 2026-07-03 web-design-agent: AdSense Auto-Ads must NOT place in-page ads inside the
    hero/above-the-fold (observed overlap with trust-stat badges on mobile via DE-Site auto-ad
@@ -777,10 +779,21 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 
       <!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
       <!-- CRO 2026-06-19 web-design-agent: primary CTA hardened to permanent state (Hormuz window closed 2026-06-17; JS-patch removed, static HTML now matches live intent — eliminates post-load text-swap CLS risk). -->
+      <!-- CRO 2026-07-05 web-design-agent: EN hero had zero monetization CTA above the fold
+           (DE hero shows a Newsletter sign-up form ATF; policy forbids Newsletter on EN, so EN
+           had NO equivalent conversion path in the hero at all — flagged in the 2026-06-25 audit).
+           Swapped the hero-ctas YouTube link (duplicate of the sector-nav YouTube link already
+           shown on screens >480px, see hero-sector-nav below) for a generic broker-comparison CTA
+           (IBKR/CapTrader comparison page — allowed on EN per marco-profile.md EN-IBKR-exception
+           19.06.2026, DE stays blackout). Same element count/height => no CLS, no fold-position
+           regression. Mobile (<=480px) media query below updated so hero-sector-nav's YouTube
+           link (previously hidden as "already present above") now stays visible, since the
+           hero-ctas slot no longer carries a YouTube link. Measure: GA4 click event on
+           #hero-cta-broker-en vs. 0-click baseline (element didn't exist before). -->
       <div class="hero-ctas" id="hero-ctas-en">
         <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
         <a href="pages/calculators.html" class="btn btn-ghost" id="hero-cta-secondary-en">Free Calculators ↗</a>
-        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn-link" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 0">YouTube →</a>
+        <a href="pages/best-broker-dividends.html" class="btn-link" id="hero-cta-broker-en" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim,#c8cfe0);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 0">Compare Brokers ↗</a>
       </div>
 
       <!-- REMOVED 2026-07-03 growth-funnel-agent: EN hero newsletter form (added 2026-06-27 by
