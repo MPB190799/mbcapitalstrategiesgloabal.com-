@@ -620,6 +620,11 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 .hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
 .hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
 .hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
+/* CRO 2026-07-05 web-design-agent: clickable trust stats -> surface internal linking (blog/tools) */
+a.trust-item{text-decoration:none;color:inherit;transition:transform var(--t-fast)}
+a.trust-item:hover{transform:translateY(-2px)}
+a.trust-item:hover .trust-num{color:var(--fg)}
+a.trust-item:hover .trust-lab{color:var(--accent)}
 .hero-ctas{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:8px}
 /* CRO: primary CTA filled (Browse Research) — secondary stays ghost */
 .hero-ctas .btn:first-child{background:var(--accent);color:var(--bg);border-color:var(--accent)}
@@ -766,14 +771,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
            the fold must never overclaim; re-verify against output/data/kpi-rollup.json before each edit. -->
       <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 20px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy · CFA Level&nbsp;I candidate · <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.35);">635+ YouTube subscribers</a></p>
       <div class="hero-trust" role="list" aria-label="Platform metrics">
-        <div class="trust-item" role="listitem">
+        <a class="trust-item" href="/blog/" role="listitem" aria-label="View all research articles">
           <span class="trust-num">160+</span>
           <span class="trust-lab">research<br>articles</span>
-        </div>
-        <div class="trust-item" role="listitem">
+        </a>
+        <a class="trust-item" href="/tools/" role="listitem" aria-label="View free dividend calculators">
           <span class="trust-num">8</span>
           <span class="trust-lab">free<br>calculators</span>
-        </div>
+        </a>
         <div class="trust-item" role="listitem">
           <span class="trust-num">YOC 6.93%</span>
           <span class="trust-lab">real portfolio<br>2026</span>
