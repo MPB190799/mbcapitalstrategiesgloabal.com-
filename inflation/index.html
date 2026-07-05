@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Silent Expropriation — Why Inflation Isn't a Conspiracy</title>
+<meta name="description" content="Interactive & statistically documented: why inflation exists as long as money is printed — and how CBDCs could change the game. Real data from the Fed, BLS, Eurostat, NBER.">
+<meta name="author" content="Marco Bozem">
+<meta name="theme-color" content="#080810">
+
+<!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/inflation/">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/inflation/">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/inflation/">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/inflation/">
+
+<meta property="og:title" content="The Silent Expropriation — Why Inflation Isn't a Conspiracy">
+<meta property="og:description" content="Interactive & statistically documented: why inflation is a tax nobody ever voted for. Real data from the Fed, BLS, Eurostat, NBER.">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/inflation/">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-default.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Silent Expropriation — Why Inflation Isn't a Conspiracy">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied','ad_user_data': 'denied','ad_personalization': 'denied',
+    'analytics_storage': 'denied','functionality_storage': 'granted','security_storage': 'granted','wait_for_update': 500
+  });
+  gtag('config', 'G-FSW7J7QYL8');
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root{
+  --dark:#080810; --card:#0f0f1a; --surface:#161625; --border:#1e1e35;
+  --gold:#D4AF37; --gold-light:#f5d76e; --gold-dim:#a88a2a;
+  --green:#22c55e; --red:#ef4444; --amber:#f5a623; --blue:#60a5fa;
+  --text:#f0f4ff; --dim:#c8cfe0; --gray:#6b7a99;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--dark);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.65;overflow-x:hidden}
+.bg-grad{position:fixed;inset:0;z-index:-2;background:radial-gradient(900px 600px at 80% -10%,rgba(212,175,55,.10),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(96,165,250,.06),transparent 60%)}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--gold-dim),var(--gold-light));z-index:100;transition:width .1s}
+header.nav{position:fixed;top:0;left:0;right:0;display:flex;align-items:center;gap:12px;padding:14px 22px;backdrop-filter:blur(8px);background:rgba(8,8,16,.55);border-bottom:1px solid var(--border);z-index:60}
+header.nav img{height:34px}
+header.nav .brand{font-weight:700;letter-spacing:.5px;color:var(--gold);font-size:14px}
+header.nav .spacer{flex:1}
+header.nav a.cta{font-size:13px;color:var(--dark);background:var(--gold);padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:700}
+section{max-width:980px;margin:0 auto;padding:88px 22px;position:relative}
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.kicker{color:var(--gold);font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.kicker::before{content:"";width:26px;height:2px;background:var(--gold)}
+h1{font-size:clamp(34px,6vw,62px);line-height:1.05;font-weight:800;letter-spacing:-.5px}
+h2{font-size:clamp(26px,4.2vw,40px);line-height:1.12;font-weight:800;margin-bottom:18px;letter-spacing:-.4px}
+h2 .g{color:var(--gold)}
+p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--dim);max-width:760px}
+p{color:var(--dim);margin:14px 0;max-width:760px}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:120px}
+.quote{border-left:3px solid var(--gold);padding:18px 24px;margin:26px 0;background:linear-gradient(90deg,rgba(212,175,55,.08),transparent);border-radius:0 12px 12px 0}
+.quote .q{font-size:clamp(18px,2.6vw,24px);font-style:italic;color:var(--text);line-height:1.5}
+.quote .src{margin-top:12px;font-size:13px;color:var(--gray)}
+.scrollhint{margin-top:54px;color:var(--gray);font-size:13px;display:flex;align-items:center;gap:10px;animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+.bignum{font-size:clamp(58px,13vw,140px);font-weight:800;line-height:.95;background:linear-gradient(180deg,var(--gold-light),var(--gold-dim));-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-2px}
+.bignum.red{background:linear-gradient(180deg,#ff7a7a,var(--red));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--dim);font-size:18px;margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+@media(max-width:780px){.grid2{grid-template-columns:1fr}}
+.chartwrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 18px 12px;box-shadow:0 18px 50px rgba(0,0,0,.4)}
+.chartwrap h3{font-size:15px;color:var(--text);font-weight:700;margin-bottom:4px}
+.chartwrap .csrc{font-size:11px;color:var(--gray);margin-bottom:10px}
+.chartbox{position:relative;height:320px}
+.pill{display:inline-block;font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;border:1px solid var(--border);color:var(--dim);background:var(--surface);margin:3px 4px 3px 0}
+.pyramid{display:flex;flex-direction:column;align-items:center;gap:9px;margin:24px 0}
+.tier{border-radius:10px;padding:14px 18px;text-align:center;font-weight:700;color:var(--dark);width:0;overflow:hidden;white-space:nowrap;transition:width 1s cubic-bezier(.2,.7,.2,1);opacity:.96}
+.in .tier{width:var(--w)}
+.tier small{display:block;font-weight:600;font-size:11px;opacity:.8}
+.calc{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
+.calc label{display:block;font-size:13px;color:var(--gray);margin:16px 0 6px;font-weight:600}
+.calc .row{display:flex;justify-content:space-between;font-size:14px;color:var(--dim)}
+.calc input[type=range]{width:100%;accent-color:var(--gold);height:6px}
+.calc .out{margin-top:22px;padding-top:20px;border-top:1px solid var(--border);text-align:center}
+.calc .out .v{font-size:clamp(34px,8vw,56px);font-weight:800;color:var(--red);line-height:1}
+.calc .out .v.gold{color:var(--gold)}
+.calc .out small{color:var(--gray);font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:24px}
+.cap{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px;transition:transform .25s,border-color .25s}
+.cap:hover{transform:translateY(-4px);border-color:var(--gold-dim)}
+.cap .ico{font-size:24px;margin-bottom:8px}
+.cap h4{font-size:15px;color:var(--text);margin-bottom:6px}
+.cap p{font-size:13px;margin:0;color:var(--gray)}
+.scale{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:24px 0;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.scale .side{padding:22px}
+.scale .win{background:linear-gradient(180deg,rgba(34,197,94,.10),transparent)}
+.scale .lose{background:linear-gradient(180deg,rgba(239,68,68,.10),transparent);border-left:1px solid var(--border)}
+.scale h4{font-size:14px;letter-spacing:1px;text-transform:uppercase;margin-bottom:12px}
+.scale .win h4{color:var(--green)} .scale .lose h4{color:var(--red)}
+.scale ul{list-style:none;font-size:15px;color:var(--dim)} .scale li{padding:5px 0}
+.statusrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:22px}
+.status{border-radius:14px;padding:20px;border:1px solid var(--border);background:var(--card)}
+.status .tag{font-size:11px;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:10px}
+.status.live .tag{background:rgba(239,68,68,.16);color:#ff8a8a;border:1px solid rgba(239,68,68,.4)}
+.status.ban .tag{background:rgba(34,197,94,.16);color:#7ee2a0;border:1px solid rgba(34,197,94,.4)}
+.status.build .tag{background:rgba(245,166,35,.16);color:var(--amber);border:1px solid rgba(245,166,35,.4)}
+.status h4{font-size:18px;color:var(--text);margin-bottom:6px}
+.status p{font-size:13px;color:var(--gray);margin:0}
+.callout{background:linear-gradient(135deg,rgba(212,175,55,.12),rgba(212,175,55,.03));border:1px solid var(--gold-dim);border-radius:16px;padding:26px;margin:26px 0}
+.callout .big{font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--text);line-height:1.3}
+.disclaimer{font-size:12px;color:var(--gray);border-top:1px solid var(--border);padding-top:22px;margin-top:30px;max-width:820px}
+footer{text-align:center;padding:50px 22px;color:var(--gray);font-size:13px;border-top:1px solid var(--border)}
+footer a{color:var(--gold);text-decoration:none}
+.tag-fact{font-size:11px;color:var(--green);font-weight:700;letter-spacing:1px}
+.tag-these{font-size:11px;color:var(--amber);font-weight:700;letter-spacing:1px}
+.videowrap{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--border);box-shadow:0 18px 50px rgba(0,0,0,.5);margin-top:14px}
+.videowrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.videoslot{margin-top:14px;aspect-ratio:16/9;border-radius:16px;border:1px dashed var(--gold-dim);background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(212,175,55,.02));display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
+.videoslot .vs-badge{display:inline-block;font-size:13px;font-weight:800;letter-spacing:1px;color:var(--gold);border:1px solid var(--gold-dim);border-radius:999px;padding:7px 16px;margin-bottom:12px}
+.videoslot .vs-txt{font-size:15px;color:var(--dim);max-width:520px;margin:0 auto}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why does inflation happen when central banks print money?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Printing money alone doesn't fully explain inflation — what matters is how fast that money circulates (M2 velocity) and whether it reaches citizens directly. The Fed's balance sheet grew 5x between 2008-2015 without high inflation because the money stayed within the banking system. In 2020-2021, money reached citizens through direct payments — that drove inflation much harder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much purchasing power has the US dollar lost since 1913?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The US dollar has lost about 97% of its purchasing power since the Federal Reserve was founded in 1913. $100 from back then is worth only a fraction of its original value today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are CBDCs and how do they relate to inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CBDCs (Central Bank Digital Currencies) are digital central bank currencies. They could turn today's slow, invisible inflation-driven expropriation into a directly controllable measure at the push of a button — through programmable money with expiration dates or targeted money-supply control."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<div class="bg-grad"></div>
+<div class="progress" id="prog"></div>
+<header class="nav">
+  <a href="https://mbcapitalstrategiesgloabal.com" aria-label="MB Capital Strategies — Home"><img src="/Logo.png" alt="MB Capital Strategies"></a>
+  <span class="brand">MB CAPITAL STRATEGIES</span>
+  <span class="spacer"></span>
+  <a class="cta" href="#protection">What protects?</a>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="reveal">
+    <div class="kicker">Hard Assets &amp; Dividends · Data Deep-Dive</div>
+    <h1>The Silent<br><span style="color:var(--gold)">Expropriation</span></h1>
+    <p class="lead" style="margin-top:20px">Why inflation isn't a conspiracy — but a tax nobody ever voted for. Statistically documented, with real data from the Fed, BLS, Eurostat and NBER.</p>
+    <div class="quote">
+      <div class="q">"By a continuing process of inflation, governments can <b style="color:var(--gold)">confiscate</b>, secretly and unobserved, an important part of the wealth of their citizens."</div>
+      <div class="src">John Maynard Keynes · <i>The Economic Consequences of the Peace</i>, 1919, Ch. VI</div>
+    </div>
+    <p style="font-size:15px;color:var(--gray)">That's not some crypto guy talking. That's the most famous economist of the 20th century. And the word he uses is: <b style="color:var(--text)">confiscate</b>.</p>
+    <div class="scrollhint">▼ &nbsp;Scroll — and look at the numbers</div>
+  </div>
+</section>
+
+<!-- ============ VIDEO EMBED SLOT (companion video) ============
+     Once the YouTube video is live: replace the whole <div class="videoslot">…</div>
+     with this block (insert VIDEO_ID):
+     <div class="videowrap"><iframe src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+       title="The Silent Expropriation — MB Capital Strategies" loading="lazy"
+       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+       allowfullscreen></iframe></div>
+-->
+<section id="video">
+  <div class="reveal">
+    <div class="kicker">The video on this topic</div>
+    <h2>Rather <span class="g">watch</span> than read?</h2>
+    <div class="videowrap"><iframe src="https://www.youtube-nocookie.com/embed/htxIlb4aJVQ" title="The Silent Expropriation — MB Capital Strategies" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+  </div>
+</section>
+
+<!-- K1a USD -->
+<section>
+  <div class="grid2">
+    <div class="reveal">
+      <div class="kicker">Chapter 1 · The proof in your own money</div>
+      <h2>The US dollar has lost <span class="g">97%</span> of its purchasing power.</h2>
+      <div class="bignum red" data-count="97" data-suffix="%">0%</div>
+      <div class="sub">Purchasing-power loss of the US dollar since the Fed was founded in 1913. Of every dollar, just <b style="color:var(--text)">3 cents</b> of value remain today.</div>
+      <div style="margin-top:14px"><span class="pill">Source: BLS / FRED CUUR0000SA0R</span></div>
+    </div>
+    <div class="reveal chartwrap">
+      <h3>Purchasing power of the US dollar 1913 → today (1913 = 100)</h3>
+      <div class="csrc">Source: U.S. Bureau of Labor Statistics · FRED series CUUR0000SA0R</div>
+      <div class="chartbox"><canvas id="cPP"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- K1b interactive year slider -->
+<section>
+  <div class="reveal">
+    <div class="kicker">Interactive · Do the math yourself</div>
+    <h2>What <span class="g">$100</span> from your birth year is worth today</h2>
+    <p>Drag the slider to a year — and see how much purchasing power has evaporated since. Real BLS data.</p>
+  </div>
+  <div class="reveal calc" style="margin-top:24px">
+    <label>Year: <b id="yrLabel" style="color:var(--gold)">1971</b></label>
+    <input type="range" id="yrSlider" min="1913" max="2025" value="1971" step="1">
+    <div class="out">
+      <div class="v gold"><span id="yrVal">—</span></div>
+      <small>Purchasing power of <b>$100</b> from <span id="yrA">—</span>, expressed in today's purchasing power. Conversely: $100 today had the purchasing power of <b id="yrInv">—</b> back in <span id="yrLabel2">1971</span>.</small>
+    </div>
+  </div>
+</section>
+
+<!-- K1c Euro -->
+<section>
+  <div class="reveal">
+    <div class="kicker">Your euro, too</div>
+    <h2>€100 from 1999 is worth only about <span class="g">€60</span> today.</h2>
+    <p>Since the euro was introduced in 1999, German purchasing power has lost <b style="color:var(--text)">−37.6%</b>. Some claim it "halved" — that's not true, it's about 37%. I'll stick with the real numbers. <span class="pill" style="margin-left:8px">Source: Flossbach von Storch / Destatis</span></p>
+  </div>
+</section>
+
+<!-- K2 money supply pyramid -->
+<section>
+  <div class="reveal">
+    <div class="kicker">Chapter 2 · Why this happens</div>
+    <h2>Which <span class="g">money supply</span> you actually need to watch</h2>
+    <p>Not every "money supply" is the same. The central-bank balance sheet (M0) is misleading — what matters is the broad money that reaches the consumer, <b style="color:var(--text)">times its velocity</b>.</p>
+  </div>
+  <div class="reveal pyramid">
+    <div class="tier" style="--w:46%;background:linear-gradient(90deg,#3a3a55,#52527a)">M0 · Monetary base<small>Cash + central-bank reserves — the 2008 trap</small></div>
+    <div class="tier" style="--w:62%;background:linear-gradient(90deg,#52527a,#6b6ba0)">M1 · + demand deposits<small>money available on any given day</small></div>
+    <div class="tier" style="--w:82%;background:linear-gradient(90deg,var(--gold-dim),var(--gold))">M2 · US gauge ✓<small>+ savings/short-term deposits — the US inflation signal</small></div>
+    <div class="tier" style="--w:100%;background:linear-gradient(90deg,var(--gold),var(--gold-light))">M3 · Euro gauge ✓<small>+ money-market funds — the ECB's gauge</small></div>
+  </div>
+  <div class="callout reveal">
+    <div class="big">"Don't watch the central-bank balance sheet — watch <span style="color:var(--gold)">M2 / M3 × velocity</span>."</div>
+  </div>
+</section>
+
+<!-- K3a velocity -->
+<section>
+  <div class="grid2">
+    <div class="reveal">
+      <div class="kicker">Chapter 3 · The honest part</div>
+      <h2>Why "printing = inflation" is <span class="g">too simple</span></h2>
+      <p>If printing money instantly caused inflation — why did it stay below 2% from 2008–2020, even as the Fed created trillions? The answer is in this curve: <b style="color:var(--text)">velocity</b> collapsed. The money sat in the banking system.</p>
+      <div><span class="pill">Source: FRED M2V</span></div>
+    </div>
+    <div class="reveal chartwrap">
+      <h3>Velocity of money (M2 velocity)</h3>
+      <div class="csrc">Source: Federal Reserve Bank of St. Louis · FRED series M2V</div>
+      <div class="chartbox"><canvas id="cVel"></canvas></div>
+    </div>
+  </div>
+</section>
+
+<!-- K3b fed balance vs cpi -->
+<section>
+  <div class="reveal">
+    <div class="kicker">The 2008–2014 paradox</div>
+    <h2>Fed balance sheet <span class="g">×5</span> — and still no inflation</h2>
+    <p>The Fed ballooned its balance sheet from under 1 to 4.5 trillion dollars. Inflation? Stayed below 2% for over a decade. Because the money sat as bank reserves (excess reserves peaked at ~$2.7 tn in 2014) and never reached the consumer.</p>
+  </div>
+  <div class="reveal chartwrap" style="margin-top:22px">
+    <h3>Fed balance sheet ($ tn) vs. US inflation (% YoY), 2007–2015</h3>
+    <div class="csrc">Source: FRED WALCL (balance sheet) · BLS CPIAUCSL (inflation, own YoY calc)</div>
+    <div class="chartbox"><canvas id="cFed"></canvas></div>
+  </div>
+</section>
+
+<!-- K3c m2 spike vs cpi -->
+<section>
+  <div class="reveal">
+    <div class="kicker">The clean proof, 2020–2022</div>
+    <h2>This time the money landed <span class="g">straight in citizens' pockets</span></h2>
+    <p>In just over two years M2 shot up by about <b style="color:var(--text)">+40%</b> (single-year record ~27% YoY, Feb 2021) — this time as helicopter money straight into accounts, not just as bank reserves. Roughly 12–18 months later: inflation at <b style="color:var(--text)">9.1%</b> (June 2022), the highest since 1981. Watch the lag between the two curves.</p>
+  </div>
+  <div class="reveal chartwrap" style="margin-top:22px">
+    <h3>M2 money-supply growth vs. inflation (% YoY), 2018–2024</h3>
+    <div class="csrc">Source: FRED M2SL &amp; BLS CPIAUCSL (own YoY calc) · Peak M2 +26.8% (Feb 2021), CPI peak June 2022</div>
+    <div class="chartbox"><canvas id="cM2"></canvas></div>
+  </div>
+  <div class="callout reveal">
+    <div class="big">Not "printing = inflation." Rather: <span style="color:var(--gold)">printing + it reaches the consumer + velocity holds = inflation.</span></div>
+    <p style="margin-top:10px;font-size:14px">Long term the money supply wins anyway — that's the purchasing-power curve from the very top. (And yes: deflation despite printing is possible — Japan, 2008/09.)</p>
+  </div>
+</section>
+
+<!-- K4 expropriation -->
+<section>
+  <div class="reveal">
+    <div class="kicker">Chapter 4 · The silent expropriation</div>
+    <h2>Inflation is a <span class="g">tax</span> nobody ever voted for</h2>
+    <p>Nobody votes on it. You pay it anyway. Economists have a name for it — the <b style="color:var(--text)">inflation tax</b> — and it's in peer-reviewed Harvard papers, not conspiracy forums.</p>
+  </div>
+
+  <div class="reveal calc" style="margin-top:24px">
+    <div class="kicker" style="margin-bottom:4px">Interactive · Your silent expropriation</div>
+    <label>Inflation rate: <b id="infL" style="color:var(--red)">7.0%</b></label>
+    <input type="range" id="infS" min="0" max="12" value="7" step="0.1">
+    <label>Your savings rate: <b id="savL" style="color:var(--green)">0.3%</b></label>
+    <input type="range" id="savS" min="0" max="6" value="0.3" step="0.1">
+    <label>Amount saved (€): <b id="amtL" style="color:var(--gold)">€10,000</b></label>
+    <input type="range" id="amtS" min="1000" max="100000" value="10000" step="1000">
+    <div class="out">
+      <div class="v"><span id="realLoss">−6.3%</span> / year real</div>
+      <small>Your account balance stays the same — your purchasing power shrinks. After <b>10 years</b>, <span id="amtStart">€10,000</span> is worth only <b id="amt10" style="color:var(--red)">—</b> in real terms. That's the silent expropriation — made visible.</small>
+    </div>
+  </div>
+
+  <div class="grid2" style="margin-top:36px">
+    <div class="reveal">
+      <h2 style="font-size:26px"><span class="g">€170 bn</span> in a single year alone</h2>
+      <div class="bignum" data-count="170" data-suffix=" bn €">0</div>
+      <div class="sub">is what German savers lost in purchasing power in 2022 — through negative real interest rates.</div>
+      <div style="margin-top:12px"><span class="pill">Source: Destatis data / ratior</span></div>
+    </div>
+    <div class="reveal chartwrap">
+      <h3>How much government debt "financial repression" melts away</h3>
+      <div class="csrc">Reinhart &amp; Sbrancia, "The Liquidation of Government Debt" · NBER w16893 · avg % of GDP / year via negative real rates</div>
+      <div class="chartbox"><canvas id="cRep"></canvas></div>
+    </div>
+  </div>
+
+  <div class="reveal scale">
+    <div class="side win">
+      <h4>▲ Winners</h4>
+      <ul>
+        <li>The state — the world's largest debtor (inflation devalues its own debt)</li>
+        <li>Debtors in general</li>
+        <li>Owners of real assets (stocks, real estate)</li>
+        <li>Whoever is closest to the money printer — <b>Cantillon effect</b></li>
+      </ul>
+    </div>
+    <div class="side lose">
+      <h4>▼ Losers</h4>
+      <ul>
+        <li>Savers with cash &amp; savings accounts</li>
+        <li>Pensioners on fixed incomes</li>
+        <li>Wage earners whose pay lags inflation</li>
+        <li>Anyone who trusts money instead of investing it</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout reveal">
+    <div class="big">Inflation is not a natural event — it's a <span style="color:var(--gold)">wealth transfer</span>. From savers to debtors. And the biggest debtor sits in the finance ministry.</div>
+  </div>
+</section>
+
+<!-- K5 CBDC -->
+<section>
+  <div class="reveal">
+    <div class="kicker">Chapter 5 · Looking ahead</div>
+    <h2>CBDCs: creeping expropriation could become one <span class="g">at the push of a button</span></h2>
+    <p>For 100 years the expropriation was invisible and slow. Now comes technology that could make it visible, fast and targeted: central bank digital currency (CBDC). <b style="color:var(--text)">Important:</b> the technology <i>enables</i> it — whether the West uses it that way is open. China shows it live, the US is pushing back, the EU is building with privacy promises.</p>
+  </div>
+
+  <div class="cards reveal">
+    <div class="cap"><div class="ico">⏳</div><h4>Expiry date on money</h4><p>Money that becomes worthless after date X — to force spending. Already deployable in China.</p></div>
+    <div class="cap"><div class="ico">🚫</div><h4>Purchase restrictions</h4><p>"This money only for X" — programmable rules for what you're allowed to pay for.</p></div>
+    <div class="cap"><div class="ico">📉</div><h4>Negative rates by click</h4><p>The account simply shrinks — directly enforceable, no detour through banks.</p></div>
+    <div class="cap"><div class="ico">🔍</div><h4>Full visibility</h4><p>Every transaction potentially traceable — the end of cash-like privacy.</p></div>
+  </div>
+
+  <div class="quote reveal" style="margin-top:30px">
+    <div class="q">"The central bank will have <b style="color:var(--gold)">absolute control</b> on the rules and regulations that will determine the use of … central bank liability, and also <b style="color:var(--gold)">we will have the technology to enforce that</b>."</div>
+    <div class="src">Agustín Carstens, General Manager of the Bank for International Settlements (BIS) · IMF seminar, 19 Oct 2020</div>
+  </div>
+  <p class="reveal" style="font-size:15px;color:var(--gray)">That's not a goldbug at the bar — that's the top central banker of central banks. Openly, on the record. Again: no conspiracy when it's said out loud.</p>
+
+  <div class="statusrow reveal">
+    <div class="status live">
+      <span class="tag">● CHINA · LIVE</span>
+      <h4>e-CNY (digital yuan)</h4>
+      <p>The world's largest live CBDC: &gt;$2.3 tn cumulative, +800% since 2023, ~2.25 bn wallets. Expiry dates &amp; compliance blocks technically real. Source: Atlantic Council / IndustryWeek.</p>
+    </div>
+    <div class="status ban">
+      <span class="tag">● USA · AGAINST</span>
+      <h4>Digital dollar — stopped</h4>
+      <p>Trump executive order (23 Jan 2025) bars federal agencies from a CBDC. The Senate additionally waved through a ban until 2030 (85–5) — the law not yet finally signed, but the direction is unmistakable. Rationale: privacy &amp; freedom.</p>
+    </div>
+    <div class="status build">
+      <span class="tag">● EU · IN PROGRESS</span>
+      <h4>Digital euro</h4>
+      <p>Possible first issuance in 2029 at the earliest, EU Parliament decides in 2026. Holding limit ~€3,000. The ECB promises privacy &amp; a cash-like offline mode. Source: ECB.</p>
+    </div>
+  </div>
+  <p class="reveal" style="font-size:15px;margin-top:22px"><b style="color:var(--text)">Staying honest:</b> the digital euro is officially <i>not</i> planned as control money. But that's exactly why the fight over limits, privacy and programmability matters <b style="color:var(--gold)">now</b> — whoever waits until it's built has no voice left.</p>
+</section>
+
+<!-- K6 protection -->
+<section id="protection">
+  <div class="reveal">
+    <div class="kicker">Chapter 6 · What protects</div>
+    <h2>What <span class="g">can't be switched off</span> with an update</h2>
+    <p>If money can lose value slowly (inflation) or fast (a CBDC rule) — what's left? Historically: <b style="color:var(--text)">real assets</b>. Productive assets that have a real counter-value and can't be devalued with a click. As a category, not as a hot tip.</p>
+    <p style="font-size:14px;color:var(--gray)">Honestly: real assets fluctuate, are no free lunch and no miracle cure. Diversification and long horizons are part of it. I'm not selling you anything here — I'm just showing you what Keynes already knew 100 years ago.</p>
+  </div>
+  <div class="callout reveal">
+    <div class="big">"There is no subtler, no surer means of overturning the existing basis of society than to debauch the currency … not one man in a million is able to diagnose it."</div>
+    <p style="margin-top:10px;font-size:15px">Keynes, 1919. Not one in a million sees through it. Now <b style="color:var(--gold)">you</b> do.</p>
+  </div>
+  <div class="disclaimer">
+    <b>Disclaimer:</b> This content is for information and educational purposes only and does <b>not constitute investment advice</b> or a recommendation to buy or sell. The asset classes mentioned are general categories, not individual recommendations. Investments in real assets and securities carry risks up to total loss. Do not make any investment decision based solely on this content, and seek independent, qualified advice where needed. All figures compiled to the best of our knowledge from the stated primary sources (as of their respective publication); no guarantee of completeness or timeliness.
+  </div>
+</section>
+
+<footer>
+  MB Capital Strategies · Hard Assets &amp; Dividends · Data: Fed/FRED, BLS, Eurostat, NBER, ECB, BIS<br>
+  <a href="https://mbcapitalstrategiesgloabal.com">mbcapitalstrategiesgloabal.com</a> &nbsp;·&nbsp; Full sources in the video &amp; companion article
+</footer>
+
+<script>
+const DATA = {"meta": {"m2_latest": ["2026-05-01", "23052.3"], "m2v_latest": ["2026-01-01", "1.411"], "walcl_latest_T": 6.74, "cpi_latest": ["2026-05-01", "333.979"], "pp_latest": ["2026-05-01", "29.8"], "usd_loss_since_1913_pct": 97.0, "usd_cents_left": 3.0}, "C1_purchasing_power": [["1913", 100.0], ["1914", 97.68], ["1915", 97.03], ["1916", 93.95], ["1917", 84.0], ["1918", 70.34], ["1919", 59.39], ["1920", 50.86], ["1921", 51.57], ["1922", 57.99], ["1923", 58.46], ["1924", 56.87], ["1925", 56.78], ["1926", 54.76], ["1927", 56.01], ["1928", 56.87], ["1929", 57.43], ["1930", 57.43], ["1931", 61.78], ["1932", 68.69], ["1933", 76.18], ["1934", 74.25], ["1935", 72.07], ["1936", 71.02], ["1937", 69.69], ["1938", 69.01], ["1939", 70.34], ["1940", 70.51], ["1941", 69.69], ["1942", 62.69], ["1943", 58.11], ["1944", 56.43], ["1945", 55.16], ["1946", 53.96], ["1947", 45.67], ["1948", 41.4], ["1949", 40.84], ["1950", 41.7], ["1951", 38.63], ["1952", 37.08], ["1953", 36.84], ["1954", 36.43], ["1955", 36.7], ["1956", 36.61], ["1957", 35.52], ["1958", 34.32], ["1959", 33.88], ["1960", 33.46], ["1961", 32.93], ["1962", 32.7], ["1963", 32.29], ["1964", 31.75], ["1965", 31.4], ["1966", 30.81], ["1967", 29.82], ["1968", 28.82], ["1969", 27.55], ["1970", 25.97], ["1971", 24.67], ["1972", 23.88], ["1973", 23.02], ["1974", 21.06], ["1975", 18.84], ["1976", 17.65], ["1977", 16.76], ["1978", 15.7], ["1979", 14.37], ["1980", 12.62], ["1981", 11.29], ["1982", 10.4], ["1983", 10.03], ["1984", 9.65], ["1985", 9.29], ["1986", 8.97], ["1987", 8.83], ["1988", 8.49], ["1989", 8.12], ["1990", 7.71], ["1991", 7.3], ["1992", 7.11], ["1993", 6.89], ["1994", 6.72], ["1995", 6.53], ["1996", 6.37], ["1997", 6.17], ["1998", 6.08], ["1999", 5.97], ["2000", 5.82], ["2001", 5.61], ["2002", 5.55], ["2003", 5.4], ["2004", 5.31], ["2005", 5.15], ["2006", 4.95], ["2007", 4.85], ["2008", 4.66], ["2009", 4.66], ["2010", 4.53], ["2011", 4.46], ["2012", 4.33], ["2013", 4.26], ["2014", 4.21], ["2015", 4.21], ["2016", 4.15], ["2017", 4.05], ["2018", 3.96], ["2019", 3.9], ["2020", 3.81], ["2021", 3.75], ["2022", 3.5], ["2023", 3.28], ["2024", 3.18], ["2025", 3.09], ["2026", 3.02]], "C5_velocity": [["1995-01-01", 2.155], ["1995-04-01", 2.151], ["1995-07-01", 2.142], ["1995-10-01", 2.147], ["1996-01-01", 2.147], ["1996-04-01", 2.165], ["1996-07-01", 2.171], ["1996-10-01", 2.176], ["1997-01-01", 2.174], ["1997-04-01", 2.19], ["1997-07-01", 2.192], ["1997-10-01", 2.184], ["1998-01-01", 2.17], ["1998-04-01", 2.155], ["1998-07-01", 2.155], ["1998-10-01", 2.14], ["1999-01-01", 2.129], ["1999-04-01", 2.124], ["1999-07-01", 2.128], ["1999-10-01", 2.145], ["2000-01-01", 2.134], ["2000-04-01", 2.15], ["2000-07-01", 2.14], ["2000-10-01", 2.132], ["2001-01-01", 2.084], ["2001-04-01", 2.057], ["2001-07-01", 2.011], ["2001-10-01", 1.978], ["2002-01-01", 1.966], ["2002-04-01", 1.97], ["2002-07-01", 1.95], ["2002-10-01", 1.924], ["2003-01-01", 1.912], ["2003-04-01", 1.899], ["2003-07-01", 1.903], ["2003-10-01", 1.938], ["2004-01-01", 1.948], ["2004-04-01", 1.938], ["2004-07-01", 1.947], ["2004-10-01", 1.956], ["2005-01-01", 1.983], ["2005-04-01", 1.993], ["2005-07-01", 1.998], ["2005-10-01", 1.999], ["2006-01-01", 2.014], ["2006-04-01", 2.015], ["2006-07-01", 2.003], ["2006-10-01", 1.994], ["2007-01-01", 1.991], ["2007-04-01", 1.983], ["2007-07-01", 1.975], ["2007-10-01", 1.974], ["2008-01-01", 1.936], ["2008-04-01", 1.924], ["2008-07-01", 1.904], ["2008-10-01", 1.81], ["2009-01-01", 1.732], ["2009-04-01", 1.705], ["2009-07-01", 1.707], ["2009-10-01", 1.723], ["2010-01-01", 1.735], ["2010-04-01", 1.742], ["2010-07-01", 1.744], ["2010-10-01", 1.741], ["2011-01-01", 1.723], ["2011-04-01", 1.708], ["2011-07-01", 1.651], ["2011-10-01", 1.644], ["2012-01-01", 1.638], ["2012-04-01", 1.627], ["2012-07-01", 1.608], ["2012-10-01", 1.582], ["2013-01-01", 1.58], ["2013-04-01", 1.57], ["2013-07-01", 1.57], ["2013-10-01", 1.561], ["2014-01-01", 1.537], ["2014-04-01", 1.545], ["2014-07-01", 1.55], ["2014-10-01", 1.538], ["2015-01-01", 1.52], ["2015-04-01", 1.525], ["2015-07-01", 1.519], ["2015-10-01", 1.498], ["2016-01-01", 1.471], ["2016-04-01", 1.462], ["2016-07-01", 1.455], ["2016-10-01", 1.447], ["2017-01-01", 1.44], ["2017-04-01", 1.434], ["2017-07-01", 1.438], ["2017-10-01", 1.448], ["2018-01-01", 1.457], ["2018-04-01", 1.461], ["2018-07-01", 1.463], ["2018-10-01", 1.462], ["2019-01-01", 1.455], ["2019-04-01", 1.456], ["2019-07-01", 1.451], ["2019-10-01", 1.436], ["2020-01-01", 1.39], ["2020-04-01", 1.126], ["2020-07-01", 1.176], ["2020-10-01", 1.165], ["2021-01-01", 1.155], ["2021-04-01", 1.15], ["2021-07-01", 1.152], ["2021-10-01", 1.163], ["2022-01-01", 1.163], ["2022-04-01", 1.191], ["2022-07-01", 1.219], ["2022-10-01", 1.252], ["2023-01-01", 1.286], ["2023-04-01", 1.324], ["2023-07-01", 1.352], ["2023-10-01", 1.37], ["2024-01-01", 1.373], ["2024-04-01", 1.387], ["2024-07-01", 1.393], ["2024-10-01", 1.392], ["2025-01-01", 1.39], ["2025-04-01", 1.395], ["2025-07-01", 1.408], ["2025-10-01", 1.41], ["2026-01-01", 1.411]], "C6_fed_balance_T": [["2007-01-03", 0.875], ["2007-01-31", 0.866], ["2007-02-28", 0.877], ["2007-03-28", 0.87], ["2007-04-25", 0.88], ["2007-05-23", 0.874], ["2007-06-20", 0.866], ["2007-07-18", 0.873], ["2007-08-15", 0.865], ["2007-09-12", 0.886], ["2007-10-10", 0.886], ["2007-11-07", 0.886], ["2007-12-05", 0.883], ["2008-01-02", 0.922], ["2008-01-30", 0.9], ["2008-02-27", 0.894], ["2008-03-26", 0.894], ["2008-04-23", 0.886], ["2008-05-21", 0.898], ["2008-06-18", 0.902], ["2008-07-16", 0.911], ["2008-08-13", 0.915], ["2008-09-10", 0.926], ["2008-10-08", 1.592], ["2008-11-05", 2.074], ["2008-12-03", 2.137], ["2008-12-31", 2.239], ["2009-01-28", 1.927], ["2009-02-25", 1.916], ["2009-03-25", 2.072], ["2009-04-22", 2.197], ["2009-05-20", 2.182], ["2009-06-17", 2.073], ["2009-07-15", 2.072], ["2009-08-12", 2.015], ["2009-09-09", 2.088], ["2009-10-07", 2.138], ["2009-11-04", 2.165], ["2009-12-02", 2.204], ["2009-12-30", 2.234], ["2010-01-27", 2.247], ["2010-02-24", 2.286], ["2010-03-24", 2.313], ["2010-04-21", 2.338], ["2010-05-19", 2.351], ["2010-06-16", 2.344], ["2010-07-14", 2.341], ["2010-08-11", 2.328], ["2010-09-08", 2.306], ["2010-10-06", 2.308], ["2010-11-03", 2.3], ["2010-12-01", 2.347], ["2010-12-29", 2.421], ["2011-01-26", 2.444], ["2011-02-23", 2.533], ["2011-03-23", 2.601], ["2011-04-20", 2.686], ["2011-05-18", 2.758], ["2011-06-15", 2.828], ["2011-07-13", 2.878], ["2011-08-10", 2.872], ["2011-09-07", 2.859], ["2011-10-05", 2.86], ["2011-11-02", 2.822], ["2011-11-30", 2.814], ["2011-12-28", 2.926], ["2012-01-25", 2.92], ["2012-02-22", 2.933], ["2012-03-21", 2.893], ["2012-04-18", 2.875], ["2012-05-16", 2.851], ["2012-06-13", 2.869], ["2012-07-11", 2.866], ["2012-08-08", 2.856], ["2012-09-05", 2.822], ["2012-10-03", 2.809], ["2012-10-31", 2.823], ["2012-11-28", 2.851], ["2012-12-26", 2.907], ["2013-01-23", 3.012], ["2013-02-20", 3.095], ["2013-03-20", 3.207], ["2013-04-17", 3.295], ["2013-05-15", 3.354], ["2013-06-12", 3.411], ["2013-07-10", 3.504], ["2013-08-07", 3.585], ["2013-09-04", 3.654], ["2013-10-02", 3.747], ["2013-10-30", 3.843], ["2013-11-27", 3.926], ["2013-12-25", 4.033], ["2014-01-22", 4.098], ["2014-02-19", 4.149], ["2014-03-19", 4.222], ["2014-04-16", 4.284], ["2014-05-14", 4.337], ["2014-06-11", 4.341], ["2014-07-09", 4.383], ["2014-08-06", 4.41], ["2014-09-03", 4.416], ["2014-10-01", 4.45], ["2014-10-29", 4.487], ["2014-11-26", 4.486], ["2014-12-24", 4.509], ["2015-01-21", 4.513], ["2015-02-18", 4.497], ["2015-03-18", 4.496], ["2015-04-15", 4.485], ["2015-05-13", 4.501], ["2015-06-10", 4.468], ["2015-07-08", 4.481], ["2015-08-05", 4.486], ["2015-09-02", 4.476], ["2015-09-30", 4.484], ["2015-10-28", 4.489], ["2015-11-25", 4.477]], "C6_cpi_yoy": [["2007-01-01", 2.08], ["2007-02-01", 2.42], ["2007-03-01", 2.8], ["2007-04-01", 2.59], ["2007-05-01", 2.71], ["2007-06-01", 2.69], ["2007-07-01", 2.32], ["2007-08-01", 1.9], ["2007-09-01", 2.83], ["2007-10-01", 3.61], ["2007-11-01", 4.37], ["2007-12-01", 4.11], ["2008-01-01", 4.29], ["2008-02-01", 4.14], ["2008-03-01", 3.97], ["2008-04-01", 3.9], ["2008-05-01", 4.09], ["2008-06-01", 4.94], ["2008-07-01", 5.5], ["2008-08-01", 5.31], ["2008-09-01", 4.95], ["2008-10-01", 3.73], ["2008-11-01", 1.1], ["2008-12-01", -0.02], ["2009-01-01", -0.11], ["2009-02-01", 0.01], ["2009-03-01", -0.45], ["2009-04-01", -0.58], ["2009-05-01", -1.02], ["2009-06-01", -1.23], ["2009-07-01", -1.96], ["2009-08-01", -1.48], ["2009-09-01", -1.38], ["2009-10-01", -0.22], ["2009-11-01", 1.91], ["2009-12-01", 2.81], ["2010-01-01", 2.62], ["2010-02-01", 2.15], ["2010-03-01", 2.29], ["2010-04-01", 2.21], ["2010-05-01", 2.0], ["2010-06-01", 1.12], ["2010-07-01", 1.34], ["2010-08-01", 1.15], ["2010-09-01", 1.12], ["2010-10-01", 1.17], ["2010-11-01", 1.08], ["2010-12-01", 1.44], ["2011-01-01", 1.7], ["2011-02-01", 2.12], ["2011-03-01", 2.62], ["2011-04-01", 3.08], ["2011-05-01", 3.46], ["2011-06-01", 3.5], ["2011-07-01", 3.58], ["2011-08-01", 3.75], ["2011-09-01", 3.81], ["2011-10-01", 3.52], ["2011-11-01", 3.45], ["2011-12-01", 3.06], ["2012-01-01", 3.01], ["2012-02-01", 2.9], ["2012-03-01", 2.58], ["2012-04-01", 2.27], ["2012-05-01", 1.74], ["2012-06-01", 1.65], ["2012-07-01", 1.42], ["2012-08-01", 1.69], ["2012-09-01", 1.95], ["2012-10-01", 2.16], ["2012-11-01", 1.8], ["2012-12-01", 1.76], ["2013-01-01", 1.68], ["2013-02-01", 2.02], ["2013-03-01", 1.52], ["2013-04-01", 1.14], ["2013-05-01", 1.39], ["2013-06-01", 1.72], ["2013-07-01", 1.89], ["2013-08-01", 1.54], ["2013-09-01", 1.09], ["2013-10-01", 0.88], ["2013-11-01", 1.23], ["2013-12-01", 1.51], ["2014-01-01", 1.56], ["2014-02-01", 1.12], ["2014-03-01", 1.61], ["2014-04-01", 2.02], ["2014-05-01", 2.17], ["2014-06-01", 2.06], ["2014-07-01", 1.97], ["2014-08-01", 1.72], ["2014-09-01", 1.68], ["2014-10-01", 1.61], ["2014-11-01", 1.23], ["2014-12-01", 0.65], ["2015-01-01", -0.23], ["2015-02-01", -0.09], ["2015-03-01", -0.02], ["2015-04-01", -0.1], ["2015-05-01", 0.04], ["2015-06-01", 0.18], ["2015-07-01", 0.23], ["2015-08-01", 0.24], ["2015-09-01", 0.01], ["2015-10-01", 0.13], ["2015-11-01", 0.44]], "C7_m2_yoy": [["2018-01-01", 4.39], ["2018-02-01", 4.14], ["2018-03-01", 4.08], ["2018-04-01", 3.8], ["2018-05-01", 3.86], ["2018-06-01", 4.1], ["2018-07-01", 3.9], ["2018-08-01", 3.84], ["2018-09-01", 3.64], ["2018-10-01", 3.31], ["2018-11-01", 3.17], ["2018-12-01", 3.64], ["2019-01-01", 4.02], ["2019-02-01", 3.99], ["2019-03-01", 3.89], ["2019-04-01", 3.98], ["2019-05-01", 4.34], ["2019-06-01", 4.71], ["2019-07-01", 5.02], ["2019-08-01", 5.28], ["2019-09-01", 5.63], ["2019-10-01", 6.51], ["2019-11-01", 7.09], ["2019-12-01", 6.68], ["2020-01-01", 6.69], ["2020-02-01", 6.8], ["2020-03-01", 10.14], ["2020-04-01", 16.93], ["2020-05-01", 21.96], ["2020-06-01", 22.84], ["2020-07-01", 23.17], ["2020-08-01", 22.95], ["2020-09-01", 23.63], ["2020-10-01", 23.53], ["2020-11-01", 24.2], ["2020-12-01", 24.55], ["2021-01-01", 25.62], ["2021-02-01", 26.78], ["2021-03-01", 23.95], ["2021-04-01", 18.22], ["2021-05-01", 14.09], ["2021-06-01", 12.61], ["2021-07-01", 12.53], ["2021-08-01", 13.2], ["2021-09-01", 12.79], ["2021-10-01", 12.81], ["2021-11-01", 12.31], ["2021-12-01", 12.47], ["2022-01-01", 11.72], ["2022-02-01", 10.6], ["2022-03-01", 9.63], ["2022-04-01", 7.9], ["2022-05-01", 6.16], ["2022-06-01", 5.73], ["2022-07-01", 4.94], ["2022-08-01", 3.83], ["2022-09-01", 2.65], ["2022-10-01", 1.42], ["2022-11-01", 0.33], ["2022-12-01", -0.97], ["2023-01-01", -1.71], ["2023-02-01", -2.22], ["2023-03-01", -3.86], ["2023-04-01", -4.63], ["2023-05-01", -4.1], ["2023-06-01", -3.93], ["2023-07-01", -3.98], ["2023-08-01", -3.98], ["2023-09-01", -3.66], ["2023-10-01", -3.39], ["2023-11-01", -3.08], ["2023-12-01", -2.41], ["2024-01-01", -2.05], ["2024-02-01", -1.49], ["2024-03-01", 0.13], ["2024-04-01", 0.96], ["2024-05-01", 0.92], ["2024-06-01", 1.29], ["2024-07-01", 1.46], ["2024-08-01", 1.97], ["2024-09-01", 2.52], ["2024-10-01", 2.89], ["2024-11-01", 3.4]], "C7_cpi_yoy": [["2018-01-01", 2.15], ["2018-02-01", 2.26], ["2018-03-01", 2.33], ["2018-04-01", 2.47], ["2018-05-01", 2.78], ["2018-06-01", 2.81], ["2018-07-01", 2.85], ["2018-08-01", 2.64], ["2018-09-01", 2.33], ["2018-10-01", 2.49], ["2018-11-01", 2.15], ["2018-12-01", 2.0], ["2019-01-01", 1.49], ["2019-02-01", 1.52], ["2019-03-01", 1.88], ["2019-04-01", 2.0], ["2019-05-01", 1.8], ["2019-06-01", 1.67], ["2019-07-01", 1.83], ["2019-08-01", 1.74], ["2019-09-01", 1.68], ["2019-10-01", 1.73], ["2019-11-01", 2.09], ["2019-12-01", 2.32], ["2020-01-01", 2.6], ["2020-02-01", 2.34], ["2020-03-01", 1.49], ["2020-04-01", 0.31], ["2020-05-01", 0.2], ["2020-06-01", 0.72], ["2020-07-01", 1.0], ["2020-08-01", 1.28], ["2020-09-01", 1.39], ["2020-10-01", 1.23], ["2020-11-01", 1.18], ["2020-12-01", 1.32], ["2021-01-01", 1.37], ["2021-02-01", 1.67], ["2021-03-01", 2.67], ["2021-04-01", 4.13], ["2021-05-01", 4.92], ["2021-06-01", 5.3], ["2021-07-01", 5.25], ["2021-08-01", 5.15], ["2021-09-01", 5.35], ["2021-10-01", 6.24], ["2021-11-01", 6.9], ["2021-12-01", 7.17], ["2022-01-01", 7.56], ["2022-02-01", 7.94], ["2022-03-01", 8.57], ["2022-04-01", 8.23], ["2022-05-01", 8.54], ["2022-06-01", 8.98], ["2022-07-01", 8.46], ["2022-08-01", 8.22], ["2022-09-01", 8.19], ["2022-10-01", 7.76], ["2022-11-01", 7.12], ["2022-12-01", 6.4], ["2023-01-01", 6.33], ["2023-02-01", 5.96], ["2023-03-01", 4.92], ["2023-04-01", 4.95], ["2023-05-01", 4.13], ["2023-06-01", 3.07], ["2023-07-01", 3.29], ["2023-08-01", 3.72], ["2023-09-01", 3.69], ["2023-10-01", 3.25], ["2023-11-01", 3.13], ["2023-12-01", 3.32], ["2024-01-01", 3.09], ["2024-02-01", 3.16], ["2024-03-01", 3.49], ["2024-04-01", 3.36], ["2024-05-01", 3.24], ["2024-06-01", 2.97], ["2024-07-01", 2.94], ["2024-08-01", 2.61], ["2024-09-01", 2.43], ["2024-10-01", 2.58], ["2024-11-01", 2.72]]};
+
+/* ---- progress bar ---- */
+const prog=document.getElementById('prog');
+addEventListener('scroll',()=>{const h=document.documentElement;const p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;prog.style.width=p+'%';},{passive:true});
+
+/* ---- reveal + lazy triggers ---- */
+const built={};
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');const f=e.target.dataset.chart;if(f&&!built[f]){built[f]=1;CHART[f]&&CHART[f]();}const c=e.target.querySelector('[data-count]');if(c)animCount(c);io.unobserve(e.target);}});},{threshold:.25});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* attach chart builders to their wrappers */
+function tagChart(canvasId,fn){const cv=document.getElementById(canvasId);if(!cv)return;const wrap=cv.closest('.reveal')||cv.closest('section');CHART[canvasId]=fn;wrap.dataset.chart=canvasId;io.observe(wrap);}
+const CHART={};
+
+/* ---- animated counters ---- */
+function animCount(el){const tgt=parseFloat(el.dataset.count);const suf=el.dataset.suffix||'';const t0=performance.now();const dur=1400;
+  function tick(t){let k=Math.min(1,(t-t0)/dur);k=1-Math.pow(1-k,3);el.textContent=(tgt%1?(tgt*k).toFixed(0):Math.round(tgt*k)).toLocaleString('en-US')+suf;if(k<1)requestAnimationFrame(tick);}
+  requestAnimationFrame(tick);}
+
+/* ---- chart.js defaults ---- */
+Chart.defaults.color='#6b7a99';Chart.defaults.font.family='-apple-system,Segoe UI,Roboto,sans-serif';
+const GRID={color:'#1a1a2e'};
+function lab(arr){return arr.map(p=>p[0]);}
+function val(arr){return arr.map(p=>p[1]);}
+
+CHART.cPP=()=>new Chart(cPP,{type:'line',data:{labels:lab(DATA.C1_purchasing_power),
+  datasets:[{label:'Purchasing power (1913=100)',data:val(DATA.C1_purchasing_power),borderColor:'#D4AF37',backgroundColor:'rgba(212,175,55,.12)',fill:true,tension:.25,pointRadius:0,borderWidth:2.5}]},
+  options:{animation:{duration:1800},plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:10}},y:{grid:GRID,title:{display:true,text:'Index (1913 = 100)'}}}}});
+
+CHART.cVel=()=>new Chart(cVel,{type:'line',data:{labels:lab(DATA.C5_velocity),
+  datasets:[{label:'M2 velocity',data:val(DATA.C5_velocity),borderColor:'#60a5fa',backgroundColor:'rgba(96,165,250,.10)',fill:true,tension:.3,pointRadius:0,borderWidth:2.5}]},
+  options:{animation:{duration:1800},plugins:{legend:{display:false}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:9,callback:(v,i)=>DATA.C5_velocity[i][0].slice(0,4)}},y:{grid:GRID}}}});
+
+CHART.cFed=()=>new Chart(cFed,{type:'line',data:{labels:lab(DATA.C6_fed_balance_T),
+  datasets:[
+   {label:'Fed balance sheet ($ tn)',data:val(DATA.C6_fed_balance_T),borderColor:'#D4AF37',backgroundColor:'rgba(212,175,55,.10)',fill:true,tension:.25,pointRadius:0,borderWidth:2.5,yAxisID:'y'},
+   {label:'Inflation (% YoY)',data:DATA.C6_cpi_yoy.map(p=>p[1]),borderColor:'#ef4444',tension:.25,pointRadius:0,borderWidth:2,yAxisID:'y1'}]},
+  options:{animation:{duration:1800},plugins:{legend:{labels:{boxWidth:12}}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:8,callback:(v,i)=>DATA.C6_fed_balance_T[i][0].slice(0,4)}},
+   y:{position:'left',grid:GRID,title:{display:true,text:'$ tn'}},y1:{position:'right',grid:{display:false},title:{display:true,text:'% YoY'},suggestedMax:6}}}});
+
+CHART.cM2=()=>new Chart(cM2,{type:'line',data:{labels:lab(DATA.C7_m2_yoy),
+  datasets:[
+   {label:'M2 growth (% YoY)',data:val(DATA.C7_m2_yoy),borderColor:'#D4AF37',backgroundColor:'rgba(212,175,55,.10)',fill:true,tension:.3,pointRadius:0,borderWidth:2.5},
+   {label:'Inflation (% YoY)',data:DATA.C7_cpi_yoy.map(p=>p[1]),borderColor:'#ef4444',tension:.3,pointRadius:0,borderWidth:2.5}]},
+  options:{animation:{duration:1800},plugins:{legend:{labels:{boxWidth:12}}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:8,callback:(v,i)=>DATA.C7_m2_yoy[i][0].slice(0,7)}},y:{grid:GRID,title:{display:true,text:'% YoY'}}}}});
+
+CHART.cRep=()=>new Chart(cRep,{type:'bar',data:{labels:['USA / UK\n(1945–80)','Australia','Italy'],
+  datasets:[{label:'% of GDP / year',data:[3.5,5,5],backgroundColor:['#D4AF37','#a88a2a','#a88a2a'],borderRadius:6}]},
+  options:{animation:{duration:1500},plugins:{legend:{display:false}},scales:{x:{grid:{display:false}},y:{grid:GRID,beginAtZero:true,title:{display:true,text:'% GDP / year via negative real rates'}}}}});
+
+tagChart('cPP',CHART.cPP);tagChart('cVel',CHART.cVel);tagChart('cFed',CHART.cFed);tagChart('cM2',CHART.cM2);tagChart('cRep',CHART.cRep);
+
+/* ---- interactive: year slider (purchasing power) ---- */
+const PP=Object.fromEntries(DATA.C1_purchasing_power.map(p=>[p[0],p[1]]));
+const ppToday=DATA.C1_purchasing_power[DATA.C1_purchasing_power.length-1][1];
+function fmtE(n){return n.toLocaleString('en-US',{maximumFractionDigits:0});}
+function updYr(){const y=document.getElementById('yrSlider').value;const ppY=PP[y]||ppToday;
+  const todayWorth=100*ppY/ppToday;       // $100 from year y in today's purchasing power
+  const inv=100*ppToday/ppY;              // $100 today in purchasing power of year y
+  document.getElementById('yrLabel').textContent=y;
+  document.getElementById('yrLabel2').textContent=y;
+  document.getElementById('yrA').textContent=y;
+  document.getElementById('yrVal').textContent='$'+fmtE(todayWorth);
+  document.getElementById('yrInv').textContent='$'+fmtE(inv);
+}
+document.getElementById('yrSlider').addEventListener('input',updYr);updYr();
+
+/* ---- interactive: negative real-rate calculator ---- */
+function updCalc(){const inf=parseFloat(infS.value),sav=parseFloat(savS.value),amt=parseFloat(amtS.value);
+  infL.textContent=inf.toFixed(1)+'%';
+  savL.textContent=sav.toFixed(1)+'%';
+  amtL.textContent='€'+amt.toLocaleString('en-US');
+  const real=(1+sav/100)/(1+inf/100)-1;            // real rate p.a.
+  document.getElementById('realLoss').textContent=(real*100).toFixed(1)+'%';
+  const after10=amt*Math.pow(1+real,10);
+  document.getElementById('amtStart').textContent='€'+amt.toLocaleString('en-US');
+  document.getElementById('amt10').textContent='€'+after10.toLocaleString('en-US',{maximumFractionDigits:0});
+}
+['infS','savS','amtS'].forEach(id=>document.getElementById(id).addEventListener('input',updCalc));updCalc();
+</script>
+</body>
+</html>
