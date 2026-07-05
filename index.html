@@ -618,8 +618,13 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 <style>
 .hero-trust{display:flex;gap:32px;margin:26px 0 22px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;justify-content:center}
 .hero-trust .trust-item{display:flex;flex-direction:column;gap:6px;flex:1 1 auto;min-width:120px}
-.hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum"}
-.hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45}
+/* CRO 2026-07-05 web-design-agent: compass-backdrop photo (opaque on desktop, .22-.32 opacity on
+   mobile) sits directly behind the trust stats — live Playwright screenshots (DE+EN, desktop+mobile
+   390x844) show the gold/beige compass rim/needle reduces contrast under "160+ Research Articles" /
+   "8 Free Calculators" / cardinal labels, worst on the muted trust-lab text. Text-shadow makes the
+   3 key trust numbers legible regardless of what's behind them, no layout change. */
+.hero-trust .trust-num{font-family:var(--serif);font-weight:400;font-size:clamp(34px,4vw,46px);line-height:1;color:var(--accent);letter-spacing:-.02em;font-feature-settings:"lnum";text-shadow:0 2px 10px rgba(0,0,0,.55)}
+.hero-trust .trust-lab{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--fg-muted);line-height:1.45;text-shadow:0 1px 6px rgba(0,0,0,.7)}
 /* CRO 2026-07-05 web-design-agent: clickable trust stats -> surface internal linking (blog/tools) */
 a.trust-item{text-decoration:none;color:inherit;transition:transform var(--t-fast)}
 a.trust-item:hover{transform:translateY(-2px)}
