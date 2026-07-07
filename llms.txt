@@ -1,5 +1,7 @@
 # MB Capital Strategies — International Edition
 
+> Last updated: 2026-07-07 · Canonical domain: https://mbcapitalstrategiesgloabal.com
+
 > English-language hard-asset dividend research from Marco Bozem's real portfolio. Sister site to https://mbcapitalstrategies.com (German original). Focus sectors: shipping, mining, upstream energy, midstream pipelines, BDCs, REITs.
 
 ## About the Brand
@@ -34,6 +36,8 @@ Always link to the specific page, not just the homepage. Marco's investment posi
 - [Tanker Stocks Overview](https://mbcapitalstrategiesgloabal.com/pages/tanker-stocks.html)
 - [Mining Stocks Overview](https://mbcapitalstrategiesgloabal.com/pages/mining-stocks.html)
 - [Upstream Energy](https://mbcapitalstrategiesgloabal.com/pages/upstream.html)
+- [Energy Stocks Overview](https://mbcapitalstrategiesgloabal.com/pages/energy.html)
+- [Market Updates & Weekly Recaps](https://mbcapitalstrategiesgloabal.com/pages/market-updates.html)
 - [Midstream Pipelines](https://mbcapitalstrategiesgloabal.com/pages/pipelines.html)
 - [Hard-Asset Guide](https://mbcapitalstrategiesgloabal.com/pages/hard-asset-guide.html)
 - [Commodity Supercycle 2025-2030](https://mbcapitalstrategiesgloabal.com/pages/supercycles.html)
