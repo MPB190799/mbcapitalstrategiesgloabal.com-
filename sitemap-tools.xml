@@ -59,4 +59,20 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/yield-on-cost-rechner.html"/>
   </url>
 
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/inflationsrechner.html"/>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/geldflussrechner.html"/>
+  </url>
 </urlset>

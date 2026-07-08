@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#050508">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Flow Calculator 2026: Sankey Diagram of Income & Expenses</title>
+    <meta name="description" content="Free cash flow calculator: enter your income and expenses and see them as a clear Sankey money-flow chart. Track your budget and how much is left to invest.">
+    <meta name="author" content="Marco Bozem">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous"><!-- LCP-Fix 2026-06-13 web-design-agent: Outfit woff2 direct preload -->
+    <link rel="stylesheet" href="../css/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+    <style>
+        /* --- Cash-flow Sankey widget (host-adapted, English-only) --- */
+        .mbcs-tool{
+          --dark-card:#0f0f1a;--dark-surface:#161625;--dark-border:#1e1e35;
+          --gold:#D4AF37;--gold-dim:#a88a2a;--green:#22c55e;--red:#ef4444;--blue:#60a5fa;
+          --text:#f0f4ff;--text-dim:#c8cfe0;--gray:#6b7a99;--font-mono:'IBM Plex Mono',monospace;
+          font-family:inherit;color:var(--text);max-width:1280px;margin:0 auto;
+        }
+        .mbcs-tool *{box-sizing:border-box}
+        .mbcs-tool .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px}
+        .mbcs-tool .kpi{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:12px;padding:16px 18px}
+        .mbcs-tool .kpi .lbl{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+        .mbcs-tool .kpi .val{font-family:var(--font-mono);font-size:22px;font-weight:600}
+        .mbcs-tool .kpi.inc .val{color:var(--gold)} .mbcs-tool .kpi.exp .val{color:var(--blue)}
+        .mbcs-tool .kpi.sav .val{color:var(--green)} .mbcs-tool .kpi.rate .val{color:var(--text)}
+        .mbcs-tool .kpi.neg .val{color:var(--red)}
+        .mbcs-tool .grid{display:grid;grid-template-columns:340px 1fr;gap:20px;align-items:start}
+        @media(max-width:960px){.mbcs-tool .grid{grid-template-columns:1fr}.mbcs-tool .kpis{grid-template-columns:repeat(2,1fr)}}
+        .mbcs-tool .panel{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:18px}
+        .mbcs-tool .panel h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+        .mbcs-tool .panel h3 .dot{width:8px;height:8px;border-radius:50%}
+        .mbcs-tool .dot.gold{background:var(--gold)} .mbcs-tool .dot.blue{background:var(--blue)}
+        .mbcs-tool .rows{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
+        .mbcs-tool .row{display:grid;grid-template-columns:1fr 96px 30px;gap:8px;align-items:center}
+        .mbcs-tool .row input{background:var(--dark-surface);border:1px solid var(--dark-border);border-radius:8px;color:var(--text);font-family:inherit;font-size:14px;padding:9px 11px;width:100%}
+        .mbcs-tool .row input.amt{font-family:var(--font-mono);text-align:right}
+        .mbcs-tool .row input:focus{outline:none;border-color:var(--gold-dim);box-shadow:0 0 0 2px #d4af3722}
+        .mbcs-tool .row .del{background:none;border:none;color:var(--gray);cursor:pointer;font-size:18px;line-height:1;padding:4px;border-radius:6px}
+        .mbcs-tool .row .del:hover{color:var(--red);background:#ef444415}
+        .mbcs-tool .addbtn{width:100%;background:var(--dark-surface);border:1px dashed var(--dark-border);color:var(--text-dim);font-family:inherit;font-size:13px;font-weight:600;padding:10px;border-radius:8px;cursor:pointer}
+        .mbcs-tool .addbtn:hover{border-color:var(--gold-dim);color:var(--gold)}
+        .mbcs-tool .subtotal{display:flex;justify-content:space-between;margin-top:12px;padding-top:12px;border-top:1px solid var(--dark-border);font-family:var(--font-mono);font-size:14px}
+        .mbcs-tool .subtotal .gold{color:var(--gold)} .mbcs-tool .subtotal .blue{color:var(--blue)}
+        .mbcs-tool .actions{display:flex;gap:8px;margin-top:16px}
+        .mbcs-tool .actions button{flex:1;font-family:inherit;font-size:12px;font-weight:600;padding:9px;border-radius:8px;cursor:pointer;border:1px solid var(--dark-border);background:var(--dark-surface);color:var(--text-dim)}
+        .mbcs-tool .actions button:hover{border-color:var(--gold-dim);color:var(--gold)}
+        .mbcs-tool .chartcard{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:18px;min-height:520px;position:relative;overflow:hidden}
+        .mbcs-tool .chartcard::before{content:"";position:absolute;top:-120px;left:-60px;width:340px;height:340px;background:radial-gradient(circle, #D4AF3714, transparent 70%);pointer-events:none}
+        .mbcs-tool .chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;position:relative}
+        .mbcs-tool .chart-head h3{font-size:16px;font-weight:700}
+        .mbcs-tool .chart-head .hint{font-size:12px;color:var(--gray)}
+        .mbcs-tool #chart{width:100%;position:relative}
+        .mbcs-tool .node rect{cursor:default;transition:opacity .2s}
+        .mbcs-tool .node text{font-family:inherit;font-size:12.5px;fill:var(--text);font-weight:500}
+        .mbcs-tool .node text.amt{font-family:var(--font-mono);fill:var(--text-dim);font-size:11px}
+        .mbcs-tool .link{fill:none;transition:stroke-opacity .2s}
+        .mbcs-tool .link:hover{stroke-opacity:.75!important}
+        .mbcs-tool .empty{display:grid;place-items:center;height:440px;color:var(--gray);text-align:center;font-size:14px}
+        .mbcs-tool .watermark{position:absolute;bottom:12px;right:16px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#33384a}
+        .ad-wrap{min-height:100px;max-width:900px;margin:40px auto 0;padding:0 20px;text-align:center;}
+        .ad-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6b7a99;margin-bottom:6px;}
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('config', 'G-FSW7J7QYL8');
+</script>
+
+<meta property="og:title" content="Cash Flow Calculator 2026: Sankey Diagram of Income & Expenses">
+<meta property="og:description" content="Free cash flow calculator: see your income and expenses as a clear Sankey money-flow chart. No signup, no login.">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+<meta property="og:type" content="website">
+<meta property=og:locale content=en_US>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cash Flow Calculator 2026: Sankey Diagram of Income & Expenses">
+<meta name="twitter:description" content="Free cash flow Sankey diagram: map income and expenses, see your savings rate and what's left to invest.">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/geldflussrechner.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Cash Flow Sankey Calculator – MB Capital Strategies Global",
+  "description": "Free cash flow calculator that turns your income and expenses into a clear Sankey money-flow diagram, showing your budget, savings rate and how much is left to invest.",
+  "url": "https://mbcapitalstrategiesgloabal.com/tools/cashflow-sankey.html",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://odysee.com/@mbcapitalstrategies:5"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesgloabal.com/Logo.webp"
+    }
+  },
+  "inLanguage": "en",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "1.0",
+  "featureList": "Income entries, Expense entries, Total income, Total expenses, Surplus/Deficit, Savings rate, Sankey money-flow diagram",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "keywords": [
+    "cash flow calculator",
+    "sankey diagram budget",
+    "income expense flow",
+    "money flow chart",
+    "savings rate",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://mbcapitalstrategiesgloabal.com/pages/calculators.html"},
+    {"@type": "ListItem", "position": 3, "name": "Cash Flow Sankey"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is a cash flow Sankey diagram?",
+      "acceptedAnswer": {"@type": "Answer", "text": "A Sankey diagram is a flow chart where the width of each stream is proportional to its value. For a budget, your income sources flow into a central budget node, then split out into expense categories and whatever is left over as surplus or savings. It makes it instantly visual where your money goes."}},
+    {"@type": "Question", "name": "How do I calculate my savings rate?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Savings rate = (total income − total expenses) ÷ total income, expressed as a percentage. If you earn 3,680 per month and spend 2,120, your surplus is 1,560 and your savings rate is about 42%. The tool calculates this automatically as you type."}},
+    {"@type": "Question", "name": "Is my budget data stored anywhere?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. All calculations run in your browser and your entries are kept locally in your own browser storage only. Nothing is sent to a server and no account is required."}},
+    {"@type": "Question", "name": "Why does cash flow matter for investing?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Your monthly surplus is the fuel for building a portfolio. Seeing the flow clearly helps you find categories to trim and grow the amount you can put into dividend-paying hard assets each month. The bigger and more consistent the surplus, the faster compounding works."}},
+    {"@type": "Question", "name": "Is this cash flow tool financial advice?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. It is an educational household-budgeting tool. Nothing here is investment, tax or financial advice. Always do your own research and consult a licensed advisor for personal financial decisions."}}
+  ]
+}
+</script>
+
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <picture><source srcset="../Logo.webp" type="image/webp"><img src="../Logo.webp" alt="MB Capital Strategies" class="nav-logo-img" width="auto" height="40" style="height:40px;margin-right:10px;" fetchpriority="high"></picture>
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                        <li><a href="../pages/strategy.html">80/20 Strategy</a></li>
+                        <li><a href="../pages/dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/shipping.html">Shipping</a></li>
+                        <li><a href="../pages/pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="../pages/mining.html">Mining</a></li>
+                        <li><a href="../pages/energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="../pages/high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="../pages/supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Best-of 2026</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/best-lng.html">Best LNG Stocks</a></li>
+                        <li><a href="../pages/best-tanker.html">Best Tanker Stocks</a></li>
+                        <li><a href="../pages/best-high-yield.html">Top High-Yield</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link active">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Financial Tools</span>
+            <h1>Free <span class="gold-text">Cash Flow</span> Sankey Calculator</h1>
+            <p>Map your income and expenses into a clear money-flow diagram — and see how much is left to invest each month.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+<!-- AEO Answer-First Block -->
+<div class="aeo-answer-block" style="background:rgba(212,175,55,0.07);border-left:3px solid #D4AF37;border-radius:6px;padding:16px 20px;margin:0 0 28px;">
+  <p style="margin:0;font-size:1.05rem;line-height:1.65;"><strong>Quick Answer:</strong> This free cash flow calculator turns your monthly income and expenses into a Sankey money-flow diagram. Add each income source and expense category — the tool draws the flow live and computes total income, total expenses, your surplus (or deficit) and your savings rate. Everything stays in your browser: no signup, no server. Load the example to see it instantly.</p>
+</div>
+
+            <div class="glass-card mbcs-tool">
+              <div class="kpis">
+                <div class="kpi inc"><div class="lbl">Income</div><div class="val" id="kIn">0 €</div></div>
+                <div class="kpi exp"><div class="lbl">Expenses</div><div class="val" id="kOut">0 €</div></div>
+                <div class="kpi sav" id="kSavBox"><div class="lbl">Surplus</div><div class="val" id="kSav">0 €</div></div>
+                <div class="kpi rate"><div class="lbl">Savings rate</div><div class="val" id="kRate">–</div></div>
+              </div>
+
+              <div class="grid">
+                <div>
+                  <div class="panel">
+                    <h3><span class="dot gold"></span><span>Income</span></h3>
+                    <div class="rows" id="incRows"></div>
+                    <button class="addbtn" id="addInc">+ <span>Add income</span></button>
+                    <div class="subtotal"><span>Total</span><span class="gold" id="incSum">0 €</span></div>
+                  </div>
+                  <div class="panel" style="margin-top:16px">
+                    <h3><span class="dot blue"></span><span>Expenses</span></h3>
+                    <div class="rows" id="expRows"></div>
+                    <button class="addbtn" id="addExp">+ <span>Add expense</span></button>
+                    <div class="subtotal"><span>Total</span><span class="blue" id="expSum">0 €</span></div>
+                  </div>
+                  <div class="actions">
+                    <button id="btnExample">Load example</button>
+                    <button id="btnReset">Reset</button>
+                  </div>
+                </div>
+
+                <div class="chartcard">
+                  <div class="chart-head">
+                    <h3>Money-flow diagram</h3>
+                    <span class="hint">monthly · in EUR</span>
+                  </div>
+                  <div id="chart"></div>
+                  <div class="watermark">MB Capital Strategies</div>
+                </div>
+              </div>
+            </div>
+            <p style="margin-top:2rem;"><em>This tool is for your own household overview only. Your entries stay locally in your browser (no server, no transfer). Not investment, tax or financial advice.</em></p>
+        </div>
+    </section>
+
+    <!-- Explainer -->
+    <section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
+      <h2 style="color:#D4AF37;font-size:1.5rem;margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">See Your Cash Flow — Then Grow What's Left to Invest</h2>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">Most budgets are a wall of numbers. A Sankey diagram turns that wall into a picture: every income source flows into one central budget, and out the other side into your expense categories — with whatever remains flowing into a clearly visible <strong style="color:#e8c95a;">surplus</strong>. The width of each stream is its size, so the biggest drains on your money are impossible to miss.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">That surplus is the number that matters most for building wealth. It is the fuel you feed into a portfolio each month. The whole approach I follow — <strong style="color:#e8c95a;">hard assets and dividends</strong> — depends on a consistent monthly amount going to work. The clearer you can see your cash flow, the easier it is to find categories to trim and grow the amount you invest. Once you know your surplus, the <a href="dividend-calculator.html" style="color:#D4AF37;">Dividend Income Calculator</a> and <a href="dividend-snowball.html" style="color:#D4AF37;">Dividend Snowball Calculator</a> show what that stream can compound into over time.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">How It Works — 4 Steps</h3>
+      <ol style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
+        <li><strong style="color:#e8c95a;">Add your income</strong> — salary, dividends, side income. One row per source.</li>
+        <li><strong style="color:#e8c95a;">Add your expenses</strong> — rent, groceries, transport, insurance, leisure, and your monthly saving/ETF contribution.</li>
+        <li><strong style="color:#e8c95a;">Read the flow</strong> — the diagram redraws live; the KPI strip shows total income, expenses, surplus and savings rate.</li>
+        <li><strong style="color:#e8c95a;">Optimise</strong> — spot the widest expense streams, trim where it makes sense, and watch your surplus grow.</li>
+      </ol>
+    </section>
+
+    <!-- AdSense Display Unit (labeled, CLS-safe) -->
+    <div class="ad-wrap">
+      <div class="ad-label">Advertisement</div>
+      <!-- AdSense ins disabled (EN re-approval pending)
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+    </div>
+
+    <!-- FAQ -->
+    <section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
+      <h2 style="color:#D4AF37;font-size:1.5rem;margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">Frequently Asked Questions</h2>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">What is a cash flow Sankey diagram?</strong> A Sankey is a flow chart where the width of each stream is proportional to its value. Your income sources flow into one budget node, then split out into expense categories plus whatever is left over as surplus or savings. It makes it instantly visual where your money goes.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">How do I calculate my savings rate?</strong> Savings rate = (total income − total expenses) ÷ total income, as a percentage. Earn €3,680 and spend €2,120, and your surplus is €1,560 — a savings rate of about 42%. The tool calculates this automatically as you type.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">Is my budget data stored anywhere?</strong> No. All calculations run in your browser and your entries stay in your own browser storage only. Nothing is sent to a server and no account is required.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">Why does cash flow matter for investing?</strong> Your monthly surplus is the fuel for building a portfolio. Seeing the flow clearly helps you trim categories and grow the amount you can put into dividend-paying hard assets each month. The bigger and steadier the surplus, the faster compounding works.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;font-style:italic;border-left:3px solid rgba(212,175,55,0.4);padding-left:16px;">This tool is an educational household-budgeting aid. Nothing here is investment, tax or financial advice. Always do your own research and consult a licensed advisor for personal financial decisions.</p>
+
+      <h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">More Calculators</h2>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:10px"><a href="dividend-calculator.html" style="color:#60a5fa;text-decoration:none">Dividend Income Calculator — monthly &amp; annual income</a></li>
+        <li style="margin-bottom:10px"><a href="inflation-calculator.html" style="color:#60a5fa;text-decoration:none">Inflation Calculator — what your cash will really be worth</a></li>
+        <li style="margin-bottom:10px"><a href="dividend-snowball.html" style="color:#60a5fa;text-decoration:none">Dividend Snowball Calculator — model reinvestment</a></li>
+        <li style="margin-bottom:10px"><a href="dividend-growth.html" style="color:#60a5fa;text-decoration:none">Dividend Growth Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="yield-on-cost.html" style="color:#60a5fa;text-decoration:none">Yield on Cost (YOC) Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="drip-calculator.html" style="color:#60a5fa;text-decoration:none">DRIP Calculator — dividend reinvestment</a></li>
+        <li style="margin-bottom:10px"><a href="financial-freedom.html" style="color:#60a5fa;text-decoration:none">Financial Freedom Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="shipping-cashflow.html" style="color:#60a5fa;text-decoration:none">Shipping Cashflow Calculator</a></li>
+      </ul>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <div class="footer-social" style="margin-bottom: 16px; display: flex; gap: 12px; justify-content: center; align-items: center;">
+                    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mb-capital-strategies/" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.xing.com/profile/Marco_Bozem" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="XING">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.88c-.09.185-.089.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l2.435-4.38-2.386-4.22c-.163-.305-.455-.637-.96-.637H3.648z"/></svg>
+                    </a>
+                    <a href="https://odysee.com/@mbcapitalstrategies:5" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="Odysee">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.08c-.572.846-1.782.846-2.354 0l-3.54-5.243-3.54 5.243c-.572.846-1.782.846-2.354 0-.572-.846-.572-2.217 0-3.063L9.646 9.08 6.106 4.017c-.572-.846-.572-2.217 0-3.063.572-.846 1.782-.846 2.354 0L12 6.197l3.54-5.243c.572-.846 1.782-.846 2.354 0 .572.846.572 2.217 0 3.063L14.354 9.08l3.54 4.937c.572.846.572 2.217 0 3.063z"/></svg>
+                    </a>
+                </div>
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../pages/contact.html">Contact</a>
+                    <a href="../pages/imprint.html">Imprint</a>
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/glossary.html">Glossary</a>
+                    <a href="../pages/disclaimer.html">Disclaimer</a>
+                    <a href="../pages/affiliate-disclosure.html">Affiliate Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="../js/main.min.js"></script>
+
+<div class="author-box" rel="author" style="display:flex;align-items:center;gap:16px;margin:40px auto;padding:20px;max-width:700px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="../marco.webp" onerror="this.src='../marco.webp'" alt="Marco Bozem — MB Capital Strategies Global" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies | YouTube <a href="https://www.youtube.com/@MBCapitalStrategies" rel="author noopener" target="_blank" style="color:#D4AF37;">@MBCapitalStrategies</a> | Podcast &ldquo;Der Finanzfeuer Talk&rdquo;</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco has been analyzing dividend and hard-asset stocks since 2022, with a focus on shipping, mining and energy. All tools and analyses are for informational purposes only. <em>Not financial advice.</em> <a href="../pages/about.html" rel="author" style="color:#D4AF37;">About Marco &rarr;</a></p>
+  </div>
+</div>
+
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+
+<script>
+(function(){
+  const EUR = n => new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n||0);
+  const $ = s => document.querySelector(s);
+
+  const EX_INC=[["Net salary",3200],["Dividends",180],["Side income",300]];
+  const EX_EXP=[["Rent",1050],["Groceries",450],["Transport",220],["Insurance",160],["Leisure",240],["Saving/ETF",600]];
+
+  let inc=[{name:'',amt:''}];
+  let exp=[{name:'',amt:''}];
+
+  function save(){ try{localStorage.setItem('mbcs_flow_en',JSON.stringify({inc,exp}))}catch(e){} }
+  function load(){ try{const d=JSON.parse(localStorage.getItem('mbcs_flow_en'));if(d){inc=d.inc||inc;exp=d.exp||exp}}catch(e){} }
+
+  function renderRows(){
+    const mk=(arr,host)=>{
+      host.innerHTML='';
+      arr.forEach((r,i)=>{
+        const div=document.createElement('div');div.className='row';
+        div.innerHTML=`<input type="text" placeholder="Label" value="${(r.name||'').replace(/"/g,'&quot;')}">
+          <input class="amt" type="number" inputmode="decimal" min="0" placeholder="0" value="${r.amt}">
+          <button class="del" title="delete">×</button>`;
+        const [n,a]=div.querySelectorAll('input');
+        n.oninput=e=>{arr[i].name=e.target.value;draw();save()};
+        a.oninput=e=>{arr[i].amt=e.target.value;draw();save()};
+        div.querySelector('.del').onclick=()=>{arr.splice(i,1);if(!arr.length)arr.push({name:'',amt:''});renderRows();draw();save()};
+        host.appendChild(div);
+      });
+    };
+    mk(inc,$('#incRows'));mk(exp,$('#expRows'));
+  }
+
+  function num(v){const n=parseFloat(v);return isFinite(n)&&n>0?n:0;}
+
+  function draw(){
+    const incF=inc.filter(r=>num(r.amt)>0).map(r=>({name:r.name||'Income',val:num(r.amt)}));
+    const expF=exp.filter(r=>num(r.amt)>0).map(r=>({name:r.name||'Expense',val:num(r.amt)}));
+    const totIn=incF.reduce((s,r)=>s+r.val,0);
+    const totOut=expF.reduce((s,r)=>s+r.val,0);
+    const bal=totIn-totOut;
+
+    $('#kIn').textContent=EUR(totIn); $('#kOut').textContent=EUR(totOut);
+    $('#incSum').textContent=EUR(totIn); $('#expSum').textContent=EUR(totOut);
+    const savBox=$('#kSavBox');
+    $('#kSav').textContent=EUR(Math.abs(bal));
+    $('#kSavBox').querySelector('.lbl').textContent = bal>=0? 'Surplus' : 'Deficit';
+    savBox.classList.toggle('neg',bal<0); savBox.classList.toggle('sav',bal>=0);
+    $('#kRate').textContent = totIn>0 ? Math.round(bal/totIn*100)+' %' : '–';
+
+    const host=$('#chart');host.innerHTML='';
+    if(!incF.length || !totOut && !totIn){ host.innerHTML=`<div class="empty">Enter income and expenses on the left — your diagram appears here.</div>`; return; }
+
+    const nodes=[], links=[];
+    const idx={};
+    const add=(key,label,type)=>{ if(idx[key]==null){idx[key]=nodes.length;nodes.push({name:label,type});} return idx[key]; };
+    const B=add('__budget__','Budget','budget');
+    incF.forEach((r,i)=>{const n=add('i'+i,r.name,'inc');links.push({source:n,target:B,value:r.val,kind:'inc'});});
+    expF.forEach((r,i)=>{const n=add('e'+i,r.name,'exp');links.push({source:B,target:n,value:r.val,kind:'exp'});});
+    if(bal>0){const s=add('__surplus__','Surplus','sav');links.push({source:B,target:s,value:bal,kind:'sav'});}
+    else if(bal<0){const d=add('__deficit__','Deficit','def');links.push({source:B,target:d,value:-bal,kind:'def'});}
+
+    const W=host.clientWidth||760, H=Math.max(440, (Math.max(incF.length,expF.length)+1)*54);
+    const svg=d3.select(host).append('svg').attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+    const defs=svg.append('defs');
+    const grad=(id,c1,c2)=>{const g=defs.append('linearGradient').attr('id',id).attr('x1','0%').attr('x2','100%');
+      g.append('stop').attr('offset','0%').attr('stop-color',c1).attr('stop-opacity',.55);
+      g.append('stop').attr('offset','100%').attr('stop-color',c2).attr('stop-opacity',.55);};
+    grad('g_inc','#D4AF37','#a88a2a'); grad('g_exp','#3b5bab','#60a5fa'); grad('g_sav','#16a34a','#22c55e'); grad('g_def','#b91c1c','#ef4444');
+
+    const sankey=d3.sankey().nodeWidth(16).nodePadding(16).extent([[4,10],[W-4,H-10]]);
+    const graph=sankey({nodes:nodes.map(d=>Object.assign({},d)),links:links.map(d=>Object.assign({},d))});
+
+    const nodeColor=d=>({inc:'#D4AF37',exp:'#60a5fa',sav:'#22c55e',def:'#ef4444',budget:'#c8cfe0'}[d.type]||'#c8cfe0');
+    const linkGrad=d=>`url(#g_${d.kind})`;
+
+    svg.append('g').selectAll('path').data(graph.links).join('path')
+      .attr('class','link').attr('d',d3.sankeyLinkHorizontal())
+      .attr('stroke',linkGrad).attr('stroke-width',d=>Math.max(1.2,d.width)).attr('stroke-opacity',.5);
+
+    const node=svg.append('g').selectAll('g').data(graph.nodes).join('g').attr('class','node');
+    node.append('rect')
+      .attr('x',d=>d.x0).attr('y',d=>d.y0).attr('height',d=>Math.max(2,d.y1-d.y0)).attr('width',d=>d.x1-d.x0)
+      .attr('rx',3).attr('fill',nodeColor).attr('fill-opacity',.9)
+      .attr('filter','drop-shadow(0 0 6px rgba(212,175,55,.15))');
+
+    node.append('text')
+      .attr('x',d=>d.x0<W/2? d.x1+8 : d.x0-8)
+      .attr('y',d=>(d.y0+d.y1)/2-4)
+      .attr('text-anchor',d=>d.x0<W/2?'start':'end')
+      .text(d=>d.name);
+    node.append('text').attr('class','amt')
+      .attr('x',d=>d.x0<W/2? d.x1+8 : d.x0-8)
+      .attr('y',d=>(d.y0+d.y1)/2+11)
+      .attr('text-anchor',d=>d.x0<W/2?'start':'end')
+      .text(d=>EUR(d.value));
+  }
+
+  $('#addInc').onclick=()=>{inc.push({name:'',amt:''});renderRows();save();};
+  $('#addExp').onclick=()=>{exp.push({name:'',amt:''});renderRows();save();};
+  $('#btnReset').onclick=()=>{inc=[{name:'',amt:''}];exp=[{name:'',amt:''}];renderRows();draw();save();};
+  $('#btnExample').onclick=()=>{
+    inc=EX_INC.map(([n,a])=>({name:n,amt:a})); exp=EX_EXP.map(([n,a])=>({name:n,amt:a}));
+    renderRows();draw();save();};
+  window.addEventListener('resize',()=>draw());
+
+  load(); renderRows(); draw();
+})();
+</script>
+</body>
+</html>

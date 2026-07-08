@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!-- Favicon / Brand Icons -->
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#050508">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inflation Calculator 2026: What Will My Money Be Worth? Free Tool</title>
+    <meta name="description" content="Free inflation calculator — see how inflation erodes the purchasing power of your cash over time. Enter amount, inflation rate & years to find out what your money will really be worth.">
+    <meta name="author" content="Marco Bozem">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous"><!-- LCP-Fix 2026-06-13 web-design-agent: Outfit woff2 direct preload -->
+    <link rel="stylesheet" href="../css/style.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <style>
+        /* --- Inflation widget (host-adapted, English-only) --- */
+        .mbcs-tool{
+          --dark-card:#0f0f1a;--dark-surface:#161625;--dark-border:#1e1e35;
+          --gold:#D4AF37;--gold-dim:#a88a2a;--red:#ef4444;--amber:#f5a623;
+          --text:#f0f4ff;--text-dim:#c8cfe0;--gray:#6b7a99;--font-mono:'IBM Plex Mono',monospace;
+          font-family:inherit;color:var(--text);max-width:1180px;margin:0 auto;
+        }
+        .mbcs-tool *{box-sizing:border-box}
+        .mbcs-tool .grid{display:grid;grid-template-columns:320px 1fr;gap:20px;align-items:start}
+        @media(max-width:900px){.mbcs-tool .grid{grid-template-columns:1fr}}
+        .mbcs-tool .panel{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:20px}
+        .mbcs-tool .panel h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:var(--text-dim);margin-bottom:16px}
+        .mbcs-tool .field{margin-bottom:16px}
+        .mbcs-tool .field label{display:block;font-size:12px;color:var(--gray);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em}
+        .mbcs-tool .inp{display:flex;align-items:center;background:var(--dark-surface);border:1px solid var(--dark-border);border-radius:9px;overflow:hidden}
+        .mbcs-tool .inp input{flex:1;background:none;border:none;color:var(--text);font-family:var(--font-mono);font-size:16px;padding:11px 12px;width:100%}
+        .mbcs-tool .inp input:focus{outline:none}
+        .mbcs-tool .inp:focus-within{border-color:var(--gold-dim);box-shadow:0 0 0 2px #d4af3722}
+        .mbcs-tool .inp .unit{padding:0 12px;color:var(--gray);font-family:var(--font-mono);font-size:14px;border-left:1px solid var(--dark-border)}
+        .mbcs-tool .slider{width:100%;margin-top:8px;accent-color:var(--gold)}
+        .mbcs-tool .opt{display:flex;align-items:center;gap:8px;margin-top:4px;padding-top:14px;border-top:1px solid var(--dark-border)}
+        .mbcs-tool .opt input{accent-color:var(--gold);width:16px;height:16px}
+        .mbcs-tool .opt label{font-size:13px;color:var(--text-dim)}
+        .mbcs-tool .mono{font-family:var(--font-mono)}
+        .mbcs-tool .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:18px}
+        @media(max-width:560px){.mbcs-tool .kpis{grid-template-columns:1fr}}
+        .mbcs-tool .kpi{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:12px;padding:16px 18px}
+        .mbcs-tool .kpi .lbl{font-size:11px;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px}
+        .mbcs-tool .kpi .val{font-family:var(--font-mono);font-size:24px;font-weight:600}
+        .mbcs-tool .kpi.keep .val{color:var(--gold)} .mbcs-tool .kpi.loss .val{color:var(--red)} .mbcs-tool .kpi.pct .val{color:var(--amber)}
+        .mbcs-tool .chartcard{background:var(--dark-card);border:1px solid var(--dark-border);border-radius:14px;padding:18px;position:relative;overflow:hidden}
+        .mbcs-tool .chartcard::before{content:"";position:absolute;top:-120px;right:-60px;width:340px;height:340px;background:radial-gradient(circle,#D4AF3714,transparent 70%);pointer-events:none}
+        .mbcs-tool .chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+        .mbcs-tool .chart-head h3{font-size:16px;font-weight:700}
+        .mbcs-tool .legend{display:flex;gap:16px;font-size:12px;color:var(--text-dim);margin-top:4px}
+        .mbcs-tool .legend i{display:inline-block;width:20px;height:3px;border-radius:2px;margin-right:6px;vertical-align:middle}
+        .mbcs-tool #chart svg text{font-family:var(--font-mono);font-size:11px;fill:var(--gray)}
+        .mbcs-tool .narr{margin-top:16px;background:linear-gradient(180deg,#12142010,#0f0f1a);border:1px solid var(--dark-border);border-left:3px solid var(--gold);border-radius:10px;padding:16px 18px}
+        .mbcs-tool .narr p{font-size:14px;color:var(--text-dim);margin:0}
+        .mbcs-tool .narr b{color:var(--gold)}
+        .mbcs-tool .watermark{position:absolute;bottom:12px;left:16px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:#33384a}
+        .ad-wrap{min-height:100px;max-width:900px;margin:40px auto 0;padding:0 20px;text-align:center;}
+        .ad-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6b7a99;margin-bottom:6px;}
+    </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted',
+    'wait_for_update': 500
+  });
+  gtag('config', 'G-FSW7J7QYL8');
+</script>
+
+<meta property="og:title" content="Inflation Calculator 2026: What Will My Money Be Worth?">
+<meta property="og:description" content="Free inflation calculator: see how inflation erodes the purchasing power of your cash over time. No signup, no login.">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+<meta property="og:type" content="website">
+<meta property=og:locale content=en_US>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Inflation Calculator 2026: What Will My Money Be Worth?">
+<meta name="twitter:description" content="Free purchasing power calculator: see how inflation erodes your cash over time. Try it now.">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/inflationsrechner.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html">
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Inflation Calculator – MB Capital Strategies Global",
+  "description": "Free inflation calculator: see how inflation erodes the purchasing power of your cash over time, and compare against an optional hard-asset return based on your own assumption.",
+  "url": "https://mbcapitalstrategiesgloabal.com/tools/inflation-calculator.html",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesgloabal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://odysee.com/@mbcapitalstrategies:5"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesgloabal.com/Logo.webp"
+    }
+  },
+  "inLanguage": "en",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "softwareVersion": "1.0",
+  "featureList": "Amount today, Inflation rate, Time horizon, Real purchasing power, Purchasing-power loss, Optional hard-asset comparison (your assumption)",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock"
+  },
+  "keywords": [
+    "inflation calculator",
+    "purchasing power calculator",
+    "what will my money be worth",
+    "inflation erosion",
+    "hard assets",
+    "dividends",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesgloabal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://mbcapitalstrategiesgloabal.com/pages/calculators.html"},
+    {"@type": "ListItem", "position": 3, "name": "Inflation Calculator"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What will my money be worth after inflation?",
+      "acceptedAnswer": {"@type": "Answer", "text": "It depends on the inflation rate and the number of years. At 2.5% inflation, cash loses roughly 22% of its purchasing power over 10 years and about 39% over 20 years. Enter your amount, an inflation rate and a time horizon in the calculator to see the real value that remains."}},
+    {"@type": "Question", "name": "How does the inflation calculator work?",
+      "acceptedAnswer": {"@type": "Answer", "text": "It discounts your nominal amount by a constant annual inflation rate: real value = amount / (1 + inflation)^years. The chart plots the eroding purchasing power year by year. It is a simplified model — real inflation varies over time."}},
+    {"@type": "Question", "name": "Does inflation make cash a risky asset?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Nominally, cash does not fall in value, but in real (purchasing-power) terms it shrinks every year inflation is positive. Over long horizons this quiet erosion can be substantial, which is why many investors hold productive hard assets and dividend-paying stocks instead of large idle cash balances."}},
+    {"@type": "Question", "name": "Is the hard-asset comparison a return promise?",
+      "acceptedAnswer": {"@type": "Answer", "text": "No. The optional hard-asset line uses only the return rate you enter yourself, clearly labelled as your own assumption. It is not a forecast, guarantee or promise of any return. Nothing on this page is investment advice."}},
+    {"@type": "Question", "name": "What is a realistic inflation rate to use?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Central banks in the eurozone and the US target around 2%. Actual inflation has ranged well above that in recent years. A common approach is to model a base case near the long-run target and a higher scenario to stress-test how much purchasing power you could lose."}}
+  ]
+}
+</script>
+
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <picture><source srcset="../Logo.webp" type="image/webp"><img src="../Logo.webp" alt="MB Capital Strategies" class="nav-logo-img" width="auto" height="40" style="height:40px;margin-right:10px;" fetchpriority="high"></picture>
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                        <li><a href="../pages/strategy.html">80/20 Strategy</a></li>
+                        <li><a href="../pages/dividend-strategy.html">Dividend Strategy</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Sectors</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/shipping.html">Shipping</a></li>
+                        <li><a href="../pages/pipelines.html">Pipelines &amp; Midstream</a></li>
+                        <li><a href="../pages/mining.html">Mining</a></li>
+                        <li><a href="../pages/energy.html">Energy &amp; Upstream</a></li>
+                        <li><a href="../pages/high-yield.html">High-Yield &amp; BDCs</a></li>
+                        <li><a href="../pages/supercycles.html">Commodity Supercycles</a></li>
+                    </ul>
+                </li>
+                                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Best-of 2026</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/best-lng.html">Best LNG Stocks</a></li>
+                        <li><a href="../pages/best-tanker.html">Best Tanker Stocks</a></li>
+                        <li><a href="../pages/best-high-yield.html">Top High-Yield</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link active">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Financial Tools</span>
+            <h1>Free <span class="gold-text">Inflation</span> Calculator</h1>
+            <p>See how inflation erodes the purchasing power of your cash — and what your money will really be worth in the years ahead.</p>
+        </div>
+    </section>
+
+    <section class="page-content">
+        <div class="container">
+<!-- AEO Answer-First Block -->
+<div class="aeo-answer-block" style="background:rgba(212,175,55,0.07);border-left:3px solid #D4AF37;border-radius:6px;padding:16px 20px;margin:0 0 28px;">
+  <p style="margin:0;font-size:1.05rem;line-height:1.65;"><strong>Quick Answer:</strong> This free inflation calculator shows how much purchasing power your cash loses over time. Enter an amount, an inflation rate (%) and a number of years — it returns your real purchasing power, the loss in currency and in %, and a chart of the erosion. At 2.5% inflation, cash loses roughly 39% of its value over 20 years. Optional: compare against a hard-asset return you enter yourself (your assumption — not a promise).</p>
+</div>
+
+            <div class="glass-card mbcs-tool">
+              <div class="grid">
+                <div class="panel">
+                  <h3>Your inputs</h3>
+                  <div class="field"><label>Amount today</label>
+                    <div class="inp"><input id="amt" type="number" min="0" value="50000"><span class="unit">€</span></div></div>
+                  <div class="field"><label>Inflation p.a. · <span id="inflVal" class="mono">2.5 %</span></label>
+                    <div class="inp"><input id="infl" type="number" min="0" step="0.1" value="2.5"><span class="unit">%</span></div>
+                    <input class="slider" id="inflS" type="range" min="0" max="12" step="0.1" value="2.5"></div>
+                  <div class="field"><label>Time horizon · <span id="yrVal" class="mono">20 years</span></label>
+                    <div class="inp"><input id="years" type="number" min="1" max="60" value="20"><span class="unit">years</span></div>
+                    <input class="slider" id="yearsS" type="range" min="1" max="50" step="1" value="20"></div>
+                  <div class="opt"><input type="checkbox" id="cmp"><label for="cmp">Hard-asset comparison (your assumption)</label></div>
+                  <div class="field" id="retField" style="display:none;margin-top:14px">
+                    <label>Assumed return p.a. · <span id="retVal" class="mono">7 %</span></label>
+                    <div class="inp"><input id="ret" type="number" min="0" step="0.1" value="7"><span class="unit">%</span></div>
+                    <input class="slider" id="retS" type="range" min="0" max="15" step="0.1" value="7"></div>
+                </div>
+
+                <div>
+                  <div class="kpis">
+                    <div class="kpi keep"><div class="lbl">Real purchasing power</div><div class="val" id="kKeep">–</div></div>
+                    <div class="kpi loss"><div class="lbl">Purchasing-power loss</div><div class="val" id="kLoss">–</div></div>
+                    <div class="kpi pct"><div class="lbl">Loss in %</div><div class="val" id="kPct">–</div></div>
+                  </div>
+                  <div class="chartcard">
+                    <div class="chart-head"><div><h3>Purchasing power over time</h3>
+                      <div class="legend">
+                        <span><i style="background:var(--red)"></i><span>Cash (real)</span></span>
+                        <span id="legAsset" style="display:none"><i style="background:var(--gold)"></i><span>Hard asset (real, your assumption)</span></span>
+                      </div></div></div>
+                    <div id="chart"></div>
+                    <div class="watermark">MB Capital Strategies</div>
+                  </div>
+                  <div class="narr"><p id="narr"></p></div>
+                </div>
+              </div>
+            </div>
+            <p style="margin-top:2rem;"><em>Simplified model with a constant rate. Actual inflation and returns fluctuate. The optional hard-asset line is based solely on your own assumption and is not a return promise. Not investment, tax or financial advice.</em></p>
+        </div>
+    </section>
+
+    <!-- Explainer -->
+    <section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
+      <h2 style="color:#D4AF37;font-size:1.5rem;margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">Why Inflation Is a Silent Tax on Cash</h2>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">Cash never falls in value on paper. A €50,000 balance still reads €50,000 next year. But what that money <em>buys</em> shrinks every year prices rise. That gap — between the number in your account and the goods it can purchase — is the real cost of holding cash. At a modest 2.5% inflation rate, €50,000 keeps only about €30,500 of purchasing power after 20 years. Nothing was "lost" nominally; it simply eroded, quietly.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">This is the core reason I focus on <strong style="color:#e8c95a;">hard assets and dividends</strong> — shipping, mining, energy, pipelines and REITs — rather than hoarding cash. Productive assets that generate ongoing cash flow (dividends) give you an income stream that can grow, instead of a balance that silently shrinks. The optional comparison line in the tool above lets you model that idea with <strong>your own return assumption</strong>. It is deliberately not a forecast: you enter the number, and the chart shows the gap. That gap is the premium for staying invested rather than sitting in cash.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">How It Works — 3 Steps</h3>
+      <ol style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
+        <li><strong style="color:#e8c95a;">Enter your amount</strong> — the cash sum you want to test, today.</li>
+        <li><strong style="color:#e8c95a;">Set an inflation rate and time horizon</strong> — use a base case near 2–2.5% and a higher scenario to stress-test.</li>
+        <li><strong style="color:#e8c95a;">Read the result</strong> — real purchasing power remaining, the loss in € and %, and the erosion chart. Optionally tick the hard-asset box and enter your own assumed return to see the gap.</li>
+      </ol>
+    </section>
+
+    <!-- AdSense Display Unit (labeled, CLS-safe) -->
+    <div class="ad-wrap">
+      <div class="ad-label">Advertisement</div>
+      <!-- AdSense ins disabled (EN re-approval pending)
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+    </div>
+
+    <!-- FAQ -->
+    <section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
+      <h2 style="color:#D4AF37;font-size:1.5rem;margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">Frequently Asked Questions</h2>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">What will my money be worth after inflation?</strong> It depends on the rate and the horizon. At 2.5% inflation, cash loses roughly 22% of its purchasing power over 10 years and about 39% over 20 years. Enter your amount, an inflation rate and a time horizon above to see the real value that remains.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">How does the inflation calculator work?</strong> It discounts your nominal amount by a constant annual rate: real value = amount ÷ (1 + inflation)<sup>years</sup>. The chart plots the eroding purchasing power year by year. It is a simplified model — real-world inflation varies over time.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">Does inflation make cash a risky asset?</strong> Nominally cash does not fall, but in real terms it shrinks every year inflation is positive. Over long horizons this quiet erosion adds up — which is why many investors hold productive hard assets and dividend-paying stocks instead of large idle cash balances.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">Is the hard-asset comparison a return promise?</strong> No. The optional line uses only the return rate <em>you</em> enter, clearly labelled as your own assumption. It is not a forecast, guarantee or promise. Nothing on this page is investment advice.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem;"><strong style="color:#e8c95a;">What inflation rate should I use?</strong> Central banks in the eurozone and the US target around 2%. Actual inflation has run well above that in recent years. Model a base case near the target and a higher scenario to see how much purchasing power you could lose.</p>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;font-style:italic;border-left:3px solid rgba(212,175,55,0.4);padding-left:16px;">This tool is educational. Nothing here is financial advice. The optional hard-asset comparison reflects your own assumption, not a promise. Always do your own research and consult a licensed advisor before making investment decisions.</p>
+
+      <h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">More Calculators</h2>
+      <ul style="list-style:none;padding:0">
+        <li style="margin-bottom:10px"><a href="dividend-calculator.html" style="color:#60a5fa;text-decoration:none">Dividend Income Calculator — monthly &amp; annual income</a></li>
+        <li style="margin-bottom:10px"><a href="cashflow-sankey.html" style="color:#60a5fa;text-decoration:none">Cash Flow Sankey — see where your money goes</a></li>
+        <li style="margin-bottom:10px"><a href="dividend-snowball.html" style="color:#60a5fa;text-decoration:none">Dividend Snowball Calculator — model reinvestment</a></li>
+        <li style="margin-bottom:10px"><a href="dividend-growth.html" style="color:#60a5fa;text-decoration:none">Dividend Growth Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="yield-on-cost.html" style="color:#60a5fa;text-decoration:none">Yield on Cost (YOC) Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="drip-calculator.html" style="color:#60a5fa;text-decoration:none">DRIP Calculator — dividend reinvestment</a></li>
+        <li style="margin-bottom:10px"><a href="financial-freedom.html" style="color:#60a5fa;text-decoration:none">Financial Freedom Calculator</a></li>
+        <li style="margin-bottom:10px"><a href="shipping-cashflow.html" style="color:#60a5fa;text-decoration:none">Shipping Cashflow Calculator</a></li>
+      </ul>
+    </section>
+
+<footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <div class="footer-social" style="margin-bottom: 16px; display: flex; gap: 12px; justify-content: center; align-items: center;">
+                    <a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mb-capital-strategies/" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.xing.com/profile/Marco_Bozem" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="XING">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.88c-.09.185-.089.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l2.435-4.38-2.386-4.22c-.163-.305-.455-.637-.96-.637H3.648z"/></svg>
+                    </a>
+                    <a href="https://odysee.com/@mbcapitalstrategies:5" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="Odysee">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.08c-.572.846-1.782.846-2.354 0l-3.54-5.243-3.54 5.243c-.572.846-1.782.846-2.354 0-.572-.846-.572-2.217 0-3.063L9.646 9.08 6.106 4.017c-.572-.846-.572-2.217 0-3.063.572-.846 1.782-.846 2.354 0L12 6.197l3.54-5.243c.572-.846 1.782-.846 2.354 0 .572.846.572 2.217 0 3.063L14.354 9.08l3.54 4.937c.572.846.572 2.217 0 3.063z"/></svg>
+                    </a>
+                </div>
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../pages/contact.html">Contact</a>
+                    <a href="../pages/imprint.html">Imprint</a>
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/glossary.html">Glossary</a>
+                    <a href="../pages/disclaimer.html">Disclaimer</a>
+                    <a href="../pages/affiliate-disclosure.html">Affiliate Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script defer src="../js/main.min.js"></script>
+
+<div class="author-box" rel="author" style="display:flex;align-items:center;gap:16px;margin:40px auto;padding:20px;max-width:700px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
+  <img src="../marco.webp" onerror="this.src='../marco.webp'" alt="Marco Bozem — MB Capital Strategies Global" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies | YouTube <a href="https://www.youtube.com/@MBCapitalStrategies" rel="author noopener" target="_blank" style="color:#D4AF37;">@MBCapitalStrategies</a> | Podcast &ldquo;Der Finanzfeuer Talk&rdquo;</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco has been analyzing dividend and hard-asset stocks since 2022, with a focus on shipping, mining and energy. All tools and analyses are for informational purposes only. <em>Not financial advice.</em> <a href="../pages/about.html" rel="author" style="color:#D4AF37;">About Marco &rarr;</a></p>
+  </div>
+</div>
+
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+
+<script>
+(function(){
+  const $=s=>document.querySelector(s);
+  const nf=new Intl.NumberFormat('en-US',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  const pf=v=>new Intl.NumberFormat('en-US',{maximumFractionDigits:1}).format(v);
+
+  function calc(){
+    const amt=+$('#amt').value||0, infl=+$('#infl').value||0, years=Math.max(1,+$('#years').value||1);
+    const cmp=$('#cmp').checked, ret=+$('#ret').value||0;
+    $('#inflVal').textContent=pf(infl)+' %'; $('#yrVal').textContent=years+' years';
+    $('#retVal').textContent=pf(ret)+' %';
+    $('#retField').style.display=cmp?'block':'none'; $('#legAsset').style.display=cmp?'inline':'none';
+
+    const cash=[], asset=[];
+    for(let y=0;y<=years;y++){
+      cash.push(amt/Math.pow(1+infl/100,y));
+      asset.push(amt*Math.pow(1+ret/100,y)/Math.pow(1+infl/100,y));
+    }
+    const keep=cash[years], loss=amt-keep, pct=amt>0?loss/amt*100:0;
+    $('#kKeep').textContent=nf.format(keep);
+    $('#kLoss').textContent='−'+nf.format(loss);
+    $('#kPct').textContent='−'+pf(pct)+' %';
+
+    let html=`<b>${nf.format(amt)}</b> in cash becomes just <b>${nf.format(keep)}</b> in real terms after <b>${years} years</b> at <b>${pf(infl)}%</b> inflation — a purchasing-power loss of <b>${nf.format(loss)}</b>. Cash isn't safe, it just shrinks quietly. Hard assets with ongoing cashflow (dividends) are the answer.`;
+    if(cmp) html+=` With your assumed return the real value would be <b>${nf.format(asset[years])}</b> — the gap is the premium for staying invested.`;
+    $('#narr').innerHTML=html;
+
+    drawChart(cash,cmp?asset:null,years);
+  }
+
+  function drawChart(cash,asset,years){
+    const host=$('#chart');host.innerHTML='';
+    const W=host.clientWidth||760,H=340,m={t:14,r:18,b:26,l:64};
+    const svg=d3.select(host).append('svg').attr('width',W).attr('height',H).attr('viewBox',`0 0 ${W} ${H}`);
+    const defs=svg.append('defs');
+    const ag=defs.append('linearGradient').attr('id','ar').attr('x1',0).attr('y1',0).attr('x2',0).attr('y2',1);
+    ag.append('stop').attr('offset','0%').attr('stop-color','#ef4444').attr('stop-opacity',.35);
+    ag.append('stop').attr('offset','100%').attr('stop-color','#ef4444').attr('stop-opacity',0);
+
+    const x=d3.scaleLinear().domain([0,years]).range([m.l,W-m.r]);
+    const maxV=d3.max([...cash,...(asset||[0])]);
+    const y=d3.scaleLinear().domain([0,maxV*1.08]).range([H-m.b,m.t]);
+
+    const yt=y.ticks(5);
+    svg.append('g').selectAll('line').data(yt).join('line')
+      .attr('x1',m.l).attr('x2',W-m.r).attr('y1',d=>y(d)).attr('y2',d=>y(d))
+      .attr('stroke','#1e1e35').attr('stroke-width',1);
+    svg.append('g').selectAll('text').data(yt).join('text')
+      .attr('x',m.l-8).attr('y',d=>y(d)+4).attr('text-anchor','end').text(d=>nf.format(d).replace(/[€$]/,''));
+    const xt=x.ticks(Math.min(years,8));
+    svg.append('g').selectAll('text').data(xt).join('text')
+      .attr('x',d=>x(d)).attr('y',H-8).attr('text-anchor','middle').text(d=>d);
+
+    const area=d3.area().x((d,i)=>x(i)).y0(H-m.b).y1(d=>y(d)).curve(d3.curveMonotoneX);
+    const line=d3.line().x((d,i)=>x(i)).y(d=>y(d)).curve(d3.curveMonotoneX);
+
+    svg.append('path').datum(cash).attr('fill','url(#ar)').attr('d',area);
+    svg.append('path').datum(cash).attr('fill','none').attr('stroke','#ef4444').attr('stroke-width',2.5).attr('d',line);
+    if(asset){
+      svg.append('path').datum(asset).attr('fill','none').attr('stroke','#D4AF37').attr('stroke-width',2.5)
+        .attr('filter','drop-shadow(0 0 5px #d4af3766)').attr('d',line);
+      svg.append('circle').attr('cx',x(years)).attr('cy',y(asset[years])).attr('r',4).attr('fill','#D4AF37');
+    }
+    svg.append('circle').attr('cx',x(years)).attr('cy',y(cash[years])).attr('r',4).attr('fill','#ef4444');
+  }
+
+  ['amt','infl','years','ret'].forEach(id=>$('#'+id).addEventListener('input',()=>{sync(id);calc()}));
+  $('#inflS').addEventListener('input',e=>{$('#infl').value=e.target.value;calc()});
+  $('#yearsS').addEventListener('input',e=>{$('#years').value=e.target.value;calc()});
+  $('#retS').addEventListener('input',e=>{$('#ret').value=e.target.value;calc()});
+  $('#cmp').addEventListener('change',calc);
+  function sync(id){const map={infl:'inflS',years:'yearsS',ret:'retS'};if(map[id])$('#'+map[id]).value=$('#'+id).value;}
+  window.addEventListener('resize',calc);
+  calc();
+})();
+</script>
+</body>
+</html>
