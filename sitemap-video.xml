@@ -3,19 +3,6 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
 
   <!-- Chevron Analysis -->
-  <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/chevron-analysis-2026.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/dk8hXUMBo10/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Chevron: P/E 30 + Guyana Mega-Deal — Quality Premium or Overvalued?</video:title>
-      <video:description>Chevron stock analysis 2026 - P/E ratio, Guyana mega-deal evaluation, and dividend outlook for CVX investors.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/dk8hXUMBo10</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=dk8hXUMBo10</video:content_loc>
-      <video:duration>600</video:duration>
-      <video:publication_date>2026-03-20</video:publication_date>
-    </video:video>
-  </url>
-
   <!-- Harbour Energy Analysis -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/harbour-energy-analysis-2026.html</loc>
@@ -497,19 +484,6 @@
   <!-- ==================== UPSTREAM ==================== -->
 
   <!-- Aker BP Analysis -->
-  <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/aker-bp-analysis-2026.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/NQE8W68o0BE/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Aker BP Analysis 2026</video:title>
-      <video:description>In-depth analysis of Aker BP — dividends, cashflow, valuation and risks.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/NQE8W68o0BE</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=NQE8W68o0BE</video:content_loc>
-      <video:duration>600</video:duration>
-      <video:publication_date>2026-03-01T00:00:00+00:00</video:publication_date>
-    </video:video>
-  </url>
-
   <!-- ConocoPhillips Analysis -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/conocophillips-analysis-2026.html</loc>
@@ -723,19 +697,6 @@
   </url>
 
   <!-- ONEOK Analysis -->
-  <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/oneok-analysis-2026.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/xS2QIVORDc0/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>ONEOK Analysis 2026</video:title>
-      <video:description>In-depth analysis of ONEOK — dividends, cashflow, valuation and risks.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/xS2QIVORDc0</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=xS2QIVORDc0</video:content_loc>
-      <video:duration>600</video:duration>
-      <video:publication_date>2026-03-01T00:00:00+00:00</video:publication_date>
-    </video:video>
-  </url>
-
   <!-- Pipeline Comparison -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/pipeline-comparison-2026.html</loc>
@@ -823,19 +784,6 @@
   </url>
 
   <!-- Tanker Mixed Fleet 2025 -->
-  <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/tanker-mixed-fleet-2025.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/S4p1ugFZyvw/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>Tanker Mixed Fleet 2025</video:title>
-      <video:description>In-depth analysis of Tanker Mixed Fleet — dividends, cashflow, valuation and risks.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/S4p1ugFZyvw</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=S4p1ugFZyvw</video:content_loc>
-      <video:duration>600</video:duration>
-      <video:publication_date>2026-03-01T00:00:00+00:00</video:publication_date>
-    </video:video>
-  </url>
-
   <!-- ==================== DIVIDEND / BDC ==================== -->
 
   <!-- Ten High Yield Dividend Stocks 2025 -->
@@ -982,18 +930,6 @@
   </url>
 
   <!-- Weekly Recap KW19 -->
-  <url>
-    <loc>https://mbcapitalstrategiesgloabal.com/blog/weekly-recap-kw19-2026.html</loc>
-    <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/Mmdlhudobww/maxresdefault.jpg</video:thumbnail_loc>
-      <video:title>EUR 164 Special Dividend: INSW + Dorian LPG | Weekly Recap KW19 2026</video:title>
-      <video:description>Weekly recap KW19 2026: INSW $4.55 + Dorian LPG $1.00 special dividend (largest in INSW history), Realty Income 113th hike streak, Arbor Realty cuts, Trump 25% EU auto tariff, Iran talks crash Brent from $105 to $101.</video:description>
-      <video:player_loc allow_embed="yes">https://www.youtube.com/embed/Mmdlhudobww</video:player_loc>
-      <video:content_loc>https://www.youtube.com/watch?v=Mmdlhudobww</video:content_loc>
-      <video:publication_date>2026-05-09T12:00:00+02:00</video:publication_date>
-    </video:video>
-  </url>
-
   <!-- Portfolio Update April 2026 -->
   <url>
     <loc>https://mbcapitalstrategiesgloabal.com/blog/portfolio-update-april-2026.html</loc>
