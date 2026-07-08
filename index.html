@@ -22,21 +22,15 @@
 <!-- CRO 2026-06-28 web-design-agent: Title hook — EN CTR 0.41% vs DE 0.82% gap. Previous generic title missed "hard assets investing" + "dividend yield 2026" search intent (GSC: "hard assets investment" 33 impr pos 41, "highest dividend yield stocks 2026" 40 impr pos 11). New title: category + yield signal + brand. Max 60 chars. -->
 <title>Hard Asset Dividends: Shipping, Mining &amp; Energy 2026</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <!-- LCP-Fix 2026-06-15 web-design-agent: preconnect→dns-prefetch — preconnect triggered immediate TCP/TLS handshake to Ad servers, accelerating CMP modal trigger before hero render. dns-prefetch sufficient for async AdSense script at page bottom. -->
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <!-- dns-prefetch dedup 2026-06-15 web-design-agent: removed duplicate googletagmanager + google-analytics entries (were declared twice in head) -->
 <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
-<!-- duplicate preconnect fonts.gstatic.com removed 2026-06-12 web-design-agent (was causing redundant TLS handshake) -->
 <!-- LCP-Fix 2026-06-12: switched to brand fonts Outfit+IBM Plex Mono (css/style.css uses Outfit, not Cormorant/Inter Tight/JetBrains — wrong bundle was preloaded, wasting ~200ms). -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direct preload — eliminates 1 network round-trip (CSS→woff2) in critical path (~100-200ms) -->
 <!-- Brand parity fix 2026-06-15 web-design-agent: EN site defined --serif:"Cormorant Garamond" in CSS but never loaded the font — all 20+ serif-class elements (insight-title, .display, .lede, .asset-name, FAQ, footer-brand, compass-cardinals) were falling back to Georgia. Added Cormorant to combined bundle; kept Outfit as LCP font (preloaded separately). Single combined Google Fonts request = no extra DNS round-trip vs previous. -->
-<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
 <link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"></noscript>
 <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections start at opacity:0 and only
      become visible via JS (IntersectionObserver). If JS is blocked/slow/fails, these sections stay
      permanently invisible (content loss). Noscript fallback forces full visibility without JS —
@@ -555,6 +549,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
   }
 }
 </script>
+  <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
 <body>
 

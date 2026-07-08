@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
   <!-- Core Web Vitals: Font preload for LCP improvement -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <meta charset="UTF-8">
@@ -38,13 +36,8 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
 .breadcrumbs a{color:var(--text-muted);text-decoration:none}
 @media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
 </style>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJuktqQ4E.woff2" crossorigin="anonymous"><!-- font v11→v15 (web-design-agent 2026-06-12 — matches DE site, prevents cache-miss on shared CDN) -->
     <!-- LCP-Fix: Preload critical font + CSS non-blocking (Batch 119 - LCP was 14s) -->
     <link rel="preload" as="style" href="../css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="../css/style.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"></noscript>
 <!-- LCP-Fix 2026-06-12: Preload above-fold YT thumbnail (was loading=lazy — LCP penalty) -->
 <link rel="preload" as="image" href="https://img.youtube.com/vi/jhJB7qIfN3k/hqdefault.jpg" fetchpriority="high">
 <!-- Critical inline CSS for LCP: above-fold elements render before external CSS (Batch 137 LCP-Fix) -->
