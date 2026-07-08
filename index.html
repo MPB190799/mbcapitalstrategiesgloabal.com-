@@ -319,6 +319,17 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
    same image) so the label stays legible without changing btn-ghost anywhere else on the site. */
 #hero-cta-secondary-en{background:rgba(12,11,9,.6);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-color:var(--accent);color:var(--fg)}
 #hero-cta-secondary-en:hover{color:var(--bg);border-color:var(--fg)}
+/* CRO 2026-07-08 web-design-agent (UX-Audit): #hero-cta-broker-en ("Compare Brokers", the
+   affiliate-monetized 3rd hero CTA) had its text-contrast fixed 2026-07-05 (fg-dim -> fg-muted)
+   but that fix assumed a flat --bg backdrop. Live Playwright screenshot (desktop 1440x900) shows
+   the button sits directly over the light brass/cream compass-face image, same root cause already
+   diagnosed+fixed one CTA over for #hero-cta-secondary-en on 2026-07-04 (light-tan text over a
+   light image = near-zero contrast even though the token itself is fine against --bg). Applying
+   the identical proven scrim+blur treatment here closes the gap instead of reinventing it. No new
+   element, no CLS, no fold-position change. Measure: GA4 click-rate on #hero-cta-broker-en
+   before/after (affiliate broker-comparison funnel). */
+#hero-cta-broker-en{background:rgba(12,11,9,.6);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);color:var(--fg-muted)}
+#hero-cta-broker-en:hover{color:var(--accent);border-color:var(--accent)}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
