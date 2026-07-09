@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- LCP-Fix: Preload critical font -->
+    <meta charset="UTF-8">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}}
+</style>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#050508">
+
+<title>Duration Risk Explained: Why Rates Crushed Biotech -63%</title>
+<meta name="description" content="Rising rates sank the XBI biotech index -63.5% while Big Pharma dividends barely moved. The duration mechanic explained, plus a 3-question sector check.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="author" content="Marco Bozem">
+<meta name="keywords" content="duration risk stocks, interest rate sensitive sectors, XBI biotech crash, why do rates hurt biotech stocks, REIT interest rate sensitivity, duration check framework, MB Capital Strategies">
+
+<link rel="canonical" href="https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/duration-check-zinsen-sektoren-2026.html">
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html">
+
+<meta property="og:title" content="Duration Risk Explained: Why Rates Crushed Biotech -63%">
+<meta property="og:description" content="Rising rates sank the XBI biotech index -63.5% while Big Pharma dividends barely moved. The duration mechanic explained, plus a 3-question sector check.">
+<meta property="og:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+<meta property="og:url" content="https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Duration Risk Explained: Why Rates Crushed Biotech -63%">
+<meta name="twitter:description" content="Rising rates sank the XBI biotech index -63.5% while Big Pharma dividends barely moved. The duration mechanic explained, plus a 3-question sector check.">
+<meta name="twitter:image" content="https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg">
+<link rel="stylesheet" href="../css/style.min.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('consent', 'default', {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
+gtag('config', 'G-FSW7J7QYL8');
+</script>
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Duration Risk Explained: Why the Same Rate Move Crushed Biotech and Left Big Pharma Untouched",
+  "description": "Rising interest rates sank the XBI biotech index -63.5% between 2021 and 2023 while Big Pharma dividends barely moved. This is the duration mechanic behind it -- and a 3-question framework to check any sector's rate sensitivity, from biotech to REITs to shipping.",
+  "wordCount": 1180,
+  "url": "https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html",
+  "image": "https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://www.linkedin.com/in/marco-bozem-182173295",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MB Capital Strategies Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesgloabal.com/Logo.webp"
+    }
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html",
+  "datePublished": "2026-07-09",
+  "dateModified": "2026-07-09",
+  "inLanguage": "en",
+  "articleSection": "Strategie"
+}</script>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategiesgloabal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategiesgloabal.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Duration Risk Explained: Interest Rate Sector Cycles",
+      "item": "https://mbcapitalstrategiesgloabal.com/blog/duration-interest-rate-sector-cycle-2026.html"
+    }
+  ]
+}</script>
+<style>
+.info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+.risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+.news-box{background:#0f1822;padding:18px;border:1px solid rgba(212,175,55,.25);border-radius:10px;margin:22px 0}
+.news-box h3{color:#d4af37;margin-top:0}
+.breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+.breadcrumbs a{color:#d4af37;text-decoration:none}
+.metric-card{background:#1a1f2b;border:1px solid rgba(212,175,55,.22);border-radius:12px;padding:20px;text-align:center}
+.metric-value{display:block;color:#d4af37;font-size:1.8rem;font-weight:800}
+.metric-label{display:block;color:#9aa6c0;font-size:.82rem;margin-top:4px}
+.metrics-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px;margin:24px 0}
+.related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+.related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+.related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+.related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+.duration-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.92rem}
+.duration-table th,.duration-table td{padding:10px 14px;border:1px solid rgba(212,175,55,.18);text-align:left}
+.duration-table th{background:rgba(212,175,55,.1);color:#d4af37}
+.duration-table td.pharma{background:rgba(212,175,55,.05)}
+.duration-table td.biotech{background:rgba(255,107,107,.06)}
+.check-step{background:#1a1f2b;border-left:4px solid #d4af37;border-radius:8px;padding:16px 18px;margin:14px 0}
+.check-step strong{color:#d4af37}
+</style>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="stylesheet" href="/fonts/fonts.css">
+</head>
+<body>
+
+<nav class="navbar" id="navbar"></nav>
+
+<nav class="breadcrumbs"><a href="/">Home</a> &rsaquo; <a href="/pages/blog.html">Blog</a> &rsaquo; <span>Duration Risk Explained</span></nav>
+
+<main style="max-width:900px;margin:0 auto;padding:0 20px">
+<section class="article-hero">
+  <span class="section-label">Cycle Strategy</span>
+  <h1>Duration Risk Explained: Why the Same Rate Move Crushed Biotech and Left Big Pharma Untouched</h1>
+  <div class="aeo-block" style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+    <p style="margin:0 0 10px"><strong style="color:#D4AF37">Why Do Interest Rates Hit Some Sectors So Much Harder Than Others?</strong><br>
+    The answer is <strong>duration</strong> -- how far in the future a company's cash actually arrives. Between February 2021 and October 2023, the small/mid-cap biotech index XBI fell -63.5% as rates rose, while Big Pharma dividend stocks barely moved. Same market, same rates, opposite outcome. The mechanic scales far beyond biotech: it explains why REITs bleed when rates rise and why shipping, energy and commodities often shrug it off -- or benefit. Not investment advice.</p>
+  </div>
+  <div class="article-meta">
+    <span>July 9, 2026</span> &middot; <span>Marco Bozem</span> &middot; <span>Hard Asset Strategy</span>
+  </div>
+</section>
+
+<article class="article-body">
+
+<p>Minus 63.5 percent. That's how far an entire growth sector collapsed in under three years -- while a group of blue-chip dividend payers sitting right next to it barely blinked and kept paying out. Same market. Same country. Same interest rates. And yet one side was in free fall while the other stood like a rock.</p>
+
+<p>That's not a coincidence. It's a mechanism -- and once you understand it, you can spot it in almost any sector, from small-cap biotech to REITs to shipping stocks.</p>
+
+<div class="metrics-grid">
+  <div class="metric-card"><span class="metric-value">-63.5%</span><span class="metric-label">XBI Peak-to-Trough 2021&ndash;2023</span></div>
+  <div class="metric-card"><span class="metric-value">-70%</span><span class="metric-label">Max NPV Hit From +3pp Rates</span></div>
+  <div class="metric-card"><span class="metric-value">2&ndash;4%</span><span class="metric-label">Typical Big Pharma Dividend Yield</span></div>
+  <div class="metric-card"><span class="metric-value">3.5&ndash;3.75%</span><span class="metric-label">Current Fed Funds Range</span></div>
+</div>
+
+<h2>1. Two Companies, One Interest Rate, Two Completely Different Outcomes</h2>
+
+<p>Picture two businesses. Company A is a large, established pharmaceutical maker: profitable today, selling approved drugs for decades, paying a reliable dividend of roughly 2% to 4%. Its cash arrives <strong>now</strong>. Company B is a small biotech: no approved drug, no dividend, burning cash every quarter. Its payoff, if it ever comes, might be eight or ten years out.</p>
+
+<p>Here's what most investors miss: these two don't react to rising rates a little differently -- they react in opposite directions. Company B's entire value sits in the future, and future cash is exactly what rising rates destroy.</p>
+
+<!-- AdSense -->
+<!-- AdSense disabled 2026-06-27: EN re-approval pending, CMP consent wall blocks EU visitors
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+
+<h2>2. The Proof: Biotech's -63.5% Collapse, 2021&ndash;2023</h2>
+
+<p>The clearest evidence sits in the <strong>XBI</strong>, the index tracking small- and mid-cap biotech -- essentially the purest interest-rate-sensitivity barometer in the market. In February 2021 the XBI hit a high of $174.79, with money close to free and speculative growth names euphoric. Then the Fed reversed course and rates rose sharply. By October 2023, the same index sat at $63.80 -- a drop of <strong>63.5%</strong>, the steepest drawdown since the XBI's inception in 2006. The maximum single drawdown was measured on May 11, 2022, mid-hiking-cycle, at nearly 64% below the high.</p>
+
+<p>Now the contrast that explains everything: during the 2008 financial crisis, when the Fed slashed rates to zero, biotech (the BTK index) fell only 11% between December 2007 and June 2009 -- while the broad S&P 500 lost 37% over the same window. Biotech was the <strong>safe haven</strong> that time. Same sector, once a rock and once a free fall. The difference wasn't the companies -- it was the direction rates were moving.</p>
+
+<h2>3. Why the Pattern Fires Sometimes -- and Not Always</h2>
+
+<p>So falling rates are good for biotech, rising rates are poison -- simple, right? Not quite, and this is exactly where most investors lose money chasing the headline. In 2019, the Fed delivered three modest "insurance cuts" and the XBI gained <strong>32.56%</strong> for the year -- a direct hit. In 2024, the Fed cut rates for the first time in September; by the same logic biotech should have taken off. Full-year result: <strong>+1.01%</strong>. Essentially nothing. A brief spike on the cut itself, then the index closed the year roughly where it started, near $100. The pattern simply didn't fire.</p>
+
+<p>Why? Because it was never about the cut itself -- it's about timing and expectation. The real pattern: biotech tends to outperform in the months <em>before</em> the first cut, as the market prices it in; right <em>after</em>, it often underperforms for about a month (classic sell-the-news); then, over the following six to twelve months, gains of roughly 20% to 30% typically follow. And it isn't purely a rate story either: in 2025 the XBI rose 35% -- up 75% from its April low -- with <strong>no</strong> rate cut at all. Rates are the single strongest lever for duration-sensitive sectors, but never the only one.</p>
+
+<h2>4. The Mechanic: Duration in Plain English</h2>
+
+<p>Here's the mechanism. Every stock is, at its core, a claim on future cash. To know what future cash is worth <em>today</em>, you discount it -- and the interest rate is the discount rate. When rates rise, the present value of money that arrives far in the future shrinks, and the effect is brutal for anything whose payday sits many years out.</p>
+
+<p>The math: a 3-percentage-point increase in the discount rate can cut a project's <strong>net present value (NPV)</strong> by roughly <strong>32% to 70%</strong> -- the longer the runway to commercialization, the closer you get to that 70% end. Three points is not an extreme scenario; it's roughly what a single Fed hiking cycle can deliver. That means a 3-point rate move can erase up to 70% of a future-focused business's present-day value without a single thing changing about the underlying business -- same drug, same pipeline, same team, only the discount rate moved. It's the same discounting logic behind the <a href="/glossary/dividend-discount-model.html" style="color:#D4AF37;">Dividend Discount Model</a> used to value income stocks.</p>
+
+<p>Big Pharma sits on the opposite end: most of its cash arrives now, so the discounting effect barely bites. That's the anchor behind the "boring, stable dividend payer" reputation.</p>
+
+<h2>5. Big Pharma vs. Biotech: The Cheat Sheet</h2>
+
+<p><strong>A quick note before the table:</strong> the names below (Pfizer, Bristol-Myers, AbbVie, Johnson &amp; Johnson) appear purely as real-world examples of the <em>mechanic</em> -- this is not a buy recommendation for any of them, individually or as a group.</p>
+
+<table class="duration-table">
+<tr><th>Trait</th><th>Big Pharma</th><th>Small/Mid Biotech (XBI)</th></tr>
+<tr><td>Dividend</td><td class="pharma">2&ndash;4% typical (Pfizer ~6.4%, Bristol-Myers &gt;5%, AbbVie ~3% &ndash; a Dividend King with 50+ straight years of raises, J&amp;J ~3%)</td><td class="biotech">None</td></tr>
+<tr><td>Cash flow timing</td><td class="pharma">Today</td><td class="biotech">Years in the future, if ever</td></tr>
+<tr><td>Duration</td><td class="pharma">Short</td><td class="biotech">Long</td></tr>
+<tr><td>Rate sensitivity</td><td class="pharma">Low</td><td class="biotech">Extreme</td></tr>
+<tr><td>Portfolio role</td><td class="pharma">Defensive anchor</td><td class="biotech">Rides the full cycle, up and down</td></tr>
+</table>
+
+<h2>6. The Duration Check: 3 Questions for Any Sector</h2>
+
+<p>Now the useful part. You don't need a finance degree to run this check on any stock or sector -- just three questions.</p>
+
+<div class="check-step"><strong>1. When does the cash actually arrive?</strong> Profit and dividends today, or a payoff that's years out? The further away the payday, the more rate-sensitive the business.</div>
+<div class="check-step"><strong>2. How does the business fund itself?</strong> From its own operating cash flow, or by constantly raising fresh capital? Companies dependent on new capital get hit twice by rising rates: once on valuation, once through more expensive financing.</div>
+<div class="check-step"><strong>3. Which direction are rates moving -- and what's already priced in?</strong> Remember 2019 versus 2024: the same type of rate cut, wildly different outcomes, because expectations were positioned differently going in.</div>
+
+<p>Run those three questions on any sector and the duration pattern becomes visible almost everywhere.</p>
+
+<h2>7. The Bridge to Hard Assets: REITs vs. Shipping and Commodities</h2>
+
+<p>This logic isn't limited to pharma versus biotech -- it explains nearly every hard-asset sector, and it's a big part of why I build my own portfolio the way I do.</p>
+
+<p><a href="/pages/reit-investing.html" style="color:#D4AF37;">REITs</a> sit closer to biotech in duration terms than most investors assume. A property is essentially a long stream of future rental income -- long duration, plus real debt on top. Rising rates hit REITs twice: future rents get discounted harder, and refinancing gets more expensive. Same mechanic as biotech, just built from concrete instead of molecules (see <a href="/blog/mpw-reit-analysis-2026.html" style="color:#D4AF37;">our MPW analysis</a> for a real example).</p>
+
+<p><a href="/pages/shipping.html" style="color:#D4AF37;">Shipping</a> and commodities often behave the opposite way. A tanker earns its money right now, at today's spot rates -- short duration. And rates usually rise <em>because</em> the economy is running hot and inflation is elevated, which is often exactly the environment that pushes freight rates and commodity prices higher. That's why shipping, energy, and commodities sit at the core of a hard-asset, dividend-focused portfolio: the natural counterweight to duration-heavy growth assets. You don't need to own every sector, but knowing which of your holdings are duration-exposed -- and which benefit from the same rate move -- is the difference between a random collection of stocks and a portfolio you understand.</p>
+
+<h2>8. Today's Regime: Why This Matters Right Now</h2>
+
+<p>This isn't a history lesson -- it's the current setup. The Fed funds range currently sits at 3.5%&ndash;3.75%, with no rate cut visible on the 2026 calendar. Goldman Sachs doesn't see the next cut until 2027, and markets have at times priced in the risk of a <em>hike</em> instead, since the Iran conflict has kept oil and gas elevated and core PCE inflation ran at 3.4% in May -- the highest reading in roughly three years.</p>
+
+<p>Translated into the duration framework: this is not an environment where long-duration bets get rewarded, and there's no falling-rate tailwind pulling future-focused growth stories higher right now. If anything, the regime leans against long-duration assets and potentially favors the short-duration side -- energy, shipping, commodities. I'm not telling you what to buy. But knowing which interest-rate regime you're in tells you which part of your portfolio has the wind at its back right now, and which part is fighting against it. That's what cycle recognition actually means.</p>
+
+<div style="border-left:4px solid #D4AF37;margin:28px 0;padding:16px 20px;background:#0d1117;border-radius:6px;">
+  <h3 style="margin:0 0 8px;color:#D4AF37;font-size:1rem;">Track Fundamentals Yourself</h3>
+  <p style="margin:0 0 12px;color:#cfd6e6;font-size:0.9rem;">I pull the underlying fundamental data (dividend history, cash flow, fair value) for pieces like this from <strong>InvestingPro</strong> &mdash; it's the source I actually use before publishing any sector comparison. Readers get 15% off through my link.</p>
+  <a href="https://www.investing-referral.com/mbcapitalglobal/" target="_blank" rel="noopener noreferrer" style="display:inline-block;background:#D4AF37;color:#0f1115;font-weight:700;padding:9px 18px;border-radius:5px;text-decoration:none;font-size:0.9rem;">Get InvestingPro -15% &rarr;</a>
+</div>
+
+<div class="related-articles">
+<h3>Related Content</h3>
+<ul>
+<li><a href="/pages/reit-investing.html">&rarr; How to Invest in REITs 2026: Dividends &amp; the 90% Rule</a></li>
+<li><a href="/pages/reit-etfs.html">&rarr; REIT ETF Comparison 2026</a></li>
+<li><a href="/blog/mpw-reit-analysis-2026.html">&rarr; MPW: 7.4% Yield After a 70% Cut</a></li>
+<li><a href="/pages/shipping.html">&rarr; Shipping Stocks 2026: 10&ndash;15% Yield</a></li>
+<li><a href="/pages/energy.html">&rarr; Oil &amp; Gas Stocks 2026: 26 Picks Compared</a></li>
+<li><a href="/pages/mining.html">&rarr; Mining Stocks 2026: Best Dividend Picks</a></li>
+<li><a href="/glossary/dividend-discount-model.html">&rarr; Dividend Discount Model Explained</a></li>
+<li><a href="/blog/fomc-june-2026-hard-assets-interest-rates.html">&rarr; FOMC June 2026: What It Means for Hard Assets</a></li>
+<li><a href="/pages/dividend-strategy.html">&rarr; Dividend Strategy 2026 &mdash; High-Yield Hard Assets</a></li>
+</ul>
+</div>
+
+<div class="blog-post-disclaimer" style="margin-top:2rem;padding:1.25rem 1.5rem;border-left:3px solid rgba(212,175,55,0.6);background:rgba(212,175,55,0.04);border-radius:4px;">
+  <p style="margin:0;font-size:0.875rem;color:#aaa;line-height:1.7;"><strong style="color:#d4af37;">Disclaimer:</strong> This article is for informational and educational purposes only. It does not constitute investment advice, a recommendation, or an offer to buy or sell any security. Pfizer, Bristol-Myers, AbbVie, Johnson &amp; Johnson and the XBI index are named strictly as real-world examples to illustrate the duration mechanic -- none of this is a buy or sell call on any of them. All information provided without guarantee. Act on your own responsibility. <a href="../pages/disclaimer.html" style="color:#d4af37;">Full disclaimer &rarr;</a></p>
+</div>
+
+<div class="author-box" style="max-width:860px;margin:40px auto 0;padding:20px;background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;"><picture><source srcset="/marco.webp" type="image/webp"><img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem" width="64" height="64" loading="lazy"></picture><div style="flex:1;min-width:200px;"><span style="font-size:.78em;letter-spacing:.08em;text-transform:uppercase;color:#9aa6c0;">Author</span><strong style="display:block;color:#FFD700;font-size:1.08em;margin:2px 0 6px;">Marco Bozem</strong><p style="margin:0 0 10px;color:#cfd6e6;font-size:.92em;line-height:1.55;">Independent hard-asset investor since 2022. Covers dividends from shipping, mining, energy &amp; pipelines from a real private-investor portfolio &mdash; with disclosed positions on every analysis.</p><div style="display:flex;gap:14px;flex-wrap:wrap;font-size:.88em;"><a href="/pages/about.html" style="color:#d4af37;text-decoration:none;">About Marco &rarr;</a><a href="https://www.youtube.com/@mbcapitalstrategies" target="_blank" rel="noopener" style="color:#9aa6c0;text-decoration:none;">YouTube</a><a href="https://www.linkedin.com/in/marco-bozem-182173295" target="_blank" rel="noopener" style="color:#9aa6c0;text-decoration:none;">LinkedIn</a></div></div></div>
+
+<!-- AdSense -->
+<!-- AdSense disabled 2026-06-27: EN re-approval pending, CMP consent wall blocks EU visitors
+<ins class="adsbygoogle" style="display:block;text-align:center;margin:24px auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+-->
+</article>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;">
+      <p>&copy; 2026 MB Capital Strategies Global.</p>
+      <div class="footer-links">
+        <a href="../pages/imprint.html">Imprint</a>
+        <a href="../pages/privacy.html">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/main.min.js" defer></script>
+<script src="../js/glossar-linking.js" defer></script>
+
+<div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is duration risk in stock investing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Duration risk is how sensitive a stock's value is to changes in interest rates, based on how far in the future its cash flows arrive. A company generating profit and dividends today has short duration and low rate sensitivity. A company whose payoff sits years in the future (an unprofitable biotech, a REIT's long-dated rental income) has long duration -- its present value swings hard when the discount rate (the interest rate) changes. A 3-percentage-point rate increase can cut the present value of a long-duration business by roughly 32% to 70%, depending on how far out the payoff sits."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did biotech stocks fall so much more than Big Pharma when interest rates rose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Between February 2021 and October 2023, the XBI biotech index fell 63.5% (from $174.79 to $63.80) as the Fed raised rates sharply -- the steepest drawdown since the index launched in 2006. Small and mid-cap biotechs have no current profit or dividend; their entire value depends on future drug approvals, often 8-10 years out, so rising rates crushed their present value. Big Pharma names generate profit and pay dividends today (typically 2-4% yield), so the discounting effect barely touched them -- proving the difference was duration, not the sector label."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How can I check whether a sector is interest-rate sensitive?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Run the 3-question Duration Check: (1) When does the cash actually arrive -- today, or years in the future? The further out, the more rate-sensitive. (2) How is the business funded -- from its own operating cash flow, or by constantly raising fresh capital? Capital-dependent businesses get hit twice by rising rates. (3) Which direction are rates moving, and what's already priced in? The same rate cut produced +32.6% for the XBI in 2019 but only +1.01% in 2024, because market expectations were positioned differently going in."
+      }
+    }
+  ]
+}
+</script>
+
+</body>
+</html>
