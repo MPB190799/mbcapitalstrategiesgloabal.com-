@@ -13,7 +13,12 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="theme-color" content="#0c0b09">
 <meta name="google-adsense-account" content="ca-pub-7097302643579933">
-<!-- AdSense loader moved to body-end (2026-06-19 web-design-agent LCP-fix). Verification via <meta name="google-adsense-account"> above is sufficient for E-E-A-T. HEAD loader was triggering Google CMP before hero render — duplicate of body-end loader at line ~1406. DE site pattern is the reference. -->
+<!-- AdSense loader in <head> per Google's site-verification requirement (Marco 2026-07-10).
+     FACT-CORRECTION: EN AdSense is NOT approved. Google AdSense console (Websites) shows
+     mbcapitalstrategiesglobal.com = "Maßnahme erforderlich / Minderwertige Inhalte" (last review
+     2026-07-07). Prior comments claiming "re-approved 2026-06-24 / live 2026-07-04" were FALSE.
+     No ads serve on EN until the "low-value content" review is passed (E-E-A-T + content-quality
+     remediation → seo-agent). ads.txt authorized; loader must be inside <head> on every page. -->
 <!-- dns-prefetch for pagead2 is sufficient for early DNS lookup without blocking hero -->
 <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
@@ -396,6 +401,7 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 }
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1075,17 +1081,12 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   </div>
 </section>
 
-<!-- AdSense slot 3778191657 disabled 2026-06-19 web-design-agent CRO-fix:
-     ORIGINAL reason (unapproved account) is STALE — EN AdSense was re-approved 2026-06-24 and
-     verified still live+intact 2026-07-04 (seo-agent batch285, active in blog/). CURRENT reason
-     (monetization-agent, 2026-07-10, monetization-playbook.md §1): homepage funnels directly into
-     Tier-A conversion pages (Best-Broker/Best-LNG/Best-Tanker) — Google's CMP consent-wall still
-     fires on ANY page loading adsbygoogle.js regardless of approval status, and adds friction right
-     where affiliate-CRO is the active priority (0.226% conv-rate notstand, Winner-Box/CTA work in
-     progress). Slot placeholder kept for future re-activation ONLY as a deliberate monetization-agent
-     Tier-A ad-density decision (playbook §1: max 1-2 units, never above the conversion path) —
-     do NOT re-enable solely because "EN approval confirmed" is now true, that condition is met but
-     is no longer the blocking reason. adsbygoogle.js loader at page-end stays (AdSense verification). -->
+<!-- AdSense slot 3778191657 held 2026-06-19. FACT-CORRECTION 2026-07-10 (Marco): the earlier note
+     "EN approval confirmed / re-approved 2026-06-24" was FALSE. AdSense console shows
+     "Minderwertige Inhalte" (low-value content), last review 2026-07-07 — EN is NOT approved and
+     no ads serve. Ad-slot <ins> stays disabled until (a) the low-value-content review is passed and
+     (b) a monetization-agent Tier-A ad-density decision re-enables it. The adsbygoogle.js LOADER now
+     lives in <head> (Google verification), independent of these slots. -->
 <!-- <div style="text-align:center;margin:24px auto;">
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="3778191657" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -1175,10 +1176,9 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 
 <div class="divider"></div>
 
-<!-- AdSense slot 1212067635 disabled 2026-06-19 web-design-agent CRO-fix:
-     Same corrected reason as slot 3778191657 above (updated 2026-07-10 monetization-agent) —
-     deliberate CRO-priority hold, not a pending-approval gap. Re-enable only via monetization-agent
-     Tier-A ad-density review, not on "approval confirmed" alone. -->
+<!-- AdSense slot 1212067635 held 2026-06-19. Same corrected status as slot 3778191657 above
+     (Marco 2026-07-10): EN NOT approved — "Minderwertige Inhalte", last review 2026-07-07.
+     Re-enable only after review passes + monetization-agent Tier-A decision. -->
 <!-- <div style="text-align:center;margin:24px auto;">
 <ins class="adsbygoogle" style="display:block;text-align:center;margin:0 auto" data-ad-client="ca-pub-7097302643579933" data-ad-slot="1212067635" data-ad-format="in-article" data-full-width-responsive="true"></ins>
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -1440,20 +1440,12 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
-<!-- AdSense script disabled 2026-06-19 web-design-agent CRO-fix:
-     This script (adsbygoogle.js) triggers Google Funding Choices CMP modal even with no active ad slots.
-     The German-language CMP was blocking above-the-fold hero render for all EU visitors.
-     CORRECTED 2026-07-10 (monetization-agent): EN AdSense is NOT unapproved anymore — re-approved
-     2026-06-24, verified live+intact 2026-07-04 (seo-agent batch285, active in blog/ articles).
-     This script stays disabled on the HOMEPAGE specifically as a deliberate CRO decision
-     (monetization-playbook.md §1) — the CMP consent-wall fires on ANY page that loads this tag,
-     and the homepage is the top-of-funnel into Tier-A conversion pages currently under active
-     affiliate-CRO work. Account verification: <meta name="google-adsense-account"> tag at line 11
-     is sufficient for Google's pub-verification endpoint, independent of this script.
-     Re-enable this script AND the two <ins> slots together ONLY via a monetization-agent Tier-A
-     ad-density decision — "approval confirmed" alone is no longer the blocking condition. -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
-
+<!-- Body-end AdSense loader removed 2026-07-10 (Marco): the loader now lives in <head> (top of file)
+     per Google's site-verification requirement — no duplicate needed here. NOTE: the German CMP /
+     consent-wall is a REQUIRED Google-certified consent step for EEA ad serving, not an optional CRO
+     nuisance — it must fire for approval. The real blocker is "Minderwertige Inhalte" (low-value
+     content, AdSense review 2026-07-07), fixed via content-quality + E-E-A-T remediation, not by
+     hiding the loader. -->
 <!-- Sticky Research CTA bar — depth navigation, no newsletter (EN-only policy) v1.1 2026-06-19 web-design-agent
      CRO fix: close-button contrast #555→#c8cfe0 (WCAG AA on #0f0f1a bg), touch-target enlarged,
      mobile scroll-threshold raised 300→600px (banner no longer interrupts hero engagement zone) -->
