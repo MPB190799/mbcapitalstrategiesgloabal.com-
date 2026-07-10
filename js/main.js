@@ -3,6 +3,31 @@
    Main JavaScript
    ============================================ */
 
+/* ── Microsoft Clarity — GDPR/DSGVO consent-gated (Way A, Marco 10.07.2026) ──
+   Clarity is a session recorder (cookies + recording) → requires active consent.
+   Init runs immediately but with consent=false (no tracking until user accepts).
+   After accept: clarity('consent', true) — only then does recording start.
+   Project ID: xka8c2u3sg (mbcapitalstrategiesglobal.com / EN-Site)
+   Consent key: 'cookie_consent' === 'accepted' (same key used by cookieAccept handler below)
+────────────────────────────────────────────────────────────────────────── */
+(function(){
+  var _enConsent = localStorage.getItem('cookie_consent');
+  /* Guard: only inject once (dedup-safe, mirrors GA4 guard pattern) */
+  if (!document.querySelector('script[src*="clarity.ms/tag"]')) {
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,'clarity','script','xka8c2u3sg');
+  }
+  /* Set consent state on load — blocks tracking before user decision */
+  if (_enConsent === 'accepted') {
+    window.clarity('consent', true);
+  } else {
+    window.clarity('consent', false);
+  }
+})();
+
 /* Premium Polish: soft corner glows on every non-luxe-v3 sub-page.
    Font-Guard 2026-06-12: Cormorant Garamond injection removed — brand font is Outfit (design-style-guide.md).
    Cormorant was never used in css/style.css body rules, causing ~200ms wasted font-parse per sub-page. */
@@ -231,6 +256,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieAccept) {
         cookieAccept.addEventListener('click', () => {
             localStorage.setItem('cookie_consent', 'accepted');
+            // Grant GA4 Consent Mode v2 — gives full (non-cookieless) analytics data
+            if (window.gtag) {
+                window.gtag('consent', 'update', {
+                    'ad_storage': 'granted',
+                    'analytics_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                });
+            }
+            // Clarity: consent granted → unlock session recording
+            if (window.clarity) { window.clarity('consent', true); }
             if (cookieBanner) cookieBanner.classList.remove('show');
         });
     }
@@ -238,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieReject) {
         cookieReject.addEventListener('click', () => {
             localStorage.setItem('cookie_consent', 'rejected');
+            // Clarity: stays denied (clarity('consent', false) already set at load)
             if (cookieBanner) cookieBanner.classList.remove('show');
             // Disable GA4 if rejected
             window['ga-disable-G-FSW7J7QYL8'] = true;

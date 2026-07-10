@@ -1440,6 +1440,67 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<!-- Microsoft Clarity + Consent Handler — GDPR consent-gated (Way A, Marco 10.07.2026)
+     EN index.html does not load main.js → consent handler runs standalone here.
+     Clarity Project ID: xka8c2u3sg (mbcapitalstrategiesglobal.com)
+     Consent key: 'cookie_consent' (shared with main.js on sub-pages)
+     Clarity init with consent=false → only unlocked after Accept click.
+     AdSense is present on this page: Google Funding Choices CMP handles EEA consent.
+     Own banner suppressed when GFC active (CMP-stacking guard). -->
+<script>(function(){
+  var EN_CONSENT_KEY = 'cookie_consent';
+  var _c = localStorage.getItem(EN_CONSENT_KEY);
+  /* ── Clarity Init (consent-gated) ── */
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window,document,'clarity','script','xka8c2u3sg');
+  if (_c === 'accepted') {
+    window.clarity('consent', true);
+  } else {
+    window.clarity('consent', false);
+  }
+  /* ── Cookie Banner Handlers ── */
+  var banner = document.getElementById('cookieBanner');
+  var btnAccept = document.getElementById('cookieAccept');
+  var btnReject = document.getElementById('cookieReject');
+  function grantConsent() {
+    localStorage.setItem(EN_CONSENT_KEY, 'accepted');
+    if (window.gtag) {
+      window.gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'analytics_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted'
+      });
+    }
+    if (window.clarity) { window.clarity('consent', true); }
+    if (banner) banner.classList.remove('show');
+  }
+  function denyConsent() {
+    localStorage.setItem(EN_CONSENT_KEY, 'rejected');
+    if (banner) banner.classList.remove('show');
+    window['ga-disable-G-FSW7J7QYL8'] = true;
+  }
+  if (btnAccept) btnAccept.addEventListener('click', grantConsent);
+  if (btnReject) btnReject.addEventListener('click', denyConsent);
+  /* ── Banner Visibility Logic ── */
+  if (!_c) {
+    /* CMP-stacking guard: if AdSense/Google Funding Choices is present, suppress own banner.
+       GFC handles EEA consent. Own banner only shown on non-AdSense pages. */
+    var hasAdSense = (typeof window.adsbygoogle !== 'undefined') ||
+                     document.querySelector('ins.adsbygoogle') !== null ||
+                     document.querySelector('script[src*="adsbygoogle.js"]') !== null;
+    if (!hasAdSense && banner) {
+      setTimeout(function() {
+        if (!localStorage.getItem(EN_CONSENT_KEY)) banner.classList.add('show');
+      }, 300);
+    }
+  } else if (_c === 'rejected') {
+    window['ga-disable-G-FSW7J7QYL8'] = true;
+  }
+})();</script>
 <!-- Body-end AdSense loader removed 2026-07-10 (Marco): the loader now lives in <head> (top of file)
      per Google's site-verification requirement — no duplicate needed here. NOTE: the German CMP /
      consent-wall is a REQUIRED Google-certified consent step for EEA ad serving, not an optional CRO
