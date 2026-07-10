@@ -108,6 +108,48 @@
   }
 }</script>
 
+<!-- JSON-LD: FAQPage (schema-backfill for existing visible FAQ section) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Isn't the shipping market already too hot after the rate surge?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Short term, rates and sentiment are high -- those are late-cycle signals. What matters is the structural supply-demand balance: the fleet is ageing out, scrapping is at a 20-year low, and near-term yard slots are thin (peak of deliveries not until 2027). Temporary rate spikes like the Hormuz jump are not something to trade -- the thesis is the scarcity beyond the headline day."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Doesn't the record orderbook contradict the scarcity thesis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The VLCC orderbook jumped from ~1% to 26-30% of the fleet in 15 months, so mid-term a lot of new tonnage is coming. But near delivery years are thin (only ~7 VLCC in 2025, ~40 in 2026) because yard slots are booked into 2028. Near to medium term it stays tight; long term, record contracting is the seed of the next downturn."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is TCE and why is it the most important metric?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "TCE (Time Charter Equivalent) is the daily rate of a voyage after voyage costs (port, bunkers). For tankers, TCE determines cashflow almost directly, and with it the variable dividend. Higher TCE means more distribution; lower TCE means less."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is the Strait of Hormuz relevant for shipping investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Hormuz is the tightest chokepoint for oil transport. When disrupted, tankers have to reroute, lengthening ton-miles and sending rates and war-risk premiums higher. This is an accelerant of the scarcity thesis, not its core -- the fleet stays old even without a Hormuz disruption."
+      }
+    }
+  ]
+}
+</script>
+
     <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 </head>

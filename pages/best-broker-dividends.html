@@ -108,6 +108,48 @@
 }
 </script>
 
+<!-- JSON-LD: FAQPage (batch AEO/GEO carry-forward) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the best broker for dividend investors in 2026?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Interactive Brokers (IBKR) is the strongest all-rounder for international dividend investors in 2026 thanks to access to 150+ markets, very low FX conversion fees (~0.002%), and treaty-rate withholding tax handled at source. Charles Schwab suits US-based income investors, while Trading 212 works well for simple EU/UK dividend portfolios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does the FX conversion fee matter more than commissions for dividend investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dividend investors hold for years and receive recurring payouts in foreign currencies. An FX spread of 0.5% or more on every conversion quietly erodes yield year after year, while a one-off trading commission is paid only once. Over a long-term income portfolio, FX drag compounds into a far bigger cost than commissions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does withholding tax work on US dividends for international investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The standard US withholding tax rate is 30%, reduced to 15% for most treaty countries once a valid W-8BEN form is filed with the broker. A broker that applies the treaty rate at source saves investors the slow refund-claim process; without the form, investors overpay and must reclaim the difference manually."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do fractional shares matter for dividend reinvestment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Fractional shares and DRIP support let investors reinvest the exact dividend amount received instead of waiting to accumulate a full share, which compounds returns more efficiently over time — especially on higher-priced stocks."
+      }
+    }
+  ]
+}
+</script>
+
 <style>
   .info-box {
     background: rgba(212,175,55,0.06);
@@ -429,6 +471,16 @@
             </ul>
             <div class="info-box">
                 <strong>Bottom line:</strong> Optimise the boring stuff — withholding-tax forms and FX fees — before chasing the last 0.2% of headline commission. On a long-term dividend portfolio, those two factors compound into far more than trading costs.
+            </div>
+
+            <div class="related-articles" style="margin-bottom:24px;">
+                <h3>Frequently asked questions</h3>
+                <div style="display:flex;flex-direction:column;gap:14px;">
+                  <div><strong style="color:var(--gold-primary);">What is the best broker for dividend investors in 2026?</strong><p style="margin:6px 0 0;color:var(--text-secondary);">Interactive Brokers (IBKR) is the strongest all-rounder for international dividend investors thanks to access to 150+ markets, very low FX conversion fees (~0.002%), and treaty-rate withholding tax handled at source. Charles Schwab suits US-based income investors, while Trading 212 works well for simple EU/UK dividend portfolios.</p></div>
+                  <div><strong style="color:var(--gold-primary);">Why does the FX conversion fee matter more than commissions?</strong><p style="margin:6px 0 0;color:var(--text-secondary);">Dividend investors hold for years and receive recurring foreign-currency payouts. An FX spread of 0.5%+ on every conversion quietly erodes yield year after year — over a long-term portfolio that compounds into a far bigger cost than a one-off trading commission.</p></div>
+                  <div><strong style="color:var(--gold-primary);">How does withholding tax work on US dividends?</strong><p style="margin:6px 0 0;color:var(--text-secondary);">The standard US withholding rate is 30%, reduced to 15% for most treaty countries once a valid W-8BEN is filed. A broker that applies the treaty rate at source saves the slow refund-claim process.</p></div>
+                  <div><strong style="color:var(--gold-primary);">Do fractional shares matter for dividend reinvestment?</strong><p style="margin:6px 0 0;color:var(--text-secondary);">Yes — fractional shares and DRIP let you reinvest the exact dividend amount instead of waiting to accumulate a full share, compounding returns more efficiently, especially on higher-priced stocks.</p></div>
+                </div>
             </div>
 
             <div class="related-articles">

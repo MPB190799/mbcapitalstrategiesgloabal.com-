@@ -144,6 +144,48 @@
 }
 </script>
 
+<!-- JSON-LD: FAQPage (schema-backfill for existing visible FAQ section) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a good TCE rate for a tanker stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A good TCE depends on the vessel type and the company's break-even rate. For a product tanker operator like TORM, a fleet-average TCE above $25,000/day generates strong free cash flow given a break-even near $14,000-$16,000/day. For VLCCs (Frontline, CMB.Tech), $40,000+/day is the threshold where dividends become substantial. The metric that matters is the spread between TCE and break-even, not the absolute number."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often do shipping companies report TCE rates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most listed shipping companies report fleet-average TCE quarterly in earnings releases, some also giving guidance for the upcoming quarter. FLEX LNG, for example, reports near-100% fleet utilization at contracted rates visible 12-24 months in advance."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a higher TCE always better for investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Generally yes, but context matters. An extremely high TCE in the spot market may be unsustainable if it reflects temporary supply disruptions. The best risk-adjusted shipping investments mix time-charter visibility with spot exposure, not pure spot plays that can collapse 60% in a single quarter."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can TCE rates be negative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In theory yes, though it is rare for commercial fleets. TCE turns negative when voyage expenses (especially bunker fuel on long voyages with low freight rates) exceed gross revenue -- this occasionally happened in dry bulk during severe troughs (2015-2016). More commonly companies lay up vessels rather than operate at negative TCE."
+      }
+    }
+  ]
+}
+</script>
+
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="stylesheet" href="/fonts/fonts.css">
 </head>
