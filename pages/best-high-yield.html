@@ -195,11 +195,15 @@
     </section>
 
     <!-- AdSense: After hero, before content — DISABLED 2026-06-20 web-design-agent CRO-fix:
-         EN AdSense unapproved (re-application pending ~25.06.2026). Active adsbygoogle.js script
-         triggers Google Funding Choices CMP consent wall for EU visitors even with no approved ads.
-         This creates a consent barrier on the highest-impression EN page (948 Impr / pos12 / 0 Clicks).
-         Disable until EN AdSense approval is confirmed. Same fix applied to index.html on 2026-06-19.
-         Re-enable: uncomment BOTH adsbygoogle.js and <ins> blocks together after approval confirmed.
+         CORRECTED 2026-07-10 (monetization-agent): original "unapproved" reason is STALE — EN
+         AdSense was re-approved 2026-06-24, verified live in blog/ 2026-07-04 (seo-agent batch285).
+         Kept disabled here as a deliberate Tier-A CRO decision (monetization-playbook §1) — this
+         page has an above-the-fold Winner-Box (InvestingPro CTA, moneti-008) on the highest-impression
+         EN page (948 Impr / pos12), and Google's CMP consent-wall fires on any page loading
+         adsbygoogle.js regardless of approval status, adding friction exactly where affiliate-CRO
+         is the active priority. Do NOT re-enable on "approval confirmed" alone — that condition is
+         now met but is no longer the blocking reason.
+         Re-enable: only via monetization-agent Tier-A ad-density review (uncomment BOTH adsbygoogle.js and <ins> blocks together).
          Also: same slot ID 3778191657 was used 3× on this page (AdSense policy violation). Use
          distinct slot IDs per unit when re-enabling. -->
     <!-- <div style="max-width:960px;margin:20px auto;text-align:center;padding:0 20px;">
@@ -221,7 +225,7 @@
 
     <section class="page-content">
         <div class="container">
-<!-- AdSense: intro — DISABLED 2026-06-20 web-design-agent (EN unapproved, CMP-wall CRO-kill, same-slot-ID violation — see comment above). -->
+<!-- AdSense: intro — DISABLED 2026-06-20 web-design-agent (CRO-priority hold, not pending-approval — corrected 2026-07-10, see comment above). -->
 
             <!-- ================= ANSWER-FIRST BLOCK (AEO/AI Overview citability) ================= -->
             <div style="background:rgba(212,175,55,0.08);border-left:4px solid #D4AF37;border-radius:6px;padding:18px 22px;margin:0 0 28px;font-size:0.97rem;line-height:1.65;">
@@ -891,7 +895,7 @@
     </div>
 </section>
 
-<!-- AdSense: pre-footer — DISABLED 2026-06-20 web-design-agent (EN unapproved, CMP-wall CRO-kill — see comment above). -->
+<!-- AdSense: pre-footer — DISABLED 2026-06-20 web-design-agent (CRO-priority hold, not pending-approval — corrected 2026-07-10, see comment above). -->
 
     
 <footer class="footer">
