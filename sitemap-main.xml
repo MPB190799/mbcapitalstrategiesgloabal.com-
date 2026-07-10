@@ -45,21 +45,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/about.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/ueber-marco-bozem/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/ueber-marco-bozem"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/blog.html</loc><lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/blog.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/calculators.html</loc><lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/calculators.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/rechner/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/rechner"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/copper-supercycle.html</loc><lastmod>2026-06-02</lastmod>
@@ -94,7 +94,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/dividend-strategy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/dividendenstrategie/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/dividendenstrategie"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/energy.html</loc><lastmod>2026-06-02</lastmod>
@@ -114,7 +114,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/glossary.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/glossar/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/glossar"/>
   </url>
   <!-- Glossary Standalone Pages -->
   <url>
@@ -167,7 +167,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/mining.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/mining-aktien/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/mining-aktien"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/pipelines.html</loc><lastmod>2026-06-02</lastmod>
@@ -181,7 +181,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/podcast.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/podcast/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/podcast"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/portfolio.html</loc><lastmod>2026-06-02</lastmod>
@@ -202,14 +202,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/shipping.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/shipping-aktien/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/shipping-aktien"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/strategy.html</loc><lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/strategy.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/depot-strategie/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/depot-strategie"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/supercycles.html</loc><lastmod>2026-06-02</lastmod>
@@ -230,7 +230,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/upstream.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/upstream-aktien/index.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/upstream-aktien"/>
   </url>
   <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/uranium-supercycle.html</loc><lastmod>2026-06-02</lastmod>
@@ -294,8 +294,5 @@
   <url><loc>https://mbcapitalstrategiesglobal.com/pages/reit-investing.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mbcapitalstrategiesglobal.com/pages/pharma-investing.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://mbcapitalstrategiesglobal.com/pages/defensive-investing.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://mbcapitalstrategiesglobal.com/pages/water-etfs.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://mbcapitalstrategiesglobal.com/pages/reit-etfs.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://mbcapitalstrategiesglobal.com/pages/pharma-etfs.html</loc><lastmod>2026-06-26</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://mbcapitalstrategiesglobal.com/inflation/</loc><lastmod>2026-07-05</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
