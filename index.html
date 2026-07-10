@@ -433,6 +433,14 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
     
   </nav>
   <div class="header-actions">
+    <!-- CRO/consistency-fix 2026-07-10 web-design-agent: .lang-flag was fully styled in CSS
+         (incl. 44px mobile touch-target) but the link markup was never added to this header --
+         DE has a working "EN" language-switch pill in its header-actions, EN had none, so
+         visitors on the EN homepage had no quick way back to the DE site (only a buried footer
+         "Deutsch" link). Adding the reciprocal pill closes the DE/EN header-parity gap. Plain
+         reciprocal language-switcher (hreflang already links both sites both ways) -- not the
+         old DE->EN traffic-funnel pattern retired 15.06.2026 (feedback_no-en-crosslink-for-adsense). -->
+    <a href="https://mbcapitalstrategies.com/" rel="noopener" class="lang-flag" title="Deutsche Version">DE</a>
     <button class="theme-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
