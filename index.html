@@ -34,7 +34,13 @@
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direct preload — eliminates 1 network round-trip (CSS→woff2) in critical path (~100-200ms) -->
 <!-- Brand parity fix 2026-06-15 web-design-agent: EN site defined --serif:"Cormorant Garamond" in CSS but never loaded the font — all 20+ serif-class elements (insight-title, .display, .lede, .asset-name, FAQ, footer-brand, compass-cardinals) were falling back to Georgia. Added Cormorant to combined bundle; kept Outfit as LCP font (preloaded separately). Single combined Google Fonts request = no extra DNS round-trip vs previous. -->
 <!-- LCP-Fix: Compass backdrop image — early fetch prevents late discovery delay -->
-<link rel="preload" as="image" href="assets/compass-vintage.webp" type="image/webp" fetchpriority="high">
+<!-- LCP-Fix 2026-07-10 web-design-agent: preload had no imagesrcset/imagesizes, so on mobile
+     the browser preloaded the full 1024px compass-vintage.webp (90KB) while the <picture>
+     element below actually renders compass-vintage-512.webp (36KB) at that viewport — the
+     preload fetched the WRONG file, wasting bandwidth+time on the mobile critical path and
+     forcing a second fetch for the real LCP image. Added imagesrcset/imagesizes mirroring the
+     <picture> breakpoints so the preload always matches what mobile/tablet actually renders. -->
+<link rel="preload" as="image" href="assets/compass-vintage.webp" imagesrcset="assets/compass-vintage-512.webp 512w, assets/compass-vintage-768.webp 768w, assets/compass-vintage.webp 1024w" imagesizes="(max-width: 768px) 512px, (max-width: 1200px) 768px, 1024px" type="image/webp" fetchpriority="high">
 <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections start at opacity:0 and only
      become visible via JS (IntersectionObserver). If JS is blocked/slow/fails, these sections stay
      permanently invisible (content loss). Noscript fallback forces full visibility without JS —
