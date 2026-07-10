@@ -30,20 +30,20 @@ jobs:
           curl -s -X POST "https://api.indexnow.org/IndexNow" \
             -H "Content-Type: application/json" \
             -d '{
-              "host": "mbcapitalstrategiesgloabal.com",
+              "host": "mbcapitalstrategiesglobal.com",
               "key": "9281296539de44729f00285e02a89b85",
-              "keyLocation": "https://mbcapitalstrategiesgloabal.com/9281296539de44729f00285e02a89b85.txt",
+              "keyLocation": "https://mbcapitalstrategiesglobal.com/9281296539de44729f00285e02a89b85.txt",
               "urlList": ${{ steps.urls.outputs.url_json }}
             }' -o /dev/null -w "IndexNow: HTTP %{http_code}\n"
 
       - name: Ping Google Sitemap
         run: |
-          curl -s "https://www.google.com/ping?sitemap=https://mbcapitalstrategiesgloabal.com/sitemap.xml" \
+          curl -s "https://www.google.com/ping?sitemap=https://mbcapitalstrategiesglobal.com/sitemap.xml" \
             -o /dev/null -w "Google ping: HTTP %{http_code}\n"
 
       - name: Ping Bing Sitemap
         run: |
-          curl -s "https://www.bing.com/ping?sitemap=https://mbcapitalstrategiesgloabal.com/sitemap.xml" \
+          curl -s "https://www.bing.com/ping?sitemap=https://mbcapitalstrategiesglobal.com/sitemap.xml" \
             -o /dev/null -w "Bing ping: HTTP %{http_code}\n"
 
       - name: Summary

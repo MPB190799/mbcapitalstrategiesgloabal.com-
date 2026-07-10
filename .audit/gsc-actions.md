@@ -4,9 +4,9 @@ Generated: 2026-04-16
 Perform these steps AFTER waiting 3 days for Google to re-crawl the pushed changes.
 
 ## Step 1: Submit Fresh Sitemap
-1. Open Google Search Console for mbcapitalstrategiesgloabal.com
+1. Open Google Search Console for mbcapitalstrategiesglobal.com
 2. Go to Sitemaps
-3. Submit: https://mbcapitalstrategiesgloabal.com/sitemap.xml
+3. Submit: https://mbcapitalstrategiesglobal.com/sitemap.xml
 
 ## Step 2: Request Indexing for Priority Pages
 URL-Inspect each of these and click "Request Indexing":
@@ -38,8 +38,8 @@ URL-Inspect each of these and click "Request Indexing":
 Wait until ALL of these are true:
 - At least 14 days since rejection (earliest: 2026-04-30)
 - At least 3 days since last push
-- site:mbcapitalstrategiesgloabal.com shows 80+ indexed pages
+- site:mbcapitalstrategiesglobal.com shows 80+ indexed pages
 - "Not indexed" count has decreased from 43
 - No manual actions in GSC
 
-Then go to AdSense > Sites > mbcapitalstrategiesgloabal.com > Request review
+Then go to AdSense > Sites > mbcapitalstrategiesglobal.com > Request review

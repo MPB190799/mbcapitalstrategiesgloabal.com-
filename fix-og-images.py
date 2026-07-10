@@ -13,27 +13,27 @@ MAPPING = [
       "frontline", "torm", "scorpio", "golar", "flex-lng", "cool-company", "cmb",
       "golden-ocean", "star-bulk", "mpc-container", "avance", "bw-lpg", "hidden-champion",
       "panoro", "six-shipping", "best-tanker", "best-lng"],
-     "https://mbcapitalstrategiesgloabal.com/assets/og-shipping.jpg"),
+     "https://mbcapitalstrategiesglobal.com/assets/og-shipping.jpg"),
     # Mining / Gold / Copper / Coal
     (["mining", "gold", "copper", "coal", "barrick", "newmont", "bhp", "rio-tinto",
       "anglogold", "b2gold", "fresnillo", "jiangxi", "central-asia", "thungela", "whitehaven",
       "exxaro", "yancoal", "suncoke", "south32", "valterra", "kazatomprom", "angloamerican",
       "gerdau", "resources", "supercycle", "copper-supercycle", "hard-asset"],
-     "https://mbcapitalstrategiesgloabal.com/assets/og-mining.jpg"),
+     "https://mbcapitalstrategiesglobal.com/assets/og-mining.jpg"),
     # Energy / Upstream / Oil & Gas
     (["energy", "upstream", "petrobras", "repsol", "equinor", "aker-bp", "coterra",
       "devon", "chevron", "conocophillips", "apa-", "ecopetrol", "omv", "cardinal",
       "dno", "energean", "harbour", "inplay", "petrotal", "total-gabon", "woodside",
       "var-energi", "oil", "gas", "pipeline"],
-     "https://mbcapitalstrategiesgloabal.com/assets/og-energy.jpg"),
+     "https://mbcapitalstrategiesglobal.com/assets/og-energy.jpg"),
     # Dividends / Yield / BDC / Finance / Tools
     (["dividend", "yield", "calculator", "bdc", "freedom", "snowball", "reinvest",
       "cashflow", "debitum", "weekly", "recap", "broker", "toolbox", "strategy",
       "newtek", "hercules", "drip", "quellensteuer", "tax", "pipelines"],
-     "https://mbcapitalstrategiesgloabal.com/assets/og-dividenden.jpg"),
+     "https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg"),
 ]
 
-DEFAULT_OG = "https://mbcapitalstrategiesgloabal.com/assets/og-default.jpg"
+DEFAULT_OG = "https://mbcapitalstrategiesglobal.com/assets/og-default.jpg"
 PATTERN = re.compile(r'(<meta\s+property="og:image"\s+content=")[^"]*(")', re.IGNORECASE)
 TWITTER_PATTERN = re.compile(r'(<meta\s+name="twitter:image"\s+content=")[^"]*(")', re.IGNORECASE)
 

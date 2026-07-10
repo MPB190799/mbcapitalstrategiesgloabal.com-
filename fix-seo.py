@@ -9,7 +9,7 @@ import re
 import glob
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-EN_DOMAIN = "https://mbcapitalstrategiesgloabal.com"
+EN_DOMAIN = "https://mbcapitalstrategiesglobal.com"
 DE_DOMAIN = "https://mbcapitalstrategies.com"
 
 

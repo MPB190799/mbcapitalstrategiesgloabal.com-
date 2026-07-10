@@ -20,7 +20,7 @@ jobs:
       - name: Find changed HTML files
         id: changed
         run: |
-          DOMAIN="https://mbcapitalstrategiesgloabal.com"
+          DOMAIN="https://mbcapitalstrategiesglobal.com"
           CHANGED=$(git diff --name-only HEAD~1 HEAD -- '*.html' | grep -v 'google.*\.html')
 
           if [ -z "$CHANGED" ]; then
@@ -54,9 +54,9 @@ jobs:
           curl -s -X POST "https://api.indexnow.org/IndexNow" \
             -H "Content-Type: application/json" \
             -d '{
-              "host": "mbcapitalstrategiesgloabal.com",
+              "host": "mbcapitalstrategiesglobal.com",
               "key": "9281296539de44729f00285e02a89b85",
-              "keyLocation": "https://mbcapitalstrategiesgloabal.com/9281296539de44729f00285e02a89b85.txt",
+              "keyLocation": "https://mbcapitalstrategiesglobal.com/9281296539de44729f00285e02a89b85.txt",
               "urlList": ${{ steps.changed.outputs.url_json }}
             }' -o /dev/null -w "IndexNow: HTTP %{http_code}\n"
 

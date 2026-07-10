@@ -472,7 +472,7 @@ def process_file(filepath: Path, dry_run: bool = False) -> dict:
     # hreflang injection if was missing
     if not had_hreflang:
         rel_path = str(filepath.relative_to(EN_ROOT)).replace('\\', '/')
-        en_url = f'https://mbcapitalstrategiesgloabal.com/{rel_path}'
+        en_url = f'https://mbcapitalstrategiesglobal.com/{rel_path}'
         de_href = de_url or 'https://mbcapitalstrategies.com/'
         inject = (
             f'    <link rel="alternate" hreflang="de" href="{de_href}">\n'

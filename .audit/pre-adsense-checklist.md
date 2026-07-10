@@ -1,10 +1,10 @@
 # Pre-AdSense-Resubmit Checklist
 
 Generated: 2026-04-16
-Site: mbcapitalstrategiesgloabal.com
+Site: mbcapitalstrategiesglobal.com
 
 ## Pflichtseiten
-- [x] Imprint zeigt korrekte Domain (mbcapitalstrategiesgloabal.com) — 10 occurrences
+- [x] Imprint zeigt korrekte Domain (mbcapitalstrategiesglobal.com) — 10 occurrences
 - [x] Privacy enthalt AdSense + Analytics Disclosure — 3 AdSense, 16 GDPR mentions
 - [x] Privacy enthalt EN-Affiliate-Liste (InvestingPro, Debitum, Airalo, Wise) — KEIN Scalable/TR
 - [x] Disclaimer hat US/UK/EU jurisdiction notes — 2 jurisdiction blocks
@@ -32,7 +32,7 @@ Site: mbcapitalstrategiesgloabal.com
 - [ ] URL-Inspection auf 5 Top-Seiten ausgefuehrt -> "Indexierung anfordern"
 - [ ] Manuelle Massnahmen-Report ist clean
 - [ ] "Seiten -> Nicht indexiert" Anzahl ist GESUNKEN seit Audit-Start
-- [ ] site:mbcapitalstrategiesgloabal.com zeigt mindestens 80 indexierte Seiten
+- [ ] site:mbcapitalstrategiesglobal.com zeigt mindestens 80 indexierte Seiten
 
 ## AdSense Re-Apply
 - [ ] Mindestens 14 Tage seit letzter Ablehnung gewartet (Ablehnung: 2026-04-16 -> fruehestens 2026-04-30)

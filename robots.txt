@@ -52,12 +52,12 @@ User-agent: meta-externalagent
 Allow: /
 
 # --- LLM Discovery
-# https://mbcapitalstrategiesgloabal.com/llms.txt
+# https://mbcapitalstrategiesglobal.com/llms.txt
 
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-main.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-blog.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-tools.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-video.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-bestenlisten.xml
-Sitemap: https://mbcapitalstrategiesgloabal.com/sitemap-glossary.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-main.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-blog.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-tools.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-video.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-bestenlisten.xml
+Sitemap: https://mbcapitalstrategiesglobal.com/sitemap-glossary.xml
