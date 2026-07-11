@@ -1,0 +1,17 @@
+{
+  "file": "car-carrier-vs-tanker-valuation-2026.html",
+  "factcheck": "pass",
+  "content_qa": "pass",
+  "source": "output/marco-inbox/2026-07-11-valuation-HAUTO-nav-dcf.md (investment-banker-agent, R23-compliant subset only) + output/growth/substack-hauto-dsx-sa-rotation-2026-07-11.md (content-qa 12/14 pass) + output/radar/triggers/2026-07-11-DSX-GNK-tender-outcome-pending.md (earnings-radar-agent, 2 Tier-1 sources)",
+  "numbers_verified_by": "claude",
+  "checks": {
+    "hauto_fleet_size": "34 owned PCTC + 12 Aurora newbuilds, ammonia-ready, delivery through mid-2027 -- double-sourced in IB memo (Hoegh IR + Baird Maritime/MarineLink/gCaptain); re-verified via WebSearch 2026-07-11 (Aurora-class 9,100 CEU ammonia-ready confirmed)",
+    "hauto_dividend_yield": "~12% trailing, declining, coupled to quarterly earnings ~75-80% payout -- sourced FMP ratios-ttm in IB memo (0.1210), cross-checked via own calc; WebSearch 2026-07-11 confirms double-digit yield direction (various third-party trackers show 13.9-23.5% depending on measurement date/annualization method -- trailing 12% from the R23-compliant internal memo used as primary, conservative figure)",
+    "r23_compliance": "NO premium-only figures used: excluded Q1 2026 EPS $0.54, Q-EBITDA $144.5M, net income $103M, NOK fair-value range/DCF table/WACC derivation per R23 earnings-gating (CLAUDE.md R23). Only qualitative thesis (P/NAV premium vs. tanker NAV discount) used, clearly labeled as market interpretation/thesis, not as a concrete NOK price target.",
+    "diana_genco_tender": "Deadline 2026-07-10 17:00 NYC passed; no result filing as of 2026-07-11 morning -- verified via SEC EDGAR full-text search + GlobeNewswire (source doc) and independently re-confirmed via WebSearch 2026-07-11 (no newer filing found beyond 2026-07-08 Genco PR). Tender terms ($24.80 cash-only, $27.34 implied merger value, 28.4% tendered as of 2026-06-26) match both source doc and WebSearch cross-check. Outcome explicitly stated as pending, no speculation on result.",
+    "holdings_disclosure": "Hoegh Autoliners 42 shares/Scalable/~EUR 570 and Diana Shipping 267 shares/TR+Scalable/~EUR 484 -- sourced from held-positions.json SSOT via substack draft (content-qa corrected 2026-07-11, depot-membership verified). CapTrader not mentioned (R13 blackout respected).",
+    "tanker_discount_thesis": "CMB.Tech/TORM NAV-discount framing is qualitative market-structure interpretation from IB memo section 3, not a specific price/NAV number -- labeled as such in the article."
+  },
+  "reviewed_by": "blog-generator-subagent",
+  "reviewed_at": "2026-07-11"
+}
