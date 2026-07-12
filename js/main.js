@@ -324,11 +324,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === GA4 Affiliate Click Tracking ===
     if (typeof gtag === 'function') {
-        document.querySelectorAll('a[href*="everflow"], a[href*="impact.com"], a[href*="investingpro"]').forEach(function(link) {
+        document.querySelectorAll('a[rel*="sponsored"]').forEach(function(link) {
             link.addEventListener('click', function() {
                 gtag('event', 'affiliate_click', {
                     event_category: 'monetization',
-                    event_label: link.href
+                    event_label: link.hostname || link.href,
+                    page: window.location.pathname
                 });
             });
         });
