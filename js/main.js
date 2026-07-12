@@ -36,7 +36,7 @@
   if (!document.querySelector('link[href*="Outfit"]')) {
     var f = document.createElement('link');
     f.rel = 'stylesheet';
-    f.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap';
+    f.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=optional';
     document.head.appendChild(f);
   }
   if (!document.documentElement.hasAttribute('data-luxe-v3') && !document.getElementById('mbcs-premium-polish')) {
