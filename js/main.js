@@ -33,7 +33,11 @@
    Cormorant was never used in css/style.css body rules, causing ~200ms wasted font-parse per sub-page. */
 (function(){
   /* Font guard: ensure brand fonts Outfit + IBM Plex Mono are loaded if missing (sub-pages without preload in <head>) */
-  if (!document.querySelector('link[href*="Outfit"]')) {
+  /* BUG FIX 13.07.2026: guard missed self-hosted /fonts/fonts.css (DSGVO self-hosted-fonts policy) —
+     re-fetched Outfit AGAIN from Google's CDN on every self-hosted page, causing a second font-swap
+     reflow (CLS) on top of the self-hosted @font-face swap + an unauthorized Google-CDN request the
+     self-hosted policy exists to avoid. Mirror of the DE nav.js fix (same root-cause, same file role). */
+  if (!document.querySelector('link[href*="Outfit"]') && !document.querySelector('link[href*="fonts.css"]')) {
     var f = document.createElement('link');
     f.rel = 'stylesheet';
     f.href = 'https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=optional';
