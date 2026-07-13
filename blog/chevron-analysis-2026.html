@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
 <!-- CRO/Brand-Fix 2026-07-12 web-design-agent: page referenced font-family:'Outfit' in its inline critical CSS but never loaded the self-hosted fonts.css/woff2 -- Outfit silently fell back to system-ui, breaking brand typography parity with the other 135 EN blog pages that do load it (DE-parity LCP-fix batch). 2 lines, no CLS (font-display:swap already set in fonts.css), no layout change. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
-<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
   <meta name="robots" content="noindex, follow"><!-- R23: guidance/earnings detail -->
   
 <!-- Favicon / Brand Icons -->
