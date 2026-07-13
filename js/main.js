@@ -12,14 +12,23 @@
 ────────────────────────────────────────────────────────────────────────── */
 (function(){
   var _enConsent = localStorage.getItem('cookie_consent');
-  /* Guard: only inject once (dedup-safe, mirrors GA4 guard pattern) */
-  if (!document.querySelector('script[src*="clarity.ms/tag"]')) {
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window,document,'clarity','script','xka8c2u3sg');
-  }
+  /* CWV-Fix 2026-07-13 web-design-agent: defer actual Clarity tag fetch+execute to
+     window 'load' (was blocking main thread immediately on script start, competing
+     with LCP paint — see index.html inline handler for full rationale). Consent
+     queue stub stays instant/free, dedup guard unchanged. */
+  (function(c,l,a,r,i){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    function loadClarityTag(){
+      if (l.querySelector('script[src*="clarity.ms/tag"]')) return;
+      var t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }
+    if (document.readyState === 'complete') {
+      loadClarityTag();
+    } else {
+      window.addEventListener('load', loadClarityTag);
+    }
+  })(window,document,'clarity','script','xka8c2u3sg');
   /* Set consent state on load — blocks tracking before user decision */
   if (_enConsent === 'accepted') {
     window.clarity('consent', true);

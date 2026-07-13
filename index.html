@@ -1459,11 +1459,26 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 <script>(function(){
   var EN_CONSENT_KEY = 'cookie_consent';
   var _c = localStorage.getItem(EN_CONSENT_KEY);
-  /* ── Clarity Init (consent-gated) ── */
-  (function(c,l,a,r,i,t,y){
+  /* ── Clarity Init (consent-gated) ──
+     CWV-Fix 2026-07-13 web-design-agent: live Lighthouse mobile showed EN-Homepage
+     LCP 12.65s with Render Delay dominating the timeline (element downloads fast,
+     paints late) — bootup-time attributed several hundred ms of main-thread scripting
+     to clarity.js loading immediately on page start. The consent-queue stub (c[a]=...)
+     stays instant (pure function def, zero cost) — only the actual tag fetch+execute
+     is deferred to window 'load', after the critical render path. No change to
+     consent gating/project ID/dedup, only load timing. */
+  (function(c,l,a,r,i){
     c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
-    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    function loadClarityTag(){
+      if (l.querySelector('script[src*="clarity.ms/tag"]')) return;
+      var t=l.createElement(r);t.async=1;t.src='https://www.clarity.ms/tag/'+i;
+      var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }
+    if (document.readyState === 'complete') {
+      loadClarityTag();
+    } else {
+      window.addEventListener('load', loadClarityTag);
+    }
   })(window,document,'clarity','script','xka8c2u3sg');
   if (_c === 'accepted') {
     window.clarity('consent', true);
