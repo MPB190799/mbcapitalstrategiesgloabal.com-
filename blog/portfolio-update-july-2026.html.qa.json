@@ -1,0 +1,12 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-13T07:01:22.568Z",
+  "content_sha": "75b5f9b970cac935",
+  "hard_scan": "PASS",
+  "note": "Shipping Portfolio Update July 2026 EN: BlogPosting+VideoObject+FAQPage+BreadcrumbList schema, hreflang EN/DE, GA4 G-FSW7J7QYL8, disclaimer+affiliate disclosure 1st paragraph, no newsletter CTA (EN policy), no CapTrader, max 2 affiliate links, EN voice, R23-compliant (portfolio performance only), DE video embedded per policy"
+}
