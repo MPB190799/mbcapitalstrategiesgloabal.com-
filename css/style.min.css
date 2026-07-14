@@ -2785,3 +2785,6 @@ button:focus-visible,
   .footer-inner{grid-template-columns:1fr 1fr;gap:28px}
   .nl-box{padding:32px 20px}
 }
+
+[id^="google_anchor"],.gad-anchor-container{display:none!important}
+ins.adsbygoogle[data-anchor-shown="true"]{display:none!important}
