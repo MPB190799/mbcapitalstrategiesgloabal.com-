@@ -111,11 +111,13 @@
       "https://www.linkedin.com/company/mb-capital-strategies/",
       "https://www.youtube.com/@MBCapitalStrategiesGlobal",
       "https://www.wikidata.org/wiki/Q138571853",
-      "https://odysee.com/@MBCapitalStrategiesGlobal:5"
+      "https://odysee.com/@MBCapitalStrategiesGlobal:5",
+      "https://www.youtube.com/@mbcapitalstrategies"
     ]
   },
   "publisher": {
-    "@type": "Organization", "@id": "https://mbcapitalstrategiesglobal.com/#organization",
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategiesglobal.com/#organization",
     "name": "MB Capital Strategies Global",
     "logo": {
       "@type": "ImageObject",
@@ -150,9 +152,23 @@
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Calculators", "item": "https://mbcapitalstrategiesglobal.com/pages/calculators.html"},
-    {"@type": "ListItem", "position": 3, "name": "Inflation Calculator"}
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategiesglobal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Calculators",
+      "item": "https://mbcapitalstrategiesglobal.com/pages/calculators.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Inflation Calculator"
+    }
   ]
 }
 </script>
@@ -163,9 +179,18 @@
   "name": "How to Use the Inflation Calculator",
   "description": "Calculate how much purchasing power your money loses over time to inflation.",
   "step": [
-    {"@type": "HowToStep", "text": "Enter the starting amount."},
-    {"@type": "HowToStep", "text": "Enter the expected annual inflation rate."},
-    {"@type": "HowToStep", "text": "Enter the time horizon in years — the calculator shows the real (inflation-adjusted) value that remains."}
+    {
+      "@type": "HowToStep",
+      "text": "Enter the starting amount."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enter the expected annual inflation rate."
+    },
+    {
+      "@type": "HowToStep",
+      "text": "Enter the time horizon in years — the calculator shows the real (inflation-adjusted) value that remains."
+    }
   ]
 }
 </script>
@@ -174,16 +199,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What will my money be worth after inflation?",
-      "acceptedAnswer": {"@type": "Answer", "text": "It depends on the inflation rate and the number of years. At 2.5% inflation, cash loses roughly 22% of its purchasing power over 10 years and about 39% over 20 years. Enter your amount, an inflation rate and a time horizon in the calculator to see the real value that remains."}},
-    {"@type": "Question", "name": "How does the inflation calculator work?",
-      "acceptedAnswer": {"@type": "Answer", "text": "It discounts your nominal amount by a constant annual inflation rate: real value = amount / (1 + inflation)^years. The chart plots the eroding purchasing power year by year. It is a simplified model — real inflation varies over time."}},
-    {"@type": "Question", "name": "Does inflation make cash a risky asset?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Nominally, cash does not fall in value, but in real (purchasing-power) terms it shrinks every year inflation is positive. Over long horizons this quiet erosion can be substantial, which is why many investors hold productive hard assets and dividend-paying stocks instead of large idle cash balances."}},
-    {"@type": "Question", "name": "Is the hard-asset comparison a return promise?",
-      "acceptedAnswer": {"@type": "Answer", "text": "No. The optional hard-asset line uses only the return rate you enter yourself, clearly labelled as your own assumption. It is not a forecast, guarantee or promise of any return. Nothing on this page is investment advice."}},
-    {"@type": "Question", "name": "What is a realistic inflation rate to use?",
-      "acceptedAnswer": {"@type": "Answer", "text": "Central banks in the eurozone and the US target around 2%. Actual inflation has ranged well above that in recent years. A common approach is to model a base case near the long-run target and a higher scenario to stress-test how much purchasing power you could lose."}}
+    {
+      "@type": "Question",
+      "name": "What will my money be worth after inflation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on the inflation rate and the number of years. At 2.5% inflation, cash loses roughly 22% of its purchasing power over 10 years and about 39% over 20 years. Enter your amount, an inflation rate and a time horizon in the calculator to see the real value that remains."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the inflation calculator work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It discounts your nominal amount by a constant annual inflation rate: real value = amount / (1 + inflation)^years. The chart plots the eroding purchasing power year by year. It is a simplified model — real inflation varies over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does inflation make cash a risky asset?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nominally, cash does not fall in value, but in real (purchasing-power) terms it shrinks every year inflation is positive. Over long horizons this quiet erosion can be substantial, which is why many investors hold productive hard assets and dividend-paying stocks instead of large idle cash balances."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the hard-asset comparison a return promise?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The optional hard-asset line uses only the return rate you enter yourself, clearly labelled as your own assumption. It is not a forecast, guarantee or promise of any return. Nothing on this page is investment advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a realistic inflation rate to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Central banks in the eurozone and the US target around 2%. Actual inflation has ranged well above that in recent years. A common approach is to model a base case near the long-run target and a higher scenario to stress-test how much purchasing power you could lose."
+      }
+    }
   ]
 }
 </script>

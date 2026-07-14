@@ -107,7 +107,24 @@
   .related-articles a:hover { text-decoration: underline; }
 </style>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"MB Capital Strategies","url":"https://mbcapitalstrategiesglobal.com","logo":{"@type":"ImageObject","url":"https://mbcapitalstrategiesglobal.com/Logo.webp"},"sameAs":["https://www.youtube.com/@MBCapitalStrategiesGlobal","https://www.linkedin.com/company/mb-capital-strategies/","https://www.wikidata.org/wiki/Q138571853","https://mbcapitalstrategies.com"],"description":"Independent hard-asset dividend investing analysis: shipping, mining, energy, REITs. Run by Marco Bozem, investor with real portfolio."}
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "MB Capital Strategies",
+  "url": "https://mbcapitalstrategiesglobal.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategiesglobal.com/Logo.webp"
+  },
+  "sameAs": [
+    "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+    "https://www.linkedin.com/company/mb-capital-strategies/",
+    "https://www.wikidata.org/wiki/Q138571853",
+    "https://mbcapitalstrategies.com",
+    "https://www.youtube.com/@mbcapitalstrategies"
+  ],
+  "description": "Independent hard-asset dividend investing analysis: shipping, mining, energy, REITs. Run by Marco Bozem, investor with real portfolio."
+}
 </script>
 
 <script type="application/ld+json">
@@ -122,7 +139,8 @@
   "@context": "https://schema.org",
   "author": {
     "@type": "Person",
-    "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person", "name": "Marco Bozem",
+    "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person",
+    "name": "Marco Bozem",
     "jobTitle": "Independent Investor & Financial Analyst",
     "url": "https://mbcapitalstrategiesglobal.com/pages/about.html",
     "sameAs": [
@@ -130,7 +148,8 @@
       "https://www.linkedin.com/company/mb-capital-strategies/",
       "https://www.youtube.com/@MBCapitalStrategiesGlobal",
       "https://www.wikidata.org/wiki/Q138571853",
-      "https://odysee.com/@MBCapitalStrategiesGlobal:5"
+      "https://odysee.com/@MBCapitalStrategiesGlobal:5",
+      "https://www.youtube.com/@mbcapitalstrategies"
     ]
   },
   "publisher": {
@@ -153,11 +172,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "How is free cash flow calculated?", "acceptedAnswer": {"@type": "Answer", "text": "Free Cash Flow = Operating Cash Flow minus Capital Expenditures. Operating cash flow is cash generated from day-to-day business operations; capex is spending on property, equipment, mine development, or vessel acquisition needed to maintain and grow the business."}},
-    {"@type": "Question", "name": "Why does FCF matter more than earnings for dividend investors?", "acceptedAnswer": {"@type": "Answer", "text": "Earnings per share includes non-cash items like depreciation, impairment charges, and stock-based compensation — a company can report positive net income while burning cash. Dividends are paid in cash, not accounting earnings, so FCF shows the true source from which dividends are funded and cannot be faked the way EPS can."}},
-    {"@type": "Question", "name": "What is a good FCF yield for a dividend stock?", "acceptedAnswer": {"@type": "Answer", "text": "Below 4% is typical for high-growth or richly valued stocks; 4-8% is fair value for most dividend payers; 8-12% is attractive with strong cash generation relative to price; above 12% is either deeply undervalued or the market expects FCF to decline. In hard asset sectors, FCF yields above 15% are not uncommon during commodity upcycles."}},
-    {"@type": "Question", "name": "What FCF payout ratio is safe for a dividend?", "acceptedAnswer": {"@type": "Answer", "text": "An FCF payout ratio below 60% is ideal for dividend safety. Investors should also check whether FCF has been positive for 3+ consecutive years and whether the company has consistently generated more FCF than it distributes — if not, the dividend may be funded by debt, a red flag."}},
-    {"@type": "Question", "name": "How does normalised FCF differ from single-year FCF for cyclical stocks?", "acceptedAnswer": {"@type": "Answer", "text": "A cyclical company's single-year FCF can be misleading — a tanker company might show a 40% FCF yield at the cycle peak and negative FCF at the trough. Normalised (mid-cycle) FCF estimates what the business generates at average commodity prices or charter rates over a full cycle, giving a realistic, conservative floor for dividend sustainability analysis."}}
+    {
+      "@type": "Question",
+      "name": "How is free cash flow calculated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free Cash Flow = Operating Cash Flow minus Capital Expenditures. Operating cash flow is cash generated from day-to-day business operations; capex is spending on property, equipment, mine development, or vessel acquisition needed to maintain and grow the business."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does FCF matter more than earnings for dividend investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Earnings per share includes non-cash items like depreciation, impairment charges, and stock-based compensation — a company can report positive net income while burning cash. Dividends are paid in cash, not accounting earnings, so FCF shows the true source from which dividends are funded and cannot be faked the way EPS can."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good FCF yield for a dividend stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Below 4% is typical for high-growth or richly valued stocks; 4-8% is fair value for most dividend payers; 8-12% is attractive with strong cash generation relative to price; above 12% is either deeply undervalued or the market expects FCF to decline. In hard asset sectors, FCF yields above 15% are not uncommon during commodity upcycles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What FCF payout ratio is safe for a dividend?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An FCF payout ratio below 60% is ideal for dividend safety. Investors should also check whether FCF has been positive for 3+ consecutive years and whether the company has consistently generated more FCF than it distributes — if not, the dividend may be funded by debt, a red flag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does normalised FCF differ from single-year FCF for cyclical stocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A cyclical company's single-year FCF can be misleading — a tanker company might show a 40% FCF yield at the cycle peak and negative FCF at the trough. Normalised (mid-cycle) FCF estimates what the business generates at average commodity prices or charter rates over a full cycle, giving a realistic, conservative floor for dividend sustainability analysis."
+      }
+    }
   ]
 }
 </script>
