@@ -1,0 +1,29 @@
+{
+  "article": "aker-bp-q2-2026-earnings-beat.html",
+  "lang": "en",
+  "ticker": "AKRBP.OL / AKRBF",
+  "generated_by": "blog-generator-subagent",
+  "generated_at": "2026-07-16T00:00:00Z",
+  "content_qa": {
+    "pass": true,
+    "score": "12/14",
+    "notes": "EN adaptation of DE master (not literal translation), consistent tone, headline-only per R23, thesis clearly marked as opinion, disclosure present, author box present. No newsletter CTA on EN (site policy: newsletter is DE-only)."
+  },
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "source": "earnings-radar 2026-07-16 (3x verified) + own WebSearch (2x) on 2026-07-16, same ledger as DE master",
+  "verification": [
+    {"claim": "Aker BP Q2 2026 EPS beat vs consensus", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8960354"]},
+    {"claim": "Reported July 15, 2026", "verdict": "VERIFIED", "sources": ["prnewswire.com/news-releases/aker-bp-second-quarter-2026-results-302825976.html", "stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html"]},
+    {"claim": "Dividend confirmed unchanged, policy min. 5% growth/year, 2026 +5% vs 2025", "verdict": "VERIFIED", "sources": ["tipranks.com/news/company-announcements/aker-bp-sets-second-quarter-2026-dividend-payout", "gurufocus.com/news/8959059"]},
+    {"claim": "Record operating cash flow", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8960354"]},
+    {"claim": "2026 production guidance raised and narrowed", "verdict": "VERIFIED", "sources": ["investing.com/news/transcripts/earnings-call-transcript-aker-bp-lifts-production-outlook-in-q2-2026-93CH-4792316", "gurufocus.com/news/8959059"]},
+    {"claim": "Major projects Yggdrasil, Valhall PWP-Fenris, Skarv Satellite on schedule", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/AKRBF/aker-bp-second-quarter-2026-ltfcte8u4mk3.html", "gurufocus.com/news/8960354"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "scripts/r23-guard.py --files",
+    "result": "0 VERSTOESSE"
+  },
+  "excluded_numbers_r23": ["EPS $1.15", "Consensus $0.9626", "Operating cash flow $3.1B (only mentioned qualitatively as record)", "Net profit $521M", "Production guidance 380,000-400,000 boe/d (only mentioned qualitatively as raised+narrowed)", "Dividend $0.6615/share (only policy % growth mentioned as guidance, no quarterly amount)"]
+}
