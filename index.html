@@ -412,15 +412,16 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 @media(pointer:coarse){#mb-cursor-glow{display:none}}
 /* Compass — mouse-reactive transform */
 .compass-backdrop.mb-live{transform:translate(-50%,-50%) perspective(1700px) rotateX(calc(var(--tilt,42deg) + var(--mouse-tilt-x,0deg))) rotateY(var(--mouse-rot-y,0deg)) rotate(calc(var(--scroll-rot,0deg) + var(--mouse-rot-z,0deg)))}
-/* Pulse rings inside compass */
-.compass-ring{position:absolute;top:50%;left:50%;width:55%;height:55%;border-radius:50%;border:1px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4s ease-in-out infinite;will-change:transform,opacity}
-.compass-ring:nth-child(2){animation-delay:1.35s}
-.compass-ring:nth-child(3){animation-delay:2.7s}
-@keyframes ringPulse{0%{opacity:.6;border-color:rgba(212,175,55,.32);transform:translate(-50%,-50%) scale(1)}60%{opacity:.04;border-color:rgba(212,175,55,.04);transform:translate(-50%,-50%) scale(1.85)}100%{opacity:.6;border-color:rgba(212,175,55,.32);transform:translate(-50%,-50%) scale(1)}}
-/* Cardinal hover → compass brightens */
-#hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.14)!important}
-/* Gold particles */
-.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent);animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
+/* Pulse rings — larger start + wider expansion (rings visually go beyond compass) */
+.compass-ring{position:absolute;top:50%;left:50%;width:62%;height:62%;border-radius:50%;border:1.5px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4.5s ease-in-out infinite;will-change:transform,opacity}
+.compass-ring:nth-child(2){animation-delay:1.5s}
+.compass-ring:nth-child(3){animation-delay:3s}
+@keyframes ringPulse{0%{opacity:.55;border-color:rgba(212,175,55,.35);transform:translate(-50%,-50%) scale(1)}65%{opacity:.03;border-color:rgba(212,175,55,.03);transform:translate(-50%,-50%) scale(2.2)}100%{opacity:.55;border-color:rgba(212,175,55,.35);transform:translate(-50%,-50%) scale(1)}}
+/* Cardinal hover → smooth glow transition */
+.compass-backdrop::before{transition:opacity .4s ease,transform .4s ease}
+#hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.16)!important}
+/* Gold particles — z-index:2 → above hero scrim (::before z-index:1), below content (z-index:6) */
+.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent);z-index:2;animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
 @keyframes hpFloat{0%{opacity:0;transform:translateY(0) scale(0)}8%{opacity:var(--hp-o,.5);transform:translateY(-12px) scale(1)}90%{opacity:calc(var(--hp-o,.5)*.25);transform:translateY(var(--hp-h,-110px)) scale(.4)}100%{opacity:0;transform:translateY(var(--hp-h,-120px)) scale(0)}}
 @media(prefers-reduced-motion:reduce){.hero-particle,.compass-ring{display:none!important}}
 /* CTA button shimmer */
