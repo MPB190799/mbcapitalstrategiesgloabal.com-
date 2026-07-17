@@ -404,6 +404,31 @@ input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px soli
 </style>
 <!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
+<!-- MB Interactive v1.0 — web-design-agent 2026-07-17 -->
+<style>
+/* Cursor glow */
+#mb-cursor-glow{position:fixed;pointer-events:none;z-index:2;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.11) 0%,transparent 65%);transform:translate(-50%,-50%);will-change:left,top;opacity:0;transition:opacity .6s;mix-blend-mode:screen}
+body.mb-cursor-active #mb-cursor-glow{opacity:1}
+@media(pointer:coarse){#mb-cursor-glow{display:none}}
+/* Compass — mouse-reactive transform */
+.compass-backdrop.mb-live{transform:translate(-50%,-50%) perspective(1700px) rotateX(calc(var(--tilt,42deg) + var(--mouse-tilt-x,0deg))) rotateY(var(--mouse-rot-y,0deg)) rotate(calc(var(--scroll-rot,0deg) + var(--mouse-rot-z,0deg)))}
+/* Pulse rings inside compass */
+.compass-ring{position:absolute;top:50%;left:50%;width:55%;height:55%;border-radius:50%;border:1px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4s ease-in-out infinite;will-change:transform,opacity}
+.compass-ring:nth-child(2){animation-delay:1.35s}
+.compass-ring:nth-child(3){animation-delay:2.7s}
+@keyframes ringPulse{0%{opacity:.6;border-color:rgba(212,175,55,.32);transform:translate(-50%,-50%) scale(1)}60%{opacity:.04;border-color:rgba(212,175,55,.04);transform:translate(-50%,-50%) scale(1.85)}100%{opacity:.6;border-color:rgba(212,175,55,.32);transform:translate(-50%,-50%) scale(1)}}
+/* Cardinal hover → compass brightens */
+#hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.14)!important}
+/* Gold particles */
+.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent);animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
+@keyframes hpFloat{0%{opacity:0;transform:translateY(0) scale(0)}8%{opacity:var(--hp-o,.5);transform:translateY(-12px) scale(1)}90%{opacity:calc(var(--hp-o,.5)*.25);transform:translateY(var(--hp-h,-110px)) scale(.4)}100%{opacity:0;transform:translateY(var(--hp-h,-120px)) scale(0)}}
+@media(prefers-reduced-motion:reduce){.hero-particle,.compass-ring{display:none!important}}
+/* CTA button shimmer */
+.btn::after{content:'';position:absolute;top:0;bottom:0;left:-110%;width:55%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.13),transparent);transform:skewX(-18deg);transition:left .52s cubic-bezier(.2,.6,.2,1);pointer-events:none;z-index:1}
+.btn:hover::after{left:160%}
+/* Magnetic card tilt */
+.asset,.pillar,.step{transition:transform .28s cubic-bezier(.2,.6,.2,1),background var(--t-fast),box-shadow var(--t-fast)}
+</style>
 </head>
 <body>
 
@@ -1448,6 +1473,85 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
     hb.addEventListener('click', () => {
       mob.classList.toggle('open');
       hb.setAttribute('aria-expanded', mob.classList.contains('open'));
+    });
+  }
+})();
+</script>
+<script>
+/* MB Interactive v1.0 — web-design-agent 2026-07-17 */
+(()=>{
+  const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const touch=matchMedia('(pointer:coarse)').matches;
+
+  /* 1 — Cursor glow */
+  if(!touch){
+    const g=document.createElement('div');
+    g.id='mb-cursor-glow';
+    document.body.prepend(g);
+    let gx=-999,gy=-999,rf=0;
+    document.addEventListener('mousemove',e=>{
+      gx=e.clientX;gy=e.clientY;
+      document.body.classList.add('mb-cursor-active');
+      if(!rf)rf=requestAnimationFrame(()=>{g.style.left=gx+'px';g.style.top=gy+'px';rf=0;});
+    },{passive:true});
+  }
+
+  /* 2 — Compass: mouse tracking + glow rings */
+  const cb=document.getElementById('compass-backdrop');
+  const hero=document.getElementById('hero');
+  if(cb&&hero&&!rm){
+    cb.classList.add('mb-live');
+    for(let i=0;i<3;i++){const r=document.createElement('div');r.className='compass-ring';cb.appendChild(r);}
+    if(!touch){
+      let crf=0;
+      hero.addEventListener('mousemove',e=>{
+        if(crf)return;
+        crf=requestAnimationFrame(()=>{
+          const r=hero.getBoundingClientRect();
+          const nx=(e.clientX-r.left)/r.width*2-1;
+          const ny=(e.clientY-r.top)/r.height*2-1;
+          cb.style.setProperty('--mouse-tilt-x',(-ny*5).toFixed(2)+'deg');
+          cb.style.setProperty('--mouse-rot-y',(nx*8).toFixed(2)+'deg');
+          cb.style.setProperty('--mouse-rot-z',(nx*5).toFixed(2)+'deg');
+          crf=0;
+        });
+      },{passive:true});
+      hero.addEventListener('mouseleave',()=>{
+        cb.style.setProperty('--mouse-tilt-x','0deg');
+        cb.style.setProperty('--mouse-rot-y','0deg');
+        cb.style.setProperty('--mouse-rot-z','0deg');
+      });
+    }
+    // Cardinal bearing (EN uses data-cardinal, not data-bearing — snap works if attribute present)
+    document.querySelectorAll('.compass-cardinals a[data-bearing]').forEach(a=>{
+      a.addEventListener('mouseenter',()=>{cb.style.setProperty('--mouse-rot-z',(+a.dataset.bearing*0.08).toFixed(2)+'deg');hero.classList.add('compass-cardinal-hover');});
+      a.addEventListener('mouseleave',()=>{cb.style.setProperty('--mouse-rot-z','0deg');hero.classList.remove('compass-cardinal-hover');});
+    });
+  }
+
+  /* 3 — Gold particles */
+  if(hero&&!rm){
+    [[3,14,72,10,0,.55],[2,28,58,8,1.5,.4],[4,48,82,12,.5,.45],[2,68,62,9,2,.4],
+     [3,84,76,11,.8,.5],[2,22,38,7.5,3,.35],[3,58,34,13,1,.4],[2,78,48,9.5,2.5,.45],
+     [3,38,66,8.5,.3,.5],[2,92,55,11,1.8,.45],[2,54,80,7,4,.35],[3,72,28,10.5,.6,.5]
+    ].forEach(([s,x,y,d,t,o])=>{
+      const p=document.createElement('div');
+      p.className='hero-particle';
+      p.style.cssText=`left:${x}%;top:${y}%;width:${s}px;height:${s}px;--hp-d:${d}s;--hp-t:${t}s;--hp-o:${o};--hp-h:-${Math.round(70+d*8)}px`;
+      hero.appendChild(p);
+    });
+  }
+
+  /* 4 — Magnetic 3D tilt on cards */
+  if(!rm&&!touch){
+    document.querySelectorAll('.asset,.pillar,.step').forEach(c=>{
+      c.addEventListener('mousemove',e=>{
+        const r=c.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        c.style.transform=`perspective(700px) rotateY(${(x*7).toFixed(2)}deg) rotateX(${(-y*5).toFixed(2)}deg) translateZ(2px)`;
+      },{passive:true});
+      c.addEventListener('mouseleave',()=>{c.style.transform='';});
     });
   }
 })();
