@@ -446,6 +446,16 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 /* Stat flash */
 .stat-flash{animation:statFlash .5s ease forwards}
 @keyframes statFlash{0%{color:var(--fg);text-shadow:none}40%{color:var(--accent-bright);text-shadow:0 0 28px rgba(212,175,55,.75)}100%{color:var(--fg);text-shadow:none}}
+/* FAQ gold accent when open */
+.faq-item[open]{border-left:2px solid var(--accent);padding-left:16px}
+.faq-item[open]>summary{color:var(--accent)}
+.faq-a{animation:faqIn .32s cubic-bezier(.16,1,.3,1)}
+@keyframes faqIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+/* Ticker hover */
+.ticker-row:hover{background:rgba(212,175,55,.06);box-shadow:inset 3px 0 0 var(--accent)}
+/* Asset grid stronger scale stagger */
+.assets-grid.reveal>*{transform:translateY(28px) scale(.94)!important}
+.assets-grid.reveal.is-visible>*{transform:none!important}
 </style>
 </head>
 <body>
