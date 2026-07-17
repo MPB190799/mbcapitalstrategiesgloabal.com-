@@ -503,6 +503,14 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
   </div>
 </header>
 
+<!-- CLS-Fix 2026-07-17 web-design-agent: Sale-Bar Self-Expiry + Header-top-Offset-Sync liefen
+     bisher als Scripte am Ende von <body>, also nach dem ersten Paint -- Live-CWV-Snapshot
+     (17.07., mobil) zeigt LCP 13.31s + Layout-Shift auf der EN-Startseite (gleicher Bug wie DE).
+     Beide Scripte direkt hinter </header> ausfuehren loest Bar-Sichtbarkeit + Header-Versatz auf,
+     bevor der Browser den ersten sichtbaren Frame malt. Keine Verhaltensaenderung, nur Timing. -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
+<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
+
 <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
   <div class="mob-label">Navigation</div>
   <a href="/">Home</a>
@@ -1714,13 +1722,9 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 })();
 </script>
 
-<!-- InvestingPro Sale Self-Expiry: shows .ip-sale in July window, hides .ip-evergreen -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
-<!-- CRO fix 2026-07-03 web-design-agent: .header is position:fixed;top:0 and overlapped the
-     sale bar (also top, in-flow) once it became visible — the sale bar's gold divider line ran
-     straight through the logo+nav text (verified live on desktop). Fix: header is offset down by
-     JS to the sale bar's actual rendered height while the bar is shown. -->
-<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
+<!-- InvestingPro Sale Self-Expiry + Header-Offset-Sync: moved 2026-07-17 web-design-agent to
+     directly after </header> (see CLS-fix comment there) -- ran here after first paint before,
+     causing a 0.28+ CLS jump (Lighthouse mobile, threshold 0.1), DE-parity fix. -->
 
 
 <!-- LCP-Fix 2026-07-10 web-design-agent: JSON-LD moved from <head> to end of <body> -- Schema.org does not require head placement, Google reads JSON-LD anywhere in DOM. Removes head-parse bytes from critical path (see LCP-fix-plan Massnahme 1, DE-parity fix). -->
