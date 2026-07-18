@@ -3,6 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity): the promo-bar self-expiry + header-offset
+     scripts read bar.offsetHeight while webfonts were still on their fallback, so the measured
+     header offset didn't match the final post-swap bar height (same root cause as the DE fix, see
+     DE index.html commit same day). Fix: resolve visibility + header offset in pure CSS via an
+     html.promo-active class set here (before any body content exists), see .ip-sale / .header CSS
+     rules near .header below. Old body-level scripts are dead code, kept as comments. -->
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.documentElement.classList.add('promo-active');}}catch(err){}})();</script>
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~42KB, after 4 JSON-LD blocks + inline style blocks -- preload scanner discovered font CSS only after parsing head-bloat, adding round-trips on mobile. Zero visual/layout change, DE-parity fix, verified against LCP-fix-plan Massnahme 1. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity, same root cause): the Cormorant Garamond
@@ -139,6 +146,16 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav-link:focus-visible,
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:0}
 
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
+/* CLS-Fix 2026-07-18 web-design-agent (DE-parity): promo bar visibility + header offset resolved
+   in CSS only (html.promo-active, set by the blocking head-script above) -- no JS offsetHeight
+   read, nothing races webfont loading, nothing changes after first paint. Heights measured live
+   via Playwright (desktop 1440px=47px, mobile ≤760px 2-line wrap=68px -- EN has no mobile
+   compaction classes like DE's .ip-sale-short, so it stays 2-line; that's a separate, non-CLS
+   above-the-fold candidate for a future run, not addressed here). */
+.ip-sale{display:none}
+html.promo-active .ip-sale{display:block}
+html.promo-active .header{top:47px}
+@media (max-width:760px){ html.promo-active .header{top:68px} }
 .header.is-scrolled{background:color-mix(in oklab,var(--bg) 82%,transparent);backdrop-filter:blur(18px) saturate(1.2);-webkit-backdrop-filter:blur(18px) saturate(1.2);border-bottom-color:var(--border)}
 .logo{display:flex;align-items:center;gap:14px}
 .logo-mark{width:clamp(40px,5.5vw,48px);height:clamp(40px,5.5vw,48px);display:grid;place-items:center;position:relative;flex-shrink:0}
@@ -468,7 +485,7 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 <a href="#main" class="skip-link">Skip to main content</a>
 
 <!-- InvestingPro Summer Sale Top Bar (default hidden, JS shows within July window) -->
-<div class="ip-sale" style="display:none;background:linear-gradient(90deg,rgba(10,20,5,0.98) 0%,rgba(15,20,8,1) 50%,rgba(10,20,5,0.98) 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f0f5;z-index:90;position:relative">
+<div class="ip-sale" style="background:linear-gradient(90deg,rgba(10,20,5,0.98) 0%,rgba(15,20,8,1) 50%,rgba(10,20,5,0.98) 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f0f5;z-index:90;position:relative">
   <strong style="color:#d4af37;white-space:nowrap">InvestingPro Summer Sale: 60% Off + 15% On Top</strong> <span style="white-space:nowrap">&nbsp;·&nbsp; July only &nbsp;</span>
   <a href="investingpro-summer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px;white-space:nowrap">Claim 60%+15% →</a>
   <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate link</span>
@@ -513,8 +530,9 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
      (17.07., mobil) zeigt LCP 13.31s + Layout-Shift auf der EN-Startseite (gleicher Bug wie DE).
      Beide Scripte direkt hinter </header> ausfuehren loest Bar-Sichtbarkeit + Header-Versatz auf,
      bevor der Browser den ersten sichtbaren Frame malt. Keine Verhaltensaenderung, nur Timing. -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.querySelectorAll('.ip-sale').forEach(function(x){x.style.display='';});document.querySelectorAll('.ip-evergreen').forEach(function(x){x.style.display='none';});var h=document.documentElement;if(h.scrollTop>0&&h.scrollTop<80)h.scrollTop=0;}}catch(err){}})();</script>
-<script>(function(){try{var bar=document.querySelector('.ip-sale'),hdr=document.querySelector('.header');if(!bar||!hdr)return;function syncHeaderOffset(){var h=(bar.style.display!=='none'&&bar.offsetHeight>0)?bar.offsetHeight:0;hdr.style.top=h+'px';}syncHeaderOffset();window.addEventListener('resize',syncHeaderOffset);window.addEventListener('orientationchange',syncHeaderOffset);}catch(err){}})();</script>
+<!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity): the promo-bar/header-offset scripts that used
+     to live here are superseded by the html.promo-active CSS class set in <head> above (see
+     .ip-sale / .header CSS comment). Pure-CSS resolution removes the webfont-timing race entirely. -->
 
 <nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
   <div class="mob-label">Navigation</div>
