@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<!-- r23-approved: marco -->
+<html lang="en">
+<head>
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0f1115">
+<link rel="preconnect" href="https://img.youtube.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://img.youtube.com">
+
+<style>
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+.nav-mobile{display:none}@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}.nav-mobile.open{display:flex;flex-direction:column;background:rgba(5,5,8,.97);padding:16px 20px;gap:10px}.nav-mobile a{color:#cfd6e6;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);display:block}.nav-mobile .mob-label{color:#d4af37;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:10px 0 4px}}
+.yt-lite{position:relative;width:100%;padding-bottom:56.25%;border-radius:12px;border:1px solid var(--gold);overflow:hidden;cursor:pointer;background:#000;margin:12px 0}
+.yt-lite img.yt-thumb{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.yt-lite .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,0.7);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.yt-lite .yt-play svg{width:28px;height:28px;fill:#fff}
+.yt-lite .yt-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:.8rem;padding:18px 14px 10px;font-family:inherit}
+</style>
+
+<!-- EN AdSense disabled until approval. Loader removed to prevent CMP/consent modal issue. -->
+
+<link rel="preload" as="style" href="/blog/styles.min.css?v=5" onload="this.onload=null;this.rel='stylesheet'">
+
+  <title>Copper 2035: 30% Supply Gap — The Supercycle No One Is Talking About</title>
+  <meta name="description" content="The IEA projects a 30% copper supply deficit by 2035. EVs need 3x more copper than combustion engines, AI data centres add a new demand wedge — while new mines take 17.9 years to build. Marco's analysis + 7 real copper positions with transparent P&L.">
+  <meta name="author" content="Marco Bozem">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html" />
+  <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html">
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/kupfer-2035-superzyklus-angebotslücke.html">
+  <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Copper 2035: 30% Supply Gap — The Supercycle No One Is Talking About">
+  <meta property="og:description" content="IEA warns: 30% of copper demand by 2035 is unmet by current project pipelines. Why mines need 17.9 years to respond and how Marco is positioned with 7 real holdings.">
+  <meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-mining.jpg">
+  <meta property="og:url" content="https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="MB Capital Strategies Global">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Copper 2035: 30% Supply Gap — The Supercycle No One Is Talking About">
+  <meta name="twitter:description" content="IEA warns: 30% copper deficit by 2035. Marco's analysis + 7 real copper holdings with transparent gains and losses.">
+  <meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-mining.jpg">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Copper 2035: 30% Supply Gap — The Supercycle No One Is Talking About",
+  "description": "IEA projects a 30% copper supply deficit by 2035. Analysis of the supply-demand gap, M&A consolidation, and Marco's 7 copper holdings with transparent P&L.",
+  "author": {
+    "@type": "Person",
+    "name": "Marco Bozem",
+    "url": "https://mbcapitalstrategiesglobal.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategiesglobal.com/#organization",
+    "name": "MB Capital Strategies Global",
+    "url": "https://mbcapitalstrategiesglobal.com",
+    "sameAs": [
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.youtube.com/@MBCapitalStrategies",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/"
+    ]
+  },
+  "datePublished": "2026-07-18",
+  "dateModified": "2026-07-18",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Copper",
+    "sameAs": "https://www.wikidata.org/wiki/Q753"
+  },
+  "keywords": "copper 2035, copper supply gap, copper supercycle, IEA copper deficit, copper stocks, BHP, Rio Tinto, Jiangxi Copper, mining stocks, hard assets, copper investing"
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Mining Stocks", "item": "https://mbcapitalstrategiesglobal.com/mining-stocks/"},
+    {"@type": "ListItem", "position": 3, "name": "Copper 2035: Supply Gap & Supercycle", "item": "https://mbcapitalstrategiesglobal.com/blog/copper-2035-supply-gap-supercycle.html"}
+  ]
+}
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Copper is Running Out — Why the $53 Billion Deal Proves It",
+  "description": "Copper 2035: IEA 30% supply gap, declining ore grades, 17.9-year mine lead times. Marco's portfolio of 7 copper-adjacent positions analysed transparently.",
+  "thumbnailUrl": "https://img.youtube.com/vi/wTA8lfZBICg/maxresdefault.jpg",
+  "uploadDate": "2026-07-17",
+  "embedUrl": "https://www.youtube.com/embed/wTA8lfZBICg",
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategiesglobal.com/#organization",
+    "name": "MB Capital Strategies Global",
+    "url": "https://mbcapitalstrategiesglobal.com"
+  }
+}
+</script>
+
+  <style>
+    .breadcrumbs { max-width: 900px; margin: 20px auto; font-size: 0.9em; color: #ccc; }
+    .breadcrumbs a { color: #d4af37; text-decoration: none; }
+    .cta-btn {
+      display: inline-block;
+      padding: 12px 18px;
+      margin: 12px 0;
+      background: #d4af37;
+      color: #000;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+    .cta-box {
+      background: #151821;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid rgba(212,175,55,.3);
+      margin: 30px 0;
+    }
+    .info-box {
+      margin: 20px 0;
+      padding: 14px;
+      border-left: 4px solid #d4af37;
+      background: #1a1f2b;
+      border-radius: 8px;
+    }
+    .risk-box {
+      margin: 20px 0;
+      padding: 14px;
+      border-left: 4px solid #ff6b6b;
+      background: #22151a;
+      border-radius: 8px;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px;
+      margin: 24px 0;
+    }
+    .stat-card {
+      background: #0d1117;
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+    .stat-card .stat-value {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #d4af37;
+      line-height: 1.1;
+    }
+    .stat-card .stat-label {
+      font-size: 0.78rem;
+      color: #9aa0b8;
+      margin-top: 4px;
+    }
+    .position-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.87rem; }
+    .position-table th { background: #0d1117; color: #d4af37; padding: 10px 12px; text-align: left; border-bottom: 1px solid rgba(212,175,55,0.3); }
+    .position-table td { padding: 9px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: #cfd6e6; }
+    .position-table tr:hover td { background: rgba(212,175,55,0.04); }
+    .pos-plus { color: #22c55e; font-weight: 700; }
+    .pos-minus { color: #ef4444; font-weight: 700; }
+    footer.footer { max-width: 900px; margin: 40px auto; text-align: center; padding-bottom: 40px; }
+    footer.footer a { color: #d4af37; }
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0;}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase;}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:0.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s;}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06);}
+  </style>
+
+<!-- GA4 EN -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+  gtag('config', 'G-FSW7J7QYL8');
+</script>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
+</head>
+
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies Global" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/portfolio-strategy/">Portfolio Strategy</a>
+      <a href="/hard-asset-guide/">Hard Asset Guide</a>
+      <div class="dropdown">
+        <button class="dropdown-btn" aria-haspopup="true" aria-label="Topics menu">Topics ▾</button>
+        <div class="dropdown-content">
+          <a href="/shipping-stocks/">🚢 Shipping Stocks</a>
+          <a href="/mining-stocks/">⛏️ Mining Stocks</a>
+          <a href="/upstream-stocks/">🛢️ Upstream / Oil &amp; Gas</a>
+          <a href="/commodity-supercycle/">🌋 Commodity Supercycle</a>
+        </div>
+      </div>
+      <a href="/blog/">Blog</a>
+      <a href="/toolbox.html">Toolbox</a>
+    </nav>
+  </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Home</a>
+    <a href="/portfolio-strategy/">Portfolio Strategy</a>
+    <div class="mob-label">Topics</div>
+    <a href="/shipping-stocks/">🚢 Shipping</a>
+    <a href="/mining-stocks/">⛏️ Mining</a>
+    <a href="/upstream-stocks/">🛢️ Upstream / Oil &amp; Gas</a>
+    <a href="/commodity-supercycle/">🌋 Commodity Supercycle</a>
+    <div class="mob-label">Content</div>
+    <a href="/blog/">📰 Blog</a>
+    <a href="/toolbox.html">🧰 Toolbox</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs">
+  <a href="/">Home</a> ›
+  <a href="/blog/">Blog</a> ›
+  <a href="/mining-stocks/">Mining</a> ›
+  <span>Copper 2035 — Supply Gap &amp; Supercycle</span>
+</nav>
+
+<section class="container">
+
+  <h1>Copper 2035: 30% Supply Gap — The Supercycle No One Is Talking About</h1>
+
+  <!-- AEO Direct-Answer Block -->
+  <div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 20px;">
+    <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">In short: What is the copper supply gap?</strong> The International Energy Agency (IEA) projects that mines currently operating or under construction will cover only about 70% of global copper demand in 2035 — leaving a ~30% shortfall (roughly 7.4 million tonnes, per S&amp;P Global). Drivers: EVs use about 3x more copper than combustion vehicles; power grids and AI data centres add structural demand. The gap cannot be closed quickly — the average lead time from discovery to first production is 17.9 years (S&amp;P Global, 2024). This is a quantity forecast, not a price target. Not investment advice.</p>
+  </div>
+
+  <!-- Cross-language link -->
+  <aside aria-label="Cross-language link" style="margin:18px 0 22px;padding:14px 20px;border:1px solid rgba(212,175,55,0.32);border-radius:10px;background:rgba(212,175,55,0.06);font-size:0.92rem;color:#cfd6e6"><strong style="color:#f5f6fa">Deutsche Version:</strong> <a href="https://mbcapitalstrategies.com/blog/kupfer-2035-superzyklus-angebotsl%C3%BCcke.html" style="color:#d4af37;text-decoration:none;border-bottom:1px solid rgba(212,175,55,.4)">Diese Analyse auf Deutsch lesen</a> &nbsp;·&nbsp; <a href="https://mbcapitalstrategies.com/" style="color:#d4af37">MB Capital Strategies (DE)</a></aside>
+
+  <p class="article-date" style="color:#7a8499;font-size:0.82rem;margin:4px 0 16px;">Published: July 18, 2026 | Author: Marco Bozem | Sources: IEA, S&amp;P Global, USGS, BHP Insights, Wood Mackenzie</p>
+
+  <p>
+    Thirty percent. That is how much of the copper the world needs by 2035 is simply not covered by today's mine pipeline — not built, not permitted, not even discovered. This is not a number from a bullish research note: it is the calculation of the <strong>International Energy Agency (IEA)</strong>, based on every mining project currently in the pipeline.
+  </p>
+
+  <p>
+    Money cannot solve the problem. Even if the copper price tripled tomorrow, a new mine would still take close to 18 years to reach first production. Demand and supply are diverging, and this article explains step by step why — along with how I have invested in this thesis through seven copper-adjacent holdings, with full transparency on gains and one honest loss.
+  </p>
+
+  <div class="info-box">
+    Not investment advice. Everything here is my personal opinion for information purposes only. Copper equities are cyclical and can fall sharply. Invest responsibly.
+  </div>
+
+  <!-- Key Metrics Grid -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">~30%</div>
+      <div class="stat-label">2035 demand unmet by current pipeline (IEA forecast)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">17.9 yrs</div>
+      <div class="stat-label">Avg. lead time discovery → production (S&amp;P Global)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">14 / 239</div>
+      <div class="stat-label">Major discoveries in the last decade (S&amp;P 2024)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">−40%</div>
+      <div class="stat-label">Ore grade decline since 1991 (BHP / S&amp;P Global)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">~45%</div>
+      <div class="stat-label">China's share of global refined copper 2024 (SMM/WoodMac)</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">$53bn</div>
+      <div class="stat-label">Anglo-Teck merger — combined enterprise value (Mining.com)</div>
+    </div>
+  </div>
+
+  <!-- YouTube Lite Embed -->
+  <h2>Video Analysis</h2>
+  <p>I recorded this analysis as a video — with live charts, my portfolio on Parqet and the full M&A timeline (German language, subtitles available):</p>
+
+  <div class="yt-lite" data-id="wTA8lfZBICg" data-title="Copper is Running Out — The $53bn Deal Proves It" role="button" tabindex="0" aria-label="Play video: Copper 2035 — Supply Gap &amp; Supercycle">
+    <img class="yt-thumb" src="https://img.youtube.com/vi/wTA8lfZBICg/hqdefault.jpg" alt="Copper 2035 Supercycle Video Thumbnail" width="480" height="360" loading="lazy" decoding="async">
+    <div class="yt-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+    <div class="yt-label">Copper is Running Out — The $53bn Deal Proves It | Marco Bozem</div>
+  </div>
+
+  <h2>1. Why Copper? The Demand Side</h2>
+
+  <p>
+    Copper is the metal that carries electricity. No other affordable material conducts as well. And the world we are moving into is a world built on electricity.
+  </p>
+
+  <p>
+    A conventional combustion vehicle contains roughly 23 kg of copper — wiring harnesses, motors, electronics. A battery electric vehicle? Around 80 kg. That is approximately three times as much copper per vehicle (source: Copper Development Association / International Copper Association via Incorrys; S&amp;P data). And the car is just one wedge.
+  </p>
+
+  <p>
+    Four demand drivers are pulling in the same direction simultaneously:
+  </p>
+
+  <ul>
+    <li><strong>Power grids:</strong> Every country serious about the energy transition must upgrade and expand its grid — and a grid means copper, by the tonne.</li>
+    <li><strong>Electric vehicles:</strong> Triple copper content per vehicle, growing global fleet.</li>
+    <li><strong>AI data centres:</strong> Three years ago, no copper demand model seriously accounted for data centres. Today this is its own growing wedge — power supply, cooling, cabling.</li>
+    <li><strong>Urbanisation / infrastructure:</strong> Asia continues to build out.</li>
+  </ul>
+
+  <p>
+    The result: major forecasters project roughly 2–2.5% annual demand growth through 2035 (BHP: 2.6% p.a.; Wood Mackenzie: ~2.2% p.a., +24% by 2035). That does not sound dramatic — but hold that number and compare it against supply in a moment.
+  </p>
+
+  <h2>2. The Supply Problem — Four Hard Reasons</h2>
+
+  <h3>Almost No New Discoveries</h3>
+  <p>
+    Since 1990, there have been 239 significant copper discoveries globally (threshold: at least 500,000 tonnes contained copper; S&amp;P Global Market Intelligence, Nov. 2024). Of those 239, only 14 came from the last decade. Over the past five years, the number of truly large new finds can be counted on one hand. The easy, near-surface deposits are already in production.
+  </p>
+
+  <h3>Declining Ore Grades</h3>
+  <p>
+    In the early 1990s the global average ore grade was around 1.5% copper. Today it sits at 0.6–0.7% — a decline of roughly 40% since 1991 (source: BHP Insights; Benchmark Mineral Intelligence via Investing News Network). This is not a recent trend; it is a 35-year structural shift. In practice: you now need to move almost twice as much rock to extract the same amount of copper. More energy, more cost, less metal.
+  </p>
+
+  <h3>17.9 Years Lead Time — The Real Problem</h3>
+  <p>
+    Say you discover a world-class deposit today. How long until the first kilogram of copper is sold? On average: 17.9 years — exploration, permitting, legal disputes, construction (source: S&amp;P Global Market Intelligence; mines with production start 2020–2023). For comparison, the lead time around 2005–2009 was approximately 12.7 years. The timeline is getting longer, not shorter.
+  </p>
+
+  <div class="info-box">
+    This is the core of the argument: even if copper prices surge tomorrow, supply cannot meaningfully respond before the mid-2030s at the earliest. Price does not fix a structural supply problem in the short or even medium term.
+  </div>
+
+  <h3>Geography and Concentration Risk</h3>
+  <p>
+    Copper comes from very few countries. Chile supplies roughly 23% of global mine production, the DRC has become number two at ~14–15%, Peru ~11%, China ~8%. The top five producers account for approximately 70% of world output (source: USGS Mineral Commodity Summaries 2025). A strike in Chile, a mine shutdown in the DRC — and a meaningful share of global supply wobbles.
+  </p>
+
+  <p>
+    One crucial distinction: <strong>China mines only ~8% of global copper, but refines roughly 45% of the world's refined copper production.</strong> In 2024, China processed 13.6 of a total 28 Mt of refined copper (source: Shanghai Metal Market; Wood Mackenzie). Mining geography and refining geography are two very different maps — both concentrated.
+  </p>
+
+  <h2>3. Supply vs. Demand — The Deficit</h2>
+
+  <p>
+    Demand growing at ~2% per year, supply growing at ~1% per year. Two percent against one percent sounds like small numbers. But when that gap compounds for ten to fifteen years, it becomes a massive physical shortfall.
+  </p>
+
+  <p>
+    This is exactly how the IEA reaches its figure: all mines operating or under construction today cover only around 70% of 2035 demand. The remaining ~30% is unmet (source: IEA 2025, confirmed via S&amp;P Global Commodity Insights). The tonnage gap is estimated at approximately 7.4 million tonnes by 2035 (S&amp;P Global) — more than Chile produces in an entire year.
+  </p>
+
+  <div class="info-box">
+    Important framing: this is a forecast based on the current project pipeline, not a measured fact. It does not mean supply will shrink by 30% — it means 30% of future demand is not yet covered by any project. Under more aggressive climate scenarios, the gap could widen to 40% (IEA).
+  </div>
+
+  <h2>4. M&A: The Giants Are Buying Instead of Building</h2>
+
+  <p>
+    The mining majors see the same gap. And because building from scratch takes almost two decades, they are doing the obvious: buying copper reserves through acquisitions. This explains a consolidation wave not seen for decades.
+  </p>
+
+  <ul>
+    <li><strong>BHP vs Anglo American (2024):</strong> BHP's third and final bid came in at ~$49.1 billion (£38.6bn). Anglo rejected it; BHP walked away in late May 2024 (source: Mining.com; Argus Media).</li>
+    <li><strong>Anglo American + Teck:</strong> Instead of a BHP deal, Anglo merged with Canadian copper producer Teck — combined enterprise value of ~$53 billion. The deal closed (source: Mining.com / North of 60 Mining News, Sept. 2025). Anglo holds 62.4%, Teck 37.6%.</li>
+    <li><strong>Glencore + Rio Tinto (Jan/Feb 2026):</strong> Merger talks reopened in January 2026 — would have created the world's largest miner (~$260bn combination). Talks collapsed on 5 February 2026. Third failed attempt after 2014 and 2024 (source: CNBC; S&amp;P Global Market Intelligence).</li>
+  </ul>
+
+  <div class="info-box">
+    The structural signal is clear: the pressure to consolidate is real and every major wants access to scarce copper. Yet the mega-deals keep collapsing. Only the Anglo-Teck merger went through. When companies sitting on billions of cash prefer to acquire rather than build, it tells you everything about how hard it has become to bring new copper supply on stream.
+  </div>
+
+  <h2>5. My Copper Portfolio — Skin in the Game</h2>
+
+  <p>
+    Here is the honest part. Seven copper-adjacent positions from my portfolio at Trade Republic and Scalable Capital, tracked via Parqet. Not a recommendation — a transparent view of how I have put this thesis into practice, with winners and with one clear loser.
+  </p>
+
+  <table class="position-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Shares</th>
+        <th>Avg. Cost</th>
+        <th>Cost Value</th>
+        <th>Current Value</th>
+        <th>P&amp;L %</th>
+        <th>Dividends (net)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Jiangxi Copper</strong></td>
+        <td>Pure-play copper (China)</td>
+        <td>40</td>
+        <td>€1.74</td>
+        <td>€69.41</td>
+        <td>€144.00</td>
+        <td class="pos-plus">+104.6%</td>
+        <td>€3.88</td>
+      </tr>
+      <tr>
+        <td><strong>BHP Group</strong></td>
+        <td>Diversified, copper (Escondida)</td>
+        <td>18.19*</td>
+        <td>€22.91</td>
+        <td>€416.74</td>
+        <td>€656.18</td>
+        <td class="pos-plus">+56.5%</td>
+        <td>€39.46</td>
+      </tr>
+      <tr>
+        <td><strong>Rio Tinto</strong></td>
+        <td>Diversified, copper (Oyu Tolgoi)</td>
+        <td>11</td>
+        <td>€61.57</td>
+        <td>€677.25</td>
+        <td>€997.30</td>
+        <td class="pos-plus">+46.5%</td>
+        <td>€59.87</td>
+      </tr>
+      <tr>
+        <td><strong>Anglo American</strong></td>
+        <td>Diversified → Anglo-Teck merger</td>
+        <td>7.52</td>
+        <td>€29.42</td>
+        <td>€221.31</td>
+        <td>€313.33</td>
+        <td class="pos-plus">+41.1%</td>
+        <td>€1.96 (div. cut)</td>
+      </tr>
+      <tr>
+        <td><strong>Glencore</strong></td>
+        <td>Copper + Trading</td>
+        <td>93</td>
+        <td>€5.25</td>
+        <td>€488.42</td>
+        <td>€564.51</td>
+        <td class="pos-plus">+10.3%</td>
+        <td>€53.10</td>
+      </tr>
+      <tr>
+        <td><strong>Vale</strong></td>
+        <td>Iron ore-dominated, growing copper division</td>
+        <td>107</td>
+        <td>€9.17</td>
+        <td>€981.68</td>
+        <td>€1,330.01</td>
+        <td class="pos-plus">+34.2%</td>
+        <td>€101.81</td>
+      </tr>
+      <tr>
+        <td><strong>Central Asia Metals</strong></td>
+        <td>Copper/Zinc, Kazakhstan</td>
+        <td>499</td>
+        <td>€1.81</td>
+        <td>€905.28</td>
+        <td>€813.37</td>
+        <td class="pos-minus">−10.6%</td>
+        <td>€36.68</td>
+      </tr>
+      <tr style="font-weight:700;background:rgba(212,175,55,0.07);">
+        <td colspan="4"><strong>Cluster total</strong></td>
+        <td><strong>€3,760.09</strong></td>
+        <td><strong>€4,818.70</strong></td>
+        <td class="pos-plus"><strong>+26.7%</strong></td>
+        <td><strong>€296.76 dividends</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.8rem;color:#9aa0b8;margin-top:4px;">* BHP topped up ~15 July 2026 from 15 to 18.19 shares. Source: Parqet (Trade Republic + Scalable Capital). As of 16 July 2026. Not investment advice.</p>
+
+  <div class="info-box">
+    <strong>Key notes on individual positions:</strong><br>
+    <strong>Vale</strong> is NOT a copper pure-play — Vale is primarily iron ore. Copper is a growing division, nothing more. Buying Vale for copper exposure is buying it for the wrong reason.<br>
+    <strong>Central Asia Metals</strong> is the only loss in the cluster. Copper and zinc from Kazakhstan — not every copper bet works out. I show this deliberately because showing only winners would be dishonest.<br>
+    <strong>Jiangxi Copper</strong> is the purest copper name: maximum leverage to the copper price but rarely a meaningful dividend. Pure-play copper cyclicals are a price bet, not an income investment.
+  </div>
+
+  <div class="cta-box">
+    <h3 style="color:#d4af37;margin:0 0 8px;">Research Tool: InvestingPro</h3>
+    <p style="color:#cfd6e6;margin:0 0 12px;">For fundamental analysis, fair value estimates and dividend safety checks I use InvestingPro. My affiliate link gives a permanent 15% discount — plus a limited summer sale until 31 July 2026.</p>
+    <a class="cta-btn" href="https://www.investing-referral.com/mbcapitalglobal/" target="_blank" rel="sponsored noopener nofollow">Go to InvestingPro (−15% + Summer Sale) → *Affiliate</a>
+    <p style="font-size:0.75rem;color:#9aa0b8;margin-top:8px;">*I receive a commission if you purchase via my link. Your price is lower as a result.</p>
+  </div>
+
+  <h2>6. Pure-Play Cyclicals vs. Diversified Majors</h2>
+
+  <p>
+    If the copper thesis interests you, there are two fundamentally different approaches:
+  </p>
+
+  <p>
+    <strong>Pure-play copper cyclicals</strong> (Southern Copper, Freeport-McMoRan, Antofagasta, Jiangxi Copper, Teck): maximum leverage to the copper price, volatile, thin dividends. You are buying the cycle — not the income. When copper rises, these names outperform diversified peers significantly.
+  </p>
+
+  <p>
+    <strong>Diversified majors</strong> (BHP, Rio Tinto, Glencore): steadier, broader, decent dividends. Copper is one slice of the pie, not the whole thing. The downside: if copper runs, you capture less upside — but you sleep better at night because iron ore cash flow at BHP buffers copper weakness.
+  </p>
+
+  <div class="info-box">
+    The pure-play gives you the leverage, the diversified gives you the sleep. Both are legitimate approaches, but they are completely different bets. Know which one you are making.
+  </div>
+
+  <h2>7. Risks — What Could Go Wrong</h2>
+
+  <div class="risk-box">
+    <strong>Key risks to the thesis:</strong>
+    <ul>
+      <li><strong>Cyclicality:</strong> Copper is an economic cycle metal. In a recession, near-term demand collapses regardless of how compelling the 2035 thesis is. Interim drawdowns of 30–40% are realistic and must be tolerable.</li>
+      <li><strong>China risk:</strong> China is both the largest consumer and the largest processor. A Chinese economic slowdown or policy intervention hits the copper price hard.</li>
+      <li><strong>Substitution and recycling:</strong> At very high price levels engineers switch to alternatives — aluminium in some cable applications. Recycling covers a growing share of demand. Both dampen the gap.</li>
+      <li><strong>Faster permitting:</strong> The 18-year lead time is a risk in both directions. If permitting accelerates, more supply arrives sooner than expected.</li>
+      <li><strong>Concentration:</strong> Few countries, few companies — concentration that can turn against you.</li>
+    </ul>
+  </div>
+
+  <p>
+    I believe the long-term structural supply shortage is real. But the path there is bumpy, not linear. Investors in copper equities must accept volatility.
+  </p>
+
+  <h2>Summary</h2>
+
+  <p>
+    Copper demand is rising structurally — EVs, power grids, data centres. Supply cannot keep up — almost no new major discoveries, declining ore grades, 18 years to build a mine. The IEA calculates a ~30% supply gap by 2035. And the mining majors are buying each other rather than building. For me, copper is one of the most compelling hard-asset cases of this decade.
+  </p>
+
+  <p>
+    I am invested in seven copper-adjacent holdings with a total cost of approximately €3,760, a current value of ~€4,820, up roughly 27% — plus nearly €300 in dividends received. With clear winners and one honest loss.
+  </p>
+
+  <div class="related-articles">
+    <h3>More Mining &amp; Commodity Analysis</h3>
+    <ul>
+      <li><a href="/blog/bhp-analysis-2026.html">⛏️ BHP Analysis 2026 — Dividend, Copper &amp; Cash Flow</a></li>
+      <li><a href="/blog/rio-tinto-analysis-2026.html">⛏️ Rio Tinto Analysis 2026</a></li>
+      <li><a href="/blog/bhp-vs-rio-tinto-comparison-2026.html">⚖️ BHP vs. Rio Tinto 2026 — Comparison</a></li>
+      <li><a href="/blog/jiangxi-copper-analysis-2026.html">⛏️ Jiangxi Copper Analysis</a></li>
+      <li><a href="/blog/mining-capital-allocation-supercycle-2026.html">📊 Mining Capital Allocation &amp; Supercycle</a></li>
+      <li><a href="/blog/mining-stocks-overview-2026.html">📋 Mining Stocks Overview 2026</a></li>
+    </ul>
+  </div>
+
+  <!-- Disclaimer -->
+  <div style="background:#0a0c12;border:1px solid rgba(255,255,255,0.08);border-radius:8px;padding:16px 20px;margin:28px 0;font-size:0.82rem;color:#7a8499;line-height:1.6;">
+    <strong style="color:#9aa0b8;">Important disclaimer:</strong> All content is for information and entertainment purposes only and represents my personal opinion. Nothing on this website constitutes investment advice or a recommendation to buy or sell any security. Invest at your own risk. Copper equities are cyclical and you can lose money. Portfolio data is shown transparently via Parqet (Trade Republic + Scalable Capital).<br>
+    Sources: IEA (2025); S&amp;P Global Market Intelligence; USGS Mineral Commodity Summaries 2025; BHP Insights; Wood Mackenzie; Shanghai Metal Market; Mining.com; Parqet; InvestingPro.
+  </div>
+
+</section>
+
+<script>
+// YT Lite Embed
+document.querySelectorAll('.yt-lite').forEach(function(el){
+  el.addEventListener('click',function(){
+    var id=el.getAttribute('data-id');
+    var iframe=document.createElement('iframe');
+    iframe.setAttribute('src','https://www.youtube.com/embed/'+id+'?autoplay=1&rel=0');
+    iframe.setAttribute('frameborder','0');
+    iframe.setAttribute('allow','accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture');
+    iframe.setAttribute('allowfullscreen','');
+    iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+    el.innerHTML='';
+    el.appendChild(iframe);
+  });
+  el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')el.click();});
+});
+// Mobile Nav
+var hb=document.getElementById('navHamburger'),mn=document.getElementById('navMobile');
+if(hb&&mn)hb.addEventListener('click',function(){var o=mn.classList.toggle('open');hb.setAttribute('aria-expanded',o);});
+</script>
+
+</body>
+</html>

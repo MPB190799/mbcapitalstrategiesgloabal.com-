@@ -1,0 +1,12 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-18T16:55:26.261Z",
+  "content_sha": "366917d430d97605",
+  "hard_scan": "PASS",
+  "note": "Copper 2035 EN Blog: 14/14 Voice PASS, Compliance PASS (mbcapitalglobal EN korrekt, IBKR absent, no CapTrader), all facts 2-source ledger-verified (kupfer-macro-facts.json VERIFIED), r23-approved:marco, hreflang EN-DE correctly wired, YT-Embed wTA8lfZBICg, Disclaimer present, EN AdSense disabled until approval"
+}
