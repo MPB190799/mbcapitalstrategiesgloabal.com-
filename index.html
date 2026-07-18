@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~42KB, after 4 JSON-LD blocks + inline style blocks -- preload scanner discovered font CSS only after parsing head-bloat, adding round-trips on mobile. Zero visual/layout change, DE-parity fix, verified against LCP-fix-plan Massnahme 1. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity, same root cause): the Cormorant Garamond
+     (--serif) file used by .display/.hero-title (huge clamp()-sized Hero-H1) was not preloaded,
+     only the Outfit body font was -- late webfont swap over the Georgia fallback drives layout
+     shift on Home. Preload the exact Latin-range regular (400) woff2. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
@@ -413,15 +418,15 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 /* Compass — mouse-reactive transform */
 .compass-backdrop.mb-live{transform:translate(-50%,-50%) perspective(1700px) rotateX(calc(var(--tilt,42deg) + var(--mouse-tilt-x,0deg))) rotateY(var(--mouse-rot-y,0deg)) rotate(calc(var(--scroll-rot,0deg) + var(--mouse-rot-z,0deg)))}
 /* Pulse rings — larger start + wider expansion (rings visually go beyond compass) */
-.compass-ring{position:absolute;top:50%;left:50%;width:62%;height:62%;border-radius:50%;border:1.5px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4.5s ease-in-out infinite;will-change:transform,opacity}
+.compass-ring{position:absolute;top:50%;left:50%;width:62%;height:62%;border-radius:50%;border:2px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4.5s ease-in-out infinite;will-change:transform,opacity}
 .compass-ring:nth-child(2){animation-delay:1.5s}
 .compass-ring:nth-child(3){animation-delay:3s}
-@keyframes ringPulse{0%{opacity:.55;border-color:rgba(212,175,55,.35);transform:translate(-50%,-50%) scale(1)}65%{opacity:.03;border-color:rgba(212,175,55,.03);transform:translate(-50%,-50%) scale(2.2)}100%{opacity:.55;border-color:rgba(212,175,55,.35);transform:translate(-50%,-50%) scale(1)}}
+@keyframes ringPulse{0%{opacity:.75;border-color:rgba(212,175,55,.55);box-shadow:0 0 14px rgba(212,175,55,.3),inset 0 0 14px rgba(212,175,55,.12);transform:translate(-50%,-50%) scale(1)}65%{opacity:.03;border-color:rgba(212,175,55,.03);box-shadow:0 0 4px rgba(212,175,55,0),inset 0 0 4px rgba(212,175,55,0);transform:translate(-50%,-50%) scale(2.2)}100%{opacity:.75;border-color:rgba(212,175,55,.55);box-shadow:0 0 14px rgba(212,175,55,.3),inset 0 0 14px rgba(212,175,55,.12);transform:translate(-50%,-50%) scale(1)}}
 /* Cardinal hover → smooth glow transition */
 .compass-backdrop::before{transition:opacity .4s ease,transform .4s ease}
 #hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.16)!important}
-/* Gold particles — z-index:2 → above hero scrim (::before z-index:1), below content (z-index:6) */
-.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent);z-index:2;animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
+/* Gold particles — ember glow (visual audit v1.5: plain dots were invisible against compass) */
+.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent-bright);box-shadow:0 0 6px 1px rgba(212,175,55,.8),0 0 14px 4px rgba(212,175,55,.35);z-index:2;animation:hpFloat var(--hp-d,9s) ease-in-out infinite var(--hp-t,0s);will-change:transform,opacity}
 @keyframes hpFloat{0%{opacity:0;transform:translateY(0) scale(0)}8%{opacity:var(--hp-o,.5);transform:translateY(-12px) scale(1)}90%{opacity:calc(var(--hp-o,.5)*.25);transform:translateY(var(--hp-h,-110px)) scale(.4)}100%{opacity:0;transform:translateY(var(--hp-h,-120px)) scale(0)}}
 @media(prefers-reduced-motion:reduce){.hero-particle,.compass-ring{display:none!important}}
 /* CTA button shimmer */
