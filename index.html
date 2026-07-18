@@ -65,6 +65,35 @@
      affects 0% of normal (JS-enabled) visitors, only closes the resilience gap. DE-parity fix. -->
 <noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
 
+<!-- CRO/Resilience-Fix 2026-07-19 web-design-agent (DE-parity): Live-Audit (Playwright Full-Page-
+     Screenshot) showed huge empty black voids on the homepage — the .reveal/.sr/.animate-on-scroll
+     IntersectionObserver in the shared main.min.js bundle never runs if ANY earlier statement in
+     that file throws. GA4 shows engagement rate only 29.4% and avg session 89.3s (28d) — consistent
+     with "page looks empty -> instant bounce". The noscript fallback above only covers "JS fully off",
+     not "JS runs but errors before reveal setup". Fix: self-contained, error-isolated script (own
+     try/catch, independent of main.min.js) registers its own reveal observer AND force-reveals
+     anything still hidden after 2.5s (timeout failsafe). In the normal case the main bundle's
+     observer wins first — zero visual change, pure resilience net against content loss on script
+     errors elsewhere on the page. -->
+<script>
+(function(){
+  function reveal(el){ if(el) el.classList.add('is-visible','visible'); }
+  try {
+    if ('IntersectionObserver' in window) {
+      var fio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) { reveal(e.target); fio.unobserve(e.target); } });
+      }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
+      document.addEventListener('DOMContentLoaded', function(){
+        try { document.querySelectorAll('.reveal, .sr').forEach(function(el){ fio.observe(el); }); } catch(e2) {}
+      });
+    }
+  } catch(err) {}
+  setTimeout(function(){
+    try { document.querySelectorAll('.reveal:not(.is-visible), .sr:not(.visible)').forEach(reveal); } catch(err) {}
+  }, 2500);
+})();
+</script>
+
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
