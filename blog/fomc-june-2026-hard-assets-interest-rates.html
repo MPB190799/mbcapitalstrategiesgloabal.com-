@@ -82,7 +82,13 @@
       align-items: center;
       gap: 16px;
     }
-    .site-header img { height: 38px; width: auto; }
+    /* CWV-Fix 2026-07-18 web-design-agent: height:38px + width:auto left the logo's rendered
+       width unresolved until the image resource itself loaded (aspect-ratio unknown from CSS/HTML
+       alone -- no width/height attrs on the <img>, unlike every other page's shared header which
+       has explicit 48x48). Small single-page CLS risk on this page's highest-traffic article
+       (GA4 top EN page today). aspect-ratio locks the box at parse time -> zero shift, 0 visual
+       change (Logo.png/webp is 540x540, ratio 1). */
+    .site-header img { height: 38px; width: auto; aspect-ratio: 1 / 1; }
     .site-header span { color: var(--text-2); font-size: .85rem; }
 
     /* Hero */
