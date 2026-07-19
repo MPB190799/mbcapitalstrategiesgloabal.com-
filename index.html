@@ -258,6 +258,21 @@ html.promo-active .header{top:47px}
 .hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
 .hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+/* CRO 2026-07-19 web-design-agent: Live-audit (Playwright, 1366x768 — the most common laptop
+   resolution, plus 1280x800) found the EN hero's primary CTA row / trust bar cut off below the
+   fold — same root cause already fixed for 1440x900 on 2026-07-04, but not for shorter viewports.
+   DE sister repo got the parity fix same day (2026-07-19). Desktop-only, short-viewport breakpoint;
+   1440x900+ (already verified good) is untouched. */
+@media (min-width:1024px) and (max-height:820px){
+  .hero{padding-top:64px}
+  .hero-eyebrow-row{margin-bottom:16px}
+  .hero-issue{margin-bottom:16px}
+  .hero-title{font-size:clamp(40px,6vw,76px);margin-bottom:18px}
+  .hero-sub{margin-bottom:18px}
+  #hero-context-en{margin:6px auto 12px}
+  .hero-trust{margin:14px 0 14px;padding:12px 0}
+  .hero-ctas{margin-top:2px}
+}
 
 .hero-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(5,1fr);gap:8px;padding:80px var(--pad);z-index:0;pointer-events:none;mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%)}
 .hbar{background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--accent-deep));border-radius:2px;height:100%;width:100%;opacity:0;animation:barIn 1.4s var(--t-med) both,float 6s ease-in-out infinite;transform-origin:center;filter:blur(.2px)}
