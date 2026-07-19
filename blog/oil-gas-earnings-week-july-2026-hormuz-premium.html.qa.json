@@ -1,0 +1,31 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "blog-generator-subagent",
+  "checked_at": "2026-07-19T07:37:30Z",
+  "note": "Q2 2026 oil & gas earnings-week preview (Jul 21-24). Headline/calendar-only, no consensus EPS/revenue figures. R23 respected: 0 report numbers, only qualitative watch-items (dividend safety, FCF, guidance tone). Voice PASS (Marco first-person, no AI-English blacklist hits, fact/thesis separated).",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude",
+  "verification": [
+    {"claim": "Var Energi Q2 2026 results July 21, 2026, 07:00 CEST", "verdict": "VERIFIED", "sources": ["varenergi.no/en/investor/financial-calendar/", "Cision press release, Var Energi financial calendar"]},
+    {"claim": "Philip Morris International Q2 2026 earnings July 22, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/philip-morris-international-pm-to-post-earnings-on-wednesday-2026-07-15", "finance.yahoo.com (Philip Morris Q2 2026 earnings preview)"]},
+    {"claim": "Equinor Q2 2026 results July 22, 2026", "verdict": "VERIFIED", "sources": ["equinor.com/news/20260708-invitation-consensus-estimates-2q2026", "marketbeat.com earnings calendar"]},
+    {"claim": "TotalEnergies Q2 2026 results July 23, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/totalenergies-tte-to-announce-quarterly-earnings-on-thursday-2026-07-16", "totalenergies.com/investors/results"]},
+    {"claim": "Eni Q2 2026 results July 24, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/eni-e-expected-to-announce-quarterly-earnings-on-friday-2026-07-17", "eni.com/en-IT/investors/financial-calendar.html"], "note": "minor conflict: investing.com listed Jul 29 in one cached record; marketbeat (more recent, Jul 17) + task brief agree on Jul 24 -- treated as VERIFIED per 2-source majority, framed with report-day caution in text"},
+    {"claim": "Verizon Q2 2026 earnings July 24, 2026", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/VZ/verizon-to-report-earnings-july-24-0skr0xtotaw7 (company webcast announcement)", "marketbeat.com earnings calendar"]},
+    {"claim": "Brent crude spiked toward $88, traded above $85 on July 17, 2026 amid Hormuz escalation", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
+    {"claim": "US sanctions waiver on Iranian oil expired, naval blockade near Iranian ports reimposed", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
+    {"claim": "Diana Shipping tender offer for Genco Shipping closes July 24, 2026, 5:00pm New York time; ~30% of free-float tendered as of most recent extension", "verdict": "VERIFIED", "sources": ["globenewswire.com/news-release/2026/07/13/3326114 (Diana Shipping Inc. extension press release)", "stocktitan.net/news/DSX/diana-shipping-inc-announces-extension-of-tender-offer", "investing.com/news/company-news/diana-extends-genco-tender-offer-to-july-24-93CH-4788280"]}
+  ],
+  "r23_gate": {
+    "checked": true,
+    "tool": "scripts/r23-guard.py + manual review",
+    "result": "0 VIOLATIONS -- preview article, no consensus EPS/revenue figures, no post-earnings report numbers; only company names, tickers, report dates, and qualitative watch-items present"
+  },
+  "excluded_numbers_r23": ["No analyst consensus EPS estimates for any of the 6 companies", "No analyst consensus revenue estimates", "No specific production/guidance range figures speculated ahead of reports"],
+  "originally_generated_by": "blog-generator-subagent",
+  "source": "Marco-provided context brief (verified) + own WebSearch (2026-07-19) for report-date confirmation and Brent/Hormuz freshness"
+}
