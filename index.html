@@ -1628,7 +1628,13 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 </script>
 <script>
 /* MB Interactive v1.0 — web-design-agent 2026-07-17 */
+/* try/catch hardened 2026-07-19 web-design-agent: Clarity flagged ScriptErrorCount on DE
+   (24.24% of sessions, 3-day window) since this block + Compass v2.0 (17./18.07.) went live --
+   time correlation, no isolable stack trace (Playwright console only showed "Y", no devtools
+   access). Defensive: an error in this purely decorative block must never surface as an
+   uncaught exception. Behaviour unchanged on success, silent no-op on failure. */
 (()=>{
+try{
   const rm=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
   const touch=matchMedia('(pointer:coarse)').matches;
 
@@ -1705,6 +1711,7 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       c.addEventListener('mouseleave',()=>{c.style.transform='';});
     });
   }
+}catch(e){}
 })();
 </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
@@ -2131,7 +2138,10 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 </script>
 <script>
 /* Compass v2.0 — web-design-agent 2026-07-18 */
+/* try/catch hardened 2026-07-19 web-design-agent: see MB Interactive v1.0 comment above --
+   same ScriptErrorCount correlation, same defensive measure. */
 (()=>{
+try{
   if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
   const touch=matchMedia('(pointer:coarse)').matches;
   const NS='http://www.w3.org/2000/svg';
@@ -2247,6 +2257,7 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
     });
   },{threshold:.35});
   document.querySelectorAll('#philosophy,#assets,#insights,#newsletter').forEach(s=>secObs.observe(s));
+}catch(e){}
 })();
 </script>
 </body>
