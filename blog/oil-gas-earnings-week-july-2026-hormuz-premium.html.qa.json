@@ -5,8 +5,8 @@
   "lang": "en",
   "platform": "blog",
   "checker": "blog-generator-subagent",
-  "checked_at": "2026-07-19T07:37:30Z",
-  "note": "Q2 2026 oil & gas earnings-week preview (Jul 21-24). Headline/calendar-only, no consensus EPS/revenue figures. R23 respected: 0 report numbers, only qualitative watch-items (dividend safety, FCF, guidance tone). Voice PASS (Marco first-person, no AI-English blacklist hits, fact/thesis separated).",
+  "checked_at": "2026-07-19T09:45:00Z",
+  "note": "Q2 2026 oil & gas earnings-week preview (Jul 21-24, Eni separately Jul 29). Headline/calendar-only, no consensus EPS/revenue figures. R23 respected: 0 report numbers, only qualitative watch-items (dividend safety, FCF, guidance tone). Voice PASS (Marco first-person, no AI-English blacklist hits, fact/thesis separated). CORRECTION PASS (post-publish, same session): initial verified figures used a 2-day-old approximation (Brent 'near $86, pulled back from $88 spike' per orchestrator brief) and a secondary-source Eni date (marketbeat: Jul 24); both were superseded during QA re-verification by more authoritative primary sources (Eni's own investor-relations financial calendar PDF: Board meets Jul 28, results+call Jul 29; live Brent quote/CNBC: Friday Jul 17 close $88.09-88.10, +4.58-4.6%, no confirmed pullback as of Sunday Jul 19 non-trading day) -- article rewritten end-to-end for internal consistency before push (title/og/twitter/JSON-LD/FAQ/body/disclaimer all reconciled).",
   "factcheck": "pass",
   "numbers_verified_by": "claude",
   "verification": [
@@ -14,10 +14,11 @@
     {"claim": "Philip Morris International Q2 2026 earnings July 22, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/philip-morris-international-pm-to-post-earnings-on-wednesday-2026-07-15", "finance.yahoo.com (Philip Morris Q2 2026 earnings preview)"]},
     {"claim": "Equinor Q2 2026 results July 22, 2026", "verdict": "VERIFIED", "sources": ["equinor.com/news/20260708-invitation-consensus-estimates-2q2026", "marketbeat.com earnings calendar"]},
     {"claim": "TotalEnergies Q2 2026 results July 23, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/totalenergies-tte-to-announce-quarterly-earnings-on-thursday-2026-07-16", "totalenergies.com/investors/results"]},
-    {"claim": "Eni Q2 2026 results July 24, 2026 (before market open)", "verdict": "VERIFIED", "sources": ["marketbeat.com/instant-alerts/eni-e-expected-to-announce-quarterly-earnings-on-friday-2026-07-17", "eni.com/en-IT/investors/financial-calendar.html"], "note": "minor conflict: investing.com listed Jul 29 in one cached record; marketbeat (more recent, Jul 17) + task brief agree on Jul 24 -- treated as VERIFIED per 2-source majority, framed with report-day caution in text"},
+    {"claim": "Eni Q2 2026 results: Board meeting July 28, press release + conference call July 29, 2026 (NOT July 24)", "verdict": "VERIFIED", "sources": ["eni.com official 2026 financial calendar PDF (Board Jul 28 / results+call Jul 29)", "corroborated via WebSearch citing Eni's own investors/financial-calendar.html"], "note": "supersedes an earlier marketbeat-sourced Jul 24 estimate; Eni's own primary-source calendar wins per factcheck-protocol conflict-resolution rule"},
     {"claim": "Verizon Q2 2026 earnings July 24, 2026", "verdict": "VERIFIED", "sources": ["stocktitan.net/news/VZ/verizon-to-report-earnings-july-24-0skr0xtotaw7 (company webcast announcement)", "marketbeat.com earnings calendar"]},
-    {"claim": "Brent crude spiked toward $88, traded above $85 on July 17, 2026 amid Hormuz escalation", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
-    {"claim": "US sanctions waiver on Iranian oil expired, naval blockade near Iranian ports reimposed", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
+    {"claim": "Brent crude settled at $88.09-88.10 on July 17, 2026, +4.58-4.6% on the day, after Iran-related escalation (Kuwait: Iran struck a desalination/power plant)", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/17/oil-price-today-brent-wti.html", "tradingeconomics.com/commodity/brent-crude-oil"]},
+    {"claim": "Brent above both 50-day ($84.59) and 200-day ($82.95) moving averages as of Jul 17 close", "verdict": "PLAUSIBLE", "sources": ["FMP live quote (internal fleet data feed)"], "note": "single internal source for the exact MA figures; directionally corroborated by CNBC/tradingeconomics describing the level as a one-month/multi-month high -- flagged PLAUSIBLE not VERIFIED per protocol, kept in text as it's a technical read-through not a market-moving claim"},
+    {"claim": "US sanctions waiver on Iranian oil expired, naval blockade near Iranian ports reimposed, Strait of Hormuz escalation ongoing", "verdict": "VERIFIED", "sources": ["cnbc.com/2026/07/15/oil-prices-today-brent-wti-hormuz-blockade.html", "aljazeera.com/economy/2026/7/14/oil-hits-1-month-high-as-us-iran-fighting-clouds-strait-of-hormuz-outlook"]},
     {"claim": "Diana Shipping tender offer for Genco Shipping closes July 24, 2026, 5:00pm New York time; ~30% of free-float tendered as of most recent extension", "verdict": "VERIFIED", "sources": ["globenewswire.com/news-release/2026/07/13/3326114 (Diana Shipping Inc. extension press release)", "stocktitan.net/news/DSX/diana-shipping-inc-announces-extension-of-tender-offer", "investing.com/news/company-news/diana-extends-genco-tender-offer-to-july-24-93CH-4788280"]}
   ],
   "r23_gate": {
@@ -27,5 +28,5 @@
   },
   "excluded_numbers_r23": ["No analyst consensus EPS estimates for any of the 6 companies", "No analyst consensus revenue estimates", "No specific production/guidance range figures speculated ahead of reports"],
   "originally_generated_by": "blog-generator-subagent",
-  "source": "Marco-provided context brief (verified) + own WebSearch (2026-07-19) for report-date confirmation and Brent/Hormuz freshness"
+  "source": "Marco-provided context brief (initial) + own WebSearch (2026-07-19, 2 rounds) for report-date confirmation, Brent-price freshness and Eni-date correction"
 }
