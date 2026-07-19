@@ -991,14 +991,39 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       </div>
 
       <div class="realinv-video">
-        <div class="rv-frame">
-          <iframe loading="lazy"
-            src="https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9de2z6a0MqXsEdm8Erda1Zwp"
-            title="MB Capital Strategies — real portfolio updates by Marco Bozem"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen></iframe>
+        <!-- CWV-Fix 2026-07-19 web-design-agent: eager YouTube playlist iframe replaced with
+             click-to-load facade (same lite pattern already used 121x across EN blog posts).
+             Was loading YouTube's full player JS unconditionally (loading="lazy" only defers
+             by viewport, still fires on first scroll-into-view) and threw a console 404
+             (youtube.com/img/meh7.png) on every homepage load — now a static thumbnail until
+             the visitor actually clicks play. Same .rv-frame box/aspect-ratio, zero layout change. -->
+        <div class="rv-frame" id="rv-yt-facade" role="button" tabindex="0" style="cursor:pointer" aria-label="Play video: MB Capital Strategies portfolio updates playlist">
+          <img src="https://i.ytimg.com/vi/yFMawpGGO6g/hqdefault.jpg" alt="MB Capital Strategies — real portfolio updates by Marco Bozem" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+          <div aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none">
+            <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff"><path d="M8 5v14l11-7z"/></svg>
+          </div>
         </div>
+        <script>
+        (function(){
+          var f=document.getElementById('rv-yt-facade');
+          if(!f)return;
+          function activate(){
+            f.removeEventListener('click',activate);
+            var iframe=document.createElement('iframe');
+            iframe.src='https://www.youtube.com/embed/videoseries?list=PLb7T0VuyV9de2z6a0MqXsEdm8Erda1Zwp&autoplay=1&rel=0';
+            iframe.title='MB Capital Strategies — real portfolio updates by Marco Bozem';
+            iframe.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.referrerPolicy='strict-origin-when-cross-origin';
+            iframe.allowFullscreen=true;
+            iframe.style.cssText='position:absolute;inset:0;width:100%;height:100%;border:0';
+            f.innerHTML='';
+            f.style.cursor='default';
+            f.appendChild(iframe);
+          }
+          f.addEventListener('click',activate);
+          f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();activate();}});
+        })();
+        </script>
         <div class="rv-cap">
           <span>▶ Portfolio updates &amp; weekly recaps</span>
           <span style="opacity:.5">·</span>
