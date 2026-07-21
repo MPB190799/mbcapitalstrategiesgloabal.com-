@@ -17,6 +17,11 @@
      only the Outfit body font was -- late webfont swap over the Georgia fallback drives layout
      shift on Home. Preload the exact Latin-range regular (400) woff2. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-21 web-design-agent (DE-parity, same root cause): only the NORMAL-style
+     Cormorant Garamond was preloaded above. The hero's accent "<em>Hard Assets.</em>" is italic --
+     a different woff2 (fonts.css: style italic, weight 400, Latin U+0000-00FF), still arriving
+     late via fonts.css only. Preloading it closes the remaining fallback-vs-webfont reflow window. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
