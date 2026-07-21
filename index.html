@@ -22,6 +22,14 @@
      a different woff2 (fonts.css: style italic, weight 400, Latin U+0000-00FF), still arriving
      late via fonts.css only. Preloading it closes the remaining fallback-vs-webfont reflow window. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-21b web-design-agent: DE-parity. Lighthouse's own layout-shifts audit
+     (en-home-20260721.json) explicitly cites IBM Plex Mono (--mono, used by .eyebrow "ISSUE #53" +
+     .hero-meta + ticker, rendered inside/above .hero-content) as a "Web font loaded" cause of the
+     p.lede shift (score 0.139) -- this family had zero preload. The weight-500 file cited is exact
+     ("gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2"); adding it + its Latin 400 sibling removes the
+     last unaddressed font swap in the hero. No visual/layout change. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
