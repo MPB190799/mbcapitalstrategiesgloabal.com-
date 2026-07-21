@@ -1,0 +1,14 @@
+{
+  "score": 12,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-07-21T06:29:33.211Z",
+  "content_sha": "56d54068bbc0e220",
+  "hard_scan": "PASS",
+  "note": "",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
