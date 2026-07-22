@@ -82,12 +82,14 @@
       align-items: center;
       gap: 16px;
     }
-    /* CWV-Fix 2026-07-18 web-design-agent: height:38px + width:auto left the logo's rendered
-       width unresolved until the image resource itself loaded (aspect-ratio unknown from CSS/HTML
-       alone -- no width/height attrs on the <img>, unlike every other page's shared header which
-       has explicit 48x48). Small single-page CLS risk on this page's highest-traffic article
-       (GA4 top EN page today). aspect-ratio locks the box at parse time -> zero shift, 0 visual
-       change (Logo.png/webp is 540x540, ratio 1). */
+    /* CWV-Fix 2026-07-18 web-design-agent: aspect-ratio locks the box at parse time -> zero shift.
+       CWV-Fix 2026-07-22 web-design-agent: header img still had loading="lazy" + no width/height
+       attrs -- an above-the-fold logo on this site's #1 EN page (GA4 top_pages) was deferred by
+       the lazy-load intersection observer instead of loading eager/high-priority like every other
+       page's shared header (index.html: loading="eager" fetchpriority="high" width/height=48).
+       Added width="38" height="38" loading="eager" fetchpriority="high" to the <img> itself --
+       belt-and-suspenders with the CSS aspect-ratio below, zero visual change
+       (Logo.png/webp is 540x540, ratio 1). */
     .site-header img { height: 38px; width: auto; aspect-ratio: 1 / 1; }
     .site-header span { color: var(--text-2); font-size: .85rem; }
 
@@ -311,7 +313,7 @@
 <!-- Site Header -->
 <header class="site-header">
   <a href="/">
-    <picture><source srcset="https://mbcapitalstrategiesglobal.com/Logo.webp" type="image/webp"><img src="https://mbcapitalstrategiesglobal.com/Logo.png" alt="MB Capital Strategies Logo" loading="lazy"></picture>
+    <picture><source srcset="https://mbcapitalstrategiesglobal.com/Logo.webp" type="image/webp"><img src="https://mbcapitalstrategiesglobal.com/Logo.png" alt="MB Capital Strategies Logo" width="38" height="38" loading="eager" fetchpriority="high" decoding="async"></picture>
   </a>
   <span>Hard Assets &amp; Dividends — Shipping, Mining, Energy, Pipelines, REITs</span>
 </header>
