@@ -567,10 +567,16 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 <div class="scroll-progress" id="scroll-progress"></div>
 
 <header class="header" id="header">
+  <!-- LCP-Fix 2026-07-22 web-design-agent (CMO-Vormerkung 21.07., cwv-snapshot: EN-Home LCP 7,69s mobil):
+       48x48 Header-Logo trug fetchpriority="high" -- gleiche Priorität wie das 1024x1024
+       Kompass-Hintergrundbild (echter LCP-Kandidat) + der 34px Signatur-Avatar (ebenfalls high,
+       siehe unten) + Font-Preloads. Auf Mobilfunk-Bandbreite konkurrierten so mehrere hochpriorisierte
+       Requests um die ersten Bytes statt das tatsächliche LCP-Element zu bevorzugen. fetchpriority
+       entfernt (Browser-Default), loading=eager/decoding=async beibehalten -- 0 visuelle Änderung. -->
   <a href="/" class="logo" aria-label="MB Capital Strategies Global home">
     <picture class="logo-mark">
       <source srcset="/Logo.webp" type="image/webp">
-      <img src="/Logo.webp" alt="MB Capital Strategies Global Logo" width="48" height="48" loading="eager" decoding="async" fetchpriority="high">
+      <img src="/Logo.webp" alt="MB Capital Strategies Global Logo" width="48" height="48" loading="eager" decoding="async">
     </picture>
     <span class="logo-name">MB Capital Strategies <em>Global</em></span>
   </a>
@@ -742,7 +748,7 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
         <span class="sig-avatar">
           <picture>
             <source srcset="marco.webp" type="image/webp">
-            <img src="marco.webp" onerror="this.onerror=null;this.src='marco.webp'" alt="Marco Bozem" width="34" height="34" fetchpriority="high">
+            <img src="marco.webp" onerror="this.onerror=null;this.src='marco.webp'" alt="Marco Bozem" width="34" height="34" loading="eager" decoding="async">
           </picture>
         </span>
         <span class="sig-text">
