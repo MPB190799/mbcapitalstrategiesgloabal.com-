@@ -1,0 +1,16 @@
+{
+  "artifact": "kumba-iron-ore-analysis-2026.html",
+  "checker": "content-qa-agent",
+  "date": "2026-07-22",
+  "score": "13/14",
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "factcheck": "pass",
+  "source": "FMP live 2026-07-22",
+  "numbers_source": "FMP (Financial Modeling Prep) TTM + dividend history",
+  "numbers_verified_by": "claude",
+  "unverified_numbers": false,
+  "r23": "approved-marco (TTM valuation + dividend history, no reported quarterly/FY report figure)",
+  "note": "Kumba KIO.JO EN — every load-bearing figure FMP-live-verified against stable API: EV/EBITDA TTM 1.974 = 2.0x, netDebt/EBITDA -0.451 = -0.45x (net cash), EBITDA margin 0.4609 = 46%, current ratio 2.458 = 2.46, income quality 1.855 = 1.85, P/FCF 4.697 -> FCF yield 21.3%. Peer table verified in prior PASS 13/14 same day. Dividend history ZAR 24.20 -> 19.90 -> 15.43 exact. Bull/Base/Bear labeled 'my own estimates and theses, not forecasts'. Not-financial-advice disclaimer + conflict-of-interest disclosed. Affiliate rel=sponsored, disclosure present. No CapTrader/IBKR. EN AdSense loader disabled (approval pending) — correct. Marco holds 33 shares Scalable (public Parqet)."
+}
