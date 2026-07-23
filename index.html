@@ -1671,9 +1671,13 @@ try{
   }
 
   /* 2 — Compass: mouse tracking + glow rings */
-  const cb=document.getElementById('compass-backdrop');
-  const hero=document.getElementById('hero');
-  if(cb&&hero&&!rm){
+  /* CWV-Fix 2026-07-23 web-design-agent: mirrors the DE fix (same file, same code path) -- this
+     was the one effect not gated by !touch (Cursor-Glow above already skips touch). Unconditional
+     always-on compositor work (2 continuously-animating divs) on every mobile/touch visit with a
+     dead mouse-tracking payoff inside. Gating to !touch removes that cost for the majority-mobile
+     audience with zero desktop visual change; scroll-linked base tilt is untouched (separate,
+     already-gated-for-both code path). Fully reversible: revert this one condition. -->
+  if(cb&&hero&&!rm&&!touch){
     cb.classList.add('mb-live');
     for(let i=0;i<3;i++){const r=document.createElement('div');r.className='compass-ring';cb.appendChild(r);}
     if(!touch){
