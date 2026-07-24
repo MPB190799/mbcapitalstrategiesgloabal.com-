@@ -230,7 +230,11 @@ html.promo-active .header{top:47px}
 .btn-ghost::before{background:var(--fg)}
 .btn-ghost:hover{color:var(--bg);border-color:var(--fg)}
 
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
+/* CLS-Fix 2026-07-24 web-design-agent: parity fix with DE Home (same live trace signature — hero-inner
+   top 143->443, bottom pinned at 823 = classic 100vh mobile-UI-collapse layout shift, not a font/image
+   swap). min-height:100svh binds hero height to the smallest viewport (browser UI visible), which
+   doesn't change again during load. 100vh stays as fallback for browsers without svh support. */
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
 .hero-inner{position:relative;z-index:2;display:block;max-width:1080px;margin:0 auto;width:100%}
 /* Centered hero composition — compass spins recognizably BEHIND the text (12.06.2026, Marco) */
 .hero-content{text-align:center;max-width:880px;margin:0 auto}
