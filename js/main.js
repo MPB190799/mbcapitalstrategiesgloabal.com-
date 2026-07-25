@@ -134,10 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Mobile dropdown toggle
+        // Mobile + tablet/touch dropdown toggle
+        // UX-Fix 2026-07-25 web-design-agent: Clarity flagged 60% DeadClickCount on
+        // /pages/high-yield.html — root cause: nav dropdowns ("Portfolio Strategy",
+        // "Sectors", "Best-of 2026") only worked via CSS :hover above the 768px
+        // hamburger breakpoint. Touch devices without a mouse (most tablets, e.g.
+        // iPad portrait ~810-834px width) have no :hover, so tapping the href="#"
+        // toggle did nothing but jump-scroll to page top — a textbook dead click.
+        // Fix: detect touch capability (matchMedia hover:none), not just viewport
+        // width, so the click-to-toggle behavior also covers tablets. Desktop mouse
+        // users are unaffected (hover still works, unchanged CSS/JS path there).
         navMenu.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
+                var isTouch = window.matchMedia('(hover: none)').matches;
+                if (window.innerWidth <= 768 || isTouch) {
                     e.preventDefault();
                     var dropdown = toggle.closest('.dropdown');
                     if (dropdown) dropdown.classList.toggle('active');

@@ -358,6 +358,19 @@ button {
     transform: translateY(0);
 }
 
+/* UX-Fix 2026-07-25 web-design-agent: tablets/touch devices above the 768px
+   hamburger breakpoint have no :hover, so the dropdown never opened there
+   (Clarity DeadClickCount 60% on /pages/high-yield.html). JS now toggles
+   .active on tap for touch devices at any width — this makes that state
+   visible without affecting desktop mouse/hover behavior. */
+@media (hover: none) {
+    .dropdown.active .dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+}
+
 .dropdown-menu li a {
     display: block;
     padding: 10px 14px;
