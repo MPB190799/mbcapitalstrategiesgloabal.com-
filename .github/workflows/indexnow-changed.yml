@@ -55,8 +55,8 @@ jobs:
             -H "Content-Type: application/json" \
             -d '{
               "host": "mbcapitalstrategiesglobal.com",
-              "key": "9281296539de44729f00285e02a89b85",
-              "keyLocation": "https://mbcapitalstrategiesglobal.com/9281296539de44729f00285e02a89b85.txt",
+              "key": "1353804911fc41b4802b780e8fca77b5",
+              "keyLocation": "https://mbcapitalstrategiesglobal.com/1353804911fc41b4802b780e8fca77b5.txt",
               "urlList": ${{ steps.changed.outputs.url_json }}
             }' -o /dev/null -w "IndexNow: HTTP %{http_code}\n"
 
