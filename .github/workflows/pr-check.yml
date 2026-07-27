@@ -1,0 +1,47 @@
+# MB Capital — PR-Gate für die Website
+#
+# WARUM ES DAS BISHER NICHT GAB (gefunden 27.07.2026):
+# Dieses Repo hatte nur Deploy- und IndexNow-Workflows — beide laufen NACH dem Merge.
+# Vor dem Merge prüfte niemand irgendetwas. Drei Fehlerklassen sind deshalb wiederholt
+# live gegangen: JSON-LD durch HTML-Anker zerschossen (Batches 221/222/223 in Folge,
+# 223 war ein 48-Seiten-Massenfix), verschachtelte Anker als 404-Generator (+8 neue 404
+# im Ahrefs-Audit 23.06.), und erfundene Bildpfade (Audit 23.07.: 17 Blogs mit kaputtem
+# Autorenfoto und Social-Preview).
+#
+# GEPRÜFT WIRD NUR, WAS DER PR ÄNDERT. Ein Vollscan über >500 gewachsene Seiten wäre beim
+# ersten Lauf an Altlasten gescheitert und damit dauerhaft rot — ein Gate, das immer rot
+# ist, wird umgangen. Genau das hat am 27.07. das MBFinanceMate-Gate 10 h lang jeden PR
+# blockieren lassen.
+#
+# Owner: seo-agent · Konsument: merge-all-repos.sh (merged erst bei grün)
+name: PR-Check
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  html:
+    name: Geänderte Seiten prüfen
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Geänderte HTML-Dateien ermitteln
+        id: changed
+        run: |
+          git fetch -q origin "${{ github.base_ref }}"
+          files=$(git diff --name-only --diff-filter=ACMR \
+                  "origin/${{ github.base_ref }}...HEAD" -- '*.html' '*.htm' | tr '\n' ' ')
+          echo "files=$files" >> "$GITHUB_OUTPUT"
+          echo "Geändert: ${files:-（keine HTML-Änderung)}"
+
+      - name: Validieren
+        if: steps.changed.outputs.files != ''
+        run: python3 .github/scripts/validate-changed.py ${{ steps.changed.outputs.files }}
