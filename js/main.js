@@ -146,9 +146,22 @@ document.addEventListener('DOMContentLoaded', () => {
         // users are unaffected (hover still works, unchanged CSS/JS path there).
         navMenu.querySelectorAll('.dropdown-toggle').forEach(toggle => {
             toggle.addEventListener('click', (e) => {
+                // UX-Fix 2026-07-27 web-design-agent: the 07-25 fix covered touch/tablet
+                // dead clicks but explicitly left desktop-mouse clicks unprevented.
+                // href="#" with no default-prevention means a mouse user who CLICKS
+                // (not just hovers) "Portfolio Strategy"/"Sectors"/"Best-of 2026" gets a
+                // silent jump-to-top scroll — a dead click by definition (visible nothing
+                // happens vs. the expected "go to a Sectors page"). Clarity DeadClickCount
+                // hits this on best-high-yield.html (20%) and water-etfs.html (33%), where
+                // GA4 shows desktop sessions (19) far outnumber mobile (3) on the EN site
+                // — i.e. most affected users are exactly the desktop-hover cohort this
+                // gap left unprotected. Fix: always preventDefault() on this link; the
+                // CSS :hover reveal for mouse users is completely unchanged, so desktop
+                // dropdown navigation behaves identically — the only difference is the
+                // click no longer silently discards scroll position.
+                e.preventDefault();
                 var isTouch = window.matchMedia('(hover: none)').matches;
                 if (window.innerWidth <= 768 || isTouch) {
-                    e.preventDefault();
                     var dropdown = toggle.closest('.dropdown');
                     if (dropdown) dropdown.classList.toggle('active');
                 }
