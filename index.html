@@ -1306,70 +1306,63 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
       <span class="eyebrow">§05 · Latest</span>
       <h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
       <!-- AEO/Freshness 2026-06-21 web-design-agent: freshness date updated 20→21 June. -->
-      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-06-26">June 26, 2026</time></p>
+      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-07-27">July 27, 2026</time></p>
     </div>
     <div class="insights-list reveal">
-      <!-- CRO 2026-06-26 web-design-agent: Triple-Ex-Date highlight with self-expire after Ex-Date (30.06.2026 21:59 UTC).
-           After expiry: gold highlight styles stripped, "Today" tag replaced with "Dividends", title normalized.
-           JS does NOT remove the element (avoids CLS), only removes visual highlight. -->
-      <a id="triple-ex-insight-en" class="insight" href="blog/ex-dividend-june-30-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
-        <span class="insight-date">2026-06-26</span>
-        <span id="triple-ex-tag-en" class="insight-tag">Dividends · Today</span>
-        <span id="triple-ex-title-en" class="insight-title">Ex-Dividend June 30: O, TRP, TTE, Enagás — Last Buy Day is Today</span>
-        <span class="insight-arrow">→</span>
+      <!-- CRO 2026-07-27: insights module refreshed to July inventory (was frozen at 2026-06-26, 31 days stale; top entry was an expired ex-dividend date). Self-expire scripts dropped — date-bound highlights do not belong in an evergreen module. -->
+      <a class="insight" href="blog/chokepoint-economics-hormuz-bab-al-mandeb-oil-inflation-shipping-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+        <span class="insight-date">2026-07-23</span>
+        <span class="insight-tag">Macro · Deep Dive</span>
+        <span class="insight-title">Chokepoint Economics: Hormuz &amp; Bab al-Mandeb &mdash; Oil, Inflation, Shipping</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <script>(function(){try{var expire=Date.UTC(2026,5,30,21,59,59);if(Date.now()>expire){var el=document.getElementById('triple-ex-insight-en');if(el){el.style.borderLeft='';el.style.paddingLeft='';el.style.background='';}var tag=document.getElementById('triple-ex-tag-en');if(tag)tag.textContent='Dividends';var ttl=document.getElementById('triple-ex-title-en');if(ttl)ttl.textContent='Ex-Dividend June 30 passed: O, TRP, TTE, Enagás';}}catch(e){}})();</script>
-      <!-- CRO 2026-06-26 web-design-agent: BHP insight hardened to plain state (highlight expired 2026-06-21, self-expire JS removed — eliminates micro-CLS + inline script block). -->
-      <!-- CRO-FIX 2026-06-20 web-design-agent: link corrected bhp-analysis-2026.html → bhp-jansen-writedown-mining-capital-discipline-2026.html. -->
-      <a class="insight" href="blog/bhp-jansen-writedown-mining-capital-discipline-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="blog/kumba-iron-ore-analysis-2026.html">
+        <span class="insight-date">2026-07-23</span>
         <span class="insight-tag">Mining</span>
-        <span class="insight-title">BHP writes down $2.3B Jansen Potash — what this means for mining dividends in 2026</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Kumba Iron Ore 2026: 12.8 % Dividend &mdash; Gift or Trap?</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <!-- CRO 2026-06-19 web-design-agent: FOMC expired highlight removed from static HTML (expired 2026-06-18). Plain insight, no highlight. -->
-      <a class="insight" href="blog/fomc-june-2026-hard-assets-interest-rates.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">FOMC · June 17</span>
-        <span class="insight-title">FOMC June 17, 2026 — Fed Hold: What the rate decision means for Shipping, REITs and Pipelines</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <!-- CRO 2026-06-20 web-design-agent: Hormuz highlight downgraded from "Current" to plain — event is 4 days old, BHP is today's Breaking topic (today-strategy 20.06.). -->
-      <a class="insight" href="blog/hormuz-tanker-rates-shipping-stocks-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="blog/tanker-cycle-late-signals-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+        <span class="insight-date">2026-07-21</span>
         <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Hormuz Crisis: Tanker Freight Rates +24% in One Day — Shipping Stocks 2026</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Tanker Cycle 2026: Record Rates &amp; the Late-Cycle Warning</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <a class="insight" href="blog/rio-tinto-analysis-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="blog/copper-2035-supply-gap-supercycle.html">
+        <span class="insight-date">2026-07-18</span>
         <span class="insight-tag">Mining</span>
-        <span class="insight-title">Rio Tinto (RIO) 2026: 6% Yield + Copper Pivot</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Copper 2035: Supercycle &amp; a 30 % Supply Gap</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
-      <a class="insight" href="blog/whitehaven-coal-analysis-2026.html">
-        <span class="insight-date">2026-06</span>
+      <a class="insight" href="blog/portfolio-update-july-2026.html">
+        <span class="insight-date">2026-07-13</span>
+        <span class="insight-tag">Portfolio</span>
+        <span class="insight-title">Shipping Portfolio July 2026: +76.5 % Total Return</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="blog/weekly-recap-kw28-2026-shipping-brent-opec.html">
+        <span class="insight-date">2026-07-12</span>
+        <span class="insight-tag">Weekly Recap</span>
+        <span class="insight-title">Weekly Recap KW28: Brent +5.6 %, BDI +8.3 % &mdash; Shipping</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="blog/car-carrier-vs-tanker-valuation-2026.html">
+        <span class="insight-date">2026-07-11</span>
+        <span class="insight-tag">Shipping</span>
+        <span class="insight-title">Car-Carrier NAV Premium vs Tanker Discount 2026</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="blog/duration-interest-rate-sector-cycle-2026.html">
+        <span class="insight-date">2026-07-09</span>
+        <span class="insight-tag">Rates</span>
+        <span class="insight-title">Duration Risk Explained: Why Rates Crushed Biotech &minus;63 %</span>
+        <span class="insight-arrow">&rarr;</span>
+      </a>
+      <a class="insight" href="blog/equinor-transocean-billion-dollar-deal-2026.html">
+        <span class="insight-date">2026-07-02</span>
         <span class="insight-tag">Energy</span>
-        <span class="insight-title">Whitehaven Coal (WHC) 2026: 8% Yield, Met Coal + Daunia Deal</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <a class="insight" href="blog/frontline-vs-scorpio-tankers-2026.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Frontline vs Scorpio Tankers 2026: VLCC vs Product Tanker — which dividend wins?</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <a class="insight" href="blog/green-shipping-2026-transformation.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Green Shipping 2026: EU ETS Winners & FuelEU Losers — the new cost reality</span>
-        <span class="insight-arrow">→</span>
-      </a>
-      <a class="insight" href="blog/fredriksen-vs-saverys-shipping-two-visions-2026.html">
-        <span class="insight-date">2026-06</span>
-        <span class="insight-tag">Shipping</span>
-        <span class="insight-title">Fredriksen vs Saverys 2026: Two shipping strategies — who is right?</span>
-        <span class="insight-arrow">→</span>
+        <span class="insight-title">Equinor Expands: $1 Billion Transocean Rig Deal</span>
+        <span class="insight-arrow">&rarr;</span>
       </a>
       <a class="insight" href="pages/blog.html">
         <span class="insight-date">Archive</span>
