@@ -286,7 +286,12 @@
             <div style="display:flex;flex-wrap:wrap;gap:8px 20px;margin:12px 0 14px;align-items:center;" aria-label="Tanker stock metrics">
               <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:.1em;text-transform:uppercase;color:#D4AF37;white-space:nowrap;">8–15% Dividend Yield</span>
               <span style="color:rgba(212,175,55,.3);font-size:0.9rem;" aria-hidden="true">·</span>
-              <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:.1em;text-transform:uppercase;color:#c8cfe0;white-space:nowrap;">CMB.Tech · TORM · Frontline · Scorpio · INSW</span>
+              <!-- CRO-Fix 2026-07-30 web-design-agent: this span's white-space:nowrap forced its full
+                   width past the 390px mobile viewport; body has overflow-x:hidden (style.min.css:65),
+                   so the tail (" INSW") was silently clipped instead of wrapping or scrolling — the
+                   parent's flex-wrap only reorders whole spans, it can't wrap text inside one. This
+                   span alone (5 tickers) is long enough to need it; the other two stay nowrap. -->
+              <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:.1em;text-transform:uppercase;color:#c8cfe0;">CMB.Tech · TORM · Frontline · Scorpio · INSW</span>
               <span style="color:rgba(212,175,55,.3);font-size:0.9rem;" aria-hidden="true">·</span>
               <span style="font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:.1em;text-transform:uppercase;color:#c8cfe0;white-space:nowrap;">Real Portfolio · Not Investment Advice</span>
             </div>
