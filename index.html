@@ -30,6 +30,13 @@
      last unaddressed font swap in the hero. No visual/layout change. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
+<!-- CWV-Fix 2026-07-31 seo-agent (DE-parity, same fix web-design-agent applied to DE index.html
+     same day): Lighthouse "uses-rel-preconnect" flags www.clarity.ms as a missing preconnect
+     candidate. Microsoft Clarity is not an ad/CMP network (no risk of re-triggering the
+     CMP-before-hero bug from the 2026-06-15 DE fix) -- safe to preconnect. fonts.gstatic.com is
+     NOT added here: EN self-hosts all webfonts locally (/fonts/*.woff2, GDPR self-hosted-fonts
+     policy), so there is no gstatic dependency to preconnect to. -->
+<link rel="preconnect" href="https://www.clarity.ms" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
