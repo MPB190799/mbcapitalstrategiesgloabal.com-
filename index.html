@@ -30,6 +30,17 @@
      last unaddressed font swap in the hero. No visual/layout change. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
+<!-- CLS-Fix 2026-07-31 web-design-agent: live cwv-snapshot (30.07. 23:31Z) still measured
+     CLS=0.127 on EN-Home (fresh Lighthouse re-run 31.07. confirms 0.1265, same single shift,
+     p.lede as the moved element). The layout-shifts audit now names exactly ONE remaining
+     unaddressed woff2: IBM Plex Mono weight 600, Latin range U+0000-00FF
+     ("gf-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2") -- text set at font-weight 700 in mono
+     resolves to this 600-face (fonts.css defines no 700 face), still arriving late via
+     fonts.css only. The audit also names the matching Cyrillic-range 400 sibling
+     ("gf-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2"), which is NOT preloaded here on purpose --
+     the page has no Cyrillic content, preloading it would burn bandwidth on a glyph range
+     nothing on this page uses, so only the Latin 600 face is added. No visual/layout change. -->
+<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3vAOwlBFgg.woff2" crossorigin>
 <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 
