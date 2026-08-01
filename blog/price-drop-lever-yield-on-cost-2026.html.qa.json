@@ -1,0 +1,13 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-08-01T08:34:26.283Z",
+  "content_sha": "3fc95bbbc44e7e31",
+  "hard_scan": "PASS",
+  "note": "Same fact set as DE, verified independently: FMP price/52W/day-% exit0; TTM $3.95 + 8.3% = FMP dividendPerShareTTM/dividendYieldTTM; dividend table matches FMP recordDate/amount/paymentDate; 'irregular cash dividend', announced Jul 16 2026, record Jul 27, payable Aug 12 via Businesswire PR + SEC 8-K lpg-20260716xex99d1; holding verified in held-positions.json (scalable+tr). Disclosure + MAR tier-2 block in body; R23 clean.",
+  "factcheck": "pass"
+}
