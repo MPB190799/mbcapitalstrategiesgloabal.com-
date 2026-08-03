@@ -728,6 +728,17 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   /* CRO 2026-06-27: tighten trust section vertical margin (28→12px) to save ~32px on mobile (part of CTAs-above-fold fix) */
   .hero-trust{gap:18px;margin:12px 0;padding:18px 0}
   .hero-trust .trust-item{min-width:90px}
+  /* CRO 2026-08-03 web-design-agent: DE-parity port (DE 2026-07-19 fix, never ported to EN).
+     Live Playwright/OpenClaw audit at 390x844 shows the "160+"/"8"/"YOC 6,93%" trust-stat row
+     still sits directly on the brightest part of the compass face — the 2026-07-03 opacity
+     tweak (.35→.22) and the mobile hero::before lightening (line ~483) reduce the scrim but
+     don't guarantee contrast, because the compass rotation moves the bright dial spot under the
+     text unpredictably. Root cause identical to the one DE fixed on 2026-07-19: chasing the
+     compass brightness never fully closes the gap. Fix (ported, not reinvented): give
+     .hero-trust itself a flat semi-opaque backdrop — guarantees contrast for all 3 stats
+     regardless of what rotates behind them. No padding/margin change → zero CLS, and does not
+     touch the deliberate 2026-06-27 mobile scrim-lightening decision above (additive only). */
+  .hero-trust{background:rgba(12,11,9,.62);border-radius:10px}
   .hero-ctas{gap:18px}
   /* CRO 2026-07-03 web-design-agent: opacity .35 let the light compass-face brass color
      bleed through "160+ research articles" stat label (var(--fg-muted) gray-on-beige,
