@@ -187,6 +187,39 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What TCE rate should I use for a dividend estimate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use the vessel's 3-5 year historical average TCE rate as your base case, not a recent spot peak or trough. Then run a downside scenario near break-even (roughly OPEX plus debt service) and an upside scenario at the top of the historical range. The spread between these two outcomes tells you far more about dividend durability than a single optimistic projection."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is this different from a generic dividend calculator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A generic dividend calculator starts from a per-share yield you already know. This calculator works backward from vessel-level operating economics (daily charter rate, OPEX, fleet size) to estimate the distributable cashflow that could support a dividend in the first place -- the step most shipping investors skip. It is built specifically for tanker, bulker and LNG carrier cashflow modeling, not general dividend stocks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this work for both spot and contract-backed shipping stocks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but the inputs differ. For spot-exposed tankers (TORM, Frontline), use current or historical average spot TCE rates and expect the output to vary significantly between market cycles. For contract-backed LNG carriers (FLEX LNG), use the contracted daily rate rather than a spot estimate -- these companies have already locked in their cashflow for years, so the calculator output is a much more stable estimate."
+      }
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "HowTo",
   "name": "How to use the Shipping Stock Cashflow Calculator",
   "description": "Step-by-step guide to using the free Shipping Stock Cashflow Calculator from MB Capital Strategies.",
