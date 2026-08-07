@@ -50,9 +50,10 @@ h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+  var mbcsEnExistingConsent = (function(){ try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; } })();
       gtag('consent', 'default', {
-        'ad_storage': 'denied', 'ad_user_data': 'denied',
-        'ad_personalization': 'denied', 'analytics_storage': 'denied',
+        'ad_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'), 'ad_user_data': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+        'ad_personalization': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'), 'analytics_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
         'functionality_storage': 'granted', 'security_storage': 'granted',
         'wait_for_update': 500
       });

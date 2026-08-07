@@ -54,11 +54,12 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
+  var mbcsEnExistingConsent = (function(){ try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; } })();
     gtag('consent', 'default', {
-      'ad_storage': 'denied',
-      'analytics_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied',
+      'ad_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+      'analytics_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+      'ad_user_data': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+      'ad_personalization': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
       'wait_for_update': 500
     });
     gtag('config', 'G-FSW7J7QYL8');

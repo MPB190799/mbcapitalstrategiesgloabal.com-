@@ -84,7 +84,8 @@
 }
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
+  var mbcsEnExistingConsent = (function(){ try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; } })();
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('consent','default',{'ad_storage':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'ad_user_data':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'ad_personalization':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'analytics_storage':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'wait_for_update':500});gtag('config','G-FSW7J7QYL8');</script>
 <style>
 body{font-family:'Segoe UI',sans-serif;background:#0a0e14;color:#d0d3e2;line-height:1.8;max-width:860px;margin:0 auto;padding:40px 24px}
 h1{color:#D4AF37;font-size:1.8rem;font-weight:800;margin:0 0 12px}

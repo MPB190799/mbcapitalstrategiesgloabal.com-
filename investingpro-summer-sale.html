@@ -88,7 +88,8 @@
 <script>
 window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 gtag('js',new Date());
-gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
+  var mbcsEnExistingConsent = (function(){ try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; } })();
+gtag('consent','default',{'ad_storage':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'ad_user_data':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'ad_personalization':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'analytics_storage':(mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),'functionality_storage':'granted','security_storage':'granted','wait_for_update':500});
 gtag('config','G-FSW7J7QYL8');
 </script>
 
