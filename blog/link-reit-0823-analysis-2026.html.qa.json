@@ -1,0 +1,14 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-08-07T12:15:49.108Z",
+  "content_sha": "6fabecd5765b5e5a",
+  "hard_scan": "PASS",
+  "note": "Link REIT (0823.HK) Analyse, r23-approved:marco im HTML. Faktencheck WebSearch 2026-08-07, je >=2 unabh. Quellen: DPU 253,61 HK-Cents = 126,88+126,73 (aastocks.com+linkreit.com); NAV/Einheit HKD 57,75 vs 63,30 Vorjahr (simplywall.st+HKEXnews-PDF); Umsatz HKD 13.938 Mio -2,0%, NPI -3,7% (companiesmarketcap.com+mingtiandi.com); Netto-Gearing 23,9% + Gesamtschulden HKD 56,7 Mrd (linkreit.com+HKEXnews-PDF); Ratings A2/A/A stabil (linkreit.com Moody's-Release+cbonds.com S&P); Sydney-Verkauf 100 Market Street 50% ~AUD 226 Mio Q3 2026 Closing (dimsumdaily.hk+thestandard.com.hk+marketscreener.com). Tagesskurs HKD 39,14 = Marktschnappschuss (FMP lt Methodology-Block), Rabatt 32,2% ist Arithmetik aus verifiziertem NAV+Kurs. Voice/Disclaimer/FAKT-These sauber, Korrektur eines fruehen Fehlers im Text dokumentiert. R16-Fallback-Selbstzert (content-qa-agent nicht spawnbar im non-interaktiven Self-Heal-Lauf) -- Folgetag-Recheck via qa-selfcert-recheck.py.",
+  "factcheck": "pass",
+  "numbers_verified_by": "claude"
+}
