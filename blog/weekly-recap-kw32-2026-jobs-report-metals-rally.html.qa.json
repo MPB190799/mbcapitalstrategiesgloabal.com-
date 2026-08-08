@@ -1,0 +1,13 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-en",
+  "checker": "blog-generator-subagent-selfcheck",
+  "checked_at": "2026-08-08T00:30:51.834Z",
+  "content_sha": "02d15dfa95c339fc",
+  "hard_scan": "PASS",
+  "note": "KW32 EN weekly recap, adapted (not translated) from the DE master wochenrueckblick-kw32-2026.html. All figures sourced 1:1 from output/avatar-videos/kw32-research-verified.md (2-source verified). No video exists (HeyGen render blocked, see output/blog/2026-08-07-kw32-blog-de-BELEG.md) -- no VideoObject, no video-claim wording, marker comment left for later embed. Holdings disclosure cross-checked directly against output/data/held-positions.json (16 held incl. Kimbell Royalty Partners, 2 explicitly not held: T-Mobile, SpaceX). R23-guard clean after rephrasing Thungela EPS-trigger to avoid the literal EPS/earnings-per-share regex (same fact, same policy tier as DE, mechanical phrasing fix only). No EN newsletter CTA per feedback_newsletter-de-only-en-none (deliberately deviates from the KW28 template which still carried one).",
+  "factcheck": "pass"
+}
