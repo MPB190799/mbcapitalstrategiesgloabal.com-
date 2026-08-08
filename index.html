@@ -456,6 +456,14 @@ html.promo-active .header{top:47px}
   .perf-grid{grid-template-columns:1fr}.ticker{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr}
   .hero-meta{display:none}
+  /* CRO 2026-08-08 web-design-agent: hero-issue row (Issue № + date + "Shipping · Mining · Energy")
+     is inline-flex/nowrap with no wrap-fallback — at <=640px the 5-span row is wider than the
+     viewport and each flex item wraps its own text internally instead of the row wrapping,
+     producing a cramped 3-column mess (found via mobile screenshot, confirmed against DE which
+     has no 5th span and renders fine). The sector tag is redundant: "Shipping, Mining & Energy"
+     already repeats in #hero-context-en directly below the H1. Hide the duplicate segment only —
+     Issue №/date stay visible, same fix pattern as .hero-signature-pill above. */
+  #hero-issue-sector-rule-en,#hero-issue-sector-en{display:none}
   .hero-title{font-size:clamp(44px,10vw,72px)}
   .logo-name{font-size:16px}
   /* Touch-targets P0: lang-switcher + theme-btn ≥44px on mobile (was ~22px / 34px) */
@@ -792,8 +800,8 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
         <span class="issue-rule"></span>
         <span class="issue-no" id="hero-issue-no-en">Issue № 49</span>
         <span id="hero-issue-date-en">21 June 2026</span>
-        <span class="issue-rule" style="opacity:.5"></span>
-        <span style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
+        <span class="issue-rule" id="hero-issue-sector-rule-en" style="opacity:.5"></span>
+        <span id="hero-issue-sector-en" style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
       </div>
       <script>
       // web-design-agent 2026-06-26: permanent rolling issue badge — ref №49 = 2026-06-21 (Sunday).
