@@ -244,26 +244,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === Cookie Consent Banner ===
-    // CMP-Stacking-Guard v3 (web-design-agent 2026-06-14 fix):
-    // When AdSense (adsbygoogle) is present on the page, Google Funding Choices IS the CMP.
-    // Our custom banner must NEVER show alongside Google's CMP — that creates double-dialog (UX-kill).
-    // v2 bug: even when googlefc was detected, own banner showed AFTER CMP dismissed (sequential stack).
-    // v3 fix: if page has AdSense → suppress own banner entirely. GA4 consent handled by gtag defaults.
-    //         Only show own banner on pages WITHOUT AdSense (GA4-only pages need own consent UI).
+    // CMP-Stacking-Guard v4 (seo-agent 2026-08-09 fix, escalation 2026-08-07):
+    // v3 assumed "ins.adsbygoogle present → Google Funding Choices handles consent" and
+    // suppressed our own banner on every AdSense page. LIVE-VERIFIED FALSE (07.08.2026,
+    // fresh-visitor test on blog/agnc-investment-analysis-2026.html): no banner, no Funding
+    // Choices dialog, no __tcfapi in DOM at all — on top of that the adsbygoogle.js LOADER
+    // itself is commented out site-wide pending EN AdSense re-approval (see head of this
+    // file's <script> block / per-page comment "AdSense loader disabled"), so Funding
+    // Choices can never even initialize. The ins-tag heuristic detected markup, not an
+    // active CMP. v4 fix: never assume — always run the real __tcfapi-based detection
+    // below; it already falls back to showing our own banner whenever no live CMP answers.
     const cookieBanner = document.getElementById('cookieBanner');
     if (cookieBanner && !localStorage.getItem('cookie_consent')) {
-        // Detect AdSense presence: array defined by adsbygoogle.js load or inline push scripts
-        const hasAdSense = (typeof window.adsbygoogle !== 'undefined') ||
-                           document.querySelector('ins.adsbygoogle') !== null ||
-                           document.querySelector('script[src*="adsbygoogle.js"]') !== null;
-
-        if (hasAdSense) {
-            // AdSense present → Google Funding Choices handles consent. Own banner suppressed.
-            // GA4 consent mode defaults are already set via gtag('consent','default') in <head>.
-        } else {
-            // No AdSense on this page → show own lightweight banner after brief delay
+        {
             let cmpCheckAttempts = 0;
-            const cmpMaxAttempts = 15; // 15 × 100ms = 1.5s — shorter wait on non-AdSense pages
+            const cmpMaxAttempts = 15; // 15 × 100ms = 1.5s
             function checkCmpAndMaybeShowBanner() {
                 cmpCheckAttempts++;
                 if (typeof window.__tcfapi === 'function') {

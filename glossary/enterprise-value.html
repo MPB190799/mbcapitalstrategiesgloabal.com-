@@ -296,5 +296,42 @@ EV/EBITDA = Enterprise Value / EBITDA
 </p>
 
 <p class="disclaimer">This glossary entry is for educational purposes only. Nothing on this page constitutes investment advice. All valuation multiples are illustrative ranges and not specific buy or sell recommendations. Please consult a qualified financial adviser before making investment decisions.</p>
+
+<!-- Self-contained cookie consent banner (SEO-agent 2026-08-09, DSGVO gap fix, escalation 2026-08-07) -->
+<style>
+.mbcs-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0f1219;border-top:1px solid rgba(212,175,55,.35);padding:14px 18px;display:none;box-shadow:0 -4px 18px rgba(0,0,0,.4)}
+.mbcs-cookie-banner.show{display:block}
+.mbcs-cookie-inner{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+.mbcs-cookie-text{color:#d0d3e2;font-size:.82rem;line-height:1.5;margin:0;flex:1;min-width:220px}
+.mbcs-cookie-text a{color:#D4AF37;text-decoration:underline}
+.mbcs-cookie-buttons{display:flex;gap:10px;flex-shrink:0}
+.mbcs-cookie-btn{padding:8px 18px;border-radius:6px;font-size:.82rem;font-weight:700;cursor:pointer;border:1px solid transparent}
+.mbcs-cookie-btn-accept{background:#D4AF37;color:#0a0e14;border-color:#D4AF37}
+.mbcs-cookie-btn-reject{background:transparent;color:#d0d3e2;border-color:#3a3f4d}
+@media(max-width:480px){.mbcs-cookie-inner{flex-direction:column;align-items:stretch}.mbcs-cookie-buttons{justify-content:flex-end}}
+</style>
+<div class="mbcs-cookie-banner" id="cookieBanner"><div class="mbcs-cookie-inner"><p class="mbcs-cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="mbcs-cookie-buttons"><button class="mbcs-cookie-btn mbcs-cookie-btn-reject" id="cookieReject">Reject</button><button class="mbcs-cookie-btn mbcs-cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<script>
+(function(){
+  var b=document.getElementById('cookieBanner');
+  if(!b) return;
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){ if(!localStorage.getItem('cookie_consent')) b.classList.add('show'); }, 400);
+  }
+  var a=document.getElementById('cookieAccept'), r=document.getElementById('cookieReject');
+  if(a) a.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','accepted');
+    if(window.gtag) window.gtag('consent','update',{'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+    if(window.clarity) window.clarity('consent', true);
+    b.classList.remove('show');
+  });
+  if(r) r.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','rejected');
+    b.classList.remove('show');
+    window['ga-disable-G-FSW7J7QYL8']=true;
+  });
+})();
+</script>
+
 </body>
 </html>
