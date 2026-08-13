@@ -311,6 +311,32 @@
   <p style="margin:0;font-size:1.05rem;line-height:1.65;"><strong>Quick Answer:</strong> Free shipping cashflow calculator for tanker, bulk carrier, and LNG investors. Enter daily TCE rate ($), number of vessels, and operating costs (OPEX). Output: daily revenue, annual gross cashflow, and dividend capacity. Use current Baltic Exchange rates as inputs — see indicative ranges in the table below the calculator.</p>
 </div>
             <div class="glass-card calc-container">
+                <!-- FLEET SCENARIOS ─ neutral segment estimates. Branded issuer presets
+                     (logo + "Advertisement" label + position disclosure) are only ever
+                     injected from an approved deal in the sponsorship register —
+                     sponsor_id stays null until then. A named preset without a deal
+                     would assert a partnership that does not exist. -->
+                <div class="calc-group" style="margin-bottom:16px;">
+                    <label for="szenarioSelect">Load a fleet scenario (optional)</label>
+                    <select id="szenarioSelect" class="form-input" onchange="loadScenario()">
+                        <option value="">— enter your own figures —</option>
+                    </select>
+                    <p id="scenarioNote" style="display:none;color:#9aa6c0;font-size:0.78rem;margin:6px 0 0;"></p>
+                    <p id="scenarioPartner" style="display:none;color:#D4AF37;font-size:0.78rem;margin:4px 0 0;font-weight:600;"></p>
+                </div>
+                <script id="fleetScenarios" type="application/json">
+                [
+                  {"id":"eco-vlcc","label":"Eco VLCC crude tanker (segment estimates)","sponsor_id":null,
+                   "note":"Estimates for a modern eco VLCC in a mid-cycle market, derived from public quarterly reports of large tanker owners (as of 08/2026). Not company data — overwrite with your own figures at any time.",
+                   "values":{"dailyRate":45000,"opexDay":8000,"daysAtSea":335,"numVessels":20}},
+                  {"id":"mr-product-tanker","label":"MR product tanker fleet (segment estimates)","sponsor_id":null,
+                   "note":"Estimates for an MR product tanker fleet, derived from public quarterly reports (as of 08/2026). Not company data.",
+                   "values":{"dailyRate":25000,"opexDay":7000,"daysAtSea":343,"numVessels":30}},
+                  {"id":"kamsarmax-bulker","label":"Kamsarmax dry bulker fleet (segment estimates)","sponsor_id":null,
+                   "note":"Estimates for a Kamsarmax bulker fleet, derived from public quarterly reports (as of 08/2026). Not company data.",
+                   "values":{"dailyRate":14000,"opexDay":6000,"daysAtSea":347,"numVessels":25}}
+                ]
+                </script>
                 <div class="calc-grid">
                     <div class="calc-group">
                         <label for="dailyRate">Daily Rate ($)</label>
@@ -575,6 +601,43 @@
     <script defer src="../js/main.min.js"></script>
     <script>
         function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
+        /* Fleet scenarios (presets) — reads the inline JSON, fills the dropdown and,
+           on selection, the inputs. A filled sponsor_id shows the labelled partner
+           line; that only happens via an approved sponsorship register entry. */
+        function fleetScenarios() {
+            try { return JSON.parse(document.getElementById('fleetScenarios').textContent) || []; }
+            catch (e) { return []; }
+        }
+        (function initScenarios() {
+            var sel = document.getElementById('szenarioSelect');
+            if (!sel) return;
+            fleetScenarios().forEach(function (s) {
+                var o = document.createElement('option');
+                o.value = s.id; o.textContent = s.label;
+                sel.appendChild(o);
+            });
+        })();
+        function loadScenario() {
+            var sel = document.getElementById('szenarioSelect');
+            var note = document.getElementById('scenarioNote');
+            var partner = document.getElementById('scenarioPartner');
+            var s = fleetScenarios().find(function (x) { return x.id === sel.value; });
+            if (!s) { note.style.display = 'none'; partner.style.display = 'none'; return; }
+            var v = s.values || {};
+            ['dailyRate', 'opexDay', 'daysAtSea', 'numVessels'].forEach(function (k) {
+                if (v[k] != null) document.getElementById(k).value = v[k];
+            });
+            note.textContent = s.note || '';
+            note.style.display = s.note ? 'block' : 'none';
+            if (s.sponsor_id && s.partner_label) {
+                partner.textContent = 'Advertisement — fleet data provided by ' + s.partner_label
+                    + (s.position_disclosed ? ' · I hold this stock; disclosure: /pages/advertise.html' : '');
+                partner.style.display = 'block';
+            } else {
+                partner.style.display = 'none';
+            }
+            calculate();
+        }
         function calculate() {
             var rate = parseFloat(document.getElementById('dailyRate').value) || 0;
             var opex = parseFloat(document.getElementById('opexDay').value) || 0;
