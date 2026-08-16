@@ -1,0 +1,19 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-en",
+  "checker": "blog-generator-subagent-selfcheck",
+  "checked_at": "2026-08-16T03:52:09.418Z",
+  "content_sha": "4f65d59ca100f1d1",
+  "hard_scan": "PASS",
+  "note": "KW33 EN weekly recap, adapted (not translated) from output/avatar-videos/script-kw33-v1.md + kw33-research-verified.md. Held-positions cross-checked against output/data/held-positions.json (INSW, Cosan ADR, Thungela Resources confirmed held; no other named company held). R23: Wallenius Wilhelmsen EBITDA guidance number omitted (qualitative only, per DE script + R23 free-tier policy); Cosan Q2 figures omitted (one sentence, no numbers). r23-guard.py clean after rephrasing a FAQ sentence where dividend wording coincidentally matched the net-profit+number regex (same facts, mechanical phrasing fix, no restricted number ever present). Hormuz ceasefire date corrected to Mon 17.08.2026 per the dossier's own 15.08.2026 correction (UK HoC Library, US CRS, Wikipedia). Thungela +475% profit jump explicitly NOT carried into this article (that is a KW32 story per the dossier); only the Monday H1-results outlook is mentioned. No EN newsletter CTA per feedback_newsletter-de-only-en-none. DE counterpart (wochenrueckblick-kw33-2026.html) does not exist yet -- flagged as open item; hreflang points to the planned DE URL per F3 Schritt 6.",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": false,
+    "basis": "output/avatar-videos/kw33-research-verified.md (2-source verified per fact, R16 doppel-gate PASS 13/14 already run on the DE script/dossier this article adapts from); every number cross-checked line-by-line against that dossier during autho",
+    "note": "abgeleitetes Artefakt — Beleg liegt beim benannten Original, hier nicht nachgeprueft"
+  },
+  "numbers_verified_by": "claude"
+}
