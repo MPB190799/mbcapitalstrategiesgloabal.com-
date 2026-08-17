@@ -219,7 +219,24 @@ header.header a:hover,
   border-top: 1px solid rgba(212,175,55,0.1);
   margin: 6px 0;
 }
-@media (min-width: 700px) { .dropdown:hover .dropdown-content { display: block; } }
+@media (min-width: 700px) {
+  /* Hover-Bruecke (17.08.2026, Marco: "man muss erst anklicken").
+     Zwischen Button und Menue liegen 8 px Totzone (top: calc(100% + 8px)). Der Zeiger
+     verliess dort das .dropdown, `.dropdown:hover` wurde falsch und das Menue schloss,
+     BEVOR man es erreichte — gemessen: elementFromPoint in der Luecke liefert .nav-inner.
+     Das ::before ueberspannt die Luecke unsichtbar und haelt den Hover. :focus-within
+     macht dasselbe fuer Tastatur-Navigation. */
+  .dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 10px;
+  }
+  .dropdown:hover .dropdown-content,
+  .dropdown:focus-within .dropdown-content { display: block; }
+}
 @media (max-width: 699px) { .dropdown.open .dropdown-content { display: block; } }
 
 /* Premium dropdown – high specificity to beat inline styles */
