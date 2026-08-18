@@ -354,33 +354,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // === GA4 Affiliate Click Tracking ===
-    if (typeof gtag === 'function') {
-        document.querySelectorAll('a[rel*="sponsored"]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                gtag('event', 'affiliate_click', {
-                    event_category: 'monetization',
-                    event_label: link.hostname || link.href,
-                    page: window.location.pathname
-                });
+    // Delegierter Listener (statt einmaligem forEach bei DOMContentLoaded) — gtag laedt async
+    // und ist beim DOMContentLoaded fast nie schon vorhanden. Die typeof-gtag-Pruefung wandert
+    // deshalb vom Bindungs- zum Klick-Zeitpunkt (Vorbild: DE assets/js/nav.js Zeile ~769).
+    document.addEventListener('click', function(e) {
+        var link = e.target.closest('a[rel*="sponsored"]');
+        if (link && typeof gtag === 'function') {
+            gtag('event', 'affiliate_click', {
+                event_category: 'monetization',
+                event_label: link.hostname || link.href,
+                page: window.location.pathname
             });
-        });
+        }
+    });
 
-        // === GA4 Scroll Depth Tracking (25%, 50%, 75%, 90%) ===
-        var scrollMarkers = {25: false, 50: false, 75: false, 90: false};
-        window.addEventListener('scroll', function() {
-            var scrollHeight = document.body.scrollHeight - window.innerHeight;
-            if (scrollHeight <= 0) return;
-            var pct = Math.round((window.scrollY / scrollHeight) * 100);
-            [25, 50, 75, 90].forEach(function(m) {
-                if (pct >= m && !scrollMarkers[m]) {
-                    scrollMarkers[m] = true;
-                    gtag('event', 'scroll_depth', {
-                        event_category: 'engagement',
-                        event_label: m + '%'
-                    });
-                }
-            });
-        }, { passive: true });
-    }
+    // === GA4 Scroll Depth Tracking (25%, 50%, 75%, 90%) ===
+    var scrollMarkers = {25: false, 50: false, 75: false, 90: false};
+    window.addEventListener('scroll', function() {
+        if (typeof gtag !== 'function') return;
+        var scrollHeight = document.body.scrollHeight - window.innerHeight;
+        if (scrollHeight <= 0) return;
+        var pct = Math.round((window.scrollY / scrollHeight) * 100);
+        [25, 50, 75, 90].forEach(function(m) {
+            if (pct >= m && !scrollMarkers[m]) {
+                scrollMarkers[m] = true;
+                gtag('event', 'scroll_depth', {
+                    event_category: 'engagement',
+                    event_label: m + '%'
+                });
+            }
+        });
+    }, { passive: true });
 
 });
