@@ -1,41 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
-
-  <url>
-    <loc>https://mbcapitalstrategiesglobal.com/pages/best-high-yield.html</loc><lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-high-yield.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/top-5-high-yield-aktien-2026.html"/>
-  </url>
-  <url>
-    <loc>https://mbcapitalstrategiesglobal.com/pages/best-lng.html</loc><lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-lng.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/beste-lng-aktien-2026.html"/>
-  </url>
-  <url>
-    <loc>https://mbcapitalstrategiesglobal.com/pages/best-tanker.html</loc><lastmod>2026-06-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-tanker.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/beste-tanker-aktien-2026.html"/>
-  </url>
-  <url>
-    <loc>https://mbcapitalstrategiesglobal.com/pages/best-broker-dividends.html</loc><lastmod>2026-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-broker-dividends.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/bester-broker-dividenden-2026.html"/>
-  </url>
-  <url>
-    <loc>https://mbcapitalstrategiesglobal.com/pages/travel-money-2026.html</loc><lastmod>2026-06-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/travel-money-2026.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/geld-auf-reisen-2026.html"/>
-  </url>
-
-</urlset>
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:urlset xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <ns0:url>
+    <ns0:loc>https://mbcapitalstrategiesglobal.com/pages/best-high-yield.html</ns0:loc>
+    <ns0:lastmod>2026-06-02</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+    <html:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-high-yield.html" />
+    <html:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/top-5-high-yield-aktien-2026.html" />
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://mbcapitalstrategiesglobal.com/pages/best-lng.html</ns0:loc>
+    <ns0:lastmod>2026-06-02</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+    <html:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-lng.html" />
+    <html:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/beste-lng-aktien-2026.html" />
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://mbcapitalstrategiesglobal.com/pages/best-tanker.html</ns0:loc>
+    <ns0:lastmod>2026-06-02</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+    <html:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-tanker.html" />
+    <html:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/beste-tanker-aktien-2026.html" />
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://mbcapitalstrategiesglobal.com/pages/best-broker-dividends.html</ns0:loc>
+    <ns0:lastmod>2026-06-19</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.8</ns0:priority>
+    <html:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/best-broker-dividends.html" />
+    <html:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/bester-broker-dividenden-2026.html" />
+  </ns0:url>
+  <ns0:url>
+    <ns0:loc>https://mbcapitalstrategiesglobal.com/pages/travel-money-2026.html</ns0:loc>
+    <ns0:lastmod>2026-06-19</ns0:lastmod>
+    <ns0:changefreq>monthly</ns0:changefreq>
+    <ns0:priority>0.75</ns0:priority>
+    <html:link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/pages/travel-money-2026.html" />
+    <html:link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/bestenlisten/geld-auf-reisen-2026.html" />
+  </ns0:url>
+</ns0:urlset>
