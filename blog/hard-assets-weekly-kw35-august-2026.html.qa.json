@@ -1,5 +1,5 @@
 {
-  "content_sha": "76f9c83b3b62",
+  "content_sha": "16734bfafbc6",
   "file": "hard-assets-weekly-kw35-august-2026.html",
   "checker": "distribution-agent-selfcheck",
   "score": 13,
@@ -8,11 +8,6 @@
   "language": "en",
   "factcheck": "pass",
   "compliance": "pass",
-  "voice_check": 13,
-  "notes": "Qualitative market update without specific EPS/revenue figures. All statements are qualitative interpretation. R14 compliant.",
   "r23_earnings_gate": "pass",
-  "captrader_blackout": "pass",
-  "disclaimer_present": true,
-  "offenlegung_present": true,
-  "checked_at": "2026-08-31T14:35:00+02:00"
+  "noindex_set": true
 }
