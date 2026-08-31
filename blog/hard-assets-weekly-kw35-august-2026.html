@@ -1,98 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <!-- LCP-Fix: Critical Fonts preload -->
+<meta charset="UTF-8">
+  <!-- R23: contains EPS/earnings data -->
+  
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#050508">
+  <meta name="theme-color" content="#0f1115">
+<!-- LCP-Critical-CSS: Inline Above-the-Fold styles -->
+<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}
+:root{--gold:#d4af37;--bg:#050508;--bg-soft:#0c0e16;--text:#f0f1f5;--text-muted:#9aa0b8;--radius:16px}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:'Outfit',system-ui,sans-serif;line-height:1.7;overflow-x:hidden}
+h1{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--gold);margin:0 0 18px;line-height:1.1;letter-spacing:-0.02em}
+.nav,header.header{position:sticky;top:0;z-index:100;background:rgba(5,5,8,0.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(212,175,55,0.1)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-brand span{color:var(--gold);font-weight:700;font-size:.9rem;letter-spacing:.02em;white-space:nowrap}
+.nav-hamburger{display:none;flex-direction:column;gap:4px;background:none;border:none;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:20px;height:2px;background:var(--gold);border-radius:2px}
+.container,.page-wrapper{max-width:1000px;margin:0 auto;padding:0 24px 80px}
+.breadcrumbs{max-width:940px;margin:16px auto 0;padding:0 20px;font-size:.82em;color:var(--text-muted)}
+.breadcrumbs a{color:var(--text-muted);text-decoration:none}
+.nav-mobile{display:none}@media(max-width:768px){.nav-links{display:none}.nav-hamburger{display:flex}h1{font-size:1.6rem}.nav-mobile.open{display:flex;flex-direction:column;background:rgba(5,5,8,.97);padding:16px 20px;gap:10px}.nav-mobile a{color:#cfd6e6;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05);display:block}.nav-mobile .mob-label{color:#d4af37;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin:10px 0 4px}}
+</style>
 
-  <title>Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Actually Say</title>
-  <meta name="description" content="Week 35 market update: oil stable below $85, shipping rates dip 8%, gold holds above $2,600. Three earnings reports this week — Pfizer, Chevron, ConocoPhillips — and what they mean for hard-asset dividend investors.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index,follow">
+  <title>Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Say</title>
+  <meta name="description" content="KW35 update: Brent at $84/bbl, tanker rates -8%, gold above $2,600. Chevron and ConocoPhillips earnings this week — and why hard assets are more than a trend trade.">
   <meta name="author" content="Marco Bozem">
-
-  <link rel="canonical" href="https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="canonical" href="https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html" />
+  <link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/blog/ellington-financial-analyse-2026.html">
   <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html">
   <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html">
-
-  <meta property="og:title" content="Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Actually Say">
-  <meta property="og:description" content="Week 35 market update: oil stable below $85, shipping rates dip 8%, gold holds above $2,600. Three earnings reports this week and what they mean for hard-asset dividend investors.">
-  <meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-energy.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Say">
+  <meta property="og:description" content="KW35 update: Brent at $84/bbl, tanker rates -8%, gold above $2,600. Chevron and ConocoPhillips earnings this week — and why hard assets are more than a trend trade.">
+  <meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
   <meta property="og:url" content="https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="en_US">
-  <meta property="og:site_name" content="MB Capital Strategies">
+  <meta property="og:site_name" content="MB Capital Strategies Global">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Actually Say">
-  <meta name="twitter:description" content="Week 35 market update: oil stable below $85, shipping rates dip 8%, gold holds above $2,600. Three earnings reports this week and what they mean for hard-asset dividend investors.">
-  <meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-energy.jpg">
+  <meta name="twitter:title" content="Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Say">
+  <meta name="twitter:description" content="KW35 update: Brent at $84/bbl, tanker rates -8%, gold above $2,600. Chevron and ConocoPhillips earnings this week — and why hard assets are more than a trend trade.">
+  <meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
   <meta name="twitter:creator" content="@MBCapitalStrat">
 
-  <link rel="stylesheet" href="/blog/styles.css?v=3">
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Actually Say",
-  "description": "Week 35 market update: oil stable below $85, shipping rates dip 8%, gold holds above $2,600. Three earnings reports this week — Pfizer, Chevron, ConocoPhillips — and what they mean for hard-asset dividend investors.",
-  "author": {
-    "@type": "Person",
-    "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person",
-    "name": "Marco Bozem",
-    "jobTitle": "Independent Investor & Financial Analyst",
-    "url": "https://mbcapitalstrategiesglobal.com/pages/about.html",
-    "sameAs": [
-      "https://www.linkedin.com/in/marco-bozem-182173295/",
-      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
-      "https://www.wikidata.org/wiki/Q138571853"
-    ]
-  },
-  "publisher": {
-    "@type": "Organization",
-    "@id": "https://mbcapitalstrategiesglobal.com/#organization",
-    "name": "MB Capital Strategies",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://mbcapitalstrategiesglobal.com/assets/logo.png"
-    },
-    "sameAs": [
-      "https://www.wikidata.org/wiki/Q138571853",
-      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
-      "https://www.linkedin.com/company/mb-capital-strategies/"
-    ]
-  },
-  "datePublished": "2026-08-31",
-  "dateModified": "2026-08-31",
-  "mainEntityOfPage": "https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html",
-  "image": "https://mbcapitalstrategiesglobal.com/assets/og-energy.jpg",
-  "articleSection": "Market Update · Hard Assets Weekly",
-  "wordCount": 680,
-  "keywords": [
-    "hard assets weekly",
-    "oil price August 2026",
-    "shipping rates KW35",
-    "gold price August 2026",
-    "Chevron earnings Q2",
-    "ConocoPhillips earnings",
-    "Pfizer earnings 2026",
-    "dividend stocks hard assets"
-  ]
-}
-</script>
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://mbcapitalstrategiesglobal.com/blog/" },
-    { "@type": "ListItem", "position": 3, "name": "Hard Assets Weekly KW35", "item": "https://mbcapitalstrategiesglobal.com/blog/hard-assets-weekly-kw35-august-2026.html" }
-  ]
-}
-</script>
+  <!-- Critical inline CSS -->
+<style>body{margin:0;background:#0f1115;color:#f0f4ff;font-family:system-ui,-apple-system,sans-serif}h1{font-size:clamp(1.5rem,4vw,2.2rem);line-height:1.25;color:#f0f4ff;margin:0 0 .5em}section.container{max-width:900px;margin:0 auto;padding:20px 16px}</style>
+<link rel="preload" as="style" href="../css/style.min.css" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="../css/style.min.css"></noscript>
 
-<!-- Google tag (gtag.js) -->
+  <style>
+    .info-box{background:#1a1f2b;padding:14px;border-left:4px solid #d4af37;border-radius:8px;margin:22px 0}
+    .risk-box{background:#22151a;padding:14px;border-left:4px solid #ff6b6b;border-radius:8px;margin:22px 0}
+    .cta-box{background:#151821;padding:22px;border-radius:12px;border:1px solid rgba(212,175,55,.35);margin:40px 0}
+    .cta-btn{display:inline-block;padding:12px 18px;background:#d4af37;color:#000;font-weight:700;border-radius:8px;text-decoration:none}
+    .breadcrumbs{max-width:900px;margin:20px auto;font-size:.9rem;color:#aaa}
+    .breadcrumbs a{color:#d4af37;text-decoration:none}
+    .metrics-table{width:100%;border-collapse:collapse;margin:16px 0}
+    .metrics-table td{padding:10px 14px;border-bottom:1px solid rgba(212,175,55,.12);font-size:.93rem}
+    .metrics-table td:first-child{color:#d4af37;font-weight:600;width:45%}
+    .highlight-box{background:linear-gradient(135deg,#1a1f2b,#151821);padding:18px 20px;border-radius:10px;border:1px solid rgba(212,175,55,.4);margin:24px 0}
+    .related-articles{background:rgba(212,175,55,.06);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:24px 28px;margin:40px 0}
+    .related-articles h3{color:#d4af37;font-size:1rem;font-weight:700;margin:0 0 16px;letter-spacing:.04em;text-transform:uppercase}
+    .related-articles ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+    .related-articles li a{color:#9aa6c0;text-decoration:none;font-size:.88rem;display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:1px solid rgba(212,175,55,.1);transition:all .2s}
+    .related-articles li a:hover{color:#d4af37;border-color:rgba(212,175,55,.35);background:rgba(212,175,55,.06)}
+    .author-box{background:#0f1220;border:1px solid rgba(212,175,55,.25);border-radius:12px;padding:22px 24px;margin:40px 0;display:flex;gap:18px;align-items:flex-start}
+    .author-box .author-info h4{margin:0 0 6px;color:#d4af37;font-size:1rem}
+    .author-box .author-info p{margin:0;color:#9aa6c0;font-size:.87rem;line-height:1.55}
+  </style>
+
+  <!-- GA4 EN -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -100,163 +86,530 @@
   gtag('js', new Date());
   var mbcsEnExistingConsent = (function(){ try { return localStorage.getItem('cookie_consent'); } catch(e) { return null; } })();
   gtag('consent', 'default', {
-    'ad_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'), 'ad_user_data': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
-    'ad_personalization': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'), 'analytics_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
-    'functionality_storage': 'granted', 'security_storage': 'granted', 'wait_for_update': 500
+    'ad_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+    'analytics_storage': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+    'ad_user_data': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied'),
+    'ad_personalization': (mbcsEnExistingConsent === 'accepted' ? 'granted' : 'denied')
   });
   gtag('config', 'G-FSW7J7QYL8');
 </script>
+
+  <!-- SEO SCHEMA: BlogPosting -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Hard Assets Weekly KW35: Oil Holds, Shipping Rates Dip — What the Numbers Say",
+  "description": "Ellington Financial (EFC) analysis 2026: monthly dividend $0.13, yield ~11.5%, ADE $0.55/Q covers dividend 1.41x. Credit mREIT with Longbridge reverse mortgage segment. Marco's honest take including his position at −4.6%.",
+  "author": {
+    "@type": "Person",
+    "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person",
+    "name": "Marco Bozem",
+    "jobTitle": "Independent Investor & Financial Analyst",
+    "url": "https://mbcapitalstrategiesglobal.com/pages/about.html",
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/channel/UC5LIDzErtraezONAApuC7OA",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://odysee.com/@MBCapitalStrategiesGlobal:5"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://mbcapitalstrategiesglobal.com/#organization",
+    "name": "MB Capital Strategies Global",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://mbcapitalstrategiesglobal.com/Logo.webp"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/mb-capital-strategies/",
+      "https://www.wikidata.org/wiki/Q138571853",
+      "https://www.youtube.com/@MBCapitalStrategiesGlobal",
+      "https://www.linkedin.com/in/marco-bozem-182173295",
+      "https://medium.com/@mbcapitalstrategies",
+      "https://www.reddit.com/r/MBCapitalStrategies/",
+      "https://open.spotify.com/show/2j9OzcSCsghPvyV7hegLHI",
+      "https://www.xing.com/profile/Marco_Bozem",
+      "https://de.investing.com/members/contributors/268748043/opinion",
+      "https://odysee.com/@mbcapitalstrategies:5",
+      "https://podcasts.apple.com/de/podcast/der-finanzfeuer-talk/id1866542893",
+      "https://www.youtube.com/channel/UC5LIDzErtraezONAApuC7OA",
+      "https://www.youtube.com/@mbcapitalstrategies",
+      "https://mbcapitalstrategies.com",
+      "https://odysee.com/@MBCapitalStrategiesGlobal:5"
+    ]
+  },
+  "mainEntityOfPage": "https://mbcapitalstrategiesglobal.com/blog/ellington-financial-analysis-2026.html",
+  "datePublished": "2026-07-01",
+  "dateModified": "2026-07-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg",
+    "width": 1200,
+    "height": 630
+  },
+  "inLanguage": "en",
+  "articleSection": "Mortgage REIT",
+  "wordCount": 1200,
+  "keywords": [
+    "Ellington Financial",
+    "EFC",
+    "Credit mREIT",
+    "monthly dividend",
+    "Non-QM loans",
+    "Longbridge reverse mortgage",
+    "dividend yield",
+    "Adjusted Distributable Earnings",
+    "MB Capital Strategies"
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: BreadcrumbList -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://mbcapitalstrategiesglobal.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://mbcapitalstrategiesglobal.com/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Ellington Financial (EFC) Analysis 2026",
+      "item": "https://mbcapitalstrategiesglobal.com/blog/ellington-financial-analysis-2026.html"
+    }
+  ]
+}
+</script>
+
+  <!-- SEO SCHEMA: FAQPage -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Ellington Financial and a traditional equity REIT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ellington Financial (EFC) is not an equity REIT that owns and leases physical properties. EFC is a credit mREIT — a mortgage real estate investment trust that buys, holds, and securitizes loans and mortgage-related securities. Its core assets include non-QM residential mortgages (loans for self-employed borrowers or those with non-traditional income who don't qualify for Fannie/Freddie), residential transition loans, commercial mortgage loans, and through its subsidiary Longbridge Financial, reverse mortgage loans for US seniors. This means no tenant concentration risk, but full credit default risk and meaningful interest rate exposure."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Ellington Financial's $0.13 monthly dividend covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "As of Q1 2026: yes, with a solid cushion. Adjusted Distributable Earnings (ADE) came in at $0.55 per share for the quarter — the quarterly dividend totals $0.39 (3 × $0.13/month). That gives a coverage ratio of approximately 1.41x. This is well above the 1.0–1.1x coverage seen at many peer mREITs. Risk: ADE is a non-GAAP metric and can deteriorate quickly if credit losses increase or interest rates move adversely. Not investment advice."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is Longbridge Financial and why does it matter for EFC investors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Longbridge Financial is a wholly owned EFC subsidiary and one of the largest US reverse mortgage originators. In Q1 2026, Longbridge originated $515 million in new reverse mortgage loans — up 52% from Q1 2025 — and generated $57.5 million in net income, surpassing Longbridge's entire full-year 2025 net income in a single quarter. The segment has become EFC's growth engine and meaningfully diversifies the non-QM credit risk in the rest of the portfolio."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the biggest risk with Ellington Financial stock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The biggest risk is a recession that drives up credit defaults in the non-QM and consumer loan segment. Non-QM borrowers carry higher default risk than conforming borrowers — they lack the FICO scores or income profiles to qualify for Fannie Mae or Freddie Mac loans. In a recession, default rates in this segment tend to rise first. Add to that substantial leverage (debt-to-equity roughly 9x), which amplifies losses. A third risk is shareholder dilution: the share count grew roughly 37% year-over-year due to capital raises. Not investment advice."
+      }
+    }
+  ]
+}
+</script>
+
   <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
   <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
-<style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
+<!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
 </head>
+
 <body>
 
 <header class="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-brand">MB Capital Strategies</a>
-    <nav>
+    <a href="/" class="nav-brand">
+      <picture><source srcset="/Logo.webp" type="image/webp"><img src="/Logo.webp" alt="MB Capital Strategies" width="40" height="40" fetchpriority="high"></picture>
+      <span>MB Capital Strategies</span>
+    </a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/pages/dividend-strategy.html">Dividend Strategy</a>
+      <a href="/pages/reit-investing.html">REITs</a>
+      <a href="/pages/best-high-yield.html">High Yield</a>
       <a href="/blog/">Blog</a>
-      <a href="/pages/about.html">About</a>
-      <a href="/pages/calculators.html">Tools</a>
+      <a href="/tools/">Tools</a>
+      <a href="/glossary/">Glossary</a>
     </nav>
   </div>
+  <nav class="nav-mobile" id="navMobile" aria-label="Mobile Navigation">
+    <a href="/">Home</a>
+    <a href="/pages/dividend-strategy.html">Dividend Strategy</a>
+    <a href="/pages/reit-investing.html">REITs</a>
+    <a href="/pages/best-high-yield.html">High Yield</a>
+    <a href="/blog/">Blog</a>
+    <a href="/tools/">Tools</a>
+    <a href="/glossary/">Glossary</a>
+  </nav>
 </header>
 
-<main class="blog-main" data-no-google-auto-placements="true">
-  <article>
+<nav class="breadcrumbs">
+  <a href="/">Home</a> ›
+  <a href="/blog/">Blog</a> ›
+  <span>Ellington Financial (EFC) Analysis 2026</span>
+</nav>
 
-    <div class="breadcrumbs" style="max-width:860px;margin:20px auto 0;font-size:0.85rem;color:#888;">
-      <a href="/" style="color:#D4AF37;text-decoration:none;">Home</a> &rsaquo;
-      <a href="/blog/" style="color:#D4AF37;text-decoration:none;">Blog</a> &rsaquo;
-      Hard Assets Weekly KW35
-    </div>
+<section class="container">
 
-    <header class="article-header" style="max-width:860px;margin:28px auto 0;">
-      <div class="article-meta" style="color:#D4AF37;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:12px;">
-        MARKET UPDATE · KW35 · AUGUST 2026
-      </div>
-      <h1>Hard Assets Weekly: Oil Holds, Shipping Rates Dip — What the Numbers Actually Say</h1>
-      <p class="post-meta" style="color:#9aa6c0;font-size:0.875rem;margin:0 0 20px;"><time datetime="2026-08-31">Published: August 31, 2026</time> &middot; By <a href="/pages/about.html" style="color:#D4AF37;text-decoration:none;">Marco Bozem</a> &middot; <em>Not financial advice.</em></p>
+<!-- AEO Answer-First Block -->
+<div style="background:rgba(212,175,55,0.07);border-left:4px solid #D4AF37;border-radius:8px;padding:16px 20px;margin:0 0 24px;">
+  <p style="margin:0;color:#e8eaf0;font-size:0.97rem;line-height:1.6;"><strong style="color:#D4AF37;">Ellington Financial (EFC) at a glance (as of July 1, 2026):</strong> Credit mREIT, NYSE: EFC. Price $13.61 · 52-week range $11.28–$14.12 · Market cap ~$1.35B. Dividend $0.13/month = $1.56/year, yield ~11.5% — monthly payout. ADE Q1 2026: $0.55/share, coverage 1.41x. Book Value (May 2026): $13.49/share. Longbridge Reverse Mortgage: record quarter $57.5M net income. Not investment advice.</p>
+</div>
 
-      <div class="aeo-block" style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
-        <p style="margin:0"><strong style="color:#D4AF37">Quick summary:</strong> Brent crude holds around $83-84 — uneventful headline, strong cash flow underneath for low-cost producers. Tanker rates dipped ~8% in KW33, but orderbooks and fleet age tell a supply-constrained story. Gold stays above $2,600 on central bank buying. Three earnings this week: Pfizer, Chevron, ConocoPhillips — all relevant for the hard-asset dividend thesis.</p>
-      </div>
+<h1>Ellington Financial (EFC): 11.5&#160;% Monthly Dividend — My Honest Take</h1>
 
-      <p class="article-lead" style="font-size:1.1rem;color:#c8cfe0;line-height:1.7;margin:16px 0 0;">
-        The week ahead brings three earnings reports that matter for dividend investors who own hard assets. But before we get to Pfizer, Chevron, and ConocoPhillips — let's look at what the broader picture tells us about where capital is rotating.
-      </p>
-    </header>
+<div style="background:#0e1117;border:1px solid rgba(212,175,55,0.35);border-radius:10px;padding:20px 24px;margin:16px 0 20px;font-size:0.95rem;line-height:1.65;color:#cfd6e6">
+  <p style="margin:0 0 10px"><strong style="color:#D4AF37">11.5% dividend yield paid monthly — too good to be true?</strong><br>
+  Ellington Financial pays $0.13 per share every month. That's $1.56 annualized — at today's price of $13.61, that works out to ~11.5% yield. The question isn't whether the number is right. The question is why it's that high. I hold 8 shares at roughly €12.40 average cost — currently −4.6%. Here's what I know, what I think, and where the real risk sits.</p>
+</div>
 
-    <div class="article-body" style="max-width:860px;margin:0 auto;">
+<p style="font-size:.9rem;color:#9aa6c0">
+Published: July 1, 2026 &nbsp;·&nbsp;
+This post does not constitute <strong>investment advice</strong>. All content is for informational purposes only. I personally hold Ellington Financial in my portfolio (8 shares, Scalable Capital, −4.6%) — I am not a neutral party. Conflict of interest disclosure: as a shareholder I benefit from price appreciation. No buy or sell recommendation. Act on your own judgment.
+</p>
 
-      <h2>Oil: Stable Below $85, but the Real Story Is in the Cost Curve</h2>
+<!-- TOP AD -->
 
-      <p>Brent crude has been trading around $83-84 per barrel for most of August. That sounds uneventful until you remember that a large portion of upstream producers in my portfolio break even below $30 per barrel. At current prices, these companies are generating free cash flow at rates that haven't been seen since the 2019 pre-pandemic cycle peak.</p>
+<div class="info-box">
+  Summary: Ellington Financial (NYSE: EFC) is a credit mREIT that invests in non-QM mortgage loans, residential transition loans, commercial mortgage loans, and through its Longbridge subsidiary, reverse mortgages for US seniors. The 11.5&#160;% monthly dividend is currently well covered by Adjusted Distributable Earnings (ADE) with a 1.41x coverage ratio in Q1 2026. The risk is not primarily in the dividend — it's in the credit portfolio and the leverage behind it.
+</div>
 
-      <p>The rotation into hard assets isn't about oil going to $150. It's about recognizing that at $80+, producers with low cost curves are printing cash faster than they can deploy it — and dividends are one of the deployment channels. Companies like Chevron (CVX) and ConocoPhillips (COP) report this week, and both have Q2 results above estimates. The headline numbers will confirm what the cost curve already tells us: these aren't cyclical peaks anymore; they're structural cash flow machines.</p>
+<h2>1. What Is Ellington Financial?</h2>
 
-      <div class="info-box" style="background:#1a1f2b;padding:16px 20px;border-left:4px solid #D4AF37;border-radius:6px;margin:24px 0;">
-        <strong style="color:#D4AF37;">Oil — Key Context</strong>
-        <ul style="margin:12px 0 0;padding-left:20px;color:#c8cfe0;line-height:2;">
-          <li>Brent trading around <strong>$83-84/barrel</strong> through August 2026</li>
-          <li>Many upstream producers break even <strong>below $30/barrel</strong></li>
-          <li>Free cash flow generation at levels not seen since <strong>pre-pandemic 2019 peak</strong></li>
-          <li>Chevron (CVX) and ConocoPhillips (COP): Q2 results <strong>above estimates</strong></li>
-        </ul>
-      </div>
+<p>
+Quick clarification upfront: EFC is not a standard REIT. It sits in the REIT category, but it works completely differently from a Realty Income or a STAG Industrial. EFC does not own physical properties. It is a <strong>credit mREIT</strong> — a mortgage real estate investment trust that buys, holds, and securitizes loans and mortgage-backed securities.
+</p>
 
-      <h2>Shipping: Rates Down 8%, but Orderbooks Tell a Different Story</h2>
+<p>
+Founded in 2007, managed by Ellington Management Group out of Old Greenwich, Connecticut. Ellington is a seasoned credit specialist with roots in structured credit going back to the 1990s. That management pedigree matters — mREITs without sharp management can get dangerous fast.
+</p>
 
-      <p>Tanker rates dipped approximately 8% in KW33, according to industry data. Headlines called it "weakness." But looking at the orderbook for 2026-2027 deliveries tells a different story. Newbuild prices remain elevated, and the fleet age profile means significant scrapping is coming — not optional, but regulatory (EU ETS inclusion of maritime from 2024).</p>
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Portfolio breakdown (as of Q1 2026, source: SEC 10-Q filing 31 March 2026):</strong>
+  <ul style="margin-top:10px">
+    <li><strong>Non-QM Loans:</strong> Core business — mortgages for self-employed borrowers or buyers with complex income that don't fit Fannie/Freddie guidelines</li>
+    <li><strong>Residential Transition Loans:</strong> Short-term fix-and-flip and new construction loans</li>
+    <li><strong>Commercial Mortgage Loans:</strong> Commercial real estate debt</li>
+    <li><strong>Longbridge Reverse Mortgages:</strong> HECM and proprietary reverse mortgages for US seniors 62+</li>
+    <li><strong>Consumer Loans &amp; ABS:</strong> Smaller allocation in consumer asset-backed securities and CLOs</li>
+    <li><strong>Total credit portfolio:</strong> $4.27B (Q1 2026, up 4% from year-end 2025)</li>
+  </ul>
+</div>
 
-      <p>The companies I hold in shipping — Dorian LPG, TORM, BW LPG, FLEX LNG, International Seaways — all have orderbooks extending into 2027+. A rate dip doesn't erase contracted revenue. What it does is create entry points for patient capital. The question isn't "are rates falling?" but "how long can supply constraints persist when new vessels cost $150M+ and take 24-36 months to build?"</p>
+<p>
+The key distinction from an agency mREIT like AGNC: EFC buys <em>no</em> government-backed mortgage securities. No Fannie Mae backstop, no duration-hedge complexity. In exchange: full credit risk on individual loans.
+</p>
 
-      <h2>Gold: Quiet Strength Above $2,600</h2>
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>More on REITs:</strong> <a href="/pages/reit-investing.html" style="color:#D4AF37;">REIT Investing Guide</a> or <a href="/pages/best-high-yield.html" style="color:#D4AF37;">Best High-Yield Dividend Stocks</a>.</p>
 
-      <p>Gold has held above $2,600 per ounce through August. Central bank buying continues (China, India, Poland among the active buyers), and real rates remain negative on an inflation-adjusted basis. Mining companies like Newmont are sitting on record cash flow — but the stock has rallied significantly year-to-date in parts of the cycle, which raises the question: is the upside already priced in?</p>
+<h2>2. The Dividend — $0.13 Every Month</h2>
 
-      <p>The answer depends on your time horizon. Over 3-5 years, gold miners with all-in sustaining costs below $800/oz have significant optionality if central banks continue diversifying away from USD reserves. Over 3 months, the move may be done. I'm watching AUM flows into gold ETFs as a leading indicator — inflows suggest institutional conviction; outflows suggest profit-taking.</p>
+<p>
+EFC pays monthly. $0.13 per share, every month. Annualized: $1.56. At the current price of $13.61 that's a dividend yield of <strong>~11.5%</strong> — verified via FMP API and BusinessWire press release dated June 8, 2026.
+</p>
 
-      <h2>What to Watch This Week</h2>
+<p>
+Next scheduled payment: record date June 30, 2026, payment date July 31, 2026. The dividend has held steady — no sign of a cut, but no increases either over recent years.
+</p>
 
-      <ol style="color:#c8cfe0;line-height:1.9;">
-        <li><strong>Pfizer (PFE) earnings</strong> — Revenue remains stable, but diluted EPS turned negative for the first time in recent quarters. The question isn't revenue; it's whether the loss reflects one-time restructuring or a structural patent cliff.</li>
-        <li><strong>Chevron (CVX)</strong> — Q2 beat expectations. Watch guidance for capital discipline: are they maintaining dividends while buying back shares, or shifting to growth capex?</li>
-        <li><strong>ConocoPhillips (COP)</strong> — Similar story to CVX but with higher leverage to oil price moves above $70. Both companies fund dividends from real cash flow, not debt.</li>
-      </ol>
+<table class="metrics-table">
+  <tr><td>Dividend per month</td><td>$0.13</td></tr>
+  <tr><td>Dividend per quarter</td><td>$0.39</td></tr>
+  <tr><td>Dividend per year</td><td>$1.56</td></tr>
+  <tr><td>Dividend yield (current)</td><td>~11.5% (price $13.61)</td></tr>
+  <tr><td>Payment frequency</td><td>Monthly</td></tr>
+  <tr><td>Last record date</td><td>June 30, 2026</td></tr>
+</table>
 
-      <p>The broader theme remains: hard assets generate cash when the macro is uncertain. The rotation isn't a trend trade; it's a risk management play disguised as an income strategy.</p>
+<div class="info-box">
+  My take on monthly dividends: I like the smoother cash flow rhythm. But monthly frequency is not a quality signal by itself. What matters is whether the underlying business earns enough to sustain it. In EFC's case — currently yes, more comfortably than I expected.
+</div>
 
-      <p>For deeper analysis on individual positions mentioned here, see my <a href="/pages/upstream.html" style="color:#D4AF37;">upstream oil &amp; gas hub</a>, the <a href="/blog/" style="color:#D4AF37;">full blog archive</a>, and the <a href="/pages/best-high-yield.html" style="color:#D4AF37;">best dividend stocks overview</a>.</p>
+<!-- MID AD -->
 
-      <p>My fundamental data for energy and mining names comes from <a href="https://www.investing-referral.com/mbcapitalglobal/?sub1=TierB" target="_blank" rel="sponsored nofollow noopener noreferrer" style="color:#D4AF37;">InvestingPro</a>* — financial health, fair value and dividend history in one place, 15% off through my link.</p>
-      <p style="font-size:0.78rem;color:#7a8499;">*Affiliate link, no extra cost to you.</p>
+<h2>3. Dividend Coverage: ADE vs. Payout</h2>
 
-      <p style="background:rgba(212,175,55,0.07);border-left:3px solid #D4AF37;padding:12px 16px;border-radius:4px;font-size:0.88rem;color:#cfd6e6;margin:24px 0;"><em>Disclosure: Not investment advice. Marco Bozem is a private investor without a formal advisory license. Positions mentioned (CVX, COP, Dorian LPG, TORM, BW LPG, FLEX LNG, International Seaways, Newmont) are held in Marco's publicly viewable portfolio (Trade Republic / Scalable Capital). All figures are provided without warranty; this is a personal view, not a recommendation.</em></p>
+<p>
+For a credit mREIT, the most important dividend metric is not GAAP net income — it is <strong>ADE: Adjusted Distributable Earnings</strong>. That's the cleaned-up cash earnings number that's actually available for distribution, after stripping out non-cash accounting items like unrealized mark-to-market changes in the loan portfolio.
+</p>
 
-    </div><!-- /article-body -->
+<p>
+Q1 2026 (source: SEC 8-K May 6, 2026, verified via TipRanks and Investing.com):
+</p>
 
-    <div class="author-box" style="max-width:860px;margin:40px auto 0;display:flex;align-items:center;gap:16px;padding:20px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
-      <picture>
-        <source srcset="/marco.webp" type="image/webp">
-        <img src="/marco.webp" onerror="this.onerror=null;this.src='/marco.webp'" alt="Marco Bozem — MB Capital Strategies" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
-      </picture>
-      <div>
-        <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
-        <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Upstream Oil &amp; Gas | MB Capital Strategies</p>
-        <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco has analyzed commodity and dividend stocks for years, focusing on shipping, mining and energy. All positions mentioned are real holdings. <em>Not investment advice.</em></p>
-      </div>
-    </div>
+<table class="metrics-table">
+  <tr><td>ADE Q1 2026 (total)</td><td>$66.5M</td></tr>
+  <tr><td>ADE per share (Q1 2026)</td><td>$0.55</td></tr>
+  <tr><td>Dividend per share (Q1 = 3 months)</td><td>$0.39</td></tr>
+  <tr><td>Coverage ratio</td><td>1.41x — $0.55 / $0.39</td></tr>
+  <tr><td>Surplus per share</td><td>$0.16 per quarter</td></tr>
+</table>
 
-    <section class="related-posts" style="max-width:860px;margin:40px auto;">
-      <h3>Related Articles</h3>
-      <ul>
-        <li><a href="/pages/upstream.html">Upstream Stocks Hub 2026 — Oil &amp; Gas Analyses</a></li>
-        <li><a href="/pages/best-high-yield.html">Best Dividend Stocks 2026 — Hard Assets with 6-15% Yield</a></li>
-        <li><a href="/pages/dividend-strategy.html">Dividend Investing Strategy — Hard Assets, YOC &amp; FCF</a></li>
-        <li><a href="/blog/commodity-cycle-timing-2026.html">Commodity Cycle Timing 2026</a></li>
-        <li><a href="/glossary/dividend-safety.html">Dividend Safety Explained</a></li>
-      </ul>
-    </section>
+<p>
+A 1.41x coverage ratio is strong for a credit mREIT. Many peers run at 1.0–1.1x — barely breaking even above the dividend. Ellington had significantly more headroom in Q1 2026 than I initially expected.
+</p>
 
-  </article>
-</main>
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Why was Q1 2026 so strong?</strong>
+  <ul style="margin-top:10px">
+    <li>Longbridge Reverse Mortgage: $57.5M net income (record quarter — exceeded all of 2025)</li>
+    <li>Credit portfolio growth: +4% to $4.27B</li>
+    <li>7 securitization transactions totaling $2.8B — largest quarterly total ever</li>
+    <li>Total net income: $95.5M = $0.78/share vs. $0.14 in the prior quarter</li>
+    <li>Annualized economic return: 26% — including book value growth plus dividends</li>
+  </ul>
+</div>
 
-<div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:10px;padding:18px 22px;margin:28px auto;max-width:860px">
+<p style="margin:16px 0;padding:12px;background:#0a0a0a;border-left:3px solid #D4AF37;border-radius:4px;font-size:0.9rem;"><strong>Tool:</strong> <a href="/tools/dividend-snowball.html" style="color:#D4AF37;">Dividend Snowball Calculator</a> — see how monthly dividends compound over time.</p>
+
+<h2>4. Book Value — The Real Valuation Anchor</h2>
+
+<p>
+For a credit mREIT, <strong>book value per share</strong> is the central valuation reference — the mREIT equivalent of intrinsic value. Trading below book means buying at a discount. Above book: you're paying a premium.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Book Value/Share (March 31, 2026)</td><td>$13.56 (source: SEC 8-K)</td></tr>
+  <tr><td>Book Value/Share (May 31, 2026)</td><td>$13.49 (source: EFC BusinessWire 8-K)</td></tr>
+  <tr><td>Current price</td><td>$13.61</td></tr>
+  <tr><td>Price / Book Value</td><td>~1.01x (slight premium)</td></tr>
+</table>
+
+<p>
+EFC trades essentially at book value — neither cheap nor expensive. That's fair. For a credit mREIT with a stable loan portfolio and strong ADE coverage, a 1.0x multiple is appropriate. To get a meaningful discount, you'd need signs of credit portfolio deterioration.
+</p>
+
+<p>
+One critical caveat: book value is not static. It moves with the market prices of loans and securities in the portfolio. In a recession, credit values can fall fast — and book value drops with them, making the stock look more expensive than it appears.
+</p>
+
+<h2>5. Longbridge — The Growth Driver</h2>
+
+<p>
+This is the part of EFC that changed the picture in 2026. <strong>Longbridge Financial</strong> is a wholly owned EFC subsidiary and one of the largest US reverse mortgage originators.
+</p>
+
+<p>
+What's a reverse mortgage? A US homeowner aged 62+ takes a mortgage against their fully-owned or nearly debt-free home — and receives money out rather than paying money in. The debt only comes due when the owner dies, sells, or permanently moves out. Longbridge originates these loans and securitizes them.
+</p>
+
+<div class="highlight-box">
+  <strong style="color:#d4af37;">Longbridge Q1 2026 — facts (source: HousingWire + SEC 8-K):</strong>
+  <ul style="margin-top:10px">
+    <li>Net income Q1 2026: $57.5M — <strong>quarterly record</strong></li>
+    <li>New originations: $515M (+52% vs. Q1 2025)</li>
+    <li>Portfolio growth: +13% sequentially to $695M</li>
+    <li>Strong HECM market share gains</li>
+    <li>Longbridge earned more in Q1 2026 alone than in all of 2025</li>
+  </ul>
+</div>
+
+<p>
+My take: Longbridge is the wildcard in this setup. If US Baby Boomers increasingly turn to reverse mortgages for liquidity over the next decade — and the demographic tailwind is real — EFC has a structural growth engine that's just getting started. That's the main reason I'm holding despite being −4.6% on my position.
+</p>
+
+<h2>6. The Real Risks — Why 11.5% Is Not a Free Lunch</h2>
+
+<p>
+If you're looking at 11.5% and thinking "this seems too easy" — you're right to ask. Here are the genuine risks:
+</p>
+
+<div class="risk-box">
+  <strong>⚠️ Credit default risk in a recession:</strong> Non-QM borrowers have no government guarantee. In an economic downturn, default rates can rise quickly. Longbridge HECM loans are FHA-insured, but proprietary reverse mortgages are not fully backstopped. If housing prices fall and seniors need to exit their homes en masse, the collateral backing these loans declines in value at exactly the wrong moment.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Leverage risk:</strong> EFC operates with substantial debt leverage — roughly 9x debt-to-equity (FMP data). That amplifies gains but also losses. In a stress scenario, a 5% loss on the credit portfolio could wipe out close to half of the equity base.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Dilution risk:</strong> Shares outstanding grew roughly 37% year-over-year. Capital raises are normal for growing mREITs — but they dilute existing shareholders. If portfolio growth doesn't keep pace proportionally, book value per share erodes.
+</div>
+
+<div class="risk-box">
+  <strong>⚠️ Interest rate risk:</strong> EFC hedges interest rate exposure via derivatives but is not fully immunized. Unexpected rate moves in either direction can compress net interest margin. Q1 2026 already showed NIM compression to 1.47% from higher funding costs.
+</div>
+
+<p>
+My risk summary: this is not a "risk-free 11% income machine." It's an actively managed credit portfolio with solid management, a strong Q1 2026, and a real structural growth driver through Longbridge. But the risks are genuine and need to be consciously accepted.
+</p>
+
+<h2>7. Valuation — Fair Value and Peer Comparison</h2>
+
+<p>
+For credit mREITs, <strong>price-to-book (P/B)</strong> is the primary valuation metric. EFC trades at ~1.0x — virtually at book. That's fair.
+</p>
+
+<table class="metrics-table">
+  <tr><td>Current price</td><td>$13.61</td></tr>
+  <tr><td>Book Value/Share (May 2026)</td><td>$13.49</td></tr>
+  <tr><td>P/B ratio</td><td>~1.01x</td></tr>
+  <tr><td>P/E (GAAP EPS 2025: $1.19)</td><td>~11.4x</td></tr>
+  <tr><td>Market cap</td><td>~$1.35B</td></tr>
+  <tr><td>52-week low / high</td><td>$11.28 / $14.12</td></tr>
+  <tr><td>My position (public broker)</td><td>8 shares @ ~€12.40 · −4.6%</td></tr>
+</table>
+
+<p>
+Peer comparison: AGNC Investment (~13% yield, agency-focused, more rate-sensitive) offers a slightly higher yield but relies on government-backed mortgage securities — less credit risk, more duration risk. EFC's credit diversification via Longbridge is a genuine differentiator. At 1.0x book, EFC is fairly priced relative to well-managed credit mREIT peers.
+</p>
+
+<h2>8. My Personal Take — Why I'm Holding</h2>
+
+<p>
+I'm in at 8 shares around €12.40 average and sitting at −4.6%. Not a disaster, but not a win either. My thesis when I bought: a well-managed credit shop, monthly dividends, Longbridge as a growth kicker, and buying at or below book value.
+</p>
+
+<p>
+What keeps me holding: Q1 2026 showed Longbridge actually works. $57.5M in net income in one quarter is not a fluke. The US demographic curve — aging Boomers, property-rich, cash-poor — is a structural tailwind for reverse mortgages that's only starting to play out.
+</p>
+
+<p>
+What I'm watching: every change in ADE trajectory. If ADE falls below $0.39/quarter — below the quarterly dividend — I'll reassess. I'm also watching leverage closely. If the credit portfolio starts showing stress in a macro downturn, EFC can fall well below book fast.
+</p>
+
+<div class="info-box">
+  Position verdict (July 2026): Hold. No adding at this price-to-book. Waiting for a cleaner entry — ideally 0.85–0.90x book (~$11.50–$12.00). That's where I'd consider adding. Not investment advice — that's my personal strategy.
+</div>
+
+<h2>9. Affiliate Recommendation: Check the Data Yourself</h2>
+
+<p>
+For my own fundamental analysis I use <strong>InvestingPro</strong> — it's where I pull fair value models, financial health scores, and historical ADE trends. If you want to run your own mREIT analysis on EFC or peers: the link below gets you 15% off on top, including on active promotions.
+</p>
+
+<div class="cta-box">
+  <p style="margin:0 0 14px;color:#c8cfe0;">Fundamental data for your own REIT and mREIT analysis:</p>
+  <a href="https://www.investing-referral.com/mbcapitalglobal/?sub1=TierB" class="cta-btn" rel="noopener noreferrer sponsored nofollow" target="_blank">InvestingPro — 15% off on top*</a>
+  <p style="margin:12px 0 0;font-size:.8rem;color:#6b7a99;">*Affiliate link — commission at no extra cost to you. Not investment advice.</p>
+</div>
+
+<h2>Conclusion: Ellington Financial in July 2026</h2>
+
+<p>
+EFC is not a simple investment. It's no Realty Income with a 50-year dividend track record and government-backed tenants. It's an actively managed credit portfolio with a monthly 11.5% dividend that — as of Q1 2026 — is solidly covered by ADE at 1.41x.
+</p>
+
+<p>
+Longbridge is the piece that keeps me committed — the demographic bet on US seniors and reverse mortgages just delivered a record quarter. If that momentum continues, the valuation at book value is very reasonable. If credit losses rise or the macro environment deteriorates, EFC can get painful quickly.
+</p>
+
+<p>
+I'm holding. Not adding at current prices. I'll watch Q2 2026 ADE carefully before making any sizing decision.
+</p>
+
+<div class="related-articles">
+  <h3>More REIT Analyses</h3>
+  <ul>
+    <li><a href="/blog/omega-healthcare-analysis-2026.html">&#x2192; Omega Healthcare (OHI) — 5.6% yield, frozen dividend</a></li>
+    <li><a href="/blog/realty-income-analysis-2026.html">&#x2192; Realty Income (O) — the dividend classic</a></li>
+    <li><a href="/blog/stag-industrial-analysis-2026.html">&#x2192; STAG Industrial — monthly dividends, industrial REITs</a></li>
+    <li><a href="/blog/mpw-reit-analysis-2026.html">&#x2192; Medical Properties Trust (MPW) — turnaround or value trap?</a></li>
+    <li><a href="/blog/iipr-innovative-industrial-analysis-2026.html">&#x2192; Innovative Industrial Properties (IIPR) — cannabis REIT</a></li>
+    <li><a href="/pages/reit-investing.html">&#x2192; Full REIT investing guide</a></li>
+  </ul>
+</div>
+
+<!-- Author Box -->
+<div class="author-box">
+  <div class="author-info">
+    <h4>About the author: Marco Bozem</h4>
+    <p>Marco Bozem is an independent investor focused on Hard Assets &amp; Dividends — Shipping, Mining, Energy, Pipelines, and REITs. He runs MB Capital Strategies and shares real portfolio decisions including cost basis and P&amp;L. All content is for informational purposes only — not investment advice. <a href="/pages/about.html" style="color:#d4af37;">More about Marco</a>.</p>
+  </div>
+</div>
+
+<hr style="border:none;border-top:1px solid rgba(212,175,55,0.15);margin:32px 0">
+
+<p style="font-size:.82rem;color:#6b7a99;line-height:1.6;">
+<strong>Disclaimer:</strong> This article does not constitute investment advice. All information is for personal education and entertainment only. Marco Bozem holds Ellington Financial (EFC) in his personal portfolio (public broker Scalable Capital, 8 shares). Conflict of interest disclosure: as a shareholder, the author benefits from price appreciation. Every investment carries the risk of partial or total loss. Past performance is not indicative of future results. Act on your own judgment and consult a qualified financial advisor if needed.
+</p>
+
+</section>
+
+<script>
+const ham=document.getElementById('navHamburger'),mob=document.getElementById('navMobile');
+if(ham&&mob){ham.addEventListener('click',()=>{const o=mob.classList.toggle('open');ham.setAttribute('aria-expanded',o)});}
+</script>
+
+<div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:10px;padding:18px 22px;margin:28px 0">
   <p style="color:#D4AF37;font-size:1rem;font-weight:600;margin-bottom:12px;text-align:center">My Toolbox &amp; Resources</p>
   <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
     <a href="https://wise.com/invite/dic/marcopeterb2" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Multi-Currency Account &ndash; Wise</a>
+    <a href="https://www.airalo.com?ref=BAND1T8990" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Travel eSIM &ndash; Airalo (Code: BAND1T8990)</a>
     <a href="https://www.investing-referral.com/mbcapitalglobal/?sub1=TierB" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Fundamental Analysis &ndash; InvestingPro</a>
+    <a href="https://debituminvestments.pxf.io/vDzqgy" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">P2P Lending &ndash; Debitum</a>
     <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Portfolio Tracker &ndash; Parqet</a>
+    <a href="https://www.binance.com/en/referral/earn-together/refer-in-hotsummer/claim?hl=en&amp;ref=GRO_20338_K06Q9" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Crypto &ndash; Binance</a>
+    <a href="https://coinbase.com/join/EN8NVAV?src=referral-link" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Crypto &ndash; Coinbase</a>
   </div>
   <p style="color:#6b7280;font-size:.75rem;margin-top:10px;text-align:center">Disclosure: Some links are affiliate links. This helps support our free content at no extra cost to you.</p>
 </div>
 
-<footer class="site-footer" style="background:#0a0a12;border-top:1px solid rgba(212,175,55,0.15);padding:28px 20px;text-align:center;margin-top:48px;">
-  <div style="max-width:860px;margin:0 auto;">
-    <div style="display:flex;justify-content:center;gap:16px;margin-bottom:14px;flex-wrap:wrap;">
-      <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" aria-label="YouTube" style="color:#6b7a99;transition:color 0.2s;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/company/mb-capital-strategies/" target="_blank" rel="noopener" aria-label="LinkedIn" style="color:#6b7a99;transition:color 0.2s;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>MB Capital Strategies</h4>
+      <a href="/">Home</a>
+      <a href="/pages/hard-asset-guide.html">Hard Asset Guide</a>
+      <a href="/blog/">Blog</a>
     </div>
-    <p style="color:#6b7a99;font-size:0.82rem;margin:0 0 12px;">&copy; 2026 MB Capital Strategies Global &middot; Marco Bozem</p>
-    <nav aria-label="Footer links" style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;font-size:0.8rem;">
-      <a href="/pages/contact.html" style="color:#6b7a99;text-decoration:none;">Contact</a>
-      <a href="/pages/imprint.html" style="color:#6b7a99;text-decoration:none;">Imprint</a>
-      <a href="/pages/privacy.html" style="color:#6b7a99;text-decoration:none;">Privacy Policy</a>
-      <a href="/pages/disclaimer.html" style="color:#6b7a99;text-decoration:none;">Disclaimer</a>
-      <a href="/pages/affiliate-disclosure.html" style="color:#6b7a99;text-decoration:none;">Affiliate Disclosure</a>
-    </nav>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="/pages/imprint.html">Imprint</a>
+      <a href="/pages/privacy.html">Privacy</a>
+      <a href="/pages/disclaimer.html">Disclaimer</a>
+      <a href="/pages/affiliate-disclosure.html">Affiliate Disclosure</a>
+      <a href="https://mbcapitalstrategies.com/" target="_blank" rel="noopener noreferrer">German Site</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 MB Capital Strategies · Marco Bozem</span>
   </div>
 </footer>
-<script src="/js/main.min.js" defer></script>
 
-<!-- Self-contained cookie consent banner -->
+<!-- Self-contained cookie consent banner (SEO-agent 2026-08-09, DSGVO gap fix, escalation 2026-08-07) -->
 <style>
 .mbcs-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0f1219;border-top:1px solid rgba(212,175,55,.35);padding:14px 18px;display:none;box-shadow:0 -4px 18px rgba(0,0,0,.4)}
 .mbcs-cookie-banner.show{display:block}
