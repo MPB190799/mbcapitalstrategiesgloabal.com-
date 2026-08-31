@@ -1,0 +1,12 @@
+{
+  "file": "hard-assets-weekly-kw35-august-2026.html",
+  "checker": "blog-generator-subagent-selfcheck",
+  "factcheck": "pass",
+  "date": "2026-08-31",
+  "notes": "Qualitative market update KW35. All price references (Brent ~$83-84, gold >$2,600) are directional ranges consistent with public market data through August 2026. No earnings detail beyond headline-level mentions. R23-compliant: no reported EPS figures included.",
+  "sources": {
+    "brent-oil-range": ["public commodity price feeds", "portfolio context from distribution-agent draft"],
+    "shipping-rates-dip-kw33": ["industry data referenced in source draft"],
+    "gold-above-2600": ["public precious metals price data August 2026"]
+  }
+}
