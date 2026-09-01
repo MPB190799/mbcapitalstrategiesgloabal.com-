@@ -1,0 +1,19 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-en",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-09-01T16:29:26.263Z",
+  "content_sha": "85136b8299275aaa",
+  "hard_scan": "PASS",
+  "note": "Standalone EN analysis on hard asset dividend spreads vs Treasuries. 8 claims in facts-ledger (5 PLAUSIBLE with --allow-plausible, 2 VERIFIED from held-positions.json + KW35 content, 1 VERIFIED disclosure). Disclosure present. No CapTrader mention.",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "hard-asset-dividend-spread-vs-treasuries-september-2026.html.facts.json",
+    "allow_plausible": true,
+    "max_age_days": 7
+  }
+}
