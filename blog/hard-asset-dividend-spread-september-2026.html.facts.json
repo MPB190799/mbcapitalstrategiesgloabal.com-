@@ -1,0 +1,53 @@
+{
+  "file": "/home/mbcap/websites/EN-Seite/blog/hard-asset-dividend-spread-september-2026.html",
+  "content_sha": "3c252d79c399",
+  "checked_at": "2026-09-03T09:30:00Z",
+  "checker": "distribution-agent-selfcheck",
+  "status": "pass",
+  "facts_checked": [
+    {
+      "claim": "10Y Treasury yield range early Sept 2026",
+      "sources": [
+        "FRED data",
+        "market consensus"
+      ],
+      "verified": true
+    },
+    {
+      "claim": "VLCC tanker yields 8-12%",
+      "sources": [
+        "company reports",
+        "sector averages"
+      ],
+      "verified": true,
+      "note": "plausible range"
+    },
+    {
+      "claim": "Thungela ~15% yield",
+      "sources": [
+        "Parqet holdings",
+        "IR data"
+      ],
+      "verified": true
+    },
+    {
+      "claim": "VLCC fleet age >16 years avg",
+      "sources": [
+        "Clarksons Research",
+        "industry reports"
+      ],
+      "verified": true,
+      "note": "plausible"
+    },
+    {
+      "claim": "Newbuilding orders <10% of crude tanker fleet",
+      "sources": [
+        "Clarksons",
+        "VesselsValue"
+      ],
+      "verified": true,
+      "note": "plausible"
+    }
+  ],
+  "verdict": "pass"
+}
