@@ -249,6 +249,50 @@
   <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 <!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
+<style>
+/* CO-BRANDING SHOWCASE — fictional issuer preset demo (see /werbung.html).
+   Own brand colour (maritime teal) so the contrast against MB gold makes it
+   visible which part of the page belongs to the partner. */
+.cobrand { --pb:#2bb3c7; --pb2:#0d6e80;
+  max-width:900px; margin:28px auto 0; border:1px solid rgba(43,179,199,0.42); border-radius:14px;
+  background:linear-gradient(160deg,rgba(43,179,199,0.13) 0%,rgba(13,110,128,0.06) 45%,rgba(18,22,31,0) 100%),#12161f;
+  overflow:hidden; scroll-margin-top:96px; font-family:system-ui,-apple-system,sans-serif; }
+.cobrand-ribbon { display:flex; flex-wrap:wrap; gap:10px; align-items:center; justify-content:space-between;
+  padding:8px 16px; background:rgba(43,179,199,0.14); border-bottom:1px solid rgba(43,179,199,0.28); }
+.cobrand-tag { font-size:0.66rem; font-weight:800; letter-spacing:0.13em; text-transform:uppercase;
+  color:#0a0e14; background:var(--pb); border-radius:3px; padding:3px 8px; }
+.cobrand-tag.ghost { color:#9fe4ef; background:transparent; border:1px solid rgba(43,179,199,0.45); }
+.cobrand-ribbon span.hint { font-size:0.72rem; color:#8ecfda; }
+.cobrand-head { display:flex; align-items:center; gap:14px; padding:18px 16px 14px; }
+.cobrand-logo { flex:0 0 auto; width:54px; height:54px; border-radius:12px;
+  background:linear-gradient(145deg,var(--pb) 0%,var(--pb2) 100%);
+  display:flex; align-items:center; justify-content:center; box-shadow:0 4px 16px rgba(13,110,128,0.45); }
+.cobrand-name { margin:0; font-size:1.12rem; font-weight:800; letter-spacing:0.02em; color:#eaf9fc; line-height:1.2; }
+.cobrand-name em { font-style:normal; color:var(--pb); }
+.cobrand-sub { margin:3px 0 0; font-size:0.78rem; color:#93a6b8; }
+.cobrand-facts { display:grid; grid-template-columns:repeat(3,1fr); gap:1px;
+  background:rgba(43,179,199,0.20); border-top:1px solid rgba(43,179,199,0.20); border-bottom:1px solid rgba(43,179,199,0.20); }
+.cobrand-facts div { background:#12161f; padding:11px 13px; }
+.cobrand-facts .fl { display:block; font-size:0.65rem; text-transform:uppercase; letter-spacing:0.08em; color:#7e93a5; }
+.cobrand-facts .fv { display:block; font-size:0.97rem; font-weight:700; color:#eaf9fc; margin-top:3px; }
+.cobrand-fleet { padding:14px 16px 4px; }
+.cobrand-fleet h4 { margin:0 0 8px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--pb); font-weight:700; }
+.cobrand-fleet table { width:100%; border-collapse:collapse; font-size:0.8rem; }
+.cobrand-fleet th { text-align:left; font-weight:600; color:#7e93a5; font-size:0.68rem; text-transform:uppercase;
+  letter-spacing:0.06em; padding:0 8px 6px 0; border-bottom:1px solid rgba(43,179,199,0.22); }
+.cobrand-fleet tbody td { padding:6px 8px 6px 0; color:#c6d3dd; background:transparent;
+  border-bottom:1px solid rgba(255,255,255,0.05); }
+.cobrand-fleet tbody td:first-child { color:#eaf9fc; font-weight:600; white-space:nowrap; }
+.cobrand-fleet tr:last-child td { border-bottom:none; }
+.cobrand-more { font-size:0.72rem; color:#7e93a5; margin:6px 0 0; }
+.cobrand-foot { padding:12px 16px 16px; border-top:1px solid rgba(43,179,199,0.20); margin-top:10px; }
+.cobrand-disc { margin:0 0 10px; font-size:0.72rem; line-height:1.55; color:#8b9aa8; }
+.cobrand-cta { display:inline-block; padding:9px 16px; border-radius:6px; font-size:0.8rem; font-weight:700;
+  text-decoration:none; border:0; cursor:pointer; color:#06121a; background:var(--pb); }
+.cobrand-cta:hover { background:#4fc7d8; }
+@media(max-width:520px){ .cobrand-facts { grid-template-columns:repeat(2,1fr); }
+  .cobrand-fleet th:nth-child(4), .cobrand-fleet td:nth-child(4){ display:none; } }
+</style>
 </head>
 <body>
     <nav class="navbar" id="navbar">
@@ -335,7 +379,10 @@
                    "values":{"dailyRate":25000,"opexDay":7000,"daysAtSea":343,"numVessels":30}},
                   {"id":"kamsarmax-bulker","label":"Kamsarmax dry bulker fleet (segment estimates)","sponsor_id":null,
                    "note":"Estimates for a Kamsarmax bulker fleet, derived from public quarterly reports (as of 08/2026). Not company data.",
-                   "values":{"dailyRate":14000,"opexDay":6000,"daysAtSea":347,"numVessels":25}}
+                   "values":{"dailyRate":14000,"opexDay":6000,"daysAtSea":347,"numVessels":25}},
+                  {"id":"demo-mb-capital-flotte","label":"★ Example preset: MB Capital Fleet (fictional, co-branded)","sponsor_id":null,"demo":true,
+                   "note":"Fictional example fleet — not a real company, not real fleet data. It shows what an issuer co-branding preset looks like: your fleet as an option inside the calculator, with your logo and your figures, maintained on every change. Formats and pricing: mbcapitalstrategies.com/werbung.html",
+                   "values":{"dailyRate":30000,"opexDay":7500,"daysAtSea":339,"numVessels":12}}
                 ]
                 </script>
                 <div class="calc-grid">
@@ -364,6 +411,73 @@
                     <div class="result-row"><span class="result-label">Cashflow per Vessel</span><span class="result-value" id="cashPerVessel">—</span></div>
                 </div>
             </div>
+            <!-- CO-BRANDING SHOWCASE (fictional example preset) — linked from
+                 mbcapitalstrategies.com/werbung.html. Shows an issuer what a paid
+                 preset looks like: own logo, own brand colour, fleet profile,
+                 advertising label, disclosure. Everything here is invented —
+                 "MB Capital Fleet" is a placeholder brand, not a company. A real
+                 preset only ever ships via an approved sponsorship register entry. -->
+            <section id="example-preset" class="cobrand" aria-label="Fictional co-branding example">
+              <div class="cobrand-ribbon">
+                <span><span class="cobrand-tag">Advertisement</span> <span class="cobrand-tag ghost">Fictional example</span></span>
+                <span class="hint">This is how your company&rsquo;s preset would look</span>
+              </div>
+              <div class="cobrand-head">
+                <div class="cobrand-logo" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="5.2" r="2.6" stroke="#06121a" stroke-width="2"/>
+                    <path d="M16 8v16.6" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                    <path d="M10.4 11h11.2" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                    <path d="M6.6 17.4c0 5.2 4.2 8.4 9.4 8.4s9.4-3.2 9.4-8.4" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="cobrand-name">MB CAPITAL <em>FLEET</em></p>
+                  <p class="cobrand-sub">Product &amp; chemical tankers &middot; Oslo B&oslash;rs (fictional) &middot; Fleet data as of Q2 2026</p>
+                </div>
+              </div>
+              <div class="cobrand-facts">
+                <div><span class="fl">Fleet</span><span class="fv">12 vessels</span></div>
+                <div><span class="fl">Segment</span><span class="fv">MR2 / LR1</span></div>
+                <div><span class="fl">Avg. age</span><span class="fv">6.2 years</span></div>
+                <div><span class="fl">Fleet TCE</span><span class="fv">$30,000/day</span></div>
+                <div><span class="fl">OPEX</span><span class="fv">$7,500/day</span></div>
+                <div><span class="fl">Utilisation</span><span class="fv">93 %</span></div>
+                <div><span class="fl">Shares out</span><span class="fv">60.0 m</span></div>
+                <div><span class="fl">Price (fictional)</span><span class="fv">$12.40</span></div>
+                <div><span class="fl">Payout policy</span><span class="fv">75 % of FCF</span></div>
+              </div>
+              <div class="cobrand-fleet">
+                <h4>Fleet list (excerpt)</h4>
+                <table>
+                  <thead><tr><th>Vessel</th><th>Type</th><th>Built</th><th>dwt</th></tr></thead>
+                  <tbody>
+                    <tr><td>MB Aurora</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
+                    <tr><td>MB Borealis</td><td>MR2</td><td>2020</td><td>49,900</td></tr>
+                    <tr><td>MB Cassiopeia</td><td>LR1</td><td>2019</td><td>74,000</td></tr>
+                    <tr><td>MB Draco</td><td>MR2</td><td>2022</td><td>50,300</td></tr>
+                    <tr><td>MB Eridanus</td><td>LR1</td><td>2018</td><td>73,600</td></tr>
+                    <tr><td>MB Fornax</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
+                  </tbody>
+                </table>
+                <p class="cobrand-more">&hellip; plus 6 further units (2 &times; LR1, 4 &times; MR2). A real preset lists your vessels here.</p>
+              </div>
+              <div class="cobrand-foot">
+                <p style="margin:0 0 12px;">
+                  <button type="button" class="cobrand-cta" onclick="loadDemoPreset()">Load this fleet into the calculator &rarr;</button>
+                </p>
+                <p class="cobrand-disc">
+                  <strong style="color:#a9bcc9;">Fictional demonstration object.</strong> &ldquo;MB Capital Fleet&rdquo; is a
+                  placeholder brand: not a real company, no real ISIN, no real vessels, no investment recommendation.
+                  A real partner preset would additionally carry the position disclosure (&ldquo;I hold this stock&rdquo;)
+                  and the paid-placement label &mdash; the calculation logic itself stays unchanged and neutral either way.
+                </p>
+                <p style="margin:0;font-size:0.78rem;">
+                  <a href="https://mbcapitalstrategies.com/werbung.html" rel="noopener" style="color:#D4AF37;font-weight:600;">Co-branding for your fleet: &euro;400 setup + &euro;50/month, DE + EN &rarr;</a>
+                </p>
+              </div>
+            </section>
+
             <p style="margin-top:2rem;"><em>Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.</em></p>
         </div>
     </section>
@@ -647,7 +761,11 @@
             });
             note.textContent = s.note || '';
             note.style.display = s.note ? 'block' : 'none';
-            if (s.sponsor_id && s.partner_label) {
+            if (s.demo) {
+                partner.textContent = 'Example view (fictional): a real partner preset would read '
+                    + '"Advertisement — fleet data provided by <your company>" plus the position disclosure.';
+                partner.style.display = 'block';
+            } else if (s.sponsor_id && s.partner_label) {
                 partner.textContent = 'Advertisement — fleet data provided by ' + s.partner_label
                     + (s.position_disclosed ? ' · I hold this stock; disclosure: /pages/advertise.html' : '');
                 partner.style.display = 'block';
@@ -656,6 +774,34 @@
             }
             calculate();
         }
+
+        /* Loads the fictional example preset from the showcase panel below and
+           scrolls to the result — same path as the dropdown. */
+        function loadDemoPreset() {
+            var sel = document.getElementById('szenarioSelect');
+            if (!sel) return;
+            sel.value = 'demo-mb-capital-flotte';
+            loadScenario();
+            var box = document.getElementById('results');
+            if (box && box.scrollIntoView) box.scrollIntoView({behavior: 'smooth', block: 'center'});
+        }
+
+        /* Deep link from werbung.html: ?preset=demo (or #example-preset) fills the
+           fields with the fictional fleet figures and computes right away, so an
+           issuer sees a finished result instead of an empty form. */
+        (function demoDeeplink() {
+            var q = new URLSearchParams(location.search).get('preset');
+            if (!(q === 'demo' || q === 'demo-mb-capital-flotte' || location.hash === '#example-preset')) return;
+            var run = function () {
+                var sel = document.getElementById('szenarioSelect');
+                if (!sel) return;
+                sel.value = 'demo-mb-capital-flotte';
+                loadScenario();
+            };
+            if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+            else run();
+        })();
+
         function calculate() {
             var rate = parseFloat(document.getElementById('dailyRate').value) || 0;
             var opex = parseFloat(document.getElementById('opexDay').value) || 0;
