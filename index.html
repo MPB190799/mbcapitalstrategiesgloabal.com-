@@ -9,7 +9,7 @@
      DE index.html commit same day). Fix: resolve visibility + header offset in pure CSS via an
      html.promo-active class set here (before any body content exists), see .ip-sale / .header CSS
      rules near .header below. Old body-level scripts are dead code, kept as comments. -->
-<script>(function(){try{var t=Date.now(),s=Date.parse('2026-07-01T11:00:00Z'),e=Date.parse('2026-07-31T16:00:00Z');if(t>=s&&t<=e){document.documentElement.classList.add('promo-active');}}catch(err){}})();</script>
+<script>(function(){try{var t=Date.now(),s=Date.parse('2026-09-14T12:00:00Z'),e=Date.parse('2026-09-17T18:00:00Z');if(t>=s&&t<=e){document.documentElement.classList.add('promo-active');}}catch(err){}})();</script>
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~42KB, after 4 JSON-LD blocks + inline style blocks -- preload scanner discovered font CSS only after parsing head-bloat, adding round-trips on mobile. Zero visual/layout change, DE-parity fix, verified against LCP-fix-plan Massnahme 1. -->
 <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity, same root cause): the Cormorant Garamond
@@ -592,10 +592,10 @@ body.mb-cursor-active #mb-cursor-glow{opacity:1}
 
 <a href="#main" class="skip-link">Skip to main content</a>
 
-<!-- InvestingPro Summer Sale Top Bar (default hidden, JS shows within July window) -->
+<!-- InvestingPro Flash Sale Top Bar (default hidden, JS shows within Sep 14-17 window) -->
 <div class="ip-sale" style="background:linear-gradient(90deg,rgba(10,20,5,0.98) 0%,rgba(15,20,8,1) 50%,rgba(10,20,5,0.98) 100%);border-bottom:1.5px solid #d4af37;padding:9px 16px;text-align:center;font-size:0.84rem;color:#f0f0f5;z-index:90;position:relative">
-  <strong style="color:#d4af37;white-space:nowrap">InvestingPro Summer Sale: 60% Off + 15% On Top</strong> <span style="white-space:nowrap">&nbsp;·&nbsp; July only &nbsp;</span>
-  <a href="investingpro-summer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px;white-space:nowrap">Claim 60%+15% →</a>
+  <strong style="color:#d4af37;white-space:nowrap">InvestingPro Flash Sale: 55% Off + 15% On Top</strong> <span style="white-space:nowrap">&nbsp;·&nbsp; Sep 14–17 only &nbsp;</span>
+  <a href="investingpro-summer-sale.html" style="display:inline-block;background:#d4af37;color:#050508;font-weight:700;font-size:0.8rem;padding:4px 14px;border-radius:5px;text-decoration:none;margin-left:8px;white-space:nowrap">Claim 55%+15% →</a>
   <span style="font-size:0.72rem;color:rgba(212,175,55,0.7);margin-left:8px">*Affiliate link</span>
 </div>
 
