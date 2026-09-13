@@ -1,0 +1,18 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "distribution-agent-selfcheck",
+  "checked_at": "2026-09-13T08:44:00.233Z",
+  "content_sha": "122bdf25ab2943fb",
+  "hard_scan": "PASS",
+  "note": "FOMC September 2026 Blog EN: Rate data (US-10Y ~4.79%, Fed-Funds ~4.8%, CPI 3.3%) from FMP stable-API + BLS, YOC>=8% as quality threshold correctly cited, portfolio disclosure with held names (Torm/Dorian/Petrobras/Thungela) in text, affiliate notice present, R13 ok (no CapTrader), R6 disclaimer present, Voice: analytical direct",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "basis": "FMP stable-API Snapshot Sep 2026 + Federal Reserve Communications + BLS CPI data",
+    "note": "Numbers in blog named with sources (FMP, Fed, BLS). Rate data verified against KW36 dashboard."
+  }
+}
