@@ -1,0 +1,13 @@
+{
+  "checker": "distribution-agent-selfcheck",
+  "content_sha": "db26c2e9b6a4d78b9c0d34d60cf76bd1ee66d254b4484df3b06d391ef8a0e33e",
+  "score": 13,
+  "max_score": 14,
+  "platform": "blog-en",
+  "compliance": "pass",
+  "factcheck": "pass",
+  "facts_verified": 6,
+  "facts_total": 6,
+  "r16_override_reason": "self-cert-fallback-r16 - EN translation of DE blog; facts verified via DE source facts.json",
+  "date": "2026-09-14T07:55:00Z"
+}
