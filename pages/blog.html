@@ -118,6 +118,13 @@
         font-weight: 600;
         margin-bottom: 0.75rem;
     }
+
+    /* A11y: Skip-Link (keyboard navigation) */
+    .skip-link{position:absolute;top:-40px;left:0;background:#D4AF37;color:#050608;padding:8px 16px;z-index:9999;font-weight:700;transition:top .2s;text-decoration:none}
+    .skip-link:focus{top:0}
+
+    /* A11y: Focus styles for keyboard users */
+    a:focus-visible,button:focus-visible,.nav-link:focus-visible,.dropdown-toggle:focus-visible,.cookie-btn:focus-visible{outline:2px solid #D4AF37;outline-offset:3px;border-radius:2px}
 </style>
 <link rel="canonical" href="https://mbcapitalstrategiesglobal.com/pages/blog.html">
 
@@ -217,6 +224,9 @@
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="../index.html" class="nav-logo">
@@ -263,6 +273,8 @@
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
         </div>
     </nav>
+
+    <main id="main-content" role="main">
 
     <section class="page-hero">
         <div class="container">
@@ -521,5 +533,6 @@
     </script>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
 
+    </main>
 </body>
 </html>
