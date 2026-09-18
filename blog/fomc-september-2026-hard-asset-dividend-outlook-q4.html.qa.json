@@ -1,0 +1,12 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "de",
+  "platform": "blog-en",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-09-18T15:26:28.358Z",
+  "content_sha": "654cada746185814",
+  "hard_scan": "PASS",
+  "note": ""
+}
