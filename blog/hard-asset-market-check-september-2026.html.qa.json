@@ -4,9 +4,16 @@
   "compliance": "PASS",
   "lang": "en",
   "platform": "blog-en",
-  "checker": "distribution-agent-selfcheck",
-  "checked_at": "2026-09-07T08:00:28.738Z",
-  "content_sha": "2d36afd40a3f2d7f",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-09-24T00:43:47.117Z",
+  "content_sha": "915392353739c711",
   "hard_scan": "PASS",
-  "note": "Standalone market update — FRED Tier-1 data (SP500, DCOILWTICO, DGS10, DTWEXBGS), disclosure in text, no CapTrader, R23 not applicable, GA4+hreflang+x-default+twitter-card+FAQ Schema included"
+  "note": "Hard Asset Market Check Sep 2026: 4/4 Marktzahlen exakt gegen FRED-API (Tier-1) verifiziert; 1 Wortfix (7747-Close war Do 03.09, nicht Friday); Disclosure+Disclaimer vorhanden, kein CapTrader, R23 clean",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "hard-asset-market-check-september-2026.html.facts.json",
+    "allow_plausible": false,
+    "max_age_days": 14
+  }
 }

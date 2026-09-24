@@ -1,0 +1,44 @@
+{
+  "asset": "hard-asset-market-check-september-2026.html",
+  "created_at": "2026-09-24T00:43:39+00:00",
+  "claims": [
+    {
+      "id": "f1",
+      "claim": "S&P 500 7.718,6 am 04.09.2026; Vortag (Do 03.09.) 7.747; 02.09. 7.666",
+      "value": "7718.6 / 7747.71 / 7666.6",
+      "source": "FRED API series SP500, historische Beobachtungen 02.-04.09.2026",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=SP500",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-24T00:43:39+00:00"
+    },
+    {
+      "id": "f2",
+      "claim": "WTI 91,48 USD/Barrel am 01.09.2026; Anstieg von 84,57 USD (28.08., letzter August-Handelstag)",
+      "value": "91.48 / 84.57",
+      "source": "FRED API series DCOILWTICO, Beobachtungen 20.08.-02.09.2026",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=DCOILWTICO",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-24T00:43:39+00:00"
+    },
+    {
+      "id": "f3",
+      "claim": "US 10Y-Rendite 4,77 % am 03.09.2026",
+      "value": "4.77",
+      "source": "FRED API series DGS10, Beobachtungen 02.-04.09.2026",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=DGS10",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-24T00:43:39+00:00"
+    },
+    {
+      "id": "f4",
+      "claim": "Trade-Weighted USD-Index 118,75, letzter verfügbarer Stand 28.08.2026",
+      "value": "118.7479",
+      "source": "FRED API series DTWEXBGS, Beobachtungen 27.-29.08.2026",
+      "url": "https://api.stlouisfed.org/fred/series/observations?series_id=DTWEXBGS",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-24T00:43:39+00:00"
+    }
+  ],
+  "allow_plausible": false,
+  "max_age_days": 14
+}
