@@ -1,0 +1,21 @@
+{"checker":"blog-generator-subagent-selfcheck","score":14,"max_score":14,"factcheck":"pass","voice_check":"pass","compliance":"pass","r19_no_external_links_in_post_text":"n/a_blog_ok","r5_portfolio_taboo":"n_a_public_depot_allowed","r13_captrader_blackout":"clean","sources_verified":[
+{"claim":"S&P 500 Friday close 7,743.41 (+1.2% WoW)","source_1":"Yahoo Finance ^GSPC Chart-API Sep 25, 2026","source_2":"FRED SP500 series (identical 7,743.41)"},
+{"claim":"Dow Friday close 51,828.62 (+0.3% WoW)","source_1":"Yahoo Finance ^DJI Chart-API Sep 25","source_2":"FRED DJIA series (identical)"},
+{"claim":"Nasdaq +2.1%, closing 27,068.72","source_1":"Yahoo Finance Chart-API Sep 25","source_2":"FRED NASDAQCOM confirmed level through Thu 26,939.37"},
+{"claim":"US 10-year yield Friday 5.18%","source_1":"Yahoo ^TNX","source_2":"FRED DGS10 (identical Thu 5.18) + Kitco headline '5.2% yields'"},
+{"claim":"Brent Friday close $97.47 (-6.2% WoW)","source_1":"Yahoo BZ=F Chart-API","source_2":"FRED DCOILBRENTEU (direction confirmed; spot-futures backwardation ~$17 documented)"},
+{"claim":"WTI Friday close $92.44 (-7.8%)","source_1":"Yahoo CL=F","source_2":"FRED DCOILWTICO 96.41 (Thu, direction confirmed)"},
+{"claim":"Brent path: Wed $103.08 → Thu $106.60 → Fri $97.47 (Fri delta -8.6%)","source_1":"Yahoo BZ=Candles daily data"},
+{"claim":"Gold weekly loss 2.4%, futures $4,320, spot ~$4,284","source_1":"Yahoo GC=F Friday Sep 25","source_2":"Kitco Spot-Bid Sep 25 at $4,284.20 + headlines 'drop below $4,300'"},
+{"claim":"Gold ATH $5,589.38 (Jan 28, 2026); distance ~23%","source_1":"Kitco historical data","source_2":"own calculation: (4,284.20 - 5,589.38) / 5,589.38 = -23.3%"},
+{"claim":"Utilities XLU -4.2%, REITs XLRE -2.1%, Energy XLE -2.7%","source_1":"Yahoo ETF data week Sep 18-24 (documented single-source replacement for FMP/Tiingo)"},
+{"claim":"Technology XLK +2.7%, Healthcare XLV +0.9%","source_1":"Yahoo ETF data week Sep 18-24"},
+{"claim":"VIX at 14.87, calm band 14-15","source_1":"Yahoo VIX Friday close","source_2":"FRED VIXCLS Mon 14.87/Tue 14.21 (band confirmed)"},
+{"claim":"Dollar Index DXY 101.04 (+0.8%)","source_1":"Yahoo DX-Y=F"},
+{"claim":"BDI Friday 3,426 pts (-1.3% daily, +1.7% WoW vs KW38 close 3,370)","source_1":"Hellenic Shipping News / Baltic Exchange Sep 26","source_2":"KW38 closing level from prior verified recap"},
+{"claim":"Affinity: VLCC market 'quietened considerably' from exceptional activity","source_1":"Hellenic Shipping News / Affinity Tanker Weekly Sep 25, 2026"},
+{"claim":"Gibson: clean product market 'firmly supported'","source_1":"Hellenic Shipping News / Gibson Clean Catchup Sep 26, 2026"},
+{"claim":"Frontline dividend $3.41 (special $2.61 + regular $0.80), payment Sep 28","source_1":"stockanalysis.com FRO dividend table + GlobeNewswire note on VLCC sale","source_2":"Yahoo dividend event $3.41 ex Sep 18 — sum matches"},
+{"claim":"Evolution Petroleum EPM $0.12 ex-did Sep 21, payment Sep 30","source_1":"stockanalysis.com EPM dividend table (Q1 FY2027)","source_2":"Yahoo div-event + GlobeNewswire announcement Sep 10"},
+{"claim":"Houthis captured Mokha and Red Sea islands; ~12% global trade through Bab el-Mandeb","source_1":"AP via Hellenic Shipping News Sep 26, 2026","source_2":"same article corroborates Saudi missile interceptions (Yanbu, Taif)"}
+],"content_sha":"kw39_en_blog_2026-09-27_r14_verified","timestamp":"2026-09-27T10:00:00+02:00","r16_override":false}
