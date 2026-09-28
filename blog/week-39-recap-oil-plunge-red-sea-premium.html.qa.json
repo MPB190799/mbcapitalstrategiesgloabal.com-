@@ -1,0 +1,20 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "checker": "content-qa-agent",
+  "checked_at": "2026-09-28T03:14:57.448Z",
+  "content_sha": "9c7c56fa7554d4b0",
+  "hard_scan": "PASS",
+  "note": "",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "week-39-recap-oil-plunge-red-sea-premium.html.facts.json",
+    "allow_plausible": false,
+    "max_age_days": 14
+  },
+  "numbers_verified_by": "claude"
+}

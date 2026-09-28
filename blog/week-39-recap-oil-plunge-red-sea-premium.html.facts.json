@@ -1,0 +1,88 @@
+{
+  "spec_file": "blog/week-39-recap-oil-plunge-red-sea-premium.html",
+  "checked_by": "distribution-agent (KW39-Standalone-Lauf 28.09.2026)",
+  "checked_at": "2026-09-28T11:00:00+02:00",
+  "claims": [
+    {
+      "id": "sp500-friday-close",
+      "claim": "S&P 500 Friday close 7,743.41 (+1.2% WoW)",
+      "value": "7743.41",
+      "source": "Yahoo Finance Chart-API ^GSPC + FRED SP500 (identical verified)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "dow-friday-close",
+      "claim": "Dow Jones Friday close 51,828.62 (+0.3%)",
+      "value": "51828.62",
+      "source": "Yahoo Finance Chart-API ^DJI + FRED DJIA (identical verified)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "brent-friday-close",
+      "claim": "Brent crude Friday close $97.47/barrel (-8.6% WoW)",
+      "value": "97.47",
+      "source": "Yahoo Finance Chart-API BZ=F + FRED DCOILBRENTEU Spot (direction confirmed)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "wti-friday-close",
+      "claim": "WTI Friday close $92.44/barrel (-7.8%)",
+      "value": "92.44",
+      "source": "Yahoo Finance Chart-API CL=F + FRED DCOILWTICO (direction confirmed)",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "gold-spot-friday",
+      "claim": "Gold Spot $4,284\u2013$4,320 (-2.4% WoW)",
+      "value": "4284.20",
+      "source": "Yahoo Finance GC=F Fri 4,320.50$ + Kitco Spot-Bid Sep 25 4,284.20$",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "us10y-yield",
+      "claim": "US 10Y yield 5.18% (Thu 5.16 \u2192 Fri 5.18)",
+      "value": "5.18",
+      "source": "Yahoo Finance ^TNX + FRED DGS10 (identical) + Kitco headline '5.2% yields'",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "gold-ath-distance",
+      "claim": "Gold ATH $5,589.38 on Jan 28, 2026; current distance ~23%",
+      "value": "5589.38",
+      "source": "Kitco + Yahoo GC=F chart data; own calculation -23.3%",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "backwardation-spread",
+      "claim": "Backwardation ~$17 (Spot $114.89 vs Futures $97.47)",
+      "value": "17",
+      "source": "FRED DCOILBRENTEU Spot + Yahoo BZ=F Futures",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    },
+    {
+      "id": "fed-rate-level",
+      "claim": "Fed rate level 3.75\u20134.00% (hike from Sep 16)",
+      "value": "3.75",
+      "source": "FED official announcement; WebSearch 'cut to 4.00-4.25%' in dossier rejected as false",
+      "url": "file://output/avatar-videos/kw39-v1/research-kw39-verified.md",
+      "verdict": "VERIFIED",
+      "checked_at": "2026-09-28T11:00:00+02:00"
+    }
+  ]
+}
