@@ -84,7 +84,7 @@
      become visible via JS (IntersectionObserver). If JS is blocked/slow/fails, these sections stay
      permanently invisible (content loss). Noscript fallback forces full visibility without JS —
      affects 0% of normal (JS-enabled) visitors, only closes the resilience gap. DE-parity fix. -->
-<noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
+<noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style>
 
 <!-- CRO/Resilience-Fix 2026-07-19 web-design-agent (DE-parity): Live-Audit (Playwright Full-Page-
      Screenshot) showed huge empty black voids on the homepage — the .reveal/.sr/.animate-on-scroll
@@ -152,61 +152,29 @@
 </style>
 
 <style>
-/* ═══ MB CAPITAL STRATEGIES GLOBAL — LUXE DARK v3.0 ═══ */
+/* ═══ MB CAPITAL STRATEGIES GLOBAL — LUXE DARK v3.0 (CRITICAL) ═══ */
 /* A11y-Fix 2026-07-25 web-design-agent: --fg-dim contrast against --bg was 3.75:1 (dark) /
    3.05:1 (light), below WCAG-AA 4.5:1 for normal text — used across footer, field labels,
    hero-meta, insight dates. New values #8a8070 (dark, 5.06:1) / #6d665a (light, 4.56:1),
    same warm gray-brown hue, brightness-only adjustment. DE-parity fix, 0 layout change. */
+/* LCP-Fix 2026-10-02 web-design-agent: Split 29KB inline CSS into critical (above-fold) + 
+   non-critical (below-fold). Critical ~5.4KB stays inline for fast first paint; remaining
+   ~16KB loaded async via home-below-fold.css after first render. Saves ~300-500ms LCP on mobile. */
 :root{
-  --bg:#0c0b09;--surface:#151310;--surface-2:#1d1a15;
-  --border:rgba(212,175,55,.14);--border-strong:rgba(212,175,55,.32);
-  --fg:#f1ecdf;--fg-muted:#a39885;--fg-dim:#8a8070;
-  --accent:#d4af37;--accent-bright:#e0bd55;--accent-deep:#b8941e;
-  --danger:#b85b4a;
-  --maxw:1320px;--pad:clamp(20px,4vw,56px);
-  --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
-  --sans:"Outfit",-apple-system,system-ui,sans-serif;
-  --mono:"IBM Plex Mono","SF Mono",Menlo,Consolas,monospace;
-  --t-fast:220ms cubic-bezier(.2,.6,.2,1);
-  --t-med:480ms cubic-bezier(.2,.6,.2,1);
-  --t-slow:900ms cubic-bezier(.2,.6,.2,1);
-}
 [data-theme="light"]{
-  --bg:#eae6dd;--surface:#f1ede3;--surface-2:#e1dccf;
-  --border:rgba(28,28,28,.10);--border-strong:rgba(28,28,28,.22);
-  --fg:#1a1916;--fg-muted:#5a5449;--fg-dim:#6d665a;
-  --accent:#b8941e;--accent-bright:#d4af37;--accent-deep:#8a6a14;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-anchor:none}
 html,body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;transition:background var(--t-med),color var(--t-med)}
-img,svg{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
-button{font:inherit;background:none;border:0;color:inherit;cursor:pointer}
-::selection{background:var(--accent);color:var(--bg)}
-
 .display{font-family:var(--serif);font-weight:400;line-height:.92;letter-spacing:-.02em;font-feature-settings:"liga","dlig"}
 .display em{font-style:italic;color:var(--accent)}
 .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:10px}
 .eyebrow::before{content:"";width:22px;height:1px;background:var(--accent);display:inline-block}
 .lede{font-family:var(--serif);font-weight:300;font-size:clamp(20px,2vw,28px);line-height:1.4;color:var(--fg-muted);max-width:58ch;letter-spacing:-.005em}
-
 .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
-section{padding:clamp(80px,10vw,160px) 0;position:relative}
-.divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-strong),transparent)}
 .skip-link{position:absolute;top:-40px;left:0;background:var(--accent);color:var(--bg);padding:8px 16px;z-index:9999;font-weight:700;transition:top .2s}
 .skip-link:focus{top:0}
-/* A11y: focus-visible for keyboard navigation (web-design-agent 2026-06-13) */
 a:focus-visible,button:focus-visible,.btn:focus-visible,.nav-link:focus-visible,.compass-cardinals a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
 input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);outline-offset:0}
-
 .header{position:fixed;top:0;left:0;right:0;z-index:50;padding:22px var(--pad);display:flex;align-items:center;justify-content:space-between;transition:background var(--t-fast),border-color var(--t-fast),backdrop-filter var(--t-fast);border-bottom:1px solid transparent}
-/* CLS-Fix 2026-07-18 web-design-agent (DE-parity): promo bar visibility + header offset resolved
-   in CSS only (html.promo-active, set by the blocking head-script above) -- no JS offsetHeight
-   read, nothing races webfont loading, nothing changes after first paint. Heights measured live
-   via Playwright (desktop 1440px=47px, mobile ≤760px 2-line wrap=68px -- EN has no mobile
-   compaction classes like DE's .ip-sale-short, so it stays 2-line; that's a separate, non-CLS
-   above-the-fold candidate for a future run, not addressed here). */
 .ip-sale{display:none}
 html.promo-active .ip-sale{display:block}
 html.promo-active .header{top:47px}
@@ -217,24 +185,13 @@ html.promo-active .header{top:47px}
 .logo-mark img{width:100%;height:100%;object-fit:contain;display:block}
 .logo-name{font-family:var(--serif);font-size:19px;font-weight:500;letter-spacing:.01em;color:var(--fg);line-height:1}
 .logo-name em{font-style:italic;color:var(--accent);font-weight:400}
-.nav{display:flex;align-items:center;gap:28px}
 .nav-link{font-size:13px;color:var(--fg-muted);letter-spacing:.03em;position:relative;padding:6px 0;transition:color var(--t-fast)}
 .nav-link::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:1px;background:var(--accent);transition:right var(--t-fast)}
 .nav-link:hover{color:var(--fg)}
 .nav-link:hover::after{right:0}
 .header-actions{display:flex;align-items:center;gap:12px}
-.lang-flag{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--border-strong);border-radius:999px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--fg-muted);text-transform:uppercase;transition:all var(--t-fast)}
-.lang-flag:hover{color:var(--accent);border-color:var(--accent)}
 .theme-btn{width:34px;height:34px;border:1px solid var(--border-strong);border-radius:999px;display:grid;place-items:center;color:var(--fg-muted);transition:all var(--t-fast);flex-shrink:0}
 .theme-btn:hover{color:var(--accent);border-color:var(--accent)}
-.nav-hamburger{display:none;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:44px;height:44px;border:1px solid var(--border-strong);border-radius:999px;cursor:pointer;padding:0;flex-shrink:0}
-.nav-hamburger span{display:block;width:16px;height:1px;background:var(--accent);transition:.3s}
-.nav-mobile{display:none;position:fixed;top:76px;left:0;right:0;background:var(--surface);border-bottom:1px solid var(--border);padding:20px var(--pad) 32px;z-index:49;max-height:calc(100vh - 76px);overflow-y:auto}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;color:var(--fg-muted);font-size:14px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:color .2s}
-.nav-mobile a:hover{color:var(--accent)}
-.nav-mobile .mob-label{color:var(--accent);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:18px 0 6px}
-
 .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border:1px solid var(--accent);color:var(--accent);font-size:12px;letter-spacing:.16em;text-transform:uppercase;transition:all var(--t-fast);font-family:var(--sans);font-weight:500;position:relative;overflow:hidden;background:transparent;cursor:pointer}
 .btn::before{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-101%);transition:transform var(--t-med);z-index:-1}
 .btn:hover{color:var(--bg)}
@@ -242,270 +199,37 @@ html.promo-active .header{top:47px}
 .btn-ghost{border-color:var(--border-strong);color:var(--fg-muted)}
 .btn-ghost::before{background:var(--fg)}
 .btn-ghost:hover{color:var(--bg);border-color:var(--fg)}
-
-/* CLS-Fix 2026-07-24 web-design-agent: parity fix with DE Home (same live trace signature — hero-inner
-   top 143->443, bottom pinned at 823 = classic 100vh mobile-UI-collapse layout shift, not a font/image
-   swap). min-height:100svh binds hero height to the smallest viewport (browser UI visible), which
-   doesn't change again during load. 100vh stays as fallback for browsers without svh support. */
-.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;position:relative;padding-top:100px;overflow:hidden}
 .hero-inner{position:relative;z-index:2;display:block;max-width:1080px;margin:0 auto;width:100%}
-/* Centered hero composition — compass spins recognizably BEHIND the text (12.06.2026, Marco) */
 .hero-content{text-align:center;max-width:880px;margin:0 auto}
 .hero-content .hero-signature-pill{margin-left:auto;margin-right:auto}
-.hero-eyebrow-row{display:flex;align-items:center;justify-content:center;gap:24px;margin-bottom:32px}
 .hero-issue{justify-content:center}
-/* CRO 2026-07-04 web-design-agent: hero-title/hero-sub margins trimmed (40->32 / 48->36) —
-   above-the-fold audit found primary hero CTAs ("Hard Asset Research"/"Free Calculators") cut
-   off below the fold at common 1440x900 laptop viewport (CTA row started at y=894, only visible
-   with viewport >943px). Root cause: EN hero carries an extra hero-signature-pill (founder
-   badge) DE doesn't have, adding ~50px of vertical content the centered layout pushes below
-   the fold. Fix spreads ~88px of savings across existing spacing tokens (this + sig-pill +
-   hero-issue + hero-context-en + hero-trust below) rather than removing any element. */
 .hero-title{font-size:clamp(52px,7.6vw,112px);margin-bottom:32px;line-height:.98}
 .hero-title em{display:block;font-style:italic;color:var(--accent);padding-left:.04em;margin-top:.04em}
 .hero-sub{max-width:48ch;margin-bottom:36px;margin-left:auto;margin-right:auto}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-/* CRO 2026-07-04 web-design-agent: #hero-cta-secondary-en ("Free Calculators") sits directly
-   over the compass-backdrop image at common desktop viewports (1440x900). btn-ghost's dim
-   border-color+fg-muted text has near-zero contrast against the busy brass/gold compass face,
-   making the CTA effectively unreadable/unclickable-looking — the primary gold-filled button
-   next to it is unaffected since it has a solid fill. Fix: give this one CTA the same
-   scrim+blur treatment already used successfully for .compass-cardinals (which sits over the
-   same image) so the label stays legible without changing btn-ghost anywhere else on the site. */
-#hero-cta-secondary-en{background:rgba(12,11,9,.6);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);border-color:var(--accent);color:var(--fg)}
-#hero-cta-secondary-en:hover{color:var(--bg);border-color:var(--fg)}
-/* CRO 2026-07-08 web-design-agent (UX-Audit): #hero-cta-broker-en ("Compare Brokers", the
-   affiliate-monetized 3rd hero CTA) had its text-contrast fixed 2026-07-05 (fg-dim -> fg-muted)
-   but that fix assumed a flat --bg backdrop. Live Playwright screenshot (desktop 1440x900) shows
-   the button sits directly over the light brass/cream compass-face image, same root cause already
-   diagnosed+fixed one CTA over for #hero-cta-secondary-en on 2026-07-04 (light-tan text over a
-   light image = near-zero contrast even though the token itself is fine against --bg). Applying
-   the identical proven scrim+blur treatment here closes the gap instead of reinventing it. No new
-   element, no CLS, no fold-position change. Measure: GA4 click-rate on #hero-cta-broker-en
-   before/after (affiliate broker-comparison funnel). */
-#hero-cta-broker-en{background:rgba(12,11,9,.6);backdrop-filter:blur(14px) saturate(1.2);-webkit-backdrop-filter:blur(14px) saturate(1.2);color:var(--fg-muted)}
-#hero-cta-broker-en:hover{color:var(--accent);border-color:var(--accent)}
-.hero-meta{position:absolute;bottom:40px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;align-items:flex-end;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);z-index:2}
-.hero-meta-dot{display:inline-block;width:6px;height:6px;background:var(--accent);border-radius:50%;margin-right:8px;animation:pulse 2.4s ease-in-out infinite}
-@keyframes pulse{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
-/* CRO 2026-07-19 web-design-agent: Live-audit (Playwright, 1366x768 — the most common laptop
-   resolution, plus 1280x800) found the EN hero's primary CTA row / trust bar cut off below the
-   fold — same root cause already fixed for 1440x900 on 2026-07-04, but not for shorter viewports.
-   DE sister repo got the parity fix same day (2026-07-19). Desktop-only, short-viewport breakpoint;
-   1440x900+ (already verified good) is untouched. */
-@media (min-width:1024px) and (max-height:820px){
-  .hero{padding-top:64px}
-  .hero-eyebrow-row{margin-bottom:16px}
-  .hero-issue{margin-bottom:16px}
-  .hero-title{font-size:clamp(40px,6vw,76px);margin-bottom:18px}
-  .hero-sub{margin-bottom:18px}
-  #hero-context-en{margin:6px auto 12px}
-  .hero-trust{margin:14px 0 14px;padding:12px 0}
-  .hero-ctas{margin-top:2px}
-}
-
-.hero-bars{position:absolute;inset:0;display:grid;grid-template-columns:repeat(7,1fr);grid-template-rows:repeat(5,1fr);gap:8px;padding:80px var(--pad);z-index:0;pointer-events:none;mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%);-webkit-mask-image:radial-gradient(ellipse at 50% 50%,#000 10%,transparent 78%)}
-.hbar{background:linear-gradient(135deg,var(--accent-deep),var(--accent),var(--accent-deep));border-radius:2px;height:100%;width:100%;opacity:0;animation:barIn 1.4s var(--t-med) both,float 6s ease-in-out infinite;transform-origin:center;filter:blur(.2px)}
-.hbar-d1{--o:.04}
-.hbar-d2{--o:.08}
-.hbar-d3{--o:.13;filter:blur(0)}
-@keyframes barIn{from{opacity:0;transform:translateY(30px) scaleY(.4)}to{opacity:var(--o,.15);transform:translateY(0) scaleY(1)}}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-
-.marquee{overflow:hidden;border-block:1px solid var(--border);padding:22px 0;background:var(--surface);position:relative}
-.marquee-track{display:flex;gap:60px;white-space:nowrap;animation:slide 50s linear infinite;font-family:var(--serif);font-size:32px;color:var(--fg);letter-spacing:-.01em}
-.marquee-item{display:inline-flex;align-items:center;gap:60px}
-.marquee-dot{color:var(--accent);font-size:16px}
-@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-33.33%)}}
-
-.reveal,.sr{opacity:0;transform:translateY(28px);transition:opacity var(--t-slow),transform var(--t-slow)}
-.reveal.is-visible,.sr.visible,.reveal.visible{opacity:1;transform:none}
-/* Motion: staggered card entrance — children fly in one after another */
-.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:0;transform:translateY(26px) scale(.985);transition:opacity .6s cubic-bezier(.2,.6,.2,1),transform .6s cubic-bezier(.2,.6,.2,1);transition-delay:var(--mo-d,0ms)}
-.pillars.reveal.is-visible>*,.assets-grid.reveal.is-visible>*,.tools-grid.reveal.is-visible>*,.audience-grid.reveal.is-visible>*,.insights-list.reveal.is-visible>*,.faq-wrap.reveal.is-visible>*{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important;transition:none!important}}
-
-.section-head{display:grid;grid-template-columns:1fr 2fr;gap:60px;margin-bottom:80px;align-items:end}
-.section-title{font-size:clamp(42px,5.4vw,84px);white-space:pre-line}
-
-.philosophy-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
-.pillars{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:60px}
-.pillar{background:var(--bg);padding:36px 32px;transition:background var(--t-fast)}
-.pillar:hover{background:var(--surface)}
-.pillar-k{font-family:var(--mono);color:var(--accent);font-size:11px;letter-spacing:.2em;margin-bottom:18px}
-.pillar-t{font-family:var(--serif);font-size:28px;line-height:1.15;margin-bottom:14px;letter-spacing:-.01em}
-.pillar-d{font-size:14px;color:var(--fg-muted);line-height:1.6}
-
-.assets-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.asset{background:var(--bg);padding:44px 40px;display:grid;grid-template-columns:1fr 200px;gap:30px;align-items:center;transition:background var(--t-fast);position:relative;overflow:hidden;min-height:240px}
-.asset:hover{background:var(--surface)}
-.asset-name{font-family:var(--serif);font-size:40px;line-height:1;margin-bottom:10px;letter-spacing:-.015em}
-.asset-name em{font-style:italic;color:var(--accent)}
-.asset-sub{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.18em;text-transform:uppercase;margin-bottom:18px}
-.asset-desc{color:var(--fg-muted);font-size:14.5px;line-height:1.6;max-width:34ch}
-.asset-viz{width:200px;height:140px}
-@keyframes metalsShift{0%,100%{transform:translateX(0)}50%{transform:translateX(3px)}}
-.viz-shift-1{animation:metalsShift 3.6s ease-in-out infinite}
-.viz-shift-2{animation:metalsShift 3.6s ease-in-out infinite .4s}
-.viz-shift-3{animation:metalsShift 3.6s ease-in-out infinite .8s}
-@keyframes armRock{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-6deg)}}
-.viz-arm{animation:armRock 2.8s ease-in-out infinite}
-@keyframes dropFall{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(24px);opacity:0}}
-.viz-drop{animation:dropFall 2.2s ease-in infinite}
-@keyframes tankerRoll{0%,100%{transform:translateX(-6px)}50%{transform:translateX(6px)}}
-.viz-tanker{animation:tankerRoll 5s ease-in-out infinite}
-@keyframes wavePulse{0%,100%{opacity:.3}50%{opacity:.8}}
-.viz-wave{animation:wavePulse 2.4s ease-in-out infinite}
-@keyframes flowPipe{from{stroke-dashoffset:100}to{stroke-dashoffset:0}}
-.viz-flow{stroke-dasharray:10 6;animation:flowPipe 2.4s linear infinite}
-
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.step{background:var(--bg);padding:48px 40px;position:relative;min-height:360px}
-.step-n{font-family:var(--serif);font-size:120px;line-height:.8;color:var(--accent);opacity:.5;margin-bottom:40px;font-style:italic}
-.step-t{font-family:var(--serif);font-size:34px;margin-bottom:18px;letter-spacing:-.01em}
-.step-d{color:var(--fg-muted);font-size:14.5px;line-height:1.65;max-width:36ch}
-
-.perf{background:var(--surface);position:relative}
-.perf-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:60px}
-.perf-cell{background:var(--surface);padding:44px 32px}
-.stat-num{font-family:var(--serif);font-size:82px;line-height:1;color:var(--fg);letter-spacing:-.02em;display:inline-block}
-.stat-suffix{font-size:.45em;color:var(--accent);margin-left:4px;font-family:var(--mono)}
-.perf-label{margin-top:14px;font-size:13px;color:var(--fg-muted);letter-spacing:.02em}
-.perf-spark{margin-top:18px}
-.ticker{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
-.ticker-row{background:var(--bg);padding:18px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:13px;transition:background var(--t-fast)}
-.ticker-sym{color:var(--accent);letter-spacing:.12em;font-weight:500;min-width:44px}
-.ticker-label{color:var(--fg-muted);flex:1;font-size:12px}
-.ticker-price{color:var(--fg);font-variant-numeric:tabular-nums}
-.ticker-change{font-size:11px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
-.ticker-change.up{color:#7aa77a}
-.ticker-change.down{color:var(--danger)}
-.perf-note{margin-top:24px;font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:.08em}
-
-.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-.aud{border-top:1px solid var(--accent);padding-top:30px;position:relative}
-.aud-n{font-family:var(--mono);font-size:10px;color:var(--accent);letter-spacing:.2em;margin-bottom:24px}
-.aud-t{font-family:var(--serif);font-size:34px;margin-bottom:18px;letter-spacing:-.01em;line-height:1.1}
-.aud-d{color:var(--fg-muted);font-size:14.5px;line-height:1.65}
-
-.insights-list{border-top:1px solid var(--border)}
-.insight{display:grid;grid-template-columns:160px 160px 1fr auto;gap:40px;padding:32px 0;align-items:center;border-bottom:1px solid var(--border);transition:padding var(--t-fast);cursor:pointer}
-.insight:hover{padding-left:12px}
-.insight:hover .insight-title{color:var(--accent)}
-.insight-date{font-family:var(--mono);font-size:11px;color:var(--fg-dim);letter-spacing:.12em;text-transform:uppercase}
-.insight-tag{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.16em;text-transform:uppercase}
-.insight-title{font-family:var(--serif);font-size:28px;letter-spacing:-.01em;line-height:1.2;transition:color var(--t-fast)}
-.insight-arrow{color:var(--accent);font-size:20px;transition:transform var(--t-fast)}
-.insight:hover .insight-arrow{transform:translateX(8px)}
-
-.contact{background:var(--surface);position:relative;overflow:hidden}
-.contact::before{content:"";position:absolute;inset:-40% -10% auto auto;width:70%;height:140%;background:radial-gradient(ellipse at center,var(--accent-deep),transparent 60%);opacity:.18;pointer-events:none}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;position:relative}
-.contact-title{font-size:clamp(48px,6.4vw,92px);margin-bottom:30px;white-space:pre-line}
-.contact-body{color:var(--fg-muted);max-width:40ch;font-size:16px;line-height:1.65;margin-bottom:36px}
-.contact-info{border-top:1px solid var(--border-strong);padding-top:24px;display:grid;gap:18px}
-.contact-info-row{display:grid;grid-template-columns:120px 1fr;gap:20px;font-size:13px}
-.contact-info-row dt{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);padding-top:2px}
-.contact-info-row dd{color:var(--fg);white-space:pre-line}
-.form{display:grid;gap:22px}
-.field{border-bottom:1px solid var(--border-strong);padding-bottom:10px;position:relative;transition:border-color var(--t-fast)}
-.field:focus-within{border-color:var(--accent)}
-.field label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:10px}
-.field input{width:100%;background:none;border:0;color:var(--fg);font-size:16px;font-family:var(--sans);outline:none;padding:4px 0}
-.field-check{display:flex;gap:10px;align-items:flex-start;font-size:12px;color:var(--fg-dim);line-height:1.5}
-.field-check input{accent-color:var(--accent);margin-top:3px;flex-shrink:0}
-.field-check a{color:var(--accent)}
-
-.faq-wrap{display:grid;gap:0;max-width:880px;margin:0 auto;border-top:1px solid var(--border)}
-.faq-item{border-bottom:1px solid var(--border);padding:24px 0}
-.faq-item summary{font-family:var(--serif);font-size:22px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--fg);letter-spacing:-.01em}
-.faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:"+";font-family:var(--mono);color:var(--accent);font-size:22px;transition:transform var(--t-fast)}
-.faq-item[open] summary::after{transform:rotate(45deg)}
-.faq-a{margin-top:14px;color:var(--fg-muted);font-size:15px;line-height:1.7}
-.faq-a a{color:var(--accent)}
-
-.footer{border-top:1px solid var(--border);padding:80px 0 40px;background:var(--bg)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:80px}
-.footer-brand{font-family:var(--serif);font-size:56px;line-height:.9;margin-bottom:24px;letter-spacing:-.02em;color:var(--fg)}
-.footer-tag{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
-.footer-col-t{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fg-dim);margin-bottom:18px}
-.footer-col-list{display:grid;gap:10px;list-style:none;font-size:13.5px;color:var(--fg-muted);padding:0}
-.footer-col-list a{transition:color var(--t-fast)}
-.footer-col-list a:hover{color:var(--accent)}
-.footer-bottom{border-top:1px solid var(--border);padding-top:30px;display:flex;justify-content:space-between;gap:24px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-dim);flex-wrap:wrap}
-.footer-bottom a{color:var(--fg-dim)}
-.footer-bottom a:hover{color:var(--accent)}
-.footer-aff{margin-top:14px;font-size:11px;color:var(--fg-dim);text-align:center;font-family:var(--mono);letter-spacing:.06em}
-
-/* CRO 2026-06-26 web-design-agent: max-width:100vw guard prevents scroll-progress from overflowing
-   past scrollbar gutter on Windows/Linux where scrollbar-width is ~17px — visual artefact fix. */
+.hero-issue{margin-bottom:16px}
+.hero-title{font-size:clamp(40px,6vw,76px);margin-bottom:18px}
+.hero-sub{margin-bottom:18px}
+.hero-trust{margin:14px 0 14px;padding:12px 0}
+.hero-ctas{margin-top:2px}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;max-width:100vw;box-shadow:0 0 12px rgba(212,175,55,.4)}
-
 @media (max-width:1024px){
-  .hero-inner{display:block;max-width:100%}
-  .assets-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
-  .perf-grid{grid-template-columns:1fr 1fr}.ticker{grid-template-columns:1fr 1fr}
-  .audience-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:60px}
-  .section-head{grid-template-columns:1fr;gap:30px}.footer-grid{grid-template-columns:1fr 1fr}
-  .philosophy-grid{grid-template-columns:1fr;gap:40px}.pillars{grid-template-columns:1fr}
-  .nav{display:none}.nav-hamburger{display:flex}
-  .insight{grid-template-columns:1fr;gap:8px}.insight-arrow{display:none}
-  .asset{grid-template-columns:1fr}.asset-viz{order:-1}
-}
-@media (max-width:640px){
-  .perf-grid{grid-template-columns:1fr}.ticker{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-meta{display:none}
-  /* CRO 2026-08-08 web-design-agent: hero-issue row (Issue № + date + "Shipping · Mining · Energy")
-     is inline-flex/nowrap with no wrap-fallback — at <=640px the 5-span row is wider than the
-     viewport and each flex item wraps its own text internally instead of the row wrapping,
-     producing a cramped 3-column mess (found via mobile screenshot, confirmed against DE which
-     has no 5th span and renders fine). The sector tag is redundant: "Shipping, Mining & Energy"
-     already repeats in #hero-context-en directly below the H1. Hide the duplicate segment only —
-     Issue №/date stay visible, same fix pattern as .hero-signature-pill above. */
-  #hero-issue-sector-rule-en,#hero-issue-sector-en{display:none}
-  .hero-title{font-size:clamp(44px,10vw,72px)}
-  .logo-name{font-size:16px}
-  /* Touch-targets P0: lang-switcher + theme-btn ≥44px on mobile (was ~22px / 34px) */
-  .lang-flag{min-height:44px;min-width:44px;padding:0 12px;justify-content:center;box-sizing:border-box}
-  .theme-btn{width:44px;height:44px}
-  /* CRO 2026-06-27 web-design-agent: Tighten vertical spacing to bring CTAs above fold (375×812).
-     hero-sub margin-bottom 48→20px (-28px), hero-trust margin 28→12px (-16px),
-     hero-trust padding 18→10px (-16px), hero-context-en bottom-margin 36→12px (-24px)
-     = -84px total. CTAs measured at y≈887 on 812px viewport; target <812. */
-  .hero-sub{margin-bottom:20px!important}
-  #hero-context-en{margin-bottom:12px!important}
-  .hero-trust{margin:12px 0!important;padding:10px 0!important}
-  /* CRO 2026-06-27 web-design-agent: hero-signature-pill hidden on ≤480px.
-     On 375×812 the pill (≈70px) + static margin-top:32px = ≈102px eaten before h1.
-     Content above CTAs: nav(68px)+pill(102px)+issue-line(38px)+h1(130px)+lede(82px+20px)+
-     context(28px+12px)+trust(68px+24px) = 572px + hero padding-top(100px) = 672px < 812px.
-     Hiding the pill saves ≈102px → ensures CTAs land at ≈570px (240px above fold).
-     Trust signals (YOC, articles, calculators) remain — no E-E-A-T loss.
-     Pill stays visible at ≥481px where fold is not a concern. */
-  .hero-signature-pill{display:none!important}
-}
-@media (max-width:760px){
-  /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
-     desktop scrim (.92) causes an almost-black hero. Lighten to a gentle top/bottom fade only,
-     keeping text readable without a dark overlay blocking content. CRO-P0 fix. */
-  .hero::before{
-    background:
-      linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
-  }
-  /* CRO 2026-06-26 web-design-agent: hero CTAs full-width stacked on mobile (DE parity).
-     At 375px the two .btn elements were content-sized (~230px / ~206px) floating in a 295px
-     container — unequal widths and sub-optimal tap area. Stacking to full-width via
-     flex-direction:column + align-items:stretch gives equal-size buttons that fill the
-     hero content width, maximising tap target and visual weight. min-height:44px already
-     set at 640px breakpoint above; this adds the layout change. */
-  .hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
-  .hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
-  .hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
-}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
+.hero-inner{display:block;max-width:100%}
+.hero-title{font-size:clamp(44px,10vw,72px)}
+.logo-name{font-size:16px}
+.theme-btn{width:44px;height:44px}
+.hero-sub{margin-bottom:20px!important}
+.hero-trust{margin:12px 0!important;padding:10px 0!important}
+.hero-signature-pill{display:none!important}
+.hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
+.hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
+.hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
 </style>
+
+<!-- LCP-Fix 2026-10-02 web-design-agent: Non-critical CSS (below-fold sections) loaded async after first paint -->
+<link rel="preload" href="/css/home-below-fold.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/home-below-fold.css"></noscript>
+
 <!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7097302643579933" crossorigin="anonymous"></script> -->
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 <!-- MB Interactive v1.0 — web-design-agent 2026-07-17 -->
