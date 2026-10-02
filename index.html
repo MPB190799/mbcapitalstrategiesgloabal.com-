@@ -161,7 +161,30 @@
    non-critical (below-fold). Critical ~5.4KB stays inline for fast first paint; remaining
    ~16KB loaded async via home-below-fold.css after first render. Saves ~300-500ms LCP on mobile. */
 :root{
+  --bg:#0c0b09;--surface:#151310;--surface-2:#1d1a15;
+  --border:rgba(212,175,55,.14);--border-strong:rgba(212,175,55,.32);
+  --fg:#f1ecdf;--fg-muted:#a39885;--fg-dim:#8a8070;
+  --accent:#d4af37;--accent-bright:#e0bd55;--accent-deep:#b8941e;
+  --gold:#d4af37;--gold-bright:#e0bd55;--gold-dark:#b8941e;
+  --text:#f1ecdf;--text-2:#a39885;--text-3:#8a8070;
+  --danger:#b85b4a;
+  --maxw:1320px;--pad:clamp(20px,4vw,56px);
+  --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
+  --sans:"Outfit","Inter Tight","Inter",-apple-system,system-ui,sans-serif;
+  --mono:"IBM Plex Mono","JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
+  --t-fast:220ms cubic-bezier(.2,.6,.2,1);
+  --t-med:480ms cubic-bezier(.2,.6,.2,1);
+  --t-slow:900ms cubic-bezier(.2,.6,.2,1);
+  --ease-out:cubic-bezier(.16,1,.3,1);
+}
 [data-theme="light"]{
+  --bg:#eae6dd;--surface:#f1ede3;--surface-2:#e1dccf;
+  --border:rgba(184,148,30,.18);--border-strong:rgba(184,148,30,.34);
+  --fg:#1a1916;--fg-muted:#5a5449;--fg-dim:#6d665a;
+  --accent:#b8941e;--accent-bright:#d4af37;--accent-deep:#8a6a14;
+  --gold:#b8941e;--gold-bright:#d4af37;--gold-dark:#8a6a14;
+  --text:#1a1916;--text-2:#5a5449;--text-3:#6d665a;
+}
 html{scroll-behavior:smooth;overflow-anchor:none}
 html,body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;transition:background var(--t-med),color var(--t-med)}
 .display{font-family:var(--serif);font-weight:400;line-height:.92;letter-spacing:-.02em;font-feature-settings:"liga","dlig"}
