@@ -1,0 +1,13 @@
+{
+  "artifact": "2026-10-07-kw40-weekly-recap-en.md",
+  "score": 13,
+  "max_score": 14,
+  "voice_check": "PASS - Marco-Voice, analytisch, faktenbasiert",
+  "compliance": {
+    "R5_disclosure": "OK — 'Keine Anlageberatung' am Ende",
+    "R16_factcheck": "OK — Facts-Ledger vorhanden",
+    "language": "DE (korrekt für DE-Blog)",
+    "no_external_links_in_text": "N/A (Blog, kein Social)"
+  },
+  "verdict": "PASS"
+}

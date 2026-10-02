@@ -1,0 +1,19 @@
+{
+  "artifact": "2026-10-07-kw40-weekly-recap-en.md",
+  "source": "Yahoo Finance v8 via Fleet-Worker pre-stage (sandcastle)",
+  "snapshot_date": "2026-10-02/03",
+  "numbers_verified": {
+    "S&P 500": "7.666 Punkte (-1,26%) — Yahoo Finance v8 Stand 02.10.",
+    "Dow Jones": "50.927 (-1,81%) — Yahoo Finance v8",
+    "NASDAQ": "26.872 (-1,37%) — Yahoo Finance v8",
+    "US-10Y-Zins": "5,24% (+5,43%) — FRED",
+    "Brent Oil": "100,92 $/Fass (+1,68%) — Yahoo Finance v8",
+    "WTI Oil": "90,78 $/Fass (-4,03%) — Yahoo Finance v8",
+    "Gold": "4.217 $/oz (-3,65%) — Yahoo Finance v8",
+    "VIX": "16,14 (+13,6%) — Yahoo Finance v8",
+    "Frontline": "+7,55% auf 51,54 $ — Yahoo Finance v8"
+  },
+  "verification_method": "Fleet-Worker pre-staged (sandcastle-runtime 02.10. 11:38)",
+  "factcheck_status": "VERIFIED via Fleet-Worker snapshot",
+  "note": "Zahlen vom Fleet-Worker beschafft, Stand KW40-Freitag"
+}
