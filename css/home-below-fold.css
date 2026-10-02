@@ -171,3 +171,49 @@ keeping text readable without a dark overlay blocking content. CRO-P0 fix. */
 background:
 linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
 }
+/* === LCP-Optimization 2026-10-09 web-design-agent: Decorative CSS moved from <head> to below-fold async load.
+   These styles (cursor glow, compass animations, particles, marquee effects, mini-compass) are NOT needed for initial content render.
+   Moving them out of critical rendering path saves ~6KB inline CSS in <head>. === */
+
+/* Cursor glow */
+#mb-cursor-glow{position:fixed;pointer-events:none;z-index:2;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.11) 0%,transparent 65%);transform:translate(-50%,-50%);will-change:left,top;opacity:0;transition:opacity .6s;mix-blend-mode:screen}
+body.mb-cursor-active #mb-cursor-glow{opacity:1}
+@media(pointer:coarse){#mb-cursor-glow{display:none}}
+/* Compass — mouse-reactive transform */
+.compass-backdrop.mb-live{transform:translate(-50%,-50%) perspective(1700px) rotateX(calc(var(--tilt,42deg) + var(--mouse-tilt-x,0deg))) rotateY(var(--mouse-rot-y,0deg)) rotate(calc(var(--scroll-rot,0deg) + var(--mouse-rot-z,0deg)))}
+/* Pulse rings — larger start + wider expansion (rings visually go beyond compass) */
+.compass-ring{position:absolute;top:50%;left:50%;width:62%;height:62%;border-radius:50%;border:2px solid rgba(212,175,55,0);transform:translate(-50%,-50%) scale(1);pointer-events:none;z-index:1;animation:ringPulse 4.5s ease-in-out infinite;will-change:transform,opacity}
+.compass-ring:nth-child(2){animation-delay:1.5s}
+.compass-ring:nth-child(3){animation-delay:3s}
+@keyframes ringPulse{0%{opacity:.75;border-color:rgba(212,175,55,.55);box-shadow:0 0 14px rgba(212,175,55,.3),inset 0 0 14px rgba(212,175,55,.12);transform:translate(-50%,-50%) scale(1)}65%{opacity:.03;border-color:rgba(212,175,55,.03);box-shadow:0 0 4px rgba(212,175,55,0),inset 0 0 4px rgba(212,175,55,0);transform:translate(-50%,-50%) scale(2.2)}100%{opacity:.75;border-color:rgba(212,175,55,.55);box-shadow:0 0 14px rgba(212,175,55,.3),inset 0 0 14px rgba(212,175,55,.12);transform:translate(-50%,-50%) scale(1)}}
+/* Cardinal hover → smooth glow transition */
+.compass-backdrop::before{transition:opacity .4s ease,transform .4s ease}
+#hero.compass-cardinal-hover .compass-backdrop::before{opacity:1!important;transform:scale(1.16)!important}
+/* Gold particles — ember glow (visual audit v1.5: plain dots were invisible against compass) */
+.hero-particle{position:absolute;border-radius:50%;pointer-events:none;background:var(--accent-bright);box-shadow:0 0 6px 1px rgba(212,175,55,.8),0 0 14px 4px rgba(212,175,55,.35);z-index:2;animation:particleFloat var(--dur,8s) ease-in-out infinite;opacity:0}
+@keyframes particleFloat{0%{transform:translateY(0) scale(.6);opacity:0}12%{opacity:.9}78%{opacity:.5}100%{transform:translateY(calc(-40px - var(--drift,30px))) scale(1.15);opacity:0}}
+/* Marquee — gold shimmer on text (CRO v2.0) */
+.marquee-text{text-shadow:0 0 8px rgba(212,175,55,.4),0 0 30px rgba(212,175,55,.15);animation:textShimmer 6s ease-in-out infinite alternate}
+@keyframes textShimmer{0%{text-shadow:0 0 8px rgba(212,175,55,.4),0 0 30px rgba(212,175,55,.15)}100%{text-shadow:0 0 16px rgba(212,175,55,.8),0 0 50px rgba(212,175,55,.3)}}
+/* Marquee — scroll speed + pause on hover */
+.marquee-track{animation:marqueeScroll var(--speed,45s) linear infinite}
+#hero:hover .marquee-track{animation-play-state:paused}
+@keyframes marqueeScroll{to{transform:translateX(-200px)}}
+/* Marquee — fade edges (desktop only; on mobile the section is hidden entirely via home-below-fold.css media-query) */
+.marquee-fade-left,.marquee-fade-right{position:absolute;top:0;left:0;width:140px;height:100%;z-index:2;pointer-events:none}
+.marquee-fade-left{background:linear-gradient(90deg,var(--bg) 60%,transparent)}
+.marquee-fade-right{left:auto;right:0;background:linear-gradient(-90deg,var(--bg) 60%,transparent)}
+/* Mini-compass SVG — animated gradient ring + rose rotation */
+.cmp-svg{width:100%;height:100%}
+.cmp-bg{fill:var(--accent);stroke:var(--gold-light);stroke-width:.5;fill-opacity:.24;stroke-linejoin:round;stroke-linecap:round}
+.cmp-gradring{animation:cmpGradRing 45s linear infinite}
+.cmp-rose{animation:cmpRose 65s linear infinite reverse}
+@keyframes cmpGradRing{to{transform:rotate(360deg)}}
+@keyframes cmpRose{to{transform:rotate(360deg)}}
+.cmp-needle{will-change:transform}
+#compass-mini{position:fixed;right:24px;bottom:80px;width:64px;height:64px;opacity:0;transform:scale(.7) translateY(12px);transition:opacity .55s cubic-bezier(.2,.6,.2,1),transform .55s cubic-bezier(.2,.6,.2,1);z-index:20;filter:drop-shadow(0 4px 22px rgba(212,175,55,.5));pointer-events:none}
+#compass-mini.visible{opacity:1;transform:scale(1) translateY(0)}
+.cmp-sector{transition:fill .4s ease}
+.cmp-sector.active{fill:rgba(212,175,55,.24)!important}
+@media(pointer:coarse){#compass-mini{width:52px;height:52px;right:16px;bottom:70px}}
+@media(prefers-reduced-motion:reduce){.cmp-gradring,.cmp-rose{animation:none!important}.compass-svg-overlay,#compass-mini{display:none!important}}
