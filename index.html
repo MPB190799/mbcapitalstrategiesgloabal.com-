@@ -115,7 +115,6 @@
 })();
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -127,6 +126,21 @@
     'wait_for_update': 500
   });
   gtag('config', 'G-FSW7J7QYL8');
+  /* LCP-Optimization 2026-10-07 web-design-agent: GA4 library (gtag.js, ~45KB) was loaded async in <head>,
+     competing with fonts/images for bandwidth during critical render path. PSI reported "Reduce unused
+     JavaScript" as top opportunity (600ms savings). Fix: defer actual gtag.js download until after window 'load'
+     event — the consent-queue stub above stays instant (pure function def, zero cost), all gtag() calls queue
+     up and flush once the library arrives. No change to consent gating/project ID/dedup, only load timing. */
+  (function(c,l,a,r,i){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    function loadGtag(){
+      if(l.querySelector('script[src*="googletagmanager.com/gtag"]')) return;
+      var t=l.createElement(r);t.async=1;t.src='https://www.googletagmanager.com/gtag/js?id='+i;
+      var y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }
+    if(document.readyState==='complete') loadGtag();
+    else window.addEventListener('load',loadGtag);
+  })(window,document,'gtag','script','G-FSW7J7QYL8');
 </script>
 
 <meta property="og:title" content="Hard Asset Dividends: Shipping, Mining &amp; Energy 2026">
@@ -170,7 +184,7 @@
   --danger:#b85b4a;
   --maxw:1320px;--pad:clamp(20px,4vw,56px);
   --serif:"Cormorant Garamond","Iowan Old Style",Georgia,serif;
-  --sans:"Outfit","Inter Tight","Inter",-apple-system,system-ui,sans-serif;
+  --sans:"Outfit","Inter",-apple-system,system-ui,sans-serif;
   --mono:"IBM Plex Mono","JetBrains Mono","SF Mono",Menlo,Consolas,monospace;
   --t-fast:220ms cubic-bezier(.2,.6,.2,1);
   --t-med:480ms cubic-bezier(.2,.6,.2,1);
