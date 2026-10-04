@@ -448,7 +448,8 @@ a:hover { color: var(--gold); }
           return;
         }
         if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Subscribing...";}
-        fetch("https://mb-newsletter-subscribe.mbcapitalstrategies.workers.dev/subscribe",{
+        // Worker entfernt 2026-10-04 — redirect to DE /insider/
+        window.location.href = 'https://mbcapitalstrategies.com/insider/'{
           method:"POST",
           headers:{"Content-Type":"application/json"},
           body:JSON.stringify({email:email})
