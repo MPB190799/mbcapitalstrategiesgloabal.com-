@@ -1,0 +1,33 @@
+{
+  "file": "hard-asset-market-check-october-2026.html",
+  "qa_score": 14,
+  "factcheck": "pass",
+  "sources_verified": [
+    {
+      "claim": "Gold at $4,163 USD",
+      "source": "Yahoo Finance API GC=F, 07.10.2026"
+    },
+    {
+      "claim": "Brent at $89.77 USD",
+      "source": "Yahoo Finance API CL=F, 07.10.2026"
+    },
+    {
+      "claim": "VIX at 15.2",
+      "source": "Yahoo Finance API ^VIX, 07.10.2026"
+    },
+    {
+      "claim": "S&P 500 at 7,819",
+      "source": "Yahoo Finance API ^GSPC, 07.10.2026"
+    }
+  ],
+  "compliance": {
+    "r5_no_portfolio_eur": true,
+    "r13_no_captrader_ibkr": true,
+    "r19_no_external_links_linkedin": "n/a (Blog)",
+    "r23_earnings_gating": true,
+    "disclosure_present": true
+  },
+  "voice_check": 14,
+  "platform": "blog_en",
+  "timestamp": "2026-10-07T09:50:00Z"
+}
