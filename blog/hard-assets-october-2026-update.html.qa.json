@@ -1,0 +1,20 @@
+{
+  "file": "hard-assets-october-2026-update.html",
+  "qa_score": 13,
+  "factcheck": "pass",
+  "sources_verified": [
+    {"claim": "VIX at 12.5", "source": "FMP stable API / Yahoo Finance", "verified_at": "2026-10-09"},
+    {"claim": "Fear & Greed Index 74 (Greed)", "source": "CNN Money Fear & Greed Index", "verified_at": "2026-10-09"},
+    {"claim": "Brent Oil $85.50/bbl", "source": "FMP stable API", "verified_at": "2026-10-09"},
+    {"claim": "Gold ~$1,900/oz", "source": "Yahoo Finance / WebSearch", "verified_at": "2026-10-09"}
+  ],
+  "compliance": {
+    "R5_disclosure": true,
+    "R13_no_captrader": true,
+    "R16_double_gate": true,
+    "no_external_links_in_text": true
+  },
+  "voice_check": 12,
+  "platform": "blog_en",
+  "timestamp": "2026-10-09T07:45:00Z"
+}
