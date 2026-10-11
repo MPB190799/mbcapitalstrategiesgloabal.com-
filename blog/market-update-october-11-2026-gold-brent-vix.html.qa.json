@@ -1,0 +1,21 @@
+{
+  "file": "market-update-october-11-2026-gold-brent-vix.html",
+  "qa_score": 14,
+  "factcheck": "pass",
+  "sources_verified": [
+    {"claim": "Gold $4,216", "source": "Yahoo Finance API Oct 11 2026 ~06:30 UTC"},
+    {"claim": "Brent $104.72", "source": "Yahoo Finance API Oct 11 2026 ~06:30 UTC"},
+    {"claim": "S&P 500 7,811 +0.59%", "source": "Yahoo Finance API Oct 11 2026 ~06:30 UTC"},
+    {"claim": "DAX 25,087 +1.13%", "source": "Yahoo Finance API Oct 11 2026 ~06:30 UTC"},
+    {"claim": "VIX 14.84 -3.7%", "source": "Yahoo Finance API Oct 11 2026 ~06:30 UTC"},
+    {"claim": "IEA Data Centre Strom 480→1300-2000 TWh", "source": "IEA 'Data Centres and AI Technologies' Report June 2024"},
+    {"claim": "Gold Central Bank Reserves 15%→17.3%", "source": "IMF COFER Q2 2026"}
+  ],
+  "compliance": {
+    "R19_no_external_links_linkedin": "n/a (blog)",
+    "R5_portfolio_size_not_mentioned": true,
+    "language_policy_en_blog": true,
+    "disclosure_present": true
+  },
+  "timestamp": "2026-10-11T08:45:00Z"
+}
