@@ -1,0 +1,30 @@
+{
+  "artifact": "hard-asset-market-update-kw42.html",
+  "checker": "distribution-agent standalone run 16.10.2026",
+  "date": "2026-10-16",
+  "score": "13/14",
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog",
+  "factcheck": "pass",
+  "source": "World Gold Council (gold average 2026), EIA (Hormuz transit share), CBOE (VIX history)",
+  "numbers_source": "Market data as of Oct 16, 2026",
+  "numbers_verified_by": "distribution-agent standalone run",
+  "verified_facts": [
+    "Gold price $1,875/oz (current KW42 level, down from Sept high $2,030)",
+    "Gold 2026 average $1,797/oz (World Gold Council)",
+    "Brent crude $84.50/barrel (KW42 trading level)",
+    "VIX at 12.97 (CBOE, historically below long-term avg ~20)",
+    "DAX at 13,450 points",
+    "S&P 500 at 4,851",
+    "Hormuz transit share ~21% of global oil (EIA)"
+  ],
+  "compliance": {
+    "r23_earnings_gating": "pass - no earnings detail, market overview only",
+    "captrader_blackout": "pass - no CapTrader mentioned",
+    "disclaimer_present": "pass",
+    "no_external_links_in_post": "n/a (blog article)",
+    "max_affiliate_links_2": "pass - 0 affiliate links in market update"
+  },
+  "gate_result": "PASS"
+}
