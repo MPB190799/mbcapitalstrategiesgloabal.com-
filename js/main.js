@@ -102,10 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!scrollTicking) {
             window.requestAnimationFrame(() => {
                 const currentScroll = window.scrollY;
-                if (currentScroll > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
+                if (navbar) {
+                    navbar.classList.toggle('scrolled', currentScroll > 50);
                 }
                 lastScroll = currentScroll;
                 scrollTicking = false;
@@ -119,19 +117,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const navMenu = document.getElementById('navMenu');
 
     if (navToggle && navMenu) {
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
-            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
-        });
+        const setMenu = open => {
+            navToggle.classList.toggle('active', open);
+            navMenu.classList.toggle('active', open);
+            navToggle.setAttribute('aria-expanded', String(open));
+            navToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+            document.body.style.overflow = open ? 'hidden' : '';
+        };
+        navToggle.setAttribute('aria-controls', 'navMenu');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.addEventListener('click', () => setMenu(!navMenu.classList.contains('active')));
 
         // Close menu on link click
         navMenu.querySelectorAll('.nav-link:not(.dropdown-toggle)').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+            link.addEventListener('click', () => setMenu(false));
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && navMenu.classList.contains('active')) {
+                setMenu(false);
+                navToggle.focus();
+            }
         });
 
         // Mobile + tablet/touch dropdown toggle
