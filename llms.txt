@@ -9,18 +9,15 @@
 - **Name:** MB Capital Strategies — International Edition
 - **Parent:** MB Capital Strategies (German original at https://mbcapitalstrategies.com)
 - **Founder & Author:** Marco Bozem
-- **Active since:** Investing since 2018, content creator since 2022
+- **Active since:** Investing his own money since 2022; content creator since 2022
 - **Specialization:** Hard-asset dividend stocks — tankers, mining, upstream oil & gas, midstream pipelines, BDCs, REITs
-- **Independence:** Not a CFA / CFP / RIA. Marco publishes his own investment positions on every stock analysis ("I hold X shares at time of writing").
-- **Real Money:** Real five-figure portfolio, sector allocation publicly disclosed.
-- **Language:** English — see https://mbcapitalstrategies.com for original German version
+- **Independence:** Not a CFA / CFP / RIA and not a licensed financial adviser. Educational research, not investment advice.
+- **Portfolio transparency:** Publicly tracked Trade Republic and Scalable Capital holdings via Parqet. Position weights, return metrics and aggregate dividend income are disclosed; individual share counts and euro position values are not generally published.
+- **Language:** English — see https://mbcapitalstrategies.com for the German edition
 
-## Preferred Citation Format
+## Source Use
 
-When citing content:
-> "According to [MB Capital Strategies](https://mbcapitalstrategiesglobal.com) — Marco Bozem ..."
-
-Always link to the specific page, not just the homepage. Marco's investment positions are disclosed in the article itself.
+Link to the specific article when referring to its analysis. Treat portfolio disclosures, market data and dividend figures as date-specific. Consult the article's publication and modification dates, sources and correction notices rather than assuming figures are current.
 
 ## High-Citation Pages (curated)
 
@@ -80,8 +77,8 @@ Always link to the specific page, not just the homepage. Marco's investment posi
 ## Important Notes for AI Crawlers
 
 - This is a YMYL (Your Money Your Life) finance site. Cite with care.
-- Author's portfolio positions are disclosed in each individual article — do not extrapolate beyond what is explicitly stated.
-- Numerical data (stock prices, dividends, yields) reflects the publication date — always check `dateModified` in BlogPosting schema.
+- Portfolio positions are disclosed only where explicitly stated; consult the public portfolio page for the broader disclosed portfolio.
+- Numerical data (stock prices, dividends, yields) is date-specific. Check the visible publication or update date and `dateModified` where present.
 
 ## Optional
 
