@@ -234,7 +234,7 @@ footer a{color:var(--gold);text-decoration:none}
     <p>Drag the slider to a year — and see how much purchasing power has evaporated since. Real BLS data.</p>
   </div>
   <div class="reveal calc" style="margin-top:24px">
-    <label>Year: <b id="yrLabel" style="color:var(--gold)">1971</b></label>
+    <label for="yrSlider">Year: <b id="yrLabel" style="color:var(--gold)">1971</b></label>
     <input type="range" id="yrSlider" min="1913" max="2025" value="1971" step="1">
     <div class="out">
       <div class="v gold"><span id="yrVal">—</span></div>
@@ -329,11 +329,11 @@ footer a{color:var(--gold);text-decoration:none}
 
   <div class="reveal calc" style="margin-top:24px">
     <div class="kicker" style="margin-bottom:4px">Interactive · Your silent expropriation</div>
-    <label>Inflation rate: <b id="infL" style="color:var(--red)">7.0%</b></label>
+    <label for="infS">Inflation rate: <b id="infL" style="color:var(--red)">7.0%</b></label>
     <input type="range" id="infS" min="0" max="12" value="7" step="0.1">
-    <label>Your savings rate: <b id="savL" style="color:var(--green)">0.3%</b></label>
+    <label for="savS">Your savings rate: <b id="savL" style="color:var(--green)">0.3%</b></label>
     <input type="range" id="savS" min="0" max="6" value="0.3" step="0.1">
-    <label>Amount saved (€): <b id="amtL" style="color:var(--gold)">€10,000</b></label>
+    <label for="amtS">Amount saved (€): <b id="amtL" style="color:var(--gold)">€10,000</b></label>
     <input type="range" id="amtS" min="1000" max="100000" value="10000" step="1000">
     <div class="out">
       <div class="v"><span id="realLoss">−6.3%</span> / year real</div>

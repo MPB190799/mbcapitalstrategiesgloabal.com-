@@ -449,29 +449,7 @@ a:hover { color: var(--gold); }
         }
         if(msg){msg.style.display="block";msg.style.color="#D4AF37";msg.textContent="Subscribing...";}
         // Worker entfernt 2026-10-04 — redirect to DE /insider/
-        window.location.href = 'https://mbcapitalstrategies.com/insider/'{
-          method:"POST",
-          headers:{"Content-Type":"application/json"},
-          body:JSON.stringify({email:email})
-        })
-        .then(function(r){return r.json();})
-        .then(function(d){
-          if(msg){
-            msg.style.display="block";
-            if(d.ok){
-              msg.style.color="#22c55e";
-              msg.textContent=d.msg||"Almost done! Please confirm your email (double opt-in).";
-              if(el)el.value="";
-              if(cb)cb.checked=false;
-            } else {
-              msg.style.color="#ef4444";
-              msg.textContent=d.msg||"Error subscribing. Please try again.";
-            }
-          }
-        })
-        .catch(function(){
-          if(msg){msg.style.display="block";msg.style.color="#ef4444";msg.textContent="Connection error. Please try later.";}
-        });
+        window.location.href = 'https://mbcapitalstrategies.com/insider/?email=' + encodeURIComponent(email);
       };
     })();
     </script>

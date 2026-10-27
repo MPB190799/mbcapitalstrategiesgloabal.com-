@@ -253,6 +253,8 @@ html.promo-active .header{top:47px}
 .hero-ctas{margin-top:2px}
 .scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#b8941e,#d4af37,#e0bd55);z-index:100;transition:width 80ms linear;width:0;max-width:100vw;box-shadow:0 0 12px rgba(212,175,55,.4)}
 @media (max-width:1024px){
+.header .nav{display:none}
+.header .nav-hamburger{display:flex}
 .hero-inner{display:block;max-width:100%}
 .hero-title{font-size:clamp(44px,10vw,72px)}
 .logo-name{font-size:16px}
@@ -263,6 +265,11 @@ html.promo-active .header{top:47px}
 .hero-ctas{flex-direction:column;align-items:stretch;gap:12px;max-width:360px;margin-left:auto;margin-right:auto}
 .hero-ctas .btn{width:100%;justify-content:center;box-sizing:border-box}
 .hero-ctas .btn-link{justify-content:center;text-align:center;min-height:44px;display:flex;align-items:center}
+}
+@media (max-width:600px){
+.logo-name{display:none}
+.header{padding-top:14px;padding-bottom:14px}
+}
 </style>
 
 <!-- LCP-Fix 2026-10-02 web-design-agent: Non-critical CSS (below-fold sections) loaded async after first paint -->
@@ -319,7 +326,6 @@ html.promo-active .header{top:47px}
     <a href="pages/us-investors-buy-hard-asset-dividend-stocks.html" class="nav-link">For US Investors</a>
     <a href="pages/about.html" class="nav-link">About</a>
     <!-- REMOVED 2026-10-04 seo-agent: EN newsletter nav-link violates DE-only policy (Marco 03.06.) -->
-    <a href="pages/fleet-overview.html" class="nav-link">Flotte</a>
     <a href="/pages/advertise.html" class="nav-link">Advertise</a>
   </nav>
   <div class="header-actions">
@@ -334,7 +340,7 @@ html.promo-active .header{top:47px}
     <button class="theme-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
     </button>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-controls="navMobile" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -1457,9 +1463,20 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
   const hb = document.getElementById('navHamburger');
   const mob = document.getElementById('navMobile');
   if (hb && mob) {
-    hb.addEventListener('click', () => {
-      mob.classList.toggle('open');
-      hb.setAttribute('aria-expanded', mob.classList.contains('open'));
+    const setMenu = open => {
+      mob.classList.toggle('open', open);
+      hb.setAttribute('aria-expanded', String(open));
+      hb.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+      document.body.style.overflow = open ? 'hidden' : '';
+    };
+    hb.setAttribute('aria-controls', 'navMobile');
+    hb.addEventListener('click', () => setMenu(!mob.classList.contains('open')));
+    mob.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mob.classList.contains('open')) {
+        setMenu(false);
+        hb.focus();
+      }
     });
   }
 })();

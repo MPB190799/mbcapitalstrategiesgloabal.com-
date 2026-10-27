@@ -2218,6 +2218,9 @@ button {
 /* Mobile table scroll — auto-wraps all tables */
 .page-content table,
 .blog-post-content table,
+.calc-container table,
+.container table,
+.page-wrapper table,
 article table {
     display: block;
     overflow-x: auto;
@@ -2228,9 +2231,23 @@ article table {
 @media (min-width: 768px) {
     .page-content table,
     .blog-post-content table,
+    .calc-container table,
+    .container table,
+    .page-wrapper table,
     article table {
         display: table;
         overflow-x: visible;
+    }
+}
+
+@media (pointer: coarse) {
+    .nav-link, .dropdown-toggle, .category-filter button, .filter-btn,
+    .cookie-btn, .search-box input, .glossar-section-title, details summary {
+        min-height: 44px;
+    }
+    .category-filter button, .filter-btn, .cookie-btn {
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 

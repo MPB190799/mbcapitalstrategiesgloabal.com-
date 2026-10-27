@@ -323,19 +323,19 @@
               <div class="grid">
                 <div class="panel">
                   <h3>Your inputs</h3>
-                  <div class="field"><label>Amount today</label>
+                  <div class="field"><label for="amt">Amount today</label>
                     <div class="inp"><input id="amt" type="number" min="0" value="50000"><span class="unit">€</span></div></div>
-                  <div class="field"><label>Inflation p.a. · <span id="inflVal" class="mono">2.5 %</span></label>
+                  <div class="field"><label for="infl">Inflation p.a. · <span id="inflVal" class="mono">2.5 %</span></label>
                     <div class="inp"><input id="infl" type="number" min="0" step="0.1" value="2.5"><span class="unit">%</span></div>
-                    <input class="slider" id="inflS" type="range" min="0" max="12" step="0.1" value="2.5"></div>
-                  <div class="field"><label>Time horizon · <span id="yrVal" class="mono">20 years</span></label>
+                    <input class="slider" id="inflS" type="range" min="0" max="12" step="0.1" value="2.5" aria-label="Inflation rate slider"></div>
+                  <div class="field"><label for="years">Time horizon · <span id="yrVal" class="mono">20 years</span></label>
                     <div class="inp"><input id="years" type="number" min="1" max="60" value="20"><span class="unit">years</span></div>
-                    <input class="slider" id="yearsS" type="range" min="1" max="50" step="1" value="20"></div>
+                    <input class="slider" id="yearsS" type="range" min="1" max="50" step="1" value="20" aria-label="Time horizon slider"></div>
                   <div class="opt"><input type="checkbox" id="cmp"><label for="cmp">Hard-asset comparison (your assumption)</label></div>
                   <div class="field" id="retField" style="display:none;margin-top:14px">
-                    <label>Assumed return p.a. · <span id="retVal" class="mono">7 %</span></label>
+                    <label for="ret">Assumed return p.a. · <span id="retVal" class="mono">7 %</span></label>
                     <div class="inp"><input id="ret" type="number" min="0" step="0.1" value="7"><span class="unit">%</span></div>
-                    <input class="slider" id="retS" type="range" min="0" max="15" step="0.1" value="7"></div>
+                    <input class="slider" id="retS" type="range" min="0" max="15" step="0.1" value="7" aria-label="Assumed annual return slider"></div>
                 </div>
 
                 <div>

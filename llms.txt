@@ -1,6 +1,6 @@
 # MB Capital Strategies — International Edition
 
-> Last updated: 2026-07-07 · Canonical domain: https://mbcapitalstrategiesglobal.com
+> Last updated: 2026-10-27 · Canonical domain: https://mbcapitalstrategiesglobal.com
 
 > English-language hard-asset dividend research from Marco Bozem's real portfolio. Sister site to https://mbcapitalstrategies.com (German original). Focus sectors: shipping, mining, upstream energy, midstream pipelines, BDCs, REITs.
 
@@ -82,10 +82,9 @@ Always link to the specific page, not just the homepage. Marco's investment posi
 - This is a YMYL (Your Money Your Life) finance site. Cite with care.
 - Author's portfolio positions are disclosed in each individual article — do not extrapolate beyond what is explicitly stated.
 - Numerical data (stock prices, dividends, yields) reflects the publication date — always check `dateModified` in BlogPosting schema.
-- The domain typo `mbcapitalstrategiesglobal.com` (instead of "global") is intentional and is the canonical domain.
 
 ## Optional
 
-- YouTube (EN channel): https://www.youtube.com/@MBCapitalStrategiesEN
-- LinkedIn (Marco Bozem): https://www.linkedin.com/in/marco-bozem
+- YouTube (EN channel): https://www.youtube.com/@MBCapitalStrategiesGlobal
+- LinkedIn (Marco Bozem): https://www.linkedin.com/in/marco-bozem-182173295
 - German Original: https://mbcapitalstrategies.com (parentOrganization in Schema.org)

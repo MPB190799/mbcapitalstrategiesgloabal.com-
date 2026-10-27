@@ -148,6 +148,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .footer-bottom a{color:var(--fg-dim)}
 .footer-bottom a:hover{color:var(--accent)}
 .footer-aff{margin-top:14px;font-size:11px;color:var(--fg-dim);text-align:center;font-family:var(--mono);letter-spacing:.06em}
+@media (max-width:1024px){
 .assets-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
 .perf-grid{grid-template-columns:1fr 1fr}.ticker{grid-template-columns:1fr 1fr}
 .audience-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr;gap:60px}
@@ -156,6 +157,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 .nav{display:none}.nav-hamburger{display:flex}
 .insight{grid-template-columns:1fr;gap:8px}.insight-arrow{display:none}
 .asset{grid-template-columns:1fr}.asset-viz{order:-1}
+}
 @media (max-width:640px){
 .perf-grid{grid-template-columns:1fr}.ticker{grid-template-columns:1fr}
 .footer-grid{grid-template-columns:1fr}
@@ -163,6 +165,7 @@ section{padding:clamp(80px,10vw,160px) 0;position:relative}
 #hero-issue-sector-rule-en,#hero-issue-sector-en{display:none}
 .lang-flag{min-height:44px;min-width:44px;padding:0 12px;justify-content:center;box-sizing:border-box}
 #hero-context-en{margin-bottom:12px!important}
+}
 @media (max-width:760px){
 /* Mobile hero scrim fix: compass is near-invisible (opacity:.22) on mobile so the heavy
 desktop scrim (.92) causes an almost-black hero. Lighten to a gentle top/bottom fade only,
@@ -170,6 +173,7 @@ keeping text readable without a dark overlay blocking content. CRO-P0 fix. */
 .hero::before{
 background:
 linear-gradient(180deg,rgba(12,11,9,.45) 0%,transparent 22%,transparent 74%,var(--bg) 100%);
+}
 }
 /* === LCP-Optimization 2026-10-09 web-design-agent: Decorative CSS moved from <head> to below-fold async load.
    These styles (cursor glow, compass animations, particles, marquee effects, mini-compass) are NOT needed for initial content render.
