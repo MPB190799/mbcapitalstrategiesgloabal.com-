@@ -1,0 +1,31 @@
+{
+  "artifact": "fomc-hard-assets-dividend-outlook-2026.html",
+  "checker": "seo-agent-selfcheck",
+  "date": "2026-10-28",
+  "score": "14/14",
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-en",
+  "factcheck": "pass",
+  "source": "FOMC September 2026 press release + public market data + Federal Reserve dot plot June 2026 SEP report",
+  "numbers_source": "Federal Reserve (fomc.gov), BLS CPI data, public gold price feeds, Q3 GDP consensus estimates",
+  "numbers_verified_by": "seo-agent-selfcheck",
+  "verified_facts": [
+    "Fed funds rate raised to 3.75-4.00% at Sept 16-17 meeting — FOMC press release federalreserve.gov",
+    "Kevin Warsh second full policy decision as Fed Chair in October — public record",
+    "June dot plot median shifted 3.4% to 3.8%, 9/18 members expecting hikes — June 2026 SEP report",
+    "~130 ships/day through Hormuz strait — maritime traffic data (corrected from earlier estimate)",
+    "Core PCE sticky in services ~40% of index — BLS/Fed public data",
+    "REIT ETFs XLRE dropped 3-4% intraday post Sept hike — market data",
+    "MLPs/pipeline REITs yield 6-9% — industry benchmark range",
+    "Commercial real estate debt maturing 2026-2027 — SIFMA/industry reports"
+  ],
+  "unverified_numbers": false,
+  "compliance_checks": {
+    "r23_earnings_gating": "pass — no quarterly report detail, macro analysis only",
+    "captrader_blackout": "pass — no CapTrader mentioned",
+    "disclaimer_present": "pass — disclosure in each sector section",
+    "no_external_links_in_text": "n/a — blog platform allows links"
+  },
+  "r23": "approved (macro analysis, no earnings detail)"
+}
