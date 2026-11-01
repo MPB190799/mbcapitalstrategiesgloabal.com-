@@ -247,10 +247,13 @@
     scene.add(tilt);
 
     const parts = [];
-    const addPart = (mesh, y0, explode, dx = 0, dz = 0) => {
+    /* w = [inStart, inEnd, outStart, outEnd] — gestaffelte Zeitfenster pro Bauteil,
+       damit die Teile sichtbar NACHEINANDER abheben und wieder andocken */
+    const addPart = (mesh, y0, explode, dx = 0, dz = 0, w = [0.1, 0.3, 0.6, 0.8]) => {
       mesh.position.y = y0;
+      mesh.__w = w;
       spin.add(mesh);
-      parts.push({ mesh, y0, explode, dx, dz });
+      parts.push({ mesh, y0, explode, dx, dz, w });
       return mesh;
     };
 
@@ -259,7 +262,7 @@
       new THREE.CylinderGeometry(1.0, 1.06, 0.16, 96, 1, false),
       matBrass
     );
-    addPart(caseBody, -0.05, -0.62 * CFG.explodeDir, 0.15, -0.1);
+    addPart(caseBody, -0.05, -0.62 * CFG.explodeDir, 0.15, -0.1, [0.20, 0.46, 0.74, 0.87]);
 
     /* Zifferblatt */
     /* Zifferblatt: flache Scheibe (CircleGeometry => planare, NICHT gespiegelte UVs;
@@ -278,7 +281,7 @@
     );
     dialFace.position.y = 0.027;
     dial.add(dialFace);
-    addPart(dial, 0.045, -0.10 * CFG.explodeDir);
+    addPart(dial, 0.045, -0.10 * CFG.explodeDir, 0, 0, [0.17, 0.43, 0.71, 0.84]);
 
     /* Kompassrose: 8-strahlig, hell/dunkel doppelt gelegt */
     const star = (rLong, rShort, waist, mat) => {
@@ -305,7 +308,7 @@
     roseInner.rotation.y = Math.PI / 8;
     roseInner.position.y = 0.012;
     rose.add(roseInner);
-    addPart(rose, 0.085, 0.52 * CFG.explodeDir, 0.28, -0.22);
+    addPart(rose, 0.085, 0.52 * CFG.explodeDir, 0.28, -0.22, [0.12, 0.33, 0.65, 0.79]);
 
     /* Magnetnadel: Nord-Haelfte gold/stahl, Sued dunkel */
     const needleShape = (dir) => {
@@ -325,7 +328,7 @@
     needle.add(new THREE.Mesh(needleShape(-1), new THREE.MeshStandardMaterial({
       color: CFG.needleS, metalness: 0.75, roughness: 0.45
     })));
-    addPart(needle, 0.125, 0.88 * CFG.explodeDir, -0.18, -0.30);
+    addPart(needle, 0.125, 0.88 * CFG.explodeDir, -0.18, -0.30, [0.09, 0.28, 0.62, 0.76]);
 
     /* Lager-Kappe mit dezentem MB-Monogramm */
     const capTex = (() => {
@@ -354,7 +357,7 @@
     );
     bearTop.position.y = 0.029;
     bearing.add(bearTop);
-    addPart(bearing, 0.155, 1.28 * CFG.explodeDir, -0.55, 0.38);
+    addPart(bearing, 0.155, 1.28 * CFG.explodeDir, -0.55, 0.38, [0.06, 0.22, 0.59, 0.73]);
 
     /* Glas: klare Scheibe + feiner Reflexionsbogen */
     const glass = new THREE.Group();
@@ -376,14 +379,14 @@
     glint.rotation.y = isEN ? -0.7 : -0.5;
     glint.position.y = 0.004;
     glass.add(glint);
-    addPart(glass, 0.185, 1.72 * CFG.explodeDir, 0.60, 0.30);
+    addPart(glass, 0.185, 1.72 * CFG.explodeDir, 0.60, 0.30, [0.03, 0.16, 0.56, 0.70]);
 
     /* Luenette (vorderer Messingring) */
     const bezel = new THREE.Mesh(
       new THREE.TorusGeometry(0.965, 0.07, 24, 96).rotateX(-Math.PI / 2),
       matBrassBright
     );
-    addPart(bezel, 0.135, -0.32 * CFG.explodeDir, -0.34, -0.18);
+    addPart(bezel, 0.135, -0.32 * CFG.explodeDir, -0.34, -0.18, [0.15, 0.39, 0.68, 0.82]);
 
     /* ── Groesse/Resize ────────────────────────────────────────────────── */
     const fit = () => {
@@ -403,12 +406,21 @@
     let last = performance.now(), idleSpin = 0;
 
     /* ── Scroll-Choreografie ─────────────────────────────────────────────
-       Strecke: 2,2 Hero-Hoehen — der Kompass ist fixiert und bleibt sichtbar,
-       waehrend der Hero-Inhalt wegscrollt (V1-Verhalten):
-         0,00–0,32  Drehung baut auf, Teile fahren auseinander (Peak ~0,45)
-         0,55–0,80  Teile setzen sich wieder zusammen
-         0,82–0,97  sanftes Ausblenden, danach Render-Stopp                  */
-    const RANGE = 2.2;
+       Strecke: GESAMTE Seite (bis ganz nach unten — Auftrag Marco 2026-11-01).
+       p = scrollY / (Seitenhoehe - Hero-Hoehe). Der Kompass ist fixiert:
+         ~0–45 %    Teile heben GESTAFFELT ab (Glas zuerst, Gehaeuse zuletzt)
+         ~45–56 %   vollstaendig zerlegt, schwebende Anordnung
+         ~56–87 %   gestaffeltes Zusammensetzen (Glas dockt zuerst an)
+         ~90–98 %   sanftes Ausblenden am Seitenende, danach Render-Stopp
+       Perf: Bei Scroll-Stillstand wird auf ~12 fps gedrosselt (Idle-Rotation
+       bleibt sichtbar, Akku/CPU werden geschont).                              */
+    const doc = document.documentElement;
+    let rangePx = Math.max(1, doc.scrollHeight - (hero.offsetHeight || window.innerHeight));
+    const measure = () => {
+      rangePx = Math.max(1, doc.scrollHeight - (hero.offsetHeight || window.innerHeight));
+    };
+    window.addEventListener('resize', measure, { passive: true });
+    setInterval(measure, 4000);   /* Seite waechst dynamisch (Ticker, Lazy-Content) */
     const clamp01 = (v) => v < 0 ? 0 : v > 1 ? 1 : v;
     const smooth = (a, b, x) => {
       const t = clamp01((x - a) / (b - a));
@@ -416,14 +428,22 @@
     };
 
     let live = false;
+    let lastScroll = -1, frameNo = 0;
     const mobScale = () => (window.innerWidth < 768 ? 0.62 : 1);
 
     const frame = (now) => {
       requestAnimationFrame(frame);
       const heroH = hero.offsetHeight || window.innerHeight;
-      const p = clamp01((window.scrollY || 0) / (heroH * RANGE));
+      const p = clamp01((window.scrollY || 0) / rangePx);
 
-      /* Nach Choreografie-Ende: vollstaendig ausblenden + Render pausieren */
+      /* Perf-Drossel: ohne Scroll-Aktivitaet nur jede 5. Frame rendern (~12 fps) */
+      const sc = window.scrollY || 0;
+      const idle = sc === lastScroll;
+      lastScroll = sc;
+      frameNo++;
+      if (idle && frameNo % 5 !== 0) { last = now; return; }
+
+      /* Ganz unten angekommen: vollstaendig ausblenden + Render pausieren */
       if (p >= 1) {
         if (live) { backdrop.style.opacity = '0'; }
         last = now;
@@ -433,32 +453,36 @@
       const dt = Math.min(0.05, (now - last) / 1000);
       last = now;
 
-      /* Explosions-Huellkurve: rein 8→32 %, halten, raus 55→80 % */
-      const e = smooth(0.08, 0.32, p) * (1 - smooth(0.55, 0.80, p));
+      /* Gestaffelte Huellkurve pro Bauteil (jedes Teil hat sein eigenes Fenster w) */
       const m = mobScale();
+      const env = (w) => smooth(w[0], w[1], p) * (1 - smooth(w[2], w[3], p));
 
-      /* deutlich sichtbare Scroll-Drehung (~300°) + ruhige Idle-Rotation */
-      idleSpin += dt * 0.06 * (1 - e);
-      spin.rotation.y = p * Math.PI * 1.66 + idleSpin;
+      /* Gesamtfortschritt der Zerlegung (fuer Drehung/Nadel) */
+      const eAll = smooth(0.03, 0.46, p) * (1 - smooth(0.56, 0.87, p));
+
+      /* deutlich sichtbare Scroll-Drehung (~400°) + ruhige Idle-Rotation */
+      idleSpin += dt * 0.06 * (1 - eAll);
+      spin.rotation.y = p * Math.PI * 2.2 + idleSpin;
 
       for (const pt of parts) {
+        const e = env(pt.w);
         pt.mesh.position.y = pt.y0 + pt.explode * e * m * CFG.explodeMul;
         pt.mesh.position.x = pt.dx * e * m;
         pt.mesh.position.z = pt.dz * e * m;
       }
       /* Nadel dreht sich im Explodieren dramatisch mit */
-      needle.rotation.y = e * Math.PI * 2.4 + Math.sin(now / 640) * 0.03;
-      rose.rotation.y = -e * Math.PI * 0.7;
-      glass.rotation.y = e * Math.PI * 0.4;
-      glint.rotation.y = (isEN ? -0.7 : -0.5) + e * 1.2;
+      needle.rotation.y = env(needle.__w) * Math.PI * 2.4 + Math.sin(now / 640) * 0.03;
+      rose.rotation.y = -env(rose.__w) * Math.PI * 0.7;
+      glass.rotation.y = env(glass.__w) * Math.PI * 0.4;
+      glint.rotation.y = (isEN ? -0.7 : -0.5) + env(glass.__w) * 1.2;
 
-      /* Fade erst am Ende der Strecke — Zusammensetzen bleibt voll sichtbar.
-         Sobald der Hero weggescrollt ist (p > ~0,45), wird der Kompass hinter dem
-         Folge-Content zusaetzlich auf 55% gedimmt (Lesbarkeit).
+      /* Fade erst ganz am Ende der langen Strecke — Zusammensetzen bleibt sichtbar.
+         Sobald der Hero weggescrollt ist, wird der Kompass hinter dem Folge-Content
+         zusaetzlich auf 38% gedimmt (Lesbarkeit).
          Mobil gedeckelt (Text-Lesbarkeit, Paritaet mit bisheriger .22-.32-Daempfung). */
       const maxOp = window.innerWidth < 768 ? 0.42 : 1;
-      const dim = 1 - 0.62 * smooth(0.30, 0.50, p);
-      const fade = (1 - smooth(0.82, 0.97, p)) * maxOp * dim;
+      const dim = 1 - 0.50 * smooth(0.16, 0.30, p);
+      const fade = (1 - smooth(0.88, 0.98, p)) * maxOp * dim;
       backdrop.style.opacity = fade.toFixed(3);
 
       renderer.render(scene, camera);
