@@ -157,7 +157,7 @@ gtag('config', 'G-FSW7J7QYL8');
 <meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
 
 <link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/">
-<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/">
+<link rel="alternate" hreflang="de-DE" href="https://mbcapitalstrategies.com/">
 <link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesglobal.com/">
 <link rel="canonical" href="https://mbcapitalstrategiesglobal.com/">
 
@@ -419,6 +419,25 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 @keyframes compassImgSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .compass-backdrop{transition:opacity .35s linear}
 .compass-backdrop[data-scroll]{opacity:var(--scroll-fade)}
+
+/* 3D compass (js/compass-3d.js, 2026-11-01): the WebGL canvas replaces the static
+   image only AFTER its first rendered frame (.is-3d). Image, SVG overlay, rings and
+   glint stay in the DOM as LCP/fallback and are only hidden. Without WebGL, with
+   reduced-motion or Save-Data the class is never set — everything stays as before.
+   The 2D tilt (rotateX) is dropped in 3D mode — the model carries its own tilt. */
+.compass-backdrop.is-3d{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);transition:none}
+.compass-backdrop.is-3d .compass-img{opacity:0;animation:none;transition:opacity .7s ease .1s}
+.compass-backdrop.is-3d .compass-svg-overlay,.compass-backdrop.is-3d .compass-ring,.compass-backdrop.is-3d .compass-glint{display:none}
+canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;display:block;pointer-events:none}
+@media (prefers-reduced-motion: reduce){.compass-backdrop.is-3d .compass-img{transition:none}}
+/* Note: position:fixed lifts the compass out of .hero{overflow:hidden} — it stays visible
+   through the whole scroll choreography (V1 behavior) instead of scrolling away with the
+   hero. body{overflow-x:hidden} prevents horizontal scrollbars.
+   Content below the hero gets z-index:1 (only while 3D is active via .compass-3d-live on
+   <body>) so text/forms always paint above the compass; the JS additionally dims the
+   compass to 55% during that phase. Header (50), sticky CTA (99), dropdowns (1000) and
+   scroll progress (100) stay untouched above it. */
+.compass-3d-live .marquee,.compass-3d-live main section:not(.hero),.compass-3d-live footer{position:relative;z-index:1}
 
 .hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 46% 44% at 50% 50%,rgba(12,11,9,.84),rgba(12,11,9,.38) 55%,rgba(12,11,9,0) 80%),linear-gradient(180deg,rgba(12,11,9,.55) 0%,transparent 18%,transparent 78%,var(--bg) 100%)}
 
@@ -2130,5 +2149,7 @@ try{
   }
 })();
 </script>
+<!-- 3D compass: small module file; it lazy-loads Three.js itself after load+idle (LCP stays the static WebP) -->
+<script src="js/compass-3d.js?v=3d1" type="module"></script>
 </body>
 </html>
