@@ -49,8 +49,8 @@
     brassBright: 0x9a9176,
     brassDark:   0x33352b,
     patina:      '#4f6f5f',   /* Verdigris-Oxidation */
-    parchmentHi: '#e4ddc6',
-    parchmentLo: '#b3a67f',
+    parchmentHi: '#d5d0b8',
+    parchmentLo: '#a89f7e',
     engrave:     '#26281f',
     needleN:     0xb9c4ce,    /* kuehler Stahl statt Gold */
     needleS:     0x2e3236,
@@ -66,8 +66,8 @@
     brassBright: 0xc9a24e,
     brassDark:   0x4d3a17,
     patina:      '#54431f',
-    parchmentHi: '#dcc99b',
-    parchmentLo: '#ab9263',
+    parchmentHi: '#d9c793',
+    parchmentLo: '#a5905c',
     engrave:     '#332917',
     needleN:     0xd4af37,    /* MB-Gold */
     needleS:     0x3a3f45,
@@ -82,9 +82,12 @@
   const boot = () => {
     const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 900));
     idle(() => {
-      import(new URL('../vendor/three.module.min.js', import.meta.url).href)
-        .then((THREE) => { try { init(THREE); } catch (e) { /* still fallback */ } })
-        .catch(() => { /* still fallback */ });
+      /* DE: assets/js/compass-3d.js -> ../vendor/ · EN: js/compass-3d.js -> ./vendor/ */
+      const rel = ['../vendor/three.module.min.js', './vendor/three.module.min.js'];
+      const load = (i) => import(new URL(rel[i], import.meta.url).href)
+        .then((THREE) => { try { init(THREE); } catch (e) { /* stiller Fallback */ } })
+        .catch(() => { if (i + 1 < rel.length) load(i + 1); });
+      load(0);
     }, { timeout: 2500 });
   };
   if (document.readyState === 'complete') boot();
@@ -170,6 +173,14 @@
         g.beginPath(); g.arc(C + r * Math.cos(a), C + r * Math.sin(a), 0.6 + Math.random() * 2.2, 0, 6.2832); g.fill();
       }
 
+      /* Vignette: Rand abdunkeln (Lesbarkeit + Vintage-Look) */
+      const vg = g.createRadialGradient(C, C, C * 0.35, C, C, C);
+      vg.addColorStop(0, 'rgba(30,22,10,0)');
+      vg.addColorStop(0.8, 'rgba(30,22,10,0.18)');
+      vg.addColorStop(1, 'rgba(20,14,6,0.45)');
+      g.fillStyle = vg;
+      g.beginPath(); g.arc(C, C, C, 0, 6.2832); g.fill();
+
       const ENGRAVE = CFG.engrave;
       /* Gravur-Ringe */
       [0.985, 0.90, 0.545].forEach((rr, i) => {
@@ -193,13 +204,14 @@
       }
       g.globalAlpha = 1;
 
-      /* Gradzahlen alle 30° */
+      /* Gradzahlen alle 30° — +180° versetzt gezeichnet, weil die CircleGeometry-
+         Abbildung die Textur gedreht (nicht gespiegelt) auf -Z/+X legt */
       g.fillStyle = ENGRAVE; g.globalAlpha = 0.8;
       g.font = '600 34px Georgia, "Times New Roman", serif';
       g.textAlign = 'center'; g.textBaseline = 'middle';
       for (let d = 30; d < 360; d += 30) {
         if (d % 90 === 0) continue;
-        const a = d * Math.PI / 180, r = C * 0.665;
+        const a = (d + 180) * Math.PI / 180, r = C * 0.665;
         g.save();
         g.translate(C + r * Math.sin(a), C - r * Math.cos(a));
         g.rotate(a);
@@ -207,11 +219,11 @@
         g.restore();
       }
 
-      /* Kardinal-Buchstaben N/O/E/S/W */
+      /* Kardinal-Buchstaben N/O/E/S/W — gleiche 180°-Versetzung */
       g.globalAlpha = 1;
       g.font = '700 118px Georgia, "Times New Roman", serif';
       CFG.cardinals.forEach((lbl, i) => {
-        const a = i * 90 * Math.PI / 180, r = C * 0.665;
+        const a = (i * 90 + 180) * Math.PI / 180, r = C * 0.665;
         g.save();
         g.translate(C + r * Math.sin(a), C - r * Math.cos(a));
         g.rotate(a);
@@ -250,12 +262,22 @@
     addPart(caseBody, -0.05, -0.62 * CFG.explodeDir, 0.15, -0.1);
 
     /* Zifferblatt */
-    const dial = new THREE.Mesh(
+    /* Zifferblatt: flache Scheibe (CircleGeometry => planare, NICHT gespiegelte UVs;
+       Zylinder-Deckflaechen spiegeln die Textur) + duenner Messingkern fuer die Kante */
+    const dial = new THREE.Group();
+    const dialCore = new THREE.Mesh(
       new THREE.CylinderGeometry(0.9, 0.9, 0.05, 96),
-      [matBrassDark, new THREE.MeshStandardMaterial({
-        map: dialTex, metalness: 0.05, roughness: 0.9
-      }), matBrassDark]
+      matBrassDark
     );
+    dial.add(dialCore);
+    const dialFace = new THREE.Mesh(
+      new THREE.CircleGeometry(0.9, 96).rotateX(-Math.PI / 2),
+      new THREE.MeshStandardMaterial({
+        map: dialTex, metalness: 0.05, roughness: 0.9
+      })
+    );
+    dialFace.position.y = 0.027;
+    dial.add(dialFace);
     addPart(dial, 0.045, -0.10 * CFG.explodeDir);
 
     /* Kompassrose: 8-strahlig, hell/dunkel doppelt gelegt */
@@ -321,12 +343,17 @@
       t.colorSpace = THREE.SRGBColorSpace;
       return t;
     })();
-    const bearing = new THREE.Mesh(
+    const bearing = new THREE.Group();
+    bearing.add(new THREE.Mesh(
       new THREE.CylinderGeometry(0.088, 0.098, 0.055, 48),
-      [matBrassBright, new THREE.MeshStandardMaterial({
-        map: capTex, metalness: 0.6, roughness: 0.45
-      }), matBrassBright]
+      matBrassBright
+    ));
+    const bearTop = new THREE.Mesh(
+      new THREE.CircleGeometry(0.084, 48).rotateX(-Math.PI / 2),
+      new THREE.MeshStandardMaterial({ map: capTex, metalness: 0.6, roughness: 0.45 })
     );
+    bearTop.position.y = 0.029;
+    bearing.add(bearTop);
     addPart(bearing, 0.155, 1.28 * CFG.explodeDir, -0.55, 0.38);
 
     /* Glas: klare Scheibe + feiner Reflexionsbogen */
