@@ -2108,7 +2108,7 @@ try{
   new IntersectionObserver(([e])=>{miniEl.classList.toggle('visible',!e.isIntersecting);},{threshold:.15}).observe(heroEl);
   trackNeedle(mNeedle,()=>{const r=miniEl.getBoundingClientRect();return{x:r.left+r.width/2,y:r.top+r.height/2};},0.06);
 
-  const map={philosophy:'sN',assets:'sW',insights:'sE',newsletter:'sS'};
+  const map={philosophy:'sN',assets:'sW',insights:'sE'};
   const secObs=new IntersectionObserver(entries=>{
     entries.forEach(e=>{
       if(!e.isIntersecting) return;
@@ -2117,7 +2117,7 @@ try{
       if(sid){const s=mSectors.querySelector(`[data-sector="${sid}"]`);if(s)s.classList.add('active');}
     });
   },{threshold:.35});
-  document.querySelectorAll('#philosophy,#assets,#insights,#newsletter').forEach(s=>secObs.observe(s));
+  document.querySelectorAll('#philosophy,#assets,#insights').forEach(s=>secObs.observe(s));
 }catch(e){}
 })();
 
