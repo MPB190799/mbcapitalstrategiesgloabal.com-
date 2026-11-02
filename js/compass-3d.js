@@ -49,8 +49,8 @@
     brassBright: 0x9a9176,
     brassDark:   0x33352b,
     patina:      '#4f6f5f',   /* Verdigris-Oxidation */
-    parchmentHi: '#d5d0b8',
-    parchmentLo: '#a89f7e',
+    parchmentHi: '#c9c3ad',
+    parchmentLo: '#948b6f',
     engrave:     '#26281f',
     needleN:     0xb9c4ce,    /* kuehler Stahl statt Gold */
     needleS:     0x2e3236,
@@ -58,7 +58,11 @@
     rimColor: 0x7fb2d9, rimInt: 26.0,
     ambColor: 0x232830, ambInt: 1.15,
     tilt: 0.98, camY: 0.62, camZ: 3.75,
-    explodeDir: 1, explodeMul: 1.18   /* EN: weiter auseinander, maritim-luftiger */
+    explodeDir: 1, explodeMul: 1.18,  /* EN: weiter auseinander, maritim-luftiger */
+    sceneScale: 0.8                   /* EN-Hero ist um ein KLEINERES zentriertes
+                                         Instrument komponiert (statisches Foto ~460px
+                                         im 620px-Rahmen) — 3D darf die Zeilen nicht
+                                         ueberdecken wie ein Full-Bleed-Backdrop */
   } : {
     /* DE — dunkles Antikmessing mit Patina, Pergament, warme Gold-Stimmung */
     cardinals: ['N', 'O', 'S', 'W'],
@@ -75,7 +79,8 @@
     rimColor: 0xd4af37, rimInt: 24.0,
     ambColor: 0x2a2216, ambInt: 1.1,
     tilt: 0.86, camY: 0.55, camZ: 3.65,
-    explodeDir: 1, explodeMul: 1.0
+    explodeDir: 1, explodeMul: 1.0,
+    sceneScale: 1.0
   };
 
   /* ── Lazy-Boot: erst nach sichtbarem Inhalt ────────────────────────────── */
@@ -243,6 +248,7 @@
     const spin = new THREE.Group();           /* Scroll- + Idle-Drehung */
     const tilt = new THREE.Group();           /* fixe 3D-Neigung */
     tilt.rotation.x = CFG.tilt;
+    tilt.scale.setScalar(CFG.sceneScale || 1);
     tilt.add(spin);
     scene.add(tilt);
 
@@ -481,7 +487,7 @@
          zusaetzlich auf 38% gedimmt (Lesbarkeit).
          Mobil gedeckelt (Text-Lesbarkeit, Paritaet mit bisheriger .22-.32-Daempfung). */
       const maxOp = window.innerWidth < 768 ? 0.42 : 1;
-      const dim = 1 - 0.50 * smooth(0.16, 0.30, p);
+      const dim = 1 - 0.40 * smooth(0.16, 0.30, p);
       const fade = (1 - smooth(0.88, 0.98, p)) * maxOp * dim;
       backdrop.style.opacity = fade.toFixed(3);
 
