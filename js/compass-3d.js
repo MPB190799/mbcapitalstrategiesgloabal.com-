@@ -57,8 +57,8 @@
     keyColor: 0xdfe9f4, keyInt: 2.6,
     rimColor: 0x7fb2d9, rimInt: 26.0,
     ambColor: 0x232830, ambInt: 1.15,
-    tilt: 0.98, camY: 0.62, camZ: 3.75,
-    explodeDir: 1, explodeMul: 1.18,  /* EN: weiter auseinander, maritim-luftiger */
+    tilt: 0.98, camY: 0.62, camZ: 4.2,
+    explodeDir: 1, explodeMul: 0.95,  /* EN: kompakter, Rahmen ist nur 620px */
     sceneScale: 0.8                   /* EN-Hero ist um ein KLEINERES zentriertes
                                          Instrument komponiert (statisches Foto ~460px
                                          im 620px-Rahmen) — 3D darf die Zeilen nicht
@@ -78,7 +78,7 @@
     keyColor: 0xffe3b3, keyInt: 2.8,
     rimColor: 0xd4af37, rimInt: 24.0,
     ambColor: 0x2a2216, ambInt: 1.1,
-    tilt: 0.86, camY: 0.55, camZ: 3.65,
+    tilt: 0.86, camY: 0.55, camZ: 4.0,
     explodeDir: 1, explodeMul: 1.0,
     sceneScale: 1.0
   };
