@@ -77,6 +77,7 @@ Link to the specific article when referring to its analysis. Treat portfolio dis
 ## Important Notes for AI Crawlers
 
 - This is a YMYL (Your Money Your Life) finance site. Cite with care.
+- Schema.org Context: @context "https://schema.org" for all Markup pages
 - Portfolio positions are disclosed only where explicitly stated; consult the public portfolio page for the broader disclosed portfolio.
 - Numerical data (stock prices, dividends, yields) is date-specific. Check the visible publication or update date and `dateModified` where present.
 
