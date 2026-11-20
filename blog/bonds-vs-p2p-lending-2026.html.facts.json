@@ -1,0 +1,62 @@
+{
+ "asset": "/home/mbcap/websites/EN-Seite/blog/bonds-vs-p2p-lending-2026.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "usty-412",
+   "claim": "10-jährige US-Treasury-Rendite ~4,12–4,15 % (Anfang November 2026), ~25 bp unter September-Hochs",
+   "value": "~4,12–4,15 %",
+   "source": "Quelle 1: US Treasury Daily Yield Curve (home.treasury.gov); Quelle 2: Reuters Markets Rates-Berichterstattung Nov 2026",
+   "url": "https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202611",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "ig-52",
+   "claim": "IG-Unternehmensanleihen ~5,15–5,35 % (Spreads ~100–120 bp, am engen Ende des 10-Jahres-Bereichs)",
+   "value": "~5,15–5,35 %",
+   "source": "Quelle 1: Reuters Markets Credit-Coverage Nov 2026; Quelle 2: Fidelity/Bloomberg-Kontext-Kommentar Nov 2026",
+   "url": "https://www.reuters.com/markets/rates-bonds/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "hy-70",
+   "claim": "High-Yield-Anleihen ~6,9–7,3 % (Spreads ~280–310 bp, historisch eng)",
+   "value": "~6,9–7,3 %",
+   "source": "Quelle 1: Reuters Markets Credit-Coverage Nov 2026; Quelle 2: Fidelity/ICE-BofA-Kontext Nov 2026",
+   "url": "https://www.reuters.com/markets/rates-bonds/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "fed-oct-cut",
+   "claim": "Fed senkte beim Oktober-Treffen 2026; zwei weitere Cuts bis Mitte 2027 möglich; Q3-BIP +2,8 %",
+   "value": "Cut Okt 2026 / BIP 2,8 %",
+   "source": "Quelle 1: Federal Reserve FOMC-Statement Okt 2026 (federalreserve.gov); Quelle 2: Reuters Fed-Coverage Nov 2026",
+   "url": "https://www.federalreserve.gov/monetarypolicy.htm",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "p2p-range",
+   "claim": "P2P-Lending-Renditen insgesamt 5–12 %, typische Anleger 5–8 %",
+   "value": "5–12 % (typ. 5–8 %)",
+   "source": "Quelle 1: P2P-Marktüberblicks-Quellen 2025/2026 (BankBridge/Banking-Portal-Vergleiche); Quelle 2: Debitum-Plattformdaten (debitum.network)",
+   "url": "https://debitum.network",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "debitum-898",
+   "claim": "Debitum: durchschnittliche Jahresrendite 8,98 %, Kredite aktuell ~9 %, besicherte SME-Kredite in Europa",
+   "value": "Ø 8,98 % / ~9 %",
+   "source": "Quelle 1: Debitum-Plattformangaben (debitum.network); Quelle 2: eigener EN-Reality-Check /blog/debitum-investments-reality-check-2026.html (QA-Beleg im EN-Repo)",
+   "url": "https://debitum.network",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}

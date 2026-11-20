@@ -1,0 +1,19 @@
+{
+  "score": 14,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-post",
+  "checker": "blog-generator-subagent-selfcheck",
+  "checked_at": "2026-11-20T14:01:49.519Z",
+  "content_sha": "32d3d9e6a5298263",
+  "hard_scan": "PASS",
+  "note": "W48-Batch a-20261118T135834Z-seoagent-2; Zahlen 2-Quellen in .facts.json",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": true,
+    "ledger": "dividend-snowball-explained.html.facts.json",
+    "allow_plausible": false,
+    "max_age_days": 14
+  }
+}

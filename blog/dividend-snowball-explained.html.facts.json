@@ -1,0 +1,26 @@
+{
+ "asset": "/home/mbcap/websites/EN-Seite/blog/dividend-snowball-explained.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "aristocrats-25",
+   "claim": "S&P 500 Dividend Aristocrats: 25+ Jahre Dividendensteigerungen als Aufnahmekriterium",
+   "value": "25+ Jahre",
+   "source": "Quelle 1: S&P DJI Index Methodology (spglobal.com/spdji); Quelle 2: Investopedia — Dividend Aristocrat Definition",
+   "url": "https://www.spglobal.com/spdji/en/indices/equity/sp-500-dividend-aristocrats/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "drip-mechanism",
+   "claim": "DRIP-Mechanik: Broker ermöglichen automatisches Dividenden-Reinvestment; Standard-Dokumentation bei Investopedia/Motley Fool/Broker-Education",
+   "value": "DRIP-Standard",
+   "source": "Quelle 1: Investopedia — Dividend Reinvestment Plans; Quelle 2: The Motley Fool — DRIP guides / Fidelity Education",
+   "url": "https://www.investopedia.com/terms/d/dividendreinvestmentplan.asp",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}

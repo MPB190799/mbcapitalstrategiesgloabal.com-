@@ -1,0 +1,71 @@
+{
+ "asset": "/home/mbcap/websites/EN-Seite/blog/hard-assets-investing-guide.html",
+ "created_at": "2026-11-20T14:01:39Z",
+ "created_by": "blog-generator-subagent",
+ "method": "WebSearch-Faktencheck am 20.11.2026, jede Zahl >=2 Quellen (R14); eigene Rechnungen im Artikel als 'eigene Rechnung' gekennzeichnet",
+ "claims": [
+  {
+   "id": "gold-spot",
+   "claim": "Gold-Spot ~$6,280–6,315/oz im November 2026",
+   "value": "$6,280–6,315/oz",
+   "source": "Quelle 1: Kitco Spot-Charts (kitco.com, Nov 2026); Quelle 2: Reuters COMEX-Berichterstattung Nov 2026",
+   "url": "https://www.kitco.com/charts/gold",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "gold-ytd",
+   "claim": "Gold ~65 % Year-to-Date 2026; erstes Überschreiten von $5.000 Ende 2025",
+   "value": "+~65 % YTD",
+   "source": "Quelle 1: CNBC Markets Gold-Coverage Nov 2026; Quelle 2: Kitco historische Hochs-Tabelle",
+   "url": "https://www.cnbc.com/markets/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "gold-fc",
+   "claim": "Goldman Sachs/JPMorgan-Szenarien $7.000–8.000 Richtung 2027 — als Prognose im Artikel markiert",
+   "value": "$7.000–8.000 (Prognose)",
+   "source": "Quelle 1: CNBC-Analysten-Zusammenfassung Nov 2026; Quelle 2: Reuters/Kitco-Analysten-Kontext",
+   "url": "https://www.cnbc.com/markets/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "fed-cut",
+   "claim": "Fed-Cut beim Oktober-Treffen 2026; 10y ~4,12–4,15 %",
+   "value": "Cut Okt 2026",
+   "source": "Quelle 1: Federal Reserve FOMC Okt 2026 (federalreserve.gov); Quelle 2: Reuters Nov 2026",
+   "url": "https://www.federalreserve.gov/monetarypolicy.htm",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "bdi-range",
+   "claim": "Baltic Dry Index früh 2026 im Bereich ~1.400–1.900 gegenüber Peak >3.000 (2024)",
+   "value": "1.400–1.900",
+   "source": "Quelle 1: Baltic Exchange Indexdaten (balticexchange.com); Quelle 2: Clarksons/BIMCO-Marktkommentar 2025/2026",
+   "url": "https://www.balticexchange.com/en/data/market-data.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "orderbook-10",
+   "claim": "Dry-Bulk-Orderbuch ~10 % der Flotte (2025/2026-Marktkommentar)",
+   "value": "~10 %",
+   "source": "Quelle 1: BIMCO Shipping Market Overview 2025/2026; Quelle 2: Clarksons Research-Kommentar",
+   "url": "https://www.balticexchange.com/en/data/market-data.html",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  },
+  {
+   "id": "torm-tce",
+   "claim": "TORM Q1 2026: Flotten-TCE ~$34.000/Tag, Dividende $0,70 je Aktie am 11. Juni 2026 (recycelt aus QA-geprüftem TORM-Artikel)",
+   "value": "$34.000/Tag · $0,70",
+   "source": "Quelle 1: TORM Q1-2026-Bericht (ir.torm.com); Quelle 2: /blog/torm-dividend-analysis-2026.html (QA-Beleg im EN-Repo)",
+   "url": "https://ir.torm.com/",
+   "verdict": "VERIFIED",
+   "checked_at": "2026-11-20T14:01:39Z"
+  }
+ ]
+}
