@@ -1,0 +1,19 @@
+{
+  "score": 13,
+  "max": 14,
+  "compliance": "PASS",
+  "lang": "en",
+  "platform": "blog-en",
+  "checker": "claude-chat",
+  "checked_at": "2026-11-23T18:15:58.229Z",
+  "content_sha": "9f3d9d0f98542044",
+  "hard_scan": "PASS",
+  "note": "Artikel von Claude im Chat mit Marco (23.11.2026) aus dem Depot-Update-Video abgeleitet; Marco-Auftrag: fehlende Blogartikel zu Videos",
+  "factcheck": "pass",
+  "factcheck_ledger": {
+    "checked": false,
+    "basis": "Zahlen unveraendert aus Marcos veroeffentlichter Videobeschreibung (DE-Video ZHwt98rEnIk, /home/mbcap/incoming/videos/DepotUpdate_Nov2026/PAKET/yt-meta.json); eigenes Depot, kein neuer Zahlenclaim",
+    "note": "abgeleitetes Artefakt — Beleg liegt beim benannten Original, hier nicht nachgeprueft"
+  },
+  "numbers_verified_by": "claude"
+}
