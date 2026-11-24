@@ -421,6 +421,15 @@ a.trust-item:hover .trust-lab{color:var(--accent)}
 .compass-backdrop::before{content:"";position:absolute;inset:-6%;border-radius:50%;background:radial-gradient(circle at 50% 50%,rgba(212,175,55,.22),rgba(212,175,55,.05) 42%,transparent 65%);filter:blur(50px);animation:compassGlow 11s ease-in-out infinite;pointer-events:none;z-index:-1}
 @keyframes compassGlow{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.05)}}
 @keyframes compassImgSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+/* 2026-11-24 Handy: Kompass steht still, ohne Schlagschatten und Leuchten. Googles Messung zeigte das Hauptbild
+   erst nach rund 6 s - das dauernd drehende Bild mit zwei Schatten-Filtern und 50px-Weichzeichner ist auf
+   Handy-Prozessoren die teuerste Stelle der Startseite. Am PC bleibt alles wie es ist. */
+@media (max-width:900px){
+  .compass-backdrop .compass-img,.compass-backdrop::before{animation:none!important}
+  .compass-backdrop .compass-img{will-change:auto}
+  .compass-backdrop,.compass-backdrop .compass-img{filter:none!important}
+  .compass-backdrop::before{filter:none;display:none}
+}
 .compass-backdrop{transition:opacity .35s linear}
 .compass-backdrop[data-scroll]{opacity:var(--scroll-fade)}
 
