@@ -27,6 +27,14 @@
   try { reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches; } catch (e) {}
   if (reduceMotion) return;
   try { if (navigator.connection && navigator.connection.saveData) return; } catch (e) {}
+  /* 2026-11-24 Handy-Gate: Googles Messung (PageSpeed, Handy-Profil) ergab fuer die EN-Startseite Note 14/100 -
+     dieses Skript kostete dort 5,7 s Rechenzeit, die Seite war 7,6 s blockiert und sprang beim Laden.
+     Auf Handys und kleinen Tablets bleibt deshalb das statische Kompass-Bild (compass-vintage.webp);
+     die 3D-Fassung laeuft weiter auf grossen Bildschirmen. */
+  try {
+    if (window.matchMedia('(max-width: 900px)').matches ||
+        (window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 1100)) return;
+  } catch (e) {}
 
   const backdrop = document.getElementById('compass-backdrop');
   const hero = document.getElementById('hero');
