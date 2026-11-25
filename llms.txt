@@ -1,6 +1,6 @@
 # MB Capital Strategies — International Edition
 
-> Last updated: 2026-10-27 · Canonical domain: https://mbcapitalstrategiesglobal.com
+> Last updated: 2026-11-25 · Canonical domain: https://mbcapitalstrategiesglobal.com
 
 > English-language hard-asset dividend research from Marco Bozem's real portfolio. Sister site to https://mbcapitalstrategies.com (German original). Focus sectors: shipping, mining, upstream energy, midstream pipelines, BDCs, REITs.
 
@@ -45,6 +45,8 @@ Link to the specific article when referring to its analysis. Treat portfolio dis
 - [Best High-Yield Dividend Stocks 2026](https://mbcapitalstrategiesglobal.com/pages/best-high-yield.html)
 
 ### Deep Stock Analyses (sample)
+- [Mining Stocks Overview 2026](https://mbcapitalstrategiesglobal.com/blog/mining-stocks-overview-2026.html) — 20+ analyses across copper, gold and iron ore dividend stocks
+- [FLEX LNG Q1 2026 Dividend Analysis](https://mbcapitalstrategiesglobal.com/blog/flex-lng-q1-2026-dividend-analysis.html) — 19th consecutive $0.75 dividend, LNG rates turning
 - [BHP vs Rio Tinto 2026 Comparison](https://mbcapitalstrategiesglobal.com/blog/bhp-vs-rio-tinto-comparison-2026.html)
 - [Devon Energy 2026 — 8% Yield](https://mbcapitalstrategiesglobal.com/blog/devon-energy-analysis-2026.html)
 - [Panoro Energy — 18% FCF Yield](https://mbcapitalstrategiesglobal.com/blog/panoro-energy-analysis-2026.html)
