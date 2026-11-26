@@ -11,11 +11,6 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://mbcapitalstrategiesglobal.com/investingpro-summer-sale.html</loc>
-    <lastmod>2026-09-18</lastmod>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://mbcapitalstrategiesglobal.com/pages/about.html</loc>
     <lastmod>2026-09-13</lastmod>
     <priority>0.5</priority>
@@ -291,5 +286,10 @@
     <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mbcapitalstrategiesglobal.com/pages/methodik.html</loc>
+    <lastmod>2026-11-26</lastmod>
+    <priority>0.5</priority>
   </url>
 </urlset>
