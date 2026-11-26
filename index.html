@@ -11,25 +11,20 @@
      rules near .header below. Old body-level scripts are dead code, kept as comments. -->
 <script>(function(){try{var t=Date.now(),s=Date.parse('2026-09-14T12:00:00Z'),e=Date.parse('2026-09-17T18:00:00Z');if(t>=s&&t<=e){document.documentElement.classList.add('promo-active');}}catch(err){}})();</script>
 <!-- LCP-Fix 2026-07-10 web-design-agent: font preload+stylesheet moved to top of head (was at byte-offset ~42KB, after 4 JSON-LD blocks + inline style blocks -- preload scanner discovered font CSS only after parsing head-bloat, adding round-trips on mobile. Zero visual/layout change, DE-parity fix, verified against LCP-fix-plan Massnahme 1. -->
-<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity, same root cause): the Cormorant Garamond
      (--serif) file used by .display/.hero-title (huge clamp()-sized Hero-H1) was not preloaded,
      only the Outfit body font was -- late webfont swap over the Georgia fallback drives layout
      shift on Home. Preload the exact Latin-range regular (400) woff2. -->
-<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3bmX5slCNuHLi8bLeY9MK7whWMhyjYqXtK.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-21 web-design-agent (DE-parity, same root cause): only the NORMAL-style
      Cormorant Garamond was preloaded above. The hero's accent "<em>Hard Assets.</em>" is italic --
      a different woff2 (fonts.css: style italic, weight 400, Latin U+0000-00FF), still arriving
      late via fonts.css only. Preloading it closes the remaining fallback-vs-webfont reflow window. -->
-<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-co3smX5slCNuHLi8bLeY9MK7whWMhyjYrGFEsdtdc62E6zd58jD-iNM8.woff2" crossorigin>
 <!-- CLS-Fix 2026-07-21b web-design-agent: DE-parity. Lighthouse's own layout-shifts audit
      (en-home-20260721.json) explicitly cites IBM Plex Mono (--mono, used by .eyebrow "ISSUE #53" +
      .hero-meta + ticker, rendered inside/above .hero-content) as a "Web font loaded" cause of the
      p.lede shift (score 0.139) -- this family had zero preload. The weight-500 file cited is exact
      ("gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2"); adding it + its Latin 400 sibling removes the
      last unaddressed font swap in the hero. No visual/layout change. -->
-<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2" crossorigin>
-<link rel="preload" as="font" type="font/woff2" href="/fonts/gf-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2" crossorigin>
 <!-- CWV-Fix 2026-07-31 seo-agent (DE-parity, same fix web-design-agent applied to DE index.html
      same day): Lighthouse "uses-rel-preconnect" flags www.clarity.ms as a missing preconnect
      candidate. Microsoft Clarity is not an ad/CMP network (no risk of re-triggering the
