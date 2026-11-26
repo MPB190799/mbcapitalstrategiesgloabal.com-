@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XIRR 17.5% vs TTWROR 10.2%: Why My Two Return Numbers Differ</title>
+<meta name="description" content="Since 2022 my portfolio returned 17.5% a year by XIRR but about 10.2% a year time-weighted. What each number measures, a worked example, and which one to quote.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Marco Bozem">
+<link rel="canonical" href="https://mbcapitalstrategiesglobal.com/pages/xirr-vs-ttwror-my-portfolio-returns-explained.html">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta property="og:title" content="17.5% or 10.2% a Year? Why My Portfolio Has Two Different Returns">
+<meta property="og:description" content="Since 2022 my portfolio returned 17.5% a year by XIRR but about 10.2% a year time-weighted. What each number measures, a worked example, and which one to quote.">
+<meta property="og:url" content="https://mbcapitalstrategiesglobal.com/pages/xirr-vs-ttwror-my-portfolio-returns-explained.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MB Capital Strategies Global">
+<meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/style.min.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "17.5% or 10.2% a Year? Why My Portfolio Has Two Different Returns", "description": "Since 2022 my portfolio returned 17.5% a year by XIRR but about 10.2% a year time-weighted. What each number measures, a worked example, and which one to quote.", "author": {"@type": "Person", "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person", "name": "Marco Bozem", "url": "https://mbcapitalstrategiesglobal.com/pages/about.html", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295", "https://www.linkedin.com/company/mb-capital-strategies/", "https://www.youtube.com/@MBCapitalStrategiesGlobal", "https://www.wikidata.org/wiki/Q138571853"]}, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategiesglobal.com/#organization", "name": "MB Capital Strategies Global", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategiesglobal.com/Logo.webp"}}, "datePublished": "2026-11-26", "dateModified": "2026-11-26", "mainEntityOfPage": "https://mbcapitalstrategiesglobal.com/pages/xirr-vs-ttwror-my-portfolio-returns-explained.html", "url": "https://mbcapitalstrategiesglobal.com/pages/xirr-vs-ttwror-my-portfolio-returns-explained.html", "inLanguage": "en-US", "wordCount": 492, "articleSection": "Real Portfolio Data"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mbcapitalstrategiesglobal.com/pages/blog.html"}, {"@type": "ListItem", "position": 3, "name": "17.5% or 10.2% a Year? Why My Portfolio Has Two Different Returns"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is the difference between XIRR and TTWROR?", "acceptedAnswer": {"@type": "Answer", "text": "XIRR is a money-weighted return: periods in which more money was invested count more. TTWROR (true time-weighted rate of return) removes the effect of deposits and withdrawals and measures how each euro invested performed over time."}}, {"@type": "Question", "name": "Why is my XIRR higher than my time-weighted return?", "acceptedAnswer": {"@type": "Answer", "text": "Usually because more money was invested during the periods with the best returns. Then the money-weighted return is pulled up, while the time-weighted return treats every period equally."}}, {"@type": "Question", "name": "Which return should I compare with an index?", "acceptedAnswer": {"@type": "Answer", "text": "The time-weighted return, because index and fund returns are calculated time-weighted too. The XIRR is better for answering what your own money actually earned."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var mbcsC=(function(){try{return localStorage.getItem('cookie_consent');}catch(e){return null;}})();var mbcsG=(mbcsC==='accepted'?'granted':'denied');gtag('consent','default',{'ad_storage':mbcsG,'ad_user_data':mbcsG,'ad_personalization':mbcsG,'analytics_storage':mbcsG,'functionality_storage':'granted','security_storage':'granted'});gtag('js',new Date());gtag('config','G-FSW7J7QYL8');</script>
+<style>
+.ob p,.ob li{color:#c8cfe0;line-height:1.75;font-size:1.02rem} .ob h2{color:#f5f6fa;margin:34px 0 12px;font-size:1.45rem}
+.ob table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.92rem} .ob th,.ob td{border-bottom:1px solid #23283a;padding:8px 10px;text-align:left;color:#d0d3e2}
+.ob th{color:#D4AF37;font-family:'IBM Plex Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em} .ob td.n{text-align:right;font-family:'IBM Plex Mono',monospace}
+.ob .box{background:#11141d;border-left:4px solid #D4AF37;border-radius:6px;padding:16px 20px;margin:22px 0} .ob a{color:#D4AF37}
+.ob .tag{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:#22c55e;letter-spacing:.06em;text-transform:uppercase}
+#main-nav{background:#080810;z-index:50}
+@media(max-width:760px){main.ob{padding-top:120px!important} .ob table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch} .ob th,.ob td{white-space:nowrap}}
+</style>
+</head>
+<body>
+<nav id="main-nav" class="navbar"><div class="container">
+<a href="../index.html" class="navbar-brand"><img src="../Logo.webp" alt="MB Capital Strategies Global" width="40" height="40" loading="lazy"><span>MB Capital Strategies</span></a>
+<div class="nav-links"><a href="blog.html" class="nav-link">Research</a><a href="about.html" class="nav-link">About</a></div>
+</div></nav>
+<main class="container ob" style="max-width:860px;margin:0 auto;padding:40px 24px;">
+<nav class="breadcrumb" style="color:#6b7a99;font-size:.85rem;margin-bottom:24px;"><a href="../index.html">Home</a> &rsaquo; <a href="blog.html">Research</a> &rsaquo; XIRR vs TTWROR</nav>
+<article>
+<p class="tag">Original to this site &middot; Real Portfolio Data</p>
+<h1 style="color:#D4AF37;font-size:2rem;font-weight:800;margin:6px 0 8px;line-height:1.25">17.5% or 10.2% a Year? Why My Portfolio Has Two Different Returns</h1>
+<p style="color:#9aa6c0;font-size:.88rem;margin:0 0 24px;"><time datetime="2026-11-26">November 26, 2026</time> &middot; By <a href="about.html">Marco Bozem</a>, private investor &middot; <em>Not financial advice</em></p>
+<p>On my <a href="portfolio.html">portfolio page</a> I show two return figures from Parqet, and they look contradictory: an <strong>XIRR of 17.5% a year</strong> and a <strong>TTWROR of 57.8%</strong> since March 2022. Spread over the 4.7 years since I started, that 57.8% works out to about <strong>10.2% a year</strong>. Both numbers are correct. They answer different questions, and anyone who quotes a single return figure should know which one they're quoting.</p>
+
+<h2>What each number measures</h2>
+<ul>
+<li><strong>XIRR (money-weighted):</strong> the internal rate of return of all my actual cash flows: every deposit, every dividend, today's value. Periods in which a lot of money was invested count more than periods in which little was invested. It answers: <em>what did my money actually earn?</em></li>
+<li><strong>TTWROR (true time-weighted rate of return):</strong> splits the history into sub-periods between cash flows and chains their returns. Deposits and withdrawals have no influence. It answers: <em>how well did the investments perform, regardless of when I added money?</em> This is how funds and indices report returns.</li>
+</ul>
+
+<h2>A simple example</h2>
+<div class="box">Year 1: you invest €1,000 and it earns 0%. At the start of year 2 you add €9,000, and in year 2 everything earns 20%. At the end you have €12,000.<br><br>
+<strong>Time-weighted:</strong> 0% in year 1, 20% in year 2 → 20% over two years, about <strong>9.5% a year</strong>.<br>
+<strong>Money-weighted (XIRR):</strong> most of the money was only invested in the good year → about <strong>17.9% a year</strong>.<br>
+<span style="font-size:.88rem;color:#9aa6c0">My own calculation; illustrative numbers.</span></div>
+<p>The investments performed the same in both views. The difference comes entirely from <em>when</em> the money was there.</p>
+
+<h2>Why my XIRR is higher</h2>
+<p>My portfolio looks a lot like that example. It was small in 2022 and 2023 and grew mainly later, as I kept investing new money. You can see the growth in my dividends: €437 in 2023, €4,646 in 2025 (details in <a href="my-dividend-income-2022-2026.html">my dividend income 2022–2026</a>). At the same time, 2026 was a very strong year for the tanker and energy stocks that make up a large part of the portfolio. More money in the good years pushes the XIRR above the time-weighted return.</p>
+<p>The flip side: the same effect works in reverse. If the large, recently invested part of the portfolio has a bad year, the XIRR will fall faster than the time-weighted return.</p>
+
+<h2>Which number I'd quote</h2>
+<ul>
+<li><strong>To compare with an index or a fund:</strong> the time-weighted figure, about 10.2% a year. That's the like-for-like comparison.</li>
+<li><strong>To say what my money earned:</strong> the XIRR of 17.5% a year.</li>
+<li><strong>Always with the period and the source.</strong> Both are calculated by Parqet from my real transactions across three brokers, from 9 March 2022 to 26 November 2026. Past returns are no guarantee for the future.</li>
+</ul>
+<p>A portfolio that only shows its XIRR can look better than its investments really were, and one that only shows its time-weighted return hides what the owner actually earned. Showing both is the honest version, which is why my portfolio page lists both.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">What is the difference between XIRR and TTWROR?</h3>
+<p>XIRR is a money-weighted return: periods in which more money was invested count more. TTWROR (true time-weighted rate of return) removes the effect of deposits and withdrawals and measures how each euro invested performed over time.</p>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">Why is my XIRR higher than my time-weighted return?</h3>
+<p>Usually because more money was invested during the periods with the best returns. Then the money-weighted return is pulled up, while the time-weighted return treats every period equally.</p>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">Which return should I compare with an index?</h3>
+<p>The time-weighted return, because index and fund returns are calculated time-weighted too. The XIRR is better for answering what your own money actually earned.</p>
+<p class="box" style="font-size:.88rem"><em>Disclaimer: Not financial advice. I am a private investor, not a licensed advisor. Figures are as of the date above and without warranty; check primary sources before you act. How I work: <a href="methodik.html">my research methodology</a>.</em></p>
+<div style="display:flex;gap:16px;align-items:flex-start;background:rgba(21,24,33,.92);border:1px solid rgba(212,175,55,.22);border-radius:12px;padding:20px;margin:30px 0;">
+<img src="../assets/marco-profile.webp" alt="Marco Bozem" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+<div><p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+<p style="margin:0;font-size:.88rem;color:#ccc;">Private investor from Germany since 2022, focused on shipping, energy and mining dividends. I publish my real portfolio and the numbers behind it. <a href="about.html">About me</a> &middot; <a href="contact.html">Contact</a></p></div></div>
+<div class="box"><strong style="color:#D4AF37">Related on this site</strong><ul><li><a href="my-dividend-income-2022-2026.html">My dividend income 2022–2026</a></li><li><a href="my-winners-and-losers-since-2022.html">My winners and losers since 2022</a></li><li><a href="portfolio.html">My full portfolio</a></li></ul></div>
+</article>
+</main>
+<footer style="background:#080810;border-top:1px solid #1e1e35;padding:30px 24px;text-align:center;color:#6b7a99;font-size:.85rem;">
+<p>&copy; 2026 MB Capital Strategies Global &mdash; Marco Bozem</p>
+<nav style="margin-top:10px;"><a href="imprint.html" style="color:#D4AF37;margin:0 10px;">Imprint</a><a href="privacy.html" style="color:#D4AF37;margin:0 10px;">Privacy</a><a href="disclaimer.html" style="color:#D4AF37;margin:0 10px;">Disclaimer</a><a href="methodik.html" style="color:#D4AF37;margin:0 10px;">Methodology</a><a href="contact.html" style="color:#D4AF37;margin:0 10px;">Contact</a></nav>
+</footer>
+<style>
+.mbcs-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0f1219;border-top:1px solid rgba(212,175,55,.35);padding:14px 18px;display:none;box-shadow:0 -4px 18px rgba(0,0,0,.4)}
+.mbcs-cookie-banner.show{display:block}
+.mbcs-cookie-inner{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+.mbcs-cookie-text{color:#d0d3e2;font-size:.82rem;line-height:1.5;margin:0;flex:1;min-width:220px}
+.mbcs-cookie-text a{color:#D4AF37;text-decoration:underline}
+.mbcs-cookie-buttons{display:flex;gap:10px;flex-shrink:0}
+.mbcs-cookie-btn{padding:8px 18px;border-radius:6px;font-size:.82rem;font-weight:700;cursor:pointer;border:1px solid transparent}
+.mbcs-cookie-btn-accept{background:#D4AF37;color:#0a0e14;border-color:#D4AF37}
+.mbcs-cookie-btn-reject{background:transparent;color:#d0d3e2;border-color:#3a3f4d}
+@media(max-width:480px){.mbcs-cookie-inner{flex-direction:column;align-items:stretch}.mbcs-cookie-buttons{justify-content:flex-end}body{padding-bottom:150px}}
+</style>
+<div class="mbcs-cookie-banner" id="cookieBanner"><div class="mbcs-cookie-inner"><p class="mbcs-cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="privacy.html">Privacy Policy</a></p><div class="mbcs-cookie-buttons"><button class="mbcs-cookie-btn mbcs-cookie-btn-reject" id="cookieReject">Reject</button><button class="mbcs-cookie-btn mbcs-cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<script>
+(function(){
+  var b=document.getElementById('cookieBanner');
+  if(!b) return;
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){ if(!localStorage.getItem('cookie_consent')) b.classList.add('show'); }, 400);
+  }
+  var a=document.getElementById('cookieAccept'), r=document.getElementById('cookieReject');
+  if(a) a.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','accepted');
+    if(window.gtag) window.gtag('consent','update',{'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+    b.classList.remove('show');
+  });
+  if(r) r.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','rejected');
+    b.classList.remove('show');
+    window['ga-disable-G-FSW7J7QYL8']=true;
+  });
+})();
+</script>
+</body>
+</html>
