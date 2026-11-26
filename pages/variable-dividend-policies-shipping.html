@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Variable Dividend Policies in Shipping: How Payout Formulas Work</title>
+<meta name="description" content="Why shipping dividends jump from quarter to quarter: Hafnia&#x27;s leverage-based payout ladder, TORM&#x27;s 58% to 74% payouts, and how I estimate the next dividend.">
+<meta name="robots" content="index,follow">
+<meta name="author" content="Marco Bozem">
+<link rel="canonical" href="https://mbcapitalstrategiesglobal.com/pages/variable-dividend-policies-shipping.html">
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta property="og:title" content="Variable Dividend Policies in Shipping: How the Payout Formulas Really Work">
+<meta property="og:description" content="Why shipping dividends jump from quarter to quarter: Hafnia&#x27;s leverage-based payout ladder, TORM&#x27;s 58% to 74% payouts, and how I estimate the next dividend.">
+<meta property="og:url" content="https://mbcapitalstrategiesglobal.com/pages/variable-dividend-policies-shipping.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="MB Capital Strategies Global">
+<meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="../css/style.min.css">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Variable Dividend Policies in Shipping: How the Payout Formulas Really Work", "description": "Why shipping dividends jump from quarter to quarter: Hafnia's leverage-based payout ladder, TORM's 58% to 74% payouts, and how I estimate the next dividend.", "author": {"@type": "Person", "@id": "https://mbcapitalstrategiesglobal.com/pages/about.html#person", "name": "Marco Bozem", "url": "https://mbcapitalstrategiesglobal.com/pages/about.html", "sameAs": ["https://www.linkedin.com/in/marco-bozem-182173295", "https://www.linkedin.com/company/mb-capital-strategies/", "https://www.youtube.com/@MBCapitalStrategiesGlobal", "https://www.wikidata.org/wiki/Q138571853"]}, "publisher": {"@type": "Organization", "@id": "https://mbcapitalstrategiesglobal.com/#organization", "name": "MB Capital Strategies Global", "logo": {"@type": "ImageObject", "url": "https://mbcapitalstrategiesglobal.com/Logo.webp"}}, "datePublished": "2026-11-26", "dateModified": "2026-11-26", "mainEntityOfPage": "https://mbcapitalstrategiesglobal.com/pages/variable-dividend-policies-shipping.html", "url": "https://mbcapitalstrategiesglobal.com/pages/variable-dividend-policies-shipping.html", "inLanguage": "en-US", "wordCount": 1057, "articleSection": "Shipping Dividends"}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mbcapitalstrategiesglobal.com/pages/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Variable Dividend Policies in Shipping: How the Payout Formulas Really Work"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do shipping dividends change every quarter?", "acceptedAnswer": {"@type": "Answer", "text": "Most listed tanker and gas carrier companies pay a fixed share of each quarter's net profit rather than a fixed amount per share. Net profit follows freight rates, so the dividend moves with the market."}}, {"@type": "Question", "name": "What is Hafnia's dividend policy?", "acceptedAnswer": {"@type": "Answer", "text": "Since April 2024 Hafnia targets a payout of adjusted net profit that depends on its net loan-to-value: 50% above 40% LTV, 60% between 30% and 40%, 80% between 20% and 30%, and 90% at or below 20%. In Q2 2026, with net LTV at 13.0%, it paid out 90%."}}, {"@type": "Question", "name": "How do I estimate the next shipping dividend?", "acceptedAnswer": {"@type": "Answer", "text": "Take the share of next quarter's vessel days the company has already booked and at what rate, compare that rate with the company's cash breakeven, estimate net profit, and apply the payout ratio. It's an estimate, not a forecast; open days, vessel sales and one-offs can move it."}}]}</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FSW7J7QYL8');</script>
+<style>
+.ob p,.ob li{color:#c8cfe0;line-height:1.75;font-size:1.02rem} .ob h2{color:#f5f6fa;margin:34px 0 12px;font-size:1.45rem}
+.ob table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.92rem} .ob th,.ob td{border-bottom:1px solid #23283a;padding:8px 10px;text-align:left;color:#d0d3e2}
+.ob th{color:#D4AF37;font-family:'IBM Plex Mono',monospace;font-size:.8rem;text-transform:uppercase;letter-spacing:.04em} .ob td.n{text-align:right;font-family:'IBM Plex Mono',monospace}
+.ob .box{background:#11141d;border-left:4px solid #D4AF37;border-radius:6px;padding:16px 20px;margin:22px 0} .ob a{color:#D4AF37}
+.ob .tag{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:#22c55e;letter-spacing:.06em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<nav id="main-nav" class="navbar"><div class="container">
+<a href="../index.html" class="navbar-brand"><img src="../Logo.webp" alt="MB Capital Strategies Global" width="40" height="40" loading="lazy"><span>MB Capital Strategies</span></a>
+<div class="nav-links"><a href="blog.html" class="nav-link">Research</a><a href="portfolio.html" class="nav-link">Portfolio</a><a href="about.html" class="nav-link">About</a></div>
+</div></nav>
+<main class="container ob" style="max-width:860px;margin:0 auto;padding:40px 24px;">
+<nav class="breadcrumb" style="color:#6b7a99;font-size:.85rem;margin-bottom:24px;"><a href="../index.html">Home</a> &rsaquo; <a href="blog.html">Research</a> &rsaquo; Variable dividend policies in shipping</nav>
+<article>
+<p class="tag">Original to this site &middot; Shipping Dividends</p>
+<h1 style="color:#D4AF37;font-size:2rem;font-weight:800;margin:6px 0 8px;line-height:1.25">Variable Dividend Policies in Shipping: How the Payout Formulas Really Work</h1>
+<p style="color:#9aa6c0;font-size:.88rem;margin:0 0 24px;"><time datetime="2026-11-26">November 26, 2026</time> &middot; By <a href="about.html">Marco Bozem</a>, private investor &middot; <em>Not financial advice</em></p>
+<p>Shipping stocks make up the largest part of my dividend income, and the question I get most often about them is simple: <em>why was the dividend so different this quarter?</em> The answer is almost never a board decision in the usual sense. Most tanker and gas carrier companies run a <strong>formula</strong>, and once you understand the formula, the swings stop being surprising.</p>
+
+<div class="box"><strong style="color:#D4AF37">In one paragraph</strong><br>
+Classic dividend payers decide an amount per share and try never to cut it. Most shipping companies decide a <em>percentage of quarterly net profit</em> and pay whatever that comes to. Some, like Hafnia, also tie the percentage to how much debt they carry. The dividend therefore follows freight rates with roughly a one-quarter delay, and a trailing "yield" says very little about the next payment.</div>
+
+<h2>Fixed dividends vs. payout-ratio dividends</h2>
+<p>A company like Realty Income sets a monthly amount and raises it in small steps; cutting it would damage its reputation. A spot-exposed tanker owner can't promise that, because its revenue can double or halve within a year. So it promises a <strong>rule</strong> instead: "we pay X% of adjusted net profit each quarter." Investors get a fair share of good quarters, and the company keeps its balance sheet intact in bad ones.</p>
+<p>The rule usually has three moving parts: the payout percentage, the definition of profit (often adjusted for vessel sale gains or other one-offs), and sometimes a balance-sheet condition.</p>
+
+<h2>Example 1: Hafnia's leverage ladder</h2>
+<p>Hafnia, a product tanker owner listed in Oslo and New York, publishes one of the clearest policies in the sector. Since April 2024 its payout depends on net loan-to-value (debt minus cash, divided by fleet value):</p>
+<table>
+<thead><tr><th>Net loan-to-value</th><th>Payout of adjusted net profit</th></tr></thead>
+<tbody>
+<tr><td>Above 40%</td><td class="n">50%</td></tr>
+<tr><td>Above 30%, up to 40%</td><td class="n">60%</td></tr>
+<tr><td>Above 20%, up to 30%</td><td class="n">80%</td></tr>
+<tr><td>20% or lower</td><td class="n">90%</td></tr>
+</tbody></table>
+<p>The logic is elegant: as long as the company is indebted, a larger share of profit stays in the business to repay loans. Once debt is low, almost everything goes to shareholders. In Q2 2026 Hafnia reported net profit of USD 277.8 million and a net LTV of 13.0%, down from 20.2% one quarter earlier. That moved it onto the top rung: <strong>90% payout, USD 250.0 million or USD 0.5003 per share</strong>.</p>
+<p>What this teaches me: with Hafnia you watch <em>two</em> numbers, freight rates and debt. A falling fleet value (for example in a weak secondhand market) can push LTV up and reduce the payout percentage even if profits hold.</p>
+
+<h2>Example 2: TORM's flexible ratio</h2>
+<p>TORM, which I own, also pays out a share of net profit, but the ratio isn't fixed by a published ladder. The board sets it each quarter, and the reports show the result. Here are the numbers from TORM's own releases:</p>
+<table>
+<thead><tr><th>Period</th><th>Earnings per share (USD)</th><th>Dividend per share (USD)</th><th>Payout</th></tr></thead>
+<tbody>
+<tr><td>Full year 2025</td><td class="n">2.91</td><td class="n">2.12</td><td class="n">74%</td></tr>
+<tr><td>Q1 2026</td><td class="n">&ndash;</td><td class="n">0.70</td><td class="n">58%</td></tr>
+<tr><td>Q2 2026</td><td class="n">3.31</td><td class="n">2.40</td><td class="n">73%</td></tr>
+<tr><td>Q3 2026</td><td class="n">1.94</td><td class="n">1.35</td><td class="n">about 70%</td></tr>
+</tbody></table>
+<p style="font-size:.88rem;color:#9aa6c0">Sources: TORM annual report 2025 and quarterly releases (Q1: 13 May 2026, Q2: 26 August 2026, Q3: 4 November 2026). The Q3 payout is my own calculation from the reported figures.</p>
+<p>Two things stand out. First, the dividend more than tripled from Q1 to Q2 2026 as product tanker rates spiked with the disruption of oil flows through the Strait of Hormuz. Second, the payout percentage itself moved between 58% and 74%. In Q1 it kept more cash, in a quarter in which it also bought six resale vessels; in the record Q2 it paid out more. So with TORM you can estimate the profit fairly well, but the payout ratio adds a second layer of uncertainty.</p>
+
+<h2>How I estimate the next dividend</h2>
+<p>The goal isn't a forecast to the cent; it's to know whether the next dividend will be roughly higher, similar or lower than the last one. The inputs are all in the quarterly report:</p>
+<ol>
+<li><strong>Booked days.</strong> Companies report what share of next quarter's vessel days they have already fixed, and at what average rate. Hafnia, for example, reported in February 2026 that 76% of Q1 days were covered at about USD 29,979 per day.</li>
+<li><strong>Breakeven.</strong> Most report a breakeven per vessel per day. For a profit estimate I use one that covers operating costs, overhead and interest, but not debt repayment. The difference between booked rate and breakeven is what drives profit.</li>
+<li><strong>Rough profit.</strong> Fleet days &times; (rate &minus; breakeven), adjusted for depreciation, gives a ballpark net profit. Open days are the unknown part; I assume they earn the current spot level, which is the least bad guess.</li>
+<li><strong>Apply the rule.</strong> For Hafnia, the LTV ladder; for TORM, a range of 60 to 75% based on recent behaviour.</li>
+</ol>
+<div class="box"><strong style="color:#D4AF37">A simplified example (hypothetical numbers)</strong><br>
+A company has 100 vessels, so about 9,100 vessel days per quarter. It has booked 70% at USD 35,000/day; the rest I assume at a spot rate of USD 30,000. Its breakeven before depreciation (operating costs, overhead, interest) is USD 18,000/day. That gives about 9,100 &times; (33,500 &minus; 18,000) &asymp; USD 141 million before depreciation and other items. If depreciation takes USD 50 million, net profit is about USD 91 million. At a 70% payout and 100 million shares, the dividend would be around USD 0.64 per share.<br>
+<span style="font-size:.88rem;color:#9aa6c0">Illustration only; not any real company.</span></div>
+
+<h2>Three common mistakes</h2>
+<ul>
+<li><strong>Annualising the best quarter.</strong> Multiplying a record dividend by four gives a yield that the company itself isn't promising. Over a full cycle, tanker payouts range from very little to very large, as TORM's own figures above show.</li>
+<li><strong>Ignoring the ex-dividend drop.</strong> When a stock pays out 5% of its price in one quarter, the share price usually falls by roughly that amount on the ex-date. It's my own money coming back, not a free gift.</li>
+<li><strong>Forgetting tax and currency.</strong> Shipping dividends are declared in US dollars. For me as a euro investor, the exchange rate and the tax treatment (see <a href="foreign-dividends-what-a-german-investor-keeps.html">my 2026 tax numbers</a>) change what arrives.</li>
+</ul>
+
+<h2>Why the model makes sense</h2>
+<p>A variable dividend is honest. The company shows you its real earning power every quarter instead of smoothing it, and it doesn't borrow to defend a payout it can't afford. The trade-off is planning: shipping dividends don't work as a fixed monthly income. They are cyclical cash flow and should be treated that way in any income plan.</p>
+<h2 id="faq">Frequently asked questions</h2>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">Why do shipping dividends change every quarter?</h3>
+<p>Most listed tanker and gas carrier companies pay a fixed share of each quarter's net profit rather than a fixed amount per share. Net profit follows freight rates, so the dividend moves with the market.</p>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">What is Hafnia&#x27;s dividend policy?</h3>
+<p>Since April 2024 Hafnia targets a payout of adjusted net profit that depends on its net loan-to-value: 50% above 40% LTV, 60% between 30% and 40%, 80% between 20% and 30%, and 90% at or below 20%. In Q2 2026, with net LTV at 13.0%, it paid out 90%.</p>
+<h3 style="color:#D4AF37;font-size:1.05rem;margin:20px 0 8px;">How do I estimate the next shipping dividend?</h3>
+<p>Take the share of next quarter's vessel days the company has already booked and at what rate, compare that rate with the company's cash breakeven, estimate net profit, and apply the payout ratio. It's an estimate, not a forecast; open days, vessel sales and one-offs can move it.</p>
+<p class="box" style="font-size:.88rem"><em>Disclaimer: Not financial advice. I am a private investor, not a licensed advisor. Figures are as of the date above and without warranty; check primary sources before you act. How I work: <a href="methodik.html">my research methodology</a>.</em></p>
+<div style="display:flex;gap:16px;align-items:flex-start;background:rgba(21,24,33,.92);border:1px solid rgba(212,175,55,.22);border-radius:12px;padding:20px;margin:30px 0;">
+<img src="../assets/marco-profile.webp" alt="Marco Bozem" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+<div><p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+<p style="margin:0;font-size:.88rem;color:#ccc;">Private investor from Germany since 2022, focused on shipping, energy and mining dividends. I publish my real portfolio and the numbers behind it. <a href="about.html">About me</a> &middot; <a href="contact.html">Contact</a></p></div></div>
+<div class="box"><strong style="color:#D4AF37">Related on this site</strong><ul><li><a href="shipping-dividends-freight-cycle.html">Shipping dividends and the freight cycle</a></li><li><a href="foreign-dividends-what-a-german-investor-keeps.html">What I keep from foreign dividends: my 2026 numbers</a></li><li><a href="../tools/shipping-cashflow.html">Shipping cashflow calculator</a></li></ul></div>
+</article>
+</main>
+<footer style="background:#080810;border-top:1px solid #1e1e35;padding:30px 24px;text-align:center;color:#6b7a99;font-size:.85rem;">
+<p>&copy; 2026 MB Capital Strategies Global &mdash; Marco Bozem</p>
+<nav style="margin-top:10px;"><a href="imprint.html" style="color:#D4AF37;margin:0 10px;">Imprint</a><a href="privacy.html" style="color:#D4AF37;margin:0 10px;">Privacy</a><a href="disclaimer.html" style="color:#D4AF37;margin:0 10px;">Disclaimer</a><a href="methodik.html" style="color:#D4AF37;margin:0 10px;">Methodology</a><a href="contact.html" style="color:#D4AF37;margin:0 10px;">Contact</a></nav>
+</footer>
+</body>
+</html>
