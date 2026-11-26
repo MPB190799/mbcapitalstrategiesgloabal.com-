@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark" data-luxe-v3="1">
+
+<html data-luxe-v3="1" data-theme="dark" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity): the promo-bar self-expiry + header-offset
      scripts read bar.offsetHeight while webfonts were still on their fallback, so the measured
      header offset didn't match the final post-swap bar height (same root cause as the DE fix, see
@@ -31,16 +32,15 @@
      CMP-before-hero bug from the 2026-06-15 DE fix) -- safe to preconnect. fonts.gstatic.com is
      NOT added here: EN self-hosts all webfonts locally (/fonts/*.woff2, GDPR self-hosted-fonts
      policy), so there is no gstatic dependency to preconnect to. -->
-<link rel="preconnect" href="https://www.clarity.ms" crossorigin>
-<link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
-
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#0c0b09">
-<meta name="google-adsense-account" content="ca-pub-7097302643579933">
+<link crossorigin="" href="https://www.clarity.ms" rel="preconnect"/>
+<link as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="/fonts/fonts.css" rel="stylesheet"/></noscript>
+<link href="favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
+<link href="favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<meta content="#0c0b09" name="theme-color"/>
+<meta content="ca-pub-7097302643579933" name="google-adsense-account"/>
 <!-- AdSense loader in <head> per Google's site-verification requirement (Marco 2026-07-10).
      FACT-CORRECTION: EN AdSense is NOT approved. Google AdSense console (Websites) shows
      mbcapitalstrategiesglobal.com = "Maßnahme erforderlich / Minderwertige Inhalte" (last review
@@ -48,22 +48,20 @@
      No ads serve on EN until the "low-value content" review is passed (E-E-A-T + content-quality
      remediation → seo-agent). ads.txt authorized; loader must be inside <head> on every page. -->
 <!-- dns-prefetch for pagead2 is sufficient for early DNS lookup without blocking hero -->
-<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
-<link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://www.google-analytics.com">
-<link rel="dns-prefetch" href="https://www.youtube.com">
-
-<meta name="description" content="Hard-asset dividend research: shipping tankers, gold miners, oil & gas — with real yield data. TORM, FLEX LNG, Thungela, Harbour Energy tracked weekly." />
-<meta name="keywords" content="dividends, hard assets, shipping stocks, mining stocks, pipeline investments, cashflow investing, MB Capital Strategies, high yield, BDC, tanker stocks, LNG stocks">
-<meta name="author" content="Marco Bozem">
+<link href="https://pagead2.googlesyndication.com" rel="dns-prefetch"/>
+<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
+<link href="https://www.google-analytics.com" rel="dns-prefetch"/>
+<link href="https://www.youtube.com" rel="dns-prefetch"/>
+<meta content="Hard-asset dividend research: shipping tankers, gold miners, oil &amp; gas — with real yield data. TORM, FLEX LNG, Thungela, Harbour Energy tracked weekly." name="description"/>
+<meta content="dividends, hard assets, shipping stocks, mining stocks, pipeline investments, cashflow investing, MB Capital Strategies, high yield, BDC, tanker stocks, LNG stocks" name="keywords"/>
+<meta content="Marco Bozem" name="author"/>
 <!-- CRO 2026-06-28 web-design-agent: Title hook — EN CTR 0.41% vs DE 0.82% gap. Previous generic title missed "hard assets investing" + "dividend yield 2026" search intent (GSC: "hard assets investment" 33 impr pos 41, "highest dividend yield stocks 2026" 40 impr pos 11). New title: category + yield signal + brand. Max 60 chars. -->
 <!-- SEO-Edit 2026-09-16 seo-agent (Auftrag a-20260913T184521Z): EN Homepage CTR-Fix #2 | Hypothese: 'Dividend Yield' + konkrete %-Werte vorne → bessere Klickrate bei 'highest dividend yield stocks 2026' Query (Pos 11, 40 Impr). Baseline: ctr=0,36% gesamt; Messfenster 14d bis 2026-09-30 -->
-<title>Hard Asset Dividend Research: Shipping, Mining & Energy</title>
-
+<title>Hard Asset Dividend Research: Shipping, Mining &amp; Energy</title>
 <!-- LCP-Fix 2026-06-15 web-design-agent: preconnect→dns-prefetch — preconnect triggered immediate TCP/TLS handshake to Ad servers, accelerating CMP modal trigger before hero render. dns-prefetch sufficient for async AdSense script at page bottom. -->
-<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+<link href="https://pagead2.googlesyndication.com" rel="dns-prefetch"/>
 <!-- dns-prefetch dedup 2026-06-15 web-design-agent: removed duplicate googletagmanager + google-analytics entries (were declared twice in head) -->
-<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net">
+<link href="https://googleads.g.doubleclick.net" rel="dns-prefetch"/>
 <!-- LCP-Fix 2026-06-12: switched to brand fonts Outfit+IBM Plex Mono (css/style.css uses Outfit, not Cormorant/Inter Tight/JetBrains — wrong bundle was preloaded, wasting ~200ms). -->
 <!-- LCP-Fix 2026-06-12 web-design-agent: Outfit woff2 direct preload — eliminates 1 network round-trip (CSS→woff2) in critical path (~100-200ms) -->
 <!-- Brand parity fix 2026-06-15 web-design-agent: EN site defined --serif:"Cormorant Garamond" in CSS but never loaded the font — all 20+ serif-class elements (insight-title, .display, .lede, .asset-name, FAQ, footer-brand, compass-cardinals) were falling back to Georgia. Added Cormorant to combined bundle; kept Outfit as LCP font (preloaded separately). Single combined Google Fonts request = no extra DNS round-trip vs previous. -->
@@ -76,15 +74,14 @@
      <picture> breakpoints so the preload always matches what mobile/tablet actually renders. -->
 <!-- 2026-11-24: Vorab-Laden je Bildschirmbreite GENAU wie im <picture> darunter. Vorher waehlte das Handy ueber imagesizes x Pixeldichte
      das 1024er-Bild (90 KB) vorab und lud zusaetzlich das 512er aus dem <picture> - doppelter Abruf, spaetes Hauptbild. -->
-<link rel="preload" as="image" href="assets/compass-vintage-512.webp" media="(max-width:768px)" type="image/webp" fetchpriority="high">
-<link rel="preload" as="image" href="assets/compass-vintage-768.webp" media="(min-width:769px) and (max-width:1200px)" type="image/webp" fetchpriority="high">
-<link rel="preload" as="image" href="assets/compass-vintage.webp" media="(min-width:1201px)" type="image/webp" fetchpriority="high">
+<link as="image" fetchpriority="high" href="assets/compass-vintage-512.webp" media="(max-width:768px)" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="assets/compass-vintage-768.webp" media="(min-width:769px) and (max-width:1200px)" rel="preload" type="image/webp"/>
+<link as="image" fetchpriority="high" href="assets/compass-vintage.webp" media="(min-width:1201px)" rel="preload" type="image/webp"/>
 <!-- CRO/Resilience-Fix 2026-07-04 web-design-agent: .reveal/.sr sections start at opacity:0 and only
      become visible via JS (IntersectionObserver). If JS is blocked/slow/fails, these sections stay
      permanently invisible (content loss). Noscript fallback forces full visibility without JS —
      affects 0% of normal (JS-enabled) visitors, only closes the resilience gap. DE-parity fix. -->
 <noscript><style>.reveal,.sr,.pillars.reveal>*,.assets-grid.reveal>*,.tools-grid.reveal>*,.audience-grid.reveal>*,.insights-list.reveal>*,.faq-wrap.reveal>*{opacity:1!important;transform:none!important}</style></noscript>
-
 <!-- CRO/Resilience-Fix 2026-07-19 web-design-agent (DE-parity): Live-Audit (Playwright Full-Page-
      Screenshot) showed huge empty black voids on the homepage — the .reveal/.sr/.animate-on-scroll
      IntersectionObserver in the shared main.min.js bundle never runs if ANY earlier statement in
@@ -109,8 +106,7 @@ gtag('consent', 'default', {
 });
 gtag('config', 'G-FSW7J7QYL8');
 </script>
-
-<script defer>
+<script defer="">
 /* LCP-Optimization 2026-10-09 web-design-agent: Non-critical JS deferred — these run after first paint.
    Contains: (1) IntersectionObserver for reveal animations, (2) GA4 library loader (deferred to window.load). */
 (function(){
@@ -143,29 +139,25 @@ gtag('config', 'G-FSW7J7QYL8');
   })(window,document,'gtag','script','G-FSW7J7QYL8');
 })();
 </script>
-
-<meta property="og:title" content="Hard Asset Dividends: Shipping, Mining &amp; Energy 2026">
-<meta property="og:description" content="Independent research on shipping, mining, pipelines and energy: dated sources, dividend-coverage analysis, free calculators and a transparent private portfolio.">
-<meta property="og:url" content="https://mbcapitalstrategiesglobal.com/">
-<meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Hard Asset Dividends: Shipping, Mining &amp; Energy 2026">
-<meta name="twitter:description" content="Independent hard-asset research: dated sources, dividend-coverage analysis, free calculators and a transparent private portfolio.">
-<meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg">
-
-<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/">
-<link rel="alternate" hreflang="de-DE" href="https://mbcapitalstrategies.com/">
-<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesglobal.com/">
-<link rel="canonical" href="https://mbcapitalstrategiesglobal.com/">
-
+<meta content="Hard Asset Dividends: Shipping, Mining &amp; Energy 2026" property="og:title"/>
+<meta content="Independent research on shipping, mining, pipelines and energy: dated sources, dividend-coverage analysis, free calculators and a transparent private portfolio." property="og:description"/>
+<meta content="https://mbcapitalstrategiesglobal.com/" property="og:url"/>
+<meta content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg" property="og:image"/>
+<meta content="website" property="og:type"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Hard Asset Dividends: Shipping, Mining &amp; Energy 2026" name="twitter:title"/>
+<meta content="Independent hard-asset research: dated sources, dividend-coverage analysis, free calculators and a transparent private portfolio." name="twitter:description"/>
+<meta content="https://mbcapitalstrategiesglobal.com/assets/og-dividenden.jpg" name="twitter:image"/>
+<link href="https://mbcapitalstrategiesglobal.com/" hreflang="en" rel="alternate"/>
+<link href="https://mbcapitalstrategies.com/" hreflang="de-DE" rel="alternate"/>
+<link href="https://mbcapitalstrategiesglobal.com/" hreflang="x-default" rel="alternate"/>
+<link href="https://mbcapitalstrategiesglobal.com/" rel="canonical"/>
 <style>
 .tool-card:hover{border-color:var(--accent)!important;transform:translateY(-2px)}
 .tool-card h3{transition:color var(--t-fast)}
 .tool-card:hover h3{color:var(--accent)}
 </style>
-
 <style>
 /* ═══ MB CAPITAL STRATEGIES GLOBAL — LUXE DARK v3.0 (CRITICAL) ═══ */
 /* A11y-Fix 2026-07-25 web-design-agent: --fg-dim contrast against --bg was 3.75:1 (dark) /
@@ -270,11 +262,9 @@ html.promo-active .header{top:47px}
 .header{padding-top:14px;padding-bottom:14px}
 }
 </style>
-
 <!-- LCP-Fix 2026-10-02 web-design-agent: Non-critical CSS (below-fold sections) loaded async after first paint -->
-<link rel="preload" href="/css/home-below-fold.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/home-below-fold.css"></noscript>
-
+<link as="style" href="/css/home-below-fold.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+<noscript><link href="/css/home-below-fold.css" rel="stylesheet"/></noscript>
 <!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: -->
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 <!-- LCP-Optimization 2026-10-09 web-design-agent: Decorative CSS (cursor glow, compass animations, particles, marquee effects, mini-compass) moved to css/home-below-fold.css — async-loaded after initial content render. Saves ~6KB inline CSS in <head>. -->
@@ -291,53 +281,47 @@ html.promo-active .header{top:47px}
 </script>
 </head>
 <body>
-
-<a href="#main" class="skip-link">Skip to main content</a>
-
-
-
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="scroll-progress" id="scroll-progress"></div>
-
 <header class="header" id="header">
-  <!-- LCP-Fix 2026-07-22 web-design-agent (CMO-Vormerkung 21.07., cwv-snapshot: EN-Home LCP 7,69s mobil):
+<!-- LCP-Fix 2026-07-22 web-design-agent (CMO-Vormerkung 21.07., cwv-snapshot: EN-Home LCP 7,69s mobil):
        48x48 Header-Logo trug fetchpriority="high" -- gleiche Priorität wie das 1024x1024
        Kompass-Hintergrundbild (echter LCP-Kandidat) + der 34px Signatur-Avatar (ebenfalls high,
        siehe unten) + Font-Preloads. Auf Mobilfunk-Bandbreite konkurrierten so mehrere hochpriorisierte
        Requests um die ersten Bytes statt das tatsächliche LCP-Element zu bevorzugen. fetchpriority
        entfernt (Browser-Default), loading=eager/decoding=async beibehalten -- 0 visuelle Änderung. -->
-  <a href="/" class="logo" aria-label="MB Capital Strategies Global home">
-    <picture class="logo-mark">
-      <source srcset="/Logo.webp" type="image/webp">
-      <img src="/Logo.webp" alt="MB Capital Strategies Global Logo" width="48" height="48" loading="eager" decoding="async">
-    </picture>
-    <span class="logo-name">MB Capital Strategies <em>Global</em></span>
-  </a>
-  <nav class="nav" aria-label="Main navigation">
-    <a href="pages/portfolio.html" class="nav-link">Portfolio</a>
-    <a href="pages/hard-asset-guide.html" class="nav-link">Hard Asset Guide</a>
-    <a href="pages/blog.html" class="nav-link">Research</a>
-    <a href="pages/calculators.html" class="nav-link">Calculators</a>
-    <a href="pages/us-investors-buy-hard-asset-dividend-stocks.html" class="nav-link">For US Investors</a>
-    <a href="pages/about.html" class="nav-link">About</a>
-    <!-- REMOVED 2026-10-04 seo-agent: EN newsletter nav-link violates DE-only policy (Marco 03.06.) -->
-    <a href="/pages/advertise.html" class="nav-link">Advertise</a>
-  </nav>
-  <div class="header-actions">
-    <!-- CRO/consistency-fix 2026-07-10 web-design-agent: .lang-flag was fully styled in CSS
+<a aria-label="MB Capital Strategies Global home" class="logo" href="/">
+<picture class="logo-mark">
+<source srcset="/Logo.webp" type="image/webp"/>
+<img alt="MB Capital Strategies Global Logo" decoding="async" height="48" loading="eager" src="/Logo.webp" width="48"/>
+</picture>
+<span class="logo-name">MB Capital Strategies <em>Global</em></span>
+</a>
+<nav aria-label="Main navigation" class="nav">
+<a class="nav-link" href="pages/portfolio.html">Portfolio</a>
+Hard Asset Guide
+<a class="nav-link" href="pages/blog.html">Research</a>
+<a class="nav-link" href="pages/calculators.html">Calculators</a>
+<a class="nav-link" href="pages/us-investors-buy-hard-asset-dividend-stocks.html">For US Investors</a>
+<a class="nav-link" href="pages/about.html">About</a>
+<!-- REMOVED 2026-10-04 seo-agent: EN newsletter nav-link violates DE-only policy (Marco 03.06.) -->
+Advertise
+</nav>
+<div class="header-actions">
+<!-- CRO/consistency-fix 2026-07-10 web-design-agent: .lang-flag was fully styled in CSS
          (incl. 44px mobile touch-target) but the link markup was never added to this header --
          DE has a working "EN" language-switch pill in its header-actions, EN had none, so
          visitors on the EN homepage had no quick way back to the DE site (only a buried footer
          "Deutsch" link). Adding the reciprocal pill closes the DE/EN header-parity gap. Plain
          reciprocal language-switcher (hreflang already links both sites both ways) -- not the
          old DE->EN traffic-funnel pattern retired 15.06.2026 (feedback_no-en-crosslink-for-adsense). -->
-    <a href="https://mbcapitalstrategies.com/" rel="noopener" class="lang-flag" title="Deutsche Version">DE</a>
-    <button class="theme-btn" id="theme-btn" aria-label="Toggle theme" title="Toggle theme">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-    <button class="nav-hamburger" id="navHamburger" aria-label="Open navigation" aria-controls="navMobile" aria-expanded="false"><span></span><span></span><span></span></button>
-  </div>
+<a class="lang-flag" href="https://mbcapitalstrategies.com/" rel="noopener" title="Deutsche Version">DE</a>
+<button aria-label="Toggle theme" class="theme-btn" id="theme-btn" title="Toggle theme">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" width="14"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<button aria-controls="navMobile" aria-expanded="false" aria-label="Open navigation" class="nav-hamburger" id="navHamburger"><span></span><span></span><span></span></button>
+</div>
 </header>
-
 <!-- CLS-Fix 2026-07-17 web-design-agent: Sale-Bar Self-Expiry + Header-top-Offset-Sync liefen
      bisher als Scripte am Ende von <body>, also nach dem ersten Paint -- Live-CWV-Snapshot
      (17.07., mobil) zeigt LCP 13.31s + Layout-Shift auf der EN-Startseite (gleicher Bug wie DE).
@@ -346,30 +330,27 @@ html.promo-active .header{top:47px}
 <!-- CLS-Fix 2026-07-18 web-design-agent (DE-parity): the promo-bar/header-offset scripts that used
      to live here are superseded by the html.promo-active CSS class set in <head> above (see
      .ip-sale / .header CSS comment). Pure-CSS resolution removes the webfont-timing race entirely. -->
-
-<nav class="nav-mobile" id="navMobile" aria-label="Mobile navigation">
-  <div class="mob-label">Navigation</div>
-  <a href="/">Home</a>
-  <a href="pages/portfolio.html">Portfolio</a>
-  <a href="pages/hard-asset-guide.html">Hard Asset Guide</a>
-  <a href="pages/blog.html">Research</a>
-  <a href="pages/calculators.html">Calculators</a>
-  <a href="pages/us-investors-buy-hard-asset-dividend-stocks.html">For US Investors</a>
-  <a href="pages/about.html">About</a>
-  <!-- REMOVED 2026-10-04 seo-agent: EN newsletter nav-link violates DE-only policy (Marco 03.06.) -->
-  <a href="pages/glossary.html">Glossary</a>
-  <a href="https://mbcapitalstrategies.com/" rel="noopener">Deutsch</a>
-  <div class="mob-label">Sectors</div>
-  <a href="pages/shipping.html">Shipping</a>
-  <a href="pages/pipelines.html">Pipelines</a>
-  <a href="pages/mining.html">Mining</a>
-  <a href="pages/energy.html">Energy</a>
-  <a href="pages/dividend-strategy.html">Dividend Strategy</a>
-  <a href="/pages/advertise.html">Advertise</a>
+<nav aria-label="Mobile navigation" class="nav-mobile" id="navMobile">
+<div class="mob-label">Navigation</div>
+<a href="/">Home</a>
+<a href="pages/portfolio.html">Portfolio</a>
+Hard Asset Guide
+<a href="pages/blog.html">Research</a>
+<a href="pages/calculators.html">Calculators</a>
+<a href="pages/us-investors-buy-hard-asset-dividend-stocks.html">For US Investors</a>
+<a href="pages/about.html">About</a>
+<!-- REMOVED 2026-10-04 seo-agent: EN newsletter nav-link violates DE-only policy (Marco 03.06.) -->
+<a href="pages/glossary.html">Glossary</a>
+<a href="https://mbcapitalstrategies.com/" rel="noopener">Deutsch</a>
+<div class="mob-label">Sectors</div>
+Shipping
+Pipelines
+Mining
+Energy
+Dividend Strategy
+Advertise
 </nav>
-
-<main id="main" data-no-google-auto-placements="true">
-
+<main data-no-google-auto-placements="true" id="main">
 <!-- HERO (v3.1 — Editorial Issue) -->
 <style>
 .hero-trust{display:flex;gap:32px;margin:26px 0 22px;padding:18px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);flex-wrap:wrap;justify-content:center}
@@ -517,31 +498,30 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
 .adsense-auto-ads-ignore{ google-auto-ads: ignore; }
 </style>
 <section class="hero adsense-auto-ads-ignore" id="hero">
-  <div class="wrap hero-inner">
-    <div class="hero-content">
-      <aside class="hero-signature-pill" aria-label="Marco Bozem, founder">
-        <span class="sig-avatar">
-          <picture>
-            <source srcset="marco.webp" type="image/webp">
-            <img src="marco.webp" onerror="this.onerror=null;this.src='marco.webp'" alt="Marco Bozem" width="34" height="34" loading="eager" decoding="async">
-          </picture>
-        </span>
-        <span class="sig-text">
-          <span class="sig-name">Marco Bozem</span>
-          <span class="sig-role">Founder · Independent Investor</span>
-        </span>
-      </aside>
-
-      <!-- CRO 2026-06-16 web-design-agent: Issue-date eyebrow added for freshness/trust signal (DE parity). -->
-      <!-- web-design-agent 2026-06-26: Self-expire removed — rolling issue badge now permanent (DE parity). No expiry dead-code. -->
-      <div class="hero-issue" id="hero-issue-en">
-        <span class="issue-rule"></span>
-        <span class="issue-no" id="hero-issue-no-en">Issue № 49</span>
-        <span id="hero-issue-date-en">26 November 2026</span>
-        <span class="issue-rule" id="hero-issue-sector-rule-en" style="opacity:.5"></span>
-        <span id="hero-issue-sector-en" style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
-      </div>
-      <script>
+<div class="wrap hero-inner">
+<div class="hero-content">
+<aside aria-label="Marco Bozem, founder" class="hero-signature-pill">
+<span class="sig-avatar">
+<picture>
+<source srcset="marco.webp" type="image/webp"/>
+<img alt="Marco Bozem" decoding="async" height="34" loading="eager" onerror="this.onerror=null;this.src='marco.webp'" src="marco.webp" width="34"/>
+</picture>
+</span>
+<span class="sig-text">
+<span class="sig-name">Marco Bozem</span>
+<span class="sig-role">Founder · Independent Investor</span>
+</span>
+</aside>
+<!-- CRO 2026-06-16 web-design-agent: Issue-date eyebrow added for freshness/trust signal (DE parity). -->
+<!-- web-design-agent 2026-06-26: Self-expire removed — rolling issue badge now permanent (DE parity). No expiry dead-code. -->
+<div class="hero-issue" id="hero-issue-en">
+<span class="issue-rule"></span>
+<span class="issue-no" id="hero-issue-no-en">Issue № 49</span>
+<span id="hero-issue-date-en">26 November 2026</span>
+<span class="issue-rule" id="hero-issue-sector-rule-en" style="opacity:.5"></span>
+<span id="hero-issue-sector-en" style="color:var(--fg-muted);letter-spacing:.18em">Shipping · Mining · Energy</span>
+</div>
+<script>
       // web-design-agent 2026-06-26: permanent rolling issue badge — ref №49 = 2026-06-21 (Sunday).
       (function(){
         var ref=new Date('2026-06-21T00:00:00Z'), refIssue=49;
@@ -559,20 +539,20 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
         if(dtEl) dtEl.textContent=d+' '+m+' '+y;
       })();
       </script>
-      <h1 class="display hero-title">Dividends from <em>Hard Assets.</em></h1>
-      <p class="lede hero-sub">
+<h1 class="display hero-title">Dividends from <em>Hard Assets.</em></h1>
+<p class="lede hero-sub">
         Independent research on cashflow from shipping, mining, energy and pipelines —
         from a real private-investor portfolio. <strong style="color:var(--fg)">Not investment advice.</strong>
-      </p>
-      <!-- CRO 2026-06-26 web-design-agent: replaced expiring BHP mining hook (expired 2026-06-28)
+</p>
+<!-- CRO 2026-06-26 web-design-agent: replaced expiring BHP mining hook (expired 2026-06-28)
            with permanent evergreen authority signal. No self-expiry JS needed — eliminates layout
            gap after hook removal and avoids DOM-manipulation CLS on mobile. -->
-      <!-- CRO fix 2026-06-27 web-design-agent: 630+ subscribers belong to DE channel (@MBCapitalStrategiesGlobal, 634 subs per kpi-rollup 2026-06-26); EN channel (@MBCapitalStrategiesGlobal) has 7 subs — linking sub count to correct channel. -->
-      <!-- CRO 2026-06-28 web-design-agent: sub count updated 634→637 (kpi-rollup 2026-06-28T05:00Z, +3 subs yesterday). -->
-      <!-- CRO 2026-07-05 web-design-agent: sub count corrected 637→635 (kpi-rollup 2026-07-05, live fetch-youtube.py) —
+<!-- CRO fix 2026-06-27 web-design-agent: 630+ subscribers belong to DE channel (@MBCapitalStrategiesGlobal, 634 subs per kpi-rollup 2026-06-26); EN channel (@MBCapitalStrategiesGlobal) has 7 subs — linking sub count to correct channel. -->
+<!-- CRO 2026-06-28 web-design-agent: sub count updated 634→637 (kpi-rollup 2026-06-28T05:00Z, +3 subs yesterday). -->
+<!-- CRO 2026-07-05 web-design-agent: sub count corrected 637→635 (kpi-rollup 2026-07-05, live fetch-youtube.py) —
            hero was overstating the trust signal by 2 subscribers (stale hardcode from 06-28). Trust badges above
            the fold must never overclaim; re-verify against output/data/kpi-rollup.json before each edit. -->
-      <!-- CRO fix 2026-08-10 web-design-agent (UX/CRO-Audit): a later commit swapped this href to
+<!-- CRO fix 2026-08-10 web-design-agent (UX/CRO-Audit): a later commit swapped this href to
            @MBCapitalStrategiesGlobal (correct per Marco 10.07.2026 EN-site-uses-EN-channel rule,
            [[feedback_en-site-uses-en-channel-and-videos]]) but left the "635+" figure untouched —
            that number belonged to the DE channel (666 subs live, output/data/kpi-rollup.json
@@ -582,25 +562,24 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
            subscriber-count claim rather than swap in "17+" (too small to read as a trust signal,
            would just trade one credibility problem for another); the sector/portfolio claim next
            to it stays, it is true and needs no number. -->
-      <p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 20px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy</p>
-      <div class="hero-trust" role="list" aria-label="Platform metrics">
-        <a class="trust-item" href="/blog/" role="listitem" aria-label="View all research articles">
-          <span class="trust-num">220+</span>
-          <span class="trust-lab">research<br>articles</span>
-        </a>
-        <a class="trust-item" href="/tools/" role="listitem" aria-label="View free dividend calculators">
-          <span class="trust-num">8</span>
-          <span class="trust-lab">free<br>calculators</span>
-        </a>
-        <div class="trust-item" role="listitem">
-          <span class="trust-num">YOC 6.93%</span>
-          <span class="trust-lab">real portfolio<br>2026</span>
-        </div>
-      </div>
-
-      <!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
-      <!-- CRO 2026-06-19 web-design-agent: primary CTA hardened to permanent state (Hormuz window closed 2026-06-17; JS-patch removed, static HTML now matches live intent — eliminates post-load text-swap CLS risk). -->
-      <!-- CRO 2026-07-05 web-design-agent: EN hero had zero monetization CTA above the fold
+<p id="hero-context-en" style="font-size:11px;color:var(--fg-muted,#c8cfe0);margin:8px auto 20px;font-family:var(--mono,monospace);letter-spacing:.08em;line-height:1.45;max-width:50ch;">Real portfolio · Shipping, Mining &amp; Energy</p>
+<div aria-label="Platform metrics" class="hero-trust" role="list">
+<a aria-label="View all research articles" class="trust-item" href="/blog/" role="listitem">
+<span class="trust-num">220+</span>
+<span class="trust-lab">research<br/>articles</span>
+</a>
+<a aria-label="View free dividend calculators" class="trust-item" href="/tools/" role="listitem">
+<span class="trust-num">8</span>
+<span class="trust-lab">free<br/>calculators</span>
+</a>
+<div class="trust-item" role="listitem">
+<span class="trust-num">YOC 6.93%</span>
+<span class="trust-lab">real portfolio<br/>2026</span>
+</div>
+</div>
+<!-- CRO 2026-06-15 web-design-agent: Shipping-CTA als Primary — Hormuz-Event-Tag (Tanker +24%), Shipping-Traffic-Spike erwartet. Self-expire UTC 2026-06-17T23:59:59Z. -->
+<!-- CRO 2026-06-19 web-design-agent: primary CTA hardened to permanent state (Hormuz window closed 2026-06-17; JS-patch removed, static HTML now matches live intent — eliminates post-load text-swap CLS risk). -->
+<!-- CRO 2026-07-05 web-design-agent: EN hero had zero monetization CTA above the fold
            (DE hero shows a Newsletter sign-up form ATF; policy forbids Newsletter on EN, so EN
            had NO equivalent conversion path in the hero at all — flagged in the 2026-06-25 audit).
            Swapped the hero-ctas YouTube link (duplicate of the sector-nav YouTube link already
@@ -611,7 +590,7 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
            link (previously hidden as "already present above") now stays visible, since the
            hero-ctas slot no longer carries a YouTube link. Measure: GA4 click event on
            #hero-cta-broker-en vs. 0-click baseline (element didn't exist before). -->
-      <!-- CRO 2026-07-05 web-design-agent (UX-Audit): the 3rd hero CTA ("Compare Brokers", an
+<!-- CRO 2026-07-05 web-design-agent (UX-Audit): the 3rd hero CTA ("Compare Brokers", an
            affiliate-monetized link) was rendered with color:var(--fg-dim,#c8cfe0) — but --fg-dim
            resolves to #746b5d (dark mode), giving ~3.2:1 contrast against --bg #0c0b09 (fails
            WCAG AA 4.5:1) AND no visual container, so it looked like disabled/ghost text next to
@@ -621,101 +600,95 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
            so it reads as a real (3rd-priority, still dezent per Marco-Regel 12.06.) clickable CTA
            instead of disabled copy. No new element, no CLS, no fold-position change. Measure: GA4
            click-rate on #hero-cta-broker-en before/after. -->
-      <div class="hero-ctas" id="hero-ctas-en">
-        <a href="pages/blog.html" class="btn" id="hero-cta-primary-en">Hard Asset Research ↗</a>
-        <a href="pages/calculators.html" class="btn btn-ghost" id="hero-cta-secondary-en">Free Calculators ↗</a>
-        <a href="pages/best-broker-dividends.html" class="btn-link" id="hero-cta-broker-en" style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--fg-muted);font-family:var(--mono);min-height:44px;display:flex;align-items:center;padding:4px 12px;border:1px solid var(--border-strong);border-radius:4px">Compare Brokers ↗</a>
-      </div>
-
-      <!-- REMOVED 2026-07-03 growth-funnel-agent: EN hero newsletter form (added 2026-06-27 by
+<div class="hero-ctas" id="hero-ctas-en">
+<a class="btn" href="pages/blog.html" id="hero-cta-primary-en">Hard Asset Research ↗</a>
+<a class="btn btn-ghost" href="pages/calculators.html" id="hero-cta-secondary-en">Free Calculators ↗</a>
+Compare Brokers ↗
+</div>
+<!-- REMOVED 2026-07-03 growth-funnel-agent: EN hero newsletter form (added 2026-06-27 by
            web-design-agent) violated the explicit Marco 03.06.2026 rule "Newsletter is DE-only —
            on the EN site NO Newsletter/Insider/Sign-Up/Lead-Magnet/PDF-CTA and no newsletter.html
            may appear" (CLAUDE.md, newsletter-playbook.md §2). Was live 6 days feeding the same
            Brevo list from the EN audience. Removed entirely, not disabled — do not restore
            without explicit Marco sign-off per playbook §0. -->
-
-      <!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
+<!-- CRO 2026-06-16 web-design-agent: replaced YouTube-only micro-CTA with 4-sector inline nav.
            Rationale: EN homepage had zero internal links ATF below the main CTAs — visitors hitting
            the hero had no path into specific sectors without scrolling past the compass cardinals.
            This adds 4 high-intent sector links directly in the hero content flow.
            YouTube sub link moved inline with sector nav (no dedicated paragraph = less clutter). -->
-      <!-- CRO 2026-06-27 web-design-agent: added id=hero-sector-nav + sector-nav-divider/yt classes
+<!-- CRO 2026-06-27 web-design-agent: added id=hero-sector-nav + sector-nav-divider/yt classes
            for mobile media-query targeting (480px: tighter gap, divider+yt hidden — YouTube already
            present as btn-link in hero-ctas above, avoids duplicate tap targets on very small screens) -->
-      <div id="hero-sector-nav" style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;" aria-label="Explore by sector">
-        <span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);flex-shrink:0;">Sectors:</span>
-        <a href="pages/shipping.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Shipping</a>
-        <a href="pages/mining.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Mining</a>
-        <a href="pages/energy.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Energy</a>
-        <a href="pages/pipelines.html" style="font-family:var(--mono);font-size:11px;letter-spacing:.10em;text-transform:uppercase;color:var(--accent,#D4AF37);text-decoration:none;border-bottom:1px solid rgba(212,175,55,.3);padding-bottom:1px;transition:border-color .15s ease;white-space:nowrap;" onmouseover="this.style.borderColor='rgba(212,175,55,.85)'" onmouseout="this.style.borderColor='rgba(212,175,55,.3)'">Pipelines</a>
-        <span class="sector-nav-divider" style="width:1px;height:12px;background:var(--border-strong,#1e1e35);display:inline-block;flex-shrink:0;"></span>
-        <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="sector-nav-yt" style="font-family:var(--mono);font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);text-decoration:none;border-bottom:1px solid rgba(107,122,153,.3);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;white-space:nowrap;" onmouseover="this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,.5)'" onmouseout="this.style.color='#6b7a99';this.style.borderColor='rgba(107,122,153,.3)'">YouTube →</a>
-      </div>
-<nav class="compass-cardinals" aria-label="Hard-asset sectors">
-        <a href="pages/energy.html" data-cardinal="N" data-bearing="0">
-          <span class="cdir"><b>Oil &amp; Gas</b><small>Energy</small></span>
-        </a>
-        <a href="pages/pipelines.html" data-cardinal="E" data-bearing="90">
-          <span class="cdir"><b>Pipelines</b><small>Midstream</small></span>
-        </a>
-        <a href="pages/mining.html" data-cardinal="S" data-bearing="180">
-          <span class="cdir"><b>Metals</b><small>Mining</small></span>
-        </a>
-        <a href="pages/shipping.html" data-cardinal="W" data-bearing="270">
-          <span class="cdir"><b>Tankers</b><small>Shipping</small></span>
-        </a>
-      </nav>
-      <!-- FOMC-signal chip removed 2026-06-19 web-design-agent (expired 2026-06-18, DOM clean-up). -->
-    </div>
-  </div>
+<div aria-label="Explore by sector" id="hero-sector-nav" style="margin:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 20px;align-items:center;">
+<span style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--fg-dim,#6b7a99);flex-shrink:0;">Sectors:</span>
+Shipping
+Mining
+Energy
+Pipelines
+<span class="sector-nav-divider" style="width:1px;height:12px;background:var(--border-strong,#1e1e35);display:inline-block;flex-shrink:0;"></span>
+<a class="sector-nav-yt" href="https://www.youtube.com/@MBCapitalStrategiesGlobal" onmouseout="this.style.color='#6b7a99';this.style.borderColor='rgba(107,122,153,.3)'" onmouseover="this.style.color='#D4AF37';this.style.borderColor='rgba(212,175,55,.5)'" rel="noopener" style="font-family:var(--mono);font-size:10px;letter-spacing:.10em;text-transform:uppercase;color:var(--fg-muted,#6b7a99);text-decoration:none;border-bottom:1px solid rgba(107,122,153,.3);padding-bottom:1px;transition:color .15s ease,border-color .15s ease;white-space:nowrap;" target="_blank">YouTube →</a>
+</div>
+<nav aria-label="Hard-asset sectors" class="compass-cardinals">
 
-  <div class="compass-backdrop" id="compass-backdrop" aria-hidden="true">
-    <picture>
-      <source media="(max-width:768px)" srcset="assets/compass-vintage-512.webp" type="image/webp">
-      <source media="(max-width:1200px)" srcset="assets/compass-vintage-768.webp" type="image/webp">
-      <source srcset="assets/compass-vintage.webp" type="image/webp">
-      <img class="compass-img" src="assets/compass-vintage.webp" alt="MB Capital Strategies — Hard Assets & Dividends Compass" width="1024" height="1024" loading="eager" decoding="async" fetchpriority="high">
-    </picture>
-  </div>
+<span class="cdir"><b>Oil &amp; Gas</b><small>Energy</small></span>
 
-  <div class="wrap"><div class="hero-rule"></div></div>
+
+<span class="cdir"><b>Pipelines</b><small>Midstream</small></span>
+
+
+<span class="cdir"><b>Metals</b><small>Mining</small></span>
+
+
+<span class="cdir"><b>Tankers</b><small>Shipping</small></span>
+
+</nav>
+<!-- FOMC-signal chip removed 2026-06-19 web-design-agent (expired 2026-06-18, DOM clean-up). -->
+</div>
+</div>
+<div aria-hidden="true" class="compass-backdrop" id="compass-backdrop">
+<picture>
+<source media="(max-width:768px)" srcset="assets/compass-vintage-512.webp" type="image/webp"/>
+<source media="(max-width:1200px)" srcset="assets/compass-vintage-768.webp" type="image/webp"/>
+<source srcset="assets/compass-vintage.webp" type="image/webp"/>
+<img alt="MB Capital Strategies — Hard Assets &amp; Dividends Compass" class="compass-img" decoding="async" fetchpriority="high" height="1024" loading="eager" src="assets/compass-vintage.webp" width="1024"/>
+</picture>
+</div>
+<div class="wrap"><div class="hero-rule"></div></div>
 </section>
-
 <!-- MARQUEE — CRO 2026-06-14 web-design-agent: added social proof count items (parity with DE marquee) -->
 <!-- CRO 2026-06-28 web-design-agent: updated stale counts — 150+→160+ (163 blog articles live), 105+→170+ (170 glossary term IDs in glossary.html verified). Consistency with hero trust strip (160+). EN-CTR trust fix. -->
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track">
-    <span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Energy</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Dividend Coverage</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Hard Assets</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>170+ Glossary Terms</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Cashflow First</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Energy</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Dividend Coverage</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Hard Assets</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>170+ Glossary Terms</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Cashflow First</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
-    <span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
-  </div>
+<div aria-hidden="true" class="marquee">
+<div class="marquee-track">
+<span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Energy</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Dividend Coverage</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Hard Assets</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>170+ Glossary Terms</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Cashflow First</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Energy</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Dividend Coverage</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Hard Assets</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>170+ Glossary Terms</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Cashflow First</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>220+ research articles</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>8 Free Calculators</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Real Portfolio</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Shipping</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Midstream</span>
+<span class="marquee-item"><span class="marquee-dot">✦</span>Mining</span>
 </div>
-
+</div>
 <!-- ═══ REAL INVESTOR — Experience/Trust band (E-E-A-T) ═══
      2026-06-19 web-design-agent: makes the human investor unmistakable above-the-fold-near.
      Real %-only track record from output/seo/adsense-en-portfolio.json (Parqet TR+Scalable, as_of 2026-06-18).
@@ -753,68 +726,67 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
 @media (max-width:920px){.realinv-grid{grid-template-columns:1fr;gap:40px}.realinv-video{order:-1}}
 @media (max-width:480px){.realinv-stats{grid-template-columns:1fr;}.realinv-photo{width:64px;height:64px}}
 </style>
-<section class="realinv" id="real-investor" aria-labelledby="realinv-h">
-  <div class="wrap">
-    <div class="realinv-grid reveal">
-      <div>
-        <span class="eyebrow" style="margin-bottom:22px">Real investor · Skin in the game</span>
-        <div class="realinv-id" style="margin-top:18px">
-          <picture>
-            <source srcset="assets/marco-bozem.webp" type="image/webp">
-            <img class="realinv-photo" src="assets/marco-bozem.webp" alt="Marco Bozem — private investor and founder of MB Capital Strategies" width="84" height="84" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='marco.webp'">
-          </picture>
-          <div class="realinv-id-text">
-            <span class="realinv-name" id="realinv-h">Marco <em>Bozem</em></span>
-            <!-- CRO fix 2026-08-10 web-design-agent (UX/CRO-Audit): same "635+ YouTube subscribers"
+<section aria-labelledby="realinv-h" class="realinv" id="real-investor">
+<div class="wrap">
+<div class="realinv-grid reveal">
+<div>
+<span class="eyebrow" style="margin-bottom:22px">Real investor · Skin in the game</span>
+<div class="realinv-id" style="margin-top:18px">
+<picture>
+<source srcset="assets/marco-bozem.webp" type="image/webp"/>
+<img alt="Marco Bozem — private investor and founder of MB Capital Strategies" class="realinv-photo" decoding="async" height="84" loading="lazy" onerror="this.onerror=null;this.src='marco.webp'" src="assets/marco-bozem.webp" width="84"/>
+</picture>
+<div class="realinv-id-text">
+<span class="realinv-name" id="realinv-h">Marco <em>Bozem</em></span>
+<!-- CRO fix 2026-08-10 web-design-agent (UX/CRO-Audit): same "635+ YouTube subscribers"
                  overclaim as the hero-context-en badge above (real EN-channel count = 17, DE
                  channel's 635/666 got left on the EN-channel link after a July href swap) — this
                  one sits directly under Marco's name/photo as a personal credibility line, so the
                  mismatch was even more visible. Dropped the sub-count link; "Independent private
                  investor since 2022" stands alone and is independently true regardless of channel
                  size. -->
-            <span class="realinv-creds">Independent private investor since <b>2022</b></span>
-          </div>
-        </div>
-        <p class="realinv-lede">
+<span class="realinv-creds">Independent private investor since <b>2022</b></span>
+</div>
+</div>
+<p class="realinv-lede">
           I am a real person investing my own money in hard assets — shipping, mining, energy and pipelines.
-          Every analysis here is backed by positions I actually hold (<strong>CMB.Tech ~3.4%, TORM ~2.9%, Dorian LPG ~2.9%, FLEX&nbsp;LNG ~2.2%</strong> of the public portfolio).
+          Every analysis here is backed by positions I actually hold (<strong>CMB.Tech ~3.4%, TORM ~2.9%, Dorian LPG ~2.9%, FLEX LNG ~2.2%</strong> of the public portfolio).
           The numbers below come straight from my live Parqet tracking — Trade Republic + Scalable Capital, percentages only.
         </p>
-        <div class="realinv-stats" role="list" aria-label="Real portfolio track record">
-          <div class="realinv-stat" role="listitem">
-            <div class="rs-num">20.5<span>%</span></div>
-            <div class="rs-lab">XIRR p.a.<br>since 2022</div>
-          </div>
-          <div class="realinv-stat" role="listitem">
-            <div class="rs-num">6.93<span>%</span></div>
-            <div class="rs-lab">Yield on<br>cost (YOC)</div>
-          </div>
-          <div class="realinv-stat" role="listitem">
-            <div class="rs-num">~4,216<span>€</span></div>
-            <div class="rs-lab">net dividends<br>last 12 months</div>
-          </div>
-        </div>
-        <div class="realinv-ctas">
-          <a href="pages/portfolio.html" class="btn">See my real portfolio →</a>
-          <!-- CRO fix 2026-06-19 web-design-agent: was pointing to DE channel (@MBCapitalStrategiesGlobal) on EN site — now correctly links EN channel -->
-          <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" class="btn btn-ghost">YouTube channel ↗</a>
-        </div>
-      </div>
-
-      <div class="realinv-video">
-        <!-- CWV-Fix 2026-07-19 web-design-agent: eager YouTube playlist iframe replaced with
+<div aria-label="Real portfolio track record" class="realinv-stats" role="list">
+<div class="realinv-stat" role="listitem">
+<div class="rs-num">20.5<span>%</span></div>
+<div class="rs-lab">XIRR p.a.<br/>since 2022</div>
+</div>
+<div class="realinv-stat" role="listitem">
+<div class="rs-num">6.93<span>%</span></div>
+<div class="rs-lab">Yield on<br/>cost (YOC)</div>
+</div>
+<div class="realinv-stat" role="listitem">
+<div class="rs-num">~4,216<span>€</span></div>
+<div class="rs-lab">net dividends<br/>last 12 months</div>
+</div>
+</div>
+<div class="realinv-ctas">
+<a class="btn" href="pages/portfolio.html">See my real portfolio →</a>
+<!-- CRO fix 2026-06-19 web-design-agent: was pointing to DE channel (@MBCapitalStrategiesGlobal) on EN site — now correctly links EN channel -->
+<a class="btn btn-ghost" href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="noopener" target="_blank">YouTube channel ↗</a>
+</div>
+</div>
+<div class="realinv-video">
+<!-- CWV-Fix 2026-07-19 web-design-agent: eager YouTube playlist iframe replaced with
              click-to-load facade (same lite pattern already used 121x across EN blog posts).
              Was loading YouTube's full player JS unconditionally (loading="lazy" only defers
              by viewport, still fires on first scroll-into-view) and threw a console 404
              (youtube.com/img/meh7.png) on every homepage load — now a static thumbnail until
              the visitor actually clicks play. Same .rv-frame box/aspect-ratio, zero layout change. -->
-        <div class="rv-frame" id="rv-yt-facade" role="button" tabindex="0" style="cursor:pointer" aria-label="Play video: MB Capital Strategies portfolio updates playlist">
-          <img src="https://i.ytimg.com/vi/yFMawpGGO6g/hqdefault.jpg" alt="MB Capital Strategies — real portfolio updates by Marco Bozem" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
-          <div aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none">
-            <svg viewBox="0 0 24 24" style="width:28px;height:28px;fill:#fff"><path d="M8 5v14l11-7z"/></svg>
-          </div>
-        </div>
-        <script>
+<div aria-label="Play video: MB Capital Strategies portfolio updates playlist" class="rv-frame" id="rv-yt-facade" role="button" style="cursor:pointer" tabindex="0">
+<img alt="MB Capital Strategies — real portfolio updates by Marco Bozem" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/yFMawpGGO6g/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
+<div aria-hidden="true" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:72px;height:72px;background:rgba(0,0,0,.7);border-radius:50%;display:flex;align-items:center;justify-content:center;pointer-events:none">
+<svg style="width:28px;height:28px;fill:#fff" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+</div>
+<script>
         (function(){
           var f=document.getElementById('rv-yt-facade');
           if(!f)return;
@@ -835,248 +807,160 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
           f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();activate();}});
         })();
         </script>
-        <div class="rv-cap">
-          <span>▶ Portfolio updates &amp; weekly recaps</span>
-          <span style="opacity:.5">·</span>
-          <!-- CRO fix 2026-06-19 web-design-agent: channel handle corrected to EN channel -->
-          <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener">@MBCapitalStrategiesGlobal →</a><br><a href="/videos/">All videos &amp; Shorts on this site →</a>
-        </div>
-        <p class="realinv-disclaimer">
-          <b>This is not financial advice.</b> I am a private investor, not a financial advisor.
+<div class="rv-cap">
+<span>▶ Portfolio updates &amp; weekly recaps</span>
+<span style="opacity:.5">·</span>
+<!-- CRO fix 2026-06-19 web-design-agent: channel handle corrected to EN channel -->
+<a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="noopener" target="_blank">@MBCapitalStrategiesGlobal →</a><br/><a href="/videos/">All videos &amp; Shorts on this site →</a>
+</div>
+<p class="realinv-disclaimer">
+<b>This is not financial advice.</b> I am a private investor, not a financial advisor.
           Figures are real, percentage-based and from my own Parqet tracking (as of June 2026); past performance is no guarantee of future results.
         </p>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- PHILOSOPHY -->
 <section id="philosophy">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§01 · Philosophy</span>
-      <p style="margin-bottom:0.5em;"><a href="./pages/best-tanker.html">Top Tanker Stocks 2026 — our Best List</a></p>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§01 · Philosophy</span>
+<p style="margin-bottom:0.5em;"></p>
 <h2 class="display section-title">Cashflow over <em>speculation</em>.</h2>
-    </div>
-    <div class="philosophy-grid reveal">
-      <p class="lede">
+</div>
+<div class="philosophy-grid reveal">
+<p class="lede">
         The focus is on hard assets — energy, shipping, mining and midstream pipelines — where physical activity can generate distributable cash. The research examines how that cash is earned, what it costs to sustain the business and whether dividends remain covered through the cycle. A high yield alone is not evidence of safety or future returns.
       </p>
-      <div>
-        <p style="color:var(--fg-muted);font-size:15px;line-height:1.7">A <a href="pages/shipping.html" style="color:var(--accent)">tanker earns money</a> when it moves oil. A pipeline gets paid when gas flows through it. A mine generates revenue when copper leaves the ground. <strong style="color:var(--fg)">80 %</strong> of the portfolio sits in stable, cashflow-rich dividend payers — <strong style="color:var(--accent)">20 %</strong> stays in cash for counter-cyclical buys during weakness.</p>
-      </div>
-    </div>
-    <div class="pillars reveal">
-      <div class="pillar">
-        <div class="pillar-k">01 · Transparent</div>
-        <div class="pillar-t">Real portfolio, visible live</div>
-        <div class="pillar-d">Every position tracked via Parqet — allocation, dividend payments, even losing trades. No hypotheticals, only live holdings.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-k">02 · Independent</div>
-        <div class="pillar-t">No price forecasts</div>
-        <div class="pillar-d">No buy signals, no hype. Only clear <a href="pages/dividend-strategy.html" style="color:var(--accent)">dividend analyses</a>, cycle logic and honest verdicts — even the uncomfortable ones.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-k">03 · Cyclical</div>
-        <div class="pillar-t">Cycles over trends</div>
-        <div class="pillar-d">Hard assets follow multi-year super-cycles. This platform thinks in decades, not quarters.</div>
-      </div>
-      <div class="pillar">
-        <div class="pillar-k">04 · Free to read</div>
-        <div class="pillar-t">No paywall, no email wall</div>
-        <div class="pillar-d">Full research openly available. Funded through affiliate links — never investment advice.</div>
-      </div>
-    </div>
-  </div>
+<div>
+<p style="color:var(--fg-muted);font-size:15px;line-height:1.7">A tanker earns money when it moves oil. A pipeline gets paid when gas flows through it. A mine generates revenue when copper leaves the ground. <strong style="color:var(--fg)">80 %</strong> of the portfolio sits in stable, cashflow-rich dividend payers — <strong style="color:var(--accent)">20 %</strong> stays in cash for counter-cyclical buys during weakness.</p>
+</div>
+</div>
+<div class="pillars reveal">
+<div class="pillar">
+<div class="pillar-k">01 · Transparent</div>
+<div class="pillar-t">Real portfolio, visible live</div>
+<div class="pillar-d">Every position tracked via Parqet — allocation, dividend payments, even losing trades. No hypotheticals, only live holdings.</div>
+</div>
+<div class="pillar">
+<div class="pillar-k">02 · Independent</div>
+<div class="pillar-t">No price forecasts</div>
+<div class="pillar-d">No buy signals, no hype. Only clear dividend analyses, cycle logic and honest verdicts — even the uncomfortable ones.</div>
+</div>
+<div class="pillar">
+<div class="pillar-k">03 · Cyclical</div>
+<div class="pillar-t">Cycles over trends</div>
+<div class="pillar-d">Hard assets follow multi-year super-cycles. This platform thinks in decades, not quarters.</div>
+</div>
+<div class="pillar">
+<div class="pillar-k">04 · Free to read</div>
+<div class="pillar-t">No paywall, no email wall</div>
+<div class="pillar-d">Full research openly available. Funded through affiliate links — never investment advice.</div>
+</div>
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- ASSETS -->
 <section id="assets">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§02 · Hard Assets</span>
-      <h2 class="display section-title">Four sectors. <em>One principle.</em></h2>
-    </div>
-    <div class="assets-grid reveal">
-      <a href="pages/shipping.html" class="asset">
-        <div>
-          <div class="asset-sub">Shipping</div>
-          <div class="asset-name"><em>Tanker</em> &amp; Bulker</div>
-          <p class="asset-desc">Charter rates, fleet renewal, sanctions — a sector in the middle of a 2024–2028 super-cycle. CMB.Tech, TORM, Frontline, Scorpio.</p>
-        </div>
-        <svg viewBox="0 0 200 140" class="asset-viz" aria-hidden="true">
-          <g stroke="var(--accent)" stroke-width="1.5" fill="none">
-            <path d="M 10 80 Q 50 70 100 80 T 190 80" class="viz-wave"/>
-            <path d="M 10 95 Q 60 85 110 95 T 190 90" class="viz-wave" style="animation-delay:.4s"/>
-          </g>
-          <g class="viz-tanker" transform="translate(40,30)">
-            <rect x="0" y="40" width="120" height="16" fill="var(--accent)" rx="2"/>
-            <rect x="28" y="20" width="60" height="20" fill="var(--accent)" opacity=".55"/>
-            <rect x="42" y="10" width="18" height="12" fill="var(--accent)" opacity=".35"/>
-            <path d="M 0 56 L 10 62 L 110 62 L 120 56 Z" fill="var(--accent-deep)"/>
-          </g>
-        </svg>
-      </a>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§02 · Hard Assets</span>
+<h2 class="display section-title">Four sectors. <em>One principle.</em></h2>
+</div>
+<div class="assets-grid reveal">
 
-      <a href="pages/energy.html" class="asset">
-        <div>
-          <div class="asset-sub">Energy · Upstream</div>
-          <div class="asset-name"><em>Oil</em> &amp; Gas</div>
-          <p class="asset-desc">Fixed+Variable dividends, $40 WTI breakeven champions and FCF generators. Devon, DNO, Chevron, ConocoPhillips.</p>
-        </div>
-        <svg viewBox="0 0 200 140" class="asset-viz" aria-hidden="true">
-          <g stroke="var(--accent)" stroke-width="1.5" fill="none">
-            <line x1="20" y1="120" x2="180" y2="120"/>
-            <circle cx="60" cy="110" r="3.5" fill="var(--accent)"/>
-            <line x1="60" y1="110" x2="120" y2="70"/>
-            <g class="viz-arm" style="transform-origin:120px 70px">
-              <line x1="120" y1="70" x2="155" y2="80"/>
-              <rect x="148" y="74" width="12" height="12" fill="var(--accent)" opacity=".7"/>
-            </g>
-            <rect x="50" y="112" width="20" height="8" fill="var(--accent)" opacity=".4"/>
-          </g>
-          <circle cx="154" cy="90" r="3" fill="var(--accent)" class="viz-drop"/>
-        </svg>
-      </a>
 
-      <a href="pages/mining.html" class="asset">
-        <div>
-          <div class="asset-sub">Mining · Precious Metals</div>
-          <div class="asset-name"><em>Gold</em>, Silver, Copper</div>
-          <p class="asset-desc">All-In Sustaining Costs, reserve life, dividend stability. Barrick, AngloGold, BHP, Rio Tinto, Fresnillo.</p>
-        </div>
-        <svg viewBox="0 0 200 140" class="asset-viz" aria-hidden="true">
-          <defs>
-            <linearGradient id="goldG" x1="0" x2="1">
-              <stop offset="0" stop-color="#8a6a14"/>
-              <stop offset=".5" stop-color="#d4af37"/>
-              <stop offset="1" stop-color="#b8941e"/>
-            </linearGradient>
-          </defs>
-          <rect x="40" y="96" width="120" height="18" rx="2" fill="url(#goldG)"/>
-          <rect x="50" y="76" width="100" height="18" rx="2" fill="url(#goldG)" class="viz-shift-1"/>
-          <rect x="60" y="56" width="80" height="18" rx="2" fill="url(#goldG)" class="viz-shift-2"/>
-          <rect x="72" y="36" width="56" height="18" rx="2" fill="url(#goldG)" class="viz-shift-3"/>
-        </svg>
-      </a>
 
-      <a href="pages/pipelines.html" class="asset">
-        <div>
-          <div class="asset-sub">Midstream · Pipelines</div>
-          <div class="asset-name"><em>Pipelines</em> &amp; LNG</div>
-          <p class="asset-desc">Toll-road business models. Kinder Morgan, Enbridge, Pembina, ONEOK. Stable dividends for decades.</p>
-        </div>
-        <svg viewBox="0 0 200 140" class="asset-viz" aria-hidden="true">
-          <g stroke="var(--accent)" stroke-width="2" fill="none">
-            <path d="M 10 40 L 60 40 L 70 60 L 130 60 L 140 80 L 190 80" class="viz-flow"/>
-            <path d="M 10 100 L 80 100 L 90 120 L 190 120" stroke-width="1.5" opacity=".45"/>
-            <circle cx="60" cy="40" r="3" fill="var(--accent)"/>
-            <circle cx="130" cy="60" r="3" fill="var(--accent)"/>
-            <circle cx="190" cy="80" r="3" fill="var(--accent)"/>
-          </g>
-          <g font-family="IBM Plex Mono, monospace" font-size="9" fill="var(--accent)" opacity=".6">
-            <text x="10" y="32">WELL</text>
-            <text x="170" y="74">HUB</text>
-          </g>
-        </svg>
-      </a>
-    </div>
-  </div>
+
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- FREE TOOLS -->
-<section id="tools" aria-labelledby="tools-h">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§03 · Calculators</span>
-      <h2 class="display section-title" id="tools-h">Eight calculators. <em>No login.</em></h2>
-    </div>
-    <p style="color:var(--fg-muted);max-width:60ch;margin:0 0 48px;font-family:var(--serif);font-size:18px;line-height:1.5">Free tools for cashflow investors. Yield-on-Cost, Snowball projection, Shipping cash flow and more. No signup, no tracking, runs entirely in your browser.</p>
-    <div class="tools-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
-      <a class="tool-card" href="tools/dividend-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast),transform var(--t-fast);text-decoration:none">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">01 · Basic</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Calculator</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Gross dividend, withholding tax, net cashflow per position.</p>
-      </a>
-      <a class="tool-card" href="tools/yield-on-cost.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">02 · YOC</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Yield on Cost Calculator</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">YOC at purchase price + 10-year projection with cashflow table.</p>
-      </a>
-      <a class="tool-card" href="tools/dividend-snowball.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">03 · Snowball</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Snowball</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Simulate reinvestment + growth — see the compounding effect over 30 years.</p>
-      </a>
-      <a class="tool-card" href="tools/drip-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">04 · DRIP</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">DRIP Calculator</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Dividend reinvest in share-mode, with price path simulation.</p>
-      </a>
-      <a class="tool-card" href="tools/dividend-growth.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">05 · Growth</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Growth</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">DGR projection: conservative, realistic and optimistic in one chart.</p>
-      </a>
-      <a class="tool-card" href="tools/financial-freedom.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">06 · FIRE</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Financial Freedom</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">When do dividends cover your living expenses? Get the exact answer.</p>
-      </a>
-      <a class="tool-card" href="tools/shipping-cashflow.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">07 · Shipping</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Shipping Cash Flow</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Model TCE rates, daily rates and per-vessel cash flow for tanker investors.</p>
-      </a>
-      <a class="tool-card" href="tools/snowball-yoc-pro.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast);position:relative">
-        <span style="position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--bg);background:var(--accent);padding:2px 8px;border-radius:2px">PRO</span>
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">08 · YOC PRO</div>
-        <h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Snowball YOC PRO</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Multi-stock portfolio with taxes, growth and FX in a single model.</p>
-      </a>
-    </div>
-    <p style="margin-top:32px;color:var(--fg-dim);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase">→ All calculators: <a href="pages/calculators.html" style="color:var(--accent)">browse the full toolbox</a></p>
-  </div>
+<section aria-labelledby="tools-h" id="tools">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§03 · Calculators</span>
+<h2 class="display section-title" id="tools-h">Eight calculators. <em>No login.</em></h2>
+</div>
+<p style="color:var(--fg-muted);max-width:60ch;margin:0 0 48px;font-family:var(--serif);font-size:18px;line-height:1.5">Free tools for cashflow investors. Yield-on-Cost, Snowball projection, Shipping cash flow and more. No signup, no tracking, runs entirely in your browser.</p>
+<div class="tools-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+<a class="tool-card" href="tools/dividend-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast),transform var(--t-fast);text-decoration:none">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">01 · Basic</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Calculator</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Gross dividend, withholding tax, net cashflow per position.</p>
+</a>
+<a class="tool-card" href="tools/yield-on-cost.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">02 · YOC</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Yield on Cost Calculator</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">YOC at purchase price + 10-year projection with cashflow table.</p>
+</a>
+<a class="tool-card" href="tools/dividend-snowball.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">03 · Snowball</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Snowball</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Simulate reinvestment + growth — see the compounding effect over 30 years.</p>
+</a>
+<a class="tool-card" href="tools/drip-calculator.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">04 · DRIP</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">DRIP Calculator</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Dividend reinvest in share-mode, with price path simulation.</p>
+</a>
+<a class="tool-card" href="tools/dividend-growth.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">05 · Growth</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Growth</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">DGR projection: conservative, realistic and optimistic in one chart.</p>
+</a>
+<a class="tool-card" href="tools/financial-freedom.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">06 · FIRE</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Financial Freedom</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">When do dividends cover your living expenses? Get the exact answer.</p>
+</a>
+<a class="tool-card" href="tools/shipping-cashflow.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">07 · Shipping</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Shipping Cash Flow</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Model TCE rates, daily rates and per-vessel cash flow for tanker investors.</p>
+</a>
+<a class="tool-card" href="tools/snowball-yoc-pro.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast);position:relative">
+<span style="position:absolute;top:14px;right:14px;font-family:var(--mono);font-size:9px;letter-spacing:.18em;color:var(--bg);background:var(--accent);padding:2px 8px;border-radius:2px">PRO</span>
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">08 · YOC PRO</div>
+<h3 style="font-family:var(--serif);font-size:22px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Snowball YOC PRO</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Multi-stock portfolio with taxes, growth and FX in a single model.</p>
+</a>
+</div>
+<p style="margin-top:32px;color:var(--fg-dim);font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase">→ All calculators: <a href="pages/calculators.html" style="color:var(--accent)">browse the full toolbox</a></p>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- AUDIENCE -->
 <section id="audience">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§04 · Built for</span>
-      <h2 class="display section-title">Not for everyone. <em>For you?</em></h2>
-    </div>
-    <div class="audience-grid reveal">
-      <div class="aud">
-        <div class="aud-n">01</div>
-        <div class="aud-t">Dividend investor</div>
-        <p class="aud-d">You build cashflow for the long term — not speculate. Dividends are your measure of quality, not a side effect.</p>
-      </div>
-      <div class="aud">
-        <div class="aud-n">02</div>
-        <div class="aud-t">Hard-asset believer</div>
-        <p class="aud-d">You trust real value: oil in the ground, copper in the mine, gas in the pipeline. Valuation runs on reserves and FCF, not hype.</p>
-      </div>
-      <div class="aud">
-        <div class="aud-n">03</div>
-        <div class="aud-t">Cycle thinker</div>
-        <p class="aud-d">You know commodity cycles run 10–15 years. Capex today decides supply five years out. Patience beats excitement.</p>
-      </div>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§04 · Built for</span>
+<h2 class="display section-title">Not for everyone. <em>For you?</em></h2>
+</div>
+<div class="audience-grid reveal">
+<div class="aud">
+<div class="aud-n">01</div>
+<div class="aud-t">Dividend investor</div>
+<p class="aud-d">You build cashflow for the long term — not speculate. Dividends are your measure of quality, not a side effect.</p>
+</div>
+<div class="aud">
+<div class="aud-n">02</div>
+<div class="aud-t">Hard-asset believer</div>
+<p class="aud-d">You trust real value: oil in the ground, copper in the mine, gas in the pipeline. Valuation runs on reserves and FCF, not hype.</p>
+</div>
+<div class="aud">
+<div class="aud-n">03</div>
+<div class="aud-t">Cycle thinker</div>
+<p class="aud-d">You know commodity cycles run 10–15 years. Capex today decides supply five years out. Patience beats excitement.</p>
+</div>
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- US-ORIGINAL RESEARCH — seo-agent 2026-07-29 (AdSense replicated-content remediation).
      These 4 pages are the site's only substantial EN-original content (not a DE→EN translation
      mirror, no hreflang="de", never give them one — see knowledge/seo-playbook.md Teil C6 +
@@ -1084,78 +968,77 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
      just buried in footer/related-links) gives an AdSense reviewer — and US search intent —
      something to land on besides the 273 DE-mirrored blog/glossary pages. Reuses the existing
      .tool-card pattern (no new CSS). -->
-<section id="us-original-research" aria-labelledby="us-research-h">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§04b · Original to this site</span>
-      <h2 class="display section-title" id="us-research-h">Written for <em>international investors.</em></h2>
-    </div>
-    <p style="color:var(--fg-muted);max-width:60ch;margin:0 0 32px;font-family:var(--serif);font-size:18px;line-height:1.5">Twelve guides and analyses written for this site — none of them adapted from the German site. My real 2026 dividend and tax numbers, the payout formulas behind shipping dividends, the dividend traps that cost me money, and practical guides for investors buying outside the issuer's home market. Withholding tax by domicile, Oslo Børs and Toronto access, what an ADR quietly costs you, what franking credits are actually worth to a non-Australian, how the freight cycle drives shipping payouts, and why Marshall Islands/Bermuda domiciles change the shipping-dividend tax math entirely.</p>
-    <div class="tools-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
-      <a class="tool-card" href="pages/foreign-dividends-what-a-german-investor-keeps.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Real numbers</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">What I Actually Keep From Foreign Dividends</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">My 2026 broker data: €6,083 gross, €1,586 tax, by company and domicile — and why Belgium cost me 42%.</p>
-      </a>
-      <a class="tool-card" href="pages/variable-dividend-policies-shipping.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Shipping</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How Shipping Payout Formulas Work</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Hafnia's leverage ladder, TORM's 58–74% payouts, and how to estimate the next dividend.</p>
-      </a>
-      <a class="tool-card" href="pages/dividend-traps-my-real-losses.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Lessons</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Traps I Didn't Avoid</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Arbor Realty −83%, Medical Properties Trust −51% in my portfolio — and six warning signs.</p>
-      </a>
-      <a class="tool-card" href="pages/us-investors-buy-hard-asset-dividend-stocks.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">US Guide</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How US Investors Buy Hard Asset Dividend Stocks</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Brokerage access, ticker mapping (ADRs vs. foreign ordinaries), and account setup for US-based investors.</p>
-      </a>
-      <a class="tool-card" href="pages/foreign-dividend-withholding-tax-us-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Foreign Dividend Withholding Tax</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">What US investors actually pay on Norwegian, UK and EU dividend stocks — treaty rates, reclaim process.</p>
-      </a>
-      <a class="tool-card" href="pages/buy-norwegian-oil-gas-dividend-stocks.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Market Access</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Buy Norwegian Oil &amp; Gas Dividend Stocks</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Oslo Børs access for US brokers, ADR alternatives, and why Norwegian energy dividends differ from US majors.</p>
-      </a>
-      <a class="tool-card" href="pages/shipping-dividends-freight-cycle.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Cycle Mechanics</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Shipping Dividends &amp; the Freight Cycle</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Why tanker and bulker dividend yields swing 3–4x within a single freight cycle — and how to time entries.</p>
-      </a>
-      <a class="tool-card" href="pages/canada-pipeline-dividends-how-to-buy.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Market Access</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Canada Pipeline Dividends: How to Actually Buy Them</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Enbridge, TC Energy and Pembina all trade on the NYSE — but your tax bill depends on which line you buy on.</p>
-      </a>
-      <a class="tool-card" href="pages/australian-mining-dividends-franking-credits.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">What Franking Credits Are Worth to You</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">BHP, Rio and Fortescue yield well — but the part Australians prize is worth nothing to a foreign holder.</p>
-      </a>
-      <a class="tool-card" href="pages/adr-vs-local-listing-international-dividend-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Structure</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">ADR vs. Local Listing: What You Give Up</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Custody fees, FX spreads and indirect voting — the costs an ADR ticker doesn't put on the screen.</p>
-      </a>
-      <a class="tool-card" href="pages/uk-ireland-dividend-stocks-us-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">The UK and Irish Withholding-Tax Edge</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">The UK charges 0% on dividends — a permanent edge over most of Europe. Ireland's 25% has an exemption worth filing for.</p>
-      </a>
-      <a class="tool-card" href="pages/international-investors-taxed-shipping-dividends.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
-        <div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
-        <h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How Shipping Dividends Are Actually Taxed</h3>
-        <p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Marshall Islands and Bermuda withhold 0% — the real question is PFIC risk, which almost nobody checks.</p>
-      </a>
-    </div>
-  </div>
+<section aria-labelledby="us-research-h" id="us-original-research">
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§04b · Original to this site</span>
+<h2 class="display section-title" id="us-research-h">Written for <em>international investors.</em></h2>
+</div>
+<p style="color:var(--fg-muted);max-width:60ch;margin:0 0 32px;font-family:var(--serif);font-size:18px;line-height:1.5">Twelve guides and analyses written for this site — none of them adapted from the German site. My real 2026 dividend and tax numbers, the payout formulas behind shipping dividends, the dividend traps that cost me money, and practical guides for investors buying outside the issuer's home market. Withholding tax by domicile, Oslo Børs and Toronto access, what an ADR quietly costs you, what franking credits are actually worth to a non-Australian, how the freight cycle drives shipping payouts, and why Marshall Islands/Bermuda domiciles change the shipping-dividend tax math entirely.</p>
+<div class="tools-grid reveal" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px">
+<a class="tool-card" href="pages/foreign-dividends-what-a-german-investor-keeps.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Real numbers</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">What I Actually Keep From Foreign Dividends</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">My 2026 broker data: €6,083 gross, €1,586 tax, by company and domicile — and why Belgium cost me 42%.</p>
+</a>
+<a class="tool-card" href="pages/variable-dividend-policies-shipping.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Shipping</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How Shipping Payout Formulas Work</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Hafnia's leverage ladder, TORM's 58–74% payouts, and how to estimate the next dividend.</p>
+</a>
+<a class="tool-card" href="pages/dividend-traps-my-real-losses.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">New · Lessons</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Dividend Traps I Didn't Avoid</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Arbor Realty −83%, Medical Properties Trust −51% in my portfolio — and six warning signs.</p>
+</a>
+<a class="tool-card" href="pages/us-investors-buy-hard-asset-dividend-stocks.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">US Guide</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How US Investors Buy Hard Asset Dividend Stocks</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Brokerage access, ticker mapping (ADRs vs. foreign ordinaries), and account setup for US-based investors.</p>
+</a>
+<a class="tool-card" href="pages/foreign-dividend-withholding-tax-us-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Foreign Dividend Withholding Tax</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">What US investors actually pay on Norwegian, UK and EU dividend stocks — treaty rates, reclaim process.</p>
+</a>
+<a class="tool-card" href="pages/buy-norwegian-oil-gas-dividend-stocks.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Market Access</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Buy Norwegian Oil &amp; Gas Dividend Stocks</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Oslo Børs access for US brokers, ADR alternatives, and why Norwegian energy dividends differ from US majors.</p>
+</a>
+<a class="tool-card" href="pages/shipping-dividends-freight-cycle.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Cycle Mechanics</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Shipping Dividends &amp; the Freight Cycle</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Why tanker and bulker dividend yields swing 3–4x within a single freight cycle — and how to time entries.</p>
+</a>
+<a class="tool-card" href="pages/canada-pipeline-dividends-how-to-buy.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Market Access</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">Canada Pipeline Dividends: How to Actually Buy Them</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Enbridge, TC Energy and Pembina all trade on the NYSE — but your tax bill depends on which line you buy on.</p>
+</a>
+<a class="tool-card" href="pages/australian-mining-dividends-franking-credits.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">What Franking Credits Are Worth to You</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">BHP, Rio and Fortescue yield well — but the part Australians prize is worth nothing to a foreign holder.</p>
+</a>
+<a class="tool-card" href="pages/adr-vs-local-listing-international-dividend-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Structure</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">ADR vs. Local Listing: What You Give Up</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Custody fees, FX spreads and indirect voting — the costs an ADR ticker doesn't put on the screen.</p>
+</a>
+<a class="tool-card" href="pages/uk-ireland-dividend-stocks-us-investors.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">The UK and Irish Withholding-Tax Edge</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">The UK charges 0% on dividends — a permanent edge over most of Europe. Ireland's 25% has an exemption worth filing for.</p>
+</a>
+<a class="tool-card" href="pages/international-investors-taxed-shipping-dividends.html" style="display:block;padding:22px;border:1px solid var(--border);background:var(--surface);transition:border-color var(--t-fast)">
+<div style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--accent);text-transform:uppercase">Tax Guide</div>
+<h3 style="font-family:var(--serif);font-size:20px;font-weight:500;margin:8px 0 6px;color:var(--fg)">How Shipping Dividends Are Actually Taxed</h3>
+<p style="color:var(--fg-muted);font-size:14px;line-height:1.5;margin:0">Marshall Islands and Bermuda withhold 0% — the real question is PFIC risk, which almost nobody checks.</p>
+</a>
+</div>
+</div>
 </section>
-
 <!-- AdSense slot 3778191657 held 2026-06-19. FACT-CORRECTION 2026-07-10 (Marco): the earlier note
      "EN approval confirmed / re-approved 2026-06-24" was FALSE. AdSense console shows
      "Minderwertige Inhalte" (low-value content), last review 2026-07-07 — EN is NOT approved and
@@ -1164,169 +1047,151 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
      lives in <head> (Google verification), independent of these slots. -->
 <!-- <div style="text-align:center;margin:24px auto;">
 </div> -->
-
 <!-- INSIGHTS -->
 <section id="insights">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§05 · Latest</span>
-      <h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
-      <!-- AEO/Freshness 2026-06-21 web-design-agent: freshness date updated 20→21 June. -->
-      <p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-11-22">November 22, 2026</time></p>
-    </div>
-    <div class="insights-list reveal">
-      <!-- webseite-aktuell-modul.py 2026-11-22: datengetrieben aus datePublished, nicht handpflegen. -->
-      <a class="insight" href="/blog/bonds-vs-p2p-lending-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
-        <span class="insight-date">2026-11-20</span>
-        <span class="insight-tag">Analyse · Hard Assets</span>
-        <span class="insight-title">Bonds vs P2P Lending 2026: Which Fits a Hard-Asset Income Portfolio?</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/dividend-snowball-explained.html">
-        <span class="insight-date">2026-11-20</span>
-        <span class="insight-tag">Analyse · Hard Assets</span>
-        <span class="insight-title">The Dividend Snowball Explained: How Reinvestment Compounds Your Income</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/hard-assets-investing-guide.html">
-        <span class="insight-date">2026-11-20</span>
-        <span class="insight-tag">Shipping · Analyse</span>
-        <span class="insight-title">Hard Assets Investing 2026: The Complete Guide to Shipping, Mining and Energy</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/weekly-recap-kw44-2026-ai-correction-tankers-oil.html">
-        <span class="insight-date">2026-11-02</span>
-        <span class="insight-tag">Shipping · Analyse</span>
-        <span class="insight-title">Weekly Recap KW44: AI Correction, Burning Tankers, Oil Falls</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/fomc-hard-assets-dividend-outlook-2026.html">
-        <span class="insight-date">2026-10-28</span>
-        <span class="insight-tag">Analyse · Hard Assets</span>
-        <span class="insight-title">FOMC October 2026 — Hard Asset Dividend Outlook After Warsh&#x27;s Rate Decision</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/weekly-recap-kw43-2026-brent-113-gold.html">
-        <span class="insight-date">2026-10-26</span>
-        <span class="insight-tag">Mining · Analyse</span>
-        <span class="insight-title">Weekly Recap KW43: Brent at $113 — Oilfield Attack, Gold Dips</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-      <a class="insight" href="/blog/hard-asset-market-update-kw43-october-2026.html">
-        <span class="insight-date">2026-10-23</span>
-        <span class="insight-tag">Shipping · Analyse</span>
-        <span class="insight-title">Hard Asset Market Update KW43 — Oil Correction, Shipping Rates Hold, Dividend Resilience</span>
-        <span class="insight-arrow">&rarr;</span>
-      </a>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§05 · Latest</span>
+<h2 class="display section-title">Research &amp; <em>analysis.</em></h2>
+<!-- AEO/Freshness 2026-06-21 web-design-agent: freshness date updated 20→21 June. -->
+<p style="font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--fg-dim,#6b7a99);margin:6px 0 0;text-transform:uppercase;">Updated: <time datetime="2026-11-22">November 22, 2026</time></p>
+</div>
+<div class="insights-list reveal">
+<!-- webseite-aktuell-modul.py 2026-11-22: datengetrieben aus datePublished, nicht handpflegen. -->
+<a class="insight" href="/blog/bonds-vs-p2p-lending-2026.html" style="border-left:3px solid var(--accent);padding-left:20px;background:rgba(212,175,55,0.04);">
+<span class="insight-date">2026-11-20</span>
+<span class="insight-tag">Analyse · Hard Assets</span>
+<span class="insight-title">Bonds vs P2P Lending 2026: Which Fits a Hard-Asset Income Portfolio?</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/dividend-snowball-explained.html">
+<span class="insight-date">2026-11-20</span>
+<span class="insight-tag">Analyse · Hard Assets</span>
+<span class="insight-title">The Dividend Snowball Explained: How Reinvestment Compounds Your Income</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/hard-assets-investing-guide.html">
+<span class="insight-date">2026-11-20</span>
+<span class="insight-tag">Shipping · Analyse</span>
+<span class="insight-title">Hard Assets Investing 2026: The Complete Guide to Shipping, Mining and Energy</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/weekly-recap-kw44-2026-ai-correction-tankers-oil.html">
+<span class="insight-date">2026-11-02</span>
+<span class="insight-tag">Shipping · Analyse</span>
+<span class="insight-title">Weekly Recap KW44: AI Correction, Burning Tankers, Oil Falls</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/fomc-hard-assets-dividend-outlook-2026.html">
+<span class="insight-date">2026-10-28</span>
+<span class="insight-tag">Analyse · Hard Assets</span>
+<span class="insight-title">FOMC October 2026 — Hard Asset Dividend Outlook After Warsh's Rate Decision</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/weekly-recap-kw43-2026-brent-113-gold.html">
+<span class="insight-date">2026-10-26</span>
+<span class="insight-tag">Mining · Analyse</span>
+<span class="insight-title">Weekly Recap KW43: Brent at $113 — Oilfield Attack, Gold Dips</span>
+<span class="insight-arrow">→</span>
+</a>
+<a class="insight" href="/blog/hard-asset-market-update-kw43-october-2026.html">
+<span class="insight-date">2026-10-23</span>
+<span class="insight-tag">Shipping · Analyse</span>
+<span class="insight-title">Hard Asset Market Update KW43 — Oil Correction, Shipping Rates Hold, Dividend Resilience</span>
+<span class="insight-arrow">→</span>
+</a>
+</div>
+</div>
 </section>
-
 <div class="divider"></div>
-
 <!-- AdSense slot 1212067635 held 2026-06-19. Same corrected status as slot 3778191657 above
      (Marco 2026-07-10): EN NOT approved — "Minderwertige Inhalte", last review 2026-07-07.
      Re-enable only after review passes + monetization-agent Tier-A decision. -->
 <!-- <div style="text-align:center;margin:24px auto;">
 </div> -->
-
 <!-- E-E-A-T Author Section: homepage trust signal for AdSense re-approval + new visitors (2026-06-08) -->
-<section id="about-analyst" aria-labelledby="analyst-heading" style="padding:60px 0;">
-  <div class="wrap">
-    <div style="display:flex;align-items:flex-start;gap:32px;background:rgba(15,17,26,0.85);border:1px solid rgba(212,175,55,0.2);border-radius:16px;padding:32px 36px;flex-wrap:wrap;">
-      <picture style="flex-shrink:0;">
-        <source srcset="assets/marco-bozem.webp" type="image/webp">
-        <img src="assets/marco-bozem.webp" alt="Marco Bozem — Founder, MB Capital Strategies" width="96" height="96"
-             style="border-radius:50%;border:2px solid #D4AF37;object-fit:cover;display:block;" loading="lazy"
-             onerror="this.onerror=null;this.src='marco.webp'">
-      </picture>
-      <div style="flex:1;min-width:220px;">
-        <p style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;">§08 · About the Analyst</p>
-        <h2 id="analyst-heading" style="font-size:clamp(1.4rem,2.5vw,1.9rem);font-family:var(--serif);font-weight:400;color:var(--fg);margin:0 0 14px;line-height:1.2;">Marco Bozem — <em style="color:var(--accent);">Hard-Asset Investor</em></h2>
-        <p style="margin:0 0 12px;font-size:0.95rem;color:var(--fg-sec);line-height:1.6;">Founder of MB Capital Strategies. I have been investing my own capital since 2022, with a dedicated focus on hard-asset dividend strategies. My portfolio concentrates on shipping stocks, mining, pipelines and energy — companies that pay real cashflow, not just promise it.</p>
-        <p style="margin:0 0 20px;font-size:0.9rem;color:var(--fg-muted);line-height:1.55;">All research on this platform is based on my own due diligence — public financials, SEC filings, company investor relations materials. I hold real positions in most analysed companies (CMB.Tech, TORM, FLEX LNG, Thungela, Dorian LPG and others). Skin in the game, not just commentary.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
-          <a href="pages/about.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid #D4AF37;color:#D4AF37;border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;" onmouseover="this.style.background='#D4AF37';this.style.color='#080810'" onmouseout="this.style.background='transparent';this.style.color='#D4AF37'">Full Profile ↗</a>
-          <a href="pages/portfolio.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid rgba(212,175,55,0.35);color:var(--fg-muted);border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;" onmouseover="this.style.borderColor='#D4AF37';this.style.color='#D4AF37'" onmouseout="this.style.borderColor='rgba(212,175,55,0.35)';this.style.color='var(--fg-muted)'">Live Portfolio →</a>
-          <a href="https://www.linkedin.com/in/marco-bozem-182173295" rel="author noopener" target="_blank" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid rgba(212,175,55,0.35);color:var(--fg-muted);border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;" onmouseover="this.style.borderColor='#D4AF37';this.style.color='#D4AF37'" onmouseout="this.style.borderColor='rgba(212,175,55,0.35)';this.style.color='var(--fg-muted)'">LinkedIn →</a>
-        </div>
-      </div>
-    </div>
-  </div>
+<section aria-labelledby="analyst-heading" id="about-analyst" style="padding:60px 0;">
+<div class="wrap">
+<div style="display:flex;align-items:flex-start;gap:32px;background:rgba(15,17,26,0.85);border:1px solid rgba(212,175,55,0.2);border-radius:16px;padding:32px 36px;flex-wrap:wrap;">
+<picture style="flex-shrink:0;">
+<source srcset="assets/marco-bozem.webp" type="image/webp"/>
+<img alt="Marco Bozem — Founder, MB Capital Strategies" height="96" loading="lazy" onerror="this.onerror=null;this.src='marco.webp'" src="assets/marco-bozem.webp" style="border-radius:50%;border:2px solid #D4AF37;object-fit:cover;display:block;" width="96"/>
+</picture>
+<div style="flex:1;min-width:220px;">
+<p style="font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 8px;">§08 · About the Analyst</p>
+<h2 id="analyst-heading" style="font-size:clamp(1.4rem,2.5vw,1.9rem);font-family:var(--serif);font-weight:400;color:var(--fg);margin:0 0 14px;line-height:1.2;">Marco Bozem — <em style="color:var(--accent);">Hard-Asset Investor</em></h2>
+<p style="margin:0 0 12px;font-size:0.95rem;color:var(--fg-sec);line-height:1.6;">Founder of MB Capital Strategies. I have been investing my own capital since 2022, with a dedicated focus on hard-asset dividend strategies. My portfolio concentrates on shipping stocks, mining, pipelines and energy — companies that pay real cashflow, not just promise it.</p>
+<p style="margin:0 0 20px;font-size:0.9rem;color:var(--fg-muted);line-height:1.55;">All research on this platform is based on my own due diligence — public financials, SEC filings, company investor relations materials. I hold real positions in most analysed companies (CMB.Tech, TORM, FLEX LNG, Thungela, Dorian LPG and others). Skin in the game, not just commentary.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;">
+<a href="pages/about.html" onmouseout="this.style.background='transparent';this.style.color='#D4AF37'" onmouseover="this.style.background='#D4AF37';this.style.color='#080810'" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid #D4AF37;color:#D4AF37;border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .2s,color .2s;">Full Profile ↗</a>
+<a href="pages/portfolio.html" onmouseout="this.style.borderColor='rgba(212,175,55,0.35)';this.style.color='var(--fg-muted)'" onmouseover="this.style.borderColor='#D4AF37';this.style.color='#D4AF37'" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid rgba(212,175,55,0.35);color:var(--fg-muted);border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;">Live Portfolio →</a>
+<a href="https://www.linkedin.com/in/marco-bozem-182173295" onmouseout="this.style.borderColor='rgba(212,175,55,0.35)';this.style.color='var(--fg-muted)'" onmouseover="this.style.borderColor='#D4AF37';this.style.color='#D4AF37'" rel="author noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:1px solid rgba(212,175,55,0.35);color:var(--fg-muted);border-radius:4px;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;" target="_blank">LinkedIn →</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- FAQ -->
 <section id="faq">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <span class="eyebrow">§07 · FAQ</span>
-      <h2 class="display section-title">Frequently <em>asked.</em></h2>
-    </div>
-    <div class="faq-wrap reveal">
-      <details class="faq-item"><summary>What are hard assets and why can they pay dividends?</summary><div class="faq-a">Hard assets are physical businesses such as ships, pipelines, mines, oil wells and infrastructure. Their operations can generate cash: a tanker earns freight rates, a pipeline collects tariffs and a mine sells metals. Dividends depend on cash flow after operating and capital costs, debt and management policy — not simply on owning a physical asset. Yields and payouts can change substantially.</div></details>
-      <details class="faq-item"><summary>What is your investment philosophy?</summary><div class="faq-a">80/20: 80% in stable high-dividend hard-asset stocks — pipelines, mining royalties, shipping, infrastructure. 20% in cash/ultrashort bonds for tactical deployment. Focus is always on cashflow, never price speculation.</div></details>
-      <details class="faq-item"><summary>How can I see your portfolio?</summary><div class="faq-a">The full portfolio is live via Parqet — both <a href="pages/portfolio.html">Scalable Capital and Trade Republic</a> positions visible with every holding, every dividend payment, every allocation change.</div></details>
-      <details class="faq-item"><summary>Which free tools are available?</summary><div class="faq-a">Eight <a href="pages/calculators.html">free calculators</a>, no registration: Shipping Cashflow, Dividend Calculator, Yield-on-Cost, Dividend Growth, DRIP Reinvestment, Financial Freedom, Dividend Snowball PRO, Snowball YOC PRO.</div></details>
-    </div>
-  </div>
+<div class="wrap">
+<div class="section-head reveal">
+<span class="eyebrow">§07 · FAQ</span>
+<h2 class="display section-title">Frequently <em>asked.</em></h2>
+</div>
+<div class="faq-wrap reveal">
+<details class="faq-item"><summary>What are hard assets and why can they pay dividends?</summary><div class="faq-a">Hard assets are physical businesses such as ships, pipelines, mines, oil wells and infrastructure. Their operations can generate cash: a tanker earns freight rates, a pipeline collects tariffs and a mine sells metals. Dividends depend on cash flow after operating and capital costs, debt and management policy — not simply on owning a physical asset. Yields and payouts can change substantially.</div></details>
+<details class="faq-item"><summary>What is your investment philosophy?</summary><div class="faq-a">80/20: 80% in stable high-dividend hard-asset stocks — pipelines, mining royalties, shipping, infrastructure. 20% in cash/ultrashort bonds for tactical deployment. Focus is always on cashflow, never price speculation.</div></details>
+<details class="faq-item"><summary>How can I see your portfolio?</summary><div class="faq-a">The full portfolio is live via Parqet — both <a href="pages/portfolio.html">Scalable Capital and Trade Republic</a> positions visible with every holding, every dividend payment, every allocation change.</div></details>
+<details class="faq-item"><summary>Which free tools are available?</summary><div class="faq-a">Eight <a href="pages/calculators.html">free calculators</a>, no registration: Shipping Cashflow, Dividend Calculator, Yield-on-Cost, Dividend Growth, DRIP Reinvestment, Financial Freedom, Dividend Snowball PRO, Snowball YOC PRO.</div></details>
+</div>
+</div>
 </section>
-
 </main>
-
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-brand display">MB Capital<br>Strategies</div>
-        <div class="footer-tag">Hard Assets · Dividends · Cashflow</div>
-      </div>
-      <div>
-        <div class="footer-col-t">Platform</div>
-        <ul class="footer-col-list">
-          <li><a href="/">Home</a></li>
-          <li><a href="pages/about.html">About</a></li>
-          <li><a href="pages/portfolio.html">Portfolio</a></li>
-          <li><a href="pages/hard-asset-guide.html">Hard Asset Guide</a></li>
-          <li><a href="pages/blog.html">Research</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-t">Sectors</div>
-        <ul class="footer-col-list">
-          <li><a href="pages/shipping.html">Shipping</a></li>
-          <li><a href="pages/pipelines.html">Pipelines</a></li>
-          <li><a href="pages/mining.html">Mining</a></li>
-          <li><a href="pages/energy.html">Energy</a></li>
-          <li><a href="pages/geopolitics.html">Geopolitics</a></li>
-          <li><a href="pages/best-high-yield.html">High-Yield</a></li>
-          <li><a href="pages/market-updates.html">Market Updates</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-t">Tools &amp; more</div>
-        <ul class="footer-col-list">
-          <li><a href="pages/calculators.html">All calculators</a></li>
-          <li><a href="pages/glossary.html">Glossary</a></li>
-          <li><a href="pages/contact.html">Contact</a></li>
-          <li><a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener">YouTube EN</a></li>
-          <li><a href="https://mbcapitalstrategies.com/" rel="noopener">Deutsch</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 MB Capital Strategies · Marco Bozem</span>
-      <span style="display:flex;gap:20px;flex-wrap:wrap"><a href="pages/imprint.html">Imprint</a><a href="pages/privacy.html">Privacy</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/methodik.html">Methodology</a><a href="pages/affiliate-disclosure.html">Affiliates</a><a href="pages/advertise.html">Advertise</a></span>
-    </div>
-    <p class="footer-aff"><strong style="color:var(--fg-muted)">This is not financial advice. I am a private investor, not a financial advisor.</strong><br>Some links are affiliate links — no extra cost to you.</p>
-  </div>
-  <p class="footer-bmc" style="margin:14px 0 0;font-size:.85em;opacity:.85;text-align:center">☕ If these breakdowns help you, you can support them here: <a href="https://buymeacoffee.com/mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--gold,#D4AF37)">buymeacoffee.com/mbcapitalstrategies</a></p>
-  <div class="footer-preferred-source" style="margin:18px 0 6px;padding:16px 16px 14px;border-top:1px solid rgba(212,175,55,.28);text-align:center">
-    <p style="margin:0 0 12px;font-size:.9em;opacity:.92;line-height:1.5">📌 Want to find MB Capital more easily in your search and AI answers? Add us as a <strong>preferred source</strong> on Google — so our analysis shows up more prominently in your results.</p>
-    <a href="https://www.google.com/preferences/source" target="_blank" rel="noopener" style="display:inline-block;padding:11px 24px;background:var(--gold,#D4AF37);color:#1a1a1a;font-weight:600;text-decoration:none;border-radius:6px">Add as preferred source</a>
-  </div>
-</footer>
+<div class="wrap">
+<div class="footer-grid">
+<div>
+<div class="footer-brand display">MB Capital<br/>Strategies</div>
+<div class="footer-tag">Hard Assets · Dividends · Cashflow</div>
+</div>
+<div>
+<div class="footer-col-t">Platform</div>
+<ul class="footer-col-list">
+<li><a href="/">Home</a></li>
+<li><a href="pages/about.html">About</a></li>
+<li><a href="pages/portfolio.html">Portfolio</a></li>
 
+<li><a href="pages/blog.html">Research</a></li>
+</ul>
+</div>
+<div>
+<div class="footer-col-t">Sectors</div>
+
+</div>
+<div>
+<div class="footer-col-t">Tools &amp; more</div>
+<ul class="footer-col-list">
+<li><a href="pages/calculators.html">All calculators</a></li>
+<li><a href="pages/glossary.html">Glossary</a></li>
+<li><a href="pages/contact.html">Contact</a></li>
+<li><a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="noopener" target="_blank">YouTube EN</a></li>
+<li><a href="https://mbcapitalstrategies.com/" rel="noopener">Deutsch</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 MB Capital Strategies · Marco Bozem</span>
+<span style="display:flex;gap:20px;flex-wrap:wrap"><a href="pages/imprint.html">Imprint</a><a href="pages/privacy.html">Privacy</a><a href="pages/disclaimer.html">Disclaimer</a><a href="pages/methodik.html">Methodology</a><a href="pages/affiliate-disclosure.html">Affiliates</a>Advertise</span>
+</div>
+<p class="footer-aff"><strong style="color:var(--fg-muted)">This is not financial advice. I am a private investor, not a financial advisor.</strong><br/>Some links are affiliate links — no extra cost to you.</p>
+</div>
+<p class="footer-bmc" style="margin:14px 0 0;font-size:.85em;opacity:.85;text-align:center">☕ If these breakdowns help you, you can support them here: <a href="https://buymeacoffee.com/mbcapitalstrategies" rel="noopener" style="color:var(--gold,#D4AF37)" target="_blank">buymeacoffee.com/mbcapitalstrategies</a></p>
+<div class="footer-preferred-source" style="margin:18px 0 6px;padding:16px 16px 14px;border-top:1px solid rgba(212,175,55,.28);text-align:center">
+<p style="margin:0 0 12px;font-size:.9em;opacity:.92;line-height:1.5">📌 Want to find MB Capital more easily in your search and AI answers? Add us as a <strong>preferred source</strong> on Google — so our analysis shows up more prominently in your results.</p>
+<a href="https://www.google.com/preferences/source" rel="noopener" style="display:inline-block;padding:11px 24px;background:var(--gold,#D4AF37);color:#1a1a1a;font-weight:600;text-decoration:none;border-radius:6px" target="_blank">Add as preferred source</a>
+</div>
+</footer>
 <!-- LCP-Fix 2026-10-07 web-design-agent: defer main inline script to unblock render path.
      PSI "Reduce unused JavaScript" flagged ~600ms savings — the 169-line IIFE at line 1606
      parsed+executed synchronously during HTML parse, delaying LCP paint on mobile.
@@ -1337,7 +1202,7 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
      zero layout shift, ~400-600ms LCP savings on 3G mobile (Lighthouse estimate).
      Removed duplicate reveal observer (lines 1638-1651) — resilience script at lines 99-116
      already handles .reveal/.sr with its own IntersectionObserver + 2.5s timeout failsafe. -->
-<script defer>
+<script defer="">
 (() => {
   const pg = document.getElementById('scroll-progress');
   const header = document.getElementById('header');
@@ -1592,14 +1457,14 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
      CRO fix: close-button contrast #555→#c8cfe0 (WCAG AA on #0f0f1a bg), touch-target enlarged,
      mobile scroll-threshold raised 300→600px (banner no longer interrupts hero engagement zone) -->
 <div id="en-sticky-cta" style="position:fixed;bottom:0;left:0;right:0;background:#0f0f1a;border-top:2px solid #D4AF37;padding:10px 20px;z-index:99;display:none;">
-  <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
-    <span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;font-family:'IBM Plex Mono',monospace;">MB Capital Strategies &mdash; Free Hard Asset Research:</span>
-    <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
-      <a href="pages/blog.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Browse Research &rarr;</a>
-      <a href="pages/calculators.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Free Calculators &rarr;</a>
-    </div>
-    <button onclick="document.getElementById('en-sticky-cta').style.display='none';localStorage.setItem('enstickydismissed','1');document.body.style.paddingBottom='';" style="background:none;border:none;color:#c8cfe0;cursor:pointer;font-size:1.4rem;padding:6px 10px;line-height:1;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;" aria-label="Close sticky bar">&times;</button>
-  </div>
+<div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;max-width:900px;margin:0 auto;">
+<span style="color:#D4AF37;font-size:0.8rem;font-weight:700;white-space:nowrap;font-family:'IBM Plex Mono',monospace;">MB Capital Strategies — Free Hard Asset Research:</span>
+<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+<a href="pages/blog.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:#D4AF37;color:#000;border:0;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Browse Research →</a>
+<a href="pages/calculators.html" style="padding:12px 16px;min-height:44px;display:inline-flex;align-items:center;background:transparent;color:#D4AF37;border:1px solid #D4AF37;border-radius:4px;font-weight:700;font-size:0.8rem;white-space:nowrap;cursor:pointer;text-decoration:none;font-family:'IBM Plex Mono',monospace;letter-spacing:.04em;box-sizing:border-box;">Free Calculators →</a>
+</div>
+<button aria-label="Close sticky bar" onclick="document.getElementById('en-sticky-cta').style.display='none';localStorage.setItem('enstickydismissed','1');document.body.style.paddingBottom='';" style="background:none;border:none;color:#c8cfe0;cursor:pointer;font-size:1.4rem;padding:6px 10px;line-height:1;min-width:44px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;">×</button>
+</div>
 </div>
 <script>
 (function(){
@@ -1627,12 +1492,9 @@ canvas.compass-3d-canvas{position:absolute;inset:0;width:100%;height:100%;displa
   }
 })();
 </script>
-
 <!-- InvestingPro Sale Self-Expiry + Header-Offset-Sync: moved 2026-07-17 web-design-agent to
      directly after </header> (see CLS-fix comment there) -- ran here after first paint before,
      causing a 0.28+ CLS jump (Lighthouse mobile, threshold 0.1), DE-parity fix. -->
-
-
 <!-- LCP-Fix 2026-07-10 web-design-agent: JSON-LD moved from <head> to end of <body> -- Schema.org does not require head placement, Google reads JSON-LD anywhere in DOM. Removes head-parse bytes from critical path (see LCP-fix-plan Massnahme 1, DE-parity fix). -->
 <script type="application/ld+json">
 {
