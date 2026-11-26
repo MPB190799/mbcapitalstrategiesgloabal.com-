@@ -1,23 +1,22 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
+    <meta charset="UTF-8">
 <!-- Favicon / Brand Icons -->
-<link href="../favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="../favicon-16x16.png" rel="icon" sizes="16x16" type="image/png"/>
-<link href="../favicon-32x32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="../apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
-<meta content="#050508" name="theme-color"/>
-<link href="https://www.googletagmanager.com" rel="dns-prefetch"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<meta name="theme-color" content="#050508">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- seo-agent 2026-10-01: EN Title/Meta CTR-Fix | Hypothese: 'Free Shipping Calculator' Hook + konkrete TCE-Bereiche ($80k-$180k) → CTR von 0% auf ≥3% bei Pos 12.9, 308 Impr; Tool-Intent klarer machen = mehr Klicks. Baseline: ctr=0%, imp=308/28d, pos=12.9. Messfenster bis 2026-10-15 -->
-<!-- seo-agent 2026-10-04: Title/Meta CTR-Fix #7 | Hypothesis: Remove "Free" (lowers trust), concrete TCE-range + dividend-output promise -> clicks at Pos 11.7; Baseline CTR=0.98% (307 Impr/28d); Messfenster 14d bis 2026-10-18 -->
+    <!-- seo-agent 2026-10-04: Title/Meta CTR-Fix #7 | Hypothesis: Remove "Free" (lowers trust), concrete TCE-range + dividend-output promise -> clicks at Pos 11.7; Baseline CTR=0.98% (307 Impr/28d); Messfenster 14d bis 2026-10-18 -->
 <title>Tanker Cashflow Calculator: Does TCE Cover the Dividend?</title>
-<meta content="Free tanker cashflow calculator: Enter fleet size &amp; TCE rate ($80k-$180k/day) to see if the dividend is covered. VLCC, Suezmax &amp; Aframax — no login needed." name="description"/>
-<meta content="Marco Bozem" name="author"/>
-<link href="../css/style.min.css" rel="stylesheet"/>
-<style>
+    <meta name="description" content="Free tanker cashflow calculator: Enter fleet size &amp; TCE rate ($80k-$180k/day) to see if the dividend is covered. VLCC, Suezmax &amp; Aframax — no login needed." />
+    <meta name="author" content="Marco Bozem">
+    <link rel="stylesheet" href="../css/style.min.css">
+    <style>
         .calc-container { max-width: 700px; margin: 0 auto; }
         .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-bottom: 2rem; }
         .calc-group { display: flex; flex-direction: column; }
@@ -40,9 +39,9 @@
         @media (max-width: 600px) { .calc-grid { grid-template-columns: 1fr; } }
     </style>
 <!-- Google tag (gtag.js) -->
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
-<!-- BlogPosting Schema for SEO discoverability -->
-<script type="application/ld+json">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
+  <!-- BlogPosting Schema for SEO discoverability -->
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
@@ -68,6 +67,7 @@
   }
 }
 </script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -84,20 +84,23 @@
   });
   gtag('config', 'G-FSW7J7QYL8');
 </script>
-<meta content="Free Shipping Cashflow Calculator — TCE $80k-$180k → Dividend Estimate" property="og:title"/>
-<meta content="Calculate shipping cashflow from TCE rates: tanker, bulker &amp; LNG. Input fleet size, charter rate &amp; opex to estimate annual dividend potential. Free tool, no signup — Q4 2026 data." property="og:description"/>
-<meta content="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html" property="og:url"/>
-<meta content="https://mbcapitalstrategiesglobal.com/assets/og-shipping.jpg" property="og:image"/>
-<meta content="website" property="og:type"/>
-<meta content="en_US" property="og:locale"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="Shipping Cashflow Calculator: TCE Rate → Dividend Estimate" name="twitter:title"/>
-<meta content="Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier and container ships based on charter rates." name="twitter:description"/>
-<meta content="https://mbcapitalstrategiesglobal.com/assets/og-shipping.jpg" name="twitter:image"/>
-<link href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html" hreflang="en" rel="alternate"/>
-<link href="https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html" hreflang="de" rel="alternate"/>
-<link href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html" hreflang="x-default" rel="alternate"/>
-<link href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html" rel="canonical"/>
+
+<meta property="og:title" content="Free Shipping Cashflow Calculator — TCE $80k-$180k → Dividend Estimate">
+<meta property="og:description" content="Calculate shipping cashflow from TCE rates: tanker, bulker & LNG. Input fleet size, charter rate & opex to estimate annual dividend potential. Free tool, no signup — Q4 2026 data.">
+<meta property="og:url" content="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html">
+<meta property="og:image" content="https://mbcapitalstrategiesglobal.com/assets/og-shipping.jpg">
+<meta property="og:type" content="website">
+<meta property=og:locale content=en_US>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shipping Cashflow Calculator: TCE Rate → Dividend Estimate">
+<meta name="twitter:description" content="Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier and container ships based on charter rates.">
+<meta name="twitter:image" content="https://mbcapitalstrategiesglobal.com/assets/og-shipping.jpg">
+
+<link rel="alternate" hreflang="en" href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html">
+<link rel="alternate" hreflang="de" href="https://mbcapitalstrategies.com/tools/shipping-cashflow-rechner.html">
+<link rel="alternate" hreflang="x-default" href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html">
+<link rel="canonical" href="https://mbcapitalstrategiesglobal.com/tools/shipping-cashflow.html">
+
 <!-- JSON-LD Structured Data -->
 <script type="application/ld+json">
 {
@@ -209,8 +212,9 @@
   ]
 }
 </script>
-<!-- AdSense script disabled (EN re-approval pending)
+  <!-- AdSense script disabled (EN re-approval pending)
 -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -243,6 +247,7 @@
   ]
 }
 </script>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -269,9 +274,9 @@
   ]
 }
 </script>
-<link as="font" crossorigin="" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" rel="preload" type="font/woff2"/>
-<link as="style" href="/fonts/fonts.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
-<noscript><link href="/fonts/fonts.css" rel="stylesheet"/></noscript>
+  <link rel="preload" as="font" type="font/woff2" href="/fonts/gf-QGYvz_MVcBeNP4NJtEtq.woff2" crossorigin>
+  <link rel="preload" href="/fonts/fonts.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/fonts/fonts.css"></noscript>
 <!-- AdSense loader disabled 2026-07-11 web-design-agent: EN AdSense not yet approved; unconditional loader was still triggering Google Funding Choices CMP full-page consent modal (wrong-language on many browsers) for ZERO ad revenue -- GA4 confirms 100% bounce/0s engagement on affected pages (e.g. fomc-june-2026-hard-assets-interest-rates.html, 6 sessions). Re-enable together with ins units once EN AdSense approval is granted. ORIGINAL: -->
 <style>ins.adsbygoogle:empty{min-height:250px;display:block}@media(max-width:480px){ins.adsbygoogle:empty{min-height:280px}}</style>
 <style>
@@ -320,62 +325,58 @@
 </style>
 </head>
 <body>
-<nav class="navbar" id="navbar">
-<div class="nav-container">
-<a class="nav-logo" href="../index.html">
-<picture><source srcset="../Logo.webp" type="image/webp"/><img alt="MB Capital Strategies" class="nav-logo-img" fetchpriority="high" height="40" src="../Logo.webp" style="height:40px;margin-right:10px;" width="auto"/></picture>
-<span class="logo-mb">MB</span>
-<span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
-</a>
-<ul class="nav-menu" id="navMenu">
-<li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-<li class="nav-item dropdown">
-<a class="nav-link dropdown-toggle" href="#">Portfolio Strategy</a>
-<ul class="dropdown-menu">
-<li><a href="../pages/portfolio.html">My Portfolio</a></li>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <picture><source srcset="../Logo.webp" type="image/webp"><img src="../Logo.webp" alt="MB Capital Strategies" class="nav-logo-img" width="auto" height="40" style="height:40px;margin-right:10px;" fetchpriority="high"></picture>
+                <span class="logo-mb">MB</span>
+                <span class="logo-text">Capital Strategies<span class="logo-global">Global</span></span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Portfolio Strategy</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/portfolio.html">My Portfolio</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="../pages/calculators.html" class="nav-link active">Calculators</a></li>
+                <li class="nav-item"><a href="../pages/podcast.html" class="nav-link">Podcast</a></li>
+                <li class="nav-item"><a href="../pages/blog.html" class="nav-link">Blog</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span class="hamburger"></span></button>
+        </div>
+    </nav>
 
+    <section class="page-hero">
+        <div class="container">
+            <span class="hero-tag">Financial Tools</span>
+            <h1><span class="gold-text">Shipping Cashflow</span> Revenue Calculator</h1>
+            <p>Model daily revenue, operating expenses, and net cashflow across your shipping fleet.</p>
+        </div>
+    </section>
 
-</ul>
-</li>
-
-
-
-<li class="nav-item"><a class="nav-link active" href="../pages/calculators.html">Calculators</a></li>
-<li class="nav-item"><a class="nav-link" href="../pages/podcast.html">Podcast</a></li>
-<li class="nav-item"><a class="nav-link" href="../pages/blog.html">Blog</a></li>
-
-</ul>
-<button aria-label="Toggle navigation" class="nav-toggle" id="navToggle"><span class="hamburger"></span></button>
-</div>
-</nav>
-<section class="page-hero">
-<div class="container">
-<span class="hero-tag">Financial Tools</span>
-<h1><span class="gold-text">Shipping Cashflow</span> Revenue Calculator</h1>
-<p>Model daily revenue, operating expenses, and net cashflow across your shipping fleet.</p>
-</div>
-</section>
-<section class="page-content">
-<div class="container">
+    <section class="page-content">
+        <div class="container">
 <!-- AEO Answer-First Block (Batch 218) -->
 <div class="aeo-answer-block" style="background:rgba(212,175,55,0.07);border-left:3px solid #D4AF37;border-radius:6px;padding:16px 20px;margin:0 0 28px;">
-<p style="margin:0;font-size:1.05rem;line-height:1.65;"><strong>Quick Answer:</strong> Free shipping cashflow calculator for tanker, bulk carrier, and LNG investors. Enter daily TCE rate ($), number of vessels, and operating costs (OPEX). Output: daily revenue, annual gross cashflow, and dividend capacity. Use current Baltic Exchange rates as inputs — see indicative ranges in the table below the calculator.</p>
+  <p style="margin:0;font-size:1.05rem;line-height:1.65;"><strong>Quick Answer:</strong> Free shipping cashflow calculator for tanker, bulk carrier, and LNG investors. Enter daily TCE rate ($), number of vessels, and operating costs (OPEX). Output: daily revenue, annual gross cashflow, and dividend capacity. Use current Baltic Exchange rates as inputs — see indicative ranges in the table below the calculator.</p>
 </div>
-<div class="glass-card calc-container">
-<!-- FLEET SCENARIOS ─ neutral segment estimates. Branded issuer presets
+            <div class="glass-card calc-container">
+                <!-- FLEET SCENARIOS ─ neutral segment estimates. Branded issuer presets
                      (logo + "Advertisement" label + position disclosure) are only ever
                      injected from an approved deal in the sponsorship register —
                      sponsor_id stays null until then. A named preset without a deal
                      would assert a partnership that does not exist. -->
-<div class="calc-group" style="margin-bottom:16px;">
-<label for="szenarioSelect">Load a fleet scenario (optional)</label>
-<select class="form-input" id="szenarioSelect" onchange="loadScenario()">
-<option value="">— enter your own figures —</option>
-</select>
-<p id="scenarioNote" style="display:none;color:#9aa6c0;font-size:0.78rem;margin:6px 0 0;"></p>
-<p id="scenarioPartner" style="display:none;color:#D4AF37;font-size:0.78rem;margin:4px 0 0;font-weight:600;"></p>
-</div>
-<script id="fleetScenarios" type="application/json">
+                <div class="calc-group" style="margin-bottom:16px;">
+                    <label for="szenarioSelect">Load a fleet scenario (optional)</label>
+                    <select id="szenarioSelect" class="form-input" onchange="loadScenario()">
+                        <option value="">— enter your own figures —</option>
+                    </select>
+                    <p id="scenarioNote" style="display:none;color:#9aa6c0;font-size:0.78rem;margin:6px 0 0;"></p>
+                    <p id="scenarioPartner" style="display:none;color:#D4AF37;font-size:0.78rem;margin:4px 0 0;font-weight:600;"></p>
+                </div>
+                <script id="fleetScenarios" type="application/json">
                 [
                   {"id":"eco-vlcc","label":"Eco VLCC crude tanker (segment estimates)","sponsor_id":null,
                    "note":"Estimates for a modern eco VLCC in a mid-cycle market, derived from public quarterly reports of large tanker owners (as of 08/2026). Not company data — overwrite with your own figures at any time.",
@@ -391,323 +392,343 @@
                    "values":{"dailyRate":30000,"opexDay":7500,"daysAtSea":339,"numVessels":12}}
                 ]
                 </script>
-<div class="calc-grid">
-<div class="calc-group">
-<label for="dailyRate">Daily Rate ($)</label>
-<input class="form-input" id="dailyRate" min="0" placeholder="e.g. 35000" type="number" value="35000"/>
-</div>
-<div class="calc-group">
-<label for="opexDay">OPEX / Day ($)</label>
-<input class="form-input" id="opexDay" min="0" placeholder="e.g. 8000" type="number" value="8000"/>
-</div>
-<div class="calc-group">
-<label for="daysAtSea">Days at Sea</label>
-<input class="form-input" id="daysAtSea" min="0" placeholder="e.g. 300" type="number" value="300"/>
-</div>
-<div class="calc-group">
-<label for="numVessels">Number of Vessels</label>
-<input class="form-input" id="numVessels" min="0" placeholder="e.g. 5" type="number" value="5"/>
-</div>
-</div>
-<button class="calc-btn" onclick="calculate()">Calculate Cashflow</button>
-<div class="results-box" id="results" style="display:none;">
-<div class="result-row"><span class="result-label">Gross Revenue</span><span class="result-value" id="grossRev">—</span></div>
-<div class="result-row"><span class="result-label">Total OPEX</span><span class="result-value" id="totalOpex">—</span></div>
-<div class="result-row"><span class="result-label">Net Cashflow</span><span class="result-value" id="netCash">—</span></div>
-<div class="result-row"><span class="result-label">Cashflow per Vessel</span><span class="result-value" id="cashPerVessel">—</span></div>
-</div>
-</div>
-<!-- CO-BRANDING SHOWCASE (fictional example preset) — linked from
+                <div class="calc-grid">
+                    <div class="calc-group">
+                        <label for="dailyRate">Daily Rate ($)</label>
+                        <input type="number" min="0" id="dailyRate" class="form-input" placeholder="e.g. 35000" value="35000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="opexDay">OPEX / Day ($)</label>
+                        <input type="number" min="0" id="opexDay" class="form-input" placeholder="e.g. 8000" value="8000">
+                    </div>
+                    <div class="calc-group">
+                        <label for="daysAtSea">Days at Sea</label>
+                        <input type="number" min="0" id="daysAtSea" class="form-input" placeholder="e.g. 300" value="300">
+                    </div>
+                    <div class="calc-group">
+                        <label for="numVessels">Number of Vessels</label>
+                        <input type="number" min="0" id="numVessels" class="form-input" placeholder="e.g. 5" value="5">
+                    </div>
+                </div>
+                <button class="calc-btn" onclick="calculate()">Calculate Cashflow</button>
+                <div class="results-box" id="results" style="display:none;">
+                    <div class="result-row"><span class="result-label">Gross Revenue</span><span class="result-value" id="grossRev">—</span></div>
+                    <div class="result-row"><span class="result-label">Total OPEX</span><span class="result-value" id="totalOpex">—</span></div>
+                    <div class="result-row"><span class="result-label">Net Cashflow</span><span class="result-value" id="netCash">—</span></div>
+                    <div class="result-row"><span class="result-label">Cashflow per Vessel</span><span class="result-value" id="cashPerVessel">—</span></div>
+                </div>
+            </div>
+            <!-- CO-BRANDING SHOWCASE (fictional example preset) — linked from
                  mbcapitalstrategies.com/werbung.html. Shows an issuer what a paid
                  preset looks like: own logo, own brand colour, fleet profile,
                  advertising label, disclosure. Everything here is invented —
                  "MB Capital Fleet" is a placeholder brand, not a company. A real
                  preset only ever ships via an approved sponsorship register entry. -->
-<section aria-label="Fictional co-branding example" class="cobrand" id="example-preset">
-<div class="cobrand-ribbon">
-<span><span class="cobrand-tag">Advertisement</span> <span class="cobrand-tag ghost">Fictional example</span></span>
-<span class="hint">This is how your company’s preset would look</span>
-</div>
-<div class="cobrand-head">
-<div aria-hidden="true" class="cobrand-logo">
-<svg fill="none" height="32" viewbox="0 0 32 32" width="32" xmlns="http://www.w3.org/2000/svg">
-<circle cx="16" cy="5.2" r="2.6" stroke="#06121a" stroke-width="2"></circle>
-<path d="M16 8v16.6" stroke="#06121a" stroke-linecap="round" stroke-width="2.4"></path>
-<path d="M10.4 11h11.2" stroke="#06121a" stroke-linecap="round" stroke-width="2.4"></path>
-<path d="M6.6 17.4c0 5.2 4.2 8.4 9.4 8.4s9.4-3.2 9.4-8.4" stroke="#06121a" stroke-linecap="round" stroke-width="2.4"></path>
-</svg>
-</div>
-<div>
-<p class="cobrand-name">MB CAPITAL <em>FLEET</em></p>
-<p class="cobrand-sub">Product &amp; chemical tankers · Oslo Børs (fictional) · Fleet data as of Q2 2026</p>
-</div>
-</div>
-<div class="cobrand-facts">
-<div><span class="fl">Fleet</span><span class="fv">12 vessels</span></div>
-<div><span class="fl">Segment</span><span class="fv">MR2 / LR1</span></div>
-<div><span class="fl">Avg. age</span><span class="fv">6.2 years</span></div>
-<div><span class="fl">Fleet TCE</span><span class="fv">$30,000/day</span></div>
-<div><span class="fl">OPEX</span><span class="fv">$7,500/day</span></div>
-<div><span class="fl">Utilisation</span><span class="fv">93 %</span></div>
-<div><span class="fl">Shares out</span><span class="fv">60.0 m</span></div>
-<div><span class="fl">Price (fictional)</span><span class="fv">$12.40</span></div>
-<div><span class="fl">Payout policy</span><span class="fv">75 % of FCF</span></div>
-</div>
-<div class="cobrand-fleet">
-<h4>Fleet list (excerpt)</h4>
-<table>
-<thead><tr><th>Vessel</th><th>Type</th><th>Built</th><th>dwt</th></tr></thead>
-<tbody>
-<tr><td>MB Aurora</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
-<tr><td>MB Borealis</td><td>MR2</td><td>2020</td><td>49,900</td></tr>
-<tr><td>MB Cassiopeia</td><td>LR1</td><td>2019</td><td>74,000</td></tr>
-<tr><td>MB Draco</td><td>MR2</td><td>2022</td><td>50,300</td></tr>
-<tr><td>MB Eridanus</td><td>LR1</td><td>2018</td><td>73,600</td></tr>
-<tr><td>MB Fornax</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
-</tbody>
-</table>
-<p class="cobrand-more">… plus 6 further units (2 × LR1, 4 × MR2). A real preset lists your vessels here.</p>
-</div>
-<div class="cobrand-foot">
-<p style="margin:0 0 12px;">
-<button class="cobrand-cta" onclick="loadDemoPreset()" type="button">Load this fleet into the calculator →</button>
-</p>
-<p class="cobrand-disc">
-<strong style="color:#a9bcc9;">Fictional demonstration object.</strong> “MB Capital Fleet” is a
-                  placeholder brand: not a real company, no real ISIN, no real vessels, no investment recommendation.
-                  A real partner preset would additionally carry the position disclosure (“I hold this stock”)
-                  and the paid-placement label — the calculation logic itself stays unchanged and neutral either way.
+            <section id="example-preset" class="cobrand" aria-label="Fictional co-branding example">
+              <div class="cobrand-ribbon">
+                <span><span class="cobrand-tag">Advertisement</span> <span class="cobrand-tag ghost">Fictional example</span></span>
+                <span class="hint">This is how your company&rsquo;s preset would look</span>
+              </div>
+              <div class="cobrand-head">
+                <div class="cobrand-logo" aria-hidden="true">
+                  <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="16" cy="5.2" r="2.6" stroke="#06121a" stroke-width="2"/>
+                    <path d="M16 8v16.6" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                    <path d="M10.4 11h11.2" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                    <path d="M6.6 17.4c0 5.2 4.2 8.4 9.4 8.4s9.4-3.2 9.4-8.4" stroke="#06121a" stroke-width="2.4" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="cobrand-name">MB CAPITAL <em>FLEET</em></p>
+                  <p class="cobrand-sub">Product &amp; chemical tankers &middot; Oslo B&oslash;rs (fictional) &middot; Fleet data as of Q2 2026</p>
+                </div>
+              </div>
+              <div class="cobrand-facts">
+                <div><span class="fl">Fleet</span><span class="fv">12 vessels</span></div>
+                <div><span class="fl">Segment</span><span class="fv">MR2 / LR1</span></div>
+                <div><span class="fl">Avg. age</span><span class="fv">6.2 years</span></div>
+                <div><span class="fl">Fleet TCE</span><span class="fv">$30,000/day</span></div>
+                <div><span class="fl">OPEX</span><span class="fv">$7,500/day</span></div>
+                <div><span class="fl">Utilisation</span><span class="fv">93 %</span></div>
+                <div><span class="fl">Shares out</span><span class="fv">60.0 m</span></div>
+                <div><span class="fl">Price (fictional)</span><span class="fv">$12.40</span></div>
+                <div><span class="fl">Payout policy</span><span class="fv">75 % of FCF</span></div>
+              </div>
+              <div class="cobrand-fleet">
+                <h4>Fleet list (excerpt)</h4>
+                <table>
+                  <thead><tr><th>Vessel</th><th>Type</th><th>Built</th><th>dwt</th></tr></thead>
+                  <tbody>
+                    <tr><td>MB Aurora</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
+                    <tr><td>MB Borealis</td><td>MR2</td><td>2020</td><td>49,900</td></tr>
+                    <tr><td>MB Cassiopeia</td><td>LR1</td><td>2019</td><td>74,000</td></tr>
+                    <tr><td>MB Draco</td><td>MR2</td><td>2022</td><td>50,300</td></tr>
+                    <tr><td>MB Eridanus</td><td>LR1</td><td>2018</td><td>73,600</td></tr>
+                    <tr><td>MB Fornax</td><td>MR2</td><td>2021</td><td>49,900</td></tr>
+                  </tbody>
+                </table>
+                <p class="cobrand-more">&hellip; plus 6 further units (2 &times; LR1, 4 &times; MR2). A real preset lists your vessels here.</p>
+              </div>
+              <div class="cobrand-foot">
+                <p style="margin:0 0 12px;">
+                  <button type="button" class="cobrand-cta" onclick="loadDemoPreset()">Load this fleet into the calculator &rarr;</button>
                 </p>
-<p style="margin:0;font-size:0.78rem;">
-<a href="https://mbcapitalstrategies.com/werbung.html" rel="noopener" style="color:#D4AF37;font-weight:600;">Co-branding for your fleet: €400 setup + €50/month, DE + EN →</a>
-</p>
-</div>
-</section>
-<p style="margin-top:2rem;"><em>Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.</em></p>
-</div>
-</section>
-<!-- AdSense Display Unit -->
-<div style="max-width:900px;margin:32px auto 0;padding:0 20px;text-align:center;">
-<!-- AdSense ins disabled (EN re-approval pending)
+                <p class="cobrand-disc">
+                  <strong style="color:#a9bcc9;">Fictional demonstration object.</strong> &ldquo;MB Capital Fleet&rdquo; is a
+                  placeholder brand: not a real company, no real ISIN, no real vessels, no investment recommendation.
+                  A real partner preset would additionally carry the position disclosure (&ldquo;I hold this stock&rdquo;)
+                  and the paid-placement label &mdash; the calculation logic itself stays unchanged and neutral either way.
+                </p>
+                <p style="margin:0;font-size:0.78rem;">
+                  <a href="https://mbcapitalstrategies.com/werbung.html" rel="noopener" style="color:#D4AF37;font-weight:600;">Co-branding for your fleet: &euro;400 setup + &euro;50/month, DE + EN &rarr;</a>
+                </p>
+              </div>
+            </section>
+
+            <p style="margin-top:2rem;"><em>Free shipping cashflow calculator: estimate daily and annual revenue for tanker, bulk carrier, and container ships based on charter rates.</em></p>
+        </div>
+    </section>
+
+    <!-- AdSense Display Unit -->
+    <div style="max-width:900px;margin:32px auto 0;padding:0 20px;text-align:center;">
+      <!-- AdSense ins disabled (EN re-approval pending)
 -->
 <!-- AdSense push disabled (EN re-approval pending)
 -->
-</div>
-<!-- Educational Content Section — Shipping Cashflow Deep-Dive -->
-<section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
-<p style="margin-bottom:0.5em;"></p>
+    </div>
+
+    <!-- Educational Content Section — Shipping Cashflow Deep-Dive -->
+    <section style="max-width:900px;margin:48px auto 0;padding:0 20px;">
+      <p style="margin-bottom:0.5em;">Top Tanker Stocks 2026 — our Best List</p>
 <h2 style="color:#D4AF37;font-size:1.5rem;margin-bottom:20px;border-bottom:1px solid rgba(212,175,55,0.2);padding-bottom:12px;">How Shipping Cashflow Works — The Investor's Guide</h2>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">Shipping stocks are one of the few sectors where cashflow is almost entirely transparent and calculable from public data. Once you understand how TCE rates translate into dividends, you can evaluate stocks like TORM, Frontline, FLEX LNG or Hafnia with genuine analytical precision — not just market sentiment.</p>
-<h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">TCE Rate: The Core Metric</h3>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">The <strong style="color:#e8c95a;">Time-Charter Equivalent (TCE)</strong> rate is the single most important number in shipping analysis. It tells you how much net revenue a vessel generates per day after voyage costs (bunker fuel, port dues, canal fees). The formula:</p>
-<div style="background:#0d0d1a;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:16px;margin-bottom:1.4rem;font-family:'IBM Plex Mono',monospace;font-size:0.9rem;color:#e8c95a;">
+
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">Shipping stocks are one of the few sectors where cashflow is almost entirely transparent and calculable from public data. Once you understand how TCE rates translate into dividends, you can evaluate stocks like TORM, Frontline, FLEX LNG or Hafnia with genuine analytical precision — not just market sentiment.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">TCE Rate: The Core Metric</h3>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">The <strong style="color:#e8c95a;">Time-Charter Equivalent (TCE)</strong> rate is the single most important number in shipping analysis. It tells you how much net revenue a vessel generates per day after voyage costs (bunker fuel, port dues, canal fees). The formula:</p>
+      <div style="background:#0d0d1a;border:1px solid rgba(212,175,55,0.3);border-radius:8px;padding:16px;margin-bottom:1.4rem;font-family:'IBM Plex Mono',monospace;font-size:0.9rem;color:#e8c95a;">
         TCE = (Freight Revenue − Voyage Costs) ÷ Revenue Days
       </div>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">For a VLCC tanker in 2024-2025, spot TCEs ranged from $25,000/day (weak market) to $75,000+/day during geopolitical disruptions (Russia sanctions rerouting). LNG carriers like those operated by FLEX LNG typically earn $80,000–$120,000/day under long-term time-charter contracts — with near-zero revenue volatility.</p>
-<h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">From TCE to Dividend: The Calculation Chain</h3>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">Here is how daily vessel earnings translate into shareholder dividends — the complete chain every shipping investor needs to understand:</p>
-<ol style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
-<li><strong style="color:#e8c95a;">Daily TCE Rate</strong> × Revenue Days = Gross Vessel Revenue</li>
-<li>Gross Revenue − <strong style="color:#e8c95a;">OPEX</strong> (daily operating costs: crew, maintenance, insurance) = Operating Cashflow</li>
-<li>Operating Cashflow − G&amp;A overhead − Dry-docking reserves = <strong style="color:#e8c95a;">Distributable Cashflow</strong></li>
-<li>Distributable Cashflow ÷ Shares Outstanding = <strong style="color:#e8c95a;">Dividend per Share</strong></li>
-</ol>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">The payout ratio tells you what fraction of distributable cashflow the company actually pays out. Shipping companies with spot exposure (TORM, Frontline) pay variable dividends tied directly to TCE cycles. Contract-heavy operators (FLEX LNG, Höegh) pay stable, predictable dividends regardless of spot market moves.</p>
-<h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Real-World Example: TORM TRMD Q1 2025</h3>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">TORM reported Q1 2025 TCE of approximately $31,000/day across its MR and LR tanker fleet. With ~85 vessels and ~$8,500/day average OPEX, the cashflow math looks like this:</p>
-<div style="overflow-x:auto;margin-bottom:1.4rem;">
-<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-<thead><tr style="background:rgba(212,175,55,0.1);">
-<th style="padding:10px 14px;text-align:left;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Metric</th>
-<th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Value</th>
-</tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">Fleet TCE Rate (Q1 2025)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$31,000/day</td>
-</tr>
-<tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">OPEX per vessel/day</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$8,500</td>
-</tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">Net Revenue Days (fleet, Q1)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">~7,000</td>
-</tr>
-<tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">Distributable Cashflow (Q1)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$157M</td>
-</tr>
-<tr>
-<td style="padding:10px 14px;color:#c8cfe0;">Quarterly Dividend (100% payout)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$1.17/share</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p style="color:#aaa;font-size:0.8rem;margin-bottom:1.4rem;font-style:italic;">Illustrative calculation based on publicly reported Q1 2025 data. Not a guarantee of future results. Always verify against official filings.</p>
-<h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Vessel Types and Typical Earnings Ranges (2025)</h3>
-<div style="overflow-x:auto;margin-bottom:1.4rem;">
-<table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
-<thead><tr style="background:rgba(212,175,55,0.1);">
-<th style="padding:10px 14px;text-align:left;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Vessel Type</th>
-<th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Spot TCE Range</th>
-<th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Key Stocks</th>
-</tr></thead>
-<tbody>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">VLCC (Very Large Crude Carrier)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$20,000–$75,000/day</td>
-<td style="padding:10px 14px;text-align:right;color:#aaa;">Frontline, DHT</td>
-</tr>
-<tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">MR/LR Tanker (Product)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$15,000–$40,000/day</td>
-<td style="padding:10px 14px;text-align:right;color:#aaa;">TORM, Hafnia</td>
-</tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">LNG Carrier (Time-Charter)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$70,000–$130,000/day</td>
-<td style="padding:10px 14px;text-align:right;color:#aaa;">FLEX LNG, Höegh</td>
-</tr>
-<tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
-<td style="padding:10px 14px;color:#c8cfe0;">VLGC (Very Large Gas Carrier)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$40,000–$120,000/day</td>
-<td style="padding:10px 14px;text-align:right;color:#aaa;">BW LPG, Dorian LPG</td>
-</tr>
-<tr>
-<td style="padding:10px 14px;color:#c8cfe0;">Capesize Bulk (Iron Ore)</td>
-<td style="padding:10px 14px;text-align:right;color:#e8c95a;">$10,000–$50,000/day</td>
-<td style="padding:10px 14px;text-align:right;color:#aaa;">Star Bulk, 2020 Bulkers</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Marco's Take: What the Calculator Doesn't Show You</h3>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">As an active shipping investor (TORM, FLEX LNG, Frontline, Dorian LPG, CMB.Tech are among my current positions), I use this type of cashflow modeling as a first filter — not a final answer. Here is what the raw math misses:</p>
-<ul style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
-<li><strong style="color:#e8c95a;">Vessel age and dry-docking cycles:</strong> Older fleets face higher maintenance OPEX and more frequent, expensive dry-dockings. A 5-year-old vessel costs less to insure than a 15-year-old one but generates similar TCE — important for cashflow durability.</li>
-<li><strong style="color:#e8c95a;">Contract coverage vs. spot exposure:</strong> 80% spot exposure (Frontline) means high upside in tight markets and sharp dividend cuts in soft markets. 90% contract coverage (FLEX LNG) means stable dividends but capped upside. Neither is inherently better — it depends on your timing and risk tolerance.</li>
-<li><strong style="color:#e8c95a;">Geopolitical routing effects:</strong> Russia sanctions added 15–25% to effective ton-mile demand for product tankers in 2022-2024 as European refiners replaced Russian product imports with longer-haul shipments from the Middle East, India, and the US. This alone explains why TORM's dividend went from $0.45/share (2021) to $8+/share (2024).</li>
-<li><strong style="color:#e8c95a;">Fleet renewal optionality:</strong> Companies with access to cheap capital (Norwegian state-backed, established track record) can order new vessels at the bottom of the cycle and earn enhanced returns when rates recover. This creates a compounding advantage invisible in a single-quarter cashflow snapshot.</li>
-</ul>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;font-style:italic;border-left:3px solid rgba(212,175,55,0.4);padding-left:16px;">This is not financial advice. I own positions in multiple shipping stocks mentioned. Always do your own research and consider your individual risk tolerance before investing. Shipping markets are cyclical — dividends can and do disappear in down markets.</p>
-<h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">2026 Shipping Rate Benchmarks</h2>
-<table style="width:100%;border-collapse:collapse;margin:1rem 0">
-<thead>
-<tr style="background:#1a1d23">
-<th style="text-align:left;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Segment</th>
-<th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Weak Market</th>
-<th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Mid-Cycle</th>
-<th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Strong Market</th>
-</tr>
-</thead>
-<tbody>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
-<td style="padding:9px 14px">MR Tanker</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$12k–16k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$20k–28k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#D4AF37">$40k+/day</td>
-</tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
-<td style="padding:9px 14px">LR2 / Aframax</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$14k–20k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$25k–35k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#D4AF37">$50k+/day</td>
-</tr>
-<tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
-<td style="padding:9px 14px">VLCC</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$20k–30k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$35k–50k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#D4AF37">$80k+/day</td>
-</tr>
-<tr>
-<td style="padding:9px 14px">LNG Carrier</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$40k–60k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#c8cfe0">$65k–90k/day</td>
-<td style="padding:9px 14px;text-align:right;color:#D4AF37">$120k+/day</td>
-</tr>
-</tbody>
-</table>
-<p style="color:#9aa6c0;font-size:0.85rem;margin-top:0.5rem">Source: Clarkson Research, EIA, Baltic Exchange — indicative ranges, not current spot. Use as calibration for your calculator inputs.</p>
-<h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">OPEC+ and LNG Market Impact on Shipping Cashflows (2026 Update)</h2>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem">The shipping market in 2026 is shaped by two macro forces that directly affect the rate inputs you should use in this calculator:</p>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem"><strong style="color:#D4AF37">1. OPEC+ Production Decisions:</strong> OPEC+ controls ~40% of global crude supply. When OPEC+ increases output (as it did in early 2026 with the +188k bpd decision), tanker demand rises — more crude barrels need ships. This is the primary driver for VLCC and Suezmax charter rates. Conversely, OPEC+ cuts (2022-2024 era) pressured crude tanker rates while benefiting clean product tankers (TORM, Hafnia) that carry refined products.</p>
-<p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem"><strong style="color:#D4AF37">2. LNG Demand Surge:</strong> European LNG imports remain structurally elevated post-Ukraine-crisis. US LNG export capacity additions (Sabine Pass, Corpus Christi, Plaquemines) drive demand for LNG tankers (FLEX LNG, Golar LNG). LNG carrier TCE rates are driven by long-term contracts rather than spot swings — making LNG shipping stocks fundamentally different from crude tankers in a cashflow model.</p>
-<h3 style="color:#D4AF37;font-size:1.1rem;margin:1.5rem 0 0.8rem">How to Adjust the Calculator for Market Conditions</h3>
-<ul style="color:#c8cfe0;line-height:1.8;padding-left:1.5rem">
-<li><strong>Bullish tanker scenario (OPEC+ output increase):</strong> Use the "Peak" column from the rate table above. Apply a 70-80% utilization rate.</li>
-<li><strong>Bearish tanker scenario (OPEC+ cuts persist):</strong> Use "Base" column rates. Drop utilization to 60-65%. The resulting cashflow is your stress-test.</li>
-<li><strong>LNG carriers (long-term contracted):</strong> Use the contracted daily rate directly — not the spot estimate. FLEX LNG's Q1 2026 TCE was approximately $74k-80k/day (contracted basis).</li>
-<li><strong>Dry bulk context:</strong> Baltic Dry Index (BDI) as of May 2026 was ~3,000 points (+87% YoY). Capesize earnings ~$35k/day, Panamax ~$17k/day. Adjust your Capex and Opex accordingly.</li>
-</ul>
-<div style="background:#1a1f2e;border-left:4px solid #D4AF37;padding:16px 20px;border-radius:6px;margin:24px 0">
-<p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.9rem">Marco's Framework Note</p>
-<p style="color:#9aa6c0;margin:0;font-size:0.88rem;line-height:1.7">I use this calculator to stress-test any shipping stock before adding it to my watchlist. The key insight: a company trading at 6x P/E might look cheap — until you model a 40% rate drop scenario and realize the "cheap" stock becomes expensive at stressed cashflow. Ships are leveraged assets. Model the downside first.</p>
-</div>
-<h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">Related Shipping Analysis</h2>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">For a VLCC tanker in 2024-2025, spot TCEs ranged from $25,000/day (weak market) to $75,000+/day during geopolitical disruptions (Russia sanctions rerouting). LNG carriers like those operated by FLEX LNG typically earn $80,000–$120,000/day under long-term time-charter contracts — with near-zero revenue volatility.</p>
 
-</section>
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">From TCE to Dividend: The Calculation Chain</h3>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">Here is how daily vessel earnings translate into shareholder dividends — the complete chain every shipping investor needs to understand:</p>
+      <ol style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
+        <li><strong style="color:#e8c95a;">Daily TCE Rate</strong> × Revenue Days = Gross Vessel Revenue</li>
+        <li>Gross Revenue − <strong style="color:#e8c95a;">OPEX</strong> (daily operating costs: crew, maintenance, insurance) = Operating Cashflow</li>
+        <li>Operating Cashflow − G&amp;A overhead − Dry-docking reserves = <strong style="color:#e8c95a;">Distributable Cashflow</strong></li>
+        <li>Distributable Cashflow ÷ Shares Outstanding = <strong style="color:#e8c95a;">Dividend per Share</strong></li>
+      </ol>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;">The payout ratio tells you what fraction of distributable cashflow the company actually pays out. Shipping companies with spot exposure (TORM, Frontline) pay variable dividends tied directly to TCE cycles. Contract-heavy operators (FLEX LNG, Höegh) pay stable, predictable dividends regardless of spot market moves.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Real-World Example: TORM TRMD Q1 2025</h3>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">TORM reported Q1 2025 TCE of approximately $31,000/day across its MR and LR tanker fleet. With ~85 vessels and ~$8,500/day average OPEX, the cashflow math looks like this:</p>
+      <div style="overflow-x:auto;margin-bottom:1.4rem;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <thead><tr style="background:rgba(212,175,55,0.1);">
+            <th style="padding:10px 14px;text-align:left;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Metric</th>
+            <th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Value</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">Fleet TCE Rate (Q1 2025)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$31,000/day</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">OPEX per vessel/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$8,500</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">Net Revenue Days (fleet, Q1)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">~7,000</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">Distributable Cashflow (Q1)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$157M</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;color:#c8cfe0;">Quarterly Dividend (100% payout)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">~$1.17/share</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p style="color:#aaa;font-size:0.8rem;margin-bottom:1.4rem;font-style:italic;">Illustrative calculation based on publicly reported Q1 2025 data. Not a guarantee of future results. Always verify against official filings.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Vessel Types and Typical Earnings Ranges (2025)</h3>
+      <div style="overflow-x:auto;margin-bottom:1.4rem;">
+        <table style="width:100%;border-collapse:collapse;font-size:0.9rem;">
+          <thead><tr style="background:rgba(212,175,55,0.1);">
+            <th style="padding:10px 14px;text-align:left;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Vessel Type</th>
+            <th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Spot TCE Range</th>
+            <th style="padding:10px 14px;text-align:right;color:#D4AF37;border-bottom:1px solid rgba(212,175,55,0.3);">Key Stocks</th>
+          </tr></thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">VLCC (Very Large Crude Carrier)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$20,000–$75,000/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#aaa;">Frontline, DHT</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">MR/LR Tanker (Product)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$15,000–$40,000/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#aaa;">TORM, Hafnia</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">LNG Carrier (Time-Charter)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$70,000–$130,000/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#aaa;">FLEX LNG, Höegh</td>
+            </tr>
+            <tr style="background:rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:10px 14px;color:#c8cfe0;">VLGC (Very Large Gas Carrier)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$40,000–$120,000/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#aaa;">BW LPG, Dorian LPG</td>
+            </tr>
+            <tr>
+              <td style="padding:10px 14px;color:#c8cfe0;">Capesize Bulk (Iron Ore)</td>
+              <td style="padding:10px 14px;text-align:right;color:#e8c95a;">$10,000–$50,000/day</td>
+              <td style="padding:10px 14px;text-align:right;color:#aaa;">Star Bulk, 2020 Bulkers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="color:#D4AF37;font-size:1.15rem;margin:2rem 0 0.8rem;">Marco's Take: What the Calculator Doesn't Show You</h3>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem;">As an active shipping investor (TORM, FLEX LNG, Frontline, Dorian LPG, CMB.Tech are among my current positions), I use this type of cashflow modeling as a first filter — not a final answer. Here is what the raw math misses:</p>
+      <ul style="color:#c8cfe0;line-height:2;padding-left:1.5rem;margin-bottom:1.4rem;">
+        <li><strong style="color:#e8c95a;">Vessel age and dry-docking cycles:</strong> Older fleets face higher maintenance OPEX and more frequent, expensive dry-dockings. A 5-year-old vessel costs less to insure than a 15-year-old one but generates similar TCE — important for cashflow durability.</li>
+        <li><strong style="color:#e8c95a;">Contract coverage vs. spot exposure:</strong> 80% spot exposure (Frontline) means high upside in tight markets and sharp dividend cuts in soft markets. 90% contract coverage (FLEX LNG) means stable dividends but capped upside. Neither is inherently better — it depends on your timing and risk tolerance.</li>
+        <li><strong style="color:#e8c95a;">Geopolitical routing effects:</strong> Russia sanctions added 15–25% to effective ton-mile demand for product tankers in 2022-2024 as European refiners replaced Russian product imports with longer-haul shipments from the Middle East, India, and the US. This alone explains why TORM's dividend went from $0.45/share (2021) to $8+/share (2024).</li>
+        <li><strong style="color:#e8c95a;">Fleet renewal optionality:</strong> Companies with access to cheap capital (Norwegian state-backed, established track record) can order new vessels at the bottom of the cycle and earn enhanced returns when rates recover. This creates a compounding advantage invisible in a single-quarter cashflow snapshot.</li>
+      </ul>
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.4rem;font-style:italic;border-left:3px solid rgba(212,175,55,0.4);padding-left:16px;">This is not financial advice. I own positions in multiple shipping stocks mentioned. Always do your own research and consider your individual risk tolerance before investing. Shipping markets are cyclical — dividends can and do disappear in down markets.</p>
+
+      <h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">2026 Shipping Rate Benchmarks</h2>
+      <table style="width:100%;border-collapse:collapse;margin:1rem 0">
+        <thead>
+          <tr style="background:#1a1d23">
+            <th style="text-align:left;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Segment</th>
+            <th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Weak Market</th>
+            <th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Mid-Cycle</th>
+            <th style="text-align:right;padding:10px 14px;color:#D4AF37;border-bottom:2px solid rgba(212,175,55,0.3)">Strong Market</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
+            <td style="padding:9px 14px">MR Tanker</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$12k–16k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$20k–28k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#D4AF37">$40k+/day</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
+            <td style="padding:9px 14px">LR2 / Aframax</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$14k–20k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$25k–35k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#D4AF37">$50k+/day</td>
+          </tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,0.07)">
+            <td style="padding:9px 14px">VLCC</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$20k–30k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$35k–50k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#D4AF37">$80k+/day</td>
+          </tr>
+          <tr>
+            <td style="padding:9px 14px">LNG Carrier</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$40k–60k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#c8cfe0">$65k–90k/day</td>
+            <td style="padding:9px 14px;text-align:right;color:#D4AF37">$120k+/day</td>
+          </tr>
+        </tbody>
+      </table>
+      <p style="color:#9aa6c0;font-size:0.85rem;margin-top:0.5rem">Source: Clarkson Research, EIA, Baltic Exchange — indicative ranges, not current spot. Use as calibration for your calculator inputs.</p>
+
+      <h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">OPEC+ and LNG Market Impact on Shipping Cashflows (2026 Update)</h2>
+
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1.2rem">The shipping market in 2026 is shaped by two macro forces that directly affect the rate inputs you should use in this calculator:</p>
+
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem"><strong style="color:#D4AF37">1. OPEC+ Production Decisions:</strong> OPEC+ controls ~40% of global crude supply. When OPEC+ increases output (as it did in early 2026 with the +188k bpd decision), tanker demand rises — more crude barrels need ships. This is the primary driver for VLCC and Suezmax charter rates. Conversely, OPEC+ cuts (2022-2024 era) pressured crude tanker rates while benefiting clean product tankers (TORM, Hafnia) that carry refined products.</p>
+
+      <p style="color:#c8cfe0;line-height:1.8;margin-bottom:1rem"><strong style="color:#D4AF37">2. LNG Demand Surge:</strong> European LNG imports remain structurally elevated post-Ukraine-crisis. US LNG export capacity additions (Sabine Pass, Corpus Christi, Plaquemines) drive demand for LNG tankers (FLEX LNG, Golar LNG). LNG carrier TCE rates are driven by long-term contracts rather than spot swings — making LNG shipping stocks fundamentally different from crude tankers in a cashflow model.</p>
+
+      <h3 style="color:#D4AF37;font-size:1.1rem;margin:1.5rem 0 0.8rem">How to Adjust the Calculator for Market Conditions</h3>
+      <ul style="color:#c8cfe0;line-height:1.8;padding-left:1.5rem">
+        <li><strong>Bullish tanker scenario (OPEC+ output increase):</strong> Use the "Peak" column from the rate table above. Apply a 70-80% utilization rate.</li>
+        <li><strong>Bearish tanker scenario (OPEC+ cuts persist):</strong> Use "Base" column rates. Drop utilization to 60-65%. The resulting cashflow is your stress-test.</li>
+        <li><strong>LNG carriers (long-term contracted):</strong> Use the contracted daily rate directly — not the spot estimate. FLEX LNG's Q1 2026 TCE was approximately $74k-80k/day (contracted basis).</li>
+        <li><strong>Dry bulk context:</strong> Baltic Dry Index (BDI) as of May 2026 was ~3,000 points (+87% YoY). Capesize earnings ~$35k/day, Panamax ~$17k/day. Adjust your Capex and Opex accordingly.</li>
+      </ul>
+
+      <div style="background:#1a1f2e;border-left:4px solid #D4AF37;padding:16px 20px;border-radius:6px;margin:24px 0">
+        <p style="color:#D4AF37;font-weight:700;margin:0 0 6px;font-size:0.9rem">Marco's Framework Note</p>
+        <p style="color:#9aa6c0;margin:0;font-size:0.88rem;line-height:1.7">I use this calculator to stress-test any shipping stock before adding it to my watchlist. The key insight: a company trading at 6x P/E might look cheap — until you model a 40% rate drop scenario and realize the "cheap" stock becomes expensive at stressed cashflow. Ships are leveraged assets. Model the downside first.</p>
+      </div>
+
+      <h2 style="color:#D4AF37;font-size:1.3rem;margin:2.5rem 0 1rem;border-top:1px solid rgba(212,175,55,0.2);padding-top:1.5rem;">Related Shipping Analysis</h2>
+    </section>
+
+    
 <div style="background:#0d1117;border:1px solid rgba(212,175,55,0.3);border-radius:10px;padding:18px 22px;margin:28px 0">
-<p style="color:#D4AF37;font-size:1rem;font-weight:600;margin-bottom:12px;text-align:center">My Toolbox &amp; Resources</p>
-<div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
-<a href="https://wise.com/invite/dic/marcopeterb2" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">Multi-Currency Account – Wise</a>
-<a href="https://www.airalo.com?ref=BAND1T8990" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">Travel eSIM – Airalo (Code: BAND1T8990)</a>
-<a href="https://debituminvestments.pxf.io/vDzqgy" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">P2P Lending – Debitum</a>
-<a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">Portfolio Tracker – Parqet</a>
-<a href="https://www.binance.com/en/referral/earn-together/refer-in-hotsummer/claim?hl=en&amp;ref=GRO_20338_K06Q9" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">Crypto – Binance</a>
-<a href="https://coinbase.com/join/EN8NVAV?src=referral-link" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s" target="_blank">Crypto – Coinbase</a>
+  <p style="color:#D4AF37;font-size:1rem;font-weight:600;margin-bottom:12px;text-align:center">My Toolbox &amp; Resources</p>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center">
+    <a href="https://wise.com/invite/dic/marcopeterb2" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Multi-Currency Account &ndash; Wise</a>
+    <a href="https://www.airalo.com?ref=BAND1T8990" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Travel eSIM &ndash; Airalo (Code: BAND1T8990)</a>
+    <a href="https://debituminvestments.pxf.io/vDzqgy" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">P2P Lending &ndash; Debitum</a>
+    <a href="https://parqet.com/?ref=a99fc877f10014bd0f127146a803dac354f018d8" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Portfolio Tracker &ndash; Parqet</a>
+    <a href="https://www.binance.com/en/referral/earn-together/refer-in-hotsummer/claim?hl=en&amp;ref=GRO_20338_K06Q9" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Crypto &ndash; Binance</a>
+    <a href="https://coinbase.com/join/EN8NVAV?src=referral-link" target="_blank" rel="sponsored nofollow noopener noreferrer" style="display:inline-block;padding:8px 16px;background:#1a1f2b;color:#c8cfe0;border:1px solid rgba(212,175,55,0.2);border-radius:6px;text-decoration:none;font-size:.85rem;transition:border-color .2s">Crypto &ndash; Coinbase</a>
+  </div>
+  <p style="color:#6b7280;font-size:.75rem;margin-top:10px;text-align:center">Disclosure: Some links are affiliate links. This helps support our free content at no extra cost to you.</p>
 </div>
-<p style="color:#6b7280;font-size:.75rem;margin-top:10px;text-align:center">Disclosure: Some links are affiliate links. This helps support our free content at no extra cost to you.</p>
-</div>
+
 <!-- B2B-HINWEIS:START -->
 <aside style="max-width:960px;margin:36px auto;padding:18px 20px;background:#12121e;
      border:1px solid rgba(212,175,55,.28);border-left:3px solid #D4AF37;border-radius:6px;">
-<p style="margin:0 0 6px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  <p style="margin:0 0 6px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
      color:#8a7f6a;font-family:Outfit,sans-serif;">For shipowners &amp; issuers</p>
-<p style="margin:0 0 10px;color:#ddd;font-size:.95rem;line-height:1.65;">
+  <p style="margin:0 0 10px;color:#ddd;font-size:.95rem;line-height:1.65;">
     Do you run investor relations at a listed shipping, mining or energy company? I work with
     issuers — what is sold is the <strong style="color:#f1ecdf;">analytical work</strong>, never
     the verdict: no rating, no price target, no recommendation, at any price.
     <strong style="color:#f1ecdf;">The CEO interview is free of charge.</strong>
-</p>
-<p style="margin:0;font-size:.9rem;">
-
-</p>
+  </p>
+  <p style="margin:0;font-size:.9rem;">
+    See formats, prices and process →
+  </p>
 </aside>
 <!-- B2B-HINWEIS:END -->
+
 <footer class="footer">
-<div class="container">
-<div class="footer-bottom" style="border-top: none;">
-<div class="footer-social" style="margin-bottom: 16px; display: flex; gap: 12px; justify-content: center; align-items: center;">
-<a aria-label="YouTube" href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
-</a>
-<a aria-label="LinkedIn" href="https://www.linkedin.com/company/mb-capital-strategies/" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path></svg>
-</a>
-<a aria-label="XING" href="https://www.xing.com/profile/Marco_Bozem" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.88c-.09.185-.089.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l2.435-4.38-2.386-4.22c-.163-.305-.455-.637-.96-.637H3.648z"></path></svg>
-</a>
-<a aria-label="Odysee" href="https://odysee.com/@mbcapitalstrategies:5" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" target="_blank">
-<svg fill="currentColor" height="20" viewbox="0 0 24 24" width="20"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.08c-.572.846-1.782.846-2.354 0l-3.54-5.243-3.54 5.243c-.572.846-1.782.846-2.354 0-.572-.846-.572-2.217 0-3.063L9.646 9.08 6.106 4.017c-.572-.846-.572-2.217 0-3.063.572-.846 1.782-.846 2.354 0L12 6.197l3.54-5.243c.572-.846 1.782-.846 2.354 0 .572.846.572 2.217 0 3.063L14.354 9.08l3.54 4.937c.572.846.572 2.217 0 3.063z"></path></svg>
-</a>
-</div>
-<p>© 2026 MB Capital Strategies Global. All rights reserved.</p>
-<div class="footer-links">
-<a href="../pages/contact.html">Contact</a>
-<a href="../pages/imprint.html">Imprint</a>
-<a href="../pages/privacy.html">Privacy Policy</a>
-<a href="../pages/glossary.html">Glossary</a>
-<a href="../pages/disclaimer.html">Disclaimer</a>
-<a href="../pages/affiliate-disclosure.html">Affiliate Disclosure</a>
-</div>
-</div>
-</div>
-<p class="footer-bmc" style="margin:14px 0 0;font-size:.85em;opacity:.85;text-align:center">☕ If these breakdowns help you, you can support them here: <a href="https://buymeacoffee.com/mbcapitalstrategies" rel="noopener" style="color:var(--gold,#D4AF37)" target="_blank">buymeacoffee.com/mbcapitalstrategies</a></p>
+        <div class="container">
+            <div class="footer-bottom" style="border-top: none;">
+                <div class="footer-social" style="margin-bottom: 16px; display: flex; gap: 12px; justify-content: center; align-items: center;">
+                    <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/mb-capital-strategies/" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://www.xing.com/profile/Marco_Bozem" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="XING">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.188 0c-.517 0-.741.325-.927.66 0 0-7.455 13.224-7.702 13.657.015.024 4.919 9.023 4.919 9.023.17.308.436.66.967.66h3.454c.211 0 .375-.078.463-.22.089-.151.089-.346-.009-.536l-4.879-8.916c-.004-.006-.004-.016 0-.022L22.139.756c.095-.191.097-.387.006-.535C22.056.078 21.894 0 21.686 0h-3.498zM3.648 4.74c-.211 0-.385.074-.473.216-.09.149-.078.339.02.531l2.34 4.05c.004.01.004.016 0 .021L3.169 13.88c-.09.185-.089.381 0 .529.085.142.239.234.45.234h3.461c.518 0 .766-.348.945-.667l2.435-4.38-2.386-4.22c-.163-.305-.455-.637-.96-.637H3.648z"/></svg>
+                    </a>
+                    <a href="https://odysee.com/@mbcapitalstrategies:5" target="_blank" rel="noopener" style="color: var(--text-muted); transition: color 0.2s;" aria-label="Odysee">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 17.08c-.572.846-1.782.846-2.354 0l-3.54-5.243-3.54 5.243c-.572.846-1.782.846-2.354 0-.572-.846-.572-2.217 0-3.063L9.646 9.08 6.106 4.017c-.572-.846-.572-2.217 0-3.063.572-.846 1.782-.846 2.354 0L12 6.197l3.54-5.243c.572-.846 1.782-.846 2.354 0 .572.846.572 2.217 0 3.063L14.354 9.08l3.54 4.937c.572.846.572 2.217 0 3.063z"/></svg>
+                    </a>
+                </div>
+                <p>&copy; 2026 MB Capital Strategies Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="../pages/contact.html">Contact</a>
+                    <a href="../pages/imprint.html">Imprint</a>
+                    <a href="../pages/privacy.html">Privacy Policy</a>
+                    <a href="../pages/glossary.html">Glossary</a>
+                    <a href="../pages/disclaimer.html">Disclaimer</a>
+                    <a href="../pages/affiliate-disclosure.html">Affiliate Disclosure</a>
+                </div>
+            </div>
+        </div>
+      <p class="footer-bmc" style="margin:14px 0 0;font-size:.85em;opacity:.85;text-align:center">☕ If these breakdowns help you, you can support them here: <a href="https://buymeacoffee.com/mbcapitalstrategies" target="_blank" rel="noopener" style="color:var(--gold,#D4AF37)">buymeacoffee.com/mbcapitalstrategies</a></p>
 </footer>
-<script defer="" src="../js/main.min.js"></script>
-<script>
+    <script defer src="../js/main.min.js"></script>
+    <script>
         function fmt(n) { return '$' + n.toLocaleString('en-US', {minimumFractionDigits: 0, maximumFractionDigits: 0}); }
         /* Fleet scenarios (presets) — reads the inline JSON, fills the dropdown and,
            on selection, the inputs. A filled sponsor_id shows the labelled partner
@@ -796,21 +817,21 @@
         }
     </script>
 <div class="author-box" rel="author" style="display:flex;align-items:center;gap:16px;margin:40px auto;padding:20px;max-width:700px;background:#1a1a2e;border-left:4px solid #D4AF37;border-radius:4px;">
-<img alt="Marco Bozem — MB Capital Strategies Global" height="64" loading="lazy" onerror="this.src='../marco.webp'" src="../marco.webp" style="border-radius:50%;flex-shrink:0;" width="64"/>
-<div>
-<p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
-<p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies | YouTube <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="author noopener" style="color:#D4AF37;" target="_blank">@MBCapitalStrategiesGlobal</a> | Podcast “Der Finanzfeuer Talk”</p>
-<p style="margin:0;font-size:0.85rem;color:#ccc;">Marco has been analyzing dividend and hard-asset stocks since 2022, with a focus on shipping, mining and energy. All tools and analyses are for informational purposes only. <em>Not financial advice.</em> <a href="../pages/about.html" rel="author" style="color:#D4AF37;">About Marco →</a></p>
-</div>
+  <img src="../marco.webp" onerror="this.src='../marco.webp'" alt="Marco Bozem — MB Capital Strategies Global" width="64" height="64" style="border-radius:50%;flex-shrink:0;" loading="lazy">
+  <div>
+    <p style="margin:0 0 4px;font-weight:700;color:#D4AF37;">Marco Bozem</p>
+    <p style="margin:0 0 8px;font-size:0.875rem;color:#aaa;">Investor &amp; Analyst | Hard Assets, Dividends, Shipping | MB Capital Strategies | YouTube <a href="https://www.youtube.com/@MBCapitalStrategiesGlobal" rel="author noopener" target="_blank" style="color:#D4AF37;">@MBCapitalStrategiesGlobal</a> | Podcast &ldquo;Der Finanzfeuer Talk&rdquo;</p>
+    <p style="margin:0;font-size:0.85rem;color:#ccc;">Marco has been analyzing dividend and hard-asset stocks since 2022, with a focus on shipping, mining and energy. All tools and analyses are for informational purposes only. <em>Not financial advice.</em> <a href="../pages/about.html" rel="author" style="color:#D4AF37;">About Marco &rarr;</a></p>
+  </div>
 </div>
 <div class="cookie-banner" id="cookieBanner"><div class="cookie-inner"><p class="cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="../pages/privacy.html">Privacy Policy</a></p><div class="cookie-buttons"><button class="cookie-btn cookie-btn-reject" id="cookieReject">Reject</button><button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
-<p style="margin:16px 0;"></p>
+<p style="margin:16px 0;">Best Tanker Stocks 2026 &mdash; Compare TCE &amp; Dividends &rarr;</p>
+
+
 <!-- data-seo-agent-links -->
 <div style="margin:24px 0;padding:16px;background:rgba(21,24,33,0.85);border-left:3px solid #d4af37;border-radius:4px;">
 <p><strong>Related Tools:</strong></p>
 <ul style="margin:8px 0">
-
-
 <li><a href="/tools/shipping-cashflow.html">Shipping Cashflow Calculator</a></li>
 </ul>
 </div>
