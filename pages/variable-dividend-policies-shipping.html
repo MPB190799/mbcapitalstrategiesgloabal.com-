@@ -24,7 +24,7 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mbcapitalstrategiesglobal.com/"}, {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://mbcapitalstrategiesglobal.com/pages/blog.html"}, {"@type": "ListItem", "position": 3, "name": "Variable Dividend Policies in Shipping: How the Payout Formulas Really Work"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why do shipping dividends change every quarter?", "acceptedAnswer": {"@type": "Answer", "text": "Most listed tanker and gas carrier companies pay a fixed share of each quarter's net profit rather than a fixed amount per share. Net profit follows freight rates, so the dividend moves with the market."}}, {"@type": "Question", "name": "What is Hafnia's dividend policy?", "acceptedAnswer": {"@type": "Answer", "text": "Since April 2024 Hafnia targets a payout of adjusted net profit that depends on its net loan-to-value: 50% above 40% LTV, 60% between 30% and 40%, 80% between 20% and 30%, and 90% at or below 20%. In Q2 2026, with net LTV at 13.0%, it paid out 90%."}}, {"@type": "Question", "name": "How do I estimate the next shipping dividend?", "acceptedAnswer": {"@type": "Answer", "text": "Take the share of next quarter's vessel days the company has already booked and at what rate, compare that rate with the company's cash breakeven, estimate net profit, and apply the payout ratio. It's an estimate, not a forecast; open days, vessel sales and one-offs can move it."}}]}</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSW7J7QYL8"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-FSW7J7QYL8');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}var mbcsC=(function(){try{return localStorage.getItem('cookie_consent');}catch(e){return null;}})();var mbcsG=(mbcsC==='accepted'?'granted':'denied');gtag('consent','default',{'ad_storage':mbcsG,'ad_user_data':mbcsG,'ad_personalization':mbcsG,'analytics_storage':mbcsG,'functionality_storage':'granted','security_storage':'granted'});gtag('js',new Date());gtag('config','G-FSW7J7QYL8');</script>
 <style>
 .ob p,.ob li{color:#c8cfe0;line-height:1.75;font-size:1.02rem} .ob h2{color:#f5f6fa;margin:34px 0 12px;font-size:1.45rem}
 .ob table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.92rem} .ob th,.ob td{border-bottom:1px solid #23283a;padding:8px 10px;text-align:left;color:#d0d3e2}
@@ -119,5 +119,38 @@ A company has 100 vessels, so about 9,100 vessel days per quarter. It has booked
 <p>&copy; 2026 MB Capital Strategies Global &mdash; Marco Bozem</p>
 <nav style="margin-top:10px;"><a href="imprint.html" style="color:#D4AF37;margin:0 10px;">Imprint</a><a href="privacy.html" style="color:#D4AF37;margin:0 10px;">Privacy</a><a href="disclaimer.html" style="color:#D4AF37;margin:0 10px;">Disclaimer</a><a href="methodik.html" style="color:#D4AF37;margin:0 10px;">Methodology</a><a href="contact.html" style="color:#D4AF37;margin:0 10px;">Contact</a></nav>
 </footer>
+<style>
+.mbcs-cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:9999;background:#0f1219;border-top:1px solid rgba(212,175,55,.35);padding:14px 18px;display:none;box-shadow:0 -4px 18px rgba(0,0,0,.4)}
+.mbcs-cookie-banner.show{display:block}
+.mbcs-cookie-inner{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between}
+.mbcs-cookie-text{color:#d0d3e2;font-size:.82rem;line-height:1.5;margin:0;flex:1;min-width:220px}
+.mbcs-cookie-text a{color:#D4AF37;text-decoration:underline}
+.mbcs-cookie-buttons{display:flex;gap:10px;flex-shrink:0}
+.mbcs-cookie-btn{padding:8px 18px;border-radius:6px;font-size:.82rem;font-weight:700;cursor:pointer;border:1px solid transparent}
+.mbcs-cookie-btn-accept{background:#D4AF37;color:#0a0e14;border-color:#D4AF37}
+.mbcs-cookie-btn-reject{background:transparent;color:#d0d3e2;border-color:#3a3f4d}
+@media(max-width:480px){.mbcs-cookie-inner{flex-direction:column;align-items:stretch}.mbcs-cookie-buttons{justify-content:flex-end}body{padding-bottom:150px}}
+</style>
+<div class="mbcs-cookie-banner" id="cookieBanner"><div class="mbcs-cookie-inner"><p class="mbcs-cookie-text">We use cookies and Google Analytics to improve your experience. By clicking "Accept", you consent to the use of cookies for analytics and ads. <a href="privacy.html">Privacy Policy</a></p><div class="mbcs-cookie-buttons"><button class="mbcs-cookie-btn mbcs-cookie-btn-reject" id="cookieReject">Reject</button><button class="mbcs-cookie-btn mbcs-cookie-btn-accept" id="cookieAccept">Accept</button></div></div></div>
+<script>
+(function(){
+  var b=document.getElementById('cookieBanner');
+  if(!b) return;
+  if(!localStorage.getItem('cookie_consent')){
+    setTimeout(function(){ if(!localStorage.getItem('cookie_consent')) b.classList.add('show'); }, 400);
+  }
+  var a=document.getElementById('cookieAccept'), r=document.getElementById('cookieReject');
+  if(a) a.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','accepted');
+    if(window.gtag) window.gtag('consent','update',{'ad_storage':'granted','analytics_storage':'granted','ad_user_data':'granted','ad_personalization':'granted'});
+    b.classList.remove('show');
+  });
+  if(r) r.addEventListener('click', function(){
+    localStorage.setItem('cookie_consent','rejected');
+    b.classList.remove('show');
+    window['ga-disable-G-FSW7J7QYL8']=true;
+  });
+})();
+</script>
 </body>
 </html>

@@ -41,6 +41,7 @@
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  var mbcsC=(function(){try{return localStorage.getItem('cookie_consent');}catch(e){return null;}})();var mbcsG=(mbcsC==='accepted'?'granted':'denied');gtag('consent','default',{'ad_storage':mbcsG,'ad_user_data':mbcsG,'ad_personalization':mbcsG,'analytics_storage':mbcsG,'functionality_storage':'granted','security_storage':'granted'});
   gtag('js', new Date());
   gtag('config', 'G-FSW7J7QYL8');
 </script>
